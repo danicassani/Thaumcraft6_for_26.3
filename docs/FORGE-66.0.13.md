@@ -37,7 +37,8 @@ El script Windows del wrapper solo normaliza CRLF a LF respecto al MDK.
 
 Los arranques usan las tareas de desarrollo ForgeGradle y su raíz combinada;
 el JAR distribuible se comprueba adicionalmente por contenido y SHA-256.
-Las capturas, XML de tests y logs se publican junto al JAR en la rama de artefactos.
+Las capturas, XML de tests y logs se conservan localmente en work/.
+La rama de artefactos publica únicamente el JAR y su suma SHA-256.
 
 Persisten avisos no fatales de servicios online inaccesibles, audio y comprobación
 kqueue en Linux. No se validan Realms, autenticación remota ni reproducción de audio.
