@@ -1,84 +1,85 @@
-buildscript {
-    repositories {
-        maven { url = 'https://maven.minecraftforge.net/' }
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:3.+'
-    }
+plugins {
+    id 'java'
+    id 'idea'
+    id 'eclipse'
+    id 'net.minecraftforge.gradle' version '7.0.17'
 }
-        
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
-
-version = '1.0'
+version = '6.1.BETA26-port.2'
 group = 'griglog.thaumcraft'
-archivesBaseName = 'thaumcraft'
-
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
-compileJava.options.encoding = 'UTF-8'
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
+base.archivesName = 'thaumcraft'
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+// Forge needs one mod root. Stage each task separately so resource processing
+// cannot delete compiler outputs on a clean build or a build-cache restore.
+// Declare these roots before runs: ForgeGradle captures SourceSet output snapshots.
+def stagedMainClasses = layout.buildDirectory.dir('staging/main/classes')
+def stagedMainResources = layout.buildDirectory.dir('staging/main/resources')
+def mergedMainOutput = layout.buildDirectory.dir('mod/main')
+tasks.named('compileJava', JavaCompile) {
+    destinationDirectory = stagedMainClasses
 }
-sourceSets { main { output.resourcesDir = output.classesDir } } //essential for Idea to load resources
+tasks.named('processResources') {
+    destinationDir = stagedMainResources.get().asFile
+}
+def mergeMainMod = tasks.register('mergeMainMod', Sync) {
+    dependsOn tasks.named('compileJava'), tasks.named('processResources')
+    from stagedMainClasses
+    from stagedMainResources
+    into mergedMainOutput
+}
+sourceSets.main.output.classesDirs.setFrom(files(mergedMainOutput).builtBy(mergeMainMod))
+sourceSets.main.output.resourcesDir = mergedMainOutput.get().asFile
+sourceSets.main.output.builtBy(mergeMainMod)
+tasks.named('classes') { dependsOn mergeMainMod }
+
+// Reversible quarantine: 1.12.2 sources and resources stay intact.
+sourceSets.main {
+    java.setSrcDirs(['src/modern/java'])
+    resources.setSrcDirs(['src/modern/resources'])
+}
+// Explicit integration fixture; never packaged by the normal build.
+if (providers.gradleProperty('warpRestartProbe').isPresent()) {
+    sourceSets.main.java.srcDir('src/runtimeTest/java')
+}
+
 
 minecraft {
-    mappings channel: 'snapshot', version: '20171003-1.12'
-    accessTransformer = file('src/main/resources/META-INF/tc_at.cfg') //one
     runs {
-        client {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-            property 'forge.logging.console.level', 'debug'
+        configureEach {
+            workingDir = layout.projectDirectory.dir('run')
+            systemProperty 'eventbus.api.strictRuntimeChecks', 'true'
+            mods {
+                register('thaumcraft') { source sourceSets.main }
+            }
         }
-
-        server {
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-            property 'forge.logging.console.level', 'debug'
+        register('client')
+        register('server') {
+            workingDir = layout.projectDirectory.dir('run/server')
+            args '--nogui'
         }
     }
 }
-
 repositories {
+    minecraft.mavenizer(it)
+    maven fg.forgeMaven
+    maven fg.minecraftLibsMaven
     mavenCentral()
-    maven { url "https://www.cursemaven.com" }
 }
-
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2860'
-    implementation fg.deobf('curse.maven:baubles-227083:2518667')
+    implementation minecraft.dependency('net.minecraftforge:forge:26.3-66.0.0')
+    annotationProcessor 'net.minecraftforge:eventbus-validator:7.0.6'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.12.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.12.2'
+}
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+
+processResources {
+    from('src/main/resources') { include 'assets/**' }
 }
 
-jar {
-    manifest {
-        attributes([
-            "Specification-Title": "thaum",
-            "Specification-Vendor": "thaumsareus",
-            "Specification-Version": "1", // We are version 1 of ourselves
-            "Implementation-Title": project.name,
-            "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"thaumsareus",
-            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+tasks.named('test') { useJUnitPlatform() }
+tasks.register('checkWarpCodec') { dependsOn tasks.named('test') }
 
-            "FMLAT": "tc_at.cfg" //two
-        ])
-    }
+tasks.withType(JavaExec).configureEach {
+    if (name == 'runServer') standardInput = System.in
 }
-
-jar.finalizedBy('reobfJar')
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            artifact jar
-        }
-    }
-    repositories {
-        maven {
-            url "file:///${project.projectDir}/mcmodsrepo"
-        }
-    }
-}
-
 
