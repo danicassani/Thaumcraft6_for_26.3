@@ -4,7 +4,7 @@ plugins {
     id 'eclipse'
     id 'net.minecraftforge.gradle' version '7.0.17'
 }
-version = '6.1.BETA26-port.2'
+version = '6.1.BETA26-port.2-forge66.0.13'
 group = 'griglog.thaumcraft'
 base.archivesName = 'thaumcraft'
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
@@ -17,8 +17,10 @@ def mergedMainOutput = layout.buildDirectory.dir('mod/main')
 tasks.named('compileJava', JavaCompile) {
     destinationDirectory = stagedMainClasses
 }
+// Keep resource staging independent of SourceSet.output.resourcesDir.
+// Gradle's Copy destination convention otherwise resolves to the merged mod root.
 tasks.named('processResources') {
-    destinationDir = stagedMainResources.get().asFile
+    conventionMapping.map('destinationDir') { stagedMainResources.get().asFile }
 }
 def mergeMainMod = tasks.register('mergeMainMod', Sync) {
     dependsOn tasks.named('compileJava'), tasks.named('processResources')
@@ -65,7 +67,7 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    implementation minecraft.dependency('net.minecraftforge:forge:26.3-66.0.0')
+    implementation minecraft.dependency('net.minecraftforge:forge:26.3-66.0.13')
     annotationProcessor 'net.minecraftforge:eventbus-validator:7.0.6'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.12.2'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.12.2'
@@ -82,4 +84,3 @@ tasks.register('checkWarpCodec') { dependsOn tasks.named('test') }
 tasks.withType(JavaExec).configureEach {
     if (name == 'runServer') standardInput = System.in
 }
-

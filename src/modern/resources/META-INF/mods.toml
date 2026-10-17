@@ -3,14 +3,14 @@ loaderVersion="[66,)"
 license="All Rights Reserved"
 [[mods]]
 modId="thaumcraft"
-version="6.1.BETA26-port.2"
+version="6.1.BETA26-port.2-forge66.0.13"
 displayName="Thaumcraft 6"
 authors="Azanor, GrigLog"
 description="Personal migration of Thaumcraft 6; infrastructure only."
 [[dependencies.thaumcraft]]
 modId="forge"
 mandatory=true
-versionRange="[66.0.0]"
+versionRange="[66.0.13]"
 ordering="NONE"
 side="BOTH"
 [[dependencies.thaumcraft]]
