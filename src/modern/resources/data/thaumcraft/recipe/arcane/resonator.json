@@ -1,0 +1,23 @@
+{
+  "type": "thaumcraft:arcane",
+  "research": "TUBES",
+  "vis": 50,
+  "crystals": {},
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "I I",
+      "INI",
+      " S "
+    ],
+    "key": {
+      "I": "thaumcraft:plate_iron",
+      "N": "minecraft:quartz",
+      "S": "minecraft:stick"
+    },
+    "result": {
+      "id": "thaumcraft:resonator",
+      "count": 1
+    }
+  }
+}

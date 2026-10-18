@@ -1,0 +1,24 @@
+{
+  "type": "thaumcraft:arcane",
+  "research": "TUBES",
+  "vis": 10,
+  "crystals": {},
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      " Q ",
+      "IGI",
+      " B "
+    ],
+    "key": {
+      "I": "thaumcraft:plate_iron",
+      "G": "minecraft:glass",
+      "B": "thaumcraft:nugget_brass",
+      "Q": "thaumcraft:quicksilver"
+    },
+    "result": {
+      "id": "thaumcraft:tube",
+      "count": 8
+    }
+  }
+}

@@ -161,3 +161,9 @@ frasco. El intercambio exacto de frascos se verificó en servidor dedicado.
 La compilación limpia final pasó 34 tests sin fallos ni omisiones. El JAR normal
 contiene 101 blockstates, 170 definiciones de item y 186 recetas; se analizaron
 sus JSON y se comprobó que no incluye las fixtures de integración.
+
+## Continuación port.11
+
+La red física de tubos, succión, etiquetas y resonador se implementa en
+[ESSENTIA-TRANSPORT.md](ESSENTIA-TRANSPORT.md). Sustituye el traslado exclusivamente
+manual descrito para port.10; los frascos continúan disponibles.

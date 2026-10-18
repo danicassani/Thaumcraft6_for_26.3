@@ -32,11 +32,12 @@ import thaumcraft.aura.AuraManager;
 import thaumcraft.crystals.CrystalAspects;
 import thaumcraft.research.*;
 
-public final class AlchemyMachine extends thaumcraft.devices.AuraDeviceEntity implements MenuProvider {
+public final class AlchemyMachine extends thaumcraft.devices.AuraDeviceEntity implements MenuProvider,thaumcraft.essentia.EssentiaTransport {
     public final SimpleContainer inventory=new SimpleContainer(3){@Override public void setItem(int slot,ItemStack item){if(slot==0&&!ItemStack.isSameItemSameComponents(getItem(0),item))cook=0;super.setItem(slot,item);}@Override public void setChanged(){super.setChanged();AlchemyMachine.this.setChanged();}};
     private Map<String,Integer> aspects=Map.of();
     private int heat,burn,burnTotal,cook,decay=-100;
-    private Tag unsupported;
+    private Tag unsupported,unsupportedFilter;
+    private String filter="";
     public final FluidTank water=new FluidTank(1000,s->s.getFluid()==Fluids.WATER){
         @Override public int fill(FluidStack s,FluidAction a){return supported()?super.fill(s,a):0;}
         @Override public FluidStack drain(int max,FluidAction a){return supported()?super.drain(max,a):FluidStack.EMPTY;}
@@ -46,7 +47,8 @@ public final class AlchemyMachine extends thaumcraft.devices.AuraDeviceEntity im
     private LazyOptional<IItemHandler> input=LazyOptional.of(()->handler(0)),fuel=LazyOptional.of(()->handler(1)),output=LazyOptional.of(()->handler(2));
     public AlchemyMachine(BlockPos pos,BlockState state){super(AlchemyContent.TYPE.get(),pos,state);}
     public AlchemyBlock.Kind kind(){return ((AlchemyBlock)getBlockState().getBlock()).kind;}
-    public boolean supported(){return unsupported==null;}
+    public boolean supported(){return unsupported==null&&unsupportedFilter==null;}
+    public String filter(){return filter;}
     public Map<String,Integer> aspects(){return aspects;}
     public int total(){return AspectAmounts.total(aspects);}
     public int heat(){return heat;}
@@ -64,7 +66,7 @@ public final class AlchemyMachine extends thaumcraft.devices.AuraDeviceEntity im
     public int color(){if(total()==0)return 0xFF4080FF;long red=0,green=0,blue=0;for(var e:aspects.entrySet()){int c=CrystalAspects.COLORS.get(e.getKey());red+=((c>>16)&255)*e.getValue();green+=((c>>8)&255)*e.getValue();blue+=(c&255)*e.getValue();}return 0xFF000000|((int)(red/total())<<16)|((int)(green/total())<<8)|(int)(blue/total());}
     @Override public void serverTick(){
         if(!(level instanceof ServerLevel server)||!supported()||!server.tickRateManager().runsNormally())return;
-        if(kind()==AlchemyBlock.Kind.CRUCIBLE)crucibleTick(server);else if(kind()==AlchemyBlock.Kind.SMELTER)smelterTick(server);
+        if(kind()==AlchemyBlock.Kind.CRUCIBLE)crucibleTick(server);else if(kind()==AlchemyBlock.Kind.SMELTER)smelterTick(server);else if(jar()&&server.getGameTime()%5==0)thaumcraft.essentia.EssentiaNetwork.pull(level,worldPosition,this,Direction.UP);
     }
     private void lit(boolean lit){if(level!=null&&getBlockState().getValue(AlchemyBlock.LIT)!=lit)level.setBlockAndUpdate(worldPosition,getBlockState().setValue(AlchemyBlock.LIT,lit));}
     private void crucibleTick(ServerLevel server){
@@ -100,7 +102,7 @@ public final class AlchemyMachine extends thaumcraft.devices.AuraDeviceEntity im
     }
     private void eject(ItemStack result){if(level instanceof ServerLevel server){var entity=new ItemEntity(server,worldPosition.getX()+.5,worldPosition.getY()+1.1,worldPosition.getZ()+.5,result.copy());entity.setDeltaMovement(0,.18,0);entity.setDefaultPickUpDelay();entity.getPersistentData().putBoolean("thaumcraft:alchemy_output",true);server.addFreshEntity(entity);}}
     public boolean insertEssence(String aspect,int amount,boolean simulate){
-        if(!supported()||amount<1||!CrystalAspects.COLORS.containsKey(aspect)||!(jar()||kind()==AlchemyBlock.Kind.ALEMBIC)||!aspects.isEmpty()&&!aspects.containsKey(aspect))return false;
+        if(!supported()||amount<1||!filter.isEmpty()&&!filter.equals(aspect)||!CrystalAspects.COLORS.containsKey(aspect)||!(jar()||kind()==AlchemyBlock.Kind.ALEMBIC)||!aspects.isEmpty()&&!aspects.containsKey(aspect))return false;
         int room=capacity()-total();if(room<amount&&kind()!=AlchemyBlock.Kind.VOID_JAR)return false;
         if(!simulate){int keep=Math.min(room,amount);if(keep>0)aspects=AspectAmounts.add(aspects,Map.of(aspect,keep));changed();}return true;
     }
@@ -114,7 +116,9 @@ public final class AlchemyMachine extends thaumcraft.devices.AuraDeviceEntity im
         held.shrink(1);if(held.isEmpty())p.setItemInHand(hand,result);else if(!p.getInventory().add(result))Block.popResource(level,worldPosition,result);p.getInventory().setChanged();return InteractionResult.SUCCESS;
     }
     public InteractionResult interact(Player p,InteractionHand hand){
-        var held=p.getItemInHand(hand);if(held.is(ResearchContent.METER.get()))return InteractionResult.PASS;
+        var held=p.getItemInHand(hand);if(held.is(thaumcraft.essentia.EssentiaContent.LABEL.get()))return label(p,hand,getBlockState().getValue(AlchemyBlock.FACING));if(held.is(thaumcraft.essentia.EssentiaContent.RESONATOR.get()))return InteractionResult.PASS;
+        if(held.isEmpty()&&p.isShiftKeyDown()&&(jar()||kind()==AlchemyBlock.Kind.ALEMBIC)&&!filter.isEmpty()){if(!level.isClientSide()&&valid(p)&&supported()){filter="";Block.popResource(level,worldPosition,new ItemStack(thaumcraft.essentia.EssentiaContent.LABEL.get()));changed();}return InteractionResult.SUCCESS;}
+        if(held.is(ResearchContent.METER.get()))return InteractionResult.PASS;
         if(held.is(AlchemyContent.PHIAL.get())&&kind()!=AlchemyBlock.Kind.CRUCIBLE)return phial(p,hand);
         if(level.isClientSide())return InteractionResult.SUCCESS;if(!valid(p)||!supported())return InteractionResult.FAIL;
         if(kind()==AlchemyBlock.Kind.CRUCIBLE){
@@ -124,8 +128,23 @@ public final class AlchemyMachine extends thaumcraft.devices.AuraDeviceEntity im
         }
         p.openMenu(this);return InteractionResult.SUCCESS;
     }
-    public ItemStack jarItem(){if(jar()&&supported()&&aspects.size()==1)return AlchemyContent.filled(getBlockState().getBlock().asItem(),aspects.keySet().iterator().next(),total());return new ItemStack(getBlockState().getBlock());}
-    public void placeContents(ItemStack stack){if(!jar()||!supported())return;String a=AlchemyContent.aspect(stack);int n=AlchemyContent.amount(stack);if(!a.isEmpty()&&n>0&&n<=250)insertEssence(a,n,false);}
+    public InteractionResult label(Player p,InteractionHand hand,Direction face){
+        if(!(jar()||kind()==AlchemyBlock.Kind.ALEMBIC)||face.getAxis()==Direction.Axis.Y)return InteractionResult.FAIL;
+        if(level.isClientSide())return InteractionResult.SUCCESS;if(!valid(p)||!supported()||!filter.isEmpty())return InteractionResult.FAIL;
+        String a=aspects.isEmpty()?AlchemyContent.aspect(p.getItemInHand(hand)):aspects.keySet().iterator().next();if(a.isEmpty()||!CrystalAspects.COLORS.containsKey(a))return InteractionResult.FAIL;
+        filter=a;p.getItemInHand(hand).shrink(1);level.setBlockAndUpdate(worldPosition,getBlockState().setValue(AlchemyBlock.FACING,face));changed();return InteractionResult.SUCCESS;
+    }
+    public ItemStack jarItem(){var item=jar()&&supported()&&aspects.size()==1?AlchemyContent.filled(getBlockState().getBlock().asItem(),aspects.keySet().iterator().next(),total()):new ItemStack(getBlockState().getBlock());if(jar()&&supported()&&!filter.isEmpty())item.set(thaumcraft.essentia.EssentiaContent.FILTER.get(),filter);return item;}
+    public void placeContents(ItemStack stack){if(!jar()||!supported())return;String a=AlchemyContent.aspect(stack);int n=AlchemyContent.amount(stack);String f=stack.getOrDefault(thaumcraft.essentia.EssentiaContent.FILTER.get(),"");if(!f.isEmpty()&&(a.isEmpty()||a.equals(f)))filter=f;if(!a.isEmpty()&&n>0&&n<=250)insertEssence(a,n,false);changed();}
+    @Override public boolean connects(Direction face){return supported()&&face!=null&&(jar()?face==Direction.UP:kind()==AlchemyBlock.Kind.ALEMBIC&&face!=Direction.DOWN&&face!=getBlockState().getValue(AlchemyBlock.FACING));}
+    @Override public boolean canInput(Direction face){return connects(face)&&jar();}
+    @Override public boolean canOutput(Direction face){return connects(face);}
+    @Override public Map<String,Integer> contents(Direction face){return supported()&&(jar()||kind()==AlchemyBlock.Kind.ALEMBIC)?aspects:Map.of();}
+    @Override public String suctionType(Direction face){return jar()?filter.isEmpty()?aspects.keySet().stream().findFirst().orElse(""):filter:"";}
+    @Override public int suction(Direction face){if(!connects(face)||!jar())return 0;if(kind()==AlchemyBlock.Kind.VOID_JAR)return !filter.isEmpty()&&total()<250?48:32;return total()>=250?0:filter.isEmpty()?32:64;}
+    @Override public int minimumSuction(){return jar()?filter.isEmpty()?32:kind()==AlchemyBlock.Kind.VOID_JAR?48:64:0;}
+    @Override public boolean insert(String a,Direction face,boolean simulate){return canInput(face)&&insertEssence(a,1,simulate);}
+    @Override public boolean extract(String a,Direction face,boolean simulate){return canOutput(face)&&extractEssence(a,1,simulate);}
     public int fuelTime(ItemStack stack){if(!(level instanceof ServerLevel server)||stack.isEmpty())return 0;
         var context=new LootContext.Builder(new LootParams.Builder(server).withParameter(LootContextParams.BLOCK_STATE,getBlockState()).withParameter(LootContextParams.BLOCK_ENTITY,this).withParameter(LootContextParams.ORIGIN,Vec3.atCenterOf(worldPosition)).withParameter(LootContextParams.CONTAINER,inventory).create(LootContextParamSets.CONTAINER_PROCESS)).create(Optional.empty());
         int nativeTime=ResolvableInt.getFromItem(stack,DataComponents.COOKING_FUEL,CookingFuel::burnTime,context,0);return Math.clamp(net.minecraftforge.event.ForgeEventFactory.getItemBurnTime(stack,nativeTime,RecipeType.SMELTING),0,1000000);
@@ -151,8 +170,8 @@ public final class AlchemyMachine extends thaumcraft.devices.AuraDeviceEntity im
         }
     }
     @Override public void preRemoveSideEffects(BlockPos pos,BlockState s){super.preRemoveSideEffects(pos,s);if(level instanceof ServerLevel){for(int i=0;i<3;i++)Block.popResource(level,pos,inventory.removeItemNoUpdate(i));if(kind()==AlchemyBlock.Kind.CRUCIBLE)dump();else if(!jar()&&supported()&&total()>0)AuraManager.addFlux((ServerLevel)level,pos,total()*.25F);}}
-    @Override protected void saveAdditional(ValueOutput out){super.saveAdditional(out);out.store("alchemy",Codec.PASSTHROUGH,unsupported==null?new Dynamic<>(NbtOps.INSTANCE,AlchemyState.CODEC.encodeStart(NbtOps.INSTANCE,snapshot()).getOrThrow()):new Dynamic<>(NbtOps.INSTANCE,unsupported));for(int i=0;i<3;i++)if(!inventory.getItem(i).isEmpty())out.store("slot"+i,ItemStack.CODEC,inventory.getItem(i));}
-    @Override protected void loadAdditional(ValueInput in){super.loadAdditional(in);unsupported=null;var raw=in.read("alchemy",Codec.PASSTHROUGH);var state=AlchemyState.EMPTY;if(raw.isPresent()){Tag tag=raw.get().convert(NbtOps.INSTANCE).getValue();var decoded=AlchemyState.CODEC.parse(NbtOps.INSTANCE,tag).result();if(decoded.isPresent())state=decoded.get();else unsupported=tag.copy();}aspects=state.aspects();heat=state.heat();burn=state.burn();burnTotal=state.burnTotal();cook=state.cook();decay=state.decay();water.setFluid(state.water()==0?FluidStack.EMPTY:new FluidStack(Fluids.WATER,state.water()));if((jar()||kind()==AlchemyBlock.Kind.ALEMBIC)&&(aspects.size()>1||total()>capacity())){unsupported=raw.map(d->d.convert(NbtOps.INSTANCE).getValue().copy()).orElse(null);aspects=Map.of();}for(int i=0;i<3;i++)inventory.setItem(i,in.read("slot"+i,ItemStack.CODEC).orElse(ItemStack.EMPTY));cook=state.cook();}
+    @Override protected void saveAdditional(ValueOutput out){super.saveAdditional(out);out.store("essentia_filter",Codec.PASSTHROUGH,new Dynamic<>(NbtOps.INSTANCE,unsupportedFilter==null?thaumcraft.essentia.TubeState.FILTER.encodeStart(NbtOps.INSTANCE,filter).getOrThrow():unsupportedFilter));out.store("alchemy",Codec.PASSTHROUGH,unsupported==null?new Dynamic<>(NbtOps.INSTANCE,AlchemyState.CODEC.encodeStart(NbtOps.INSTANCE,snapshot()).getOrThrow()):new Dynamic<>(NbtOps.INSTANCE,unsupported));for(int i=0;i<3;i++)if(!inventory.getItem(i).isEmpty())out.store("slot"+i,ItemStack.CODEC,inventory.getItem(i));}
+    @Override protected void loadAdditional(ValueInput in){super.loadAdditional(in);unsupportedFilter=null;filter="";var rawFilter=in.read("essentia_filter",Codec.PASSTHROUGH);if(rawFilter.isPresent()){Tag t=rawFilter.get().convert(NbtOps.INSTANCE).getValue();var f=thaumcraft.essentia.TubeState.FILTER.parse(NbtOps.INSTANCE,t).result();if(f.isPresent())filter=f.get();else unsupportedFilter=t.copy();}unsupported=null;var raw=in.read("alchemy",Codec.PASSTHROUGH);var state=AlchemyState.EMPTY;if(raw.isPresent()){Tag tag=raw.get().convert(NbtOps.INSTANCE).getValue();var decoded=AlchemyState.CODEC.parse(NbtOps.INSTANCE,tag).result();if(decoded.isPresent())state=decoded.get();else unsupported=tag.copy();}aspects=state.aspects();heat=state.heat();burn=state.burn();burnTotal=state.burnTotal();cook=state.cook();decay=state.decay();water.setFluid(state.water()==0?FluidStack.EMPTY:new FluidStack(Fluids.WATER,state.water()));if((jar()||kind()==AlchemyBlock.Kind.ALEMBIC)&&(aspects.size()>1||total()>capacity())){unsupported=raw.map(d->d.convert(NbtOps.INSTANCE).getValue().copy()).orElse(null);aspects=Map.of();}for(int i=0;i<3;i++)inventory.setItem(i,in.read("slot"+i,ItemStack.CODEC).orElse(ItemStack.EMPTY));cook=state.cook();if(!filter.isEmpty()&&(!aspects.isEmpty()&&!aspects.containsKey(filter)||!(jar()||kind()==AlchemyBlock.Kind.ALEMBIC)))unsupportedFilter=rawFilter.map(d->d.convert(NbtOps.INSTANCE).getValue().copy()).orElse(null);}
     private IItemHandler handler(int face){return new IItemHandler(){
         public int getSlots(){return 3;}public ItemStack getStackInSlot(int s){return inventory.getItem(s).copy();}public int getSlotLimit(int s){return 64;}
         public boolean isItemValid(int s,ItemStack item){return supported()&&((face==0&&s==0&&level instanceof ServerLevel server&&!AspectResolver.item(server,item).isEmpty())||(face==1&&s==1&&fuelTime(item)>0));}

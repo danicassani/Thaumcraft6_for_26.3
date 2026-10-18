@@ -130,3 +130,10 @@ bloque, 159 IDs de item, 207 entradas creativas y 124 recetas. Véase
 comportamiento nativo. Total: 101 bloques, 69 objetos sin bloque, 170 IDs de item,
 255 entradas creativas y 186 recetas. El mazo conserva 27 cartas. Véase
 [ALCHEMY-ESSENTIA.md](ALCHEMY-ESSENTIA.md) para recetas y límites reales.
+
+## port.11: transporte de esencia
+
+Se añaden seis tubos funcionales, etiquetas y resonador. Total: 107 bloques,
+71 objetos sin bloque, 178 IDs de item, 263 entradas creativas y 195 recetas.
+El mazo conserva 27 cartas. Véase [ESSENTIA-TRANSPORT.md](ESSENTIA-TRANSPORT.md)
+para reglas de succión, montaje y límites.

@@ -347,5 +347,19 @@
   "block.thaumcraft.leaves_greatwood": "Hojas de greatwood",
   "block.thaumcraft.sapling_silverwood": "Brote de silverwood",
   "block.thaumcraft.leaves_silverwood": "Hojas de silverwood",
-  "alchemy.thaumcraft.stored": "Esencia: %s / %s"
+  "alchemy.thaumcraft.stored": "Esencia: %s / %s",
+  "block.thaumcraft.tube": "Tubo de esencia",
+  "block.thaumcraft.tube_valve": "Válvula de esencia",
+  "block.thaumcraft.tube_filter": "Tubo filtrador de esencia",
+  "block.thaumcraft.tube_restrict": "Tubo restrictor de esencia",
+  "block.thaumcraft.tube_oneway": "Tubo direccional de esencia",
+  "block.thaumcraft.tube_buffer": "Depósito de esencia",
+  "item.thaumcraft.resonator": "Resonador de esencia",
+  "item.thaumcraft.label": "Etiqueta para tarros",
+  "essentia.thaumcraft.label": "Etiqueta: %s",
+  "essentia.thaumcraft.reading": "Esencia: %s | Succión: %s (%s)",
+  "essentia.thaumcraft.any": "cualquier aspecto",
+  "essentia.thaumcraft.conflict": "Succiones incompatibles: el transporte está venteando.",
+  "essentia.thaumcraft.filter": "Filtro: %s",
+  "essentia.thaumcraft.choke": "Restricción de cara: %s (0 normal, 1 limitada, 2 sin succión)"
 }

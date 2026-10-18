@@ -46,7 +46,7 @@ Contenido: `crucible`, `centrifuge`, `bellows`, `smelterBasic`, `smelterThaumium
 
 ## M08: Transporte y almacenamiento de esencia
 
-**Estado:** port.10 implementa frascos de 10, alambiques de 128 y tarros de 250 con tipos/componentes, drops, colocación y mejora al vacío sin perder contenido; red de tubos/succión/etiquetas y jarBrain pendientes (ALCHEMY-ESSENTIA.md).
+**Estado:** port.11 añade seis tubos, succión local con conflictos y alcance, válvulas/redstone, filtros, depósitos mixtos, etiquetas persistentes y resonador; fuelles, extracción remota, espejos y jarBrain siguen pendientes (ESSENTIA-TRANSPORT.md).
 
 Contenido: `bannerCrimsonCult`, `tube`, `tubeValve`, `tubeRestrict`, `tubeOneway`, `tubeFilter`, `tubeBuffer`, `jarNormal`, `jarVoid`, `jarBrain`, `essentiaTransportInput`, `essentiaTransportOutput`, `label`, `phial`, `resonator`, `banners [16 colores]`.
 

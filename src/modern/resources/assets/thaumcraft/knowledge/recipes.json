@@ -84,6 +84,15 @@
     "aer: 1",
     "ordo: 1"
   ],
+  "thaumcraft:resonator": [
+    "[I I]",
+    "[INI]",
+    "[ S ]",
+    "I = thaumcraft:plate_iron",
+    "N = minecraft:quartz",
+    "S = minecraft:stick",
+    "Vis: 50"
+  ],
   "thaumcraft:smelter_basic": [
     "[BCB]",
     "[SFS]",
@@ -108,6 +117,40 @@
     "aqua: 1",
     "ordo: 1",
     "perditio: 1"
+  ],
+  "thaumcraft:tube": [
+    "[ Q ]",
+    "[IGI]",
+    "[ B ]",
+    "I = thaumcraft:plate_iron",
+    "G = minecraft:glass",
+    "B = thaumcraft:nugget_brass",
+    "Q = thaumcraft:quicksilver",
+    "Vis: 10"
+  ],
+  "thaumcraft:tube_buffer": [
+    "One warded jar; preserves stored essentia.",
+    "Vis: 25"
+  ],
+  "thaumcraft:tube_filter": [
+    "thaumcraft:tube",
+    "thaumcraft:filter",
+    "Vis: 10"
+  ],
+  "thaumcraft:tube_oneway": [
+    "thaumcraft:tube",
+    "Vis: 10",
+    "aqua: 1"
+  ],
+  "thaumcraft:tube_restrict": [
+    "thaumcraft:tube",
+    "Vis: 10",
+    "terra: 1"
+  ],
+  "thaumcraft:tube_valve": [
+    "thaumcraft:tube",
+    "minecraft:lever",
+    "Vis: 10"
   ],
   "thaumcraft:VisGenerator": [
     "[WSW]",
@@ -524,5 +567,48 @@
   "thaumcraft:JarVoid": [
     "Upgrade one warded jar; all essence is preserved.",
     "50 vis; 1 perditio crystal."
+  ],
+  "thaumcraft:Tube": [
+    "Vis 10; {}",
+    " Q  / IGI /  B ",
+    "I: thaumcraft:plate_iron",
+    "G: minecraft:glass",
+    "B: thaumcraft:nugget_brass",
+    "Q: thaumcraft:quicksilver"
+  ],
+  "thaumcraft:TubeValve": [
+    "Vis 10; {}",
+    "thaumcraft:tube",
+    "minecraft:lever"
+  ],
+  "thaumcraft:TubeFilter": [
+    "Vis 10; {}",
+    "thaumcraft:tube",
+    "thaumcraft:filter"
+  ],
+  "thaumcraft:TubeRestrict": [
+    "Vis 10; {'terra': 1}",
+    "thaumcraft:tube"
+  ],
+  "thaumcraft:TubeOneway": [
+    "Vis 10; {'aqua': 1}",
+    "thaumcraft:tube"
+  ],
+  "thaumcraft:TubeBuffer": [
+    "Vis 25; {}",
+    "PVP / TWT / PRP",
+    "P: empty phial; V: valve; T: tube; W: iron plate; R: restricted tube"
+  ],
+  "thaumcraft:Resonator": [
+    "Vis 50; {}",
+    "I I / INI /  S ",
+    "I: thaumcraft:plate_iron",
+    "N: minecraft:quartz",
+    "S: minecraft:stick"
+  ],
+  "thaumcraft:JarLabel": [
+    "4 paper + black dye + slime -> 4 labels.",
+    "Blank label + filled phial -> aspect label + empty phial.",
+    "One aspect label alone -> blank label."
   ]
 }

@@ -842,5 +842,19 @@
   "block.thaumcraft.leaves_greatwood": "Greatwood Leaves",
   "block.thaumcraft.sapling_silverwood": "Silverwood Sapling",
   "block.thaumcraft.leaves_silverwood": "Silverwood Leaves",
-  "alchemy.thaumcraft.stored": "Essentia: %s / %s"
+  "alchemy.thaumcraft.stored": "Essentia: %s / %s",
+  "block.thaumcraft.tube": "Essentia Tube",
+  "block.thaumcraft.tube_valve": "Essentia Valve",
+  "block.thaumcraft.tube_filter": "Filtered Essentia Tube",
+  "block.thaumcraft.tube_restrict": "Restricted Essentia Tube",
+  "block.thaumcraft.tube_oneway": "Directional Essentia Tube",
+  "block.thaumcraft.tube_buffer": "Essentia Buffer",
+  "item.thaumcraft.resonator": "Essentia Resonator",
+  "item.thaumcraft.label": "Jar Label",
+  "essentia.thaumcraft.label": "Label: %s",
+  "essentia.thaumcraft.reading": "Essentia: %s | Suction: %s (%s)",
+  "essentia.thaumcraft.any": "any aspect",
+  "essentia.thaumcraft.conflict": "Conflicting suction: transport is venting.",
+  "essentia.thaumcraft.filter": "Filter: %s",
+  "essentia.thaumcraft.choke": "Face choke: %s (0 normal, 1 limited, 2 no suction)"
 }

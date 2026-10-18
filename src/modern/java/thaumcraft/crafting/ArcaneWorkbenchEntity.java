@@ -57,11 +57,25 @@ public final class ArcaneWorkbenchEntity extends AuraDeviceEntity implements Men
     public Match match() {
         if (!(level instanceof ServerLevel server)) return null;
         var positioned=input();var input=positioned.input();
-        var arcane=server.recipeAccess().getRecipeFor(ArcaneContent.RECIPES.get(),input,server);
-        if(arcane.isPresent()) { var recipe=arcane.get().value();return new Match(recipe.assemble(input),recipe.vis(),recipe.crystals(),recipe.recipe().getRemainingItems(input),positioned,recipe.research()); }
+        var candidates=server.recipeAccess().getRecipes().stream()
+            .filter(h->h.value() instanceof ArcaneRecipe r&&r.matches(input,server))
+            .sorted(java.util.Comparator.comparing(h->h.id().toString())).toList();
+        if(!candidates.isEmpty()) {
+            // Several arcane recipes can share a grid and differ only in their crystals.
+            var selected=candidates.stream().filter(h->hasCrystals(((ArcaneRecipe)h.value()).crystals())).findFirst().orElse(candidates.getFirst());
+            var recipe=(ArcaneRecipe)selected.value();
+            return new Match(recipe.assemble(input),recipe.vis(),recipe.crystals(),recipe.recipe().getRemainingItems(input),positioned,recipe.research());
+        }
         var vanilla=server.recipeAccess().getRecipeFor(RecipeType.CRAFTING,input,server);
         if(vanilla.isPresent()) { var recipe=vanilla.get().value();return new Match(recipe.assemble(input),0,java.util.Map.of(),recipe.getRemainingItems(input),positioned,""); }
         return null;
+    }
+    private boolean hasCrystals(java.util.Map<String,Integer> costs) {
+        for(var entry:costs.entrySet()) {
+            var stack=inventory.getItem(9+ArcaneRecipe.PRIMALS.indexOf(entry.getKey()));
+            if(!stack.is(CrystalContent.ESSENCE.get())||!CrystalContent.aspect(stack).equals(entry.getKey())||stack.getCount()<entry.getValue())return false;
+        }
+        return true;
     }
     public boolean canCraft(Match match) {
         if(match==null || match.result.isEmpty() || availableVis()<match.vis) return false;
