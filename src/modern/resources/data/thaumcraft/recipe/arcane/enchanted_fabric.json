@@ -1,0 +1,20 @@
+{
+  "type": "thaumcraft:arcane",
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "result": {
+      "id": "thaumcraft:fabric"
+    },
+    "pattern": [
+      " S ",
+      "SCS",
+      " S "
+    ],
+    "key": {
+      "S": "minecraft:string",
+      "C": "#minecraft:wool"
+    }
+  },
+  "vis": 5,
+  "crystals": {}
+}

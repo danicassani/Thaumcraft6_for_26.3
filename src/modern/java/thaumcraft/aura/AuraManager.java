@@ -38,7 +38,7 @@ public final class AuraManager {
         });
         LevelEvent.Unload.BUS.addListener(event -> { if (event.getLevel() instanceof ServerLevel level) LOADED.remove(level); });
         TickEvent.LevelTickEvent.Post.BUS.addListener(event -> {
-            if (event.level() instanceof ServerLevel level && level.getGameTime() % 20 == 0) tick(level);
+            if (event.level() instanceof ServerLevel level && level.tickRateManager().runsNormally() && level.getGameTime() % 20 == 0) tick(level);
         });
     }
     private static void checkThread(ServerLevel level) {
@@ -81,6 +81,13 @@ public final class AuraManager {
         AuraSimulation.step(working, phase, new Random(level.getSeed() ^ level.getGameTime()));
         var data = AuraData.get(level);
         working.forEach(data::put);
+        // At most one creation attempt per dimension and second, like the original trigger map.
+        for(var entry:working.entrySet()) {
+            var cell=entry.getValue();
+            if(cell.flux()>cell.base()*.75F && level.getRandom().nextFloat()<cell.flux()/500F/10F) {
+                thaumcraft.rifts.RiftSpawning.trySpawn(level,AuraCell.x(entry.getKey()),AuraCell.z(entry.getKey()));break;
+            }
+        }
     }
     private static AuraCell generate(ServerLevel level, int x, int z) {
         if (!thaumcraft.config.ThaumcraftConfig.generateAura.get()) return new AuraCell(0, 0, 0);

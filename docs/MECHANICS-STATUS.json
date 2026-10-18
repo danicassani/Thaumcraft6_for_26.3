@@ -1,5 +1,7 @@
 {
   "M02": "iluminación, soporte, drops y recoloreado implementados y probados; el consumidor de estabilidad de infusión se implementará en M09",
-  "M05": "núcleo, siete cristales (crecimiento/drops/generación), césped ambiental, generador FE, dioptra y pedestal de recarga implementados y verificados en servidor, reinicio y cliente; cargador de mesa pendiente de M06/M10 y sifón de vacío pendiente de M13 (M05-CRYSTALS-DEVICES.md)",
-  "M04": "los datos y el objeto de cristales de esencia (37 aspectos) están portados en M05; investigación, escaneo, asignación/combinación de aspectos y progresión siguen pendientes"
+  "M05": "núcleo, cristales y consumidores de port.6 implementados; port.7 añade cargador sobre mesa arcana y sifón con grietas funcionales; conexión al manipulador de focos pendiente de M10 (ARCANE-RIFTS.md)",
+  "M04": "37 aspectos de esencia y Salis Mundus con transformación de mesa implementados; investigación, escaneo, asignación/combinación de aspectos y progresión pendientes",
+  "M06": "núcleo implementado: mesa persistente, menú, recetas de datos, consumo de ingredientes/cristales/vis y cargador 3×3; investigación M04, descuentos de equipo y libro de recetas pendientes (ARCANE-RIFTS.md)",
+  "M13": "núcleo de grietas implementado para el sifón: generación por flux, crecimiento, estabilidad, colisiones, sincronización, guardado y colapso con semillas; eventos avanzados, corrupción y fluidos pendientes (ARCANE-RIFTS.md)"
 }

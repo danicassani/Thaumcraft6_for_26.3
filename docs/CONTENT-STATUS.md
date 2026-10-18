@@ -88,17 +88,23 @@ La ampliación de [port.6](M05-CRYSTALS-DEVICES.md) incorpora siete cristales,
 37 variantes del objeto de esencia, césped ambiental, generador FE, dioptra y
 pedestal de recarga. El catálogo total alcanza 87 bloques, 62 objetos sin bloque
 (149 IDs de item y 185 entradas creativas al contar los aspectos), y 111 recetas.
-El núcleo y esos consumidores de M05 están implementados; el cargador de mesa
-requiere M06/M10 y el sifón de vacío requiere M13. El pedestal tiene el contrato
-y la mecánica de recarga; el equipo nativo que lo utiliza se portará en M10/M12.
-No se declara M05 completo ni se atribuyen funciones de aura al resonador de
-esencia, que se ha reclasificado en M08.
+El pedestal tiene el contrato y la mecánica de recarga; el equipo nativo que lo
+utiliza se portará en M10/M12.
+
+[Port.7](ARCANE-RIFTS.md) añade la mesa arcana persistente, Salis Mundus, el
+cargador de mesa y el sifón de vacío con grietas de flux funcionales. El catálogo
+alcanza 90 bloques y 63 objetos sin bloque (153 IDs de item y 189 entradas creativas)
+y 119 recetas. La mesa consume vis y cristales mediante recetas de datos; el
+cargador amplía su alcance a 3×3 chunks. El sifón produce semillas y admite
+extracción automática. Las grietas aparecen por exceso de flux, crecen, pierden
+estabilidad y colapsan; los eventos avanzados de M13 siguen pendientes.
+El resonador de esencia conserva su dependencia de M08.
 
 ## Lo que sigue pendiente
 
 La hoja de ruta detalla los bloques y objetos de cada sistema: árboles y hojas;
 inventarios; conocimiento/aspectos/investigación; consumidores adicionales de
-aura/vis/flux; mesa arcana; alquimia y fluidos; esencia y estandartes con aspectos;
+aura/vis/flux; progresión y descuentos de mesa arcana; alquimia y fluidos; esencia y estandartes con aspectos;
 infusión y redes de estabilización; hechizos; gólems; equipo avanzado/warp/
 accesorios; corrupción; dispositivos; espejos; botín y dimensiones. No se declara
 completo el port de Thaumcraft 6 ni se activan bloques de máquinas vacíos.

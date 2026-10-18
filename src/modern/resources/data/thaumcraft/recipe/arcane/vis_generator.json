@@ -1,0 +1,26 @@
+{
+  "type": "thaumcraft:arcane",
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "result": {
+      "id": "thaumcraft:vis_generator"
+    },
+    "pattern": [
+      "WSW",
+      "EPE",
+      "WRW"
+    ],
+    "key": {
+      "W": "#minecraft:planks",
+      "S": "minecraft:redstone",
+      "E": "thaumcraft:nugget_rareearth",
+      "P": "minecraft:piston",
+      "R": "thaumcraft:vis_resonator"
+    }
+  },
+  "vis": 25,
+  "crystals": {
+    "ignis": 1,
+    "ordo": 1
+  }
+}

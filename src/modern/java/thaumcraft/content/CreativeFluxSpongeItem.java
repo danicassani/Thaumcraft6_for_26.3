@@ -24,6 +24,7 @@ public final class CreativeFluxSpongeItem extends Item {
     /** Clears loaded chunks in the original 9x9 area, without terrain generation. */
     public static float clearArea(ServerLevel level, BlockPos center) {
         float total = 0;
+        for(var rift:level.getEntitiesOfClass(thaumcraft.rifts.FluxRiftEntity.class,new net.minecraft.world.phys.AABB(center).inflate(64)))rift.discard();
         for (int x = -4; x <= 4; x++) for (int z = -4; z <= 4; z++)
             total += AuraManager.drainFlux(level, center.offset(x * 16, 0, z * 16), AuraCell.MAX, false);
         return total;

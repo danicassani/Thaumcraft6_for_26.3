@@ -1,0 +1,18 @@
+{
+  "type": "thaumcraft:arcane",
+  "recipe": {
+    "type": "minecraft:crafting_shapeless",
+    "result": {
+      "id": "thaumcraft:vis_resonator"
+    },
+    "ingredients": [
+      "thaumcraft:plate_iron",
+      "minecraft:quartz"
+    ]
+  },
+  "vis": 50,
+  "crystals": {
+    "aer": 1,
+    "aqua": 1
+  }
+}

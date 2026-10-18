@@ -1,0 +1,24 @@
+{
+  "type": "thaumcraft:arcane",
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "result": {
+      "id": "thaumcraft:mechanism_simple"
+    },
+    "pattern": [
+      " B ",
+      "ISI",
+      " B "
+    ],
+    "key": {
+      "B": "thaumcraft:plate_brass",
+      "I": "thaumcraft:plate_iron",
+      "S": "minecraft:stick"
+    }
+  },
+  "vis": 10,
+  "crystals": {
+    "ignis": 1,
+    "aqua": 1
+  }
+}

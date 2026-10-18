@@ -94,19 +94,12 @@ plantas portadas aceptan también esta clase de césped.
 
 ## Recetas y dependencias que siguen pendientes
 
-Los dispositivos están disponibles en creativo. Sus recetas especiales de
-investigación/mesa arcana/infusión se incorporan con M04/M06/M09; no se añaden
-recetas normales que eviten esa progresión.
-
-Quedan dos bloques de M05 que no pueden funcionar con sus consumidores actuales:
-
-| Bloque | Mecánica necesaria |
-|---|---|
-| `arcane_workbench_charger` | Mesa arcana M06 y manipulador de focos M10: amplía su acceso al aura de los chunks vecinos y abre su interfaz. |
-| `void_siphon` | Rifts M13, drenaje de su energía y producción de semillas de vacío, además del inventario y la interfaz. |
-
-Ambos conservan su código original en cuarentena. No se publican versiones que
-únicamente aparenten ser máquinas. Se activarán al portar sus dependencias.
+Estado histórico de port.6: los dispositivos estaban disponibles en creativo y
+el cargador/sifón esperaban sus dependencias. [Port.7](ARCANE-RIFTS.md) incorpora
+ambos bloques, la mesa arcana y el núcleo funcional de grietas. También incorpora
+las recetas arcanas de generador, pedestal y cargador. La dioptra conserva la
+dependencia del taumómetro (M04); la receta del sifón exige infusión (M09).
+La conexión del cargador al manipulador de focos sigue pendiente de M10.
 
 ## Pruebas reproducibles
 

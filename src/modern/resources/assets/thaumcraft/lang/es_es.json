@@ -194,5 +194,14 @@
   "item.thaumcraft.crystal_essence.desiderium": "Cristal de vis de deseo",
   "item.thaumcraft.crystal_essence.exanimis": "Cristal de vis de no muerto",
   "item.thaumcraft.crystal_essence.bestia": "Cristal de vis de bestia",
-  "item.thaumcraft.crystal_essence.humanus": "Cristal de vis de humano"
+  "item.thaumcraft.crystal_essence.humanus": "Cristal de vis de humano",
+  "block.thaumcraft.arcane_workbench": "Mesa de trabajo arcana",
+  "block.thaumcraft.arcane_workbench_charger": "Cargador de mesa arcana",
+  "block.thaumcraft.void_siphon": "Sifón de vacío",
+  "item.thaumcraft.salis_mundus": "Salis Mundus",
+  "entity.thaumcraft.flux_rift": "Grieta de flux",
+  "menu.thaumcraft.craft": "Crear",
+  "menu.thaumcraft.vis": "Vis: %s / %s",
+  "menu.thaumcraft.chunks": "%s chunks",
+  "block.thaumcraft.void_siphon.progress": "Semilla de vacío: %s / %s"
 }

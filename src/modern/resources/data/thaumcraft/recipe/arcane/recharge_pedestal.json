@@ -1,0 +1,25 @@
+{
+  "type": "thaumcraft:arcane",
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "result": {
+      "id": "thaumcraft:recharge_pedestal"
+    },
+    "pattern": [
+      " R ",
+      "DID",
+      "SSS"
+    ],
+    "key": {
+      "R": "thaumcraft:vis_resonator",
+      "D": "minecraft:diamond",
+      "I": "minecraft:gold_ingot",
+      "S": "#minecraft:stone_crafting_materials"
+    }
+  },
+  "vis": 100,
+  "crystals": {
+    "aer": 1,
+    "ordo": 1
+  }
+}

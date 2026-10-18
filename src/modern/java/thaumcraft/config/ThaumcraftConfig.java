@@ -20,6 +20,7 @@ public final class ThaumcraftConfig {
     public static final ForgeConfigSpec.DoubleValue taintSpreadRate;
     public static final ForgeConfigSpec.IntValue taintSpreadArea;
     public static final ForgeConfigSpec.BooleanValue generateAura;
+    public static final ForgeConfigSpec.BooleanValue generateFluxRifts;
     public static final ForgeConfigSpec.BooleanValue generateStructure;
     public static final ForgeConfigSpec.BooleanValue generateCinnabar;
     public static final ForgeConfigSpec.BooleanValue generateAmber;
@@ -68,6 +69,7 @@ public final class ThaumcraftConfig {
         taintSpreadRate = server.defineInRange("taintSpreadRate", 100.0, 0, 500);
         taintSpreadArea = server.defineInRange("taintSpreadArea", 32, 8, 256);
         generateAura = server.define("generateAura", true);
+        generateFluxRifts = server.comment("Allow excessive flux to spawn rifts in loaded chunks.").define("generateFluxRifts", true);
         generateStructure = server.define("generateStructure", true);
         generateCinnabar = server.define("generateCinnabar", true);
         generateAmber = server.define("generateAmber", true);

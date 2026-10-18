@@ -194,5 +194,14 @@
   "item.thaumcraft.crystal_essence.desiderium": "Wish, Desire, Yearning, Want Vis Crystal",
   "item.thaumcraft.crystal_essence.exanimis": "Undead Vis Crystal",
   "item.thaumcraft.crystal_essence.bestia": "Beast Vis Crystal",
-  "item.thaumcraft.crystal_essence.humanus": "Man Vis Crystal"
+  "item.thaumcraft.crystal_essence.humanus": "Man Vis Crystal",
+  "block.thaumcraft.arcane_workbench": "Arcane Workbench",
+  "block.thaumcraft.arcane_workbench_charger": "Arcane Workbench Charger",
+  "block.thaumcraft.void_siphon": "Void Siphon",
+  "item.thaumcraft.salis_mundus": "Salis Mundus",
+  "entity.thaumcraft.flux_rift": "Flux Rift",
+  "menu.thaumcraft.craft": "Craft",
+  "menu.thaumcraft.vis": "Vis: %s / %s",
+  "menu.thaumcraft.chunks": "%s chunks",
+  "block.thaumcraft.void_siphon.progress": "Void seed: %s / %s"
 }

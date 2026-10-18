@@ -33,6 +33,7 @@
     "thaumcraft:matrix_cost",
     "thaumcraft:activator_rail",
     "thaumcraft:dioptra",
-    "thaumcraft:recharge_pedestal"
+    "thaumcraft:recharge_pedestal",
+    "thaumcraft:void_siphon"
   ]
 }

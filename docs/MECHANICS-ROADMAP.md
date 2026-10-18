@@ -22,19 +22,19 @@ Contenido: `tableWood`, `tableStone`, `pedestalArcane`, `pedestalAncient`, `pede
 
 ## M04: Aspectos, investigación, escaneo y progreso
 
-**Estado:** los datos y el objeto de cristales de esencia (37 aspectos) están portados en M05; investigación, escaneo, asignación/combinación de aspectos y progresión siguen pendientes.
+**Estado:** 37 aspectos de esencia y Salis Mundus con transformación de mesa implementados; investigación, escaneo, asignación/combinación de aspectos y progresión pendientes.
 
 Contenido: `researchTable`, `thaumonomicon`, `curio`, `primordialPearl`, `celestialNotes`, `salisMundus`, `crystalEssence`, `scribingTools`, `thaumometer`.
 
 ## M05: Aura, vis y flux por chunk y sincronización
 
-**Estado:** núcleo, siete cristales (crecimiento/drops/generación), césped ambiental, generador FE, dioptra y pedestal de recarga implementados y verificados en servidor, reinicio y cliente; cargador de mesa pendiente de M06/M10 y sifón de vacío pendiente de M13 (M05-CRYSTALS-DEVICES.md).
+**Estado:** núcleo, cristales y consumidores de port.6 implementados; port.7 añade cargador sobre mesa arcana y sifón con grietas funcionales; conexión al manipulador de focos pendiente de M10 (ARCANE-RIFTS.md).
 
 Contenido: `crystalAir`, `crystalFire`, `crystalWater`, `crystalEarth`, `crystalOrder`, `crystalEntropy`, `crystalTaint`, `grassAmbient`, `visBattery`, `arcaneWorkbenchCharger`, `dioptra`, `rechargePedestal`, `visGenerator`, `voidSiphon`, `creativeFluxSponge`.
 
 ## M06: Crafteo arcano y descuentos de vis
 
-**Estado:** pendiente.
+**Estado:** núcleo implementado: mesa persistente, menú, recetas de datos, consumo de ingredientes/cristales/vis y cargador 3×3; investigación M04, descuentos de equipo y libro de recetas pendientes (ARCANE-RIFTS.md).
 
 Contenido: `arcaneWorkbench`.
 
@@ -76,7 +76,7 @@ Contenido: `brain`, `sanitySoap`, `bathSalts`, `sanityChecker`, `voidAxe`, `void
 
 ## M13: Corrupción, contagio, rifts y fluidos especiales
 
-**Estado:** pendiente.
+**Estado:** núcleo de grietas implementado para el sifón: generación por flux, crecimiento, estabilidad, colisiones, sincronización, guardado y colapso con semillas; eventos avanzados, corrupción y fluidos pendientes (ARCANE-RIFTS.md).
 
 Contenido: `taintFibre`, `taintCrust`, `taintSoil`, `taintRock`, `taintGeyser`, `taintFeature`, `taintLog`, `fluxGoo`, `liquidDeath`, `purifyingFluid`, `bottleTaint`.
 

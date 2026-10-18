@@ -1,6 +1,6 @@
 # Correspondencia de configuración
 
-Fuente de todas las filas: `src/main/java/thaumcraft/common/config/ModConfig.java`.
+Fuente de las filas antiguas: `src/main/java/thaumcraft/common/config/ModConfig.java`.
 «Migrada (esquema)» significa definición TOML registrada, con valor por defecto conservado; sus mecánicas todavía no están conectadas. No significa que la opción ya altere el juego ni que sus mecánicas estén portadas. La generación y carga de ambos TOML sí se verificó en cliente/servidor.
 Los archivos .cfg antiguos no se importan automáticamente.
 Desde el [paso 3](PORT-STEP-3.md), las opciones de los tres minerales y su densidad están conectadas a la generación de chunks nuevos. Desde [port.6](M05-CRYSTALS-DEVICES.md), `world.generateCrystals` y `world.oreDensity` controlan los intentos de generación de cristales en chunks nuevos.
@@ -72,3 +72,10 @@ no opciones declaradas con @Config: no se convierten en ajustes de usuario.
 ConfigBlocks/Items/Entities/Recipes/Aspects/Research son inicializadores de
 contenido, no archivos de configuración adicionales. Las integraciones por
 OreDictionary y reflexión de MFR quedan pendientes con sus mecánicas.
+
+## Opción nueva de port.7
+
+`SERVER world.generateFluxRifts` (por defecto `true`) controla la aparición de
+nuevas grietas por exceso de flux. Desactivarla conserva las entidades existentes.
+No es una clave importada del `.cfg` original. El resto de M13 y `wussMode`
+continúan pendientes; véase [ARCANE-RIFTS.md](ARCANE-RIFTS.md).

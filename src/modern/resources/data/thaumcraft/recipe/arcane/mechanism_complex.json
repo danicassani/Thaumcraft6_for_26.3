@@ -1,0 +1,24 @@
+{
+  "type": "thaumcraft:arcane",
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "result": {
+      "id": "thaumcraft:mechanism_complex"
+    },
+    "pattern": [
+      " M ",
+      "TQT",
+      " M "
+    ],
+    "key": {
+      "M": "thaumcraft:mechanism_simple",
+      "T": "thaumcraft:plate_thaumium",
+      "Q": "minecraft:piston"
+    }
+  },
+  "vis": 50,
+  "crystals": {
+    "ignis": 1,
+    "aqua": 1
+  }
+}
