@@ -14,6 +14,7 @@ public final class LuminousBlock extends Block {
     private final boolean nitor;
     private final int color;
     public LuminousBlock(boolean nitor, int color, BlockBehaviour.Properties properties) { super(properties); this.nitor = nitor; this.color = color; }
+    public boolean isNitor(){return nitor;}
     @Override protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return nitor ? Block.box(5.28, 5.28, 5.28, 10.56, 10.56, 10.56) : Block.box(6, 0, 6, 10, 8, 10);
     }

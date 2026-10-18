@@ -31,11 +31,11 @@ public final class TheoryMenu extends AbstractContainerMenu {
         for(int i=0;i<3;i++){int base=21+i*8;var c=s==null||i>=s.choices.size()?null:s.choices.get(i);data.set(base,c==null?0:c.kind().ordinal()+1);if(c!=null){data.set(base+1,c.category());data.set(base+2,c.a());data.set(base+3,c.b());data.set(base+4,Math.min(32766,c.amount()));data.set(base+5,c.cost()+2);data.set(base+6,table.ready(owner,i)?1:0);data.set(base+7,c.aid()?1:0);}}
     }
     public TheoryCards.Card card(int index){int b=21+index*8,k=value(b);return k<=0?null:new TheoryCards.Card(TheoryCards.Kind.values()[k-1],value(b+1),value(b+2),value(b+3),value(b+4),0,value(b+7)==1);}
-    public int packet(int action){return value(0)*16+action;}
+    public int packet(int action){return value(0)*32+action;}
     @Override public void broadcastChanges(){refresh();super.broadcastChanges();}
     @Override public boolean stillValid(Player p){return p==owner&&(table==null||table.valid(p));}
     @Override public boolean clickMenuButton(Player p,int button){
-        if(table==null||!stillValid(p)||button<0||button/16!=table.revision())return false;int action=button%16;boolean changed;
+        if(table==null||!stillValid(p)||button<0||button/32!=table.revision())return false;int action=button%32;boolean changed;
         if(action>=10){if(table.session()!=null||action-10>=TheoryCards.AID_KEYS.size())return false;selectedAids^=1<<(action-10);refresh();return true;}
         changed=switch(action){case 1->{var selected=new ArrayList<String>();for(int i=0;i<TheoryCards.AID_KEYS.size();i++)if((selectedAids&(1<<i))!=0)selected.add(TheoryCards.AID_KEYS.get(i));yield table.start(p,selected);}case 2,3->table.draw(p,action==3);case 4,5,6->table.play(p,action-4);case 7->table.finish(p);case 8->table.cancel(p);default->false;};
         broadcastChanges();return changed;

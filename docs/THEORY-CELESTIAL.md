@@ -127,3 +127,11 @@ Por indicación del usuario, se implementan primero los consumidores y después
 las cartas pendientes. [ALCHEMY-ESSENTIA.md](ALCHEMY-ESSENTIA.md) corrige además
 las dependencias de Channel, Infuse y Sculpting; no todas necesitan la máquina
 que su nombre podría sugerir. El mazo de port.10 permanece en 27 cartas.
+
+## Actualización port.12
+
+[INFUSION-CARDS.md](INFUSION-CARDS.md) incorpora Channel, Infuse, Sculpting, Curio
+y Dark Whispers con sus costes y consumidores. El mazo pasa a 32 cartas activas.
+El crisol, la matriz y el cerebro añaden ayudas; la interfaz las pagina. Esta
+actualización sustituye las dependencias pendientes descritas arriba para esas
+cinco cartas. Study y Notation continúan sin proveedor original activo.

@@ -37,6 +37,20 @@
     "Vis: 15",
     "aqua: 1"
   ],
+  "thaumcraft:infusion_matrix": [
+    "[S S]",
+    "[ N ]",
+    "[S S]",
+    "S = thaumcraft:stone_arcane_brick",
+    "N = ['thaumcraft:nitor_white', 'thaumcraft:nitor_orange', 'thaumcraft:nitor_magenta', 'thaumcraft:nitor_lightblue', 'thaumcraft:nitor_yellow', 'thaumcraft:nitor_lime', 'thaumcraft:nitor_pink', 'thaumcraft:nitor_gray', 'thaumcraft:nitor_silver', 'thaumcraft:nitor_cyan', 'thaumcraft:nitor_purple', 'thaumcraft:nitor_blue', 'thaumcraft:nitor_brown', 'thaumcraft:nitor_green', 'thaumcraft:nitor_red', 'thaumcraft:nitor_black']",
+    "Vis: 150",
+    "aer: 1",
+    "ignis: 1",
+    "aqua: 1",
+    "terra: 1",
+    "ordo: 1",
+    "perditio: 1"
+  ],
   "thaumcraft:jar_normal": [
     "[GWG]",
     "[G G]",
@@ -71,6 +85,30 @@
     "Vis: 10",
     "ignis: 1",
     "aqua: 1"
+  ],
+  "thaumcraft:pedestal_ancient": [
+    "[SSS]",
+    "[ B ]",
+    "[SSS]",
+    "S = thaumcraft:slab_ancient",
+    "B = thaumcraft:stone_ancient",
+    "Vis: 150"
+  ],
+  "thaumcraft:pedestal_arcane": [
+    "[SSS]",
+    "[ B ]",
+    "[SSS]",
+    "S = thaumcraft:slab_arcane_stone",
+    "B = thaumcraft:stone_arcane",
+    "Vis: 10"
+  ],
+  "thaumcraft:pedestal_eldritch": [
+    "[SSS]",
+    "[ B ]",
+    "[SSS]",
+    "S = thaumcraft:slab_eldritch",
+    "B = thaumcraft:stone_eldritch_tile",
+    "Vis: 150"
   ],
   "thaumcraft:rechargepedestal": [
     "[ R ]",
@@ -610,5 +648,101 @@
     "4 paper + black dye + slime -> 4 labels.",
     "Blank label + filled phial -> aspect label + empty phial.",
     "One aspect label alone -> blank label."
+  ],
+  "thaumcraft:InfusionMatrix": [
+    "S S /  N  / S S",
+    "S: thaumcraft:stone_arcane_brick",
+    "N: ['thaumcraft:nitor_white', 'thaumcraft:nitor_orange', 'thaumcraft:nitor_magenta', 'thaumcraft:nitor_lightblue', 'thaumcraft:nitor_yellow', 'thaumcraft:nitor_lime', 'thaumcraft:nitor_pink', 'thaumcraft:nitor_gray', 'thaumcraft:nitor_silver', 'thaumcraft:nitor_cyan', 'thaumcraft:nitor_purple', 'thaumcraft:nitor_blue', 'thaumcraft:nitor_brown', 'thaumcraft:nitor_green', 'thaumcraft:nitor_red', 'thaumcraft:nitor_black']",
+    "Vis 150; {'aer': 1, 'ignis': 1, 'aqua': 1, 'terra': 1, 'ordo': 1, 'perditio': 1}"
+  ],
+  "thaumcraft:ArcanePedestal": [
+    "SSS /  B  / SSS",
+    "S: thaumcraft:slab_arcane_stone",
+    "B: thaumcraft:stone_arcane",
+    "Vis 10; {}"
+  ],
+  "thaumcraft:AncientPedestal": [
+    "SSS /  B  / SSS",
+    "S: thaumcraft:slab_ancient",
+    "B: thaumcraft:stone_ancient",
+    "Vis 150; {}"
+  ],
+  "thaumcraft:EldritchPedestal": [
+    "SSS /  B  / SSS",
+    "S: thaumcraft:slab_eldritch",
+    "B: thaumcraft:stone_eldritch_tile",
+    "Vis 150; {}"
+  ],
+  "thaumcraft:JarBrain": [
+    "Infusion: thaumcraft:jar_brain",
+    "Center: {'item': 'thaumcraft:jar_normal', 'empty_essentia': True}",
+    "Offerings: [{'item': 'thaumcraft:brain'}, {'item': 'minecraft:spider_eye'}, {'item': 'minecraft:water_bucket'}, {'item': 'minecraft:spider_eye'}]",
+    "Essentia: {'cognitio': 25, 'sensus': 25, 'exanimis': 25}; instability 4"
+  ],
+  "thaumcraft:VoidSiphon": [
+    "Infusion: thaumcraft:void_siphon",
+    "Center: {'item': 'thaumcraft:metal_void'}",
+    "Offerings: [{'item': 'thaumcraft:stone_arcane'}, {'item': 'thaumcraft:stone_arcane'}, {'item': 'thaumcraft:mechanism_complex'}, {'item': 'thaumcraft:plate_brass'}, {'item': 'thaumcraft:plate_brass'}, {'item': 'minecraft:nether_star'}]",
+    "Essentia: {'alienis': 50, 'perditio': 50, 'vacuos': 100, 'fabrico': 50}; instability 7"
+  ],
+  "thaumcraft:CrystalClusterAir": [
+    "Infusion: thaumcraft:crystal_aer",
+    "Center: {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aer'}",
+    "Offerings: [{'item': 'minecraft:wheat_seeds'}, {'item': 'thaumcraft:salis_mundus'}]",
+    "Essentia: {'aer': 10, 'vitreus': 10, 'vinculum': 5}; instability 0"
+  ],
+  "thaumcraft:CrystalClusterFire": [
+    "Infusion: thaumcraft:crystal_ignis",
+    "Center: {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'ignis'}",
+    "Offerings: [{'item': 'minecraft:wheat_seeds'}, {'item': 'thaumcraft:salis_mundus'}]",
+    "Essentia: {'ignis': 10, 'vitreus': 10, 'vinculum': 5}; instability 0"
+  ],
+  "thaumcraft:CrystalClusterWater": [
+    "Infusion: thaumcraft:crystal_aqua",
+    "Center: {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aqua'}",
+    "Offerings: [{'item': 'minecraft:wheat_seeds'}, {'item': 'thaumcraft:salis_mundus'}]",
+    "Essentia: {'aqua': 10, 'vitreus': 10, 'vinculum': 5}; instability 0"
+  ],
+  "thaumcraft:CrystalClusterEarth": [
+    "Infusion: thaumcraft:crystal_terra",
+    "Center: {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'terra'}",
+    "Offerings: [{'item': 'minecraft:wheat_seeds'}, {'item': 'thaumcraft:salis_mundus'}]",
+    "Essentia: {'terra': 10, 'vitreus': 10, 'vinculum': 5}; instability 0"
+  ],
+  "thaumcraft:CrystalClusterOrder": [
+    "Infusion: thaumcraft:crystal_ordo",
+    "Center: {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'ordo'}",
+    "Offerings: [{'item': 'minecraft:wheat_seeds'}, {'item': 'thaumcraft:salis_mundus'}]",
+    "Essentia: {'ordo': 10, 'vitreus': 10, 'vinculum': 5}; instability 0"
+  ],
+  "thaumcraft:CrystalClusterEntropy": [
+    "Infusion: thaumcraft:crystal_perditio",
+    "Center: {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'perditio'}",
+    "Offerings: [{'item': 'minecraft:wheat_seeds'}, {'item': 'thaumcraft:salis_mundus'}]",
+    "Essentia: {'perditio': 10, 'vitreus': 10, 'vinculum': 5}; instability 0"
+  ],
+  "thaumcraft:CrystalClusterFlux": [
+    "Infusion: thaumcraft:crystal_vitium",
+    "Center: {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'vitium'}",
+    "Offerings: [{'item': 'minecraft:wheat_seeds'}, {'item': 'thaumcraft:salis_mundus'}]",
+    "Essentia: {'vitium': 10, 'vitreus': 10, 'vinculum': 5}; instability 4"
+  ],
+  "thaumcraft:infusionaltar": [
+    "Matrix at y+2 above central arcane pedestal.",
+    "Four two-block columns of matching stone at the diagonal corners.",
+    "Use Salis Mundus on the matrix to assemble pillars, then empty hand to start.",
+    "Use the resonator to inspect stability and missing costs."
+  ],
+  "thaumcraft:infusionaltarancient": [
+    "Matrix at y+2 above central ancient pedestal.",
+    "Four two-block columns of matching stone at the diagonal corners.",
+    "Use Salis Mundus on the matrix to assemble pillars, then empty hand to start.",
+    "Use the resonator to inspect stability and missing costs."
+  ],
+  "thaumcraft:infusionaltareldritch": [
+    "Matrix at y+2 above central eldritch pedestal.",
+    "Four two-block columns of matching stone at the diagonal corners.",
+    "Use Salis Mundus on the matrix to assemble pillars, then empty hand to start.",
+    "Use the resonator to inspect stability and missing costs."
   ]
 }

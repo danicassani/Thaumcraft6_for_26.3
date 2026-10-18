@@ -137,3 +137,10 @@ Se añaden seis tubos funcionales, etiquetas y resonador. Total: 107 bloques,
 71 objetos sin bloque, 178 IDs de item, 263 entradas creativas y 195 recetas.
 El mazo conserva 27 cartas. Véase [ESSENTIA-TRANSPORT.md](ESSENTIA-TRANSPORT.md)
 para reglas de succión, montaje y límites.
+
+## port.12: infusión y mazo activo
+
+Se añaden matriz, tres pedestales, cerebro en frasco, cerebro y curiosidades.
+Total: 112 bloques, 73 objetos sin bloque, 185 IDs de item, 276 entradas creativas
+y 208 recetas. El mazo tiene 32 cartas activas. Véase
+[INFUSION-CARDS.md](INFUSION-CARDS.md) para acceso, costes y límites.

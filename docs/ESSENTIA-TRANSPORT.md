@@ -129,3 +129,7 @@ comprobó la lectura del resonador mediante uso real y el chat nativo.
 La compilación limpia final pasó 37 tests sin fallos ni omisiones. Se analizaron
 los JSON del JAR y sus 107 blockstates, 178 definiciones de item y 195 recetas;
 no incluye clases de fixtures ni recursos de prueba.
+
+La continuación de port.12 implementa la matriz, sus pedestales, absorción
+remota para infusión y cerebro en frasco, y amplía el mazo a 32 cartas activas.
+Véase [INFUSION-CARDS.md](INFUSION-CARDS.md) para recetas y límites.

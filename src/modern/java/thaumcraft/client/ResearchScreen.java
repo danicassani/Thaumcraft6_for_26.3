@@ -47,7 +47,7 @@ public final class ResearchScreen extends AbstractContainerScreen<ResearchMenu> 
         var page=entry.stages().get(Math.min(stage,entry.stages().size())-1);
         String prose=label(page.text()).replaceAll("(?i)<br\\s*/?>","\n\n").replaceAll("<[^>]*>","").replaceAll("§[0-9a-fk-or]","");text.append(prose).append("\n\n");
         if(stage<=entry.stages().size()){
-            for(var item:page.items())text.append(label("research.thaumcraft.deliver")).append(' ').append(item.count()).append(" × ").append(item.id()).append(item.aspect().isEmpty()?"":" ("+label("tc.aspect."+item.aspect())+")").append('\n');
+            for(var item:page.items())text.append(label("research.thaumcraft.deliver")).append(' ').append(item.count()).append(" × ").append(item.id()).append(item.aspect().isEmpty()?"":" ("+label((item.id().equals("thaumcraft:curio")?"item.thaumcraft.curio.":"tc.aspect.")+item.aspect())+")").append('\n');
             for(var item:page.crafts())text.append(label("research.thaumcraft.craft")).append(' ').append(item.id()).append('\n');
             for(var research:page.research())text.append(label("research.thaumcraft.discover")).append(' ').append(research).append('\n');
             for(var cost:page.costs())text.append(label("research.thaumcraft.cost")).append(' ').append(cost.amount()).append(' ').append(cost.kind()).append(' ').append(cost.category()).append('\n');

@@ -1,10 +1,12 @@
 {
-  "M02": "iluminación, soporte, drops y recoloreado implementados y probados; el consumidor de estabilidad de infusión se implementará en M09",
+  "M02": "luces, soporte, drops y recoloreado implementados; port.12 incorpora las velas como estabilizadores por pares con rendimiento decreciente; nitor no estabiliza (INFUSION-CARDS.md)",
   "M05": "núcleo, cristales y consumidores de port.6 implementados; port.7 añade cargador sobre mesa arcana y sifón con grietas funcionales; conexión al manipulador de focos pendiente de M10 (ARCANE-RIFTS.md)",
-  "M04": "port.9 añade mesa de investigación persistente, herramientas/recarga, teorías con 27 cartas y ayudas, y 13 variantes de notas celestes obtenibles mediante cielo nativo; faltan cartas dependientes de mecánicas posteriores y consumidores avanzados (THEORY-CELESTIAL.md); se priorizan consumidores reales antes de añadir cartas, según ALCHEMY-ESSENTIA.md",
+  "M04": "port.12 amplía a 32 cartas activas, ayudas de crisol/matriz/cerebro y nueve ayudas con paginación y protocolo nativo; curiosidades con estudio y fuente preservada, frascos exactos en requisitos; Study/Notation sin proveedor original activo se mantienen fuera (INFUSION-CARDS.md)",
   "M06": "mesa y cargador implementados; port.8 añade requisitos de investigación, recetas del taumómetro y dioptra y consulta en el libro; descuentos de equipo pendientes (RESEARCH-SCANNING.md)",
   "M13": "núcleo de grietas implementado para el sifón: generación por flux, crecimiento, estabilidad, colisiones, sincronización, guardado y colapso con semillas; eventos avanzados, corrupción y fluidos pendientes (ARCANE-RIFTS.md)",
   "M01": "port.10 añade crecimiento por tiempo/bonemeal, hojas nativas con drops/decay, recuperación de vis de silverwood y generación básica en bosques nuevos; forma de árboles y biomas mágicos originales aún parciales (ALCHEMY-ESSENTIA.md)",
   "M07": "port.10 implementa crisol, agua/calor, disolución, 55 recetas, resolución de aspectos desde recetas y horno básico con alambiques; máquinas y mejoras posteriores pendientes (ALCHEMY-ESSENTIA.md)",
-  "M08": "port.11 añade seis tubos, succión local con conflictos y alcance, válvulas/redstone, filtros, depósitos mixtos, etiquetas persistentes y resonador; fuelles, extracción remota, espejos y jarBrain siguen pendientes (ESSENTIA-TRANSPORT.md)"
+  "M08": "port.11 añade seis tubos, succión local, válvulas/redstone, filtros, depósitos mixtos, etiquetas y resonador; port.12 añade cerebro con 2000 XP y absorción remota de tarros para la matriz; fuelles y espejos de esencia siguen pendientes (ESSENTIA-TRANSPORT.md, INFUSION-CARDS.md)",
+  "M09": "port.12 implementa matriz, tres pedestales/altares, activación con Salis, recetas nativas, absorción remota de tarros, costes y progreso persistentes, simetría/estabilidad y sucesos básicos; mejoras, encantamientos y equipos avanzados pendientes (INFUSION-CARDS.md)",
+  "M03": "port.12 añade inventarios de una unidad, sincronización y capacidad Forge de los tres pedestales; contenedores y autómatas restantes pendientes"
 }

@@ -27,8 +27,13 @@ ui={
  'consume':('Consumes: %s','Consume: %s'),'keep':('Requires (kept): %s','Requiere (se conserva): %s'),
  'sky_repeat':('Already observed today.','Ya lo has observado hoy.'),'sky_supplies':('You need paper and scribing tools with ink.','Necesitas papel y herramientas con tinta.'),'sky_success':('Recorded: %s','Anotado: %s')}
 # Sorted aid IDs match TheoryCards.AID_KEYS.
-for i,(en,es) in enumerate([('Beacon','Baliza'),('Enchanting table','Encantamientos'),('End portal','Portal del End'),('Nether portal','Portal del Nether'),('Arcane table','Mesa arcana'),('Ancient glyphs','Glifos antiguos')]):ui['aid.'+str(i)]=(en,es)
+for i,(en,es) in enumerate([('Beacon','Baliza'),('Enchanting table','Encantamientos'),('End portal','Portal del End'),('Nether portal','Portal del Nether'),('Arcane table','Mesa arcana'),('Crucible','Crisol'),('Runic matrix','Matriz rúnica'),('Brain in a jar','Cerebro en frasco'),('Ancient glyphs','Glifos antiguos')]):ui['aid.'+str(i)]=(en,es)
 cards={
+'channel':('Channel','Canalizar','Requires a filled compound phial (kept); Infusion +25%.','Requiere un frasco compuesto lleno (se conserva); Infusión +25%.'),
+'infuse':('Infuse','Infundir','Consumes material and filled phial; Infusion +%s%%.','Consume material y frasco lleno; Infusión +%s%%.'),
+'sculpting':('Sculpting','Esculpir','Consumes clay: Golems +20%; bonus draw.','Consume arcilla: Gólems +20%; robo extra.'),
+'curio':('Curio','Curiosidad','Consumes curiosity: branch progress and up to 2 bonus draws.','Consume curiosidad: progreso de rama y hasta 2 robos extra.'),
+'dark_whispers':('Dark Whispers','Susurros oscuros','Consumes all XP levels; Eldritch, warp and possible bonus draw.','Consume todos los niveles; Oculto, warp y posible robo extra.'),
 'experimentation':('Experimentation','Experimentación','Random category +15–30%; Basics +1–10%.','Categoría aleatoria +15–30%; Básicos +1–10%.'),
 'analyze':('Analyze','Analizar','Spend 16 observations: %s +25–50%; Basics +5%.','Gasta 16 observaciones: %s +25–50%; Básicos +5%.'),
 'balance':('Balance','Equilibrar','Equalize categories; Basics +5%; reduce penalties.','Iguala categorías; Básicos +5%; reduce penalización.'),
@@ -65,4 +70,4 @@ for loc,index in [('en_us',0),('es_es',1)]:
 path=AS/'knowledge/recipes.json'
 if path.exists():
  pages=json.loads(path.read_text());pages.update({'thaumcraft:tablewood':['SSS / W W','S: wooden slab; W: wooden plank','Use scribing tools on this table to create a research table.'],'thaumcraft:inkwell':['Glass bottle + feather + black dye','Refill a used tool with black dye.']});save(path,pages)
-print('2 tables, scribing tools/refill, 13 celestial variants, 27 card descriptions')
+print('2 tables, scribing tools/refill, 13 celestial variants, 32 card descriptions')

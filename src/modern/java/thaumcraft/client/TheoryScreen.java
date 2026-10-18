@@ -17,6 +17,7 @@ import thaumcraft.theory.*;
 @Mod.EventBusSubscriber(modid=Thaumcraft.MODID,value=Dist.CLIENT)
 public final class TheoryScreen extends AbstractContainerScreen<TheoryMenu> {
     private Button start,draw,bonus,finish,cancel;
+    private int aidPage;
     private final List<Button> cards=new ArrayList<>(),aids=new ArrayList<>();
     public TheoryScreen(TheoryMenu m,Inventory inv,Component title){super(m,inv,title,360,240);}
     @SubscribeEvent public static void register(FMLClientSetupEvent e){e.enqueueWork(()->net.minecraft.client.gui.screens.MenuScreens.register(TheoryContent.MENU.get(),TheoryScreen::new));}
@@ -24,11 +25,12 @@ public final class TheoryScreen extends AbstractContainerScreen<TheoryMenu> {
     @Override protected void init(){
         super.init();cards.clear();aids.clear();start=button("start",8,122,70,1);draw=button("draw",80,122,70,2);bonus=button("bonus",152,122,70,3);finish=button("finish",224,122,64,7);cancel=button("cancel",290,122,62,8);
         for(int i=0;i<3;i++)cards.add(button("choose",8+i*116,101,112,4+i));
-        for(int i=0;i<TheoryCards.AID_KEYS.size();i++)aids.add(button("aid."+i,8,147+i*14,86,10+i));
+        for(int i=0;i<TheoryCards.AID_KEYS.size();i++)aids.add(button("aid."+i,8,151+(i%6)*14,86,10+i));
+        int pages=(TheoryCards.AID_KEYS.size()+5)/6;addRenderableWidget(Button.builder(Component.literal("<"),b->aidPage=Math.floorMod(aidPage-1,pages)).bounds(leftPos+8,topPos+137,40,12).build());addRenderableWidget(Button.builder(Component.literal(">"),b->aidPage=(aidPage+1)%pages).bounds(leftPos+54,topPos+137,40,12).build());
     }
     @Override public void containerTick(){super.containerTick();boolean owned=menu.value(2)==1;start.active=menu.value(10)==1;draw.active=menu.value(12)==1;bonus.active=draw.active&&menu.value(5)>0;finish.active=owned&&menu.value(1)==3;cancel.active=owned&&(menu.value(1)==2||menu.value(1)==3);
         for(int i=0;i<3;i++){cards.get(i).visible=menu.card(i)!=null;cards.get(i).active=owned&&menu.value(21+i*8+6)==1;}
-        for(int i=0;i<aids.size();i++){var b=aids.get(i);b.visible=(menu.value(8)&(1<<i))!=0;b.active=menu.value(1)==1;b.setMessage(Component.literal((menu.value(9)&(1<<i))!=0?"✓ ":"+ ").append(Component.translatable("theory.thaumcraft.aid."+i)));}
+        for(int i=0;i<aids.size();i++){var b=aids.get(i);b.visible=i/6==aidPage&&(menu.value(8)&(1<<i))!=0;b.active=menu.value(1)==1;b.setMessage(Component.literal((menu.value(9)&(1<<i))!=0?"✓ ":"+ ").append(Component.translatable("theory.thaumcraft.aid."+i)));}
     }
     @Override protected void extractLabels(GuiGraphicsExtractor g,int x,int y){}
     private Component category(int i){return Component.translatable("research.thaumcraft.category."+ResearchCatalog.CATEGORIES.get(i));}
@@ -40,7 +42,7 @@ public final class TheoryScreen extends AbstractContainerScreen<TheoryMenu> {
             int x=leftPos+8+i*116;g.fill(x,topPos+44,x+112,topPos+99,0xFFF1E4C9);var card=menu.card(i);if(card==null)continue;
             String key=card.kind().name().toLowerCase(Locale.ROOT);g.text(font,Component.translatable("theory.thaumcraft.card."+key),x+3,topPos+47,0xFF302638,false);
             g.text(font,Component.translatable("theory.thaumcraft.card_cost",card.cost()),x+3,topPos+58,0xFF715367,false);
-            var lines=font.split(Component.translatable("theory.thaumcraft.effect."+key,category(card.category()),card.amount()),106);for(int j=0;j<Math.min(3,lines.size());j++)g.text(font,lines.get(j),x+3,topPos+69+j*9,0xFF302638,false);
+            var lines=font.split(Component.translatable("theory.thaumcraft.effect."+key,card.kind()==TheoryCards.Kind.INFUSE?Component.literal(Integer.toString(card.amount())):category(card.category()),card.amount()),106);for(int j=0;j<Math.min(3,lines.size());j++)g.text(font,lines.get(j),x+3,topPos+69+j*9,0xFF302638,false);
         }
         if(menu.value(1)==1)g.text(font,Component.translatable(menu.value(11)==1?"theory.thaumcraft.supplies":"theory.thaumcraft.locked"),leftPos+32,topPos+32,0xFFFFE9BA,false);
         if(menu.value(1)==4||menu.value(2)==0)g.text(font,Component.translatable(menu.value(1)==4?"theory.thaumcraft.invalid":"theory.thaumcraft.owner"),leftPos+32,topPos+32,0xFFFF8888,false);
@@ -51,7 +53,7 @@ public final class TheoryScreen extends AbstractContainerScreen<TheoryMenu> {
         super.extractContents(g,mouseX,mouseY,partial);
         for(int i=0;i<3;i++){var card=menu.card(i);if(card==null)continue;int x=leftPos+8+i*116;
             if(mouseX>=x&&mouseX<x+112&&mouseY>=topPos+44&&mouseY<topPos+99){
-                var lines=new ArrayList<Component>();String key=card.kind().name().toLowerCase(Locale.ROOT);lines.add(Component.translatable("theory.thaumcraft.effect."+key,category(card.category()),card.amount()));
+                var lines=new ArrayList<Component>();String key=card.kind().name().toLowerCase(Locale.ROOT);lines.add(Component.translatable("theory.thaumcraft.effect."+key,card.kind()==TheoryCards.Kind.INFUSE?Component.literal(Integer.toString(card.amount())):category(card.category()),card.amount()));
                 for(var need:card.needs())lines.add(Component.translatable(need.consume()?"theory.thaumcraft.consume":"theory.thaumcraft.keep",need.stack().getHoverName()));
                 g.setTooltipForNextFrame(font,lines,Optional.empty(),mouseX,mouseY);
             }

@@ -15,7 +15,7 @@ public final class ResearchCatalog {
     public record ItemRequirement(String id,int count,String aspect,String legacy){
         public boolean matches(ItemStack stack){return !stack.isEmpty()&&!id.startsWith("unavailable:")
             &&BuiltInRegistries.ITEM.getKey(stack.getItem()).toString().equals(id)
-            &&(aspect.isEmpty()||(stack.is(CrystalContent.ESSENCE.get())&&CrystalContent.aspect(stack).equals(aspect)));}
+            &&(aspect.isEmpty()||(stack.is(CrystalContent.ESSENCE.get())&&CrystalContent.aspect(stack).equals(aspect))||(stack.is(thaumcraft.alchemy.AlchemyContent.PHIAL.get())&&thaumcraft.alchemy.AlchemyContent.amount(stack)==10&&thaumcraft.alchemy.AlchemyContent.aspect(stack).equals(aspect))||(stack.is(thaumcraft.infusion.CuriosityContent.CURIO.get())&&thaumcraft.infusion.CuriosityContent.variant(stack).equals(aspect)));}
         public String proof(){return id+(aspect.isEmpty()?"":"/"+aspect);}
     }
     public record Cost(String kind,String category,int amount){public int progression(){return kind.equals("THEORY")?32:16;}}
@@ -59,5 +59,5 @@ public final class ResearchCatalog {
         if(parts.length==2){try{return stage>=Integer.parseInt(parts[1])&&stage>0;}catch(NumberFormatException ex){return false;}}
         return parts.length==1&&stage>entry.stages.size();
     }
-    public static String proof(ItemStack stack){var key=BuiltInRegistries.ITEM.getKey(stack.getItem()).toString();if(stack.is(thaumcraft.alchemy.AlchemyContent.PHIAL.get()))return key+(thaumcraft.alchemy.AlchemyContent.aspect(stack).isEmpty()?"":"/"+thaumcraft.alchemy.AlchemyContent.aspect(stack));if(stack.is(thaumcraft.theory.TheoryContent.CELESTIAL.get()))return key+"/"+thaumcraft.theory.TheoryContent.variant(stack);return key+(stack.is(CrystalContent.ESSENCE.get())?"/"+CrystalContent.aspect(stack):"");}
+    public static String proof(ItemStack stack){var key=BuiltInRegistries.ITEM.getKey(stack.getItem()).toString();if(stack.is(thaumcraft.infusion.CuriosityContent.CURIO.get()))return key+"/"+thaumcraft.infusion.CuriosityContent.variant(stack);if(stack.is(thaumcraft.alchemy.AlchemyContent.PHIAL.get()))return key+(thaumcraft.alchemy.AlchemyContent.aspect(stack).isEmpty()?"":"/"+thaumcraft.alchemy.AlchemyContent.aspect(stack));if(stack.is(thaumcraft.theory.TheoryContent.CELESTIAL.get()))return key+"/"+thaumcraft.theory.TheoryContent.variant(stack);return key+(stack.is(CrystalContent.ESSENCE.get())?"/"+CrystalContent.aspect(stack):"");}
 }

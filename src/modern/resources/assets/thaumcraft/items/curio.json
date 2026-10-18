@@ -1,0 +1,62 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:component",
+    "component": "thaumcraft:curio_variant",
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "thaumcraft:item/curio_arcane"
+    },
+    "cases": [
+      {
+        "when": "arcane",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/curio_arcane"
+        }
+      },
+      {
+        "when": "preserved",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/curio_preserved"
+        }
+      },
+      {
+        "when": "ancient",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/curio_ancient"
+        }
+      },
+      {
+        "when": "eldritch",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/curio_eldritch"
+        }
+      },
+      {
+        "when": "knowledge",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/curio_knowledge"
+        }
+      },
+      {
+        "when": "twisted",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/curio_twisted"
+        }
+      },
+      {
+        "when": "rites",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/curio_rites"
+        }
+      }
+    ]
+  }
+}

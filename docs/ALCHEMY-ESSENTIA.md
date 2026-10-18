@@ -167,3 +167,7 @@ sus JSON y se comprobó que no incluye las fixtures de integración.
 La red física de tubos, succión, etiquetas y resonador se implementa en
 [ESSENTIA-TRANSPORT.md](ESSENTIA-TRANSPORT.md). Sustituye el traslado exclusivamente
 manual descrito para port.10; los frascos continúan disponibles.
+
+La continuación de port.12 implementa la matriz, sus pedestales, absorción
+remota para infusión y cerebro en frasco, y amplía el mazo a 32 cartas activas.
+Véase [INFUSION-CARDS.md](INFUSION-CARDS.md) para recetas y límites.

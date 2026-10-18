@@ -11,6 +11,7 @@ public final class SalisMundusItem extends Item {
     public SalisMundusItem(Properties properties) { super(properties); }
     @Override public InteractionResult useOn(UseOnContext context) {
         var level=context.getLevel();var pos=context.getClickedPos();
+        if(level.getBlockEntity(pos) instanceof thaumcraft.infusion.InfusionMatrix matrix){if(level.isClientSide())return InteractionResult.SUCCESS;return context.getPlayer()!=null&&matrix.assemble(context.getPlayer(),context.getItemInHand())?InteractionResult.SUCCESS:InteractionResult.FAIL;}
         boolean book=level.getBlockState(pos).is(Blocks.BOOKSHELF);
         boolean crucible=level.getBlockState(pos).is(Blocks.CAULDRON);
         if(!book&&!crucible&&!level.getBlockState(pos).is(Blocks.CRAFTING_TABLE))return InteractionResult.PASS;

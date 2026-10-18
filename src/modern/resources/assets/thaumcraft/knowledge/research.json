@@ -1305,8 +1305,9 @@
         "text": "research.CrimsonRites.stage.1",
         "required_item": [
           {
-            "id": "unavailable:thaumcraft:curio",
+            "id": "thaumcraft:curio",
             "count": 1,
+            "aspect": "rites",
             "legacy": "thaumcraft:curio;1;6"
           }
         ],
@@ -3342,7 +3343,7 @@
         "text": "research.INFUSION.stage.2",
         "required_craft": [
           {
-            "id": "unavailable:thaumcraft:infusion_matrix",
+            "id": "thaumcraft:infusion_matrix",
             "count": 1,
             "legacy": "thaumcraft:infusion_matrix"
           }
@@ -3620,7 +3621,7 @@
         ],
         "required_item": [
           {
-            "id": "unavailable:thaumcraft:brain",
+            "id": "thaumcraft:brain",
             "count": 1,
             "legacy": "thaumcraft:brain"
           }

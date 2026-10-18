@@ -10,19 +10,19 @@ Contenido: `saplingGreatwood`, `saplingSilverwood`, `leafGreatwood`, `leafSilver
 
 ## M02: Iluminación, soporte y tintes de velas/nitor
 
-**Estado:** iluminación, soporte, drops y recoloreado implementados y probados; el consumidor de estabilidad de infusión se implementará en M09.
+**Estado:** luces, soporte, drops y recoloreado implementados; port.12 incorpora las velas como estabilizadores por pares con rendimiento decreciente; nitor no estabiliza (INFUSION-CARDS.md).
 
 Contenido: `candles [16 colores]`, `nitor [16 colores]`.
 
 ## M03: Inventarios persistentes, menús y automatización
 
-**Estado:** pendiente.
+**Estado:** port.12 añade inventarios de una unidad, sincronización y capacidad Forge de los tres pedestales; contenedores y autómatas restantes pendientes.
 
 Contenido: `tableWood`, `tableStone`, `pedestalArcane`, `pedestalAncient`, `pedestalEldritch`, `hungryChest`, `patternCrafter`, `focusPouch`.
 
 ## M04: Aspectos, investigación, escaneo y progreso
 
-**Estado:** port.9 añade mesa de investigación persistente, herramientas/recarga, teorías con 27 cartas y ayudas, y 13 variantes de notas celestes obtenibles mediante cielo nativo; faltan cartas dependientes de mecánicas posteriores y consumidores avanzados (THEORY-CELESTIAL.md); se priorizan consumidores reales antes de añadir cartas, según ALCHEMY-ESSENTIA.md.
+**Estado:** port.12 amplía a 32 cartas activas, ayudas de crisol/matriz/cerebro y nueve ayudas con paginación y protocolo nativo; curiosidades con estudio y fuente preservada, frascos exactos en requisitos; Study/Notation sin proveedor original activo se mantienen fuera (INFUSION-CARDS.md).
 
 Contenido: `researchTable`, `thaumonomicon`, `curio`, `primordialPearl`, `celestialNotes`, `salisMundus`, `crystalEssence`, `scribingTools`, `thaumometer`.
 
@@ -46,13 +46,13 @@ Contenido: `crucible`, `centrifuge`, `bellows`, `smelterBasic`, `smelterThaumium
 
 ## M08: Transporte y almacenamiento de esencia
 
-**Estado:** port.11 añade seis tubos, succión local con conflictos y alcance, válvulas/redstone, filtros, depósitos mixtos, etiquetas persistentes y resonador; fuelles, extracción remota, espejos y jarBrain siguen pendientes (ESSENTIA-TRANSPORT.md).
+**Estado:** port.11 añade seis tubos, succión local, válvulas/redstone, filtros, depósitos mixtos, etiquetas y resonador; port.12 añade cerebro con 2000 XP y absorción remota de tarros para la matriz; fuelles y espejos de esencia siguen pendientes (ESSENTIA-TRANSPORT.md, INFUSION-CARDS.md).
 
 Contenido: `bannerCrimsonCult`, `tube`, `tubeValve`, `tubeRestrict`, `tubeOneway`, `tubeFilter`, `tubeBuffer`, `jarNormal`, `jarVoid`, `jarBrain`, `essentiaTransportInput`, `essentiaTransportOutput`, `label`, `phial`, `resonator`, `banners [16 colores]`.
 
 ## M09: Infusión, simetría, estabilidad y mejoras
 
-**Estado:** pendiente.
+**Estado:** port.12 implementa matriz, tres pedestales/altares, activación con Salis, recetas nativas, absorción remota de tarros, costes y progreso persistentes, simetría/estabilidad y sucesos básicos; mejoras, encantamientos y equipos avanzados pendientes (INFUSION-CARDS.md).
 
 Contenido: `inlay`, `infusionMatrix`, `stabilizer`.
 

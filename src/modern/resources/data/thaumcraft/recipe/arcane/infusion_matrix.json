@@ -1,0 +1,45 @@
+{
+  "type": "thaumcraft:arcane",
+  "research": "INFUSION@2",
+  "vis": 150,
+  "crystals": {
+    "aer": 1,
+    "ignis": 1,
+    "aqua": 1,
+    "terra": 1,
+    "ordo": 1,
+    "perditio": 1
+  },
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "S S",
+      " N ",
+      "S S"
+    ],
+    "key": {
+      "S": "thaumcraft:stone_arcane_brick",
+      "N": [
+        "thaumcraft:nitor_white",
+        "thaumcraft:nitor_orange",
+        "thaumcraft:nitor_magenta",
+        "thaumcraft:nitor_lightblue",
+        "thaumcraft:nitor_yellow",
+        "thaumcraft:nitor_lime",
+        "thaumcraft:nitor_pink",
+        "thaumcraft:nitor_gray",
+        "thaumcraft:nitor_silver",
+        "thaumcraft:nitor_cyan",
+        "thaumcraft:nitor_purple",
+        "thaumcraft:nitor_blue",
+        "thaumcraft:nitor_brown",
+        "thaumcraft:nitor_green",
+        "thaumcraft:nitor_red",
+        "thaumcraft:nitor_black"
+      ]
+    },
+    "result": {
+      "id": "thaumcraft:infusion_matrix"
+    }
+  }
+}

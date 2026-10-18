@@ -14,7 +14,7 @@ public final class AspectCatalog {
     private AspectCatalog(){}
     private static Map<String,Integer> values(JsonObject object){var result=new LinkedHashMap<String,Integer>();object.entrySet().forEach(e->result.put(e.getKey(),e.getValue().getAsInt()));return Map.copyOf(result);}
     public static Map<String,Integer> item(ItemStack stack){
-        if(stack.isEmpty())return Map.of();if(stack.is(thaumcraft.alchemy.AlchemyContent.PHIAL.get())&&thaumcraft.alchemy.AlchemyContent.amount(stack)==10&&!thaumcraft.alchemy.AlchemyContent.aspect(stack).isEmpty())return Map.of(thaumcraft.alchemy.AlchemyContent.aspect(stack),10);if(stack.is(CrystalContent.ESSENCE.get()))return Map.of(CrystalContent.aspect(stack),1);
+        if(stack.isEmpty())return Map.of();if(stack.is(thaumcraft.infusion.CuriosityContent.CURIO.get())){var type=thaumcraft.infusion.CuriosityContent.variant(stack);return switch(type){case "knowledge"->Map.of("cognitio",30);case "rites"->Map.of("cognitio",15,"alienis",5,"spiritus",5,"praecantatio",5);default->Map.of("cognitio",15,switch(type){case "arcane"->"praecantatio";case "preserved"->"bestia";case "ancient"->"mortuus";case "eldritch"->"alienis";default->"vitium";},15);};}if(stack.is(thaumcraft.alchemy.AlchemyContent.PHIAL.get())&&thaumcraft.alchemy.AlchemyContent.amount(stack)==10&&!thaumcraft.alchemy.AlchemyContent.aspect(stack).isEmpty())return Map.of(thaumcraft.alchemy.AlchemyContent.aspect(stack),10);if(stack.is(CrystalContent.ESSENCE.get()))return Map.of(CrystalContent.aspect(stack),1);
         var definitions=DATA.getAsJsonObject("items");String id=BuiltInRegistries.ITEM.getKey(stack.getItem()).toString();
         if(definitions.has(id))return values(definitions.getAsJsonObject(id));
         Map<String,Integer> result=Map.of();

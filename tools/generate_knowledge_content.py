@@ -30,7 +30,7 @@ def aspects(text):
 
 simple = json.loads((ROOT / 'tools/simple_content.json').read_text())
 fields = {v['legacy_field']: v['id'] for group in simple.values() if isinstance(group, list) for v in group if isinstance(v, dict) and v.get('legacy_field')}
-fields.update({'tube':'tube','tubeValve':'tube_valve','tubeFilter':'tube_filter','tubeRestrict':'tube_restrict','tubeOneway':'tube_oneway','tubeBuffer':'tube_buffer','label':'label','resonator':'resonator','saplingGreatwood':'sapling_greatwood','saplingSilverwood':'sapling_silverwood','leafGreatwood':'leaves_greatwood','leafSilverwood':'leaves_silverwood','crucible':'crucible','smelterBasic':'smelter_basic','alembic':'alembic','jarNormal':'jar_normal','jarVoid':'jar_void','phial':'phial','alumentum':'alumentum','scribingTools':'scribing_tools','researchTable':'research_table','tableWood':'table_wood','celestialNotes':'celestial_notes','thaumonomicon': 'thaumonomicon', 'thaumometer': 'thaumometer', 'salisMundus': 'salis_mundus',
+fields.update({'infusionMatrix':'infusion_matrix','pedestalArcane':'pedestal_arcane','pedestalAncient':'pedestal_ancient','pedestalEldritch':'pedestal_eldritch','jarBrain':'jar_brain','brain':'brain','curio':'curio','tube':'tube','tubeValve':'tube_valve','tubeFilter':'tube_filter','tubeRestrict':'tube_restrict','tubeOneway':'tube_oneway','tubeBuffer':'tube_buffer','label':'label','resonator':'resonator','saplingGreatwood':'sapling_greatwood','saplingSilverwood':'sapling_silverwood','leafGreatwood':'leaves_greatwood','leafSilverwood':'leaves_silverwood','crucible':'crucible','smelterBasic':'smelter_basic','alembic':'alembic','jarNormal':'jar_normal','jarVoid':'jar_void','phial':'phial','alumentum':'alumentum','scribingTools':'scribing_tools','researchTable':'research_table','tableWood':'table_wood','celestialNotes':'celestial_notes','thaumonomicon': 'thaumonomicon', 'thaumometer': 'thaumometer', 'salisMundus': 'salis_mundus',
                'arcaneWorkbench': 'arcane_workbench', 'arcaneWorkbenchCharger': 'arcane_workbench_charger',
                'visGenerator': 'vis_generator', 'rechargePedestal': 'recharge_pedestal', 'dioptra': 'dioptra',
                'voidSiphon': 'void_siphon', 'oreAmber': 'ore_amber', 'oreCinnabar': 'ore_cinnabar', 'oreQuartz': 'ore_quartz',
@@ -75,7 +75,10 @@ def spec(raw):
     item = parts[0];count = int(parts[1]) if len(parts)>1 else 1;meta = int(parts[2]) if len(parts)>2 else 0
     aspect = re.search(r"key:['\"]([^'\"]+)", parts[3]) if len(parts)>3 else None
     if ':' not in item: return {'id':'unavailable:'+item,'count':count,'legacy':raw}
-    namespace, name = item.split(':',1);item = modern_item(namespace,name,meta)
+    namespace, name = item.split(':',1)
+    if namespace=='thaumcraft' and name=='curio' and meta in range(7):
+        return {'id':'thaumcraft:curio','count':count,'aspect':['arcane','preserved','ancient','eldritch','knowledge','twisted','rites'][meta],'legacy':raw}
+    item = modern_item(namespace,name,meta)
     unavailable = item not in modern_ids or (len(parts)>3 and aspect is None)
     return {'id': item if not unavailable else 'unavailable:'+item, 'count':count, **({'aspect':aspect[1]} if aspect else {}), 'legacy':raw}
 
@@ -194,7 +197,7 @@ for path in sorted((ROOT/'src/modern/resources/data/thaumcraft/recipe/arcane').g
     definition=json.loads(path.read_text());recipe=definition['recipe'];lines=[]
     if 'pattern' in recipe:
         lines.extend('['+row+']' for row in recipe['pattern'])
-        lines.extend(key+' = '+value for key,value in recipe['key'].items())
+        lines.extend(key+' = '+str(value) for key,value in recipe['key'].items())
     else:
         lines.extend(recipe.get('ingredients', ['One warded jar; preserves stored essentia.']))
     lines.append('Vis: '+str(definition['vis']))

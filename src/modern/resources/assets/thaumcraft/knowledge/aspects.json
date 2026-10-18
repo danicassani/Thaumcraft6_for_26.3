@@ -854,9 +854,20 @@
       "alienis": 5,
       "cognitio": 5
     },
+    "thaumcraft:brain": {
+      "victus": 5,
+      "cognitio": 20,
+      "exanimis": 10
+    },
     "thaumcraft:salis_mundus": {
       "praecantatio": 5,
       "potentia": 5
+    },
+    "thaumcraft:curio": {
+      "cognitio": 15,
+      "alienis": 5,
+      "spiritus": 5,
+      "praecantatio": 5
     },
     "thaumcraft:celestial_notes": {
       "cognitio": 5,

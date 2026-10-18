@@ -59,9 +59,14 @@ public final class ResearchTableEntity extends thaumcraft.devices.AuraDeviceEnti
     }
     private boolean active(Player p){return valid(p)&&supported()&&session!=null&&owned(p)&&ResearchService.state(p)!=null&&ResearchService.knows(p,"THEORYRESEARCH");}
     /** Reserve all requirements, including non-consumed items, before changing anything. */
+    private static boolean matchesNeed(ItemStack need,ItemStack actual){
+        if(need.is(thaumcraft.infusion.CuriosityContent.CURIO.get()))return actual.is(need.getItem())&&thaumcraft.infusion.CuriosityContent.variant(need).equals(thaumcraft.infusion.CuriosityContent.variant(actual));
+        if(need.is(thaumcraft.alchemy.AlchemyContent.PHIAL.get()))return actual.is(need.getItem())&&thaumcraft.alchemy.AlchemyContent.amount(actual)==10&&thaumcraft.alchemy.AlchemyContent.aspect(need).equals(thaumcraft.alchemy.AlchemyContent.aspect(actual));
+        return ItemStack.isSameItemSameComponents(need,actual);
+    }
     private int[] plan(Player p,TheoryCards.Card card){
         int size=p.getInventory().getContainerSize();int[] left=new int[size],take=new int[size];for(int i=0;i<size;i++)left[i]=p.getInventory().getItem(i).getCount();
-        for(var need:card.needs()){int n=need.stack().getCount();for(int i=0;i<size&&n>0;i++)if(ItemStack.isSameItemSameComponents(need.stack(),p.getInventory().getItem(i))){int use=Math.min(n,left[i]);left[i]-=use;n-=use;if(need.consume())take[i]+=use;}if(n>0)return null;}
+        for(var need:card.needs()){int n=need.stack().getCount();for(int i=0;i<size&&n>0;i++)if(matchesNeed(need.stack(),p.getInventory().getItem(i))){int use=Math.min(n,left[i]);left[i]-=use;n-=use;if(need.consume())take[i]+=use;}if(n>0)return null;}
         return take;
     }
     public boolean ready(Player p,int index){

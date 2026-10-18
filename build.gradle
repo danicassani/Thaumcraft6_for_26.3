@@ -4,7 +4,7 @@ plugins {
     id 'eclipse'
     id 'net.minecraftforge.gradle' version '7.0.17'
 }
-version = '6.1.BETA26-port.11-forge66.0.13'
+version = '6.1.BETA26-port.12-forge66.0.13'
 group = 'griglog.thaumcraft'
 base.archivesName = 'thaumcraft'
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
@@ -39,6 +39,9 @@ sourceSets.main {
     resources.setSrcDirs(['src/modern/resources'])
 }
 // Explicit integration fixtures; never packaged by the normal build.
+if (providers.gradleProperty('infusionProbe').isPresent()) {
+    sourceSets.main.java.srcDir('src/infusionTest/java')
+}
 if (providers.gradleProperty('essentiaProbe').isPresent()) {
     sourceSets.main.java.srcDir('src/essentiaTest/java')
 }
@@ -75,6 +78,7 @@ minecraft {
         configureEach {
             workingDir = layout.projectDirectory.dir('run')
             systemProperty 'eventbus.api.strictRuntimeChecks', 'true'
+            if (providers.gradleProperty('infusionProbe').isPresent()) systemProperty 'thaumcraft.infusionProbe', providers.gradleProperty('infusionProbe').get()
             if (providers.gradleProperty('essentiaProbe').isPresent()) systemProperty 'thaumcraft.essentiaProbe', providers.gradleProperty('essentiaProbe').get()
             if (providers.gradleProperty('alchemyProbe').isPresent()) systemProperty 'thaumcraft.alchemyProbe', providers.gradleProperty('alchemyProbe').get()
             if (providers.gradleProperty('theoryProbe').isPresent()) systemProperty 'thaumcraft.theoryProbe', providers.gradleProperty('theoryProbe').get()
@@ -92,6 +96,7 @@ minecraft {
         register('server') {
             workingDir = layout.projectDirectory.dir('run/server')
             args '--nogui'
+            if (providers.gradleProperty('infusionProbe').isPresent()) args '--world', 'infusion-smoke'
             if (providers.gradleProperty('essentiaProbe').isPresent()) args '--world', 'essentia-smoke'
             if (providers.gradleProperty('alchemyProbe').isPresent()) args '--world', 'alchemy-smoke'
             if (providers.gradleProperty('theoryProbe').isPresent()) args '--world', 'theory-smoke'

@@ -15,23 +15,31 @@ public final class TheoryCards {
     public enum Kind { EXPERIMENTATION, ANALYZE, BALANCE, PONDER, RETHINK, REJECT, INSPIRED,
         CALIBRATE, FOCUS, MEASURE, SCRIPTING, CONCENTRATE, REACTIONS, SYNTHESIS,
         TINKER, MINDMATTER, CELESTIAL, SPELLBINDING, AWARENESS, REALIZATION, REVELATION,
-        TRUTH, SYNERGY, ENCHANTMENT, BEACON, GLYPHS, PORTAL }
+        TRUTH, SYNERGY, ENCHANTMENT, BEACON, GLYPHS, PORTAL, CHANNEL, INFUSE, SCULPTING, CURIO, DARK_WHISPERS }
     public static final List<String> ASPECTS=List.copyOf(thaumcraft.crystals.CrystalAspects.COLORS.keySet());
     private static final List<String> MACHINES=List.of("thaumcraft:vis_resonator","thaumcraft:thaumometer","minecraft:anvil","minecraft:activator_rail","minecraft:dispenser","minecraft:dropper","minecraft:enchanting_table","minecraft:ender_chest","minecraft:jukebox","minecraft:daylight_detector","minecraft:piston","minecraft:hopper","minecraft:sticky_piston","minecraft:map","minecraft:compass","minecraft:tnt_minecart","minecraft:comparator","minecraft:clock");
+    private static final List<String> INFUSE_ITEMS=List.of("thaumcraft:alumentum","thaumcraft:nitor_yellow","thaumcraft:amber","thaumcraft:brain","thaumcraft:fabric","thaumcraft:salis_mundus","thaumcraft:ingot_thaumium","thaumcraft:ingot_brass","thaumcraft:quicksilver","minecraft:gold_ingot","minecraft:iron_ingot","minecraft:diamond","minecraft:emerald","minecraft:blaze_rod","minecraft:leather","minecraft:white_wool","minecraft:brick","minecraft:arrow","minecraft:egg","minecraft:feather","minecraft:glowstone_dust","minecraft:redstone","minecraft:ghast_tear","minecraft:gunpowder","minecraft:bow","minecraft:golden_sword","minecraft:iron_sword","minecraft:iron_pickaxe","minecraft:golden_pickaxe","minecraft:quartz","minecraft:apple");
     public static final Map<String,List<Kind>> AIDS=Map.of(
+        "thaumcraft:crucible",List.of(Kind.CONCENTRATE,Kind.REACTIONS,Kind.SYNTHESIS),
+        "thaumcraft:infusion_matrix",List.of(Kind.MEASURE,Kind.CHANNEL,Kind.INFUSE),
+        "thaumcraft:jar_brain",List.of(Kind.DARK_WHISPERS),
         "thaumcraft:arcane_workbench",List.of(Kind.CALIBRATE,Kind.TINKER,Kind.MINDMATTER),
         "minecraft:enchanting_table",List.of(Kind.ENCHANTMENT),"minecraft:beacon",List.of(Kind.BEACON),
         "thaumcraft:stone_ancient_glyphed",List.of(Kind.GLYPHS),"minecraft:nether_portal",List.of(Kind.PORTAL),"minecraft:end_portal",List.of(Kind.PORTAL));
     public static final List<String> AID_KEYS=AIDS.keySet().stream().sorted().toList();
     public record Card(Kind kind,int category,int a,int b,int amount,long seed,boolean aid){
-        public static final Codec<Card> CODEC=RecordCodecBuilder.create(i->i.group(
+        public static final Codec<Card> CODEC=RecordCodecBuilder.<Card>create(i->i.group(
             Codec.STRING.comapFlatMap(s->{try{return DataResult.success(Kind.valueOf(s));}catch(Exception e){return DataResult.error(()->"Unknown theory card");}},Kind::name).fieldOf("kind").forGetter(Card::kind),
             Codec.intRange(0,6).fieldOf("category").forGetter(Card::category),Codec.intRange(0,36).fieldOf("a").forGetter(Card::a),Codec.intRange(0,36).fieldOf("b").forGetter(Card::b),
             Codec.intRange(0,100000).fieldOf("amount").forGetter(Card::amount),Codec.LONG.fieldOf("seed").forGetter(Card::seed),Codec.BOOL.fieldOf("aid").forGetter(Card::aid)
-        ).apply(i,Card::new));
+        ).apply(i,Card::new)).validate(c->c.kind()==Kind.CURIO&&c.a()>=7||c.kind()==Kind.INFUSE&&c.b()>=INFUSE_ITEMS.size()?DataResult.error(()->"Invalid theory item variant"):DataResult.success(c));
         public String cat(){return ResearchCatalog.CATEGORIES.get(category);}
         public int cost(){return switch(kind){case EXPERIMENTATION,ANALYZE,PONDER,INSPIRED->2;case REJECT->0;case RETHINK,PORTAL->-1;case BEACON->-2;default->1;};}
         public List<Need> needs(){return switch(kind){
+            case CHANNEL->List.of(new Need(thaumcraft.alchemy.AlchemyContent.filled(thaumcraft.alchemy.AlchemyContent.PHIAL.get(),ASPECTS.get(a),10),false));
+            case INFUSE->List.of(new Need(new ItemStack(BuiltInRegistries.ITEM.getValue(Identifier.parse(INFUSE_ITEMS.get(b)))),true),new Need(thaumcraft.alchemy.AlchemyContent.filled(thaumcraft.alchemy.AlchemyContent.PHIAL.get(),ASPECTS.get(a),10),true));
+            case SCULPTING->List.of(new Need(new ItemStack(Items.CLAY_BALL),true));
+            case CURIO->List.of(new Need(thaumcraft.infusion.CuriosityContent.curio(thaumcraft.infusion.CuriosityContent.VARIANTS.get(a)),true));
             case CONCENTRATE->List.of(new Need(CrystalContent.essence(ASPECTS.get(a),1),false));
             case REACTIONS->List.of(new Need(CrystalContent.essence(ASPECTS.get(a),1),false),new Need(CrystalContent.essence(ASPECTS.get(b),1),false));
             case SYNTHESIS->{var cs=AspectCatalog.components(ASPECTS.get(a));yield cs.size()==2?List.of(new Need(CrystalContent.essence(cs.get(0),1),true),new Need(CrystalContent.essence(cs.get(1),1),true)):List.of();}
@@ -42,7 +50,7 @@ public final class TheoryCards {
     private TheoryCards(){}
     public static boolean validAidCard(String s){int pos=s.indexOf('#');if(pos<0)return false;var kinds=AIDS.get(s.substring(0,pos));return kinds!=null&&kinds.stream().anyMatch(k->k.name().equals(s.substring(pos+1)));}
     public static List<String> available(Player p,TheorySession s){return ResearchCatalog.CATEGORIES.stream().filter(c->!s.blocked.contains(c)&&(c.equals("BASICS")||ResearchService.knows(p,"UNLOCK"+(c.equals("AUROMANCY")?"AUROMANCY":c)))).toList();}
-    private static String fixed(Kind k){return switch(k){case CALIBRATE,TINKER,MINDMATTER->"ARTIFICE";case FOCUS,SPELLBINDING,AWARENESS->"AUROMANCY";case MEASURE->"INFUSION";case SCRIPTING,SYNERGY->"GOLEMANCY";case CONCENTRATE,REACTIONS,SYNTHESIS->"ALCHEMY";case REALIZATION,REVELATION,TRUTH,GLYPHS,PORTAL->"ELDRITCH";default->"";};}
+    private static String fixed(Kind k){return switch(k){case CALIBRATE,TINKER,MINDMATTER->"ARTIFICE";case FOCUS,SPELLBINDING,AWARENESS->"AUROMANCY";case MEASURE,CHANNEL,INFUSE->"INFUSION";case SCRIPTING,SYNERGY,SCULPTING->"GOLEMANCY";case CONCENTRATE,REACTIONS,SYNTHESIS->"ALCHEMY";case REALIZATION,REVELATION,TRUTH,GLYPHS,PORTAL,DARK_WHISPERS->"ELDRITCH";default->"";};}
     public static Card generate(Kind kind,Player player,TheorySession session,long seed,boolean aid){
         var random=new Random(seed);var cats=available(player,session);String fixed=fixed(kind);String cat=fixed.isEmpty()?"BASICS":fixed;int a=0,b=0,amount=0;
         if(!aid&&!fixed.isEmpty()&&!cats.contains(cat))return null;
@@ -53,11 +61,13 @@ public final class TheoryCards {
             case RETHINK->{if(session.totals.values().stream().mapToInt(Integer::intValue).sum()<10)return null;}
             case REJECT->{var choices=session.totals.keySet().stream().filter(c->!session.blocked.contains(c)).toList();if(choices.isEmpty())return null;cat=choices.get(random.nextInt(choices.size()));}
             case INSPIRED,CELESTIAL->{if(session.totals.isEmpty()||kind==Kind.CELESTIAL&&!ResearchService.knows(player,"CELESTIALSCANNING"))return null;cat=session.totals.entrySet().stream().sorted(Map.Entry.<String,Integer>comparingByValue().reversed().thenComparing(Map.Entry.comparingByKey())).findFirst().get().getKey();amount=10+session.total(cat)/2;if(kind==Kind.CELESTIAL){a=random.nextInt(13);do{b=random.nextInt(13);}while(a==b);}}
+            case CHANNEL,INFUSE->{var compounds=ASPECTS.stream().filter(x->AspectCatalog.components(x).size()==2).toList();a=ASPECTS.indexOf(compounds.get(random.nextInt(compounds.size())));if(kind==Kind.INFUSE){b=random.nextInt(INFUSE_ITEMS.size());var item=new ItemStack(BuiltInRegistries.ITEM.getValue(Identifier.parse(INFUSE_ITEMS.get(b))));var values=player.level() instanceof net.minecraft.server.level.ServerLevel level?thaumcraft.alchemy.AspectResolver.item(level,item):AspectCatalog.item(item);amount=10+(int)(Math.sqrt(values.values().stream().mapToInt(Integer::intValue).sum())*1.5);}}
+            case CURIO->{var choices=new ArrayList<Integer>();for(int slot=0;slot<player.getInventory().getContainerSize();slot++){var stack=player.getInventory().getItem(slot);if(stack.is(thaumcraft.infusion.CuriosityContent.CURIO.get())){int variant=thaumcraft.infusion.CuriosityContent.VARIANTS.indexOf(thaumcraft.infusion.CuriosityContent.variant(stack));if(variant>=0)choices.add(variant);}}if(choices.isEmpty())return null;a=choices.get(random.nextInt(choices.size()));}
             case CONCENTRATE,REACTIONS,SYNTHESIS->{var compounds=ASPECTS.stream().filter(x->AspectCatalog.components(x).size()==2).toList();a=ASPECTS.indexOf(compounds.get(random.nextInt(compounds.size())));b=a;if(kind==Kind.REACTIONS)while(b==a)b=ASPECTS.indexOf(compounds.get(random.nextInt(compounds.size())));}
             case TINKER,MINDMATTER->{a=random.nextInt(MACHINES.size());var stack=new ItemStack(BuiltInRegistries.ITEM.getValue(Identifier.parse(MACHINES.get(a))));amount=(int)Math.sqrt(AspectCatalog.item(stack).values().stream().mapToInt(Integer::intValue).sum());}
             case SPELLBINDING->{if(player.experienceLevel<=0)return null;}
             case SYNERGY->{if(session.total("ARTIFICE")+session.total("ALCHEMY")+session.total("INFUSION")<15)return null;}
-            case ENCHANTMENT,BEACON,GLYPHS,PORTAL->{if(!aid)return null;}
+            case ENCHANTMENT,BEACON,GLYPHS,PORTAL,DARK_WHISPERS->{if(!aid)return null;}
             default->{}
         }
         if((!fixed.isEmpty()||kind==Kind.ANALYZE||kind==Kind.INSPIRED||kind==Kind.CELESTIAL)&&session.blocked.contains(cat))return null;
@@ -89,6 +99,11 @@ public final class TheoryCards {
             case INSPIRED->s.add(c,card.amount());
             case CALIBRATE,FOCUS,MEASURE->{s.add(c,15);s.bonus++;}
             case SCRIPTING->s.add(c,25);
+            case CHANNEL->s.add("INFUSION",25);
+            case INFUSE->s.add("INFUSION",card.amount());
+            case SCULPTING->{s.add("GOLEMANCY",20);s.bonus++;}
+            case CURIO->{s.add("BASICS",5);s.add(ResearchCatalog.CATEGORIES.get(r.nextInt(7)),5);if(card.a()==6){s.add("ELDRITCH",15+r.nextInt(6));s.add("AUROMANCY",10+r.nextInt(6));}else s.add(thaumcraft.infusion.CuriosityContent.CATEGORIES.get(card.a()),25+r.nextInt(11));if(r.nextBoolean())s.bonus++;if(r.nextBoolean())s.bonus++;}
+            case DARK_WHISPERS->{int level=Math.max(0,player.experienceLevel);levels=level+10;if(level>0)for(var key:ResearchCatalog.CATEGORIES)if(r.nextBoolean())s.add(key,r.nextInt(Math.max(1,(int)Math.sqrt(level))+1));int lo=Math.max(1,level/5),hi=Math.max(5,level/2);s.add("ELDRITCH",lo+r.nextInt(hi-lo+1));normal=Math.max(1,(int)Math.sqrt(level));if(r.nextBoolean())s.bonus++;}
             case CONCENTRATE->{s.add(c,15);s.bonus++;if(r.nextFloat()<.33)s.inspire(1);}
             case REACTIONS->{s.add(c,25);if(r.nextFloat()<.33)s.inspire(1);}
             case SYNTHESIS->{s.add(c,40);if(r.nextFloat()<.33)s.inspire(1);reward=CrystalContent.essence(ASPECTS.get(card.a()),1);}

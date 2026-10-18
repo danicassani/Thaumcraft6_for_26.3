@@ -1,0 +1,25 @@
+{
+  "type": "thaumcraft:infusion",
+  "research": "CRYSTALFARMER",
+  "input": {
+    "item": "thaumcraft:crystal_essence",
+    "crystal_aspect": "aer"
+  },
+  "components": [
+    {
+      "item": "minecraft:wheat_seeds"
+    },
+    {
+      "item": "thaumcraft:salis_mundus"
+    }
+  ],
+  "aspects": {
+    "aer": 10,
+    "vitreus": 10,
+    "vinculum": 5
+  },
+  "instability": 0,
+  "result": {
+    "id": "thaumcraft:crystal_aer"
+  }
+}
