@@ -3,6 +3,7 @@
 Fuente de todas las filas: `src/main/java/thaumcraft/common/config/ModConfig.java`.
 «Migrada (esquema)» significa definición TOML registrada, con valor por defecto conservado; sus mecánicas todavía no están conectadas. No significa que la opción ya altere el juego ni que sus mecánicas estén portadas. La generación y carga de ambos TOML sí se verificó en cliente/servidor.
 Los archivos .cfg antiguos no se importan automáticamente.
+Desde el [paso 3](PORT-STEP-3.md), las opciones de los tres minerales y su densidad están conectadas a la generación de chunks nuevos. Las demás filas marcadas como esquema conservan el estado anterior.
 
 | Clave antigua | Por defecto | Significado/comentario original | Destino | Estado |
 |---|---|---|---|---|
@@ -16,16 +17,16 @@ Los archivos .cfg antiguos no se importan automáticamente.
 | CONFIG_GRAPHICS.showGolemEmotes | `true` | Will golems display emote particles if they recieve orders or encounter problems | SERVER graphics.showGolemEmotes | migrada (esquema) |
 | CONFIG_WORLD.overworldDim | `0` | The dimension considered to be your 'overworld'. Certain TC structures will only spawn in this dim. | Pendiente: dimensión numérica → clave de dimensión | pendiente |
 | CONFIG_WORLD.dimensionOuterId | `-42` | Outer lands dimension id | Pendiente: dimensión numérica → clave de dimensión | pendiente |
-| CONFIG_WORLD.oreDensity | `100` | The % of normal ore amounts that will be spawned. For example 50 will spawn half the ores while 200 will spawn double. Default 100 | SERVER world.oreDensity | migrada (esquema) |
+| CONFIG_WORLD.oreDensity | `100` | The % of normal ore amounts that will be spawned. For example 50 will spawn half the ores while 200 will spawn double. Default 100 | SERVER world.oreDensity | activa en chunks nuevos (paso 3) |
 | CONFIG_WORLD.generateMagicForest | `true` | Generar bosque mágico | SERVER world.generateMagicForest | migrada (esquema) |
 | CONFIG_WORLD.biomeMagicalForestWeight | `5` | Higher values increases number of magical forest biomes. If you are using biome addon mods you probably want to increase this weight quite a bit | SERVER world.biomeMagicalForestWeight | migrada (esquema) |
 | CONFIG_WORLD.taintSpreadRate | `100.0f` | The % chance of taint fibres spreading on a block tick. Setting this to 0 will effectively stop taint fibre spread. | SERVER world.taintSpreadRate | migrada (esquema) |
 | CONFIG_WORLD.taintSpreadArea | `32` | The range at which taint can spread from a taint seed. This value is only a base and will be modified by flux levels. | SERVER world.taintSpreadArea | migrada (esquema) |
 | CONFIG_WORLD.generateAura | `true` | Generar aura | SERVER world.generateAura | migrada (esquema) |
 | CONFIG_WORLD.generateStructure | `true` | Habilitar generación de estructuras Thaumcraft | SERVER world.generateStructure | migrada (esquema) |
-| CONFIG_WORLD.generateCinnabar | `true` | Habilitar generación de mena de cinabrio | SERVER world.generateCinnabar | migrada (esquema) |
-| CONFIG_WORLD.generateAmber | `true` | Habilitar generación de mena de ámbar | SERVER world.generateAmber | migrada (esquema) |
-| CONFIG_WORLD.generateQuartz | `true` | Habilitar generación de mena de cuarzo | SERVER world.generateQuartz | migrada (esquema) |
+| CONFIG_WORLD.generateCinnabar | `true` | Habilitar generación de mena de cinabrio | SERVER world.generateCinnabar | activa en chunks nuevos (paso 3) |
+| CONFIG_WORLD.generateAmber | `true` | Habilitar generación de mena de ámbar | SERVER world.generateAmber | activa en chunks nuevos (paso 3) |
+| CONFIG_WORLD.generateQuartz | `true` | Habilitar generación de mena de cuarzo | SERVER world.generateQuartz | activa en chunks nuevos (paso 3) |
 | CONFIG_WORLD.generateCrystals | `true` | Habilitar generación de cristales | SERVER world.generateCrystals | migrada (esquema) |
 | CONFIG_WORLD.generateTrees | `true` | Habilitar generación de árboles Thaumcraft | SERVER world.generateTrees | migrada (esquema) |
 | CONFIG_WORLD.regenKey | `"DEFAULT"` | This key is used to keep track of which chunk have been generated/regenerated. Changing it will cause the regeneration code to run again, so only change it if you want it to happen. Useful to regen only one world feature at a time. | SERVER world.regenKey | migrada (esquema) |

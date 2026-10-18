@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": "thaumcraft:nugget_quicksilver"
+  },
+  "result": {
+    "id": "thaumcraft:quicksilver",
+    "count": 1
+  }
+}

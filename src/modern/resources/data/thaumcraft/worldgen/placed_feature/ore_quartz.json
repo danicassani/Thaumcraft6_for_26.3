@@ -1,0 +1,28 @@
+{
+  "feature": "thaumcraft:ore_quartz",
+  "placement": [
+    {
+      "type": "thaumcraft:ore_count",
+      "count": 6,
+      "ore": "quartz"
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "min_inclusive": {
+          "absolute": -32
+        },
+        "max_inclusive": {
+          "absolute": 64
+        }
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

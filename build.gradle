@@ -4,7 +4,7 @@ plugins {
     id 'eclipse'
     id 'net.minecraftforge.gradle' version '7.0.17'
 }
-version = '6.1.BETA26-port.2-forge66.0.13'
+version = '6.1.BETA26-port.3-forge66.0.13'
 group = 'griglog.thaumcraft'
 base.archivesName = 'thaumcraft'
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
@@ -38,11 +38,14 @@ sourceSets.main {
     java.setSrcDirs(['src/modern/java'])
     resources.setSrcDirs(['src/modern/resources'])
 }
-// Explicit integration fixture; never packaged by the normal build.
+// Explicit integration fixtures; never packaged by the normal build.
 if (providers.gradleProperty('warpRestartProbe').isPresent()) {
     sourceSets.main.java.srcDir('src/runtimeTest/java')
 }
 
+if (providers.gradleProperty('basicContentProbe').isPresent()) {
+    sourceSets.main.java.srcDir('src/contentTest/java')
+}
 
 minecraft {
     runs {
@@ -57,6 +60,9 @@ minecraft {
         register('server') {
             workingDir = layout.projectDirectory.dir('run/server')
             args '--nogui'
+            if (providers.gradleProperty('basicContentProbe').isPresent()) {
+                args '--world', providers.gradleProperty('basicContentProbe').get().with { it ? it : 'basic-content-smoke' }
+            }
         }
     }
 }
@@ -75,7 +81,7 @@ dependencies {
 tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
 
 processResources {
-    from('src/main/resources') { include 'assets/**' }
+    from('src/main/resources') { include 'assets/thaumcraft/textures/**' }
 }
 
 tasks.named('test') { useJUnitPlatform() }

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "thaumcraft:ore_cinnabar",
+    "thaumcraft:metal_thaumium",
+    "thaumcraft:metal_void"
+  ]
+}

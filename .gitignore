@@ -26,3 +26,6 @@ forge*changelog.txt
 
 # Forge 26.3 launcher outputs
 /logs/
+
+# Local build/runtime verification evidence
+/work/

@@ -1,0 +1,28 @@
+{
+  "feature": "thaumcraft:ore_cinnabar",
+  "placement": [
+    {
+      "type": "thaumcraft:ore_count",
+      "count": 4,
+      "ore": "cinnabar"
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "min_inclusive": {
+          "absolute": -48
+        },
+        "max_inclusive": {
+          "absolute": 32
+        }
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

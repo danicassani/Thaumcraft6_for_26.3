@@ -1,0 +1,20 @@
+{
+  "itemGroup.thaumcraft": "Thaumcraft",
+  "block.thaumcraft.ore_amber": "Amber Ore",
+  "block.thaumcraft.ore_cinnabar": "Cinnabar Ore",
+  "block.thaumcraft.ore_quartz": "Quartz Ore",
+  "block.thaumcraft.metal_thaumium": "Block of Thaumium",
+  "block.thaumcraft.metal_void": "Block of Void Metal",
+  "block.thaumcraft.metal_brass": "Block of Alchemical Brass",
+  "block.thaumcraft.amber_block": "Amber Block",
+  "block.thaumcraft.amber_brick": "Amber Bricks",
+  "item.thaumcraft.amber": "Amber",
+  "item.thaumcraft.quicksilver": "Quicksilver",
+  "item.thaumcraft.ingot_thaumium": "Thaumium Ingot",
+  "item.thaumcraft.ingot_void": "Void Metal Ingot",
+  "item.thaumcraft.ingot_brass": "Alchemical Brass Ingot",
+  "item.thaumcraft.nugget_thaumium": "Thaumium Nugget",
+  "item.thaumcraft.nugget_void": "Void Metal Nugget",
+  "item.thaumcraft.nugget_brass": "Alchemical Brass Nugget",
+  "item.thaumcraft.nugget_quicksilver": "Quicksilver Drop"
+}

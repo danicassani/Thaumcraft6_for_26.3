@@ -20,7 +20,7 @@ public final class Thaumcraft {
         context.registerConfig(ModConfig.Type.CLIENT, ThaumcraftConfig.CLIENT, "thaumcraft-client.toml");
         context.registerConfig(ModConfig.Type.SERVER, ThaumcraftConfig.SERVER, "thaumcraft-server.toml");
         FMLCommonSetupEvent.getBus(modBus).addListener(event ->
-            LOGGER.info("Thaumcraft infrastructure initialized; legacy gameplay is not loaded"));
+            LOGGER.info("Thaumcraft initialized: basic ores, materials and storage blocks loaded"));
         PlayerWarpStore.registerEvents();
     }
 }

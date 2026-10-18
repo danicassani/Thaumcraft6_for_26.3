@@ -20,6 +20,7 @@ public final class Registrar {
     public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, Thaumcraft.MODID);
     private Registrar() {}
     public static void register(BusGroup modBus) {
+        thaumcraft.content.BasicContent.register(modBus);
         BLOCKS.register(modBus);
         ITEMS.register(modBus);
         ENTITIES.register(modBus);

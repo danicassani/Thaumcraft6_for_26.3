@@ -1,0 +1,20 @@
+{
+  "itemGroup.thaumcraft": "Thaumcraft",
+  "block.thaumcraft.ore_amber": "Mena de ámbar",
+  "block.thaumcraft.ore_cinnabar": "Mena de cinabrio",
+  "block.thaumcraft.ore_quartz": "Mena de cuarzo",
+  "block.thaumcraft.metal_thaumium": "Bloque de taumio",
+  "block.thaumcraft.metal_void": "Bloque de metal del vacío",
+  "block.thaumcraft.metal_brass": "Bloque de latón alquímico",
+  "block.thaumcraft.amber_block": "Bloque de ámbar",
+  "block.thaumcraft.amber_brick": "Ladrillos de ámbar",
+  "item.thaumcraft.amber": "Ámbar",
+  "item.thaumcraft.quicksilver": "Mercurio",
+  "item.thaumcraft.ingot_thaumium": "Lingote de taumio",
+  "item.thaumcraft.ingot_void": "Lingote de metal del vacío",
+  "item.thaumcraft.ingot_brass": "Lingote de latón alquímico",
+  "item.thaumcraft.nugget_thaumium": "Pepita de taumio",
+  "item.thaumcraft.nugget_void": "Pepita de metal del vacío",
+  "item.thaumcraft.nugget_brass": "Pepita de latón alquímico",
+  "item.thaumcraft.nugget_quicksilver": "Gota de mercurio"
+}

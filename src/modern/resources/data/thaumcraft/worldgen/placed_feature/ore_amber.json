@@ -1,0 +1,28 @@
+{
+  "feature": "thaumcraft:ore_amber",
+  "placement": [
+    {
+      "type": "thaumcraft:ore_count",
+      "count": 8,
+      "ore": "amber"
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "min_inclusive": {
+          "absolute": 0
+        },
+        "max_inclusive": {
+          "absolute": 96
+        }
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

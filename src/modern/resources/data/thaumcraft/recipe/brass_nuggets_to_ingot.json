@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": "thaumcraft:nugget_brass"
+  },
+  "result": {
+    "id": "thaumcraft:ingot_brass",
+    "count": 1
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "thaumcraft:metal_brass"
+  ],
+  "result": {
+    "id": "thaumcraft:ingot_brass",
+    "count": 9
+  }
+}
