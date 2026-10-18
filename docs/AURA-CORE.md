@@ -1,5 +1,9 @@
 # Núcleo de aura, vis y flux — port.5
 
+La ampliación de cristales y dispositivos de port.6 está en
+[M05-CRYSTALS-DEVICES.md](M05-CRYSTALS-DEVICES.md). La lista de pendientes de
+este documento describe el estado de port.5.
+
 Esta entrega implementa el núcleo de M05 y dos consumidores funcionales. M05
 sigue siendo parcial: no incluye todavía todos sus dispositivos ni los sistemas
 que dependen de él. Requiere el mismo JAR port.5 en cliente y servidor.

@@ -1,0 +1,56 @@
+{
+  "variants": {
+    "facing=down,powered=false": {
+      "model": "thaumcraft:block/vis_generator",
+      "x": 180
+    },
+    "facing=up,powered=false": {
+      "model": "thaumcraft:block/vis_generator"
+    },
+    "facing=north,powered=false": {
+      "model": "thaumcraft:block/vis_generator",
+      "x": 90
+    },
+    "facing=south,powered=false": {
+      "model": "thaumcraft:block/vis_generator",
+      "y": 180,
+      "x": 90
+    },
+    "facing=east,powered=false": {
+      "model": "thaumcraft:block/vis_generator",
+      "y": 90,
+      "x": 90
+    },
+    "facing=west,powered=false": {
+      "model": "thaumcraft:block/vis_generator",
+      "y": 270,
+      "x": 90
+    },
+    "facing=down,powered=true": {
+      "model": "thaumcraft:block/vis_generator",
+      "x": 180
+    },
+    "facing=up,powered=true": {
+      "model": "thaumcraft:block/vis_generator"
+    },
+    "facing=north,powered=true": {
+      "model": "thaumcraft:block/vis_generator",
+      "x": 90
+    },
+    "facing=south,powered=true": {
+      "model": "thaumcraft:block/vis_generator",
+      "y": 180,
+      "x": 90
+    },
+    "facing=east,powered=true": {
+      "model": "thaumcraft:block/vis_generator",
+      "y": 90,
+      "x": 90
+    },
+    "facing=west,powered=true": {
+      "model": "thaumcraft:block/vis_generator",
+      "y": 270,
+      "x": 90
+    }
+  }
+}

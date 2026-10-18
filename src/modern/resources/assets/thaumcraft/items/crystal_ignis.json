@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "thaumcraft:item/crystal_ignis",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": -42495
+      }
+    ]
+  }
+}

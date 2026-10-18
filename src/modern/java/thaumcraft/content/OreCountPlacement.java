@@ -16,7 +16,7 @@ import thaumcraft.config.ThaumcraftConfig;
 /** Apply the existing server generation toggles and ore density to new chunks. */
 public record OreCountPlacement(String ore, int attempts) implements RepeatingPlacement {
     public static final MapCodec<OreCountPlacement> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
-        Codec.stringResolver(s -> s, s -> switch (s) { case "amber", "cinnabar", "quartz" -> s; default -> null; })
+        Codec.stringResolver(s -> s, s -> switch (s) { case "amber", "cinnabar", "quartz", "crystals" -> s; default -> null; })
             .fieldOf("ore").forGetter(OreCountPlacement::ore),
         Codec.intRange(1, 64).fieldOf("count").forGetter(OreCountPlacement::attempts)
     ).apply(instance, OreCountPlacement::new));
@@ -32,6 +32,7 @@ public record OreCountPlacement(String ore, int attempts) implements RepeatingPl
             case "amber" -> ThaumcraftConfig.generateAmber.get();
             case "cinnabar" -> ThaumcraftConfig.generateCinnabar.get();
             case "quartz" -> ThaumcraftConfig.generateQuartz.get();
+            case "crystals" -> ThaumcraftConfig.generateCrystals.get();
             default -> false;
         };
         if (!enabled) return 0;

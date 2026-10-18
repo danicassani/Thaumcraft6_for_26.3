@@ -31,6 +31,8 @@
     "thaumcraft:pillar_eldritch",
     "thaumcraft:matrix_speed",
     "thaumcraft:matrix_cost",
-    "thaumcraft:activator_rail"
+    "thaumcraft:activator_rail",
+    "thaumcraft:dioptra",
+    "thaumcraft:recharge_pedestal"
   ]
 }

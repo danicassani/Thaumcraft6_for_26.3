@@ -50,7 +50,7 @@ Minecraft; los shaders y emisores artísticos originales de Thaumcraft aún no s
 han portado. Los tags de fuentes de calor y estabilizadores preparan los
 consumidores de crisol e infusión: esos sistemas todavía están pendientes.
 
-## Verificación
+## Verificación del lote base (port.4)
 
 Pruebas optativas con `-PbasicContentProbe=<mundo de prueba> runServer`:
 
@@ -63,7 +63,7 @@ Pruebas optativas con `-PbasicContentProbe=<mundo de prueba> runServer`:
 Las pruebas no se empaquetan en el JAR normal. Evidencias en work/, sin publicarlas
 junto a los artefactos. La compilación limpia y la compilación final pasan con
 Java 25 / Forge 66.0.13; WarpCodecTest conserva sus seis pruebas correctas.
-El JAR contiene 135 definiciones de item y 111 recetas.
+El JAR de port.4 contiene 135 definiciones de item y 111 recetas.
 Cliente normal: mundo integrado cargado, pilares completos con textura y
 rotación, velas de colores en creativo y vela roja colocada con llama e
 iluminación, nitor rojo con partículas y armadura completa de taumio equipada
@@ -84,9 +84,15 @@ de flux. El catálogo total de port.5 contiene 76 bloques y 61 objetos sin
 bloque (137 entradas creativas), con las 111 recetas anteriores. Los comandos de operador permiten consultar y añadir vis/flux durante
 las pruebas; el HUD del taumómetro depende de M04.
 
-El núcleo de M05 está implementado; sus cristales y dispositivos dependientes
-siguen pendientes. No se declara M05 completo ni se atribuyen funciones de aura
-al resonador de esencia, que se ha reclasificado en M08.
+La ampliación de [port.6](M05-CRYSTALS-DEVICES.md) incorpora siete cristales,
+37 variantes del objeto de esencia, césped ambiental, generador FE, dioptra y
+pedestal de recarga. El catálogo total alcanza 87 bloques, 62 objetos sin bloque
+(149 IDs de item y 185 entradas creativas al contar los aspectos), y 111 recetas.
+El núcleo y esos consumidores de M05 están implementados; el cargador de mesa
+requiere M06/M10 y el sifón de vacío requiere M13. El pedestal tiene el contrato
+y la mecánica de recarga; el equipo nativo que lo utiliza se portará en M10/M12.
+No se declara M05 completo ni se atribuyen funciones de aura al resonador de
+esencia, que se ha reclasificado en M08.
 
 ## Lo que sigue pendiente
 

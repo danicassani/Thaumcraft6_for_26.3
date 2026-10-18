@@ -24,6 +24,7 @@ import thaumcraft.Thaumcraft;
 
 /** First content slice. Legacy metadata materials receive separate stable item IDs. */
 public final class BasicContent {
+    private static final List<java.util.function.Supplier<ItemStack>> DISPLAY_STACKS = new ArrayList<>();
     private static final List<RegistryObject<? extends Item>> DISPLAY_ITEMS = new ArrayList<>();
     private static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Thaumcraft.MODID);
 
@@ -50,7 +51,7 @@ public final class BasicContent {
         CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.thaumcraft"))
             .icon(() -> new ItemStack(AMBER.get()))
-            .displayItems((parameters, output) -> DISPLAY_ITEMS.forEach(item -> output.accept(item.get())))
+            .displayItems((parameters, output) -> { DISPLAY_ITEMS.forEach(item -> output.accept(item.get())); DISPLAY_STACKS.forEach(stack -> output.accept(stack.get())); })
             .build());
 
     private BasicContent() {}
@@ -59,9 +60,13 @@ public final class BasicContent {
         SimpleContent.register(bus);
         LuminousContent.register();
         AuraContent.register();
+        thaumcraft.crystals.CrystalContent.register(bus);
+        thaumcraft.devices.DeviceContent.register(bus);
         TABS.register(bus);
         OreCountPlacement.register(bus);
     }
+
+    public static void displayStack(java.util.function.Supplier<ItemStack> stack) { DISPLAY_STACKS.add(stack); }
 
     public static void display(RegistryObject<? extends Item> item) { DISPLAY_ITEMS.add(item); }
 

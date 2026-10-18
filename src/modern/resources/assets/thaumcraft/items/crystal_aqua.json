@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "thaumcraft:item/crystal_aqua",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": -12790532
+      }
+    ]
+  }
+}

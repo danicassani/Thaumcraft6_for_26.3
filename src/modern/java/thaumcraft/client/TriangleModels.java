@@ -23,6 +23,7 @@ public final class TriangleModels {
 
     @SubscribeEvent public static void loaders(ModelEvent.RegisterGeometryLoaders event) {
         event.register(Identifier.fromNamespaceAndPath(Thaumcraft.MODID, "triangles"), (json, context) -> {
+            int tint = json.has("tint_index") ? json.get("tint_index").getAsInt() : -1;
             List<float[][]> faces = new ArrayList<>();
             for (var element : json.getAsJsonArray("triangles")) {
                 var triangle = element.getAsJsonArray();
@@ -41,7 +42,7 @@ public final class TriangleModels {
             return (slots, baker, state, name) -> {
                 var material = baker.materials().resolveSlot(slots, "texture", name);
                 var sprite = material.sprite();
-                var info = baker.interner().materialInfo(BakedQuad.MaterialInfo.of(material, sprite.transparency(), -1, null, 0));
+                var info = baker.interner().materialInfo(BakedQuad.MaterialInfo.of(material, sprite.transparency(), tint, null, 0));
                 var transform = state.transformation().blockCenterToCorner();
                 var quads = new QuadCollection.Builder();
                 for (var face : faces) {

@@ -3,7 +3,8 @@
 Fuente de todas las filas: `src/main/java/thaumcraft/common/config/ModConfig.java`.
 «Migrada (esquema)» significa definición TOML registrada, con valor por defecto conservado; sus mecánicas todavía no están conectadas. No significa que la opción ya altere el juego ni que sus mecánicas estén portadas. La generación y carga de ambos TOML sí se verificó en cliente/servidor.
 Los archivos .cfg antiguos no se importan automáticamente.
-Desde el [paso 3](PORT-STEP-3.md), las opciones de los tres minerales y su densidad están conectadas a la generación de chunks nuevos. Desde [port.5](AURA-CORE.md), `world.generateAura` controla la inicialización de nuevos registros de aura. Las demás filas marcadas como esquema conservan el estado anterior.
+Desde el [paso 3](PORT-STEP-3.md), las opciones de los tres minerales y su densidad están conectadas a la generación de chunks nuevos. Desde [port.6](M05-CRYSTALS-DEVICES.md), `world.generateCrystals` y `world.oreDensity` controlan los intentos de generación de cristales en chunks nuevos.
+Desde [port.5](AURA-CORE.md), `world.generateAura` controla la inicialización de nuevos registros de aura. Las demás filas marcadas como esquema conservan el estado anterior.
 
 | Clave antigua | Por defecto | Significado/comentario original | Destino | Estado |
 |---|---|---|---|---|
@@ -27,7 +28,7 @@ Desde el [paso 3](PORT-STEP-3.md), las opciones de los tres minerales y su densi
 | CONFIG_WORLD.generateCinnabar | `true` | Habilitar generación de mena de cinabrio | SERVER world.generateCinnabar | activa en chunks nuevos (paso 3) |
 | CONFIG_WORLD.generateAmber | `true` | Habilitar generación de mena de ámbar | SERVER world.generateAmber | activa en chunks nuevos (paso 3) |
 | CONFIG_WORLD.generateQuartz | `true` | Habilitar generación de mena de cuarzo | SERVER world.generateQuartz | activa en chunks nuevos (paso 3) |
-| CONFIG_WORLD.generateCrystals | `true` | Habilitar generación de cristales | SERVER world.generateCrystals | migrada (esquema) |
+| CONFIG_WORLD.generateCrystals | `true` | Habilitar generación de cristales | SERVER world.generateCrystals | conectada: cristales en chunks nuevos |
 | CONFIG_WORLD.generateTrees | `true` | Habilitar generación de árboles Thaumcraft | SERVER world.generateTrees | migrada (esquema) |
 | CONFIG_WORLD.regenKey | `"DEFAULT"` | This key is used to keep track of which chunk have been generated/regenerated. Changing it will cause the regeneration code to run again, so only change it if you want it to happen. Useful to regen only one world feature at a time. | SERVER world.regenKey | migrada (esquema) |
 | CONFIG_WORLD.regenAura | `false` | Regenerar aura de chunks marcados para regeneración | SERVER world.regenAura | migrada (esquema) |

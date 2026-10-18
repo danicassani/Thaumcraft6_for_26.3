@@ -22,13 +22,13 @@ Contenido: `tableWood`, `tableStone`, `pedestalArcane`, `pedestalAncient`, `pede
 
 ## M04: Aspectos, investigación, escaneo y progreso
 
-**Estado:** pendiente.
+**Estado:** los datos y el objeto de cristales de esencia (37 aspectos) están portados en M05; investigación, escaneo, asignación/combinación de aspectos y progresión siguen pendientes.
 
 Contenido: `researchTable`, `thaumonomicon`, `curio`, `primordialPearl`, `celestialNotes`, `salisMundus`, `crystalEssence`, `scribingTools`, `thaumometer`.
 
 ## M05: Aura, vis y flux por chunk y sincronización
 
-**Estado:** núcleo implementado y verificado: estado por chunk, ciclo lunar, difusión, guardado por dimensión y reinicio, sincronización al cliente, batería de vis y esponja creativa; cristales y demás consumidores pendientes (AURA-CORE.md).
+**Estado:** núcleo, siete cristales (crecimiento/drops/generación), césped ambiental, generador FE, dioptra y pedestal de recarga implementados y verificados en servidor, reinicio y cliente; cargador de mesa pendiente de M06/M10 y sifón de vacío pendiente de M13 (M05-CRYSTALS-DEVICES.md).
 
 Contenido: `crystalAir`, `crystalFire`, `crystalWater`, `crystalEarth`, `crystalOrder`, `crystalEntropy`, `crystalTaint`, `grassAmbient`, `visBattery`, `arcaneWorkbenchCharger`, `dioptra`, `rechargePedestal`, `visGenerator`, `voidSiphon`, `creativeFluxSponge`.
 

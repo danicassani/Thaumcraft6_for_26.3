@@ -25,7 +25,7 @@ public final class SimplePlantBlock extends VegetationBlock {
     }
     @Override protected boolean mayPlaceOn(BlockState s, BlockGetter l, BlockPos p) {
         if (name.equals("cinderpearl")) return s.is(BlockTags.SAND) || s.is(BlockTags.TERRACOTTA) || s.is(Blocks.DIRT);
-        return s.is(Blocks.GRASS_BLOCK) || s.is(Blocks.DIRT) || s.is(Blocks.FARMLAND);
+        return s.getBlock() instanceof GrassBlock || s.is(Blocks.DIRT) || s.is(Blocks.FARMLAND);
     }
     @Override protected boolean canSurvive(BlockState s, LevelReader l, BlockPos p) { return mayPlaceOn(l.getBlockState(p.below()), l, p.below()); }
     @Override protected VoxelShape getShape(BlockState s, BlockGetter l, BlockPos p, CollisionContext c) { return Block.box(2, 0, 2, 14, 12, 14); }

@@ -1,4 +1,5 @@
 {
   "M02": "iluminación, soporte, drops y recoloreado implementados y probados; el consumidor de estabilidad de infusión se implementará en M09",
-  "M05": "núcleo implementado y verificado: estado por chunk, ciclo lunar, difusión, guardado por dimensión y reinicio, sincronización al cliente, batería de vis y esponja creativa; cristales y demás consumidores pendientes (AURA-CORE.md)"
+  "M05": "núcleo, siete cristales (crecimiento/drops/generación), césped ambiental, generador FE, dioptra y pedestal de recarga implementados y verificados en servidor, reinicio y cliente; cargador de mesa pendiente de M06/M10 y sifón de vacío pendiente de M13 (M05-CRYSTALS-DEVICES.md)",
+  "M04": "los datos y el objeto de cristales de esencia (37 aspectos) están portados en M05; investigación, escaneo, asignación/combinación de aspectos y progresión siguen pendientes"
 }

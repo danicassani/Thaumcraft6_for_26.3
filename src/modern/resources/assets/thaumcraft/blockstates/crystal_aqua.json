@@ -1,0 +1,996 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "down": "true",
+        "size": "0"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s0_v0"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v1"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v2"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v3"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v4"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v5"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v6"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v7"
+        }
+      ]
+    },
+    {
+      "when": {
+        "down": "true",
+        "size": "1"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s1_v0"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v1"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v2"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v3"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v4"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v5"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v6"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v7"
+        }
+      ]
+    },
+    {
+      "when": {
+        "down": "true",
+        "size": "2"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s2_v0"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v1"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v2"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v3"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v4"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v5"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v6"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v7"
+        }
+      ]
+    },
+    {
+      "when": {
+        "down": "true",
+        "size": "3"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s3_v0"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v1"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v2"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v3"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v4"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v5"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v6"
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v7"
+        }
+      ]
+    },
+    {
+      "when": {
+        "up": "true",
+        "size": "0"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s0_v0",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v1",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v2",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v3",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v4",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v5",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v6",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v7",
+          "x": 180
+        }
+      ]
+    },
+    {
+      "when": {
+        "up": "true",
+        "size": "1"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s1_v0",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v1",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v2",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v3",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v4",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v5",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v6",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v7",
+          "x": 180
+        }
+      ]
+    },
+    {
+      "when": {
+        "up": "true",
+        "size": "2"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s2_v0",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v1",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v2",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v3",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v4",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v5",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v6",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v7",
+          "x": 180
+        }
+      ]
+    },
+    {
+      "when": {
+        "up": "true",
+        "size": "3"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s3_v0",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v1",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v2",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v3",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v4",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v5",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v6",
+          "x": 180
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v7",
+          "x": 180
+        }
+      ]
+    },
+    {
+      "when": {
+        "north": "true",
+        "size": "0"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s0_v0",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v1",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v2",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v3",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v4",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v5",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v6",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v7",
+          "x": 270
+        }
+      ]
+    },
+    {
+      "when": {
+        "north": "true",
+        "size": "1"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s1_v0",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v1",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v2",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v3",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v4",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v5",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v6",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v7",
+          "x": 270
+        }
+      ]
+    },
+    {
+      "when": {
+        "north": "true",
+        "size": "2"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s2_v0",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v1",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v2",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v3",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v4",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v5",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v6",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v7",
+          "x": 270
+        }
+      ]
+    },
+    {
+      "when": {
+        "north": "true",
+        "size": "3"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s3_v0",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v1",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v2",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v3",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v4",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v5",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v6",
+          "x": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v7",
+          "x": 270
+        }
+      ]
+    },
+    {
+      "when": {
+        "south": "true",
+        "size": "0"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s0_v0",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v1",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v2",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v3",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v4",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v5",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v6",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v7",
+          "x": 90
+        }
+      ]
+    },
+    {
+      "when": {
+        "south": "true",
+        "size": "1"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s1_v0",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v1",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v2",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v3",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v4",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v5",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v6",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v7",
+          "x": 90
+        }
+      ]
+    },
+    {
+      "when": {
+        "south": "true",
+        "size": "2"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s2_v0",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v1",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v2",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v3",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v4",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v5",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v6",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v7",
+          "x": 90
+        }
+      ]
+    },
+    {
+      "when": {
+        "south": "true",
+        "size": "3"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s3_v0",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v1",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v2",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v3",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v4",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v5",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v6",
+          "x": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v7",
+          "x": 90
+        }
+      ]
+    },
+    {
+      "when": {
+        "west": "true",
+        "size": "0"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s0_v0",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v1",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v2",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v3",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v4",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v5",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v6",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v7",
+          "x": 90,
+          "y": 90
+        }
+      ]
+    },
+    {
+      "when": {
+        "west": "true",
+        "size": "1"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s1_v0",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v1",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v2",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v3",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v4",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v5",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v6",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v7",
+          "x": 90,
+          "y": 90
+        }
+      ]
+    },
+    {
+      "when": {
+        "west": "true",
+        "size": "2"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s2_v0",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v1",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v2",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v3",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v4",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v5",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v6",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v7",
+          "x": 90,
+          "y": 90
+        }
+      ]
+    },
+    {
+      "when": {
+        "west": "true",
+        "size": "3"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s3_v0",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v1",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v2",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v3",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v4",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v5",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v6",
+          "x": 90,
+          "y": 90
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v7",
+          "x": 90,
+          "y": 90
+        }
+      ]
+    },
+    {
+      "when": {
+        "east": "true",
+        "size": "0"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s0_v0",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v1",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v2",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v3",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v4",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v5",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v6",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s0_v7",
+          "x": 90,
+          "y": 270
+        }
+      ]
+    },
+    {
+      "when": {
+        "east": "true",
+        "size": "1"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s1_v0",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v1",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v2",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v3",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v4",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v5",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v6",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s1_v7",
+          "x": 90,
+          "y": 270
+        }
+      ]
+    },
+    {
+      "when": {
+        "east": "true",
+        "size": "2"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s2_v0",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v1",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v2",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v3",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v4",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v5",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v6",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s2_v7",
+          "x": 90,
+          "y": 270
+        }
+      ]
+    },
+    {
+      "when": {
+        "east": "true",
+        "size": "3"
+      },
+      "apply": [
+        {
+          "model": "thaumcraft:block/crystal_s3_v0",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v1",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v2",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v3",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v4",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v5",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v6",
+          "x": 90,
+          "y": 270
+        },
+        {
+          "model": "thaumcraft:block/crystal_s3_v7",
+          "x": 90,
+          "y": 270
+        }
+      ]
+    }
+  ]
+}
