@@ -1,0 +1,26 @@
+{
+  "type": "thaumcraft:arcane",
+  "research": "ESSENTIASMELTER@2",
+  "vis": 50,
+  "crystals": {
+    "ignis": 1
+  },
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "BCB",
+      "SFS",
+      "SSS"
+    ],
+    "key": {
+      "B": "thaumcraft:plate_brass",
+      "C": "thaumcraft:crucible",
+      "S": "#minecraft:stone_crafting_materials",
+      "F": "minecraft:furnace"
+    },
+    "result": {
+      "id": "thaumcraft:smelter_basic",
+      "count": 1
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "thaumcraft:crucible",
+  "research": "BASEALCHEMY",
+  "catalyst": "thaumcraft:nugget_quartz",
+  "aspects": {
+    "potentia": 2
+  },
+  "result": {
+    "id": "thaumcraft:crystal_essence",
+    "count": 1,
+    "components": {
+      "thaumcraft:crystal_aspect": "potentia",
+      "minecraft:item_name": {
+        "translate": "item.thaumcraft.crystal_essence.potentia"
+      }
+    }
+  }
+}

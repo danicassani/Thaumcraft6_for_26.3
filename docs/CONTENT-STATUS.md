@@ -123,3 +123,10 @@ Se añaden mesa de madera, mesa de investigación, herramientas de escritura con
 recarga y notas celestes de trece variantes. Total: 92 bloques, 67 objetos sin
 bloque, 159 IDs de item, 207 entradas creativas y 124 recetas. Véase
 [THEORY-CELESTIAL.md](THEORY-CELESTIAL.md) para las 27 cartas y sus límites.
+
+## port.10: consumidores antes de cartas
+
+Árboles, crisol, horno básico, alambiques, frascos, tarros y alumentum tienen
+comportamiento nativo. Total: 101 bloques, 69 objetos sin bloque, 170 IDs de item,
+255 entradas creativas y 186 recetas. El mazo conserva 27 cartas. Véase
+[ALCHEMY-ESSENTIA.md](ALCHEMY-ESSENTIA.md) para recetas y límites reales.

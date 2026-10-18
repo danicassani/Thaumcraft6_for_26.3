@@ -285,6 +285,10 @@
       "potentia": 10,
       "ignis": 10
     },
+    "minecraft:charcoal": {
+      "potentia": 10,
+      "ignis": 10
+    },
     "minecraft:redstone": {
       "potentia": 10
     },
@@ -449,6 +453,10 @@
       "tenebrae": 2,
       "ignis": 2
     },
+    "minecraft:wheat": {
+      "herba": 5,
+      "victus": 5
+    },
     "minecraft:apple": {
       "herba": 5,
       "victus": 5
@@ -561,10 +569,19 @@
       "mortuus": 5,
       "victus": 5
     },
+    "minecraft:egg": {
+      "victus": 5,
+      "bestia": 5
+    },
     "minecraft:spider_eye": {
       "sensus": 5,
       "bestia": 5,
       "mortuus": 5
+    },
+    "minecraft:gunpowder": {
+      "ignis": 10,
+      "perditio": 10,
+      "alkimia": 5
     },
     "minecraft:cod": {
       "bestia": 5,
@@ -722,9 +739,24 @@
       "vinculum": 5
     },
     "minecraft:ink_sac": {
+      "aqua": 2,
+      "bestia": 2
+    },
+    "minecraft:cocoa_beans": {
+      "desiderium": 2,
+      "potentia": 2
+    },
+    "minecraft:lapis_lazuli": {
+      "terra": 2,
+      "desiderium": 2
+    },
+    "minecraft:bone_meal": {
       "victus": 2,
       "mortuus": 1,
       "herba": 1
+    },
+    "thaumcraft:phial": {
+      "vacuos": 3
     },
     "thaumcraft:triple_meat_treat": {
       "victus": 10,
@@ -764,6 +796,20 @@
     },
     "thaumcraft:log_silverwood": {
       "herba": 20,
+      "auram": 5
+    },
+    "thaumcraft:leaves_greatwood": {
+      "herba": 5
+    },
+    "thaumcraft:leaves_silverwood": {
+      "herba": 5
+    },
+    "thaumcraft:sapling_greatwood": {
+      "herba": 15,
+      "victus": 5
+    },
+    "thaumcraft:sapling_silverwood": {
+      "herba": 15,
       "auram": 5
     },
     "thaumcraft:shimmerleaf": {

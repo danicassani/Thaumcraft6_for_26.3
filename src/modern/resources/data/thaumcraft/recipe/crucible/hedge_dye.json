@@ -1,0 +1,13 @@
+{
+  "type": "thaumcraft:crucible",
+  "research": "HEDGEALCHEMY@2",
+  "catalyst": "minecraft:ink_sac",
+  "aspects": {
+    "aqua": 2,
+    "bestia": 2
+  },
+  "result": {
+    "id": "minecraft:ink_sac",
+    "count": 2
+  }
+}

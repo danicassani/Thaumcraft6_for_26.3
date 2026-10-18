@@ -17,7 +17,7 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 public final class ScanningService {
     private ScanningService(){}
-    public static boolean observe(Player player,ItemStack stack){return observe(player,false,ResearchCatalog.proof(stack),BuiltInRegistries.ITEM.getKey(stack.getItem()).toString(),AspectCatalog.item(stack));}
+    public static boolean observe(Player player,ItemStack stack){return observe(player,false,ResearchCatalog.proof(stack),BuiltInRegistries.ITEM.getKey(stack.getItem()).toString(),player.level() instanceof ServerLevel server?thaumcraft.alchemy.AspectResolver.item(server,stack):AspectCatalog.item(stack));}
     public static boolean observe(Player player,Entity entity){if(entity instanceof ItemEntity item)return observe(player,item.getItem());var key=BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString();return observe(player,true,key,key,AspectCatalog.entity(entity));}
     private static boolean observe(Player player,boolean entity,String identity,String id,Map<String,Integer> aspects){
         if(!(player.level() instanceof ServerLevel))return false;

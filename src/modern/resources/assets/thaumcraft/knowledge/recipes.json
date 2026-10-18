@@ -1,4 +1,15 @@
 {
+  "thaumcraft:alembic": [
+    "[WFW]",
+    "[SBS]",
+    "[WFW]",
+    "W = thaumcraft:plank_greatwood",
+    "F = thaumcraft:filter",
+    "S = thaumcraft:plate_brass",
+    "B = minecraft:bucket",
+    "Vis: 50",
+    "aqua: 1"
+  ],
   "thaumcraft:dioptra": [
     "[APA]",
     "[IGI]",
@@ -18,6 +29,26 @@
     "S = minecraft:string",
     "C = #minecraft:wool",
     "Vis: 5"
+  ],
+  "thaumcraft:filter": [
+    "[GWG]",
+    "G = minecraft:gold_ingot",
+    "W = thaumcraft:plank_silverwood",
+    "Vis: 15",
+    "aqua: 1"
+  ],
+  "thaumcraft:jar_normal": [
+    "[GWG]",
+    "[G G]",
+    "[GGG]",
+    "G = minecraft:glass_pane",
+    "W = #minecraft:wooden_slabs",
+    "Vis: 5"
+  ],
+  "thaumcraft:jar_void": [
+    "One warded jar; preserves stored essentia.",
+    "Vis: 50",
+    "perditio: 1"
   ],
   "thaumcraft:mechanism_complex": [
     "[ M ]",
@@ -52,6 +83,17 @@
     "Vis: 100",
     "aer: 1",
     "ordo: 1"
+  ],
+  "thaumcraft:smelter_basic": [
+    "[BCB]",
+    "[SFS]",
+    "[SSS]",
+    "B = thaumcraft:plate_brass",
+    "C = thaumcraft:crucible",
+    "S = #minecraft:stone_crafting_materials",
+    "F = minecraft:furnace",
+    "Vis: 50",
+    "ignis: 1"
   ],
   "thaumcraft:thaumometer": [
     "[ I ]",
@@ -100,7 +142,8 @@
   ],
   "thaumcraft:salismundusfake": [
     "3 different aspect crystals + redstone + bowl + flint",
-    "Bowl and flint are returned."
+    "Bowl and flint are returned.",
+    "Cauldron + Salis Mundus -> crucible (UNLOCKALCHEMY@2)."
   ],
   "thaumcraft:tablewood": [
     "SSS / W W",
@@ -110,5 +153,376 @@
   "thaumcraft:inkwell": [
     "Glass bottle + feather + black dye",
     "Refill a used tool with black dye."
+  ],
+  "thaumcraft:vis_crystal_vitium": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: vitium 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_ignis": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: ignis 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:metal_purification_iron": [
+    "Crucible: thaumcraft:cluster_iron x1",
+    "Catalyst: minecraft:iron_ore",
+    "Aspects: metallum 5, ordo 5",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:hedge_dye": [
+    "Crucible: minecraft:ink_sac x2",
+    "Catalyst: minecraft:ink_sac",
+    "Aspects: aqua 2, bestia 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_praemunio": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: praemunio 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_instrumentum": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: instrumentum 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:voidingot": [
+    "Crucible: thaumcraft:ingot_void x1",
+    "Catalyst: thaumcraft:void_seed",
+    "Aspects: metallum 10, vitium 5",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:hedge_web": [
+    "Crucible: minecraft:cobweb x1",
+    "Catalyst: minecraft:string",
+    "Aspects: vinculum 5",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:brassingot": [
+    "Crucible: thaumcraft:ingot_brass x1",
+    "Catalyst: minecraft:iron_ingot",
+    "Aspects: instrumentum 5",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_aqua": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: aqua 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:hedge_lava": [
+    "Crucible: minecraft:lava_bucket x1",
+    "Catalyst: minecraft:bucket",
+    "Aspects: ignis 15, terra 5",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_herba": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: herba 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_exanimis": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: exanimis 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:hedge_leather": [
+    "Crucible: minecraft:leather x1",
+    "Catalyst: minecraft:rotten_flesh",
+    "Aspects: aer 3, bestia 3",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:metal_purification_cinnabar": [
+    "Crucible: thaumcraft:cluster_cinnabar x1",
+    "Catalyst: thaumcraft:ore_cinnabar",
+    "Aspects: metallum 5, ordo 5",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_mortuus": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: mortuus 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_bestia": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: bestia 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_aversio": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: aversio 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_desiderium": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: desiderium 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_vacuos": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: vacuos 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:hedge_glowstone": [
+    "Crucible: minecraft:glowstone_dust x2",
+    "Catalyst: minecraft:glowstone_dust",
+    "Aspects: sensus 5, lux 10",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:hedge_slime": [
+    "Crucible: minecraft:slime_ball x2",
+    "Catalyst: minecraft:slime_ball",
+    "Aspects: aqua 5, victus 5, alkimia 1",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:hedge_gunpowder": [
+    "Crucible: minecraft:gunpowder x2",
+    "Catalyst: minecraft:gunpowder",
+    "Aspects: ignis 10, perditio 10, alkimia 5",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:hedge_tallow": [
+    "Crucible: thaumcraft:tallow x1",
+    "Catalyst: minecraft:rotten_flesh",
+    "Aspects: ignis 1",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_perditio": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: perditio 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_alkimia": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: alkimia 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_tenebrae": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: tenebrae 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_alienis": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: alienis 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_aer": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: aer 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_volatus": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: volatus 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_permutatio": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: permutatio 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_sensus": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: sensus 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_metallum": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: metallum 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:hedge_string": [
+    "Crucible: minecraft:string x1",
+    "Catalyst: minecraft:wheat",
+    "Aspects: bestia 5, fabrico 1",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:metal_purification_gold": [
+    "Crucible: thaumcraft:cluster_gold x1",
+    "Catalyst: minecraft:gold_ore",
+    "Aspects: metallum 5, ordo 5",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:alumentum": [
+    "Crucible: thaumcraft:alumentum x1",
+    "Catalyst: ['minecraft:coal', 'minecraft:charcoal']",
+    "Aspects: potentia 10, ignis 10, perditio 5",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_potentia": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: potentia 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_gelum": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: gelum 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_victus": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: victus 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:nitor": [
+    "Crucible: thaumcraft:nitor_yellow x1",
+    "Catalyst: minecraft:glowstone_dust",
+    "Aspects: potentia 10, ignis 10, lux 10",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_machina": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: machina 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_spiritus": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: spiritus 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:hedge_clay": [
+    "Crucible: minecraft:clay_ball x1",
+    "Catalyst: minecraft:dirt",
+    "Aspects: aqua 5",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_cognitio": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: cognitio 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:thaumiumingot": [
+    "Crucible: thaumcraft:ingot_thaumium x1",
+    "Catalyst: minecraft:iron_ingot",
+    "Aspects: praecantatio 5, terra 5",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_vitreus": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: vitreus 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_vinculum": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: vinculum 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_humanus": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: humanus 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_motus": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: motus 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_praecantatio": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: praecantatio 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_terra": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: terra 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_fabrico": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: fabrico 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_lux": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: lux 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_auram": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: auram 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:vis_crystal_ordo": [
+    "Crucible: thaumcraft:crystal_essence x1",
+    "Catalyst: thaumcraft:nugget_quartz",
+    "Aspects: ordo 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:Filter": [
+    "GWG",
+    "G: minecraft:gold_ingot",
+    "W: thaumcraft:plank_silverwood",
+    "Vis 15; {'aqua': 1}"
+  ],
+  "thaumcraft:Alembic": [
+    "WFW / SBS / WFW",
+    "W: thaumcraft:plank_greatwood",
+    "F: thaumcraft:filter",
+    "S: thaumcraft:plate_brass",
+    "B: minecraft:bucket",
+    "Vis 50; {'aqua': 1}"
+  ],
+  "thaumcraft:EssentiaSmelter": [
+    "BCB / SFS / SSS",
+    "B: thaumcraft:plate_brass",
+    "C: thaumcraft:crucible",
+    "S: #minecraft:stone_crafting_materials",
+    "F: minecraft:furnace",
+    "Vis 50; {'ignis': 1}"
+  ],
+  "thaumcraft:WardedJar": [
+    "GWG / G G / GGG",
+    "G: minecraft:glass_pane",
+    "W: #minecraft:wooden_slabs",
+    "Vis 5; {}"
+  ],
+  "thaumcraft:phial": [
+    " C / G G / G",
+    "C: clay ball; G: glass",
+    "Produces 8 empty phials."
+  ],
+  "thaumcraft:viscrystalgroup": [
+    "2 units of any aspect + quartz sliver -> one vis crystal",
+    "37 aspect recipes; 50 mB water per craft."
+  ],
+  "thaumcraft:JarVoid": [
+    "Upgrade one warded jar; all essence is preserved.",
+    "50 vis; 1 perditio crystal."
   ]
 }

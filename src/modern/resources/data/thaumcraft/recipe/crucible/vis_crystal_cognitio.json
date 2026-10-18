@@ -1,0 +1,18 @@
+{
+  "type": "thaumcraft:crucible",
+  "research": "BASEALCHEMY",
+  "catalyst": "thaumcraft:nugget_quartz",
+  "aspects": {
+    "cognitio": 2
+  },
+  "result": {
+    "id": "thaumcraft:crystal_essence",
+    "count": 1,
+    "components": {
+      "thaumcraft:crystal_aspect": "cognitio",
+      "minecraft:item_name": {
+        "translate": "item.thaumcraft.crystal_essence.cognitio"
+      }
+    }
+  }
+}

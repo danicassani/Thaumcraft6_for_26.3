@@ -1569,7 +1569,7 @@
         ],
         "required_craft": [
           {
-            "id": "unavailable:thaumcraft:smelter_basic",
+            "id": "thaumcraft:smelter_basic",
             "count": 1,
             "legacy": "thaumcraft:smelter_basic"
           }
@@ -1896,7 +1896,7 @@
         ],
         "required_item": [
           {
-            "id": "unavailable:thaumcraft:phial",
+            "id": "thaumcraft:phial",
             "count": 1,
             "aspect": "vitium",
             "legacy": "thaumcraft:phial;1;1;{Aspects:[{amount:10,key:'vitium'}]}"
@@ -3008,7 +3008,7 @@
             "legacy": "thaumcraft:tallow"
           },
           {
-            "id": "unavailable:thaumcraft:leather",
+            "id": "minecraft:leather",
             "count": 1,
             "legacy": "thaumcraft:leather"
           }
@@ -3330,7 +3330,7 @@
             "legacy": "minecraft:feather"
           },
           {
-            "id": "unavailable:thaumcraft:phial",
+            "id": "thaumcraft:phial",
             "count": 1,
             "aspect": "aer",
             "legacy": "thaumcraft:phial;1;1;{Aspects:[{amount:10,key:'aer'}]}"
@@ -3573,7 +3573,7 @@
             "legacy": "minecraft:redstone"
           },
           {
-            "id": "unavailable:thaumcraft:phial",
+            "id": "thaumcraft:phial",
             "count": 1,
             "aspect": "vitium",
             "legacy": "thaumcraft:phial;1;1;{Aspects:[{amount:10,key:'vitium'}]}"
@@ -3735,7 +3735,7 @@
         ],
         "required_item": [
           {
-            "id": "minecraft:ink_sac",
+            "id": "minecraft:bone_meal",
             "count": 1,
             "legacy": "minecraft:dye;1;15"
           }
@@ -5299,25 +5299,25 @@
         ],
         "required_item": [
           {
-            "id": "unavailable:thaumcraft:phial",
+            "id": "thaumcraft:phial",
             "count": 1,
             "aspect": "vitium",
             "legacy": "thaumcraft:phial;1;1;{Aspects:[{amount:10,key:'vitium'}]}"
           },
           {
-            "id": "unavailable:thaumcraft:phial",
+            "id": "thaumcraft:phial",
             "count": 1,
             "aspect": "vinculum",
             "legacy": "thaumcraft:phial;1;1;{Aspects:[{amount:10,key:'vinculum'}]}"
           },
           {
-            "id": "unavailable:thaumcraft:phial",
+            "id": "thaumcraft:phial",
             "count": 1,
             "aspect": "alienis",
             "legacy": "thaumcraft:phial;1;1;{Aspects:[{amount:10,key:'alienis'}]}"
           },
           {
-            "id": "unavailable:thaumcraft:phial",
+            "id": "thaumcraft:phial",
             "count": 1,
             "aspect": "alkimia",
             "legacy": "thaumcraft:phial;1;1;{Aspects:[{amount:10,key:'alkimia'}]}"
@@ -5374,7 +5374,7 @@
         "text": "research.UNLOCKALCHEMY.stage.2",
         "required_craft": [
           {
-            "id": "unavailable:thaumcraft:crucible",
+            "id": "thaumcraft:crucible",
             "count": 1,
             "legacy": "thaumcraft:crucible"
           }
@@ -5385,7 +5385,7 @@
         "text": "research.UNLOCKALCHEMY.stage.3",
         "required_craft": [
           {
-            "id": "unavailable:thaumcraft:nitor",
+            "id": "thaumcraft:nitor_yellow",
             "count": 1,
             "legacy": "thaumcraft:nitor;1;4"
           }

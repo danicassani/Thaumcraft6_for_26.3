@@ -86,3 +86,10 @@ continúan pendientes; véase [ARCANE-RIFTS.md](ARCANE-RIFTS.md).
 `wussMode` evita el warp concedido por etapas de investigación; los demás efectos
 de warp/taint siguen pendientes. `allowCheatSheet` continúa sin consumidor.
 Véase [RESEARCH-SCANNING.md](RESEARCH-SCANNING.md).
+
+## Consumidores de port.10
+
+`SERVER world.generateTrees` controla la nueva generación básica de greatwood y
+silverwood en bosques. No bloquea el crecimiento de saplings plantados. La
+recuperación de vis de sus hojas usa el aura existente; véase
+[ALCHEMY-ESSENTIA.md](ALCHEMY-ESSENTIA.md).

@@ -1,0 +1,11 @@
+{
+  "type": "thaumcraft:arcane",
+  "research": "WARDEDJARS",
+  "vis": 50,
+  "crystals": {
+    "perditio": 1
+  },
+  "recipe": {
+    "type": "thaumcraft:jar_void_upgrade"
+  }
+}

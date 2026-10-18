@@ -120,3 +120,10 @@ generadores de conocimiento y teorías son idempotentes al ejecutarlos en orden.
 La compilación limpia terminó correctamente con 28 pruebas y cero fallos.
 El JAR normal contiene 92 bloques, 159 IDs de item y 124 recetas y excluye los
 fixtures de integración.
+
+## Prioridad posterior
+
+Por indicación del usuario, se implementan primero los consumidores y después
+las cartas pendientes. [ALCHEMY-ESSENTIA.md](ALCHEMY-ESSENTIA.md) corrige además
+las dependencias de Channel, Infuse y Sculpting; no todas necesitan la máquina
+que su nombre podría sugerir. El mazo de port.10 permanece en 27 cartas.

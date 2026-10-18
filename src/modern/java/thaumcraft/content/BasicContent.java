@@ -66,6 +66,8 @@ public final class BasicContent {
         thaumcraft.rifts.RiftContent.register();
         thaumcraft.research.ResearchContent.register(bus);
         thaumcraft.theory.TheoryContent.register(bus);
+        thaumcraft.alchemy.AlchemyContent.register(bus);
+        thaumcraft.trees.TreeContent.register(bus);
         TABS.register(bus);
         OreCountPlacement.register(bus);
     }

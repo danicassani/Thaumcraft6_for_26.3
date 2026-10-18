@@ -14,7 +14,7 @@ public final class AspectCatalog {
     private AspectCatalog(){}
     private static Map<String,Integer> values(JsonObject object){var result=new LinkedHashMap<String,Integer>();object.entrySet().forEach(e->result.put(e.getKey(),e.getValue().getAsInt()));return Map.copyOf(result);}
     public static Map<String,Integer> item(ItemStack stack){
-        if(stack.isEmpty())return Map.of();if(stack.is(CrystalContent.ESSENCE.get()))return Map.of(CrystalContent.aspect(stack),1);
+        if(stack.isEmpty())return Map.of();if(stack.is(thaumcraft.alchemy.AlchemyContent.PHIAL.get())&&thaumcraft.alchemy.AlchemyContent.amount(stack)==10&&!thaumcraft.alchemy.AlchemyContent.aspect(stack).isEmpty())return Map.of(thaumcraft.alchemy.AlchemyContent.aspect(stack),10);if(stack.is(CrystalContent.ESSENCE.get()))return Map.of(CrystalContent.aspect(stack),1);
         var definitions=DATA.getAsJsonObject("items");String id=BuiltInRegistries.ITEM.getKey(stack.getItem()).toString();
         if(definitions.has(id))return values(definitions.getAsJsonObject(id));
         Map<String,Integer> result=Map.of();

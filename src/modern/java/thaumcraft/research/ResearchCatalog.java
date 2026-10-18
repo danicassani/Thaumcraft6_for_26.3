@@ -59,5 +59,5 @@ public final class ResearchCatalog {
         if(parts.length==2){try{return stage>=Integer.parseInt(parts[1])&&stage>0;}catch(NumberFormatException ex){return false;}}
         return parts.length==1&&stage>entry.stages.size();
     }
-    public static String proof(ItemStack stack){var key=BuiltInRegistries.ITEM.getKey(stack.getItem()).toString();if(stack.is(thaumcraft.theory.TheoryContent.CELESTIAL.get()))return key+"/"+thaumcraft.theory.TheoryContent.variant(stack);return key+(stack.is(CrystalContent.ESSENCE.get())?"/"+CrystalContent.aspect(stack):"");}
+    public static String proof(ItemStack stack){var key=BuiltInRegistries.ITEM.getKey(stack.getItem()).toString();if(stack.is(thaumcraft.alchemy.AlchemyContent.PHIAL.get()))return key+(thaumcraft.alchemy.AlchemyContent.aspect(stack).isEmpty()?"":"/"+thaumcraft.alchemy.AlchemyContent.aspect(stack));if(stack.is(thaumcraft.theory.TheoryContent.CELESTIAL.get()))return key+"/"+thaumcraft.theory.TheoryContent.variant(stack);return key+(stack.is(CrystalContent.ESSENCE.get())?"/"+CrystalContent.aspect(stack):"");}
 }

@@ -30,7 +30,7 @@ def aspects(text):
 
 simple = json.loads((ROOT / 'tools/simple_content.json').read_text())
 fields = {v['legacy_field']: v['id'] for group in simple.values() if isinstance(group, list) for v in group if isinstance(v, dict) and v.get('legacy_field')}
-fields.update({'scribingTools':'scribing_tools','researchTable':'research_table','tableWood':'table_wood','celestialNotes':'celestial_notes','thaumonomicon': 'thaumonomicon', 'thaumometer': 'thaumometer', 'salisMundus': 'salis_mundus',
+fields.update({'saplingGreatwood':'sapling_greatwood','saplingSilverwood':'sapling_silverwood','leafGreatwood':'leaves_greatwood','leafSilverwood':'leaves_silverwood','crucible':'crucible','smelterBasic':'smelter_basic','alembic':'alembic','jarNormal':'jar_normal','jarVoid':'jar_void','phial':'phial','alumentum':'alumentum','scribingTools':'scribing_tools','researchTable':'research_table','tableWood':'table_wood','celestialNotes':'celestial_notes','thaumonomicon': 'thaumonomicon', 'thaumometer': 'thaumometer', 'salisMundus': 'salis_mundus',
                'arcaneWorkbench': 'arcane_workbench', 'arcaneWorkbenchCharger': 'arcane_workbench_charger',
                'visGenerator': 'vis_generator', 'rechargePedestal': 'recharge_pedestal', 'dioptra': 'dioptra',
                'voidSiphon': 'void_siphon', 'oreAmber': 'ore_amber', 'oreCinnabar': 'ore_cinnabar', 'oreQuartz': 'ore_quartz',
@@ -55,6 +55,8 @@ renames = {'grass':'grass_block','grass_path':'dirt_path','web':'cobweb','lit_re
 
 def modern_item(namespace, name, meta=0):
     if namespace == 'thaumcraft':
+        if name == 'leather': return 'minecraft:leather'
+        if name == 'nitor': name='nitor_'+['white','orange','magenta','lightblue','yellow','lime','pink','gray','silver','cyan','purple','blue','brown','green','red','black'][meta] if meta<16 else name
         if name in ['ingot','ingots']: name = ['ingot_thaumium','ingot_void','ingot_brass'][meta] if meta < 3 else name
         else: name = fields.get(name, re.sub(r'(?<!^)(?=[A-Z])', '_', name).lower())
         if name == 'arcane_stone': name = 'stone_arcane'
@@ -62,6 +64,7 @@ def modern_item(namespace, name, meta=0):
         if name == 'stone' and meta in range(1,7): name = ['stone','granite','polished_granite','diorite','polished_diorite','andesite','polished_andesite'][meta]
         elif name == 'dirt' and meta in [1,2]: name = ['dirt','coarse_dirt','podzol'][meta]
         elif name == 'coal' and meta == 1: name = 'charcoal'
+        elif name == 'dye' and meta in range(16): name = ['ink_sac','red_dye','green_dye','cocoa_beans','lapis_lazuli','purple_dye','cyan_dye','light_gray_dye','gray_dye','pink_dye','lime_dye','yellow_dye','light_blue_dye','magenta_dye','orange_dye','bone_meal'][meta]
         elif name == 'wool': name = 'white_wool'
         else: name = renames.get(name, name)
     return namespace+':'+name
@@ -93,7 +96,7 @@ config = (OLD / 'java/thaumcraft/common/config/ConfigResearch.java').read_text()
 formulae = {category:aspects(formula) for category, formula in re.findall(r'registerCategory\("(\w+)"[^\n]+?(new AspectList\(\).*?), new ResourceLocation', config)}
 
 # Explicit OreDictionary families mapped to modern item selectors. No substring guessing.
-ore = {'gemDiamond':['minecraft:diamond'], 'gemEmerald':['minecraft:emerald'], 'gemQuartz':['minecraft:quartz'],
+ore = {'gunpowder':['minecraft:gunpowder'],'cropWheat':['minecraft:wheat'],'egg':['minecraft:egg'],'gemDiamond':['minecraft:diamond'], 'gemEmerald':['minecraft:emerald'], 'gemQuartz':['minecraft:quartz'],
        'dustRedstone':['minecraft:redstone'], 'dustGlowstone':['minecraft:glowstone_dust'],
        'ingotIron':['minecraft:iron_ingot'], 'ingotGold':['minecraft:gold_ingot'], 'ingotCopper':['minecraft:copper_ingot'],
        'stone':['minecraft:stone','minecraft:granite','minecraft:diorite','minecraft:andesite'],
@@ -124,6 +127,7 @@ for target, formula in re.findall(r'registerObjectTag\((.*?), (new AspectList\(\
         if m:
             owner,name,meta=m.groups();selector=modern_item('thaumcraft' if owner.endswith('TC') else 'minecraft',name if owner.endswith('TC') else name.lower(),int(meta or 0))
             if selector in modern_ids: selectors=[selector]
+            if owner=="Items" and name=="COAL" and meta=="32767":selectors=["minecraft:coal","minecraft:charcoal"]
     for selector in selectors: assignments[selector]=value
 
 entities = {}
@@ -192,7 +196,7 @@ for path in sorted((ROOT/'src/modern/resources/data/thaumcraft/recipe/arcane').g
         lines.extend('['+row+']' for row in recipe['pattern'])
         lines.extend(key+' = '+value for key,value in recipe['key'].items())
     else:
-        lines.extend(recipe['ingredients'])
+        lines.extend(recipe.get('ingredients', ['One warded jar; preserves stored essentia.']))
     lines.append('Vis: '+str(definition['vis']))
     lines.extend(aspect+': '+str(count) for aspect,count in definition['crystals'].items())
     recipe_pages['thaumcraft:'+aliases.get(path.stem,path.stem)]=lines

@@ -4,7 +4,7 @@ Orden de trabajo. Estas entradas describen trabajo pendiente salvo que se indiqu
 
 ## M01: Crecimiento de árboles y ciclo de hojas
 
-**Estado:** pendiente.
+**Estado:** port.10 añade crecimiento por tiempo/bonemeal, hojas nativas con drops/decay, recuperación de vis de silverwood y generación básica en bosques nuevos; forma de árboles y biomas mágicos originales aún parciales (ALCHEMY-ESSENTIA.md).
 
 Contenido: `saplingGreatwood`, `saplingSilverwood`, `leafGreatwood`, `leafSilverwood`.
 
@@ -22,7 +22,7 @@ Contenido: `tableWood`, `tableStone`, `pedestalArcane`, `pedestalAncient`, `pede
 
 ## M04: Aspectos, investigación, escaneo y progreso
 
-**Estado:** port.9 añade mesa de investigación persistente, herramientas/recarga, teorías con 27 cartas y ayudas, y 13 variantes de notas celestes obtenibles mediante cielo nativo; faltan cartas dependientes de mecánicas posteriores y consumidores avanzados (THEORY-CELESTIAL.md).
+**Estado:** port.9 añade mesa de investigación persistente, herramientas/recarga, teorías con 27 cartas y ayudas, y 13 variantes de notas celestes obtenibles mediante cielo nativo; faltan cartas dependientes de mecánicas posteriores y consumidores avanzados (THEORY-CELESTIAL.md); se priorizan consumidores reales antes de añadir cartas, según ALCHEMY-ESSENTIA.md.
 
 Contenido: `researchTable`, `thaumonomicon`, `curio`, `primordialPearl`, `celestialNotes`, `salisMundus`, `crystalEssence`, `scribingTools`, `thaumometer`.
 
@@ -40,13 +40,13 @@ Contenido: `arcaneWorkbench`.
 
 ## M07: Alquimia, disolución de aspectos y fluidos
 
-**Estado:** pendiente.
+**Estado:** port.10 implementa crisol, agua/calor, disolución, 55 recetas, resolución de aspectos desde recetas y horno básico con alambiques; máquinas y mejoras posteriores pendientes (ALCHEMY-ESSENTIA.md).
 
 Contenido: `crucible`, `centrifuge`, `bellows`, `smelterBasic`, `smelterThaumium`, `smelterVoid`, `smelterAux`, `smelterVent`, `alembic`, `infernalFurnace`, `thaumatorium`, `thaumatoriumTop`, `brainBox`, `condenser`, `condenserlattice`, `condenserlatticeDirty`.
 
 ## M08: Transporte y almacenamiento de esencia
 
-**Estado:** pendiente.
+**Estado:** port.10 implementa frascos de 10, alambiques de 128 y tarros de 250 con tipos/componentes, drops, colocación y mejora al vacío sin perder contenido; red de tubos/succión/etiquetas y jarBrain pendientes (ALCHEMY-ESSENTIA.md).
 
 Contenido: `bannerCrimsonCult`, `tube`, `tubeValve`, `tubeRestrict`, `tubeOneway`, `tubeFilter`, `tubeBuffer`, `jarNormal`, `jarVoid`, `jarBrain`, `essentiaTransportInput`, `essentiaTransportOutput`, `label`, `phial`, `resonator`, `banners [16 colores]`.
 
