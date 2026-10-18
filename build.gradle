@@ -4,7 +4,7 @@ plugins {
     id 'eclipse'
     id 'net.minecraftforge.gradle' version '7.0.17'
 }
-version = '6.1.BETA26-port.7-forge66.0.13'
+version = '6.1.BETA26-port.8-forge66.0.13'
 group = 'griglog.thaumcraft'
 base.archivesName = 'thaumcraft'
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
@@ -39,6 +39,9 @@ sourceSets.main {
     resources.setSrcDirs(['src/modern/resources'])
 }
 // Explicit integration fixtures; never packaged by the normal build.
+if (providers.gradleProperty('knowledgeProbe').isPresent()) {
+    sourceSets.main.java.srcDir('src/knowledgeTest/java')
+}
 if (providers.gradleProperty('arcaneRiftProbe').isPresent()) {
     sourceSets.main.java.srcDir('src/arcaneRiftTest/java')
 }
@@ -63,6 +66,7 @@ minecraft {
         configureEach {
             workingDir = layout.projectDirectory.dir('run')
             systemProperty 'eventbus.api.strictRuntimeChecks', 'true'
+            if (providers.gradleProperty('knowledgeProbe').isPresent()) systemProperty 'thaumcraft.knowledgeProbe', providers.gradleProperty('knowledgeProbe').get()
             if (providers.gradleProperty('arcaneRiftProbe').isPresent()) systemProperty 'thaumcraft.arcaneRiftProbe', providers.gradleProperty('arcaneRiftProbe').get()
             if (providers.gradleProperty('m05Probe').isPresent()) systemProperty 'thaumcraft.m05Probe', providers.gradleProperty('m05Probe').get()
             if (providers.gradleProperty('auraProbe').isPresent()) {
@@ -76,6 +80,7 @@ minecraft {
         register('server') {
             workingDir = layout.projectDirectory.dir('run/server')
             args '--nogui'
+            if (providers.gradleProperty('knowledgeProbe').isPresent()) args '--world', 'knowledge-smoke'
             if (providers.gradleProperty('arcaneRiftProbe').isPresent()) args '--world', 'arcane-rifts-smoke'
             if (providers.gradleProperty('m05Probe').isPresent()) args '--world', 'm05-devices-smoke'
             if (providers.gradleProperty('auraProbe').isPresent()) args '--world', 'aura-step5-smoke'

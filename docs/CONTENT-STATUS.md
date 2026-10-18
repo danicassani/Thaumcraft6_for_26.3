@@ -100,10 +100,18 @@ extracción automática. Las grietas aparecen por exceso de flux, crecen, pierde
 estabilidad y colapsan; los eventos avanzados de M13 siguen pendientes.
 El resonador de esencia conserva su dependencia de M08.
 
+[Port.8](RESEARCH-SCANNING.md) incorpora el núcleo de investigación y escaneo:
+conocimiento persistente, diario del sueño, taumómetro, Thaumonomicon y requisitos
+de las recetas arcanas. Añade las recetas del taumómetro y la dioptra. El catálogo
+suma 90 bloques, 65 objetos sin bloque, 155 IDs de item, 191 entradas creativas y
+121 recetas. Se conservan 148 investigaciones y 271 etapas originales; las ramas
+que necesitan mecánicas posteriores mantienen sus bloqueos. La mesa de teorías
+y el cielo siguen pendientes.
+
 ## Lo que sigue pendiente
 
 La hoja de ruta detalla los bloques y objetos de cada sistema: árboles y hojas;
-inventarios; conocimiento/aspectos/investigación; consumidores adicionales de
+inventarios; teorías, observación celeste e integración avanzada de aspectos; consumidores adicionales de
 aura/vis/flux; progresión y descuentos de mesa arcana; alquimia y fluidos; esencia y estandartes con aspectos;
 infusión y redes de estabilización; hechizos; gólems; equipo avanzado/warp/
 accesorios; corrupción; dispositivos; espejos; botín y dimensiones. No se declara

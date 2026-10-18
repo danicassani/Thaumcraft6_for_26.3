@@ -64,6 +64,7 @@ public final class BasicContent {
         thaumcraft.devices.DeviceContent.register(bus);
         thaumcraft.crafting.ArcaneContent.register(bus);
         thaumcraft.rifts.RiftContent.register();
+        thaumcraft.research.ResearchContent.register(bus);
         TABS.register(bus);
         OreCountPlacement.register(bus);
     }

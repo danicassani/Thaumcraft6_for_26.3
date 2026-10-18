@@ -79,3 +79,10 @@ OreDictionary y reflexión de MFR quedan pendientes con sus mecánicas.
 nuevas grietas por exceso de flux. Desactivarla conserva las entidades existentes.
 No es una clave importada del `.cfg` original. El resto de M13 y `wussMode`
 continúan pendientes; véase [ARCANE-RIFTS.md](ARCANE-RIFTS.md).
+
+## Consumidores de port.8
+
+`SERVER misc.noSleep` ya entrega el diario al recoger cristales sin exigir dormir.
+`wussMode` evita el warp concedido por etapas de investigación; los demás efectos
+de warp/taint siguen pendientes. `allowCheatSheet` continúa sin consumidor.
+Véase [RESEARCH-SCANNING.md](RESEARCH-SCANNING.md).

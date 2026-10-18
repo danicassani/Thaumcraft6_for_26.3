@@ -15,7 +15,11 @@ public final class WorkbenchBlock extends Block implements EntityBlock {
     @Override public BlockEntity newBlockEntity(BlockPos pos, BlockState state) { return new ArcaneWorkbenchEntity(pos,state); }
     @Override protected VoxelShape getShape(BlockState state, net.minecraft.world.level.BlockGetter level, BlockPos pos, CollisionContext context) { return Block.box(0,0,0,16,16,16); }
     @Override protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
-        if(!level.isClientSide() && level.getBlockEntity(pos) instanceof ArcaneWorkbenchEntity table)player.openMenu(table);
+        if(!level.isClientSide() && level.getBlockEntity(pos) instanceof ArcaneWorkbenchEntity table){
+            // Recognize workbenches already built in earlier port versions.
+            if(thaumcraft.research.ResearchService.knows(player,"FIRSTSTEPS@1"))thaumcraft.research.ResearchService.recordCraft(player,new net.minecraft.world.item.ItemStack(this));
+            player.openMenu(table);
+        }
         return InteractionResult.SUCCESS;
     }
 }

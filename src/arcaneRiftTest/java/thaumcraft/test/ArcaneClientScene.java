@@ -26,6 +26,8 @@ public final class ArcaneClientScene {
         if(!System.getProperty("thaumcraft.arcaneRiftProbe","").equals("client") || !(event.player() instanceof ServerPlayer player))return;
         int elapsed=ticks.merge(player.getUUID(),1,Integer::sum);
         if(prepared.add(player.getUUID())) {
+        var known=new java.util.HashMap<String,Integer>();for(var entry:thaumcraft.research.ResearchCatalog.ENTRIES)known.put(entry.key(),entry.stages().size()+1);
+        thaumcraft.research.KnowledgeStore.write(player,new thaumcraft.research.KnowledgeState(1,known,java.util.Set.of(),java.util.Set.of(),java.util.Set.of(),java.util.Map.of()));
             var level=player.level();var base=new BlockPos(8,205,8);center=base;
             for(int x=-7;x<=7;x++)for(int z=-2;z<=10;z++) {level.setBlockAndUpdate(base.offset(x,-1,z),Blocks.STONE.defaultBlockState());for(int y=0;y<9;y++)level.setBlockAndUpdate(base.offset(x,y,z),Blocks.AIR.defaultBlockState());}
             level.setBlockAndUpdate(base.offset(-2,0,3),ArcaneContent.WORKBENCH.get().defaultBlockState());level.setBlockAndUpdate(base.offset(-2,1,3),ArcaneContent.CHARGER.get().defaultBlockState());

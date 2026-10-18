@@ -22,7 +22,7 @@ Contenido: `tableWood`, `tableStone`, `pedestalArcane`, `pedestalAncient`, `pede
 
 ## M04: Aspectos, investigación, escaneo y progreso
 
-**Estado:** 37 aspectos de esencia y Salis Mundus con transformación de mesa implementados; investigación, escaneo, asignación/combinación de aspectos y progresión pendientes.
+**Estado:** port.8 implementa conocimiento persistente, observaciones y escaneos únicos, catálogo original (148 investigaciones/271 etapas), diario, Thaumonomicon, requisitos y bloqueos de recetas; mesa/cartas de teorías, cielo y consumidores avanzados pendientes (RESEARCH-SCANNING.md).
 
 Contenido: `researchTable`, `thaumonomicon`, `curio`, `primordialPearl`, `celestialNotes`, `salisMundus`, `crystalEssence`, `scribingTools`, `thaumometer`.
 
@@ -34,7 +34,7 @@ Contenido: `crystalAir`, `crystalFire`, `crystalWater`, `crystalEarth`, `crystal
 
 ## M06: Crafteo arcano y descuentos de vis
 
-**Estado:** núcleo implementado: mesa persistente, menú, recetas de datos, consumo de ingredientes/cristales/vis y cargador 3×3; investigación M04, descuentos de equipo y libro de recetas pendientes (ARCANE-RIFTS.md).
+**Estado:** mesa y cargador implementados; port.8 añade requisitos de investigación, recetas del taumómetro y dioptra y consulta en el libro; descuentos de equipo pendientes (RESEARCH-SCANNING.md).
 
 Contenido: `arcaneWorkbench`.
 

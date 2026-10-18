@@ -32,5 +32,6 @@ public final class ArcaneScreen extends AbstractContainerScreen<ArcaneMenu> {
         }
         graphics.text(font,Component.translatable("menu.thaumcraft.vis",menu.available(),menu.cost()),leftPos+82,topPos+20,0xFFFFFFFF,false);
         graphics.text(font,Component.translatable("menu.thaumcraft.chunks",menu.chunks()),leftPos+82,topPos+42,0xFFDDD0EE,false);
+        if(menu.researchLocked())graphics.text(font,Component.translatable("menu.thaumcraft.research_locked"),leftPos+82,topPos+32,0xFFFF8888,false);
     }
 }

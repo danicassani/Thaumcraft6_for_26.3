@@ -119,3 +119,9 @@ también conserva el aviso previo del appender kqueue en Linux.
 Compilación limpia final: `work/m07-build-final.log`, BUILD SUCCESSFUL (28 s),
 17 pruebas unitarias, cero fallos/errores. Inspección del JAR: 153 definiciones de
 item y 119 recetas, sin clases `thaumcraft.test` ni recursos de fixtures.
+
+## Investigación en port.8
+
+Las recetas arcanas ahora comprueban sus investigaciones originales; se añaden
+las recetas del taumómetro y la dioptra y las pruebas de fabricación del libro.
+Véase [RESEARCH-SCANNING.md](RESEARCH-SCANNING.md).

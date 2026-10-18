@@ -11,9 +11,17 @@ public final class SalisMundusItem extends Item {
     public SalisMundusItem(Properties properties) { super(properties); }
     @Override public InteractionResult useOn(UseOnContext context) {
         var level=context.getLevel();var pos=context.getClickedPos();
-        if(!level.getBlockState(pos).is(Blocks.CRAFTING_TABLE))return InteractionResult.PASS;
+        boolean book=level.getBlockState(pos).is(Blocks.BOOKSHELF);
+        if(!book&&!level.getBlockState(pos).is(Blocks.CRAFTING_TABLE))return InteractionResult.PASS;
         if(level instanceof ServerLevel server) {
-            if(!server.setBlockAndUpdate(pos,ArcaneContent.WORKBENCH.get().defaultBlockState()))return InteractionResult.FAIL;
+            var player=context.getPlayer();
+            if(player==null||!thaumcraft.research.ResearchService.knows(player,book?"!gotdream":"FIRSTSTEPS@1")){
+                if(player!=null)player.sendOverlayMessage(net.minecraft.network.chat.Component.translatable(book?"research.thaumcraft.need_dream":"research.thaumcraft.need_book"));return InteractionResult.FAIL;
+            }
+            if(!server.setBlockAndUpdate(pos,book?Blocks.AIR.defaultBlockState():ArcaneContent.WORKBENCH.get().defaultBlockState()))return InteractionResult.FAIL;
+            var result=new net.minecraft.world.item.ItemStack(book?thaumcraft.research.ResearchContent.BOOK.get():ArcaneContent.WORKBENCH.get().asItem());
+            thaumcraft.research.ResearchService.recordCraft(player,result);
+            if(book){if(!player.getInventory().add(result))net.minecraft.world.level.block.Block.popResource(server,pos,result);thaumcraft.research.ResearchService.flag(player,"!gotthaumonomicon");}
             if(context.getPlayer()==null || !context.getPlayer().getAbilities().instabuild)context.getItemInHand().shrink(1);
             server.sendParticles(ParticleTypes.ENCHANT,pos.getX()+.5,pos.getY()+1,pos.getZ()+.5,40,.5,.5,.5,.1);
         }

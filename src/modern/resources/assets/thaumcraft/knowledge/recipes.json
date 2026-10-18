@@ -1,0 +1,105 @@
+{
+  "thaumcraft:dioptra": [
+    "[APA]",
+    "[IGI]",
+    "[AAA]",
+    "A = thaumcraft:stone_arcane",
+    "P = thaumcraft:vis_resonator",
+    "G = thaumcraft:thaumometer",
+    "I = thaumcraft:plate_iron",
+    "Vis: 50",
+    "aer: 1",
+    "aqua: 1"
+  ],
+  "thaumcraft:EnchantedFabric": [
+    "[ S ]",
+    "[SCS]",
+    "[ S ]",
+    "S = minecraft:string",
+    "C = #minecraft:wool",
+    "Vis: 5"
+  ],
+  "thaumcraft:mechanism_complex": [
+    "[ M ]",
+    "[TQT]",
+    "[ M ]",
+    "M = thaumcraft:mechanism_simple",
+    "T = thaumcraft:plate_thaumium",
+    "Q = minecraft:piston",
+    "Vis: 50",
+    "ignis: 1",
+    "aqua: 1"
+  ],
+  "thaumcraft:mechanism_simple": [
+    "[ B ]",
+    "[ISI]",
+    "[ B ]",
+    "B = thaumcraft:plate_brass",
+    "I = thaumcraft:plate_iron",
+    "S = minecraft:stick",
+    "Vis: 10",
+    "ignis: 1",
+    "aqua: 1"
+  ],
+  "thaumcraft:rechargepedestal": [
+    "[ R ]",
+    "[DID]",
+    "[SSS]",
+    "R = thaumcraft:vis_resonator",
+    "D = minecraft:diamond",
+    "I = minecraft:gold_ingot",
+    "S = #minecraft:stone_crafting_materials",
+    "Vis: 100",
+    "aer: 1",
+    "ordo: 1"
+  ],
+  "thaumcraft:thaumometer": [
+    "[ I ]",
+    "[IGI]",
+    "[ I ]",
+    "I = minecraft:gold_ingot",
+    "G = minecraft:glass_pane",
+    "Vis: 20",
+    "aer: 1",
+    "terra: 1",
+    "ignis: 1",
+    "aqua: 1",
+    "ordo: 1",
+    "perditio: 1"
+  ],
+  "thaumcraft:VisGenerator": [
+    "[WSW]",
+    "[EPE]",
+    "[WRW]",
+    "W = #minecraft:planks",
+    "S = minecraft:redstone",
+    "E = thaumcraft:nugget_rareearth",
+    "P = minecraft:piston",
+    "R = thaumcraft:vis_resonator",
+    "Vis: 25",
+    "ignis: 1",
+    "ordo: 1"
+  ],
+  "thaumcraft:vis_resonator": [
+    "thaumcraft:plate_iron",
+    "minecraft:quartz",
+    "Vis: 50",
+    "aer: 1",
+    "aqua: 1"
+  ],
+  "thaumcraft:workbenchcharger": [
+    "[ R ]",
+    "[W W]",
+    "[I I]",
+    "R = thaumcraft:vis_resonator",
+    "W = thaumcraft:plank_greatwood",
+    "I = minecraft:iron_ingot",
+    "Vis: 200",
+    "aer: 2",
+    "ordo: 2"
+  ],
+  "thaumcraft:salismundusfake": [
+    "3 different aspect crystals + redstone + bowl + flint",
+    "Bowl and flint are returned."
+  ]
+}

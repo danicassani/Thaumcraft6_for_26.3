@@ -53,14 +53,14 @@ public final class ArcaneWorkbenchEntity extends AuraDeviceEntity implements Men
         var stacks=new ArrayList<ItemStack>();for(int i=0;i<9;i++)stacks.add(inventory.getItem(i).copy());
         return CraftingInput.ofPositioned(3,3,stacks);
     }
-    public record Match(ItemStack result, int vis, java.util.Map<String,Integer> crystals, NonNullList<ItemStack> remaining, CraftingInput.Positioned input) {}
+    public record Match(ItemStack result, int vis, java.util.Map<String,Integer> crystals, NonNullList<ItemStack> remaining, CraftingInput.Positioned input, String research) {}
     public Match match() {
         if (!(level instanceof ServerLevel server)) return null;
         var positioned=input();var input=positioned.input();
         var arcane=server.recipeAccess().getRecipeFor(ArcaneContent.RECIPES.get(),input,server);
-        if(arcane.isPresent()) { var recipe=arcane.get().value();return new Match(recipe.assemble(input),recipe.vis(),recipe.crystals(),recipe.recipe().getRemainingItems(input),positioned); }
+        if(arcane.isPresent()) { var recipe=arcane.get().value();return new Match(recipe.assemble(input),recipe.vis(),recipe.crystals(),recipe.recipe().getRemainingItems(input),positioned,recipe.research()); }
         var vanilla=server.recipeAccess().getRecipeFor(RecipeType.CRAFTING,input,server);
-        if(vanilla.isPresent()) { var recipe=vanilla.get().value();return new Match(recipe.assemble(input),0,java.util.Map.of(),recipe.getRemainingItems(input),positioned); }
+        if(vanilla.isPresent()) { var recipe=vanilla.get().value();return new Match(recipe.assemble(input),0,java.util.Map.of(),recipe.getRemainingItems(input),positioned,""); }
         return null;
     }
     public boolean canCraft(Match match) {
@@ -73,10 +73,11 @@ public final class ArcaneWorkbenchEntity extends AuraDeviceEntity implements Men
         }
         return true;
     }
+    public boolean canCraft(Player player,Match match){return canCraft(match)&&thaumcraft.research.ResearchService.knows(player,match.research());}
     /** The button only requests a craft; the server resolves the recipe and pays everything again. */
     public boolean craft(Player player) {
         if(!(level instanceof ServerLevel) || !valid(player))return false;
-        var match=match();if(!canCraft(match)||!spendVis(match.vis))return false;
+        var match=match();if(!canCraft(player,match)||!spendVis(match.vis))return false;
         var input=match.input.input();
         for(int y=0;y<input.height();y++)for(int x=0;x<input.width();x++) {
             int i=x+match.input.left()+(y+match.input.top())*3;
@@ -89,7 +90,9 @@ public final class ArcaneWorkbenchEntity extends AuraDeviceEntity implements Men
         }
         match.crystals.forEach((aspect,count)->inventory.removeItem(9+ArcaneRecipe.PRIMALS.indexOf(aspect),count));
         var output=inventory.getItem(15);if(output.isEmpty())inventory.setItem(15,match.result.copy());else output.grow(match.result.getCount());
-        match.result.onCraftedBy(player,match.result.getCount()); inventory.setChanged(); return true;
+        match.result.onCraftedBy(player,match.result.getCount());
+        thaumcraft.research.ResearchService.recordCraft(player,match.result);
+        inventory.setChanged(); return true;
     }
     public boolean valid(Player player) { return level!=null && level.getBlockEntity(worldPosition)==this && player.distanceToSqr(worldPosition.getX()+.5,worldPosition.getY()+.5,worldPosition.getZ()+.5)<=64; }
     @Override public void preRemoveSideEffects(BlockPos pos,BlockState state) { super.preRemoveSideEffects(pos,state);if(level instanceof ServerLevel)for(int i=0;i<16;i++)Block.popResource(level,pos,inventory.removeItemNoUpdate(i)); }

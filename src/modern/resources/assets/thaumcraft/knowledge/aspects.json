@@ -1,0 +1,1283 @@
+{
+  "components": {
+    "aer": [],
+    "terra": [],
+    "ignis": [],
+    "aqua": [],
+    "ordo": [],
+    "perditio": [],
+    "vacuos": [
+      "aer",
+      "perditio"
+    ],
+    "lux": [
+      "aer",
+      "ignis"
+    ],
+    "motus": [
+      "aer",
+      "ordo"
+    ],
+    "gelum": [
+      "ignis",
+      "perditio"
+    ],
+    "vitreus": [
+      "terra",
+      "aer"
+    ],
+    "metallum": [
+      "terra",
+      "ordo"
+    ],
+    "victus": [
+      "terra",
+      "aqua"
+    ],
+    "mortuus": [
+      "aqua",
+      "perditio"
+    ],
+    "potentia": [
+      "ordo",
+      "ignis"
+    ],
+    "permutatio": [
+      "perditio",
+      "ordo"
+    ],
+    "praecantatio": [
+      "potentia",
+      "aer"
+    ],
+    "auram": [
+      "praecantatio",
+      "aer"
+    ],
+    "alkimia": [
+      "praecantatio",
+      "aqua"
+    ],
+    "vitium": [
+      "perditio",
+      "praecantatio"
+    ],
+    "tenebrae": [
+      "vacuos",
+      "lux"
+    ],
+    "alienis": [
+      "vacuos",
+      "tenebrae"
+    ],
+    "volatus": [
+      "aer",
+      "motus"
+    ],
+    "herba": [
+      "victus",
+      "terra"
+    ],
+    "instrumentum": [
+      "metallum",
+      "potentia"
+    ],
+    "fabrico": [
+      "permutatio",
+      "instrumentum"
+    ],
+    "machina": [
+      "motus",
+      "instrumentum"
+    ],
+    "vinculum": [
+      "motus",
+      "perditio"
+    ],
+    "spiritus": [
+      "victus",
+      "mortuus"
+    ],
+    "cognitio": [
+      "ignis",
+      "spiritus"
+    ],
+    "sensus": [
+      "aer",
+      "spiritus"
+    ],
+    "aversio": [
+      "spiritus",
+      "perditio"
+    ],
+    "praemunio": [
+      "spiritus",
+      "terra"
+    ],
+    "desiderium": [
+      "spiritus",
+      "vacuos"
+    ],
+    "exanimis": [
+      "motus",
+      "mortuus"
+    ],
+    "bestia": [
+      "motus",
+      "victus"
+    ],
+    "humanus": [
+      "spiritus",
+      "victus"
+    ]
+  },
+  "formulae": {
+    "BASICS": {
+      "herba": 5,
+      "ordo": 5,
+      "perditio": 5,
+      "aer": 5,
+      "ignis": 5,
+      "terra": 3,
+      "aqua": 5
+    },
+    "AUROMANCY": {
+      "auram": 20,
+      "praecantatio": 20,
+      "vitium": 15,
+      "vitreus": 5,
+      "gelum": 5,
+      "aer": 5
+    },
+    "ALCHEMY": {
+      "alkimia": 30,
+      "vitium": 10,
+      "praecantatio": 10,
+      "victus": 5,
+      "aversio": 5,
+      "desiderium": 5,
+      "aqua": 5
+    },
+    "ARTIFICE": {
+      "machina": 10,
+      "fabrico": 10,
+      "metallum": 10,
+      "instrumentum": 10,
+      "potentia": 10,
+      "lux": 5,
+      "volatus": 5,
+      "vinculum": 5,
+      "ignis": 5
+    },
+    "INFUSION": {
+      "praecantatio": 30,
+      "praemunio": 10,
+      "instrumentum": 10,
+      "vitium": 5,
+      "fabrico": 5,
+      "spiritus": 5,
+      "terra": 3
+    },
+    "GOLEMANCY": {
+      "humanus": 20,
+      "motus": 10,
+      "cognitio": 10,
+      "machina": 10,
+      "permutatio": 5,
+      "sensus": 5,
+      "bestia": 5,
+      "ordo": 5
+    },
+    "ELDRITCH": {
+      "alienis": 20,
+      "tenebrae": 10,
+      "praecantatio": 5,
+      "cognitio": 5,
+      "vacuos": 5,
+      "mortuus": 5,
+      "exanimis": 5,
+      "perditio": 5
+    }
+  },
+  "items": {
+    "minecraft:lapis_ore": {
+      "terra": 5,
+      "sensus": 15
+    },
+    "minecraft:deepslate_lapis_ore": {
+      "terra": 5,
+      "sensus": 15
+    },
+    "minecraft:diamond_ore": {
+      "terra": 5,
+      "desiderium": 15,
+      "vitreus": 15
+    },
+    "minecraft:deepslate_diamond_ore": {
+      "terra": 5,
+      "desiderium": 15,
+      "vitreus": 15
+    },
+    "minecraft:diamond": {
+      "vitreus": 15,
+      "desiderium": 15
+    },
+    "minecraft:redstone_ore": {
+      "terra": 5,
+      "potentia": 15
+    },
+    "minecraft:deepslate_redstone_ore": {
+      "terra": 5,
+      "potentia": 15
+    },
+    "minecraft:emerald_ore": {
+      "terra": 5,
+      "desiderium": 10,
+      "vitreus": 15
+    },
+    "minecraft:deepslate_emerald_ore": {
+      "terra": 5,
+      "desiderium": 10,
+      "vitreus": 15
+    },
+    "minecraft:emerald": {
+      "vitreus": 15,
+      "desiderium": 10
+    },
+    "minecraft:nether_quartz_ore": {
+      "terra": 5,
+      "vitreus": 10
+    },
+    "minecraft:quartz": {
+      "vitreus": 5
+    },
+    "minecraft:iron_ore": {
+      "terra": 5,
+      "metallum": 15
+    },
+    "minecraft:deepslate_iron_ore": {
+      "terra": 5,
+      "metallum": 15
+    },
+    "minecraft:iron_ingot": {
+      "metallum": 15
+    },
+    "minecraft:gold_ore": {
+      "terra": 5,
+      "metallum": 10,
+      "desiderium": 10
+    },
+    "minecraft:deepslate_gold_ore": {
+      "terra": 5,
+      "metallum": 10,
+      "desiderium": 10
+    },
+    "minecraft:gold_ingot": {
+      "metallum": 10,
+      "desiderium": 10
+    },
+    "minecraft:coal_ore": {
+      "terra": 5,
+      "potentia": 15,
+      "ignis": 15
+    },
+    "minecraft:coal": {
+      "potentia": 10,
+      "ignis": 10
+    },
+    "minecraft:redstone": {
+      "potentia": 10
+    },
+    "minecraft:glowstone_dust": {
+      "sensus": 5,
+      "lux": 10
+    },
+    "minecraft:copper_ingot": {
+      "metallum": 10,
+      "permutatio": 5
+    },
+    "minecraft:copper_ore": {
+      "metallum": 10,
+      "terra": 5,
+      "permutatio": 5
+    },
+    "minecraft:deepslate_copper_ore": {
+      "metallum": 10,
+      "terra": 5,
+      "permutatio": 5
+    },
+    "thaumcraft:ingot_brass": {
+      "metallum": 10,
+      "instrumentum": 5
+    },
+    "minecraft:stone": {
+      "terra": 5
+    },
+    "minecraft:granite": {
+      "terra": 5
+    },
+    "minecraft:diorite": {
+      "terra": 5
+    },
+    "minecraft:andesite": {
+      "terra": 5
+    },
+    "minecraft:cobblestone": {
+      "terra": 5,
+      "perditio": 1
+    },
+    "minecraft:bedrock": {
+      "vacuos": 25,
+      "perditio": 25,
+      "terra": 25,
+      "tenebrae": 25
+    },
+    "minecraft:dirt": {
+      "terra": 5
+    },
+    "minecraft:coarse_dirt": {
+      "terra": 5
+    },
+    "minecraft:podzol": {
+      "terra": 5,
+      "herba": 1
+    },
+    "minecraft:farmland": {
+      "terra": 5,
+      "aqua": 2,
+      "ordo": 2
+    },
+    "#minecraft:sand": {
+      "terra": 5,
+      "perditio": 5
+    },
+    "minecraft:grass_block": {
+      "terra": 5,
+      "herba": 2
+    },
+    "minecraft:dirt_path": {
+      "terra": 5,
+      "herba": 2,
+      "ordo": 2
+    },
+    "minecraft:end_stone": {
+      "terra": 5,
+      "tenebrae": 5
+    },
+    "minecraft:gravel": {
+      "terra": 5,
+      "perditio": 2
+    },
+    "minecraft:mycelium": {
+      "terra": 5,
+      "herba": 1,
+      "vitium": 1
+    },
+    "minecraft:clay_ball": {
+      "aqua": 5,
+      "terra": 5
+    },
+    "minecraft:netherrack": {
+      "terra": 5,
+      "ignis": 2
+    },
+    "minecraft:soul_sand": {
+      "terra": 3,
+      "vinculum": 1,
+      "spiritus": 3
+    },
+    "minecraft:glass": {
+      "vitreus": 5
+    },
+    "minecraft:mossy_cobblestone": {
+      "terra": 5,
+      "herba": 3,
+      "perditio": 1
+    },
+    "minecraft:obsidian": {
+      "terra": 5,
+      "ignis": 5,
+      "tenebrae": 5
+    },
+    "#minecraft:logs": {
+      "herba": 20
+    },
+    "#minecraft:saplings": {
+      "herba": 15,
+      "victus": 5
+    },
+    "#minecraft:leaves": {
+      "herba": 5
+    },
+    "minecraft:lily_pad": {
+      "herba": 5,
+      "aqua": 1
+    },
+    "minecraft:wheat_seeds": {
+      "herba": 5,
+      "victus": 1
+    },
+    "minecraft:melon_seeds": {
+      "herba": 5,
+      "victus": 1
+    },
+    "minecraft:pumpkin_seeds": {
+      "herba": 5,
+      "victus": 1
+    },
+    "minecraft:beetroot_seeds": {
+      "herba": 5,
+      "victus": 1
+    },
+    "minecraft:brown_mushroom": {
+      "herba": 5,
+      "tenebrae": 2,
+      "terra": 2
+    },
+    "minecraft:red_mushroom": {
+      "herba": 5,
+      "tenebrae": 2,
+      "ignis": 2
+    },
+    "minecraft:brown_mushroom_block": {
+      "herba": 5,
+      "tenebrae": 2,
+      "terra": 2
+    },
+    "minecraft:red_mushroom_block": {
+      "herba": 5,
+      "tenebrae": 2,
+      "ignis": 2
+    },
+    "minecraft:apple": {
+      "herba": 5,
+      "victus": 5
+    },
+    "minecraft:beetroot": {
+      "herba": 5,
+      "victus": 5,
+      "desiderium": 1
+    },
+    "minecraft:baked_potato": {
+      "herba": 5,
+      "victus": 5
+    },
+    "minecraft:poisonous_potato": {
+      "herba": 5,
+      "mortuus": 5
+    },
+    "minecraft:pumpkin": {
+      "herba": 10
+    },
+    "minecraft:melon_slice": {
+      "herba": 1
+    },
+    "minecraft:sponge": {
+      "terra": 5,
+      "vinculum": 5,
+      "aqua": 5
+    },
+    "minecraft:white_wool": {
+      "bestia": 15,
+      "fabrico": 5
+    },
+    "minecraft:experience_bottle": {
+      "cognitio": 20
+    },
+    "minecraft:name_tag": {
+      "cognitio": 10,
+      "bestia": 10
+    },
+    "minecraft:iron_horse_armor": {
+      "metallum": 15,
+      "praemunio": 10,
+      "bestia": 5
+    },
+    "minecraft:golden_horse_armor": {
+      "metallum": 10,
+      "praemunio": 15,
+      "bestia": 5
+    },
+    "minecraft:diamond_horse_armor": {
+      "vitreus": 15,
+      "praemunio": 20,
+      "bestia": 5
+    },
+    "minecraft:chorus_flower": {
+      "alienis": 5,
+      "sensus": 5,
+      "herba": 5
+    },
+    "minecraft:chorus_plant": {
+      "alienis": 5,
+      "herba": 5
+    },
+    "minecraft:chorus_fruit": {
+      "alienis": 5,
+      "sensus": 5,
+      "herba": 5
+    },
+    "minecraft:ice": {
+      "gelum": 20
+    },
+    "minecraft:packed_ice": {
+      "gelum": 15,
+      "ordo": 5
+    },
+    "minecraft:snowball": {
+      "gelum": 1
+    },
+    "minecraft:cobweb": {
+      "vinculum": 5,
+      "bestia": 1
+    },
+    "minecraft:flint": {
+      "terra": 5,
+      "instrumentum": 5
+    },
+    "minecraft:string": {
+      "bestia": 5,
+      "fabrico": 1
+    },
+    "minecraft:slime_ball": {
+      "aqua": 5,
+      "victus": 5,
+      "alkimia": 1
+    },
+    "minecraft:leather": {
+      "bestia": 5,
+      "praemunio": 5
+    },
+    "minecraft:rotten_flesh": {
+      "humanus": 5,
+      "victus": 5,
+      "perditio": 5
+    },
+    "minecraft:feather": {
+      "volatus": 5,
+      "aer": 5
+    },
+    "minecraft:bone": {
+      "mortuus": 5,
+      "victus": 5
+    },
+    "minecraft:spider_eye": {
+      "sensus": 5,
+      "bestia": 5,
+      "mortuus": 5
+    },
+    "minecraft:cod": {
+      "bestia": 5,
+      "victus": 5,
+      "aqua": 5
+    },
+    "minecraft:cooked_cod": {
+      "fabrico": 1,
+      "bestia": 5,
+      "victus": 5
+    },
+    "minecraft:chicken": {
+      "bestia": 5,
+      "victus": 5,
+      "aer": 5
+    },
+    "minecraft:cooked_chicken": {
+      "fabrico": 1,
+      "bestia": 5,
+      "victus": 5
+    },
+    "minecraft:porkchop": {
+      "bestia": 5,
+      "victus": 5,
+      "terra": 5
+    },
+    "minecraft:cooked_porkchop": {
+      "fabrico": 1,
+      "bestia": 5,
+      "victus": 5
+    },
+    "minecraft:beef": {
+      "bestia": 5,
+      "victus": 5,
+      "terra": 5
+    },
+    "minecraft:cooked_beef": {
+      "fabrico": 1,
+      "bestia": 5,
+      "victus": 5
+    },
+    "minecraft:mutton": {
+      "bestia": 5,
+      "victus": 5,
+      "terra": 5
+    },
+    "minecraft:cooked_mutton": {
+      "fabrico": 1,
+      "bestia": 5,
+      "victus": 5
+    },
+    "minecraft:rabbit": {
+      "bestia": 5,
+      "victus": 5,
+      "terra": 5
+    },
+    "minecraft:cooked_rabbit": {
+      "fabrico": 1,
+      "bestia": 5,
+      "victus": 5
+    },
+    "minecraft:rabbit_hide": {
+      "bestia": 5,
+      "praemunio": 2
+    },
+    "minecraft:rabbit_foot": {
+      "bestia": 5,
+      "praemunio": 5,
+      "motus": 10,
+      "alkimia": 5
+    },
+    "minecraft:blaze_rod": {
+      "ignis": 15,
+      "potentia": 5
+    },
+    "minecraft:saddle": {
+      "bestia": 10,
+      "motus": 10,
+      "ordo": 5
+    },
+    "minecraft:ghast_tear": {
+      "exanimis": 5,
+      "spiritus": 10,
+      "alkimia": 10
+    },
+    "minecraft:dragon_breath": {
+      "tenebrae": 10,
+      "perditio": 10,
+      "ignis": 10,
+      "alkimia": 10
+    },
+    "minecraft:totem_of_undying": {
+      "ordo": 10,
+      "perditio": 10,
+      "victus": 25,
+      "exanimis": 10
+    },
+    "minecraft:shulker_shell": {
+      "praemunio": 10,
+      "alienis": 5,
+      "bestia": 5,
+      "vacuos": 5
+    },
+    "minecraft:music_disc_13": {
+      "sensus": 15,
+      "aer": 5,
+      "aqua": 5,
+      "desiderium": 10
+    },
+    "minecraft:chainmail_helmet": {
+      "metallum": 42
+    },
+    "minecraft:chainmail_chestplate": {
+      "metallum": 67
+    },
+    "minecraft:chainmail_leggings": {
+      "metallum": 58
+    },
+    "minecraft:chainmail_boots": {
+      "metallum": 33
+    },
+    "minecraft:dragon_egg": {
+      "alienis": 15,
+      "bestia": 15,
+      "tenebrae": 15,
+      "motus": 15,
+      "praecantatio": 5
+    },
+    "minecraft:end_portal_frame": {
+      "alienis": 10,
+      "potentia": 10,
+      "motus": 10,
+      "praecantatio": 5
+    },
+    "minecraft:prismarine_shard": {
+      "aqua": 5,
+      "terra": 5
+    },
+    "minecraft:prismarine_crystals": {
+      "aqua": 5,
+      "vitreus": 5,
+      "lux": 5
+    },
+    "minecraft:elytra": {
+      "volatus": 20,
+      "motus": 15
+    },
+    "minecraft:end_rod": {
+      "ignis": 1,
+      "lux": 5
+    },
+    "minecraft:tripwire_hook": {
+      "sensus": 5,
+      "machina": 5,
+      "vinculum": 5
+    },
+    "minecraft:ink_sac": {
+      "victus": 2,
+      "mortuus": 1,
+      "herba": 1
+    },
+    "thaumcraft:triple_meat_treat": {
+      "victus": 10,
+      "desiderium": 10
+    },
+    "thaumcraft:crystal_aer": {
+      "aer": 15,
+      "vitreus": 10
+    },
+    "thaumcraft:crystal_ignis": {
+      "ignis": 15,
+      "vitreus": 10
+    },
+    "thaumcraft:crystal_aqua": {
+      "aqua": 15,
+      "vitreus": 10
+    },
+    "thaumcraft:crystal_terra": {
+      "terra": 15,
+      "vitreus": 10
+    },
+    "thaumcraft:crystal_ordo": {
+      "ordo": 15,
+      "vitreus": 10
+    },
+    "thaumcraft:crystal_perditio": {
+      "perditio": 15,
+      "vitreus": 10
+    },
+    "thaumcraft:crystal_vitium": {
+      "vitium": 15,
+      "vitreus": 10
+    },
+    "thaumcraft:log_greatwood": {
+      "herba": 20,
+      "victus": 5
+    },
+    "thaumcraft:log_silverwood": {
+      "herba": 20,
+      "auram": 5
+    },
+    "thaumcraft:shimmerleaf": {
+      "herba": 5,
+      "auram": 10,
+      "potentia": 5
+    },
+    "thaumcraft:cinderpearl": {
+      "herba": 5,
+      "auram": 5,
+      "ignis": 10
+    },
+    "thaumcraft:vishroom": {
+      "herba": 2,
+      "mortuus": 1,
+      "praecantatio": 1,
+      "perditio": 1
+    },
+    "thaumcraft:stone_ancient": {
+      "terra": 5,
+      "alienis": 5
+    },
+    "thaumcraft:stone_ancient_tile": {
+      "terra": 5,
+      "alienis": 5
+    },
+    "thaumcraft:stone_ancient_rock": {
+      "terra": 5,
+      "alienis": 5
+    },
+    "thaumcraft:stone_eldritch_tile": {
+      "terra": 5,
+      "alienis": 5
+    },
+    "thaumcraft:stone_ancient_doorway": {
+      "metallum": 5,
+      "alienis": 5,
+      "vinculum": 5
+    },
+    "thaumcraft:stone_ancient_glyphed": {
+      "metallum": 5,
+      "alienis": 5,
+      "cognitio": 5
+    },
+    "thaumcraft:salis_mundus": {
+      "praecantatio": 5,
+      "potentia": 5
+    }
+  },
+  "entities": {
+    "minecraft:zombie": {
+      "exanimis": 20,
+      "humanus": 10,
+      "terra": 5
+    },
+    "minecraft:husk": {
+      "exanimis": 20,
+      "humanus": 10,
+      "ignis": 5
+    },
+    "minecraft:giant": {
+      "exanimis": 25,
+      "humanus": 15,
+      "terra": 10
+    },
+    "minecraft:skeleton": {
+      "exanimis": 20,
+      "humanus": 5,
+      "terra": 5
+    },
+    "minecraft:wither_skeleton": {
+      "exanimis": 25,
+      "humanus": 5,
+      "perditio": 10
+    },
+    "minecraft:creeper": {
+      "herba": 15,
+      "ignis": 15
+    },
+    "minecraft:horse": {
+      "bestia": 15,
+      "terra": 5,
+      "aer": 5
+    },
+    "minecraft:donkey": {
+      "bestia": 15,
+      "terra": 5,
+      "aer": 5
+    },
+    "minecraft:mule": {
+      "bestia": 15,
+      "terra": 5,
+      "aer": 5
+    },
+    "minecraft:skeleton_horse": {
+      "bestia": 5,
+      "exanimis": 10,
+      "terra": 5,
+      "aer": 5
+    },
+    "minecraft:zombie_horse": {
+      "bestia": 10,
+      "exanimis": 5,
+      "terra": 5,
+      "aer": 5
+    },
+    "minecraft:pig": {
+      "bestia": 10,
+      "terra": 10,
+      "desiderium": 5
+    },
+    "minecraft:experience_orb": {
+      "cognitio": 10
+    },
+    "minecraft:sheep": {
+      "bestia": 10,
+      "terra": 10
+    },
+    "minecraft:cow": {
+      "bestia": 15,
+      "terra": 15
+    },
+    "minecraft:mooshroom": {
+      "bestia": 15,
+      "herba": 15,
+      "terra": 15
+    },
+    "minecraft:snow_golem": {
+      "gelum": 10,
+      "humanus": 5,
+      "machina": 5,
+      "praecantatio": 5
+    },
+    "minecraft:ocelot": {
+      "bestia": 10,
+      "perditio": 10
+    },
+    "minecraft:chicken": {
+      "bestia": 5,
+      "volatus": 5,
+      "aer": 5
+    },
+    "minecraft:squid": {
+      "bestia": 5,
+      "aqua": 10
+    },
+    "minecraft:wolf": {
+      "bestia": 15,
+      "terra": 10,
+      "aversio": 5
+    },
+    "minecraft:bat": {
+      "bestia": 5,
+      "volatus": 5,
+      "tenebrae": 5
+    },
+    "minecraft:spider": {
+      "bestia": 10,
+      "perditio": 10,
+      "vinculum": 10
+    },
+    "minecraft:slime": {
+      "victus": 10,
+      "aqua": 10,
+      "alkimia": 5
+    },
+    "minecraft:ghast": {
+      "exanimis": 15,
+      "ignis": 15
+    },
+    "minecraft:zombified_piglin": {
+      "exanimis": 15,
+      "ignis": 15,
+      "bestia": 10
+    },
+    "minecraft:enderman": {
+      "alienis": 10,
+      "motus": 15,
+      "desiderium": 5
+    },
+    "minecraft:cave_spider": {
+      "bestia": 5,
+      "mortuus": 10,
+      "vinculum": 10
+    },
+    "minecraft:silverfish": {
+      "bestia": 5,
+      "terra": 10
+    },
+    "minecraft:blaze": {
+      "alienis": 5,
+      "ignis": 15,
+      "volatus": 5
+    },
+    "minecraft:magma_cube": {
+      "aqua": 5,
+      "ignis": 10,
+      "alkimia": 5
+    },
+    "minecraft:ender_dragon": {
+      "alienis": 50,
+      "bestia": 30,
+      "perditio": 50,
+      "volatus": 10
+    },
+    "minecraft:wither": {
+      "exanimis": 50,
+      "perditio": 25,
+      "ignis": 25
+    },
+    "minecraft:witch": {
+      "humanus": 15,
+      "praecantatio": 5,
+      "alkimia": 10
+    },
+    "minecraft:villager": {
+      "humanus": 15
+    },
+    "minecraft:iron_golem": {
+      "metallum": 15,
+      "humanus": 5,
+      "machina": 5,
+      "praecantatio": 5
+    },
+    "minecraft:end_crystal": {
+      "alienis": 15,
+      "auram": 15,
+      "victus": 15
+    },
+    "minecraft:item_frame": {
+      "sensus": 5,
+      "fabrico": 5
+    },
+    "minecraft:painting": {
+      "sensus": 10,
+      "fabrico": 5
+    },
+    "minecraft:guardian": {
+      "bestia": 10,
+      "alienis": 10,
+      "aqua": 10
+    },
+    "minecraft:rabbit": {
+      "bestia": 5,
+      "terra": 5,
+      "motus": 5
+    },
+    "minecraft:endermite": {
+      "bestia": 5,
+      "alienis": 5,
+      "motus": 5
+    },
+    "minecraft:polar_bear": {
+      "bestia": 15,
+      "gelum": 10
+    },
+    "minecraft:shulker": {
+      "alienis": 10,
+      "vinculum": 5,
+      "volatus": 5,
+      "praemunio": 5
+    },
+    "minecraft:evoker": {
+      "alienis": 5,
+      "praecantatio": 5,
+      "humanus": 10
+    },
+    "minecraft:vindicator": {
+      "aversio": 5,
+      "praecantatio": 5,
+      "humanus": 10
+    },
+    "minecraft:illusioner": {
+      "sensus": 5,
+      "praecantatio": 5,
+      "humanus": 10
+    },
+    "minecraft:llama": {
+      "bestia": 15,
+      "aqua": 5
+    },
+    "minecraft:parrot": {
+      "bestia": 5,
+      "volatus": 5,
+      "sensus": 5
+    },
+    "minecraft:stray": {
+      "exanimis": 20,
+      "humanus": 5,
+      "vinculum": 5
+    },
+    "minecraft:vex": {
+      "alienis": 5,
+      "volatus": 5,
+      "praecantatio": 5,
+      "humanus": 5
+    },
+    "thaumcraft:flux_rift": {
+      "vitium": 20,
+      "alienis": 20,
+      "auram": 20
+    }
+  },
+  "triggers": {
+    "items": {
+      "thaumcraft:stone_ancient": [
+        "!ORBLOCK1"
+      ],
+      "thaumcraft:stone_ancient_tile": [
+        "!ORBLOCK1"
+      ],
+      "thaumcraft:stone_eldritch_tile": [
+        "!ORBLOCK2"
+      ],
+      "thaumcraft:stone_ancient_glyphed": [
+        "!ORBLOCK3"
+      ],
+      "thaumcraft:ore_amber": [
+        "ORE",
+        "!OREAMBER"
+      ],
+      "thaumcraft:ore_cinnabar": [
+        "ORE",
+        "!ORECINNABAR"
+      ],
+      "thaumcraft:crystal_aer": [
+        "ORE",
+        "!ORECRYSTAL"
+      ],
+      "thaumcraft:crystal_ignis": [
+        "ORE",
+        "!ORECRYSTAL"
+      ],
+      "thaumcraft:crystal_aqua": [
+        "ORE",
+        "!ORECRYSTAL"
+      ],
+      "thaumcraft:crystal_terra": [
+        "ORE",
+        "!ORECRYSTAL"
+      ],
+      "thaumcraft:crystal_ordo": [
+        "ORE",
+        "!ORECRYSTAL"
+      ],
+      "thaumcraft:crystal_perditio": [
+        "ORE",
+        "!ORECRYSTAL"
+      ],
+      "thaumcraft:crystal_vitium": [
+        "ORE",
+        "!ORECRYSTAL"
+      ],
+      "thaumcraft:log_greatwood": [
+        "PLANTS",
+        "!PLANTWOOD"
+      ],
+      "thaumcraft:log_silverwood": [
+        "PLANTS",
+        "!PLANTWOOD"
+      ],
+      "thaumcraft:sapling_greatwood": [
+        "PLANTS",
+        "!PLANTWOOD"
+      ],
+      "thaumcraft:sapling_silverwood": [
+        "PLANTS",
+        "!PLANTWOOD"
+      ],
+      "thaumcraft:cinderpearl": [
+        "PLANTS",
+        "!PLANTCINDERPEARL"
+      ],
+      "thaumcraft:shimmerleaf": [
+        "PLANTS",
+        "!PLANTSHIMMERLEAF"
+      ],
+      "thaumcraft:vishroom": [
+        "PLANTS",
+        "!PLANTVISHROOM"
+      ],
+      "minecraft:nether_portal": [
+        "f_TELEPORT"
+      ],
+      "minecraft:end_portal": [
+        "f_TELEPORT"
+      ],
+      "minecraft:end_portal_frame": [
+        "f_TELEPORT"
+      ],
+      "minecraft:dispenser": [
+        "f_DISPENSER",
+        "f_DISPENSER"
+      ],
+      "minecraft:terracotta": [
+        "f_MATCLAY"
+      ],
+      "minecraft:stained_hardened_clay": [
+        "f_MATCLAY"
+      ],
+      "thaumcraft:primordial_pearl": [
+        "PRIMPEARL"
+      ],
+      "minecraft:dragon_breath": [
+        "!DRAGONBREATH"
+      ],
+      "minecraft:totem_of_undying": [
+        "!TOTEMUNDYING"
+      ],
+      "minecraft:ender_pearl": [
+        "f_TELEPORT"
+      ],
+      "thaumcraft:brain": [
+        "f_BRAIN"
+      ],
+      "minecraft:clay_ball": [
+        "f_MATCLAY"
+      ],
+      "minecraft:arrow": [
+        "f_arrow"
+      ],
+      "thaumcraft:pech_wand": [
+        "!Pechwand"
+      ],
+      "thaumcraft:void_seed": [
+        "f_VOIDSEED"
+      ]
+    },
+    "entities": {
+      "minecraft:wisp": [
+        "!Wisp",
+        "f_FLY"
+      ],
+      "minecraft:thaumic_slime": [
+        "!ThaumSlime"
+      ],
+      "minecraft:fire_bat": [
+        "!Firebat",
+        "f_BAT",
+        "f_FLY"
+      ],
+      "minecraft:pech": [
+        "!Pech"
+      ],
+      "minecraft:brainy_zombie": [
+        "!BrainyZombie",
+        "f_BRAIN"
+      ],
+      "minecraft:eldritch_crab": [
+        "!EldritchCrab"
+      ],
+      "minecraft:inhabited_zombie": [
+        "!EldritchCrab"
+      ],
+      "minecraft:cultist": [
+        "!CrimsonCultist"
+      ],
+      "minecraft:eldritch_guardian": [
+        "!EldritchGuardian"
+      ],
+      "minecraft:taint_crawler": [
+        "!TaintCrawler"
+      ],
+      "minecraft:taintacle": [
+        "!Taintacle"
+      ],
+      "minecraft:taint_seed": [
+        "!TaintSeed"
+      ],
+      "minecraft:taint_swarm": [
+        "!TaintSwarm",
+        "f_FLY"
+      ],
+      "thaumcraft:flux_rift": [
+        "f_toomuchflux",
+        "!FluxRift"
+      ],
+      "minecraft:golem": [
+        "f_golem"
+      ],
+      "minecraft:owned_construct": [
+        "f_golem"
+      ],
+      "minecraft:spider": [
+        "f_SPIDER"
+      ],
+      "minecraft:bat": [
+        "f_BAT",
+        "f_FLY"
+      ],
+      "minecraft:parrot": [
+        "f_FLY"
+      ],
+      "minecraft:ghast": [
+        "f_FLY"
+      ],
+      "minecraft:blaze": [
+        "f_FLY"
+      ],
+      "minecraft:thaumcraft_boss": [
+        "!ORBOSS"
+      ],
+      "minecraft:enderman": [
+        "f_TELEPORT"
+      ],
+      "minecraft:arrow": [
+        "f_arrow"
+      ],
+      "minecraft:fireball": [
+        "f_fireball"
+      ],
+      "minecraft:llama_spit": [
+        "f_spit"
+      ]
+    }
+  }
+}

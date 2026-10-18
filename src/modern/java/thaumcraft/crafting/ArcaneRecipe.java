@@ -12,7 +12,7 @@ import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
 /** A separate recipe type: ordinary crafting tables must never bypass the aura cost. */
-public record ArcaneRecipe(CraftingRecipe recipe, int vis, Map<String, Integer> crystals) implements Recipe<CraftingInput> {
+public record ArcaneRecipe(CraftingRecipe recipe, int vis, Map<String, Integer> crystals, String research) implements Recipe<CraftingInput> {
     public static final java.util.List<String> PRIMALS = java.util.List.of("aer", "ignis", "aqua", "terra", "ordo", "perditio");
     private static final Codec<String> ASPECT = Codec.STRING.validate(s -> PRIMALS.contains(s)
         ? com.mojang.serialization.DataResult.success(s) : com.mojang.serialization.DataResult.error(() -> "Not a primal aspect: " + s));
@@ -21,7 +21,8 @@ public record ArcaneRecipe(CraftingRecipe recipe, int vis, Map<String, Integer> 
             ? com.mojang.serialization.DataResult.success(recipe) : com.mojang.serialization.DataResult.error(() -> "Expected a crafting recipe"))
             .xmap(recipe -> (CraftingRecipe)recipe, recipe -> (Recipe<?>)recipe).fieldOf("recipe").forGetter(ArcaneRecipe::recipe),
         Codec.intRange(0, 32766).fieldOf("vis").forGetter(ArcaneRecipe::vis),
-        Codec.unboundedMap(ASPECT, Codec.intRange(1, 64)).optionalFieldOf("crystals", Map.of()).forGetter(ArcaneRecipe::crystals)
+        Codec.unboundedMap(ASPECT, Codec.intRange(1, 64)).optionalFieldOf("crystals", Map.of()).forGetter(ArcaneRecipe::crystals),
+        Codec.string(0,192).optionalFieldOf("research", "").forGetter(ArcaneRecipe::research)
     ).apply(i, ArcaneRecipe::new));
     public static final StreamCodec<RegistryFriendlyByteBuf, ArcaneRecipe> STREAM = ByteBufCodecs.fromCodecWithRegistries(CODEC.codec());
     public ArcaneRecipe { crystals = Map.copyOf(crystals); }

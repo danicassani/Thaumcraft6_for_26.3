@@ -57,7 +57,8 @@ def arcane(name, result, vis, crystals, pattern=None, key=None, ingredients=None
         recipe['ingredients'] = ingredients
     else:
         recipe.update(pattern=pattern, key=key)
-    save(DATA / f'thaumcraft/recipe/arcane/{name}.json', {'type': 'thaumcraft:arcane', 'recipe': recipe, 'vis': vis, 'crystals': crystals})
+    research = {'mechanism_simple':'BASEARTIFICE','mechanism_complex':'BASEARTIFICE','vis_resonator':'UNLOCKAUROMANCY@2','workbench_charger':'WORKBENCHCHARGER','recharge_pedestal':'RECHARGEPEDESTAL','vis_generator':'VISGENERATOR','enchanted_fabric':'UNLOCKINFUSION','thaumometer':'FIRSTSTEPS@2','dioptra':'DIOPTRA'}[name]
+    save(DATA / f'thaumcraft/recipe/arcane/{name}.json', {'type': 'thaumcraft:arcane', 'recipe': recipe, 'vis': vis, 'crystals': crystals, 'research': research})
 
 
 # Original costs and ingredients; no recipes whose outputs still need a new mechanic.
@@ -68,6 +69,9 @@ arcane('workbench_charger', 'arcane_workbench_charger', 200, {'aer': 2, 'ordo': 
 arcane('recharge_pedestal', 'recharge_pedestal', 100, {'aer': 1, 'ordo': 1}, [' R ', 'DID', 'SSS'], {'R': 'thaumcraft:vis_resonator', 'D': 'minecraft:diamond', 'I': 'minecraft:gold_ingot', 'S': '#minecraft:stone_crafting_materials'})
 arcane('vis_generator', 'vis_generator', 25, {'ignis': 1, 'ordo': 1}, ['WSW', 'EPE', 'WRW'], {'W': '#minecraft:planks', 'S': 'minecraft:redstone', 'E': 'thaumcraft:nugget_rareearth', 'P': 'minecraft:piston', 'R': 'thaumcraft:vis_resonator'})
 arcane('enchanted_fabric', 'fabric', 5, {}, [' S ', 'SCS', ' S '], {'S': 'minecraft:string', 'C': '#minecraft:wool'})
+
+arcane('thaumometer', 'thaumometer', 20, {a: 1 for a in ['aer','terra','ignis','aqua','ordo','perditio']}, [' I ', 'IGI', ' I '], {'I': 'minecraft:gold_ingot', 'G': 'minecraft:glass_pane'})
+arcane('dioptra', 'dioptra', 50, {'aer': 1, 'aqua': 1}, ['APA','IGI','AAA'], {'A':'thaumcraft:stone_arcane','P':'thaumcraft:vis_resonator','G':'thaumcraft:thaumometer','I':'thaumcraft:plate_iron'})
 
 for tool, names in {'axe': ['arcane_workbench', 'arcane_workbench_charger'], 'pickaxe': ['void_siphon']}.items():
     path = DATA / f'minecraft/tags/block/mineable/{tool}.json'
@@ -82,4 +86,4 @@ translations = {
 for locale, extra in translations.items():
     path = ASSETS / f'lang/{locale}.json'
     strings = json.loads(path.read_text()); strings.update(extra); save(path, strings)
-print(f'Arcane workbench, original charger mesh ({len(triangles)} triangles), void siphon, Salis Mundus and 7 arcane recipes generated.')
+print(f'Arcane workbench, original charger mesh ({len(triangles)} triangles), void siphon, Salis Mundus and 9 arcane recipes generated.')

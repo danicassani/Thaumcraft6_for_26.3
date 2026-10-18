@@ -41,6 +41,8 @@ public final class ArcaneRiftProbe {
         for(var entity:level.getEntitiesOfClass(FluxRiftEntity.class,new AABB(-32,0,-32,130,320,130)))entity.discard();
         for(var pos:List.of(TABLE,TABLE.above(),SIPHON))level.setBlockAndUpdate(pos,Blocks.AIR.defaultBlockState());
         var player=new Player(level,new GameProfile(UUID.fromString("a9712d81-0e84-41b1-a7ed-31a8a265a066"),"ArcaneProbe")) { @Override public GameType gameMode(){return GameType.SURVIVAL;} };
+        var known=new java.util.HashMap<String,Integer>();for(var entry:thaumcraft.research.ResearchCatalog.ENTRIES)known.put(entry.key(),entry.stages().size()+1);
+        thaumcraft.research.KnowledgeStore.write(player,new thaumcraft.research.KnowledgeState(1,known,java.util.Set.of(),java.util.Set.of(),java.util.Set.of(),java.util.Map.of()));
         player.setPos(TABLE.getX()+.5,TABLE.getY()+1,TABLE.getZ()+.5);
         level.setBlockAndUpdate(TABLE,ArcaneContent.WORKBENCH.get().defaultBlockState());var table=(ArcaneWorkbenchEntity)level.getBlockEntity(TABLE);
         tableTests(level,table,player);salisTests(level);siphonTests(level);
