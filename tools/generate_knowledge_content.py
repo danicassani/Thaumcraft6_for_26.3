@@ -30,7 +30,7 @@ def aspects(text):
 
 simple = json.loads((ROOT / 'tools/simple_content.json').read_text())
 fields = {v['legacy_field']: v['id'] for group in simple.values() if isinstance(group, list) for v in group if isinstance(v, dict) and v.get('legacy_field')}
-fields.update({'thaumonomicon': 'thaumonomicon', 'thaumometer': 'thaumometer', 'salisMundus': 'salis_mundus',
+fields.update({'scribingTools':'scribing_tools','researchTable':'research_table','tableWood':'table_wood','celestialNotes':'celestial_notes','thaumonomicon': 'thaumonomicon', 'thaumometer': 'thaumometer', 'salisMundus': 'salis_mundus',
                'arcaneWorkbench': 'arcane_workbench', 'arcaneWorkbenchCharger': 'arcane_workbench_charger',
                'visGenerator': 'vis_generator', 'rechargePedestal': 'recharge_pedestal', 'dioptra': 'dioptra',
                'voidSiphon': 'void_siphon', 'oreAmber': 'ore_amber', 'oreCinnabar': 'ore_cinnabar', 'oreQuartz': 'ore_quartz',
@@ -88,6 +88,7 @@ for path in sorted((OLD / 'resources/assets/thaumcraft/research').glob('*.json')
         entries.append(entry)
 entries.sort(key=lambda e:e['key'])
 save(OUT / 'knowledge/research.json', entries)
+save(OUT / 'knowledge/theory_meta.json',{e['key']:(.5 if 'SPIKY' in e.get('meta',[]) else 0)+(.1 if 'HIDDEN' in e.get('meta',[]) else 0) for e in entries if any(m in e.get('meta',[]) for m in ['SPIKY','HIDDEN'])})
 config = (OLD / 'java/thaumcraft/common/config/ConfigResearch.java').read_text()
 formulae = {category:aspects(formula) for category, formula in re.findall(r'registerCategory\("(\w+)"[^\n]+?(new AspectList\(\).*?), new ResourceLocation', config)}
 

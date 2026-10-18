@@ -1,0 +1,104 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:component",
+    "component": "thaumcraft:celestial_note",
+    "cases": [
+      {
+        "when": 0,
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/celestial/sun"
+        }
+      },
+      {
+        "when": 1,
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/celestial/stars_1"
+        }
+      },
+      {
+        "when": 2,
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/celestial/stars_2"
+        }
+      },
+      {
+        "when": 3,
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/celestial/stars_3"
+        }
+      },
+      {
+        "when": 4,
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/celestial/stars_4"
+        }
+      },
+      {
+        "when": 5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/celestial/moon_1"
+        }
+      },
+      {
+        "when": 6,
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/celestial/moon_2"
+        }
+      },
+      {
+        "when": 7,
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/celestial/moon_3"
+        }
+      },
+      {
+        "when": 8,
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/celestial/moon_4"
+        }
+      },
+      {
+        "when": 9,
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/celestial/moon_5"
+        }
+      },
+      {
+        "when": 10,
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/celestial/moon_6"
+        }
+      },
+      {
+        "when": 11,
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/celestial/moon_7"
+        }
+      },
+      {
+        "when": 12,
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/celestial/moon_8"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "thaumcraft:item/celestial/sun"
+    }
+  }
+}

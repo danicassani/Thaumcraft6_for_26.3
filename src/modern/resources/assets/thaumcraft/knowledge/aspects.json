@@ -811,6 +811,11 @@
     "thaumcraft:salis_mundus": {
       "praecantatio": 5,
       "potentia": 5
+    },
+    "thaumcraft:celestial_notes": {
+      "cognitio": 5,
+      "tenebrae": 5,
+      "lux": 5
     }
   },
   "entities": {

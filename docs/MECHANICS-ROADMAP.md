@@ -22,7 +22,7 @@ Contenido: `tableWood`, `tableStone`, `pedestalArcane`, `pedestalAncient`, `pede
 
 ## M04: Aspectos, investigación, escaneo y progreso
 
-**Estado:** port.8 implementa conocimiento persistente, observaciones y escaneos únicos, catálogo original (148 investigaciones/271 etapas), diario, Thaumonomicon, requisitos y bloqueos de recetas; mesa/cartas de teorías, cielo y consumidores avanzados pendientes (RESEARCH-SCANNING.md).
+**Estado:** port.9 añade mesa de investigación persistente, herramientas/recarga, teorías con 27 cartas y ayudas, y 13 variantes de notas celestes obtenibles mediante cielo nativo; faltan cartas dependientes de mecánicas posteriores y consumidores avanzados (THEORY-CELESTIAL.md).
 
 Contenido: `researchTable`, `thaumonomicon`, `curio`, `primordialPearl`, `celestialNotes`, `salisMundus`, `crystalEssence`, `scribingTools`, `thaumometer`.
 

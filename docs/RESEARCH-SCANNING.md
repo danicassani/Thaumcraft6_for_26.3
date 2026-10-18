@@ -137,3 +137,9 @@ identidades, puntos y fabricaciones conservaron sus valores, igual que la copia
 al morir. El servidor se cerró mediante `stop`.
 La compilación limpia terminó correctamente: 22 pruebas, cero fallos. El JAR
 normal contiene 121 recetas y excluye todos los fixtures de integración.
+
+## Continuación port.9
+
+La mesa de investigación, el núcleo de teorías y la observación celeste ya
+tienen consumidores: [THEORY-CELESTIAL.md](THEORY-CELESTIAL.md). Las limitaciones
+anteriores sobre esos tres elementos describen únicamente el lote port.8.

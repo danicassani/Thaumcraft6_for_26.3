@@ -1,7 +1,7 @@
 {
   "M02": "iluminación, soporte, drops y recoloreado implementados y probados; el consumidor de estabilidad de infusión se implementará en M09",
   "M05": "núcleo, cristales y consumidores de port.6 implementados; port.7 añade cargador sobre mesa arcana y sifón con grietas funcionales; conexión al manipulador de focos pendiente de M10 (ARCANE-RIFTS.md)",
-  "M04": "port.8 implementa conocimiento persistente, observaciones y escaneos únicos, catálogo original (148 investigaciones/271 etapas), diario, Thaumonomicon, requisitos y bloqueos de recetas; mesa/cartas de teorías, cielo y consumidores avanzados pendientes (RESEARCH-SCANNING.md)",
+  "M04": "port.9 añade mesa de investigación persistente, herramientas/recarga, teorías con 27 cartas y ayudas, y 13 variantes de notas celestes obtenibles mediante cielo nativo; faltan cartas dependientes de mecánicas posteriores y consumidores avanzados (THEORY-CELESTIAL.md)",
   "M06": "mesa y cargador implementados; port.8 añade requisitos de investigación, recetas del taumómetro y dioptra y consulta en el libro; descuentos de equipo pendientes (RESEARCH-SCANNING.md)",
   "M13": "núcleo de grietas implementado para el sifón: generación por flux, crecimiento, estabilidad, colisiones, sincronización, guardado y colapso con semillas; eventos avanzados, corrupción y fluidos pendientes (ARCANE-RIFTS.md)"
 }

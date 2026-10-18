@@ -101,5 +101,14 @@
   "thaumcraft:salismundusfake": [
     "3 different aspect crystals + redstone + bowl + flint",
     "Bowl and flint are returned."
+  ],
+  "thaumcraft:tablewood": [
+    "SSS / W W",
+    "S: wooden slab; W: wooden plank",
+    "Use scribing tools on this table to create a research table."
+  ],
+  "thaumcraft:inkwell": [
+    "Glass bottle + feather + black dye",
+    "Refill a used tool with black dye."
   ]
 }

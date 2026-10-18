@@ -116,3 +116,10 @@ aura/vis/flux; progresión y descuentos de mesa arcana; alquimia y fluidos; esen
 infusión y redes de estabilización; hechizos; gólems; equipo avanzado/warp/
 accesorios; corrupción; dispositivos; espejos; botín y dimensiones. No se declara
 completo el port de Thaumcraft 6 ni se activan bloques de máquinas vacíos.
+
+## port.9: teorías y cielo
+
+Se añaden mesa de madera, mesa de investigación, herramientas de escritura con
+recarga y notas celestes de trece variantes. Total: 92 bloques, 67 objetos sin
+bloque, 159 IDs de item, 207 entradas creativas y 124 recetas. Véase
+[THEORY-CELESTIAL.md](THEORY-CELESTIAL.md) para las 27 cartas y sus límites.
