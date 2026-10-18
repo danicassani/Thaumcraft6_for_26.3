@@ -58,6 +58,7 @@ public final class BasicContent {
     public static void register(BusGroup bus) {
         SimpleContent.register(bus);
         LuminousContent.register();
+        AuraContent.register();
         TABS.register(bus);
         OreCountPlacement.register(bus);
     }

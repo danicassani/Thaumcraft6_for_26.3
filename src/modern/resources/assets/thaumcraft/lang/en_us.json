@@ -134,5 +134,12 @@
   "block.thaumcraft.nitor_brown": "Brown Nitor",
   "block.thaumcraft.nitor_green": "Green Nitor",
   "block.thaumcraft.nitor_red": "Red Nitor",
-  "block.thaumcraft.nitor_black": "Black Nitor"
+  "block.thaumcraft.nitor_black": "Black Nitor",
+  "block.thaumcraft.vis_battery": "Vis Battery",
+  "item.thaumcraft.creative_flux_sponge": "Creative Flux Sponge",
+  "item.thaumcraft.creative_flux_sponge.help": "Creative only: clears flux from loaded chunks in a 9×9 chunk area.",
+  "item.thaumcraft.creative_flux_sponge.drained": "%s flux drained from loaded chunks in the 9×9 area.",
+  "command.thaumcraft.aura.unloaded": "This chunk is not loaded.",
+  "command.thaumcraft.aura.read": "Chunk %s, %s — base: %s, vis: %s, flux: %s",
+  "command.thaumcraft.aura.add": "Added %s %s."
 }

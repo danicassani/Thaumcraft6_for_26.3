@@ -3,10 +3,10 @@ loaderVersion="[66,)"
 license="All Rights Reserved"
 [[mods]]
 modId="thaumcraft"
-version="6.1.BETA26-port.4-forge66.0.13"
+version="6.1.BETA26-port.5-forge66.0.13"
 displayName="Thaumcraft 6"
 authors="Azanor, GrigLog"
-description="Personal migration of Thaumcraft 6: building blocks, materials, thaumium equipment, food and colored lights. Advanced systems are still in progress."
+description="Personal migration of Thaumcraft 6: building blocks, materials, thaumium equipment, food, colored lights and persistent aura/vis/flux. Advanced systems are still in progress."
 [[dependencies.thaumcraft]]
 modId="forge"
 mandatory=true

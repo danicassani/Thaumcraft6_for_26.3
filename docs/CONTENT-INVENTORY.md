@@ -197,7 +197,7 @@ S = sin un sistema nuevo de Thaumcraft; P3 = lote previo; Mxx = dependencia prop
 | Items | causalityCollapser | ItemCausalityCollapser | M10 |
 | Items | scribingTools | ItemScribingTools | M04 |
 | Items | thaumometer | ItemThaumometer | M04 |
-| Items | resonator | ItemResonator | M05 |
+| Items | resonator | ItemResonator | M08 |
 | Items | sanityChecker | ItemSanityChecker | M12 |
 | Items | handMirror | ItemHandMirror | M15 |
 | Items | thaumiumAxe | ItemThaumiumAxe | S |

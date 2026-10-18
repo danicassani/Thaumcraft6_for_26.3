@@ -28,9 +28,9 @@ Contenido: `researchTable`, `thaumonomicon`, `curio`, `primordialPearl`, `celest
 
 ## M05: Aura, vis y flux por chunk y sincronización
 
-**Estado:** pendiente.
+**Estado:** núcleo implementado y verificado: estado por chunk, ciclo lunar, difusión, guardado por dimensión y reinicio, sincronización al cliente, batería de vis y esponja creativa; cristales y demás consumidores pendientes (AURA-CORE.md).
 
-Contenido: `crystalAir`, `crystalFire`, `crystalWater`, `crystalEarth`, `crystalOrder`, `crystalEntropy`, `crystalTaint`, `grassAmbient`, `visBattery`, `arcaneWorkbenchCharger`, `dioptra`, `rechargePedestal`, `visGenerator`, `voidSiphon`, `resonator`, `creativeFluxSponge`.
+Contenido: `crystalAir`, `crystalFire`, `crystalWater`, `crystalEarth`, `crystalOrder`, `crystalEntropy`, `crystalTaint`, `grassAmbient`, `visBattery`, `arcaneWorkbenchCharger`, `dioptra`, `rechargePedestal`, `visGenerator`, `voidSiphon`, `creativeFluxSponge`.
 
 ## M06: Crafteo arcano y descuentos de vis
 
@@ -48,7 +48,7 @@ Contenido: `crucible`, `centrifuge`, `bellows`, `smelterBasic`, `smelterThaumium
 
 **Estado:** pendiente.
 
-Contenido: `bannerCrimsonCult`, `tube`, `tubeValve`, `tubeRestrict`, `tubeOneway`, `tubeFilter`, `tubeBuffer`, `jarNormal`, `jarVoid`, `jarBrain`, `essentiaTransportInput`, `essentiaTransportOutput`, `label`, `phial`, `banners [16 colores]`.
+Contenido: `bannerCrimsonCult`, `tube`, `tubeValve`, `tubeRestrict`, `tubeOneway`, `tubeFilter`, `tubeBuffer`, `jarNormal`, `jarVoid`, `jarBrain`, `essentiaTransportInput`, `essentiaTransportOutput`, `label`, `phial`, `resonator`, `banners [16 colores]`.
 
 ## M09: Infusión, simetría, estabilidad y mejoras
 

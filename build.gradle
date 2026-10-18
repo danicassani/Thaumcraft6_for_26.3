@@ -4,7 +4,7 @@ plugins {
     id 'eclipse'
     id 'net.minecraftforge.gradle' version '7.0.17'
 }
-version = '6.1.BETA26-port.4-forge66.0.13'
+version = '6.1.BETA26-port.5-forge66.0.13'
 group = 'griglog.thaumcraft'
 base.archivesName = 'thaumcraft'
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
@@ -39,6 +39,10 @@ sourceSets.main {
     resources.setSrcDirs(['src/modern/resources'])
 }
 // Explicit integration fixtures; never packaged by the normal build.
+if (providers.gradleProperty('auraProbe').isPresent()) {
+    sourceSets.main.java.srcDir('src/auraTest/java')
+}
+
 if (providers.gradleProperty('warpRestartProbe').isPresent()) {
     sourceSets.main.java.srcDir('src/runtimeTest/java')
 }
@@ -52,6 +56,9 @@ minecraft {
         configureEach {
             workingDir = layout.projectDirectory.dir('run')
             systemProperty 'eventbus.api.strictRuntimeChecks', 'true'
+            if (providers.gradleProperty('auraProbe').isPresent()) {
+                systemProperty 'thaumcraft.auraProbe', providers.gradleProperty('auraProbe').get()
+            }
             mods {
                 register('thaumcraft') { source sourceSets.main }
             }
@@ -60,6 +67,7 @@ minecraft {
         register('server') {
             workingDir = layout.projectDirectory.dir('run/server')
             args '--nogui'
+            if (providers.gradleProperty('auraProbe').isPresent()) args '--world', 'aura-step5-smoke'
             if (providers.gradleProperty('basicContentProbe').isPresent()) {
                 args '--world', providers.gradleProperty('basicContentProbe').get().with { it ? it : 'basic-content-smoke' }
             }

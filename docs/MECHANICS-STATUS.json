@@ -1,3 +1,4 @@
 {
-  "M02": "iluminación, soporte, drops y recoloreado implementados y probados; el consumidor de estabilidad de infusión se implementará en M09"
+  "M02": "iluminación, soporte, drops y recoloreado implementados y probados; el consumidor de estabilidad de infusión se implementará en M09",
+  "M05": "núcleo implementado y verificado: estado por chunk, ciclo lunar, difusión, guardado por dimensión y reinicio, sincronización al cliente, batería de vis y esponja creativa; cristales y demás consumidores pendientes (AURA-CORE.md)"
 }

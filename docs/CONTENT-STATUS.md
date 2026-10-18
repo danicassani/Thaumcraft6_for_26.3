@@ -75,11 +75,24 @@ servicios externos de Realms/autenticación no están disponibles en esta prueba
 El servidor muestra un error del appender al sondear kqueue en Linux y
 continúa con su arranque normal. No se certifican audio ni servicios online.
 
+## Núcleo de aura añadido en port.5
+
+Ver [AURA-CORE.md](AURA-CORE.md): estado por chunk, ciclo lunar, regeneración,
+difusión, API de simulación/consumo, guardado por dimensión y sincronización de
+servidor a cliente. Se añaden una batería de vis funcional y la esponja creativa
+de flux. El catálogo total de port.5 contiene 76 bloques y 61 objetos sin
+bloque (137 entradas creativas), con las 111 recetas anteriores. Los comandos de operador permiten consultar y añadir vis/flux durante
+las pruebas; el HUD del taumómetro depende de M04.
+
+El núcleo de M05 está implementado; sus cristales y dispositivos dependientes
+siguen pendientes. No se declara M05 completo ni se atribuyen funciones de aura
+al resonador de esencia, que se ha reclasificado en M08.
+
 ## Lo que sigue pendiente
 
 La hoja de ruta detalla los bloques y objetos de cada sistema: árboles y hojas;
-inventarios; conocimiento/aspectos/investigación; aura/vis/flux; mesa arcana;
-alquimia y fluidos; esencia y estandartes con aspectos; infusión y redes de
-estabilización; hechizos; gólems; equipo avanzado/warp/accesorios; corrupción;
-dispositivos; espejos; botín y dimensiones. No se declara completo el port de
-Thaumcraft 6 ni se activan bloques de máquinas vacíos.
+inventarios; conocimiento/aspectos/investigación; consumidores adicionales de
+aura/vis/flux; mesa arcana; alquimia y fluidos; esencia y estandartes con aspectos;
+infusión y redes de estabilización; hechizos; gólems; equipo avanzado/warp/
+accesorios; corrupción; dispositivos; espejos; botín y dimensiones. No se declara
+completo el port de Thaumcraft 6 ni se activan bloques de máquinas vacíos.
