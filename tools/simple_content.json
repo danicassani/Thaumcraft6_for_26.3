@@ -1,0 +1,273 @@
+{
+  "blocks": [
+    {
+      "id": "stone_arcane",
+      "kind": "stone",
+      "base": "",
+      "legacy_field": "stoneArcane"
+    },
+    {
+      "id": "stone_arcane_brick",
+      "kind": "stone",
+      "base": "",
+      "legacy_field": "stoneArcaneBrick"
+    },
+    {
+      "id": "stone_ancient",
+      "kind": "stone",
+      "base": "",
+      "legacy_field": "stoneAncient"
+    },
+    {
+      "id": "stone_ancient_tile",
+      "kind": "stone",
+      "base": "",
+      "legacy_field": "stoneAncientTile"
+    },
+    {
+      "id": "stone_ancient_rock",
+      "kind": "stone",
+      "base": "",
+      "legacy_field": "stoneAncientRock"
+    },
+    {
+      "id": "stone_ancient_glyphed",
+      "kind": "stone",
+      "base": "",
+      "legacy_field": "stoneAncientGlyphed"
+    },
+    {
+      "id": "stone_ancient_doorway",
+      "kind": "stone",
+      "base": "",
+      "legacy_field": "stoneAncientDoorway"
+    },
+    {
+      "id": "stone_eldritch_tile",
+      "kind": "stone",
+      "base": "",
+      "legacy_field": "stoneEldritchTile"
+    },
+    {
+      "id": "stairs_arcane",
+      "kind": "stairs",
+      "base": "stone_arcane",
+      "legacy_field": "stairsArcane"
+    },
+    {
+      "id": "stairs_arcane_brick",
+      "kind": "stairs",
+      "base": "stone_arcane_brick",
+      "legacy_field": "stairsArcaneBrick"
+    },
+    {
+      "id": "stairs_ancient",
+      "kind": "stairs",
+      "base": "stone_ancient",
+      "legacy_field": "stairsAncient"
+    },
+    {
+      "id": "slab_arcane_stone",
+      "kind": "slab",
+      "base": "stone_arcane",
+      "legacy_field": "slabArcaneStone"
+    },
+    {
+      "id": "slab_arcane_brick",
+      "kind": "slab",
+      "base": "stone_arcane_brick",
+      "legacy_field": "slabArcaneBrick"
+    },
+    {
+      "id": "slab_ancient",
+      "kind": "slab",
+      "base": "stone_ancient",
+      "legacy_field": "slabAncient"
+    },
+    {
+      "id": "slab_eldritch",
+      "kind": "slab",
+      "base": "stone_eldritch_tile",
+      "legacy_field": "slabEldritch"
+    },
+    {
+      "id": "log_greatwood",
+      "kind": "log",
+      "base": "",
+      "legacy_field": "logGreatwood"
+    },
+    {
+      "id": "log_silverwood",
+      "kind": "log",
+      "base": "",
+      "legacy_field": "logSilverwood"
+    },
+    {
+      "id": "shimmerleaf",
+      "kind": "plant",
+      "base": "",
+      "legacy_field": "shimmerleaf"
+    },
+    {
+      "id": "cinderpearl",
+      "kind": "plant",
+      "base": "",
+      "legacy_field": "cinderpearl"
+    },
+    {
+      "id": "vishroom",
+      "kind": "plant",
+      "base": "",
+      "legacy_field": "vishroom"
+    },
+    {
+      "id": "plank_greatwood",
+      "kind": "wood",
+      "base": "",
+      "legacy_field": "plankGreatwood"
+    },
+    {
+      "id": "plank_silverwood",
+      "kind": "wood",
+      "base": "",
+      "legacy_field": "plankSilverwood"
+    },
+    {
+      "id": "stairs_greatwood",
+      "kind": "stairs",
+      "base": "plank_greatwood",
+      "legacy_field": "stairsGreatwood"
+    },
+    {
+      "id": "stairs_silverwood",
+      "kind": "stairs",
+      "base": "plank_silverwood",
+      "legacy_field": "stairsSilverwood"
+    },
+    {
+      "id": "slab_greatwood",
+      "kind": "slab",
+      "base": "plank_greatwood",
+      "legacy_field": "slabGreatwood"
+    },
+    {
+      "id": "slab_silverwood",
+      "kind": "slab",
+      "base": "plank_silverwood",
+      "legacy_field": "slabSilverwood"
+    },
+    {
+      "id": "flesh_block",
+      "kind": "flesh",
+      "base": "",
+      "legacy_field": "fleshBlock"
+    },
+    {
+      "id": "metal_alchemical",
+      "kind": "metal",
+      "base": "",
+      "legacy_field": "metalAlchemical"
+    },
+    {
+      "id": "metal_alchemical_advanced",
+      "kind": "metal",
+      "base": "",
+      "legacy_field": "metalAlchemicalAdvanced"
+    },
+    {
+      "id": "pillar_arcane",
+      "kind": "pillar",
+      "base": "",
+      "legacy_field": "pillarArcane"
+    },
+    {
+      "id": "pillar_ancient",
+      "kind": "pillar",
+      "base": "",
+      "legacy_field": "pillarAncient"
+    },
+    {
+      "id": "pillar_eldritch",
+      "kind": "pillar",
+      "base": "",
+      "legacy_field": "pillarEldritch"
+    },
+    {
+      "id": "matrix_speed",
+      "kind": "stone",
+      "base": "",
+      "legacy_field": "matrixSpeed"
+    },
+    {
+      "id": "matrix_cost",
+      "kind": "stone",
+      "base": "",
+      "legacy_field": "matrixCost"
+    },
+    {
+      "id": "activator_rail",
+      "kind": "rail",
+      "base": "",
+      "legacy_field": "activatorRail"
+    }
+  ],
+  "materials": [
+    "nugget_iron",
+    "nugget_copper",
+    "nugget_tin",
+    "nugget_silver",
+    "nugget_lead",
+    "nugget_quartz",
+    "nugget_rareearth",
+    "cluster_iron",
+    "cluster_gold",
+    "cluster_copper",
+    "cluster_tin",
+    "cluster_silver",
+    "cluster_lead",
+    "cluster_cinnabar",
+    "cluster_quartz",
+    "fabric",
+    "vis_resonator",
+    "tallow",
+    "mechanism_simple",
+    "mechanism_complex",
+    "plate_brass",
+    "plate_iron",
+    "plate_thaumium",
+    "plate_void",
+    "filter",
+    "morphic_resonator",
+    "mirrored_glass",
+    "void_seed",
+    "mind_clockwork",
+    "mind_biothaumic",
+    "module_vision",
+    "module_aggression",
+    "jar_brace",
+    "grapple_gun_tip",
+    "grapple_gun_spool"
+  ],
+  "tools": [
+    "thaumium_axe",
+    "thaumium_sword",
+    "thaumium_shovel",
+    "thaumium_pick",
+    "thaumium_hoe"
+  ],
+  "armor": [
+    "thaumium_helm",
+    "thaumium_chest",
+    "thaumium_legs",
+    "thaumium_boots"
+  ],
+  "food": [
+    "chunk_beef",
+    "chunk_chicken",
+    "chunk_pork",
+    "chunk_fish",
+    "chunk_rabbit",
+    "chunk_mutton",
+    "triple_meat_treat"
+  ]
+}

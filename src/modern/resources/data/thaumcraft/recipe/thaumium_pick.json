@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "III",
+    " S ",
+    " S "
+  ],
+  "key": {
+    "I": "thaumcraft:ingot_thaumium",
+    "S": "minecraft:stick"
+  },
+  "result": {
+    "id": "thaumcraft:thaumium_pick",
+    "count": 1
+  }
+}

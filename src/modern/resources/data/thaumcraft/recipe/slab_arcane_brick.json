@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": "thaumcraft:stone_arcane_brick"
+  },
+  "result": {
+    "id": "thaumcraft:slab_arcane_brick",
+    "count": 6
+  }
+}

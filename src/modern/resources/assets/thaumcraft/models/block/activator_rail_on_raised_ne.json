@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_rail_raised_ne",
+  "textures": {
+    "rail": "thaumcraft:blocks/rail_activator_powered"
+  }
+}

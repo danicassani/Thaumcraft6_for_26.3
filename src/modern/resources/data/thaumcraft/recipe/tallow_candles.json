@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " S ",
+    " T ",
+    " T "
+  ],
+  "key": {
+    "S": "minecraft:string",
+    "T": "thaumcraft:tallow"
+  },
+  "result": {
+    "id": "thaumcraft:candle_white",
+    "count": 3
+  }
+}

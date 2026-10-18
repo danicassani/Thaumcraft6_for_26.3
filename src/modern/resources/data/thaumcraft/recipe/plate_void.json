@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": "thaumcraft:ingot_void"
+  },
+  "result": {
+    "id": "thaumcraft:plate_void",
+    "count": 3
+  }
+}

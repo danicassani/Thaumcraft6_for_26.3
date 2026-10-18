@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "thaumcraft:triple_meat_treat",
+  "ingredients": [
+    "thaumcraft:chunk_beef",
+    "thaumcraft:chunk_pork",
+    "thaumcraft:chunk_rabbit",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "thaumcraft:triple_meat_treat"
+  }
+}

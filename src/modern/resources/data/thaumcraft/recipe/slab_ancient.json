@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": "thaumcraft:stone_ancient"
+  },
+  "result": {
+    "id": "thaumcraft:slab_ancient",
+    "count": 6
+  }
+}

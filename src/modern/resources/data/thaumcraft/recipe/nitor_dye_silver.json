@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "#thaumcraft:nitor",
+    "minecraft:light_gray_dye"
+  ],
+  "result": {
+    "id": "thaumcraft:nitor_silver"
+  }
+}

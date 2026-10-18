@@ -1,0 +1,1580 @@
+[
+  {
+    "kind": "Blocks",
+    "field": "oreAmber",
+    "class": "BlockOreTC",
+    "group": "P3"
+  },
+  {
+    "kind": "Blocks",
+    "field": "oreCinnabar",
+    "class": "BlockOreTC",
+    "group": "P3"
+  },
+  {
+    "kind": "Blocks",
+    "field": "oreQuartz",
+    "class": "BlockOreTC",
+    "group": "P3"
+  },
+  {
+    "kind": "Blocks",
+    "field": "crystalAir",
+    "class": "BlockCrystal",
+    "group": "M05"
+  },
+  {
+    "kind": "Blocks",
+    "field": "crystalFire",
+    "class": "BlockCrystal",
+    "group": "M05"
+  },
+  {
+    "kind": "Blocks",
+    "field": "crystalWater",
+    "class": "BlockCrystal",
+    "group": "M05"
+  },
+  {
+    "kind": "Blocks",
+    "field": "crystalEarth",
+    "class": "BlockCrystal",
+    "group": "M05"
+  },
+  {
+    "kind": "Blocks",
+    "field": "crystalOrder",
+    "class": "BlockCrystal",
+    "group": "M05"
+  },
+  {
+    "kind": "Blocks",
+    "field": "crystalEntropy",
+    "class": "BlockCrystal",
+    "group": "M05"
+  },
+  {
+    "kind": "Blocks",
+    "field": "crystalTaint",
+    "class": "BlockCrystal",
+    "group": "M05"
+  },
+  {
+    "kind": "Blocks",
+    "field": "stoneArcane",
+    "class": "BlockStoneTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "stoneArcaneBrick",
+    "class": "BlockStoneTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "stoneAncient",
+    "class": "BlockStoneTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "stoneAncientTile",
+    "class": "BlockStoneTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "stoneAncientRock",
+    "class": "BlockStoneTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "stoneAncientGlyphed",
+    "class": "BlockStoneTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "stoneAncientDoorway",
+    "class": "BlockStoneTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "stoneEldritchTile",
+    "class": "BlockStoneTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "stonePorous",
+    "class": "BlockStonePorous",
+    "group": "M16"
+  },
+  {
+    "kind": "Blocks",
+    "field": "stairsArcane",
+    "class": "BlockStairsTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "stairsArcaneBrick",
+    "class": "BlockStairsTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "stairsAncient",
+    "class": "BlockStairsTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "slabArcaneStone",
+    "class": "BlockSlabTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "doubleSlabArcaneStone",
+    "class": "BlockSlabTC",
+    "group": "S-double"
+  },
+  {
+    "kind": "Blocks",
+    "field": "slabArcaneBrick",
+    "class": "BlockSlabTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "doubleSlabArcaneBrick",
+    "class": "BlockSlabTC",
+    "group": "S-double"
+  },
+  {
+    "kind": "Blocks",
+    "field": "slabAncient",
+    "class": "BlockSlabTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "doubleSlabAncient",
+    "class": "BlockSlabTC",
+    "group": "S-double"
+  },
+  {
+    "kind": "Blocks",
+    "field": "slabEldritch",
+    "class": "BlockSlabTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "doubleSlabEldritch",
+    "class": "BlockSlabTC",
+    "group": "S-double"
+  },
+  {
+    "kind": "Blocks",
+    "field": "saplingGreatwood",
+    "class": "BlockSaplingTC",
+    "group": "M01"
+  },
+  {
+    "kind": "Blocks",
+    "field": "saplingSilverwood",
+    "class": "BlockSaplingTC",
+    "group": "M01"
+  },
+  {
+    "kind": "Blocks",
+    "field": "logGreatwood",
+    "class": "BlockLogsTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "logSilverwood",
+    "class": "BlockLogsTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "leafGreatwood",
+    "class": "BlockLeavesTC",
+    "group": "M01"
+  },
+  {
+    "kind": "Blocks",
+    "field": "leafSilverwood",
+    "class": "BlockLeavesTC",
+    "group": "M01"
+  },
+  {
+    "kind": "Blocks",
+    "field": "shimmerleaf",
+    "class": "BlockPlantShimmerleaf",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "cinderpearl",
+    "class": "BlockPlantCinderpearl",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "vishroom",
+    "class": "BlockPlantVishroom",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "plankGreatwood",
+    "class": "BlockPlanksTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "plankSilverwood",
+    "class": "BlockPlanksTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "stairsGreatwood",
+    "class": "BlockStairsTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "stairsSilverwood",
+    "class": "BlockStairsTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "slabGreatwood",
+    "class": "BlockSlabTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "doubleSlabGreatwood",
+    "class": "BlockSlabTC",
+    "group": "S-double"
+  },
+  {
+    "kind": "Blocks",
+    "field": "slabSilverwood",
+    "class": "BlockSlabTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "doubleSlabSilverwood",
+    "class": "BlockSlabTC",
+    "group": "S-double"
+  },
+  {
+    "kind": "Blocks",
+    "field": "amberBlock",
+    "class": "BlockTranslucent",
+    "group": "P3"
+  },
+  {
+    "kind": "Blocks",
+    "field": "amberBrick",
+    "class": "BlockTranslucent",
+    "group": "P3"
+  },
+  {
+    "kind": "Blocks",
+    "field": "fleshBlock",
+    "class": "BlockFlesh",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "lootCrateCommon",
+    "class": "BlockLoot",
+    "group": "M16"
+  },
+  {
+    "kind": "Blocks",
+    "field": "lootCrateUncommon",
+    "class": "BlockLoot",
+    "group": "M16"
+  },
+  {
+    "kind": "Blocks",
+    "field": "lootCrateRare",
+    "class": "BlockLoot",
+    "group": "M16"
+  },
+  {
+    "kind": "Blocks",
+    "field": "lootUrnCommon",
+    "class": "BlockLoot",
+    "group": "M16"
+  },
+  {
+    "kind": "Blocks",
+    "field": "lootUrnUncommon",
+    "class": "BlockLoot",
+    "group": "M16"
+  },
+  {
+    "kind": "Blocks",
+    "field": "lootUrnRare",
+    "class": "BlockLoot",
+    "group": "M16"
+  },
+  {
+    "kind": "Blocks",
+    "field": "taintFibre",
+    "class": "BlockTaintFibre",
+    "group": "M13"
+  },
+  {
+    "kind": "Blocks",
+    "field": "taintCrust",
+    "class": "BlockTaint",
+    "group": "M13"
+  },
+  {
+    "kind": "Blocks",
+    "field": "taintSoil",
+    "class": "BlockTaint",
+    "group": "M13"
+  },
+  {
+    "kind": "Blocks",
+    "field": "taintRock",
+    "class": "BlockTaint",
+    "group": "M13"
+  },
+  {
+    "kind": "Blocks",
+    "field": "taintGeyser",
+    "class": "BlockTaint",
+    "group": "M13"
+  },
+  {
+    "kind": "Blocks",
+    "field": "taintFeature",
+    "class": "BlockTaintFeature",
+    "group": "M13"
+  },
+  {
+    "kind": "Blocks",
+    "field": "taintLog",
+    "class": "BlockTaintLog",
+    "group": "M13"
+  },
+  {
+    "kind": "Blocks",
+    "field": "grassAmbient",
+    "class": "BlockGrassAmbient",
+    "group": "M05"
+  },
+  {
+    "kind": "Blocks",
+    "field": "tableWood",
+    "class": "BlockTable",
+    "group": "M03"
+  },
+  {
+    "kind": "Blocks",
+    "field": "tableStone",
+    "class": "BlockTable",
+    "group": "M03"
+  },
+  {
+    "kind": "Blocks",
+    "field": "pedestalArcane",
+    "class": "BlockPedestal",
+    "group": "M03"
+  },
+  {
+    "kind": "Blocks",
+    "field": "pedestalAncient",
+    "class": "BlockPedestal",
+    "group": "M03"
+  },
+  {
+    "kind": "Blocks",
+    "field": "pedestalEldritch",
+    "class": "BlockPedestal",
+    "group": "M03"
+  },
+  {
+    "kind": "Blocks",
+    "field": "metalBlockBrass",
+    "class": "BlockMetalTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "metalBlockThaumium",
+    "class": "BlockMetalTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "metalBlockVoid",
+    "class": "BlockMetalTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "metalAlchemical",
+    "class": "BlockMetalTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "metalAlchemicalAdvanced",
+    "class": "BlockMetalTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "pavingStoneTravel",
+    "class": "BlockPavingStone",
+    "group": "M14"
+  },
+  {
+    "kind": "Blocks",
+    "field": "pavingStoneBarrier",
+    "class": "BlockPavingStone",
+    "group": "M14"
+  },
+  {
+    "kind": "Blocks",
+    "field": "pillarArcane",
+    "class": "BlockPillar",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "pillarAncient",
+    "class": "BlockPillar",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "pillarEldritch",
+    "class": "BlockPillar",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "matrixSpeed",
+    "class": "BlockStoneTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "matrixCost",
+    "class": "BlockStoneTC",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "bannerCrimsonCult",
+    "class": "BlockBannerTC",
+    "group": "M08"
+  },
+  {
+    "kind": "Blocks",
+    "field": "visBattery",
+    "class": "BlockVisBattery",
+    "group": "M05"
+  },
+  {
+    "kind": "Blocks",
+    "field": "inlay",
+    "class": "BlockInlay",
+    "group": "M09"
+  },
+  {
+    "kind": "Blocks",
+    "field": "arcaneWorkbench",
+    "class": "BlockArcaneWorkbench",
+    "group": "M06"
+  },
+  {
+    "kind": "Blocks",
+    "field": "arcaneWorkbenchCharger",
+    "class": "BlockArcaneWorkbenchCharger",
+    "group": "M05"
+  },
+  {
+    "kind": "Blocks",
+    "field": "dioptra",
+    "class": "BlockDioptra",
+    "group": "M05"
+  },
+  {
+    "kind": "Blocks",
+    "field": "researchTable",
+    "class": "BlockResearchTable",
+    "group": "M04"
+  },
+  {
+    "kind": "Blocks",
+    "field": "crucible",
+    "class": "BlockCrucible",
+    "group": "M07"
+  },
+  {
+    "kind": "Blocks",
+    "field": "arcaneEar",
+    "class": "BlockArcaneEar",
+    "group": "M14"
+  },
+  {
+    "kind": "Blocks",
+    "field": "arcaneEarToggle",
+    "class": "BlockArcaneEarToggle",
+    "group": "M14"
+  },
+  {
+    "kind": "Blocks",
+    "field": "lampArcane",
+    "class": "BlockLamp",
+    "group": "M14"
+  },
+  {
+    "kind": "Blocks",
+    "field": "lampFertility",
+    "class": "BlockLamp",
+    "group": "M14"
+  },
+  {
+    "kind": "Blocks",
+    "field": "lampGrowth",
+    "class": "BlockLamp",
+    "group": "M14"
+  },
+  {
+    "kind": "Blocks",
+    "field": "levitator",
+    "class": "BlockLevitator",
+    "group": "M14"
+  },
+  {
+    "kind": "Blocks",
+    "field": "centrifuge",
+    "class": "BlockCentrifuge",
+    "group": "M07"
+  },
+  {
+    "kind": "Blocks",
+    "field": "bellows",
+    "class": "BlockBellows",
+    "group": "M07"
+  },
+  {
+    "kind": "Blocks",
+    "field": "smelterBasic",
+    "class": "BlockSmelter",
+    "group": "M07"
+  },
+  {
+    "kind": "Blocks",
+    "field": "smelterThaumium",
+    "class": "BlockSmelter",
+    "group": "M07"
+  },
+  {
+    "kind": "Blocks",
+    "field": "smelterVoid",
+    "class": "BlockSmelter",
+    "group": "M07"
+  },
+  {
+    "kind": "Blocks",
+    "field": "smelterAux",
+    "class": "BlockSmelterAux",
+    "group": "M07"
+  },
+  {
+    "kind": "Blocks",
+    "field": "smelterVent",
+    "class": "BlockSmelterVent",
+    "group": "M07"
+  },
+  {
+    "kind": "Blocks",
+    "field": "alembic",
+    "class": "BlockAlembic",
+    "group": "M07"
+  },
+  {
+    "kind": "Blocks",
+    "field": "rechargePedestal",
+    "class": "BlockRechargePedestal",
+    "group": "M05"
+  },
+  {
+    "kind": "Blocks",
+    "field": "wandWorkbench",
+    "class": "BlockFocalManipulator",
+    "group": "M10"
+  },
+  {
+    "kind": "Blocks",
+    "field": "hungryChest",
+    "class": "BlockHungryChest",
+    "group": "M03"
+  },
+  {
+    "kind": "Blocks",
+    "field": "tube",
+    "class": "BlockTube",
+    "group": "M08"
+  },
+  {
+    "kind": "Blocks",
+    "field": "tubeValve",
+    "class": "BlockTube",
+    "group": "M08"
+  },
+  {
+    "kind": "Blocks",
+    "field": "tubeRestrict",
+    "class": "BlockTube",
+    "group": "M08"
+  },
+  {
+    "kind": "Blocks",
+    "field": "tubeOneway",
+    "class": "BlockTube",
+    "group": "M08"
+  },
+  {
+    "kind": "Blocks",
+    "field": "tubeFilter",
+    "class": "BlockTube",
+    "group": "M08"
+  },
+  {
+    "kind": "Blocks",
+    "field": "tubeBuffer",
+    "class": "BlockTube",
+    "group": "M08"
+  },
+  {
+    "kind": "Blocks",
+    "field": "jarNormal",
+    "class": "BlockJar",
+    "group": "M08"
+  },
+  {
+    "kind": "Blocks",
+    "field": "jarVoid",
+    "class": "BlockJar",
+    "group": "M08"
+  },
+  {
+    "kind": "Blocks",
+    "field": "jarBrain",
+    "class": "BlockJar",
+    "group": "M08"
+  },
+  {
+    "kind": "Blocks",
+    "field": "infusionMatrix",
+    "class": "BlockInfusionMatrix",
+    "group": "M09"
+  },
+  {
+    "kind": "Blocks",
+    "field": "infernalFurnace",
+    "class": "BlockInfernalFurnace",
+    "group": "M07"
+  },
+  {
+    "kind": "Blocks",
+    "field": "everfullUrn",
+    "class": "BlockWaterJug",
+    "group": "M14"
+  },
+  {
+    "kind": "Blocks",
+    "field": "thaumatorium",
+    "class": "BlockThaumatorium",
+    "group": "M07"
+  },
+  {
+    "kind": "Blocks",
+    "field": "thaumatoriumTop",
+    "class": "BlockThaumatorium",
+    "group": "M07"
+  },
+  {
+    "kind": "Blocks",
+    "field": "brainBox",
+    "class": "BlockBrainBox",
+    "group": "M07"
+  },
+  {
+    "kind": "Blocks",
+    "field": "spa",
+    "class": "BlockSpa",
+    "group": "M14"
+  },
+  {
+    "kind": "Blocks",
+    "field": "golemBuilder",
+    "class": "BlockGolemBuilder",
+    "group": "M11"
+  },
+  {
+    "kind": "Blocks",
+    "field": "mirror",
+    "class": "BlockMirror",
+    "group": "M15"
+  },
+  {
+    "kind": "Blocks",
+    "field": "mirrorEssentia",
+    "class": "BlockMirror",
+    "group": "M15"
+  },
+  {
+    "kind": "Blocks",
+    "field": "essentiaTransportInput",
+    "class": "BlockEssentiaTransport",
+    "group": "M08"
+  },
+  {
+    "kind": "Blocks",
+    "field": "essentiaTransportOutput",
+    "class": "BlockEssentiaTransport",
+    "group": "M08"
+  },
+  {
+    "kind": "Blocks",
+    "field": "redstoneRelay",
+    "class": "BlockRedstoneRelay",
+    "group": "M14"
+  },
+  {
+    "kind": "Blocks",
+    "field": "patternCrafter",
+    "class": "BlockPatternCrafter",
+    "group": "M03"
+  },
+  {
+    "kind": "Blocks",
+    "field": "potionSprayer",
+    "class": "BlockPotionSprayer",
+    "group": "M14"
+  },
+  {
+    "kind": "Blocks",
+    "field": "activatorRail",
+    "class": "BlockRailPowered",
+    "group": "S"
+  },
+  {
+    "kind": "Blocks",
+    "field": "stabilizer",
+    "class": "BlockStabilizer",
+    "group": "M09"
+  },
+  {
+    "kind": "Blocks",
+    "field": "visGenerator",
+    "class": "BlockVisGenerator",
+    "group": "M05"
+  },
+  {
+    "kind": "Blocks",
+    "field": "condenser",
+    "class": "BlockCondenser",
+    "group": "M07"
+  },
+  {
+    "kind": "Blocks",
+    "field": "condenserlattice",
+    "class": "BlockCondenserLattice",
+    "group": "M07"
+  },
+  {
+    "kind": "Blocks",
+    "field": "condenserlatticeDirty",
+    "class": "BlockCondenserLattice",
+    "group": "M07"
+  },
+  {
+    "kind": "Blocks",
+    "field": "voidSiphon",
+    "class": "BlockVoidSiphon",
+    "group": "M05"
+  },
+  {
+    "kind": "Blocks",
+    "field": "fluxGoo",
+    "class": "BlockFluxGoo",
+    "group": "M13"
+  },
+  {
+    "kind": "Blocks",
+    "field": "liquidDeath",
+    "class": "BlockFluidDeath",
+    "group": "M13"
+  },
+  {
+    "kind": "Blocks",
+    "field": "purifyingFluid",
+    "class": "BlockFluidPure",
+    "group": "M13"
+  },
+  {
+    "kind": "Blocks",
+    "field": "hole",
+    "class": "BlockHole",
+    "group": "M16"
+  },
+  {
+    "kind": "Blocks",
+    "field": "effectShock",
+    "class": "BlockEffect",
+    "group": "M16"
+  },
+  {
+    "kind": "Blocks",
+    "field": "effectSap",
+    "class": "BlockEffect",
+    "group": "M16"
+  },
+  {
+    "kind": "Blocks",
+    "field": "effectGlimmer",
+    "class": "BlockEffect",
+    "group": "M16"
+  },
+  {
+    "kind": "Blocks",
+    "field": "placeholderNetherbrick",
+    "class": "BlockPlaceholder",
+    "group": "M16"
+  },
+  {
+    "kind": "Blocks",
+    "field": "placeholderObsidian",
+    "class": "BlockPlaceholder",
+    "group": "M16"
+  },
+  {
+    "kind": "Blocks",
+    "field": "placeholderBars",
+    "class": "BlockPlaceholder",
+    "group": "M16"
+  },
+  {
+    "kind": "Blocks",
+    "field": "placeholderAnvil",
+    "class": "BlockPlaceholder",
+    "group": "M16"
+  },
+  {
+    "kind": "Blocks",
+    "field": "placeholderCauldron",
+    "class": "BlockPlaceholder",
+    "group": "M16"
+  },
+  {
+    "kind": "Blocks",
+    "field": "placeholderTable",
+    "class": "BlockPlaceholder",
+    "group": "M16"
+  },
+  {
+    "kind": "Blocks",
+    "field": "empty",
+    "class": "BlockTranslucent",
+    "group": "M16"
+  },
+  {
+    "kind": "Blocks",
+    "field": "barrier",
+    "class": "BlockBarrier",
+    "group": "M16"
+  },
+  {
+    "kind": "Items",
+    "field": "thaumonomicon",
+    "class": "ItemThaumonomicon",
+    "group": "M04"
+  },
+  {
+    "kind": "Items",
+    "field": "curio",
+    "class": "ItemCurio",
+    "group": "M04"
+  },
+  {
+    "kind": "Items",
+    "field": "lootBag",
+    "class": "ItemLootBag",
+    "group": "M16"
+  },
+  {
+    "kind": "Items",
+    "field": "primordialPearl",
+    "class": "ItemPrimordialPearl",
+    "group": "M04"
+  },
+  {
+    "kind": "Items",
+    "field": "pechWand",
+    "class": "ItemPechWand",
+    "group": "M10"
+  },
+  {
+    "kind": "Items",
+    "field": "celestialNotes",
+    "class": "ItemCelestialNotes",
+    "group": "M04"
+  },
+  {
+    "kind": "Items",
+    "field": "amber",
+    "class": "ItemTCBase",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "quicksilver",
+    "class": "ItemTCBase",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "ingots",
+    "class": "ItemTCBase",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "nuggets",
+    "class": "ItemTCBase",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "clusters",
+    "class": "ItemTCBase",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "fabric",
+    "class": "ItemTCBase",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "visResonator",
+    "class": "ItemTCBase",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "tallow",
+    "class": "ItemTCBase",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "mechanismSimple",
+    "class": "ItemTCBase",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "mechanismComplex",
+    "class": "ItemTCBase",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "plate",
+    "class": "ItemTCBase",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "filter",
+    "class": "ItemTCBase",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "morphicResonator",
+    "class": "ItemTCBase",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "salisMundus",
+    "class": "ItemMagicDust",
+    "group": "M04"
+  },
+  {
+    "kind": "Items",
+    "field": "mirroredGlass",
+    "class": "ItemTCBase",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "voidSeed",
+    "class": "ItemTCBase",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "mind",
+    "class": "ItemTCBase",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "modules",
+    "class": "ItemTCBase",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "crystalEssence",
+    "class": "ItemCrystalEssence",
+    "group": "M04"
+  },
+  {
+    "kind": "Items",
+    "field": "chunks",
+    "class": "ItemChunksEdible",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "tripleMeatTreat",
+    "class": "ItemTripleMeatTreat",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "brain",
+    "class": "ItemZombieBrain",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "label",
+    "class": "ItemLabel",
+    "group": "M08"
+  },
+  {
+    "kind": "Items",
+    "field": "phial",
+    "class": "ItemPhial",
+    "group": "M08"
+  },
+  {
+    "kind": "Items",
+    "field": "alumentum",
+    "class": "ItemAlumentum",
+    "group": "M10"
+  },
+  {
+    "kind": "Items",
+    "field": "jarBrace",
+    "class": "ItemTCBase",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "bottleTaint",
+    "class": "ItemBottleTaint",
+    "group": "M13"
+  },
+  {
+    "kind": "Items",
+    "field": "sanitySoap",
+    "class": "ItemSanitySoap",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "bathSalts",
+    "class": "ItemBathSalts",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "turretPlacer",
+    "class": "ItemTurretPlacer",
+    "group": "M10"
+  },
+  {
+    "kind": "Items",
+    "field": "causalityCollapser",
+    "class": "ItemCausalityCollapser",
+    "group": "M10"
+  },
+  {
+    "kind": "Items",
+    "field": "scribingTools",
+    "class": "ItemScribingTools",
+    "group": "M04"
+  },
+  {
+    "kind": "Items",
+    "field": "thaumometer",
+    "class": "ItemThaumometer",
+    "group": "M04"
+  },
+  {
+    "kind": "Items",
+    "field": "resonator",
+    "class": "ItemResonator",
+    "group": "M05"
+  },
+  {
+    "kind": "Items",
+    "field": "sanityChecker",
+    "class": "ItemSanityChecker",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "handMirror",
+    "class": "ItemHandMirror",
+    "group": "M15"
+  },
+  {
+    "kind": "Items",
+    "field": "thaumiumAxe",
+    "class": "ItemThaumiumAxe",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "thaumiumSword",
+    "class": "ItemThaumiumSword",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "thaumiumShovel",
+    "class": "ItemThaumiumShovel",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "thaumiumPick",
+    "class": "ItemThaumiumPickaxe",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "thaumiumHoe",
+    "class": "ItemThaumiumHoe",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "voidAxe",
+    "class": "ItemVoidAxe",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "voidSword",
+    "class": "ItemVoidSword",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "voidShovel",
+    "class": "ItemVoidShovel",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "voidPick",
+    "class": "ItemVoidPickaxe",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "voidHoe",
+    "class": "ItemVoidHoe",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "elementalAxe",
+    "class": "ItemElementalAxe",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "elementalSword",
+    "class": "ItemElementalSword",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "elementalShovel",
+    "class": "ItemElementalShovel",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "elementalPick",
+    "class": "ItemElementalPickaxe",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "elementalHoe",
+    "class": "ItemElementalHoe",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "primalCrusher",
+    "class": "ItemPrimalCrusher",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "crimsonBlade",
+    "class": "ItemCrimsonBlade",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "grappleGun",
+    "class": "ItemGrappleGun",
+    "group": "M10"
+  },
+  {
+    "kind": "Items",
+    "field": "grappleGunTip",
+    "class": "ItemTCBase",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "grappleGunSpool",
+    "class": "ItemTCBase",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "goggles",
+    "class": "ItemGoggles",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "thaumiumHelm",
+    "class": "ItemThaumiumArmor",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "thaumiumChest",
+    "class": "ItemThaumiumArmor",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "thaumiumLegs",
+    "class": "ItemThaumiumArmor",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "thaumiumBoots",
+    "class": "ItemThaumiumArmor",
+    "group": "S"
+  },
+  {
+    "kind": "Items",
+    "field": "clothChest",
+    "class": "ItemRobeArmor",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "clothLegs",
+    "class": "ItemRobeArmor",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "clothBoots",
+    "class": "ItemRobeArmor",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "travellerBoots",
+    "class": "ItemBootsTraveller",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "fortressHelm",
+    "class": "ItemFortressArmor",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "fortressChest",
+    "class": "ItemFortressArmor",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "fortressLegs",
+    "class": "ItemFortressArmor",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "voidHelm",
+    "class": "ItemVoidArmor",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "voidChest",
+    "class": "ItemVoidArmor",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "voidLegs",
+    "class": "ItemVoidArmor",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "voidBoots",
+    "class": "ItemVoidArmor",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "voidRobeHelm",
+    "class": "ItemVoidRobeArmor",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "voidRobeChest",
+    "class": "ItemVoidRobeArmor",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "voidRobeLegs",
+    "class": "ItemVoidRobeArmor",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "crimsonPlateHelm",
+    "class": "ItemCultistPlateArmor",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "crimsonPlateChest",
+    "class": "ItemCultistPlateArmor",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "crimsonPlateLegs",
+    "class": "ItemCultistPlateArmor",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "crimsonBoots",
+    "class": "ItemCultistBoots",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "crimsonRobeHelm",
+    "class": "ItemCultistRobeArmor",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "crimsonRobeChest",
+    "class": "ItemCultistRobeArmor",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "crimsonRobeLegs",
+    "class": "ItemCultistRobeArmor",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "crimsonPraetorHelm",
+    "class": "ItemCultistLeaderArmor",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "crimsonPraetorChest",
+    "class": "ItemCultistLeaderArmor",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "crimsonPraetorLegs",
+    "class": "ItemCultistLeaderArmor",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "baubles",
+    "class": "ItemBaubles",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "amuletVis",
+    "class": "ItemAmuletVis",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "charmVerdant",
+    "class": "ItemVerdantCharm",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "bandCuriosity",
+    "class": "ItemCuriosityBand",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "charmVoidseer",
+    "class": "ItemVoidseerCharm",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "ringCloud",
+    "class": "ItemCloudRing",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "charmUndying",
+    "class": "ItemCharmUndying",
+    "group": "M12"
+  },
+  {
+    "kind": "Items",
+    "field": "creativeFluxSponge",
+    "class": "ItemCreativeFluxSponge",
+    "group": "M05"
+  },
+  {
+    "kind": "Items",
+    "field": "enchantedPlaceholder",
+    "class": "ItemEnchantmentPlaceholder",
+    "group": "M16"
+  },
+  {
+    "kind": "Items",
+    "field": "casterBasic",
+    "class": "ItemCaster",
+    "group": "M10"
+  },
+  {
+    "kind": "Items",
+    "field": "focus1",
+    "class": "ItemFocus",
+    "group": "M10"
+  },
+  {
+    "kind": "Items",
+    "field": "focus2",
+    "class": "ItemFocus",
+    "group": "M10"
+  },
+  {
+    "kind": "Items",
+    "field": "focus3",
+    "class": "ItemFocus",
+    "group": "M10"
+  },
+  {
+    "kind": "Items",
+    "field": "focusPouch",
+    "class": "ItemFocusPouch",
+    "group": "M03"
+  },
+  {
+    "kind": "Items",
+    "field": "golemBell",
+    "class": "ItemGolemBell",
+    "group": "M11"
+  },
+  {
+    "kind": "Items",
+    "field": "golemPlacer",
+    "class": "ItemGolemPlacer",
+    "group": "M11"
+  },
+  {
+    "kind": "Items",
+    "field": "seals",
+    "class": "ItemSealPlacer",
+    "group": "M11"
+  },
+  {
+    "kind": "Blocks",
+    "field": "candles [16 colores]",
+    "class": "BlockCandle",
+    "group": "M02"
+  },
+  {
+    "kind": "Blocks",
+    "field": "banners [16 colores]",
+    "class": "BlockBannerTC",
+    "group": "M08"
+  },
+  {
+    "kind": "Blocks",
+    "field": "nitor [16 colores]",
+    "class": "BlockNitor",
+    "group": "M02"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "I",
+    "S",
+    "S"
+  ],
+  "key": {
+    "I": "thaumcraft:ingot_thaumium",
+    "S": "minecraft:stick"
+  },
+  "result": {
+    "id": "thaumcraft:thaumium_shovel",
+    "count": 1
+  }
+}

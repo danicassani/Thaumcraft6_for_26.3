@@ -56,9 +56,13 @@ public final class BasicContent {
     private BasicContent() {}
 
     public static void register(BusGroup bus) {
+        SimpleContent.register(bus);
+        LuminousContent.register();
         TABS.register(bus);
         OreCountPlacement.register(bus);
     }
+
+    public static void display(RegistryObject<? extends Item> item) { DISPLAY_ITEMS.add(item); }
 
     private static Identifier id(String name) {
         return Identifier.fromNamespaceAndPath(Thaumcraft.MODID, name);

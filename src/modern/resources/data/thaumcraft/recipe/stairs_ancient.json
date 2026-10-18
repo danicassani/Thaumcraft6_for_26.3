@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": "thaumcraft:stone_ancient"
+  },
+  "result": {
+    "id": "thaumcraft:stairs_ancient",
+    "count": 4
+  }
+}

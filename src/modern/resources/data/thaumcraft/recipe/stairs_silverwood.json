@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": "thaumcraft:plank_silverwood"
+  },
+  "result": {
+    "id": "thaumcraft:stairs_silverwood",
+    "count": 4
+  }
+}

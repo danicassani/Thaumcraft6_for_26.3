@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "#thaumcraft:nitor",
+    "minecraft:purple_dye"
+  ],
+  "result": {
+    "id": "thaumcraft:nitor_purple"
+  }
+}

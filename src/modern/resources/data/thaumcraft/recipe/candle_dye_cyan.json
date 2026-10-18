@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "#thaumcraft:candle",
+    "minecraft:cyan_dye"
+  ],
+  "result": {
+    "id": "thaumcraft:candle_cyan"
+  }
+}

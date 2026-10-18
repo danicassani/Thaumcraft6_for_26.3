@@ -1,0 +1,9 @@
+{
+  "gore": {
+    "category": "block",
+    "sounds": [
+      "thaumcraft:gore1",
+      "thaumcraft:gore2"
+    ]
+  }
+}
