@@ -25,13 +25,18 @@ public final class FocalEntity extends AuraDeviceEntity implements MenuProvider 
     public int remaining(){return remaining;} public int total(){return total;}
     public int capacity(){return inventory.getItem(0).getItem() instanceof FocusItem f?f.capacity:0;}
     public boolean valid(Player p){return level!=null&&p.level()==level&&level.getBlockEntity(worldPosition)==this&&p.distanceToSqr(net.minecraft.world.phys.Vec3.atCenterOf(worldPosition))<=64;}
-    public boolean knows(Player p,FocusProgram program){return ResearchService.knows(p,program.mediumResearch())&&program.effects().stream().allMatch(e->ResearchService.knows(p,e.research()));}
+    public boolean knows(Player p,FocusProgram program){return program.knows(p);}
     public boolean start(Player p){
         if(!(level instanceof ServerLevel)||working()||!valid(p)||draft.complexity()>capacity()||capacity()==0||!knows(p,draft)||(!p.getAbilities().instabuild&&p.experienceLevel<draft.levels()))return false;
         var costs=new TreeMap<>(draft.crystals());
-        for(int i=1;i<10;i++){var s=inventory.getItem(i);if(s.is(CrystalContent.ESSENCE.get()))costs.computeIfPresent(CrystalContent.aspect(s),(a,n)->n-s.getCount());}
+        record Payment(Container inventory,int slot,int amount){}
+        var payments=new ArrayList<Payment>();
+        // Reserve exact costs from the table first, then the player's main inventory. Nothing is paid on failure.
+        for(Container source:List.of(inventory,p.getInventory()))for(int i=source==inventory?1:0;i<(source==inventory?10:36);i++){
+            var stack=source.getItem(i);if(!stack.is(CrystalContent.ESSENCE.get()))continue;String aspect=CrystalContent.aspect(stack);int take=Math.min(stack.getCount(),Math.max(0,costs.getOrDefault(aspect,0)));if(take>0){payments.add(new Payment(source,i,take));costs.put(aspect,costs.get(aspect)-take);}
+        }
         if(costs.values().stream().anyMatch(n->n>0))return false;
-        costs=new TreeMap<>(draft.crystals());for(int i=1;i<10;i++){var s=inventory.getItem(i);if(!s.is(CrystalContent.ESSENCE.get()))continue;String a=CrystalContent.aspect(s);int n=Math.min(s.getCount(),Math.max(0,costs.getOrDefault(a,0)));inventory.removeItem(i,n);costs.computeIfPresent(a,(key,value)->value-n);}
+        for(var payment:payments)payment.inventory.removeItem(payment.slot,payment.amount);
         if(!p.getAbilities().instabuild)p.giveExperienceLevels(-draft.levels());
         pending=draft;remaining=total=draft.craftingVis(capacity());owner=p.getUUID();sync();return true;
     }
@@ -44,7 +49,29 @@ public final class FocalEntity extends AuraDeviceEntity implements MenuProvider 
         if(remaining<=0){inventory.getItem(0).set(ThaumaturgyContent.PROGRAM.get(),pending);var p=owner==null?null:l.getServer().getPlayerList().getPlayer(owner);if(p!=null)ResearchService.recordCraft(p,inventory.getItem(0));pending=null;remaining=0;}
         sync();
     }
-    public boolean edit(Player p,int button){if(!valid(p)||working())return false;var effects=new ArrayList<>(draft.effects());String medium=draft.medium();var last=effects.getLast();switch(button){case 0->{return start(p);}case 1->medium=FocusProgram.MEDIA.get((FocusProgram.MEDIA.indexOf(medium)+1)%FocusProgram.MEDIA.size());case 2->effects.set(effects.size()-1,new FocusProgram.Effect(FocusProgram.EFFECTS.get((FocusProgram.EFFECTS.indexOf(last.kind())+1)%FocusProgram.EFFECTS.size()),last.power(),last.duration()));case 3->effects.set(effects.size()-1,new FocusProgram.Effect(last.kind(),last.power()%5+1,last.duration()));case 4->effects.set(effects.size()-1,new FocusProgram.Effect(last.kind(),last.power(),last.duration()%5+1));case 5->{if(effects.size()<8)effects.add(new FocusProgram.Effect("fire",1,1));}case 6->{if(effects.size()>1)effects.removeLast();}default->{return false;}}draft=new FocusProgram(medium,effects);sync();return true;}
+    public boolean edit(Player p,int button){return edit(p,button,0);}
+    public boolean edit(Player p,int button,int selected){
+        if(!valid(p)||working()||selected<0||selected>draft.branches().size())return false;
+        if(button==0)return start(p);
+        FocusProgram next=draft;var path=selected==0?draft.root():draft.branches().getFirst();var effects=new ArrayList<>(path.effects());var last=effects.getLast();String medium=path.medium();int radius=path.radius(),seconds=path.seconds();boolean friendly=path.friendly();
+        switch(button){
+            case 1->{if(selected==1&&draft.modifier().equals("split_target"))return false;medium=FocusProgram.MEDIA.get((FocusProgram.MEDIA.indexOf(medium)+1)%FocusProgram.MEDIA.size());}
+            case 2->effects.set(effects.size()-1,new FocusProgram.Effect(FocusProgram.EFFECTS.get((FocusProgram.EFFECTS.indexOf(last.kind())+1)%FocusProgram.EFFECTS.size()),last.power(),last.duration()));
+            case 3->effects.set(effects.size()-1,new FocusProgram.Effect(last.kind(),last.power()%5+1,last.duration()));
+            case 4->effects.set(effects.size()-1,new FocusProgram.Effect(last.kind(),last.power(),last.duration()%5+1));
+            case 5->{if(draft.totalEffects()>=8)return false;effects.add(new FocusProgram.Effect("fire",1,1));}
+            case 6->{if(effects.size()<=1)return false;effects.removeLast();}
+            case 7->next=draft.modifier(FocusProgram.MODIFIERS.get((FocusProgram.MODIFIERS.indexOf(draft.modifier())+1)%FocusProgram.MODIFIERS.size()));
+            case 9->next=new FocusProgram(draft.medium(),draft.effects(),draft.modifier(),draft.forks()==10?2:draft.forks()+1,draft.cone(),draft.radius(),draft.seconds(),draft.friendly(),draft.branches());
+            case 10->next=new FocusProgram(draft.medium(),draft.effects(),draft.modifier(),draft.forks(),FocusProgram.CONES.get((FocusProgram.CONES.indexOf(draft.cone())+1)%FocusProgram.CONES.size()),draft.radius(),draft.seconds(),draft.friendly(),draft.branches());
+            case 11->radius=radius%3+1;
+            case 12->seconds=seconds>=30?5:seconds+5;
+            case 13->friendly=!friendly;
+            default->{return false;}
+        }
+        if(button<=6||button>=11)next=draft.replace(selected,new FocusProgram.Branch(medium,effects,radius,seconds,friendly));
+        if(!next.valid())return false;draft=next;sync();return true;
+    }
     public Component getDisplayName(){return Component.translatable("block.thaumcraft.wand_workbench");}
     public AbstractContainerMenu createMenu(int id,Inventory inv,Player p){return new FocalMenu(id,inv,this);}
     @Override public void preRemoveSideEffects(BlockPos pos,BlockState state){super.preRemoveSideEffects(pos,state);if(level instanceof ServerLevel)for(int i=0;i<10;i++)Block.popResource(level,pos,inventory.removeItemNoUpdate(i));}

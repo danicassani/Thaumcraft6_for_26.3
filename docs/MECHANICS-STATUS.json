@@ -9,7 +9,7 @@
   "M08": "port.11 añade seis tubos, succión local, válvulas/redstone, filtros, depósitos mixtos, etiquetas y resonador; port.12 añade cerebro con 2000 XP y absorción remota de tarros para la matriz; fuelles y espejos de esencia siguen pendientes (ESSENTIA-TRANSPORT.md, INFUSION-CARDS.md)",
   "M09": "port.13 añade estabilizadores con carga/red horizontal de incrustaciones y pedestales, mitigación pagada, mejoras de velocidad/coste y ocho encantamientos funcionales de herramientas; port.14 añade equipo, escudos rúnicos y guantelete básico; variantes avanzadas y sucesos de corrupción siguen pendientes (INFUSION-ADVANCED.md)",
   "M03": "port.12 añade inventarios de una unidad, sincronización y capacidad Forge de los tres pedestales; contenedores y autómatas restantes pendientes",
-  "M10": "port.14 implementa manipulador persistente, tres focos, nueve efectos, tres medios, costes/investigación y guantelete con intercambio físico y activación de infusiones. Grafo ramificado, medios avanzados y dispositivos restantes pendientes (THAUMATURGY-EQUIPMENT.md)",
+  "M10": "port.15 amplía el manipulador y guantelete de port.14 con Scatter, Split Target/Trajectory de dos ramas, Cloud/Mine configurables, persistencia y enfriamiento compartido de nubes. Plan, Spellbat, Rift, grafos de mayor profundidad y dispositivos restantes pendientes (THAUMATURGY-EQUIPMENT.md, FOCUS-ADVANCED.md)",
   "M11": "pendiente",
   "M12": "port.14 añade herramientas/armaduras del vacío, elementales, fortaleza y túnicas; reparación, descuentos, escudo rúnico, botas cargables, accesorios adaptados a mano secundaria y comprobador de cordura. Equivalencia completa, siete ranuras, máscaras, culto y limpieza de distorsión siguen pendientes (THAUMATURGY-EQUIPMENT.md)",
   "M14": "pendiente",

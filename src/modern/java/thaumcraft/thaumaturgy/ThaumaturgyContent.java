@@ -25,12 +25,23 @@ public final class ThaumaturgyContent {
     public static final RegistryObject<BlockEntityType<FocalEntity>> TABLE_TYPE=TYPES.register("wand_workbench",()->new BlockEntityType<>(FocalEntity::new,Set.of(TABLE.get())));
     public static final RegistryObject<MenuType<FocalMenu>> MENU=MENUS.register("focal_manipulator",()->new MenuType<>(FocalMenu::new,FeatureFlags.VANILLA_SET));
     public static final RegistryObject<EntityType<FocusProjectile>> PROJECTILE=Registrar.ENTITIES.register("focus_projectile",()->EntityType.Builder.<FocusProjectile>of(FocusProjectile::new,MobCategory.MISC).sized(.25F,.25F).clientTrackingRange(8).updateInterval(1).build(ResourceKey.create(Registries.ENTITY_TYPE,SimpleContent.id("focus_projectile"))));
+    public static final RegistryObject<EntityType<FocusFieldEntity>> FIELD=Registrar.ENTITIES.register("focus_field",()->EntityType.Builder.<FocusFieldEntity>of(FocusFieldEntity::new,MobCategory.MISC).sized(.25F,.25F).fireImmune().clientTrackingRange(8).updateInterval(5).build(ResourceKey.create(Registries.ENTITY_TYPE,SimpleContent.id("focus_field"))));
     public static void register(BusGroup bus){
         SimpleContent.block("table_stone","stone","");SimpleContent.material("primordial_pearl");SimpleContent.material("primordial_nugget");
         SimpleContent.item("focus_1",p->new FocusItem(p,15));SimpleContent.item("focus_2",p->new FocusItem(p,25));SimpleContent.item("focus_3",p->new FocusItem(p,50));
         SimpleContent.item("wand_workbench",p->new BlockItem(TABLE.get(),p.useBlockDescriptionPrefix()));
         SimpleContent.item("caster_basic",CasterItem::new);
         COMPONENTS.register(bus);TYPES.register(bus);MENUS.register(bus);
-        net.minecraftforge.event.entity.player.ItemTooltipEvent.BUS.addListener(e->{var s=e.getItemStack();var program=s.get(PROGRAM.get());if(program==null&&s.getItem() instanceof CasterItem){var f=s.get(FOCUS.get());if(f!=null)program=f.get(PROGRAM.get());}if(program!=null){e.getToolTip().add(net.minecraft.network.chat.Component.translatable("focus.thaumcraft.details",net.minecraft.network.chat.Component.translatable("focus.thaumcraft."+program.medium()),program.complexity(),program.vis()));e.getToolTip().add(net.minecraft.network.chat.Component.translatable("focus.thaumcraft.materials",program.levels(),program.crystals()));for(var effect:program.effects())e.getToolTip().add(net.minecraft.network.chat.Component.translatable("focus.thaumcraft."+effect.kind()).append(" "+effect.power()));}});
+        net.minecraftforge.event.entity.player.ItemTooltipEvent.BUS.addListener(e->{var s=e.getItemStack();var program=s.get(PROGRAM.get());if(program==null&&s.getItem() instanceof CasterItem){var f=s.get(FOCUS.get());if(f!=null)program=f.get(PROGRAM.get());}if(program!=null){
+            e.getToolTip().add(net.minecraft.network.chat.Component.translatable("focus.thaumcraft.details",net.minecraft.network.chat.Component.translatable("focus.thaumcraft."+program.medium()),program.complexity(),program.vis()));
+            e.getToolTip().add(net.minecraft.network.chat.Component.translatable("focus.thaumcraft.materials",program.levels(),program.crystals()));
+            e.getToolTip().add(net.minecraft.network.chat.Component.translatable("focal.thaumcraft.inventory_crystals"));
+            if(!program.modifier().equals("none"))e.getToolTip().add(net.minecraft.network.chat.Component.translatable("focus.thaumcraft."+program.modifier()).append(program.modifier().equals("scatter")?" • "+program.forks()+" / "+program.cone()+"°":""));
+            for(int index=0;index<=program.branches().size();index++){var path=index==0?program.root():program.branches().get(index-1);if(program.split())e.getToolTip().add(net.minecraft.network.chat.Component.translatable("focal.thaumcraft.path",index+1).append(" • ").append(net.minecraft.network.chat.Component.translatable("focus.thaumcraft."+path.medium())));
+                if(path.medium().equals("cloud"))e.getToolTip().add(net.minecraft.network.chat.Component.translatable("focal.thaumcraft.field_settings",path.radius(),path.seconds()));
+                if(path.medium().equals("mine"))e.getToolTip().add(net.minecraft.network.chat.Component.translatable("focal.thaumcraft."+(path.friendly()?"friend":"enemy")));
+                for(var effect:path.effects())e.getToolTip().add(net.minecraft.network.chat.Component.translatable("focus.thaumcraft."+effect.kind()).append(" "+effect.power()));
+            }
+        }});
     }
 }

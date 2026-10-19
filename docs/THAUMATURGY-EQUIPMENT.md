@@ -6,7 +6,7 @@ Implementación nativa para Minecraft 26.3 / Forge 66.0.13 / Java 25. Añade 43 
 
 1. Sigue UNLOCKAUROMANCY para fabricar el resonador de vis y `caster_basic` en la mesa arcana. Crea `focus_1` en el crisol con un cristal de **ordo**, 20 vitreus, 10 praecantatio y 5 auram.
 2. BASEAUROMANCY permite fabricar la mesa de piedra y el manipulador de focos (`wand_workbench`). Su receta está en el Taumonomicón.
-3. Coloca el foco en el manipulador. Los botones cambian medio, último efecto, potencia y duración; permiten añadir o quitar efectos. La hoja de vista previa muestra el programa entero, cristales y niveles necesarios. Coloca los cristales en los nueve espacios inferiores.
+3. Coloca el foco en el manipulador. Los botones cambian medio, último efecto, potencia y duración; permiten añadir o quitar efectos. La hoja de vista previa muestra el programa entero, cristales y niveles necesarios. Coloca los cristales en los nueve espacios inferiores. Desde port.15 se completan las cantidades desde el inventario principal si hacen falta más aspectos.
 4. Crear descuenta todos los cristales y niveles después de comprobarlos. El trabajo consume hasta 20 vis por segundo, se detiene si falta aura y continúa tras guardar/reabrir el mundo. Un cargador encima permite usar los nueve chunks vecinos que ya estén cargados. El foco no se puede extraer durante el trabajo. Romper la mesa devuelve el foco sin completar; no devuelve costes ya pagados.
 5. Pon el foco en la mano secundaria y usa el guantelete agachado para instalarlo. Repite con la mano secundaria vacía para retirarlo, o con otro foco para intercambiarlos. Se conservan las pilas físicas, sus nombres y componentes.
 6. Usa el guantelete para lanzar. Cada lanzamiento paga aura local y respeta la investigación, capacidad del foco y enfriamiento. El guantelete también inicia una infusión; usarlo agachado cancela una infusión propia. La mano vacía consulta el estado de la matriz.
@@ -55,7 +55,7 @@ Los colapsos de grietas conservan su probabilidad original de recompensa primord
 
 ## Pendiente de M10/M12
 
-- Grafo ramificado original: Scatter/Split, Cloud/Mine/Plan/Spellbat y Rift/agujeros temporales; opciones de fortuna/seda y trayectoria. El editor actual combina efectos en secuencia sobre un mismo impacto.
+- Port.15 añade Scatter, Split Target/Trajectory de dos ramas y Cloud/Mine con ajustes y persistencia: [FOCUS-ADVANCED.md](FOCUS-ADVANCED.md). Siguen pendientes grafos de mayor profundidad, Plan, Spellbat, Rift/agujeros temporales y opciones originales de fortuna/seda y trayectoria.
 - Bolsa de focos, vara pech, torretas, colapsador causal y gancho.
 - Siete ranuras de accesorios, bases de joyería y equivalencia exacta de las recetas/variantes originales.
 - Mejoras de máscaras/gafas de fortaleza, bonificaciones completas de conjuntos, geometría original de armaduras y habilidades activas adicionales de herramientas elementales.

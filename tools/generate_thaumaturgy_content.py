@@ -123,3 +123,19 @@ for recipe in (D/'recipe').glob('void_*.json'):
  if 'pattern' not in r:continue
  v['thaumcraft:'+recipe.stem.replace('_','')]=['['+row+']' for row in r['pattern']]+[key+' = '+value for key,value in r['key'].items()]
 save(p,v)
+
+# Advanced focus editor and persistent delivery media.
+labels={
+ 'focus.thaumcraft.cloud':('Cloud','Nube'),'focus.thaumcraft.mine':('Mine','Mina'),
+ 'focus.thaumcraft.none':('No modifier','Sin modificador'),'focus.thaumcraft.scatter':('Scatter','Dispersión'),
+ 'focus.thaumcraft.split_target':('Split target','Dividir impacto'),'focus.thaumcraft.split_trajectory':('Split trajectory','Dividir trayectoria'),
+ 'focal.thaumcraft.page':('Setup','Más'),'focal.thaumcraft.modifier':('Modifier','Modificador'),
+ 'focal.thaumcraft.branch':('Path','Rama'),'focal.thaumcraft.path':('Editing path %s','Editando rama %s'),
+ 'focal.thaumcraft.forks':('Forks','Rayos'),'focal.thaumcraft.cone':('Cone','Cono'),'focal.thaumcraft.radius':('Radius','Radio'),
+ 'focal.thaumcraft.seconds':('Seconds','Segundos'),'focal.thaumcraft.target':('Target','Objetivo'),
+ 'focal.thaumcraft.friend':('Ally','Aliado'),'focal.thaumcraft.enemy':('Foe','Hostil'),
+ 'focal.thaumcraft.field_settings':('Radius %s • Duration %s seconds','Radio %s • Duración %s segundos'),
+ 'focal.thaumcraft.inventory_crystals':('Crystals are taken from the table, then your inventory.','Se usan los cristales de la mesa y después los del inventario.')
+}
+for i,loc in enumerate(['en_us','es_es']):
+ p=A/f'lang/{loc}.json';v=json.loads(p.read_text());v.update({k:text[i] for k,text in labels.items()});save(p,v)
