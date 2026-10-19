@@ -147,3 +147,18 @@ for locale,values in {
 }.items():
     path=A/'lang'/f'{locale}.json'
     lang=json.loads(path.read_text());lang.update(values);path.write_text(json.dumps(lang,ensure_ascii=False,indent=2)+'\n')
+
+# Spellbat and Rift (port.17). The temporary block has no item or recipe.
+save(A/'blockstates/hole.json',{'variants':{'':{'model':'minecraft:block/air'}}})
+save(D/'tags/block/rift_immune.json',{'replace':False,'values':['minecraft:bedrock','minecraft:barrier','minecraft:end_portal_frame','minecraft:reinforced_deepslate','thaumcraft:hole']})
+labels={
+'focus.thaumcraft.spellbat':('Spellbat','Murciélago de hechizo'),
+'focus.thaumcraft.rift':('Rift','Agujero temporal'),
+'focal.thaumcraft.depth':('Depth','Profundidad'),
+'entity.thaumcraft.focus_spellbat':('Spellbat','Murciélago de hechizo'),
+'block.thaumcraft.hole':('Temporary rift','Agujero temporal'),
+'research.FOCUSSPELLBAT.stage.2':('Unlock through Mine and scans of a bat and a blaze (native substitute for the unported firebat). Spellbats seek visible targets within 12 blocks. Configure friend/enemy on the second Setup page. Each bat applies effects at 0.33 power every two seconds, consumes one health per strike and has at most five strikes and 30 seconds of world time. Friendly healing bats seek injured allies. No effects while the owner is absent. This port uses the native bat model with magic particles.','Se desbloquea tras Mine y escanear un murciélago y un blaze (sustituto nativo del murciélago de fuego pendiente). Los murciélagos buscan objetivos visibles hasta 12 bloques. Configura amigos/enemigos en la segunda página Más. Aplican efectos con potencia 0,33 cada dos segundos, gastan una vida por uso y tienen como máximo cinco usos y 30 segundos de tiempo del mundo. Los curativos amigos buscan aliados heridos. No actúan sin su propietario. Este port utiliza el modelo nativo de murciélago con partículas mágicas.'),
+'research.FOCUSRIFT.stage.2':('Rift temporarily opens a 3 by 3 tunnel. The power button selects depth 8/16/24/32 and duration selects 2–10 seconds. Blocks restore their exact state when the deadline passes, including after save/restart or chunk reload. Only full opaque solid blocks without inventories, fluids, falling behavior or pistons are eligible; protected or immune central blocks stop the tunnel. No drops. Maximum 288 journaled blocks per owner and 1024 per dimension.','Rift abre temporalmente un túnel de 3 por 3. El botón de potencia selecciona profundidad 8/16/24/32 y la duración permite 2–10 segundos. Los bloques recuperan su estado exacto al vencer el plazo, incluso tras guardar/reiniciar o recargar chunks. Solo admite bloques sólidos opacos completos sin inventarios, fluidos, caída ni pistones; un bloque central protegido o inmune detiene el túnel. No genera drops. Máximo 288 bloques registrados por propietario y 1024 por dimensión.')
+}
+for i,loc in enumerate(['en_us','es_es']):
+ p=A/f'lang/{loc}.json';v=json.loads(p.read_text());v.update({k:text[i] for k,text in labels.items()});save(p,v)

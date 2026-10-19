@@ -56,9 +56,9 @@ public final class FocalEntity extends AuraDeviceEntity implements MenuProvider 
         FocusProgram next=draft;var path=selected==0?draft.root():draft.branches().getFirst();var effects=new ArrayList<>(path.effects());var last=effects.getLast();String medium=path.medium();int radius=path.radius(),seconds=path.seconds();boolean friendly=path.friendly();
         switch(button){
             case 1->{if(selected==1&&draft.modifier().equals("split_target"))return false;do{medium=FocusProgram.MEDIA.get((FocusProgram.MEDIA.indexOf(medium)+1)%FocusProgram.MEDIA.size());}while(medium.equals("plan")&&(selected==1||draft.modifier().equals("split_trajectory")||draft.modifier().equals("scatter")));}
-            case 2->effects.set(effects.size()-1,new FocusProgram.Effect(FocusProgram.EFFECTS.get((FocusProgram.EFFECTS.indexOf(last.kind())+1)%FocusProgram.EFFECTS.size()),last.power(),last.duration()));
-            case 3->effects.set(effects.size()-1,new FocusProgram.Effect(last.kind(),last.power()%5+1,last.duration()));
-            case 4->effects.set(effects.size()-1,new FocusProgram.Effect(last.kind(),last.power(),last.duration()%5+1));
+            case 2->effects.set(effects.size()-1,new FocusProgram.Effect(FocusProgram.EFFECTS.get((FocusProgram.EFFECTS.indexOf(last.kind())+1)%FocusProgram.EFFECTS.size()),last.power(),FocusProgram.EFFECTS.get((FocusProgram.EFFECTS.indexOf(last.kind())+1)%FocusProgram.EFFECTS.size()).equals("rift")?Math.max(2,last.duration()):Math.min(5,last.duration()),last.depth()));
+            case 3->effects.set(effects.size()-1,new FocusProgram.Effect(last.kind(),last.kind().equals("rift")?last.power():last.power()%5+1,last.duration(),last.kind().equals("rift")?(last.depth()==32?8:last.depth()+8):last.depth()));
+            case 4->effects.set(effects.size()-1,new FocusProgram.Effect(last.kind(),last.power(),last.kind().equals("rift")?(last.duration()==10?2:last.duration()+1):last.duration()%5+1,last.depth()));
             case 5->{if(draft.totalEffects()>=8)return false;effects.add(new FocusProgram.Effect("fire",1,1));}
             case 6->{if(effects.size()<=1)return false;effects.removeLast();}
             case 7->{int index=FocusProgram.MODIFIERS.indexOf(draft.modifier());do{next=draft.modifier(FocusProgram.MODIFIERS.get(++index%FocusProgram.MODIFIERS.size()));}while(!next.valid()&&index<FocusProgram.MODIFIERS.size()*2);}

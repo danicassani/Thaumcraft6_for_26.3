@@ -26,7 +26,7 @@ Los programas de port.14/15 se cargan sin migración: el nuevo campo opcional to
 
 ## Pendiente
 
-Spellbat, Rift/agujeros temporales, grafos de mayor profundidad y otras opciones originales de trayectoria, fortuna y seda. Ajustes de Plan durante el uso del guantelete mediante teclas. M10 permanece parcial.
+Spellbat y Rift se incorporan en [port.17](FOCUS-SPELLBAT-RIFT.md). Siguen pendientes grafos de mayor profundidad y otras opciones originales de trayectoria, fortuna y seda. Ajustes de Plan durante el uso del guantelete mediante teclas. M10 permanece parcial.
 
 ## Verificación
 

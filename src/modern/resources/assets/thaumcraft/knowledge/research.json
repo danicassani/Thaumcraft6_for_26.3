@@ -2562,7 +2562,7 @@
     "parents": [
       "FOCUSMINE",
       "f_BAT",
-      "!Firebat"
+      "!minecraft:blaze"
     ],
     "meta": [
       "REVERSE"

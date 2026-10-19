@@ -90,6 +90,8 @@ def spec(raw):
 entries = []
 for path in sorted((OLD / 'resources/assets/thaumcraft/research').glob('*.json')):
     for entry in json.loads(path.read_text())['entries']:
+        # Firebats are not ported yet: require the native blaze discovery alongside the bat.
+        if entry['key']=='FOCUSSPELLBAT': entry['parents']=['!minecraft:blaze' if key=='!Firebat' else key for key in entry['parents']]
         for stage in entry['stages']:
             if 'required_knowledgeauram' in stage:
                 stage['required_knowledge'] = stage.pop('required_knowledgeauram')
