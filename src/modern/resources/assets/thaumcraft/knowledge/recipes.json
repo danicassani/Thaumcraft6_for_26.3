@@ -544,6 +544,12 @@
     "Aspects: desiderium 2",
     "Requires hot water; consumes 50 mB per craft."
   ],
+  "thaumcraft:seal_breaker_advanced": [
+    "Research: SEALBREAK&&MINDBIOTHAUMIC",
+    "Catalyst: thaumcraft:seal_breaker",
+    "Aspects: {'sensus': 10, 'cognitio': 10, 'instrumentum': 20}",
+    "Result: thaumcraft:seal_breaker_advanced"
+  ],
   "thaumcraft:vis_crystal_vacuos": [
     "Crucible: thaumcraft:crystal_essence x1",
     "Catalyst: thaumcraft:nugget_quartz",
@@ -573,6 +579,12 @@
     "Catalyst: minecraft:rotten_flesh",
     "Aspects: ignis 1",
     "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:seal_guard_advanced": [
+    "Research: SEALGUARD&&MINDBIOTHAUMIC",
+    "Catalyst: thaumcraft:seal_guard",
+    "Aspects: {'sensus': 20, 'cognitio': 20}",
+    "Result: thaumcraft:seal_guard_advanced"
   ],
   "thaumcraft:vis_crystal_perditio": [
     "Crucible: thaumcraft:crystal_essence x1",
@@ -628,6 +640,12 @@
     "Aspects: metallum 2",
     "Requires hot water; consumes 50 mB per craft."
   ],
+  "thaumcraft:seal_stock": [
+    "Research: SEALSTOCK",
+    "Catalyst: thaumcraft:seal_fill",
+    "Aspects: {'cognitio': 10, 'desiderium': 10}",
+    "Result: thaumcraft:seal_stock"
+  ],
   "thaumcraft:hedge_string": [
     "Crucible: minecraft:string x1",
     "Catalyst: minecraft:wheat",
@@ -639,6 +657,12 @@
     "Result: seal_pickup",
     "Catalyst: thaumcraft:seal_blank",
     "Aspects: {'desiderium': 10}"
+  ],
+  "thaumcraft:seal_empty_advanced": [
+    "Research: SEALEMPTY&&MINDBIOTHAUMIC",
+    "Catalyst: thaumcraft:seal_empty",
+    "Aspects: {'sensus': 10, 'cognitio': 10}",
+    "Result: thaumcraft:seal_empty_advanced"
   ],
   "thaumcraft:seal_guard": [
     "Research: SEALGUARD",
@@ -682,11 +706,23 @@
     "Aspects: victus 2",
     "Requires hot water; consumes 50 mB per craft."
   ],
+  "thaumcraft:seal_fill_advanced": [
+    "Research: SEALSTORE&&MINDBIOTHAUMIC",
+    "Catalyst: thaumcraft:seal_fill",
+    "Aspects: {'sensus': 10, 'cognitio': 10}",
+    "Result: thaumcraft:seal_fill_advanced"
+  ],
   "thaumcraft:nitor": [
     "Crucible: thaumcraft:nitor_yellow x1",
     "Catalyst: minecraft:glowstone_dust",
     "Aspects: potentia 10, ignis 10, lux 10",
     "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:seal_pickup_advanced": [
+    "Research: SEALCOLLECT&&MINDBIOTHAUMIC",
+    "Catalyst: thaumcraft:seal_pickup",
+    "Aspects: {'sensus': 10, 'cognitio': 10}",
+    "Result: thaumcraft:seal_pickup_advanced"
   ],
   "thaumcraft:vis_crystal_machina": [
     "Crucible: thaumcraft:crystal_essence x1",
@@ -783,6 +819,12 @@
     "Catalyst: thaumcraft:nugget_quartz",
     "Aspects: ordo 2",
     "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:seal_provider": [
+    "Research: SEALPROVIDE",
+    "Catalyst: thaumcraft:seal_empty_advanced",
+    "Aspects: {'permutatio': 10, 'desiderium': 10}",
+    "Result: thaumcraft:seal_provider"
   ],
   "thaumcraft:Filter": [
     "GWG",
@@ -1722,5 +1764,47 @@
     "Center: thaumcraft:seal_blank",
     "Offerings: minecraft:golden_axe, minecraft:golden_pickaxe, minecraft:golden_shovel",
     "Aspects: {'instrumentum': 10, 'perditio': 10, 'humanus': 10}"
+  ],
+  "thaumcraft:SealCollectAdv": [
+    "Research: SEALCOLLECT&&MINDBIOTHAUMIC",
+    "Catalyst: thaumcraft:seal_pickup",
+    "Aspects: {'sensus': 10, 'cognitio': 10}",
+    "Result: thaumcraft:seal_pickup_advanced"
+  ],
+  "thaumcraft:SealStoreAdv": [
+    "Research: SEALSTORE&&MINDBIOTHAUMIC",
+    "Catalyst: thaumcraft:seal_fill",
+    "Aspects: {'sensus': 10, 'cognitio': 10}",
+    "Result: thaumcraft:seal_fill_advanced"
+  ],
+  "thaumcraft:SealEmptyAdv": [
+    "Research: SEALEMPTY&&MINDBIOTHAUMIC",
+    "Catalyst: thaumcraft:seal_empty",
+    "Aspects: {'sensus': 10, 'cognitio': 10}",
+    "Result: thaumcraft:seal_empty_advanced"
+  ],
+  "thaumcraft:SealGuardAdv": [
+    "Research: SEALGUARD&&MINDBIOTHAUMIC",
+    "Catalyst: thaumcraft:seal_guard",
+    "Aspects: {'sensus': 20, 'cognitio': 20}",
+    "Result: thaumcraft:seal_guard_advanced"
+  ],
+  "thaumcraft:SealBreakAdv": [
+    "Research: SEALBREAK&&MINDBIOTHAUMIC",
+    "Catalyst: thaumcraft:seal_breaker",
+    "Aspects: {'sensus': 10, 'cognitio': 10, 'instrumentum': 20}",
+    "Result: thaumcraft:seal_breaker_advanced"
+  ],
+  "thaumcraft:SealProvide": [
+    "Research: SEALPROVIDE",
+    "Catalyst: thaumcraft:seal_empty_advanced",
+    "Aspects: {'permutatio': 10, 'desiderium': 10}",
+    "Result: thaumcraft:seal_provider"
+  ],
+  "thaumcraft:SealStock": [
+    "Research: SEALSTOCK",
+    "Catalyst: thaumcraft:seal_fill",
+    "Aspects: {'cognitio': 10, 'desiderium': 10}",
+    "Result: thaumcraft:seal_stock"
   ]
 }

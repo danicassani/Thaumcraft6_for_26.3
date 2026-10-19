@@ -64,7 +64,7 @@ Contenido: `wandWorkbench`, `pechWand`, `alumentum`, `turretPlacer`, `causalityC
 
 ## M11: Gólems, sellos, tareas e IA
 
-**Estado:** port.20 incorpora prensa con Machina y pagos persistentes, seis materiales, piezas/rasgos, campana y gólem con navegación y carga física; sellos Recoger/Guardar/Vaciar/Vigilar/Cosechar/Romper, propietario, canales, filtros, prioridades y redstone. Sellos avanzados, logística a petición y variantes de movilidad/modelos originales pendientes (GOLEMS.md).
+**Estado:** port.21 añade cinco sellos avanzados con Inteligente, filtros de nueve muestras, guardia configurable y Seda; Proporcionar/Abastecer con objetivos, reservas de carga, transporte físico y rutas persistentes. Carga de port.20 verificada; Usar/Talar/Carnicero, movilidad especial, rangos y modelos originales pendientes (GOLEMS-LOGISTICS.md).
 
 Contenido: `golemBuilder`, `golemBell`, `golemPlacer`, `seals`.
 

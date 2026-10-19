@@ -4776,7 +4776,8 @@
       {
         "text": "research.SEALBREAK.stage.2",
         "recipes": [
-          "thaumcraft:SealBreak"
+          "thaumcraft:SealBreak",
+          "thaumcraft:SealBreakAdv"
         ],
         "required_item": [],
         "required_craft": []
@@ -4857,7 +4858,8 @@
       {
         "text": "research.SEALCOLLECT.stage.1",
         "recipes": [
-          "thaumcraft:SealCollect"
+          "thaumcraft:SealCollect",
+          "thaumcraft:SealCollectAdv"
         ],
         "required_item": [],
         "required_craft": []
@@ -4904,7 +4906,8 @@
       {
         "text": "research.SEALEMPTY.stage.2",
         "recipes": [
-          "thaumcraft:SealEmpty"
+          "thaumcraft:SealEmpty",
+          "thaumcraft:SealEmptyAdv"
         ],
         "required_item": [],
         "required_craft": []
@@ -4952,7 +4955,8 @@
         "text": "research.SEALGUARD.stage.2",
         "recipes": [
           "thaumcraft:SealGuard",
-          "thaumcraft:modaggression"
+          "thaumcraft:modaggression",
+          "thaumcraft:SealGuardAdv"
         ],
         "warp": 1,
         "required_item": [],
@@ -5132,7 +5136,8 @@
       {
         "text": "research.SEALSTORE.stage.1",
         "recipes": [
-          "thaumcraft:SealStore"
+          "thaumcraft:SealStore",
+          "thaumcraft:SealStoreAdv"
         ],
         "required_item": [],
         "required_craft": []

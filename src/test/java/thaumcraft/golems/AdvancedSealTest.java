@@ -1,0 +1,8 @@
+package thaumcraft.golems;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+class AdvancedSealTest {
+    @Test void advancedSealsRequireSmartWithoutWeakeningToolTraits(){var smart=new GolemDesign(3,1,0,0);assertFalse(SealKind.PICKUP_ADVANCED.accepts(GolemDesign.BASIC));assertTrue(SealKind.PICKUP_ADVANCED.accepts(smart));assertFalse(SealKind.GUARD_ADVANCED.accepts(smart));assertTrue(SealKind.GUARD_ADVANCED.accepts(new GolemDesign(1,1,0,2)));assertFalse(SealKind.BREAKER_ADVANCED.accepts(new GolemDesign(1,0,3,0)));assertTrue(SealKind.BREAKER_ADVANCED.accepts(new GolemDesign(1,1,3,0)));}
+    @Test void providersAndStockPreserveOriginalNoSmartNoClumsyRules(){for(var k:new SealKind[]{SealKind.PICKUP,SealKind.FILL,SealKind.EMPTY,SealKind.PICKUP_ADVANCED,SealKind.FILL_ADVANCED,SealKind.EMPTY_ADVANCED})assertFalse(k.accepts(new GolemDesign(1,1,3,0)));assertTrue(SealKind.PROVIDER.accepts(GolemDesign.BASIC));assertTrue(SealKind.STOCK.accepts(GolemDesign.BASIC));assertFalse(SealKind.PROVIDER.accepts(new GolemDesign(1,1,3,0)));assertFalse(SealKind.STOCK.accepts(new GolemDesign(1,1,2,0)));}
+    @Test void existingOrdinalsAndAdvancedTaskMappingsRemainStable(){assertArrayEquals(new SealKind[]{SealKind.PICKUP,SealKind.FILL,SealKind.EMPTY,SealKind.GUARD,SealKind.HARVEST,SealKind.BREAKER},java.util.Arrays.copyOf(SealKind.values(),6));assertEquals(SealKind.BREAKER,SealKind.BREAKER_ADVANCED.base());assertEquals(SealKind.GUARD,SealKind.GUARD_ADVANCED.base());for(var k:SealKind.values())assertTrue(k.filterSlots()==1||k.filterSlots()==9);assertEquals(9,SealKind.STOCK.filterSlots());assertEquals(1,SealKind.GUARD_ADVANCED.filterSlots());}
+}
