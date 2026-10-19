@@ -58,7 +58,7 @@ Contenido: `inlay`, `infusionMatrix`, `stabilizer`.
 
 ## M10: Focos, hechizos, guanteletes y proyectiles
 
-**Estado:** port.15 amplía el manipulador y guantelete de port.14 con Scatter, Split Target/Trajectory de dos ramas, Cloud/Mine configurables, persistencia y enfriamiento compartido de nubes. Plan, Spellbat, Rift, grafos de mayor profundidad y dispositivos restantes pendientes (THAUMATURGY-EQUIPMENT.md, FOCUS-ADVANCED.md).
+**Estado:** port.16 añade Plan con volumen/superficie, radios persistentes y vista previa nativa; port.15 aporta Scatter, Split Target/Trajectory, Cloud/Mine y enfriamiento compartido. Spellbat, Rift, grafos de mayor profundidad, ajustes por teclas y dispositivos restantes pendientes (THAUMATURGY-EQUIPMENT.md, FOCUS-ADVANCED.md, FOCUS-PLAN.md).
 
 Contenido: `wandWorkbench`, `pechWand`, `alumentum`, `turretPlacer`, `causalityCollapser`, `grappleGun`, `casterBasic`, `focus1`, `focus2`, `focus3`.
 

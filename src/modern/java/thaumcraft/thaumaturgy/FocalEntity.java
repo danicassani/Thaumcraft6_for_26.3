@@ -55,21 +55,22 @@ public final class FocalEntity extends AuraDeviceEntity implements MenuProvider 
         if(button==0)return start(p);
         FocusProgram next=draft;var path=selected==0?draft.root():draft.branches().getFirst();var effects=new ArrayList<>(path.effects());var last=effects.getLast();String medium=path.medium();int radius=path.radius(),seconds=path.seconds();boolean friendly=path.friendly();
         switch(button){
-            case 1->{if(selected==1&&draft.modifier().equals("split_target"))return false;medium=FocusProgram.MEDIA.get((FocusProgram.MEDIA.indexOf(medium)+1)%FocusProgram.MEDIA.size());}
+            case 1->{if(selected==1&&draft.modifier().equals("split_target"))return false;do{medium=FocusProgram.MEDIA.get((FocusProgram.MEDIA.indexOf(medium)+1)%FocusProgram.MEDIA.size());}while(medium.equals("plan")&&(selected==1||draft.modifier().equals("split_trajectory")||draft.modifier().equals("scatter")));}
             case 2->effects.set(effects.size()-1,new FocusProgram.Effect(FocusProgram.EFFECTS.get((FocusProgram.EFFECTS.indexOf(last.kind())+1)%FocusProgram.EFFECTS.size()),last.power(),last.duration()));
             case 3->effects.set(effects.size()-1,new FocusProgram.Effect(last.kind(),last.power()%5+1,last.duration()));
             case 4->effects.set(effects.size()-1,new FocusProgram.Effect(last.kind(),last.power(),last.duration()%5+1));
             case 5->{if(draft.totalEffects()>=8)return false;effects.add(new FocusProgram.Effect("fire",1,1));}
             case 6->{if(effects.size()<=1)return false;effects.removeLast();}
-            case 7->next=draft.modifier(FocusProgram.MODIFIERS.get((FocusProgram.MODIFIERS.indexOf(draft.modifier())+1)%FocusProgram.MODIFIERS.size()));
-            case 9->next=new FocusProgram(draft.medium(),draft.effects(),draft.modifier(),draft.forks()==10?2:draft.forks()+1,draft.cone(),draft.radius(),draft.seconds(),draft.friendly(),draft.branches());
-            case 10->next=new FocusProgram(draft.medium(),draft.effects(),draft.modifier(),draft.forks(),FocusProgram.CONES.get((FocusProgram.CONES.indexOf(draft.cone())+1)%FocusProgram.CONES.size()),draft.radius(),draft.seconds(),draft.friendly(),draft.branches());
+            case 7->{int index=FocusProgram.MODIFIERS.indexOf(draft.modifier());do{next=draft.modifier(FocusProgram.MODIFIERS.get(++index%FocusProgram.MODIFIERS.size()));}while(!next.valid()&&index<FocusProgram.MODIFIERS.size()*2);}
+            case 9->next=new FocusProgram(draft.medium(),draft.effects(),draft.modifier(),draft.forks()==10?2:draft.forks()+1,draft.cone(),draft.radius(),draft.seconds(),draft.friendly(),draft.branches(),draft.plan());
+            case 10->next=new FocusProgram(draft.medium(),draft.effects(),draft.modifier(),draft.forks(),FocusProgram.CONES.get((FocusProgram.CONES.indexOf(draft.cone())+1)%FocusProgram.CONES.size()),draft.radius(),draft.seconds(),draft.friendly(),draft.branches(),draft.plan());
             case 11->radius=radius%3+1;
             case 12->seconds=seconds>=30?5:seconds+5;
             case 13->friendly=!friendly;
+            case 14,15,16,17->{if(selected!=0||!draft.medium().equals("plan"))return false;var a=draft.plan();var plan=new FocusProgram.PlanSettings(button==14?(a.x()+1)%4:a.x(),button==15?(a.y()+1)%4:a.y(),button==16?(a.z()+1)%4:a.z(),button==17?!a.surface():a.surface());next=new FocusProgram(draft.medium(),draft.effects(),draft.modifier(),draft.forks(),draft.cone(),draft.radius(),draft.seconds(),draft.friendly(),draft.branches(),plan);}
             default->{return false;}
         }
-        if(button<=6||button>=11)next=draft.replace(selected,new FocusProgram.Branch(medium,effects,radius,seconds,friendly));
+        if(button<=6||button>=11&&button<=13)next=draft.replace(selected,new FocusProgram.Branch(medium,effects,radius,seconds,friendly));
         if(!next.valid())return false;draft=next;sync();return true;
     }
     public Component getDisplayName(){return Component.translatable("block.thaumcraft.wand_workbench");}

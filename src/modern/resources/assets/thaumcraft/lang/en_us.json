@@ -556,7 +556,7 @@
   "research.FOCUSRIFT.stage.2": "I have managed to create a focus that manipulates dimensional magic. Most inanimate objects will be shifted into this other realm temporarily like some sort of portable hole.<BR>The diameter of this hole will remain fixed at around 3 yards, but I should be able to manipulate the depth quite a bit. ",
   "research.FOCUSPLAN.title": "Focus Medium: Plan",
   "research.FOCUSPLAN.stage.1": "I have learned to manipulate blocks in the world with foci effects such as Exchange, but their practical use is a bit limited.<BR>I should discover a way to fine tune exactly which blocks I can apply such foci effects to.",
-  "research.FOCUSPLAN.stage.2": "I have designed a medium pattern that will allow me to plan which blocks I manipulate. This medium works much like Touch, except I will be shown a ghostly outline if which blocks will be manipulated. The range is also much greater (16 blocks). By pressing the focus modify key ('G' by default) I can alter the size of the area. By pressing CTRL + G I can alter the axis in which the size will be changed.<BR>This medium has two modes of operation which I can select between when I add it to a focus: Full and Surface. Full mode affects all possible blocks that match the size, while surface mode will only affect blocks that have an exposed side.<BR>This focus medium cannot be used in combination with any other mediums.",
+  "research.FOCUSPLAN.stage.2": "Plan selects blocks up to 16 blocks away. On the third Setup page of the Focal Manipulator, set X/Y/Z radii from 0 to 3 and Full or Surface mode before crafting. Full extends into the hit face. Surface follows matching, exposed (non-opaque neighbor), connected blocks on that face; X and Z control its two dimensions and Y is unused. The held gauntlet previews the geometric selection; server permissions and hardness still decide each effect. Plan supports Split Target, but does not combine with other media or Scatter in this port.",
   "research.FOCUSSCATTER.title": "Focus Modifier: Scatter",
   "research.FOCUSSCATTER.stage.1": "I now know how to create both projectiles and bolts that propagate focus effects. I believe it should be fairly simple to design a plan that allows me to split a single trajectory into multiple.",
   "research.FOCUSSCATTER.stage.2": "I have managed to split a single medium trajectory into multiple, though not quite to the degree I had hoped. There are two problems:<BR>Firstly is that while I can control the number of forks created from the original trajectory, I have no control over the resulting trajectories once it is split. It simply scatters them in random directions. Fortunately I have figured out how to limit the cone of scatter.<BR>The second problem is that the more forks I create, the weaker the individual effects are. This is not surprising - there is only so much vis I can channel. I mitigate this slightly by drawing in additional vis to bolster the effects, but each resulting fork is still weaker than the original.<BR>This modifier can only be used once in a single focus.",
@@ -1005,5 +1005,13 @@
   "focal.thaumcraft.friend": "Ally",
   "focal.thaumcraft.enemy": "Foe",
   "focal.thaumcraft.field_settings": "Radius %s • Duration %s seconds",
-  "focal.thaumcraft.inventory_crystals": "Crystals are taken from the table, then your inventory."
+  "focal.thaumcraft.inventory_crystals": "Crystals are taken from the table, then your inventory.",
+  "focus.thaumcraft.plan": "Plan",
+  "focal.thaumcraft.plan_x": "X / Height",
+  "focal.thaumcraft.plan_y": "Y",
+  "focal.thaumcraft.plan_z": "Z / Width",
+  "focal.thaumcraft.plan_mode": "Plan mode",
+  "focal.thaumcraft.plan_full": "Full",
+  "focal.thaumcraft.plan_surface": "Surface",
+  "focal.thaumcraft.plan_settings": "Plan: X %s / Y %s / Z %s • %s"
 }

@@ -510,5 +510,14 @@
   "focal.thaumcraft.friend": "Aliado",
   "focal.thaumcraft.enemy": "Hostil",
   "focal.thaumcraft.field_settings": "Radio %s • Duración %s segundos",
-  "focal.thaumcraft.inventory_crystals": "Se usan los cristales de la mesa y después los del inventario."
+  "focal.thaumcraft.inventory_crystals": "Se usan los cristales de la mesa y después los del inventario.",
+  "focus.thaumcraft.plan": "Plan",
+  "focal.thaumcraft.plan_x": "X / Alto",
+  "focal.thaumcraft.plan_y": "Y",
+  "focal.thaumcraft.plan_z": "Z / Ancho",
+  "focal.thaumcraft.plan_mode": "Modo de plan",
+  "focal.thaumcraft.plan_full": "Volumen",
+  "focal.thaumcraft.plan_surface": "Superficie",
+  "focal.thaumcraft.plan_settings": "Plan: X %s / Y %s / Z %s • %s",
+  "research.FOCUSPLAN.stage.2": "Plan selecciona bloques hasta 16 bloques. En la tercera página Más del manipulador, configura radios X/Y/Z de 0 a 3 y el modo Volumen o Superficie antes de crear el foco. Volumen se extiende hacia dentro de la cara apuntada. Superficie sigue bloques contiguos, expuestos junto a vecinos no opacos y de estado idéntico en ese plano; X y Z controlan sus dos dimensiones y Y no se utiliza. El guantelete muestra la selección geométrica; el servidor aplica permisos y dureza en cada efecto. Plan permite Split Target; en este port no se combina con otros medios ni con Scatter."
 }

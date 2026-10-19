@@ -30,7 +30,7 @@ La selección de objetivos exige línea de visión. Los rayos y campos comprueba
 
 ## Pendiente
 
-Plan, Spellbat, Rift/agujeros temporales; grafos con más niveles y combinaciones de modificadores; variantes originales completas de trayectorias, fortuna y seda; bolsa de focos, vara pech, torretas, colapsador causal y gancho. M10 sigue siendo parcial.
+Plan se incorpora en [port.16](FOCUS-PLAN.md). Pendientes: Spellbat, Rift/agujeros temporales; grafos con más niveles y combinaciones de modificadores; variantes originales completas de trayectorias, fortuna y seda; bolsa de focos, vara pech, torretas, colapsador causal y gancho. M10 sigue siendo parcial.
 
 ## Verificación
 

@@ -139,3 +139,11 @@ labels={
 }
 for i,loc in enumerate(['en_us','es_es']):
  p=A/f'lang/{loc}.json';v=json.loads(p.read_text());v.update({k:text[i] for k,text in labels.items()});save(p,v)
+
+# Plan medium (port.16): persistent per-focus dimensions.
+for locale,values in {
+'en_us':{'focus.thaumcraft.plan':'Plan','focal.thaumcraft.plan_x':'X / Height','focal.thaumcraft.plan_y':'Y','focal.thaumcraft.plan_z':'Z / Width','focal.thaumcraft.plan_mode':'Plan mode','focal.thaumcraft.plan_full':'Full','focal.thaumcraft.plan_surface':'Surface','focal.thaumcraft.plan_settings':'Plan: X %s / Y %s / Z %s • %s','research.FOCUSPLAN.stage.2':'Plan selects blocks up to 16 blocks away. On the third Setup page of the Focal Manipulator, set X/Y/Z radii from 0 to 3 and Full or Surface mode before crafting. Full extends into the hit face. Surface follows matching, exposed (non-opaque neighbor), connected blocks on that face; X and Z control its two dimensions and Y is unused. The held gauntlet previews the geometric selection; server permissions and hardness still decide each effect. Plan supports Split Target, but does not combine with other media or Scatter in this port.'},
+'es_es':{'focus.thaumcraft.plan':'Plan','focal.thaumcraft.plan_x':'X / Alto','focal.thaumcraft.plan_y':'Y','focal.thaumcraft.plan_z':'Z / Ancho','focal.thaumcraft.plan_mode':'Modo de plan','focal.thaumcraft.plan_full':'Volumen','focal.thaumcraft.plan_surface':'Superficie','focal.thaumcraft.plan_settings':'Plan: X %s / Y %s / Z %s • %s','research.FOCUSPLAN.stage.2':'Plan selecciona bloques hasta 16 bloques. En la tercera página Más del manipulador, configura radios X/Y/Z de 0 a 3 y el modo Volumen o Superficie antes de crear el foco. Volumen se extiende hacia dentro de la cara apuntada. Superficie sigue bloques contiguos, expuestos junto a vecinos no opacos y de estado idéntico en ese plano; X y Z controlan sus dos dimensiones y Y no se utiliza. El guantelete muestra la selección geométrica; el servidor aplica permisos y dureza en cada efecto. Plan permite Split Target; en este port no se combina con otros medios ni con Scatter.'}
+}.items():
+    path=A/'lang'/f'{locale}.json'
+    lang=json.loads(path.read_text());lang.update(values);path.write_text(json.dumps(lang,ensure_ascii=False,indent=2)+'\n')
