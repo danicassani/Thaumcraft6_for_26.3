@@ -64,7 +64,7 @@ Contenido: `wandWorkbench`, `pechWand`, `alumentum`, `turretPlacer`, `causalityC
 
 ## M11: Gólems, sellos, tareas e IA
 
-**Estado:** port.21 añade cinco sellos avanzados con Inteligente, filtros de nueve muestras, guardia configurable y Seda; Proporcionar/Abastecer con objetivos, reservas de carga, transporte físico y rutas persistentes. Carga de port.20 verificada; Usar/Talar/Carnicero, movilidad especial, rangos y modelos originales pendientes (GOLEMS-LOGISTICS.md).
+**Estado:** port.22 añade Usar con interacción nativa y suministros físicos, Talar conectado y Carnicero que conserva adultos; 16 tipos de sello registrados, con cliente, servidor y reinicio verificados. Movilidad especial, rangos, opciones originales adicionales y modelos/animaciones pendientes (GOLEMS-TASKS.md).
 
 Contenido: `golemBuilder`, `golemBell`, `golemPlacer`, `seals`.
 

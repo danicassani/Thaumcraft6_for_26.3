@@ -58,3 +58,5 @@ Repetición final: `work/golem-client5.log` supera `GOLEM_PRESS_OK`, `GOLEM_PICK
 Compilación final `gradle --offline clean build`: 79 pruebas, cero fallos, errores u omisiones. Se comprueban 288 diseños válidos por códec, cancelación de rasgos opuestos, costes/componentes y aptitudes de tareas. La cadena completa de generadores converge sin diferencias. El cliente final guarda y cierra normalmente (`BUILD SUCCESSFUL`). El JAR contiene 283 recetas y 246 definiciones de objetos y excluye `thaumcraft/test/`. Artefacto `thaumcraft-6.1.BETA26-port.20-forge66.0.13.jar` (7,888,119 bytes), SHA-256 `f173071d5cd3b9e9b37896f341b37eb77a366477535dbf92448a85632fea4758`.
 
 Actualización: [port.21 — sellos avanzados y abastecimiento](GOLEMS-LOGISTICS.md) incorpora filtros múltiples, cinco variantes avanzadas y logística física a petición. Véanse allí el estado y los pendientes actuales.
+
+Port.22 añade los tres sellos restantes: [Usar, Talar y Carnicero](GOLEMS-TASKS.md), con límites de la adaptación y pruebas.

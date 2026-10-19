@@ -664,7 +664,21 @@
   "golem.thaumcraft.guard_2": "Jugadores",
   "golem.thaumcraft.silk": "Toque de seda",
   "golem.thaumcraft.filter_selected": "Filtro %s/%s • %s",
-  "research.SEALPROVIDE.stage.2": "Proporcionar deja los objetos en su inventario hasta que Abastecer los pide. Deben compartir propietario/canal y estar cargados, a 32 bloques del hogar del gólem. Ambos rechazan Torpe, pero no exigen Inteligente. La extracción respeta la cara Forge marcada.",
+  "research.SEALPROVIDE.stage.2": "Proporcionar deja los objetos en su inventario hasta que Abastecer o Usar los pide. Deben compartir propietario/canal y estar cargados, a 32 bloques del hogar del gólem. Ambos rechazan Torpe, pero no exigen Inteligente. La extracción respeta la cara Forge marcada.",
   "research.SEALSTOCK.stage.2": "Configura hasta nueve muestras y cantidades objetivo. Fijar filtro toma la cantidad de la pila en mano; la segunda página ajusta de uno en uno, 1–4096. Muestras equivalentes usan el objetivo mayor. Solo se pide el déficit que cabe. El gólem camina al proveedor y vuelve con carga física. Recuenta al entregar para no sobreabastecer; el sobrante permanece en su carga. El destino cargado con redstone pausa el viaje y el descargado espera. Un destino retirado o incompatible libera la ruta conservando los objetos para otro destino válido o recuperación manual. La carga y ruta sobreviven al reinicio; las reservas vacías se reconstruyen.",
-  "golem.thaumcraft.filter_index": "Filtro %s/%s"
+  "golem.thaumcraft.filter_index": "Filtro %s/%s",
+  "item.thaumcraft.seal_use": "Sello: Usar",
+  "block.thaumcraft.seal_use": "Sello: Usar",
+  "item.thaumcraft.seal_lumber": "Sello: Talar",
+  "block.thaumcraft.seal_lumber": "Sello: Talar",
+  "item.thaumcraft.seal_butcher": "Sello: Carnicero",
+  "block.thaumcraft.seal_butcher": "Sello: Carnicero",
+  "golem.thaumcraft.use_left": "Clic izquierdo",
+  "golem.thaumcraft.use_air": "Objetivo aire",
+  "golem.thaumcraft.use_empty": "Mano vacía",
+  "golem.thaumcraft.use_sneak": "Agacharse",
+  "golem.thaumcraft.use_provision": "Pedir objeto",
+  "research.SEALUSE.stage.1": "Requiere Inteligente y Hábil. Usa la cara marcada del soporte con una mano real de supervivencia; las muestras no pagan acciones. Tercera página: clic izquierdo/derecho, objetivo aire delante del sello, mano vacía, agacharse y pedir suministros. En aire, el clic derecho se dirige al soporte bajo esa celda. Pedir necesita una muestra de lista blanca y Proporcionar del mismo propietario/canal: el gólem busca un objeto físico y vuelve a usarlo. Vaciar también puede abastecer la carga. La segunda página permite desactivar datos exactos. Las herramientas se desgastan y los objetos se consumen; recipientes y sobrantes vuelven a la carga o caen si no caben. Clic izquierdo rompe un bloque por acción nativa; si elimina el soporte, el sello se desprende y cae. Para labrar tierra coloca el sello en un lateral: la azada necesita aire encima. Respeta eventos Forge y permisos del dueño. No opera menús automáticamente. Pendientes peticiones de fabricación, clics en entidades, coincidencia por etiquetas/mod y daño separado.",
+  "research.SEALLUMBER.stage.1": "Requiere Inteligente y Rompedor. Busca un tronco inferior dentro del radio y corta los troncos conectados del mismo bloque, empezando por el más lejano, uno por segundo. Radio horizontal 1–8; altura desde un bloque bajo el sello hasta el doble del radio por encima, máximo 256 troncos por búsqueda. Solo chunks cargados, troncos rompibles y permisos del dueño/eventos Forge. Botín con hacha de hierro; el exceso cae físicamente y las hojas decaen normalmente. No replanta; también corta troncos colocados por jugadores dentro del área.",
+  "research.SEALBUTCHER.stage.1": "Requiere Inteligente y Luchador. Ataca adultos sobrantes solo mientras haya más de dos adultos válidos del mismo tipo de entidad dentro del radio. Recuenta antes de cada golpe, incluso con varios trabajadores. Excluye crías, animales domesticados/con correa, aliados y mascotas del dueño, también del recuento de la pareja. El botín queda físico para Recoger. No cría ni alimenta animales."
 }

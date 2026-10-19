@@ -508,6 +508,12 @@
     "Aspects: vitreus 20, praecantatio 10, auram 5",
     "Requires hot water; consumes 50 mB per craft."
   ],
+  "thaumcraft:seal_lumber": [
+    "Research: SEALLUMBER",
+    "Catalyst: thaumcraft:seal_breaker",
+    "Aspects: {'herba': 40, 'sensus': 20}",
+    "Result: thaumcraft:seal_lumber"
+  ],
   "thaumcraft:hedge_leather": [
     "Crucible: minecraft:leather x1",
     "Catalyst: minecraft:rotten_flesh",
@@ -741,6 +747,12 @@
     "Catalyst: minecraft:dirt",
     "Aspects: aqua 5",
     "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:seal_use": [
+    "Research: SEALUSE",
+    "Catalyst: thaumcraft:seal_blank",
+    "Aspects: {'fabrico': 20, 'sensus': 10, 'cognitio': 20}",
+    "Result: thaumcraft:seal_use"
   ],
   "thaumcraft:vis_crystal_cognitio": [
     "Crucible: thaumcraft:crystal_essence x1",
@@ -1806,5 +1818,33 @@
     "Catalyst: thaumcraft:seal_fill",
     "Aspects: {'cognitio': 10, 'desiderium': 10}",
     "Result: thaumcraft:seal_stock"
+  ],
+  "thaumcraft:SealUse": [
+    "Research: SEALUSE",
+    "Catalyst: thaumcraft:seal_blank",
+    "Aspects: {'fabrico': 20, 'sensus': 10, 'cognitio': 20}",
+    "Result: thaumcraft:seal_use"
+  ],
+  "thaumcraft:SealLumber": [
+    "Research: SEALLUMBER",
+    "Catalyst: thaumcraft:seal_breaker",
+    "Aspects: {'herba': 40, 'sensus': 20}",
+    "Result: thaumcraft:seal_lumber"
+  ],
+  "thaumcraft:SealButcher": [
+    "Research: SEALBUTCHER",
+    "Input: thaumcraft:seal_guard",
+    "Components: minecraft:leather, #minecraft:wool, minecraft:rabbit_hide, minecraft:porkchop, minecraft:mutton, minecraft:beef",
+    "Aspects: {'bestia': 10, 'sensus': 10, 'humanus': 10}",
+    "Instability: 0",
+    "Result: thaumcraft:seal_butcher"
+  ],
+  "thaumcraft:seal_butcher": [
+    "Research: SEALBUTCHER",
+    "Input: thaumcraft:seal_guard",
+    "Components: minecraft:leather, #minecraft:wool, minecraft:rabbit_hide, minecraft:porkchop, minecraft:mutton, minecraft:beef",
+    "Aspects: {'bestia': 10, 'sensus': 10, 'humanus': 10}",
+    "Instability: 0",
+    "Result: thaumcraft:seal_butcher"
   ]
 }

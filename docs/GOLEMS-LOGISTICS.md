@@ -42,7 +42,7 @@ La prueba dedicada carga un mundo de port.20 real con un sello Guardar y un gól
 
 ## Pendiente
 
-Usar, Talar y Carnicero; tareas externas a Abastecer como peticiones de fabricación; cantidades, opciones de coincidencia y variantes originales adicionales; patas con ruedas/trepadoras/voladoras, cabezas exploradoras, dardos, rangos y experiencia. Los modelos OBJ, accesorios y animaciones originales siguen pendientes. La prensa compacta y las placas siguen siendo las adaptaciones documentadas de port.20.
+Port.22 incorpora [Usar, Talar y Carnicero](GOLEMS-TASKS.md), incluida petición física de suministros para Usar. Quedan peticiones de fabricación; cantidades, opciones de coincidencia y variantes originales adicionales; patas con ruedas/trepadoras/voladoras, cabezas exploradoras, dardos, rangos y experiencia. Los modelos OBJ, accesorios y animaciones originales siguen pendientes. La prensa compacta y las placas siguen siendo las adaptaciones documentadas de port.20.
 
 ## Verificación
 
