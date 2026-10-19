@@ -89,7 +89,7 @@ public final class AlchemyMachine extends thaumcraft.devices.AuraDeviceEntity im
     public boolean process(ItemStack stack,Player player){
         if(!(level instanceof ServerLevel server)||kind()!=AlchemyBlock.Kind.CRUCIBLE||!supported()||heat<=150||water.getFluidAmount()<=0||stack.isEmpty())return false;
         if(player!=null&&(!valid(player)||ResearchService.state(player)==null))return false;
-        var matching=server.recipeAccess().getRecipes().stream().filter(h->h.value() instanceof AlchemyRecipe a&&a.catalyst().test(stack)&&AspectAmounts.contains(aspects,a.aspects())).sorted(Comparator.<RecipeHolder<?>>comparingInt(h->AspectAmounts.total(((AlchemyRecipe)h.value()).aspects())).reversed().thenComparing(h->h.id().toString())).toList();
+        var matching=server.recipeAccess().getRecipes().stream().filter(h->h.value() instanceof AlchemyRecipe a&&a.matches(new net.minecraft.world.item.crafting.SingleRecipeInput(stack),server)&&AspectAmounts.contains(aspects,a.aspects())).sorted(Comparator.<RecipeHolder<?>>comparingInt(h->AspectAmounts.total(((AlchemyRecipe)h.value()).aspects())).reversed().thenComparing(h->h.id().toString())).toList();
         AlchemyRecipe recipe=null;for(var h:matching){var r=(AlchemyRecipe)h.value();if(player!=null&&ResearchService.knows(player,r.research())){recipe=r;break;}}
         if(recipe!=null){
             if(water.getFluidAmount()<50)return false;var next=AspectAmounts.subtract(aspects,recipe.aspects());var result=recipe.result().create();if(!ResearchService.knows(player,recipe.research()))return false;

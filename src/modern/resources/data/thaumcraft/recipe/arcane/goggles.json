@@ -1,0 +1,22 @@
+{
+  "type": "thaumcraft:arcane",
+  "research": "UNLOCKARTIFICE",
+  "vis": 50,
+  "crystals": {},
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "LGL",
+      "L L",
+      "TGT"
+    ],
+    "key": {
+      "L": "minecraft:leather",
+      "G": "thaumcraft:ingot_brass",
+      "T": "thaumcraft:thaumometer"
+    },
+    "result": {
+      "id": "thaumcraft:goggles"
+    }
+  }
+}

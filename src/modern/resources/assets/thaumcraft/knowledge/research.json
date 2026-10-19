@@ -664,7 +664,7 @@
         ],
         "required_craft": [
           {
-            "id": "unavailable:thaumcraft:focus_1",
+            "id": "thaumcraft:focus_1",
             "count": 1,
             "legacy": "thaumcraft:focus_1"
           }
@@ -685,7 +685,7 @@
         ],
         "required_craft": [
           {
-            "id": "unavailable:thaumcraft:wand_workbench",
+            "id": "thaumcraft:wand_workbench",
             "count": 1,
             "legacy": "thaumcraft:wand_workbench"
           }
@@ -1969,7 +1969,7 @@
         ],
         "required_craft": [
           {
-            "id": "unavailable:thaumcraft:focus_2",
+            "id": "thaumcraft:focus_2",
             "count": 1,
             "legacy": "thaumcraft:focus_2"
           }
@@ -2277,7 +2277,7 @@
         ],
         "required_craft": [
           {
-            "id": "unavailable:thaumcraft:focus_3",
+            "id": "thaumcraft:focus_3",
             "count": 1,
             "legacy": "thaumcraft:focus_3"
           }
@@ -5478,7 +5478,7 @@
             "legacy": "thaumcraft:vis_resonator"
           },
           {
-            "id": "unavailable:thaumcraft:caster_basic",
+            "id": "thaumcraft:caster_basic",
             "count": 1,
             "legacy": "thaumcraft:caster_basic"
           }

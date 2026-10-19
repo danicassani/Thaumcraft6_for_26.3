@@ -1,0 +1,30 @@
+{
+  "type": "thaumcraft:arcane",
+  "research": "UNLOCKAUROMANCY@2",
+  "vis": 100,
+  "crystals": {
+    "aer": 1,
+    "ignis": 1,
+    "aqua": 1,
+    "terra": 1,
+    "ordo": 1,
+    "perditio": 1
+  },
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "III",
+      "LRL",
+      "LTL"
+    ],
+    "key": {
+      "I": "minecraft:iron_ingot",
+      "L": "minecraft:leather",
+      "R": "thaumcraft:vis_resonator",
+      "T": "thaumcraft:thaumometer"
+    },
+    "result": {
+      "id": "thaumcraft:caster_basic"
+    }
+  }
+}

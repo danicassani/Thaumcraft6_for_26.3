@@ -1,0 +1,28 @@
+{
+  "type": "thaumcraft:infusion",
+  "research": "VERDANTCHARMS",
+  "input": {
+    "item": "thaumcraft:charm_verdant"
+  },
+  "components": [
+    {
+      "item": "minecraft:golden_apple"
+    },
+    {
+      "item": "thaumcraft:crystal_essence",
+      "crystal_aspect": "victus"
+    },
+    {
+      "item": "thaumcraft:crystal_essence",
+      "crystal_aspect": "humanus"
+    }
+  ],
+  "aspects": {
+    "victus": 80,
+    "humanus": 80
+  },
+  "instability": 5,
+  "result": {
+    "id": "thaumcraft:charm_verdant_life"
+  }
+}

@@ -70,6 +70,8 @@ public final class BasicContent {
         thaumcraft.essentia.EssentiaContent.register(bus);
         thaumcraft.infusion.InfusionContent.register(bus);
         thaumcraft.trees.TreeContent.register(bus);
+        thaumcraft.thaumaturgy.ThaumaturgyContent.register(bus);
+        thaumcraft.equipment.EquipmentContent.register(bus);
         TABS.register(bus);
         OreCountPlacement.register(bus);
     }

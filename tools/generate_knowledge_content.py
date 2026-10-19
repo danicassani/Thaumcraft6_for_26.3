@@ -36,6 +36,10 @@ fields.update({'infusionMatrix':'infusion_matrix','pedestalArcane':'pedestal_arc
                'voidSiphon': 'void_siphon', 'oreAmber': 'ore_amber', 'oreCinnabar': 'ore_cinnabar', 'oreQuartz': 'ore_quartz',
                'amber': 'amber', 'quicksilver': 'quicksilver', 'amberBlock': 'amber_block', 'amberBrick': 'amber_brick',
                'ingotThaumium': 'ingot_thaumium', 'ingotVoid': 'ingot_void', 'ingotBrass': 'ingot_brass'})
+fields.update({'wandWorkbench':'wand_workbench','casterBasic':'caster_basic','travellerBoots':'traveller_boots','primordialPearl':'primordial_pearl'})
+for family in ['void','elemental','cloth','fortress','voidRobe']:
+    for suffix in ['Sword','Pick','Axe','Shovel','Hoe','Helm','Chest','Legs','Boots']:
+        fields[family+suffix]=('void_robe' if family=='voidRobe' else family)+'_'+suffix.lower()
 for name, tag in [('Air','aer'),('Fire','ignis'),('Water','aqua'),('Earth','terra'),('Order','ordo'),('Entropy','perditio'),('Taint','vitium')]:
     fields['crystal'+name] = 'crystal_'+tag
 

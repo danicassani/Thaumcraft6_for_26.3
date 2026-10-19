@@ -1,0 +1,32 @@
+{
+  "type": "thaumcraft:infusion",
+  "research": "VERDANTCHARMS",
+  "input": {
+    "item": "minecraft:gold_ingot"
+  },
+  "components": [
+    {
+      "item": "thaumcraft:primordial_nugget"
+    },
+    {
+      "item": "thaumcraft:crystal_essence",
+      "crystal_aspect": "victus"
+    },
+    {
+      "item": "minecraft:milk_bucket"
+    },
+    {
+      "item": "thaumcraft:crystal_essence",
+      "crystal_aspect": "herba"
+    }
+  ],
+  "aspects": {
+    "victus": 60,
+    "ordo": 30,
+    "herba": 60
+  },
+  "instability": 5,
+  "result": {
+    "id": "thaumcraft:charm_verdant"
+  }
+}

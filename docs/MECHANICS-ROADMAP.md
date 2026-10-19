@@ -28,13 +28,13 @@ Contenido: `researchTable`, `thaumonomicon`, `curio`, `primordialPearl`, `celest
 
 ## M05: Aura, vis y flux por chunk y sincronización
 
-**Estado:** núcleo, cristales y consumidores de port.6 implementados; port.7 añade cargador sobre mesa arcana y sifón con grietas funcionales; conexión al manipulador de focos pendiente de M10 (ARCANE-RIFTS.md).
+**Estado:** núcleo, cristales y consumidores de port.6 implementados; port.7 añade cargador sobre mesa arcana y sifón con grietas funcionales; port.14 conecta el manipulador de focos y su cargador (ARCANE-RIFTS.md).
 
 Contenido: `crystalAir`, `crystalFire`, `crystalWater`, `crystalEarth`, `crystalOrder`, `crystalEntropy`, `crystalTaint`, `grassAmbient`, `visBattery`, `arcaneWorkbenchCharger`, `dioptra`, `rechargePedestal`, `visGenerator`, `voidSiphon`, `creativeFluxSponge`.
 
 ## M06: Crafteo arcano y descuentos de vis
 
-**Estado:** mesa y cargador implementados; port.8 añade requisitos de investigación, recetas del taumómetro y dioptra y consulta en el libro; descuentos de equipo pendientes (RESEARCH-SCANNING.md).
+**Estado:** mesa y cargador implementados; port.8 añade requisitos de investigación, recetas del taumómetro y dioptra y consulta en el libro; port.14 aplica descuentos reales de equipo (RESEARCH-SCANNING.md).
 
 Contenido: `arcaneWorkbench`.
 
@@ -52,13 +52,13 @@ Contenido: `bannerCrimsonCult`, `tube`, `tubeValve`, `tubeRestrict`, `tubeOneway
 
 ## M09: Infusión, simetría, estabilidad y mejoras
 
-**Estado:** port.13 añade estabilizadores con carga/red horizontal de incrustaciones y pedestales, mitigación pagada, mejoras de velocidad/coste y ocho encantamientos funcionales de herramientas; equipo avanzado, escudos rúnicos, guantelete y sucesos ligados a corrupción siguen dependiendo de M10/M12/M13 (INFUSION-ADVANCED.md).
+**Estado:** port.13 añade estabilizadores con carga/red horizontal de incrustaciones y pedestales, mitigación pagada, mejoras de velocidad/coste y ocho encantamientos funcionales de herramientas; port.14 añade equipo, escudos rúnicos y guantelete básico; variantes avanzadas y sucesos de corrupción siguen pendientes (INFUSION-ADVANCED.md).
 
 Contenido: `inlay`, `infusionMatrix`, `stabilizer`.
 
 ## M10: Focos, hechizos, guanteletes y proyectiles
 
-**Estado:** pendiente.
+**Estado:** port.14 implementa manipulador persistente, tres focos, nueve efectos, tres medios, costes/investigación y guantelete con intercambio físico y activación de infusiones. Grafo ramificado, medios avanzados y dispositivos restantes pendientes (THAUMATURGY-EQUIPMENT.md).
 
 Contenido: `wandWorkbench`, `pechWand`, `alumentum`, `turretPlacer`, `causalityCollapser`, `grappleGun`, `casterBasic`, `focus1`, `focus2`, `focus3`.
 
@@ -70,7 +70,7 @@ Contenido: `golemBuilder`, `golemBell`, `golemPlacer`, `seals`.
 
 ## M12: Warp, autocuración, efectos de equipo y accesorios
 
-**Estado:** pendiente.
+**Estado:** port.14 añade herramientas/armaduras del vacío, elementales, fortaleza y túnicas; reparación, descuentos, escudo rúnico, botas cargables, accesorios adaptados a mano secundaria y comprobador de cordura. Equivalencia completa, siete ranuras, máscaras, culto y limpieza de distorsión siguen pendientes (THAUMATURGY-EQUIPMENT.md).
 
 Contenido: `brain`, `sanitySoap`, `bathSalts`, `sanityChecker`, `voidAxe`, `voidSword`, `voidShovel`, `voidPick`, `voidHoe`, `elementalAxe`, `elementalSword`, `elementalShovel`, `elementalPick`, `elementalHoe`, `primalCrusher`, `crimsonBlade`, `goggles`, `clothChest`, `clothLegs`, `clothBoots`, `travellerBoots`, `fortressHelm`, `fortressChest`, `fortressLegs`, `voidHelm`, `voidChest`, `voidLegs`, `voidBoots`, `voidRobeHelm`, `voidRobeChest`, `voidRobeLegs`, `crimsonPlateHelm`, `crimsonPlateChest`, `crimsonPlateLegs`, `crimsonBoots`, `crimsonRobeHelm`, `crimsonRobeChest`, `crimsonRobeLegs`, `crimsonPraetorHelm`, `crimsonPraetorChest`, `crimsonPraetorLegs`, `baubles`, `amuletVis`, `charmVerdant`, `bandCuriosity`, `charmVoidseer`, `ringCloud`, `charmUndying`.
 

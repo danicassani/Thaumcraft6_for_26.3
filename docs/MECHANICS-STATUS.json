@@ -1,12 +1,18 @@
 {
   "M02": "luces, soporte, drops y recoloreado implementados; port.12 incorpora las velas como estabilizadores por pares con rendimiento decreciente; nitor no estabiliza (INFUSION-CARDS.md)",
-  "M05": "núcleo, cristales y consumidores de port.6 implementados; port.7 añade cargador sobre mesa arcana y sifón con grietas funcionales; conexión al manipulador de focos pendiente de M10 (ARCANE-RIFTS.md)",
+  "M05": "núcleo, cristales y consumidores de port.6 implementados; port.7 añade cargador sobre mesa arcana y sifón con grietas funcionales; port.14 conecta el manipulador de focos y su cargador (ARCANE-RIFTS.md)",
   "M04": "port.12 amplía a 32 cartas activas, ayudas de crisol/matriz/cerebro y nueve ayudas con paginación y protocolo nativo; curiosidades con estudio y fuente preservada, frascos exactos en requisitos; Study/Notation sin proveedor original activo se mantienen fuera (INFUSION-CARDS.md)",
-  "M06": "mesa y cargador implementados; port.8 añade requisitos de investigación, recetas del taumómetro y dioptra y consulta en el libro; descuentos de equipo pendientes (RESEARCH-SCANNING.md)",
+  "M06": "mesa y cargador implementados; port.8 añade requisitos de investigación, recetas del taumómetro y dioptra y consulta en el libro; port.14 aplica descuentos reales de equipo (RESEARCH-SCANNING.md)",
   "M13": "núcleo de grietas implementado para el sifón: generación por flux, crecimiento, estabilidad, colisiones, sincronización, guardado y colapso con semillas; eventos avanzados, corrupción y fluidos pendientes (ARCANE-RIFTS.md)",
   "M01": "port.10 añade crecimiento por tiempo/bonemeal, hojas nativas con drops/decay, recuperación de vis de silverwood y generación básica en bosques nuevos; forma de árboles y biomas mágicos originales aún parciales (ALCHEMY-ESSENTIA.md)",
   "M07": "port.10 implementa crisol, agua/calor, disolución, 55 recetas, resolución de aspectos desde recetas y horno básico con alambiques; máquinas y mejoras posteriores pendientes (ALCHEMY-ESSENTIA.md)",
   "M08": "port.11 añade seis tubos, succión local, válvulas/redstone, filtros, depósitos mixtos, etiquetas y resonador; port.12 añade cerebro con 2000 XP y absorción remota de tarros para la matriz; fuelles y espejos de esencia siguen pendientes (ESSENTIA-TRANSPORT.md, INFUSION-CARDS.md)",
-  "M09": "port.13 añade estabilizadores con carga/red horizontal de incrustaciones y pedestales, mitigación pagada, mejoras de velocidad/coste y ocho encantamientos funcionales de herramientas; equipo avanzado, escudos rúnicos, guantelete y sucesos ligados a corrupción siguen dependiendo de M10/M12/M13 (INFUSION-ADVANCED.md)",
-  "M03": "port.12 añade inventarios de una unidad, sincronización y capacidad Forge de los tres pedestales; contenedores y autómatas restantes pendientes"
+  "M09": "port.13 añade estabilizadores con carga/red horizontal de incrustaciones y pedestales, mitigación pagada, mejoras de velocidad/coste y ocho encantamientos funcionales de herramientas; port.14 añade equipo, escudos rúnicos y guantelete básico; variantes avanzadas y sucesos de corrupción siguen pendientes (INFUSION-ADVANCED.md)",
+  "M03": "port.12 añade inventarios de una unidad, sincronización y capacidad Forge de los tres pedestales; contenedores y autómatas restantes pendientes",
+  "M10": "port.14 implementa manipulador persistente, tres focos, nueve efectos, tres medios, costes/investigación y guantelete con intercambio físico y activación de infusiones. Grafo ramificado, medios avanzados y dispositivos restantes pendientes (THAUMATURGY-EQUIPMENT.md)",
+  "M11": "pendiente",
+  "M12": "port.14 añade herramientas/armaduras del vacío, elementales, fortaleza y túnicas; reparación, descuentos, escudo rúnico, botas cargables, accesorios adaptados a mano secundaria y comprobador de cordura. Equivalencia completa, siete ranuras, máscaras, culto y limpieza de distorsión siguen pendientes (THAUMATURGY-EQUIPMENT.md)",
+  "M14": "pendiente",
+  "M15": "pendiente",
+  "M16": "pendiente"
 }

@@ -10,6 +10,44 @@
     "Vis: 50",
     "aqua: 1"
   ],
+  "thaumcraft:caster_basic": [
+    "Research: UNLOCKAUROMANCY@2",
+    "[III]",
+    "[LRL]",
+    "[LTL]",
+    "I = minecraft:iron_ingot",
+    "L = minecraft:leather",
+    "R = thaumcraft:vis_resonator",
+    "T = thaumcraft:thaumometer",
+    "Vis: 100",
+    "Crystals: {'aer': 1, 'ignis': 1, 'aqua': 1, 'terra': 1, 'ordo': 1, 'perditio': 1}"
+  ],
+  "thaumcraft:cloth_boots": [
+    "Research: UNLOCKINFUSION",
+    "[I I]",
+    "[I I]",
+    "I = thaumcraft:fabric",
+    "Vis: 100",
+    "Crystals: {}"
+  ],
+  "thaumcraft:cloth_chest": [
+    "Research: UNLOCKINFUSION",
+    "[I I]",
+    "[III]",
+    "[III]",
+    "I = thaumcraft:fabric",
+    "Vis: 100",
+    "Crystals: {}"
+  ],
+  "thaumcraft:cloth_legs": [
+    "Research: UNLOCKINFUSION",
+    "[III]",
+    "[I I]",
+    "[I I]",
+    "I = thaumcraft:fabric",
+    "Vis: 100",
+    "Crystals: {}"
+  ],
   "thaumcraft:dioptra": [
     "[APA]",
     "[IGI]",
@@ -36,6 +74,17 @@
     "W = thaumcraft:plank_silverwood",
     "Vis: 15",
     "aqua: 1"
+  ],
+  "thaumcraft:goggles": [
+    "Research: UNLOCKARTIFICE",
+    "[LGL]",
+    "[L L]",
+    "[TGT]",
+    "L = minecraft:leather",
+    "G = thaumcraft:ingot_brass",
+    "T = thaumcraft:thaumometer",
+    "Vis: 50",
+    "Crystals: {}"
   ],
   "thaumcraft:infusion_matrix": [
     "[S S]",
@@ -160,6 +209,12 @@
     "S = minecraft:stick",
     "Vis: 50"
   ],
+  "thaumcraft:sanity_checker": [
+    "Research: SANITYCHECKER",
+    "Vis: 5",
+    "Ingredients: {'B': 'thaumcraft:ingot_brass', 'P': 'thaumcraft:brain', 'M': 'thaumcraft:mirrored_glass'}",
+    "Accessories are equipped in the off hand. Right click to equip."
+  ],
   "thaumcraft:smelter_basic": [
     "[BCB]",
     "[SFS]",
@@ -253,6 +308,20 @@
     "Vis: 50",
     "aer: 1",
     "aqua: 1"
+  ],
+  "thaumcraft:wand_workbench": [
+    "Research: BASEAUROMANCY@2",
+    "[ISI]",
+    "[BRB]",
+    "[GTG]",
+    "I = thaumcraft:plate_iron",
+    "S = thaumcraft:slab_arcane_stone",
+    "B = thaumcraft:stone_arcane",
+    "R = thaumcraft:vis_resonator",
+    "G = minecraft:gold_ingot",
+    "T = thaumcraft:table_stone",
+    "Vis: 100",
+    "Crystals: {'terra': 1, 'aqua': 1}"
   ],
   "thaumcraft:workbenchcharger": [
     "[ R ]",
@@ -355,6 +424,12 @@
     "Crucible: thaumcraft:crystal_essence x1",
     "Catalyst: thaumcraft:nugget_quartz",
     "Aspects: exanimis 2",
+    "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:focus_1": [
+    "Crucible: thaumcraft:focus_1 x1",
+    "Catalyst: thaumcraft:crystal_essence",
+    "Aspects: vitreus 20, praecantatio 10, auram 5",
     "Requires hot water; consumes 50 mB per craft."
   ],
   "thaumcraft:hedge_leather": [
@@ -874,5 +949,510 @@
     "Offerings: enchanted book + ['thaumcraft:nitor_white', 'thaumcraft:nitor_orange', 'thaumcraft:nitor_magenta', 'thaumcraft:nitor_lightblue', 'thaumcraft:nitor_yellow', 'thaumcraft:nitor_lime', 'thaumcraft:nitor_pink', 'thaumcraft:nitor_gray', 'thaumcraft:nitor_silver', 'thaumcraft:nitor_cyan', 'thaumcraft:nitor_purple', 'thaumcraft:nitor_blue', 'thaumcraft:nitor_brown', 'thaumcraft:nitor_green', 'thaumcraft:nitor_red', 'thaumcraft:nitor_black']",
     "Essentia: {'lux': 80, 'aer': 20}",
     "Cost multiplier: next rank + 0.33 per other infusion enchantment."
+  ],
+  "thaumcraft:ClothChest": [
+    "Research: UNLOCKINFUSION",
+    "[I I]",
+    "[III]",
+    "[III]",
+    "I = thaumcraft:fabric",
+    "Vis: 100",
+    "Crystals: {}"
+  ],
+  "thaumcraft:CasterBasic": [
+    "Research: UNLOCKAUROMANCY@2",
+    "[III]",
+    "[LRL]",
+    "[LTL]",
+    "I = minecraft:iron_ingot",
+    "L = minecraft:leather",
+    "R = thaumcraft:vis_resonator",
+    "T = thaumcraft:thaumometer",
+    "Vis: 100",
+    "Crystals: {'aer': 1, 'ignis': 1, 'aqua': 1, 'terra': 1, 'ordo': 1, 'perditio': 1}"
+  ],
+  "thaumcraft:ClothBoots": [
+    "Research: UNLOCKINFUSION",
+    "[I I]",
+    "[I I]",
+    "I = thaumcraft:fabric",
+    "Vis: 100",
+    "Crystals: {}"
+  ],
+  "thaumcraft:ClothLegs": [
+    "Research: UNLOCKINFUSION",
+    "[III]",
+    "[I I]",
+    "[I I]",
+    "I = thaumcraft:fabric",
+    "Vis: 100",
+    "Crystals: {}"
+  ],
+  "thaumcraft:Goggles": [
+    "Research: UNLOCKARTIFICE",
+    "[LGL]",
+    "[L L]",
+    "[TGT]",
+    "L = minecraft:leather",
+    "G = thaumcraft:ingot_brass",
+    "T = thaumcraft:thaumometer",
+    "Vis: 50",
+    "Crystals: {}"
+  ],
+  "thaumcraft:FocalManipulator": [
+    "Research: BASEAUROMANCY@2",
+    "[ISI]",
+    "[BRB]",
+    "[GTG]",
+    "I = thaumcraft:plate_iron",
+    "S = thaumcraft:slab_arcane_stone",
+    "B = thaumcraft:stone_arcane",
+    "R = thaumcraft:vis_resonator",
+    "G = minecraft:gold_ingot",
+    "T = thaumcraft:table_stone",
+    "Vis: 100",
+    "Crystals: {'terra': 1, 'aqua': 1}"
+  ],
+  "thaumcraft:VoidRobeChest": [
+    "Research: VOIDROBEARMOR",
+    "Center: {'item': 'thaumcraft:void_chest'}",
+    "Offerings: [{'item': 'thaumcraft:cloth_chest'}, {'item': 'thaumcraft:plate_void'}, {'item': 'thaumcraft:plate_void'}, {'item': 'thaumcraft:salis_mundus'}, {'item': 'thaumcraft:fabric'}, {'item': 'minecraft:leather'}]",
+    "Essentia: {'metallum': 35, 'praemunio': 35, 'potentia': 25, 'alienis': 25, 'vacuos': 35}"
+  ],
+  "thaumcraft:FortressChest": [
+    "Research: ARMORFORTRESS",
+    "Center: {'item': 'thaumcraft:thaumium_chest'}",
+    "Offerings: [{'item': 'thaumcraft:plate_thaumium'}, {'item': 'thaumcraft:plate_thaumium'}, {'item': 'thaumcraft:plate_thaumium'}, {'item': 'thaumcraft:plate_thaumium'}, {'item': 'minecraft:gold_ingot'}, {'item': 'minecraft:leather'}]",
+    "Essentia: {'metallum': 50, 'praemunio': 30, 'potentia': 25}"
+  ],
+  "thaumcraft:Focus3": [
+    "Research: FOCUSGREATER@1",
+    "Center: {'item': 'thaumcraft:focus_2'}",
+    "Offerings: [{'item': 'thaumcraft:quicksilver'}, {'item': 'thaumcraft:primordial_pearl'}, {'item': 'thaumcraft:quicksilver'}, {'item': 'minecraft:nether_star'}]",
+    "Essentia: {'praecantatio': 25, 'ordo': 50, 'vacuos': 100}"
+  ],
+  "thaumcraft:ElementalShovel": [
+    "Research: ELEMENTALTOOLS",
+    "Center: {'item': 'thaumcraft:thaumium_shovel'}",
+    "Offerings: [{'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'terra'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'terra'}, {'item': 'thaumcraft:primordial_nugget'}, {'item': 'thaumcraft:plank_greatwood'}]",
+    "Essentia: {'terra': 60, 'fabrico': 30}"
+  ],
+  "thaumcraft:ElementalHoe": [
+    "Research: ELEMENTALTOOLS",
+    "Center: {'item': 'thaumcraft:thaumium_hoe'}",
+    "Offerings: [{'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'ordo'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'perditio'}, {'item': 'thaumcraft:primordial_nugget'}, {'item': 'thaumcraft:plank_greatwood'}]",
+    "Essentia: {'ordo': 30, 'herba': 30, 'perditio': 30}"
+  ],
+  "thaumcraft:VoidRobeHelm": [
+    "Research: VOIDROBEARMOR",
+    "Center: {'item': 'thaumcraft:void_helm'}",
+    "Offerings: [{'item': 'thaumcraft:goggles'}, {'item': 'thaumcraft:fabric'}, {'item': 'thaumcraft:fabric'}, {'item': 'thaumcraft:salis_mundus'}, {'item': 'thaumcraft:fabric'}, {'item': 'thaumcraft:fabric'}]",
+    "Essentia: {'metallum': 25, 'praemunio': 25, 'potentia': 25, 'alienis': 25, 'vacuos': 25, 'sensus': 25}"
+  ],
+  "thaumcraft:Focus2": [
+    "Research: FOCUSADVANCED@1",
+    "Center: {'item': 'thaumcraft:focus_1'}",
+    "Offerings: [{'item': 'thaumcraft:quicksilver'}, {'item': 'minecraft:diamond'}, {'item': 'thaumcraft:quicksilver'}, {'item': 'minecraft:ender_pearl'}]",
+    "Essentia: {'praecantatio': 25, 'ordo': 50}"
+  ],
+  "thaumcraft:VoidRobeLegs": [
+    "Research: VOIDROBEARMOR",
+    "Center: {'item': 'thaumcraft:void_legs'}",
+    "Offerings: [{'item': 'thaumcraft:cloth_legs'}, {'item': 'thaumcraft:plate_void'}, {'item': 'thaumcraft:plate_void'}, {'item': 'thaumcraft:salis_mundus'}, {'item': 'thaumcraft:fabric'}, {'item': 'minecraft:leather'}]",
+    "Essentia: {'metallum': 30, 'praemunio': 30, 'potentia': 25, 'alienis': 25, 'vacuos': 30}"
+  ],
+  "thaumcraft:ElementalPick": [
+    "Research: ELEMENTALTOOLS",
+    "Center: {'item': 'thaumcraft:thaumium_pick'}",
+    "Offerings: [{'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'ignis'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'ignis'}, {'item': 'thaumcraft:primordial_nugget'}, {'item': 'thaumcraft:plank_greatwood'}]",
+    "Essentia: {'ignis': 30, 'metallum': 30, 'sensus': 30}"
+  ],
+  "thaumcraft:BootsTraveller": [
+    "Research: BOOTSTRAVELLER",
+    "Center: {'item': 'minecraft:leather_boots'}",
+    "Offerings: [{'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aer'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aer'}, {'item': 'thaumcraft:fabric'}, {'item': 'thaumcraft:fabric'}, {'item': 'minecraft:feather'}, {'item': 'minecraft:cod'}]",
+    "Essentia: {'volatus': 100, 'motus': 100}"
+  ],
+  "thaumcraft:FortressLegs": [
+    "Research: ARMORFORTRESS",
+    "Center: {'item': 'thaumcraft:thaumium_legs'}",
+    "Offerings: [{'item': 'thaumcraft:plate_thaumium'}, {'item': 'thaumcraft:plate_thaumium'}, {'item': 'thaumcraft:plate_thaumium'}, {'item': 'minecraft:gold_ingot'}, {'item': 'minecraft:leather'}]",
+    "Essentia: {'metallum': 50, 'praemunio': 25, 'potentia': 25}"
+  ],
+  "thaumcraft:FortressHelm": [
+    "Research: ARMORFORTRESS",
+    "Center: {'item': 'thaumcraft:thaumium_helm'}",
+    "Offerings: [{'item': 'thaumcraft:plate_thaumium'}, {'item': 'thaumcraft:plate_thaumium'}, {'item': 'minecraft:gold_ingot'}, {'item': 'minecraft:gold_ingot'}, {'item': 'minecraft:emerald'}]",
+    "Essentia: {'metallum': 50, 'praemunio': 20, 'potentia': 25}"
+  ],
+  "thaumcraft:PrimalCrusher": [
+    "Research: PRIMALCRUSHER",
+    "Center: {'item': 'thaumcraft:primordial_pearl'}",
+    "Offerings: [{'item': 'thaumcraft:void_pick'}, {'item': 'thaumcraft:void_shovel'}, {'item': 'thaumcraft:elemental_pick'}, {'item': 'thaumcraft:elemental_shovel'}]",
+    "Essentia: {'terra': 75, 'instrumentum': 75, 'perditio': 50, 'vacuos': 50, 'aversio': 50, 'alienis': 50, 'desiderium': 50}"
+  ],
+  "thaumcraft:RunicShield": [
+    "Research: RUNICSHIELDING",
+    "Center: {'item': 'minecraft:leather_chestplate'}",
+    "Offerings: [{'item': 'thaumcraft:salis_mundus'}, {'item': 'thaumcraft:amber'}]",
+    "Essentia: {'praemunio': 40, 'vitreus': 20, 'potentia': 20}"
+  ],
+  "thaumcraft:ElementalSword": [
+    "Research: ELEMENTALTOOLS",
+    "Center: {'item': 'thaumcraft:thaumium_sword'}",
+    "Offerings: [{'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aer'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aer'}, {'item': 'thaumcraft:primordial_nugget'}, {'item': 'thaumcraft:plank_greatwood'}]",
+    "Essentia: {'aer': 30, 'motus': 30, 'aversio': 30}"
+  ],
+  "thaumcraft:ElementalAxe": [
+    "Research: ELEMENTALTOOLS",
+    "Center: {'item': 'thaumcraft:thaumium_axe'}",
+    "Offerings: [{'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aqua'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aqua'}, {'item': 'thaumcraft:primordial_nugget'}, {'item': 'thaumcraft:plank_greatwood'}]",
+    "Essentia: {'aqua': 60, 'herba': 30}"
+  ],
+  "thaumcraft:RunicShielding": [
+    "Center: any equippable armor.",
+    "Offerings: Salis Mundus + amber × next shield rank.",
+    "Essentia: praemunio = 20 + 20 × 2^current rank; vitreus and potentia = half.",
+    "Ranks 1–9; preserves the actual armor stack and its components."
+  ],
+  "thaumcraft:void_robe_chest": [
+    "Research: VOIDROBEARMOR",
+    "Center: {'item': 'thaumcraft:void_chest'}",
+    "Offerings: [{'item': 'thaumcraft:cloth_chest'}, {'item': 'thaumcraft:plate_void'}, {'item': 'thaumcraft:plate_void'}, {'item': 'thaumcraft:salis_mundus'}, {'item': 'thaumcraft:fabric'}, {'item': 'minecraft:leather'}]",
+    "Essentia: {'metallum': 35, 'praemunio': 35, 'potentia': 25, 'alienis': 25, 'vacuos': 35}"
+  ],
+  "thaumcraft:fortress_chest": [
+    "Research: ARMORFORTRESS",
+    "Center: {'item': 'thaumcraft:thaumium_chest'}",
+    "Offerings: [{'item': 'thaumcraft:plate_thaumium'}, {'item': 'thaumcraft:plate_thaumium'}, {'item': 'thaumcraft:plate_thaumium'}, {'item': 'thaumcraft:plate_thaumium'}, {'item': 'minecraft:gold_ingot'}, {'item': 'minecraft:leather'}]",
+    "Essentia: {'metallum': 50, 'praemunio': 30, 'potentia': 25}"
+  ],
+  "thaumcraft:focus_3": [
+    "Research: FOCUSGREATER@1",
+    "Center: {'item': 'thaumcraft:focus_2'}",
+    "Offerings: [{'item': 'thaumcraft:quicksilver'}, {'item': 'thaumcraft:primordial_pearl'}, {'item': 'thaumcraft:quicksilver'}, {'item': 'minecraft:nether_star'}]",
+    "Essentia: {'praecantatio': 25, 'ordo': 50, 'vacuos': 100}"
+  ],
+  "thaumcraft:elemental_shovel": [
+    "Research: ELEMENTALTOOLS",
+    "Center: {'item': 'thaumcraft:thaumium_shovel'}",
+    "Offerings: [{'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'terra'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'terra'}, {'item': 'thaumcraft:primordial_nugget'}, {'item': 'thaumcraft:plank_greatwood'}]",
+    "Essentia: {'terra': 60, 'fabrico': 30}"
+  ],
+  "thaumcraft:elemental_hoe": [
+    "Research: ELEMENTALTOOLS",
+    "Center: {'item': 'thaumcraft:thaumium_hoe'}",
+    "Offerings: [{'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'ordo'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'perditio'}, {'item': 'thaumcraft:primordial_nugget'}, {'item': 'thaumcraft:plank_greatwood'}]",
+    "Essentia: {'ordo': 30, 'herba': 30, 'perditio': 30}"
+  ],
+  "thaumcraft:void_robe_helm": [
+    "Research: VOIDROBEARMOR",
+    "Center: {'item': 'thaumcraft:void_helm'}",
+    "Offerings: [{'item': 'thaumcraft:goggles'}, {'item': 'thaumcraft:fabric'}, {'item': 'thaumcraft:fabric'}, {'item': 'thaumcraft:salis_mundus'}, {'item': 'thaumcraft:fabric'}, {'item': 'thaumcraft:fabric'}]",
+    "Essentia: {'metallum': 25, 'praemunio': 25, 'potentia': 25, 'alienis': 25, 'vacuos': 25, 'sensus': 25}"
+  ],
+  "thaumcraft:focus_2": [
+    "Research: FOCUSADVANCED@1",
+    "Center: {'item': 'thaumcraft:focus_1'}",
+    "Offerings: [{'item': 'thaumcraft:quicksilver'}, {'item': 'minecraft:diamond'}, {'item': 'thaumcraft:quicksilver'}, {'item': 'minecraft:ender_pearl'}]",
+    "Essentia: {'praecantatio': 25, 'ordo': 50}"
+  ],
+  "thaumcraft:void_robe_legs": [
+    "Research: VOIDROBEARMOR",
+    "Center: {'item': 'thaumcraft:void_legs'}",
+    "Offerings: [{'item': 'thaumcraft:cloth_legs'}, {'item': 'thaumcraft:plate_void'}, {'item': 'thaumcraft:plate_void'}, {'item': 'thaumcraft:salis_mundus'}, {'item': 'thaumcraft:fabric'}, {'item': 'minecraft:leather'}]",
+    "Essentia: {'metallum': 30, 'praemunio': 30, 'potentia': 25, 'alienis': 25, 'vacuos': 30}"
+  ],
+  "thaumcraft:elemental_pick": [
+    "Research: ELEMENTALTOOLS",
+    "Center: {'item': 'thaumcraft:thaumium_pick'}",
+    "Offerings: [{'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'ignis'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'ignis'}, {'item': 'thaumcraft:primordial_nugget'}, {'item': 'thaumcraft:plank_greatwood'}]",
+    "Essentia: {'ignis': 30, 'metallum': 30, 'sensus': 30}"
+  ],
+  "thaumcraft:traveller_boots": [
+    "Research: BOOTSTRAVELLER",
+    "Center: {'item': 'minecraft:leather_boots'}",
+    "Offerings: [{'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aer'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aer'}, {'item': 'thaumcraft:fabric'}, {'item': 'thaumcraft:fabric'}, {'item': 'minecraft:feather'}, {'item': 'minecraft:cod'}]",
+    "Essentia: {'volatus': 100, 'motus': 100}"
+  ],
+  "thaumcraft:fortress_legs": [
+    "Research: ARMORFORTRESS",
+    "Center: {'item': 'thaumcraft:thaumium_legs'}",
+    "Offerings: [{'item': 'thaumcraft:plate_thaumium'}, {'item': 'thaumcraft:plate_thaumium'}, {'item': 'thaumcraft:plate_thaumium'}, {'item': 'minecraft:gold_ingot'}, {'item': 'minecraft:leather'}]",
+    "Essentia: {'metallum': 50, 'praemunio': 25, 'potentia': 25}"
+  ],
+  "thaumcraft:fortress_helm": [
+    "Research: ARMORFORTRESS",
+    "Center: {'item': 'thaumcraft:thaumium_helm'}",
+    "Offerings: [{'item': 'thaumcraft:plate_thaumium'}, {'item': 'thaumcraft:plate_thaumium'}, {'item': 'minecraft:gold_ingot'}, {'item': 'minecraft:gold_ingot'}, {'item': 'minecraft:emerald'}]",
+    "Essentia: {'metallum': 50, 'praemunio': 20, 'potentia': 25}"
+  ],
+  "thaumcraft:primal_crusher": [
+    "Research: PRIMALCRUSHER",
+    "Center: {'item': 'thaumcraft:primordial_pearl'}",
+    "Offerings: [{'item': 'thaumcraft:void_pick'}, {'item': 'thaumcraft:void_shovel'}, {'item': 'thaumcraft:elemental_pick'}, {'item': 'thaumcraft:elemental_shovel'}]",
+    "Essentia: {'terra': 75, 'instrumentum': 75, 'perditio': 50, 'vacuos': 50, 'aversio': 50, 'alienis': 50, 'desiderium': 50}"
+  ],
+  "thaumcraft:elemental_sword": [
+    "Research: ELEMENTALTOOLS",
+    "Center: {'item': 'thaumcraft:thaumium_sword'}",
+    "Offerings: [{'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aer'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aer'}, {'item': 'thaumcraft:primordial_nugget'}, {'item': 'thaumcraft:plank_greatwood'}]",
+    "Essentia: {'aer': 30, 'motus': 30, 'aversio': 30}"
+  ],
+  "thaumcraft:elemental_axe": [
+    "Research: ELEMENTALTOOLS",
+    "Center: {'item': 'thaumcraft:thaumium_axe'}",
+    "Offerings: [{'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aqua'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aqua'}, {'item': 'thaumcraft:primordial_nugget'}, {'item': 'thaumcraft:plank_greatwood'}]",
+    "Essentia: {'aqua': 60, 'herba': 30}"
+  ],
+  "thaumcraft:band_curiosity": [
+    "Research: CURIOSITYBAND",
+    "Center: {'item': 'minecraft:gold_ingot'}",
+    "Offerings: [{'item': 'minecraft:emerald'}, {'item': 'minecraft:writable_book'}, {'item': 'minecraft:emerald'}, {'item': 'minecraft:writable_book'}, {'item': 'minecraft:emerald'}, {'item': 'minecraft:writable_book'}, {'item': 'minecraft:emerald'}, {'item': 'minecraft:writable_book'}]",
+    "Essentia: {'cognitio': 150, 'vacuos': 50, 'vinculum': 100}",
+    "Accessories are equipped in the off hand. Right click to equip."
+  ],
+  "thaumcraft:charm_voidseer": [
+    "Research: VOIDSEERPEARL",
+    "Center: {'item': 'minecraft:gold_ingot'}",
+    "Offerings: [{'item': 'thaumcraft:brain'}, {'item': 'thaumcraft:void_seed'}, {'item': 'thaumcraft:brain'}, {'item': 'thaumcraft:primordial_pearl'}]",
+    "Essentia: {'cognitio': 150, 'vacuos': 150, 'praecantatio': 100}",
+    "Accessories are equipped in the off hand. Right click to equip."
+  ],
+  "thaumcraft:charm_undying": [
+    "Research: CHARMUNDYING",
+    "Center: {'item': 'minecraft:totem_of_undying'}",
+    "Offerings: [{'item': 'thaumcraft:plate_brass'}]",
+    "Essentia: {'victus': 25}",
+    "Accessories are equipped in the off hand. Right click to equip."
+  ],
+  "thaumcraft:charm_verdant": [
+    "Research: VERDANTCHARMS",
+    "Center: {'item': 'minecraft:gold_ingot'}",
+    "Offerings: [{'item': 'thaumcraft:primordial_nugget'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'victus'}, {'item': 'minecraft:milk_bucket'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'herba'}]",
+    "Essentia: {'victus': 60, 'ordo': 30, 'herba': 60}",
+    "Accessories are equipped in the off hand. Right click to equip."
+  ],
+  "thaumcraft:amulet_vis": [
+    "Research: VISAMULET",
+    "Center: {'item': 'minecraft:gold_ingot'}",
+    "Offerings: [{'item': 'thaumcraft:vis_resonator'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aer'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'ignis'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aqua'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'terra'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'ordo'}]",
+    "Essentia: {'auram': 50, 'potentia': 100, 'vacuos': 50}",
+    "Accessories are equipped in the off hand. Right click to equip."
+  ],
+  "thaumcraft:charm_verdant_sustain": [
+    "Research: VERDANTCHARMS",
+    "Center: {'item': 'thaumcraft:charm_verdant'}",
+    "Offerings: [{'item': 'thaumcraft:triple_meat_treat'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'desiderium'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aer'}]",
+    "Essentia: {'desiderium': 80, 'aer': 80}",
+    "Accessories are equipped in the off hand. Right click to equip."
+  ],
+  "thaumcraft:charm_verdant_life": [
+    "Research: VERDANTCHARMS",
+    "Center: {'item': 'thaumcraft:charm_verdant'}",
+    "Offerings: [{'item': 'minecraft:golden_apple'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'victus'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'humanus'}]",
+    "Essentia: {'victus': 80, 'humanus': 80}",
+    "Accessories are equipped in the off hand. Right click to equip."
+  ],
+  "thaumcraft:ring_cloud": [
+    "Research: CLOUDRING",
+    "Center: {'item': 'minecraft:gold_ingot'}",
+    "Offerings: [{'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aer'}, {'item': 'minecraft:feather'}]",
+    "Essentia: {'aer': 50}",
+    "Accessories are equipped in the off hand. Right click to equip."
+  ],
+  "thaumcraft:ThaumiumFortressHelm": [
+    "Research: ARMORFORTRESS",
+    "Center: {'item': 'thaumcraft:thaumium_helm'}",
+    "Offerings: [{'item': 'thaumcraft:plate_thaumium'}, {'item': 'thaumcraft:plate_thaumium'}, {'item': 'minecraft:gold_ingot'}, {'item': 'minecraft:gold_ingot'}, {'item': 'minecraft:emerald'}]",
+    "Essentia: {'metallum': 50, 'praemunio': 20, 'potentia': 25}"
+  ],
+  "thaumcraft:ThaumiumFortressChest": [
+    "Research: ARMORFORTRESS",
+    "Center: {'item': 'thaumcraft:thaumium_chest'}",
+    "Offerings: [{'item': 'thaumcraft:plate_thaumium'}, {'item': 'thaumcraft:plate_thaumium'}, {'item': 'thaumcraft:plate_thaumium'}, {'item': 'thaumcraft:plate_thaumium'}, {'item': 'minecraft:gold_ingot'}, {'item': 'minecraft:leather'}]",
+    "Essentia: {'metallum': 50, 'praemunio': 30, 'potentia': 25}"
+  ],
+  "thaumcraft:ThaumiumFortressLegs": [
+    "Research: ARMORFORTRESS",
+    "Center: {'item': 'thaumcraft:thaumium_legs'}",
+    "Offerings: [{'item': 'thaumcraft:plate_thaumium'}, {'item': 'thaumcraft:plate_thaumium'}, {'item': 'thaumcraft:plate_thaumium'}, {'item': 'minecraft:gold_ingot'}, {'item': 'minecraft:leather'}]",
+    "Essentia: {'metallum': 50, 'praemunio': 25, 'potentia': 25}"
+  ],
+  "thaumcraft:CHARMUNDYING": [
+    "Research: CHARMUNDYING",
+    "Center: {'item': 'minecraft:totem_of_undying'}",
+    "Offerings: [{'item': 'thaumcraft:plate_brass'}]",
+    "Essentia: {'victus': 25}",
+    "Accessories are equipped in the off hand. Right click to equip."
+  ],
+  "thaumcraft:CLOUDRING": [
+    "Research: CLOUDRING",
+    "Center: {'item': 'minecraft:gold_ingot'}",
+    "Offerings: [{'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aer'}, {'item': 'minecraft:feather'}]",
+    "Essentia: {'aer': 50}",
+    "Accessories are equipped in the off hand. Right click to equip."
+  ],
+  "thaumcraft:CuriosityBand": [
+    "Research: CURIOSITYBAND",
+    "Center: {'item': 'minecraft:gold_ingot'}",
+    "Offerings: [{'item': 'minecraft:emerald'}, {'item': 'minecraft:writable_book'}, {'item': 'minecraft:emerald'}, {'item': 'minecraft:writable_book'}, {'item': 'minecraft:emerald'}, {'item': 'minecraft:writable_book'}, {'item': 'minecraft:emerald'}, {'item': 'minecraft:writable_book'}]",
+    "Essentia: {'cognitio': 150, 'vacuos': 50, 'vinculum': 100}",
+    "Accessories are equipped in the off hand. Right click to equip."
+  ],
+  "thaumcraft:VerdantHeart": [
+    "Research: VERDANTCHARMS",
+    "Center: {'item': 'minecraft:gold_ingot'}",
+    "Offerings: [{'item': 'thaumcraft:primordial_nugget'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'victus'}, {'item': 'minecraft:milk_bucket'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'herba'}]",
+    "Essentia: {'victus': 60, 'ordo': 30, 'herba': 60}",
+    "Accessories are equipped in the off hand. Right click to equip."
+  ],
+  "thaumcraft:VerdantHeartLife": [
+    "Research: VERDANTCHARMS",
+    "Center: {'item': 'thaumcraft:charm_verdant'}",
+    "Offerings: [{'item': 'minecraft:golden_apple'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'victus'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'humanus'}]",
+    "Essentia: {'victus': 80, 'humanus': 80}",
+    "Accessories are equipped in the off hand. Right click to equip."
+  ],
+  "thaumcraft:VerdantHeartSustain": [
+    "Research: VERDANTCHARMS",
+    "Center: {'item': 'thaumcraft:charm_verdant'}",
+    "Offerings: [{'item': 'thaumcraft:triple_meat_treat'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'desiderium'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aer'}]",
+    "Essentia: {'desiderium': 80, 'aer': 80}",
+    "Accessories are equipped in the off hand. Right click to equip."
+  ],
+  "thaumcraft:VisAmulet": [
+    "Research: VISAMULET",
+    "Center: {'item': 'minecraft:gold_ingot'}",
+    "Offerings: [{'item': 'thaumcraft:vis_resonator'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aer'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'ignis'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aqua'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'terra'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'ordo'}]",
+    "Essentia: {'auram': 50, 'potentia': 100, 'vacuos': 50}",
+    "Accessories are equipped in the off hand. Right click to equip."
+  ],
+  "thaumcraft:VoidseerPearl": [
+    "Research: VOIDSEERPEARL",
+    "Center: {'item': 'minecraft:gold_ingot'}",
+    "Offerings: [{'item': 'thaumcraft:brain'}, {'item': 'thaumcraft:void_seed'}, {'item': 'thaumcraft:brain'}, {'item': 'thaumcraft:primordial_pearl'}]",
+    "Essentia: {'cognitio': 150, 'vacuos': 150, 'praecantatio': 100}",
+    "Accessories are equipped in the off hand. Right click to equip."
+  ],
+  "thaumcraft:RobeChest": [
+    "Research: UNLOCKINFUSION",
+    "[I I]",
+    "[III]",
+    "[III]",
+    "I = thaumcraft:fabric",
+    "Vis: 100",
+    "Crystals: {}"
+  ],
+  "thaumcraft:RobeLegs": [
+    "Research: UNLOCKINFUSION",
+    "[III]",
+    "[I I]",
+    "[I I]",
+    "I = thaumcraft:fabric",
+    "Vis: 100",
+    "Crystals: {}"
+  ],
+  "thaumcraft:RobeBoots": [
+    "Research: UNLOCKINFUSION",
+    "[I I]",
+    "[I I]",
+    "I = thaumcraft:fabric",
+    "Vis: 100",
+    "Crystals: {}"
+  ],
+  "thaumcraft:RunicArmorFake0": [
+    "Center: any equippable armor.",
+    "Offerings: Salis Mundus + amber × next shield rank.",
+    "Essentia: praemunio = 20 + 20 × 2^current rank; vitreus and potentia = half.",
+    "Ranks 1–9; preserves the actual armor stack and its components."
+  ],
+  "thaumcraft:RunicArmorFake1": [
+    "Center: any equippable armor.",
+    "Offerings: Salis Mundus + amber × next shield rank.",
+    "Essentia: praemunio = 20 + 20 × 2^current rank; vitreus and potentia = half.",
+    "Ranks 1–9; preserves the actual armor stack and its components."
+  ],
+  "thaumcraft:RunicArmorFake2": [
+    "Center: any equippable armor.",
+    "Offerings: Salis Mundus + amber × next shield rank.",
+    "Essentia: praemunio = 20 + 20 × 2^current rank; vitreus and potentia = half.",
+    "Ranks 1–9; preserves the actual armor stack and its components."
+  ],
+  "thaumcraft:tablestone": [
+    "[SSS]",
+    "[ P ]",
+    "[ P ]",
+    "S = Arcane Stone Slab",
+    "P = Arcane Stone"
+  ],
+  "thaumcraft:voidsword": [
+    "[I]",
+    "[I]",
+    "[S]",
+    "I = thaumcraft:ingot_void",
+    "S = minecraft:stick"
+  ],
+  "thaumcraft:voidboots": [
+    "[I I]",
+    "[I I]",
+    "I = thaumcraft:ingot_void"
+  ],
+  "thaumcraft:voidhelm": [
+    "[III]",
+    "[I I]",
+    "I = thaumcraft:ingot_void"
+  ],
+  "thaumcraft:voidpick": [
+    "[III]",
+    "[ S ]",
+    "[ S ]",
+    "I = thaumcraft:ingot_void",
+    "S = minecraft:stick"
+  ],
+  "thaumcraft:voidingotstoblock": [
+    "[###]",
+    "[###]",
+    "[###]",
+    "# = thaumcraft:ingot_void"
+  ],
+  "thaumcraft:voidhoe": [
+    "[II]",
+    "[S ]",
+    "[S ]",
+    "I = thaumcraft:ingot_void",
+    "S = minecraft:stick"
+  ],
+  "thaumcraft:voidshovel": [
+    "[I]",
+    "[S]",
+    "[S]",
+    "I = thaumcraft:ingot_void",
+    "S = minecraft:stick"
+  ],
+  "thaumcraft:voidchest": [
+    "[I I]",
+    "[III]",
+    "[III]",
+    "I = thaumcraft:ingot_void"
+  ],
+  "thaumcraft:voidlegs": [
+    "[III]",
+    "[I I]",
+    "[I I]",
+    "I = thaumcraft:ingot_void"
+  ],
+  "thaumcraft:voidnuggetstoingot": [
+    "[###]",
+    "[###]",
+    "[###]",
+    "# = thaumcraft:nugget_void"
+  ],
+  "thaumcraft:voidaxe": [
+    "[II]",
+    "[SI]",
+    "[S ]",
+    "I = thaumcraft:ingot_void",
+    "S = minecraft:stick"
   ]
 }

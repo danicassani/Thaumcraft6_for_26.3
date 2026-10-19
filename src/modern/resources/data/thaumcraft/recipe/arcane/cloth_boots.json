@@ -1,0 +1,19 @@
+{
+  "type": "thaumcraft:arcane",
+  "research": "UNLOCKINFUSION",
+  "vis": 100,
+  "crystals": {},
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "I I",
+      "I I"
+    ],
+    "key": {
+      "I": "thaumcraft:fabric"
+    },
+    "result": {
+      "id": "thaumcraft:cloth_boots"
+    }
+  }
+}

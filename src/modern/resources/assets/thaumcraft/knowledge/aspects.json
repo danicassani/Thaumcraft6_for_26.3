@@ -863,6 +863,11 @@
       "praecantatio": 5,
       "potentia": 5
     },
+    "thaumcraft:amulet_vis": {
+      "auram": 20,
+      "metallum": 5,
+      "praecantatio": 5
+    },
     "thaumcraft:curio": {
       "cognitio": 15,
       "alienis": 5,
@@ -873,6 +878,14 @@
       "cognitio": 5,
       "tenebrae": 5,
       "lux": 5
+    },
+    "thaumcraft:primordial_pearl": {
+      "aer": 10,
+      "ignis": 10,
+      "aqua": 10,
+      "terra": 10,
+      "ordo": 10,
+      "perditio": 10
     }
   },
   "entities": {

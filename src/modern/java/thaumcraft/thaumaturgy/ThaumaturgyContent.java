@@ -1,0 +1,36 @@
+package thaumcraft.thaumaturgy;
+import java.util.*;
+import com.mojang.serialization.Codec;
+import net.minecraft.core.component.DataComponentType;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.entity.*;
+import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.inventory.MenuType;
+import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraftforge.registries.*;
+import net.minecraftforge.eventbus.api.bus.BusGroup;
+import thaumcraft.*;
+import thaumcraft.content.*;
+public final class ThaumaturgyContent {
+    private static final DeferredRegister<DataComponentType<?>> COMPONENTS=DeferredRegister.create(Registries.DATA_COMPONENT_TYPE,Thaumcraft.MODID);
+    private static final DeferredRegister<BlockEntityType<?>> TYPES=DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE,Thaumcraft.MODID);
+    private static final DeferredRegister<MenuType<?>> MENUS=DeferredRegister.create(Registries.MENU,Thaumcraft.MODID);
+    public static final RegistryObject<DataComponentType<FocusProgram>> PROGRAM=COMPONENTS.register("focus_program",()->DataComponentType.<FocusProgram>builder().persistent(FocusProgram.CODEC).networkSynchronized(ByteBufCodecs.fromCodec(FocusProgram.CODEC)).build());
+    public static final RegistryObject<DataComponentType<ItemStack>> FOCUS=COMPONENTS.register("caster_focus",()->DataComponentType.<ItemStack>builder().persistent(ItemStack.CODEC).networkSynchronized(ItemStack.STREAM_CODEC).build());
+    public static final RegistryObject<FocalBlock> TABLE=Registrar.BLOCKS.register("wand_workbench",()->new FocalBlock(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK,SimpleContent.id("wand_workbench"))).strength(2).noOcclusion()));
+    public static final RegistryObject<BlockEntityType<FocalEntity>> TABLE_TYPE=TYPES.register("wand_workbench",()->new BlockEntityType<>(FocalEntity::new,Set.of(TABLE.get())));
+    public static final RegistryObject<MenuType<FocalMenu>> MENU=MENUS.register("focal_manipulator",()->new MenuType<>(FocalMenu::new,FeatureFlags.VANILLA_SET));
+    public static final RegistryObject<EntityType<FocusProjectile>> PROJECTILE=Registrar.ENTITIES.register("focus_projectile",()->EntityType.Builder.<FocusProjectile>of(FocusProjectile::new,MobCategory.MISC).sized(.25F,.25F).clientTrackingRange(8).updateInterval(1).build(ResourceKey.create(Registries.ENTITY_TYPE,SimpleContent.id("focus_projectile"))));
+    public static void register(BusGroup bus){
+        SimpleContent.block("table_stone","stone","");SimpleContent.material("primordial_pearl");SimpleContent.material("primordial_nugget");
+        SimpleContent.item("focus_1",p->new FocusItem(p,15));SimpleContent.item("focus_2",p->new FocusItem(p,25));SimpleContent.item("focus_3",p->new FocusItem(p,50));
+        SimpleContent.item("wand_workbench",p->new BlockItem(TABLE.get(),p.useBlockDescriptionPrefix()));
+        SimpleContent.item("caster_basic",CasterItem::new);
+        COMPONENTS.register(bus);TYPES.register(bus);MENUS.register(bus);
+        net.minecraftforge.event.entity.player.ItemTooltipEvent.BUS.addListener(e->{var s=e.getItemStack();var program=s.get(PROGRAM.get());if(program==null&&s.getItem() instanceof CasterItem){var f=s.get(FOCUS.get());if(f!=null)program=f.get(PROGRAM.get());}if(program!=null){e.getToolTip().add(net.minecraft.network.chat.Component.translatable("focus.thaumcraft.details",net.minecraft.network.chat.Component.translatable("focus.thaumcraft."+program.medium()),program.complexity(),program.vis()));e.getToolTip().add(net.minecraft.network.chat.Component.translatable("focus.thaumcraft.materials",program.levels(),program.crystals()));for(var effect:program.effects())e.getToolTip().add(net.minecraft.network.chat.Component.translatable("focus.thaumcraft."+effect.kind()).append(" "+effect.power()));}});
+    }
+}

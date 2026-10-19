@@ -1,0 +1,25 @@
+{
+  "type": "thaumcraft:infusion",
+  "research": "RUNICSHIELDING",
+  "input": {
+    "item": "minecraft:leather_chestplate"
+  },
+  "components": [
+    {
+      "item": "thaumcraft:salis_mundus"
+    },
+    {
+      "item": "thaumcraft:amber"
+    }
+  ],
+  "aspects": {
+    "praemunio": 40,
+    "vitreus": 20,
+    "potentia": 20
+  },
+  "instability": 5,
+  "result": {
+    "id": "minecraft:book"
+  },
+  "infusion_enchantment": "runic"
+}

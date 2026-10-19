@@ -1,0 +1,27 @@
+package thaumcraft.test;
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import thaumcraft.*;
+import thaumcraft.thaumaturgy.*;
+import static thaumcraft.test.ThaumaturgyProbe.*;
+@Mod.EventBusSubscriber(modid=Thaumcraft.MODID)
+public final class ThaumaturgyClient {
+    static int stage,ticks;static BlockPos protectedBreak,protectedPlace;static ServerPlayer player;static net.minecraft.world.entity.monster.zombie.Zombie target;
+    @SubscribeEvent public static void tick(TickEvent.ServerTickEvent.Post e){if(!System.getProperty("thaumcraft.thaumaturgyProbe","").equals("client")||e.server().isDedicatedServer()||e.server().getPlayerList().getPlayers().isEmpty()||++ticks<80)return;var p=e.server().getPlayerList().getPlayers().getFirst();var l=p.level();
+        if(stage==0){player=p;var pos=new BlockPos(8,205,8);for(var q:BlockPos.betweenClosed(pos.offset(-5,-1,-5),pos.offset(5,3,8)))l.setBlockAndUpdate(q,q.getY()==204?Blocks.STONE.defaultBlockState():Blocks.AIR.defaultBlockState());l.setBlockAndUpdate(pos,ThaumaturgyContent.TABLE.get().defaultBlockState());var f=(FocalEntity)l.getBlockEntity(pos);p.teleportTo(l,8.5,206,8.5,java.util.Set.of(),0,0,true);rules(p,f);var focus=item("focus_1");focus.set(ThaumaturgyContent.PROGRAM.get(),f.draft);var caster=item("caster_basic");p.setItemInHand(InteractionHand.MAIN_HAND,caster);p.setItemInHand(InteractionHand.OFF_HAND,focus);check(((CasterItem)caster.getItem()).swap(p,caster),"Cannot equip client focus");p.setYRot(0);p.setXRot(0);target=new net.minecraft.world.entity.monster.zombie.Zombie(l);target.setNoAi(true);target.setNoGravity(true);target.setPos(p.getX(),p.getY(),p.getZ()+3);l.addFreshEntity(target);float before=thaumcraft.aura.AuraManager.get(l,p.blockPosition()).vis();check(caster.getItem().use(l,p,InteractionHand.MAIN_HAND)==InteractionResult.SUCCESS,"Native glove cast failed");float after=thaumcraft.aura.AuraManager.get(l,p.blockPosition()).vis();check(target.getHealth()<target.getMaxHealth()&&Math.abs(before-after-thaumcraft.equipment.EquipmentContent.visCost(p,f.draft.vis()))<.001,"Glove did not pay exact discounted aura/damage target");check(caster.getItem().use(l,p,InteractionHand.MAIN_HAND)==InteractionResult.FAIL,"Glove cooldown bypass");target.discard();p.inventoryMenu.broadcastChanges();stage=1;ticks=0;return;}
+        if(stage==1){
+            protectedBreak=P.east(2);l.setBlockAndUpdate(protectedBreak,Blocks.STONE.defaultBlockState());var breakProgram=new FocusProgram("touch",java.util.List.of(new FocusProgram.Effect("break",1,1)));SpellEngine.apply(p,breakProgram,new net.minecraft.world.phys.BlockHitResult(net.minecraft.world.phys.Vec3.atCenterOf(protectedBreak),net.minecraft.core.Direction.UP,protectedBreak,false));check(l.getBlockState(protectedBreak).is(Blocks.STONE),"Spell break bypassed Forge protection");
+            protectedPlace=P.west(2);l.setBlockAndUpdate(protectedPlace,Blocks.STONE.defaultBlockState());p.setItemInHand(InteractionHand.OFF_HAND,new net.minecraft.world.item.ItemStack(net.minecraft.world.item.Items.DIRT,2));var exchange=new FocusProgram("touch",java.util.List.of(new FocusProgram.Effect("exchange",1,1)));SpellEngine.apply(p,exchange,new net.minecraft.world.phys.BlockHitResult(net.minecraft.world.phys.Vec3.atCenterOf(protectedPlace),net.minecraft.core.Direction.UP,protectedPlace,false));check(l.getBlockState(protectedPlace).isAir()&&p.getOffhandItem().getCount()==2,"Spell exchange bypassed placement protection or consumed denied item");
+            var focus=item("focus_1");focus.set(ThaumaturgyContent.PROGRAM.get(),new FocusProgram("projectile",java.util.List.of(new FocusProgram.Effect("earth",2,1))));p.setItemInHand(InteractionHand.OFF_HAND,focus);var caster=p.getMainHandItem();check(((CasterItem)caster.getItem()).swap(p,caster),"Projectile focus swap failed");p.setYRot(0);p.setXRot(0);target=new net.minecraft.world.entity.monster.zombie.Zombie(l);target.setNoAi(true);target.setNoGravity(true);target.setPos(p.getX(),p.getY(),p.getZ()+5);l.addFreshEntity(target);check(caster.getItem().use(l,p,InteractionHand.MAIN_HAND)==InteractionResult.SUCCESS,"Projectile glove cast failed");stage=2;ticks=60;return;
+        }
+        if(stage==2){check(target.getHealth()<=14,"Native projectile did not collide and damage target: "+target.getHealth());target.discard();check(p.getMainHandItem().has(ThaumaturgyContent.FOCUS.get()),"Glove lost focus during native tick");p.openMenu((FocalEntity)l.getBlockEntity(P));stage=3;Thaumcraft.LOGGER.info("THAUMATURGY_CLIENT_EFFECTS_OK: native touch/projectile glove, exact discounted aura debit, real collision/target damage, cooldown, protected breaking/placement and persistent focal job");}
+    }
+    @SubscribeEvent public static void protectBreak(net.minecraftforge.event.level.BlockEvent.BreakEvent e){if(System.getProperty("thaumcraft.thaumaturgyProbe","").equals("client")&&e.getPos().equals(protectedBreak))e.setResult(net.minecraftforge.common.util.Result.DENY);}
+    @SubscribeEvent public static boolean protectPlace(net.minecraftforge.event.level.BlockEvent.EntityPlaceEvent e){return System.getProperty("thaumcraft.thaumaturgyProbe","").equals("client")&&e.getPos().equals(protectedPlace);}
+}

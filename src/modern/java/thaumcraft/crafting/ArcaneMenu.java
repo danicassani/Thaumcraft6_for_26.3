@@ -16,7 +16,7 @@ public final class ArcaneMenu extends AbstractContainerMenu {
     public ArcaneMenu(int id,Inventory playerInv,ArcaneWorkbenchEntity table) {
         super(ArcaneContent.MENU.get(),id);this.table=table;this.inventory=table==null?new SimpleContainer(16):table.inventory;
         data=table==null?new SimpleContainerData(11):new ContainerData() {
-            public int get(int i) { var match=table.match();return switch(i) {case 0->Math.min(32766,table.availableVis());case 1->match==null?0:match.vis();case 2->table.canCraft(playerInv.player,match)?1:0;case 3->table.charged()?9:1;case 10->match!=null&&!thaumcraft.research.ResearchService.knows(playerInv.player,match.research())?1:0;default->match==null?0:match.crystals().getOrDefault(ArcaneRecipe.PRIMALS.get(i-4),0);}; }
+            public int get(int i) { var match=table.match();return switch(i) {case 0->Math.min(32766,table.availableVis());case 1->table.visCost(playerInv.player,match);case 2->table.canCraft(playerInv.player,match)?1:0;case 3->table.charged()?9:1;case 10->match!=null&&!thaumcraft.research.ResearchService.knows(playerInv.player,match.research())?1:0;default->match==null?0:match.crystals().getOrDefault(ArcaneRecipe.PRIMALS.get(i-4),0);}; }
             public void set(int i,int value) {} public int getCount() { return 11; }
         };
         for(int y=0;y<3;y++)for(int x=0;x<3;x++)addSlot(new Slot(inventory,x+y*3,16+x*20,28+y*20));

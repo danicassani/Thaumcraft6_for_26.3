@@ -1,0 +1,7 @@
+{
+  "parent": "thaumcraft:item/caster_gauntlet_focus",
+  "textures": {
+    "skin": "thaumcraft:items/caster_basic_skin",
+    "particle": "#skin"
+  }
+}

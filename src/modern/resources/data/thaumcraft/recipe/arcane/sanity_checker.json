@@ -1,0 +1,22 @@
+{
+  "type": "thaumcraft:arcane",
+  "research": "SANITYCHECKER",
+  "vis": 5,
+  "crystals": {},
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      " M ",
+      "BPB",
+      " B "
+    ],
+    "key": {
+      "B": "thaumcraft:ingot_brass",
+      "P": "thaumcraft:brain",
+      "M": "thaumcraft:mirrored_glass"
+    },
+    "result": {
+      "id": "thaumcraft:sanity_checker"
+    }
+  }
+}

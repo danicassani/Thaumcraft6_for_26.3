@@ -68,6 +68,7 @@ public final class FluxRiftEntity extends Entity {
         if(tickCount%20==0)server.sendParticles(ParticleTypes.REVERSE_PORTAL,getX(),getY(),getZ(),2,.3,.3,.3,.01);
     }
     private void completeCollapse(ServerLevel level) {
+        if(random.nextInt(100)<(int)Math.sqrt(maxSize))level.addFreshEntity(new ItemEntity(level,getX(),getY(),getZ(),new ItemStack(SimpleContent.ITEMS.get("primordial_nugget").get(),2+random.nextInt(4))));
         var seeds=new ItemStack(SimpleContent.ITEMS.get("void_seed").get(),(int)Math.sqrt(maxSize));
         if(!seeds.isEmpty())level.addFreshEntity(new ItemEntity(level,getX(),getY(),getZ(),seeds));
         level.sendParticles(ParticleTypes.PORTAL,getX(),getY(),getZ(),60,.6,.6,.6,.2);discard();

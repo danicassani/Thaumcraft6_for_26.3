@@ -1,0 +1,28 @@
+{
+  "type": "thaumcraft:infusion",
+  "research": "VERDANTCHARMS",
+  "input": {
+    "item": "thaumcraft:charm_verdant"
+  },
+  "components": [
+    {
+      "item": "thaumcraft:triple_meat_treat"
+    },
+    {
+      "item": "thaumcraft:crystal_essence",
+      "crystal_aspect": "desiderium"
+    },
+    {
+      "item": "thaumcraft:crystal_essence",
+      "crystal_aspect": "aer"
+    }
+  ],
+  "aspects": {
+    "desiderium": 80,
+    "aer": 80
+  },
+  "instability": 5,
+  "result": {
+    "id": "thaumcraft:charm_verdant_sustain"
+  }
+}

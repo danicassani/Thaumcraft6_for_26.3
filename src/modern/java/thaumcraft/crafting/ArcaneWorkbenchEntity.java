@@ -77,8 +77,10 @@ public final class ArcaneWorkbenchEntity extends AuraDeviceEntity implements Men
         }
         return true;
     }
-    public boolean canCraft(Match match) {
-        if(match==null || match.result.isEmpty() || availableVis()<match.vis) return false;
+    public int visCost(Player p,Match m){return m==null?0:(int)Math.ceil(thaumcraft.equipment.EquipmentContent.visCost(p,m.vis));}
+    public boolean canCraft(Match match) {return canCraft(match,match==null?0:match.vis);}
+    private boolean canCraft(Match match,int cost) {
+        if(match==null || match.result.isEmpty() || availableVis()<cost) return false;
         var output=inventory.getItem(15);
         if(!output.isEmpty() && (!ItemStack.isSameItemSameComponents(output,match.result)||output.getCount()+match.result.getCount()>output.getMaxStackSize()))return false;
         for(var entry:match.crystals.entrySet()) {
@@ -87,11 +89,11 @@ public final class ArcaneWorkbenchEntity extends AuraDeviceEntity implements Men
         }
         return true;
     }
-    public boolean canCraft(Player player,Match match){return canCraft(match)&&thaumcraft.research.ResearchService.knows(player,match.research());}
+    public boolean canCraft(Player player,Match match){return canCraft(match,visCost(player,match))&&thaumcraft.research.ResearchService.knows(player,match.research());}
     /** The button only requests a craft; the server resolves the recipe and pays everything again. */
     public boolean craft(Player player) {
         if(!(level instanceof ServerLevel) || !valid(player))return false;
-        var match=match();if(!canCraft(player,match)||!spendVis(match.vis))return false;
+        var match=match();if(!canCraft(player,match)||!spendVis(visCost(player,match)))return false;
         var input=match.input.input();
         for(int y=0;y<input.height();y++)for(int x=0;x<input.width();x++) {
             int i=x+match.input.left()+(y+match.input.top())*3;
@@ -108,7 +110,7 @@ public final class ArcaneWorkbenchEntity extends AuraDeviceEntity implements Men
         thaumcraft.research.ResearchService.recordCraft(player,match.result);
         inventory.setChanged(); return true;
     }
-    public boolean valid(Player player) { return level!=null && level.getBlockEntity(worldPosition)==this && player.distanceToSqr(worldPosition.getX()+.5,worldPosition.getY()+.5,worldPosition.getZ()+.5)<=64; }
+    public boolean valid(Player player) { return level!=null && player.level()==level && level.getBlockEntity(worldPosition)==this && player.distanceToSqr(worldPosition.getX()+.5,worldPosition.getY()+.5,worldPosition.getZ()+.5)<=64; }
     @Override public void preRemoveSideEffects(BlockPos pos,BlockState state) { super.preRemoveSideEffects(pos,state);if(level instanceof ServerLevel)for(int i=0;i<16;i++)Block.popResource(level,pos,inventory.removeItemNoUpdate(i)); }
     @Override protected void saveAdditional(ValueOutput output) { super.saveAdditional(output);for(int i=0;i<16;i++)if(!inventory.getItem(i).isEmpty())output.store("slot"+i,ItemStack.CODEC,inventory.getItem(i)); }
     @Override protected void loadAdditional(ValueInput input) { super.loadAdditional(input);for(int i=0;i<16;i++)inventory.setItem(i,input.read("slot"+i,ItemStack.CODEC).orElse(ItemStack.EMPTY)); }

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    " P ",
+    " P "
+  ],
+  "key": {
+    "S": "thaumcraft:slab_arcane_stone",
+    "P": "thaumcraft:stone_arcane"
+  },
+  "result": {
+    "id": "thaumcraft:table_stone"
+  }
+}
