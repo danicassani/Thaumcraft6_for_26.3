@@ -1,0 +1,23 @@
+{
+  "type": "thaumcraft:arcane",
+  "research": "ADVANCEDTURRET",
+  "vis": 150,
+  "crystals": {
+    "aer": 2
+  },
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "PMP",
+      "PTP"
+    ],
+    "key": {
+      "P": "thaumcraft:plate_iron",
+      "M": "thaumcraft:mind_biothaumic",
+      "T": "thaumcraft:turret_basic"
+    },
+    "result": {
+      "id": "thaumcraft:turret_advanced"
+    }
+  }
+}

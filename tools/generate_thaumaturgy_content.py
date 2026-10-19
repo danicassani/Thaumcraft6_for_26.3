@@ -189,3 +189,59 @@ for i,loc in enumerate(['en_us','es_es']):
  p=A/f'lang/{loc}.json';v=json.loads(p.read_text());v.update({k:t[i] for k,t in focus_options.items()})
  v['research.FOCUSPLAN.stage.2'] += (' G resizes radii 0–3 on the held caster; Ctrl+G cycles all/X/Z/Y axes. Rebind this control in Options. The server synchronizes the dimensions used by both preview and execution.' if i==0 else ' G cambia los radios de 0 a 3 en el guantelete; Ctrl+G alterna todos/X/Z/Y. Puedes cambiar la tecla en Opciones. El servidor sincroniza las dimensiones usadas por la vista previa y el hechizo.')
  save(p,v)
+
+# Deep graphs and thaumaturgy devices (port.19).
+device_names=['focus_pouch','pech_wand','causality_collapser','grapple_gun','grapple_gun_tip','grapple_gun_spool']
+for name in device_names:
+ old=O/f'models/item/{name}.json';v=json.loads(old.read_text()) if old.exists() else {'parent':'minecraft:item/generated','textures':{'layer0':'thaumcraft:items/'+name}}
+ v.pop('overrides',None)
+ # Old grapple models use missing 1.12 loaders; retain their original item texture.
+ if name.startswith('grapple_gun'):v={'parent':'minecraft:item/handheld','textures':{'layer0':'thaumcraft:items/'+name}}
+ save(A/f'models/item/{name}.json',v);save(A/f'items/{name}.json',{'model':{'type':'minecraft:model','model':'thaumcraft:item/'+name}})
+for name in ['turret_basic','turret_advanced']:
+ def element(fr,to,texture):return {'from':fr,'to':to,'faces':{face:{'texture':'#'+texture} for face in ['north','south','east','west','up','down']}}
+ save(A/f'models/block/{name}.json',{'textures':{'wood':'minecraft:block/dark_oak_planks','metal':'minecraft:block/iron_block','particle':'minecraft:block/dark_oak_planks'},'elements':[element([3,0,3],[13,3,13],'wood'),element([6,3,6],[10,11,10],'wood'),element([4,10,3],[12,14,13],'metal' if name.endswith('advanced') else 'wood'),element([0,11,4],[16,13,6],'wood'),element([7,11,0],[9,13,16],'metal')]})
+ save(A/f'blockstates/{name}.json',{'variants':{'':{'model':'thaumcraft:block/'+name}}})
+ save(A/f'items/{name}.json',{'model':{'type':'minecraft:model','model':'thaumcraft:block/'+name}})
+ save(D/f'loot_table/blocks/{name}.json',{'type':'minecraft:block','pools':[{'rolls':1,'entries':[{'type':'minecraft:item','name':'thaumcraft:'+name}]}]})
+arc('focus_pouch','FOCUSPOUCH',25,{},['LGL','LBL','LLL'],{'L':'minecraft:leather','G':'minecraft:gold_ingot','B':'minecraft:string'})
+arc('grapple_gun_tip','GRAPPLEGUN',25,{'terra':1},['BRB','RHR','BRB'],{'B':'thaumcraft:plate_brass','R':'thaumcraft:nugget_rareearth','H':'minecraft:tripwire_hook'})
+arc('grapple_gun_spool','GRAPPLEGUN',25,{'aqua':1},['SHS','SGS','SSS'],{'S':'minecraft:string','H':'minecraft:tripwire_hook','G':'thaumcraft:mechanism_simple'})
+arc('grapple_gun','GRAPPLEGUN',75,{'aer':1,'ignis':1},['  S','TII',' BW'],{'S':'thaumcraft:grapple_gun_spool','T':'thaumcraft:grapple_gun_tip','I':'thaumcraft:plate_iron','B':'thaumcraft:plate_brass','W':'thaumcraft:plank_greatwood'})
+arc('turret_basic','BASICTURRET',100,{'aer':1},['BGI','WMW','S S'],{'B':'minecraft:bow','G':'thaumcraft:mechanism_simple','I':'thaumcraft:plate_iron','W':'thaumcraft:plank_greatwood','M':'thaumcraft:mind_clockwork','S':'minecraft:stick'})
+arc('turret_advanced','ADVANCEDTURRET',150,{'aer':2},['PMP','PTP'],{'P':'thaumcraft:plate_iron','M':'thaumcraft:mind_biothaumic','T':'thaumcraft:turret_basic'})
+inf('causality_collapser','RIFTCLOSER','minecraft:tnt',['morphic_resonator','minecraft:redstone_block','alumentum','nitor_yellow','vis_resonator','minecraft:redstone_block','alumentum','nitor_yellow'],{'alienis':50,'vitium':50},8)
+extra={
+ 'focal.thaumcraft.graph_node':('Node %s','Nodo %s'),'focal.thaumcraft.graph_enter':('Enter next','Entrar siguiente'),'focal.thaumcraft.graph_add':('Add next','Añadir siguiente'),'focal.thaumcraft.graph_back':('Parent','Anterior'),'focal.thaumcraft.graph_remove':('Remove next','Quitar siguiente'),'focal.thaumcraft.graph_path':('Level %s / Path %s','Nivel %s / Rama %s'),
+ 'device.thaumcraft.pech_studied':('Pech wand studied. Curse research revealed.','Vara pech estudiada. Investigación de Maldición descubierta.'),
+ 'device.thaumcraft.turret_status':('Arrows: %s / 64 • %s','Flechas: %s / 64 • %s'),
+ 'device.thaumcraft.targets_0':('Monsters','Monstruos'),'device.thaumcraft.targets_1':('Other creatures','Otras criaturas'),'device.thaumcraft.targets_2':('Players','Jugadores')}
+for n,en,es in [('focus_pouch','Focus Pouch','Bolsa de focos'),('pech_wand','Pech Wand','Vara pech'),('causality_collapser','Causality Collapser','Colapsador causal'),('grapple_gun','Grappling Gun','Lanzador de gancho'),('grapple_gun_tip','Grapple Tip','Punta de gancho'),('grapple_gun_spool','Grapple Spool','Bobina de gancho'),('turret_basic','Automated Crossbow','Ballesta automática'),('turret_advanced','Advanced Crossbow','Ballesta automática avanzada')]:extra[('block.' if n.startswith('turret_') else 'item.')+'thaumcraft.'+n]=(en,es)
+for i,loc in enumerate(['en_us','es_es']):
+ p=A/f'lang/{loc}.json';v=json.loads(p.read_text());v.update({k:t[i] for k,t in extra.items()});save(p,v)
+p=A/'knowledge/recipes.json';v=json.loads(p.read_text());aliases={'focus_pouch':'FocusPouch','grapple_gun':'GrappleGun','grapple_gun_tip':'GrappleGunTip','grapple_gun_spool':'GrappleGunSpool','turret_basic':'AutomatedCrossbow','turret_advanced':'AdvancedCrossbow','causality_collapser':'CausalityCollapser'}
+for n,alias in aliases.items():
+ path=D/f'recipe/arcane/{n}.json';path=path if path.exists() else D/f'recipe/infusion/{n}.json';r=json.loads(path.read_text());v['thaumcraft:'+alias]=['Research: '+r['research']]+(['Vis: '+str(r['vis']),'Ingredients: '+str(r['recipe']['key'])] if 'recipe' in r else ['Center: '+str(r['input']),'Offerings: '+str(r['components']),'Essentia: '+str(r['aspects'])]);v['thaumcraft:'+n]=v['thaumcraft:'+alias]
+save(p,v)
+
+guides={
+ 'research.FOCUSPOUCH.stage.2':('Open the pouch in your main hand to store 18 physical foci. With the pouch in the off hand and caster in the main hand, sneak-use the caster to cycle them. Installed foci return to the same pouch slot; names and spell graphs are preserved.','Abre la bolsa en la mano principal para guardar 18 focos físicos. Con la bolsa en la mano secundaria y el guantelete en la principal, usa el guantelete agachado para alternarlos. El foco instalado vuelve al hueco de la bolsa; conserva nombre y grafo.'),
+ 'research.GRAPPLEGUN.stage.2':('Charge the gun on a charging pedestal or with a Vis Amulet (capacity 100). A shot consumes one charge and attaches to a solid block within 32 blocks. The tether pulls you toward its anchor. Sneak or use again to release. Changing the support or an obstructed tether also releases it.','Carga el lanzador en un pedestal de recarga o con un amuleto de vis (capacidad 100). Cada disparo consume una carga y se fija a un bloque sólido hasta 32 bloques. El cable te atrae al anclaje. Agáchate o usa otra vez para soltarte. Cambiar el soporte u obstruir el cable también lo suelta.'),
+ 'research.BASICTURRET.stage.2':('Place your automated crossbow and right click it with normal arrows to load up to 64. It attacks visible monsters up to 24 blocks away, consuming one arrow per shot. Redstone pauses it. Sneak-use an empty hand to retrieve ammunition. Only its owner can configure it; it fires while the owner is present in this dimension.','Coloca tu ballesta automática y usa flechas normales sobre ella para cargar hasta 64. Ataca monstruos visibles hasta 24 bloques y consume una flecha por disparo. La redstone la pausa. Usa la mano vacía agachado para recuperar munición. Solo el propietario puede configurarla; dispara mientras está presente en esta dimensión.'),
+ 'research.ADVANCEDTURRET.stage.2':('The advanced crossbow fires faster and more accurately. Use a stick to cycle monsters, other non-allied creatures or players. Allies, pets and PVP-disabled targets are protected. It uses the same arrows, owner and redstone rules as the basic model.','La ballesta avanzada dispara más rápido y con más precisión. Usa un palo para alternar monstruos, otras criaturas no aliadas o jugadores. Protege aliados, mascotas y objetivos con PVP desactivado. Comparte munición, propietario y control por redstone con el modelo básico.'),
+ 'research.RIFTCLOSER.stage.2':('Throw a Causality Collapser toward a flux rift. It explodes on impact and starts the collapse of rifts within three blocks. Collapse persists and produces the rift normal loot. Stay clear of the blast.','Lanza el colapsador causal hacia una grieta de flux. Explota al impactar e inicia el colapso de las grietas a tres bloques. El colapso persiste y produce el botín normal de la grieta. Aléjate de la explosión.')}
+for i,loc in enumerate(['en_us','es_es']):
+ p=A/f'lang/{loc}.json';v=json.loads(p.read_text());v.update({k:t[i] for k,t in guides.items()})
+ v['research.BASEAUROMANCY.stage.3'] = (' The fifth Setup page adds, enters or removes the continuation of the selected path, or returns to its parent. Each level can have its own modifier and two paths; at most four levels, eight total effects and 64 deliveries. Cost, crystals and research include the entire graph. A continuation starts at the preceding impact.' if i==0 else ' La quinta página Más añade, abre o elimina la continuación de la rama seleccionada, o vuelve al nivel anterior. Cada nivel admite su modificador y dos ramas; máximo cuatro niveles, ocho efectos totales y 64 ejecuciones. Coste, cristales e investigación incluyen todo el grafo. Cada continuación parte del impacto anterior.')
+ save(p,v)
+
+# Restore the rare-earth prerequisite and its original additional mining drop.
+p=A/'knowledge/research.json';v=json.loads(p.read_text())
+for entry in v:
+ if entry['key']=='GRAPPLEGUN':
+  for stage in entry['stages']:
+   for requirement in stage.get('required_item',[]):
+    if requirement.get('legacy')=='thaumcraft:nugget;1;10':requirement['id']='thaumcraft:nugget_rareearth'
+save(p,v)
+save(R/'src/modern/resources/data/forge/loot_modifiers/global_loot_modifiers.json',{'replace':False,'entries':['thaumcraft:rare_earth']})
+save(D/'loot_modifiers/rare_earth.json',{'type':'thaumcraft:rare_earth','conditions':[]})

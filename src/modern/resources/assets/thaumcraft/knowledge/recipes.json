@@ -75,6 +75,11 @@
     "Vis: 15",
     "aqua: 1"
   ],
+  "thaumcraft:focus_pouch": [
+    "Research: FOCUSPOUCH",
+    "Vis: 25",
+    "Ingredients: {'L': 'minecraft:leather', 'G': 'minecraft:gold_ingot', 'B': 'minecraft:string'}"
+  ],
   "thaumcraft:goggles": [
     "Research: UNLOCKARTIFICE",
     "[LGL]",
@@ -85,6 +90,21 @@
     "T = thaumcraft:thaumometer",
     "Vis: 50",
     "Crystals: {}"
+  ],
+  "thaumcraft:grapple_gun": [
+    "Research: GRAPPLEGUN",
+    "Vis: 75",
+    "Ingredients: {'S': 'thaumcraft:grapple_gun_spool', 'T': 'thaumcraft:grapple_gun_tip', 'I': 'thaumcraft:plate_iron', 'B': 'thaumcraft:plate_brass', 'W': 'thaumcraft:plank_greatwood'}"
+  ],
+  "thaumcraft:grapple_gun_spool": [
+    "Research: GRAPPLEGUN",
+    "Vis: 25",
+    "Ingredients: {'S': 'minecraft:string', 'H': 'minecraft:tripwire_hook', 'G': 'thaumcraft:mechanism_simple'}"
+  ],
+  "thaumcraft:grapple_gun_tip": [
+    "Research: GRAPPLEGUN",
+    "Vis: 25",
+    "Ingredients: {'B': 'thaumcraft:plate_brass', 'R': 'thaumcraft:nugget_rareearth', 'H': 'minecraft:tripwire_hook'}"
   ],
   "thaumcraft:infusion_matrix": [
     "[S S]",
@@ -288,6 +308,16 @@
     "thaumcraft:tube",
     "minecraft:lever",
     "Vis: 10"
+  ],
+  "thaumcraft:turret_advanced": [
+    "Research: ADVANCEDTURRET",
+    "Vis: 150",
+    "Ingredients: {'P': 'thaumcraft:plate_iron', 'M': 'thaumcraft:mind_biothaumic', 'T': 'thaumcraft:turret_basic'}"
+  ],
+  "thaumcraft:turret_basic": [
+    "Research: BASICTURRET",
+    "Vis: 100",
+    "Ingredients: {'B': 'minecraft:bow', 'G': 'thaumcraft:mechanism_simple', 'I': 'thaumcraft:plate_iron', 'W': 'thaumcraft:plank_greatwood', 'M': 'thaumcraft:mind_clockwork', 'S': 'minecraft:stick'}"
   ],
   "thaumcraft:VisGenerator": [
     "[WSW]",
@@ -1454,5 +1484,47 @@
     "[S ]",
     "I = thaumcraft:ingot_void",
     "S = minecraft:stick"
+  ],
+  "thaumcraft:FocusPouch": [
+    "Research: FOCUSPOUCH",
+    "Vis: 25",
+    "Ingredients: {'L': 'minecraft:leather', 'G': 'minecraft:gold_ingot', 'B': 'minecraft:string'}"
+  ],
+  "thaumcraft:GrappleGun": [
+    "Research: GRAPPLEGUN",
+    "Vis: 75",
+    "Ingredients: {'S': 'thaumcraft:grapple_gun_spool', 'T': 'thaumcraft:grapple_gun_tip', 'I': 'thaumcraft:plate_iron', 'B': 'thaumcraft:plate_brass', 'W': 'thaumcraft:plank_greatwood'}"
+  ],
+  "thaumcraft:GrappleGunTip": [
+    "Research: GRAPPLEGUN",
+    "Vis: 25",
+    "Ingredients: {'B': 'thaumcraft:plate_brass', 'R': 'thaumcraft:nugget_rareearth', 'H': 'minecraft:tripwire_hook'}"
+  ],
+  "thaumcraft:GrappleGunSpool": [
+    "Research: GRAPPLEGUN",
+    "Vis: 25",
+    "Ingredients: {'S': 'minecraft:string', 'H': 'minecraft:tripwire_hook', 'G': 'thaumcraft:mechanism_simple'}"
+  ],
+  "thaumcraft:AutomatedCrossbow": [
+    "Research: BASICTURRET",
+    "Vis: 100",
+    "Ingredients: {'B': 'minecraft:bow', 'G': 'thaumcraft:mechanism_simple', 'I': 'thaumcraft:plate_iron', 'W': 'thaumcraft:plank_greatwood', 'M': 'thaumcraft:mind_clockwork', 'S': 'minecraft:stick'}"
+  ],
+  "thaumcraft:AdvancedCrossbow": [
+    "Research: ADVANCEDTURRET",
+    "Vis: 150",
+    "Ingredients: {'P': 'thaumcraft:plate_iron', 'M': 'thaumcraft:mind_biothaumic', 'T': 'thaumcraft:turret_basic'}"
+  ],
+  "thaumcraft:CausalityCollapser": [
+    "Research: RIFTCLOSER",
+    "Center: {'item': 'minecraft:tnt'}",
+    "Offerings: [{'item': 'thaumcraft:morphic_resonator'}, {'item': 'minecraft:redstone_block'}, {'item': 'thaumcraft:alumentum'}, {'item': 'thaumcraft:nitor_yellow'}, {'item': 'thaumcraft:vis_resonator'}, {'item': 'minecraft:redstone_block'}, {'item': 'thaumcraft:alumentum'}, {'item': 'thaumcraft:nitor_yellow'}]",
+    "Essentia: {'alienis': 50, 'vitium': 50}"
+  ],
+  "thaumcraft:causality_collapser": [
+    "Research: RIFTCLOSER",
+    "Center: {'item': 'minecraft:tnt'}",
+    "Offerings: [{'item': 'thaumcraft:morphic_resonator'}, {'item': 'minecraft:redstone_block'}, {'item': 'thaumcraft:alumentum'}, {'item': 'thaumcraft:nitor_yellow'}, {'item': 'thaumcraft:vis_resonator'}, {'item': 'minecraft:redstone_block'}, {'item': 'thaumcraft:alumentum'}, {'item': 'thaumcraft:nitor_yellow'}]",
+    "Essentia: {'alienis': 50, 'vitium': 50}"
   ]
 }

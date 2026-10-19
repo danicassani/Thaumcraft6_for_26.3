@@ -2963,7 +2963,7 @@
         ],
         "required_item": [
           {
-            "id": "unavailable:thaumcraft:nugget",
+            "id": "thaumcraft:nugget_rareearth",
             "count": 1,
             "legacy": "thaumcraft:nugget;1;10"
           }

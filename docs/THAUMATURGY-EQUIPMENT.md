@@ -74,3 +74,5 @@ Registros finales de trabajo: `work/thaumaturgy-client4.log`, `work/thaumaturgy-
 Limitación del entorno gráfico: después de guardar y salir al título, el servidor integrado terminó y guardó el mundo, pero el renderizador Vulkan por software quedó esperando en `vkQueuePresentKHR`. Se detuvo ese proceso del cliente. Una ejecución anterior al cerrar la ventana activó el watchdog del cliente por esa misma espera nativa. El volcado sitúa la espera en el backend gráfico nativo, sin ejecución de Thaumcraft en esa pila; el cierre gráfico normal no queda certificado en este entorno.
 
 Entrega: `thaumcraft-6.1.BETA26-port.14-forge66.0.13.jar`, 7 674 166 bytes. SHA-256: `1da9f2232f9af1c6d0a81c326d31fe9d8218bfec4d749f4d2b106e51cd5c054b`. Compilación limpia correcta; el JAR contiene las clases de producción y excluye las fixtures `thaumcraft/test/`.
+
+Actualización: [port.19](FOCUS-GRAPHS-DEVICES.md) incorpora continuaciones de grafos, bolsa, vara pech, colapsador, gancho y dos torretas adaptadas. Véanse allí los límites y diferencias respecto a 1.12.

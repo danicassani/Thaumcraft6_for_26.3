@@ -1,0 +1,22 @@
+{
+  "type": "thaumcraft:arcane",
+  "research": "FOCUSPOUCH",
+  "vis": 25,
+  "crystals": {},
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "LGL",
+      "LBL",
+      "LLL"
+    ],
+    "key": {
+      "L": "minecraft:leather",
+      "G": "minecraft:gold_ingot",
+      "B": "minecraft:string"
+    },
+    "result": {
+      "id": "thaumcraft:focus_pouch"
+    }
+  }
+}

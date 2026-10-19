@@ -1,0 +1,27 @@
+{
+  "type": "thaumcraft:arcane",
+  "research": "GRAPPLEGUN",
+  "vis": 75,
+  "crystals": {
+    "aer": 1,
+    "ignis": 1
+  },
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "  S",
+      "TII",
+      " BW"
+    ],
+    "key": {
+      "S": "thaumcraft:grapple_gun_spool",
+      "T": "thaumcraft:grapple_gun_tip",
+      "I": "thaumcraft:plate_iron",
+      "B": "thaumcraft:plate_brass",
+      "W": "thaumcraft:plank_greatwood"
+    },
+    "result": {
+      "id": "thaumcraft:grapple_gun"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "thaumcraft:arcane",
+  "research": "BASICTURRET",
+  "vis": 100,
+  "crystals": {
+    "aer": 1
+  },
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "BGI",
+      "WMW",
+      "S S"
+    ],
+    "key": {
+      "B": "minecraft:bow",
+      "G": "thaumcraft:mechanism_simple",
+      "I": "thaumcraft:plate_iron",
+      "W": "thaumcraft:plank_greatwood",
+      "M": "thaumcraft:mind_clockwork",
+      "S": "minecraft:stick"
+    },
+    "result": {
+      "id": "thaumcraft:turret_basic"
+    }
+  }
+}

@@ -43,3 +43,5 @@ Evidencia local de trabajo: `work/focus-advanced-tests2.log`, `work/focus-advanc
 Limitación gráfica del entorno: el servidor integrado guarda y finaliza, pero el renderizador Vulkan por software queda esperando en `vkQueuePresentKHR` al salir al título, como en port.14. Se conserva un volcado de hilos y se termina ese proceso del cliente. Las pruebas de juego pasan; el cierre normal de la interfaz gráfica no queda certificado aquí.
 
 Compilación limpia: `work/focus-advanced-clean-build.log`, correcta; 53 pruebas verificadas y JAR sin `thaumcraft/test/`. Entrega: `thaumcraft-6.1.BETA26-port.15-forge66.0.13.jar`, 7 697 007 bytes. SHA-256: `3685bf4472bf72b96a57f9af685a667d4f5cf4681c652a3a2ccee888858abeb7`.
+
+Actualización: [port.19](FOCUS-GRAPHS-DEVICES.md) incorpora continuaciones de grafos, bolsa, vara pech, colapsador, gancho y dos torretas adaptadas. Véanse allí los límites y diferencias respecto a 1.12.

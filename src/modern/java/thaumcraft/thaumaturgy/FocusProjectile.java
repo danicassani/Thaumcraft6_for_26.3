@@ -41,6 +41,6 @@ public final class FocusProjectile extends ThrowableItemProjectile {
     protected void onHit(HitResult hit){
         var program=program();
         if(program!=null&&program.projectile().option()==1&&hit instanceof BlockHitResult b){var v=getDeltaMovement();var axis=b.getDirection().getAxis();setDeltaMovement(v.x*(axis==net.minecraft.core.Direction.Axis.X?-.9:.9),v.y*(axis==net.minecraft.core.Direction.Axis.Y?-.81:.9),v.z*(axis==net.minecraft.core.Direction.Axis.Z?-.9:.9));setPos(hit.getLocation().add(new Vec3(b.getDirection().getStepX(),b.getDirection().getStepY(),b.getDirection().getStepZ()).scale(.02)));syncVelocity=true;if(!level().isClientSide()&&getDeltaMovement().length()<.2)discard();return;}
-        super.onHit(hit);if(!level().isClientSide()){if(program!=null&&getOwner() instanceof ServerPlayer p&&p.level()==level())SpellEngine.apply(p,program,hit,strength);discard();}
+        super.onHit(hit);if(!level().isClientSide()){if(program!=null&&getOwner() instanceof ServerPlayer p&&p.level()==level())SpellEngine.apply(p,program,hit,strength,getDeltaMovement().normalize());discard();}
     }
 }

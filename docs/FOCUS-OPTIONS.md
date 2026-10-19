@@ -45,3 +45,5 @@ La primera fixture de rebote observaba el proyectil después de que volviese has
 La cadena completa de generadores reproduce los recursos sin diferencias. El JAR normal excluye las fixtures.
 
 Compilación limpia correcta: `work/focus-options-clean-build.log`, siete tareas ejecutadas y 67 pruebas sin fallos, errores ni omisiones. Entrega `thaumcraft-6.1.BETA26-port.18-forge66.0.13.jar`, 7748568 bytes; SHA-256 `17852564f12563bbe48ea772a05128c2efb8c50e3d3a5d9fe67ec28034d62ec6`.
+
+Actualización: [port.19](FOCUS-GRAPHS-DEVICES.md) incorpora continuaciones de grafos, bolsa, vara pech, colapsador, gancho y dos torretas adaptadas. Véanse allí los límites y diferencias respecto a 1.12.

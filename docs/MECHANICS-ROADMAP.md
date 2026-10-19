@@ -58,7 +58,7 @@ Contenido: `inlay`, `infusionMatrix`, `stabilizer`.
 
 ## M10: Focos, hechizos, guanteletes y proyectiles
 
-**Estado:** port.18 añade velocidad/rebote/búsqueda de proyectiles, Fortuna IV/Seda en Rotura e Intercambio y G/Ctrl+G para Plan con ajustes sincronizados y persistentes; port.15–17 aportan Scatter, Split, Cloud/Mine, Plan, Spellbat y Rift. Grafos profundos, secuencias de medios y dispositivos restantes pendientes (FOCUS-OPTIONS.md).
+**Estado:** port.19 añade continuaciones de hasta cuatro niveles con modificadores propios, validación/costes globales y editor navegable; bolsa de 18 focos, estudio pech, colapsador causal, gancho recargable y ballestas automáticas básica/avanzada. Compatibilidad visual original, lienzo libre y variantes detalladas pendientes (FOCUS-GRAPHS-DEVICES.md).
 
 Contenido: `wandWorkbench`, `pechWand`, `alumentum`, `turretPlacer`, `causalityCollapser`, `grappleGun`, `casterBasic`, `focus1`, `focus2`, `focus3`.
 

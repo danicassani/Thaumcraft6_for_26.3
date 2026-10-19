@@ -1,0 +1,24 @@
+{
+  "type": "thaumcraft:arcane",
+  "research": "GRAPPLEGUN",
+  "vis": 25,
+  "crystals": {
+    "terra": 1
+  },
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "BRB",
+      "RHR",
+      "BRB"
+    ],
+    "key": {
+      "B": "thaumcraft:plate_brass",
+      "R": "thaumcraft:nugget_rareearth",
+      "H": "minecraft:tripwire_hook"
+    },
+    "result": {
+      "id": "thaumcraft:grapple_gun_tip"
+    }
+  }
+}
