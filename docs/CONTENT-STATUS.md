@@ -144,3 +144,11 @@ Se añaden matriz, tres pedestales, cerebro en frasco, cerebro y curiosidades.
 Total: 112 bloques, 73 objetos sin bloque, 185 IDs de item, 276 entradas creativas
 y 208 recetas. El mazo tiene 32 cartas activas. Véase
 [INFUSION-CARDS.md](INFUSION-CARDS.md) para acceso, costes y límites.
+
+## port.13: estabilización y encantamientos de infusión
+
+Se añaden estabilizador, incrustaciones y resplandor interno sin item, cuatro
+recetas arcanas y ocho recetas de encantamiento. Total: 115 bloques, 73 objetos
+sin bloque, 187 IDs de item, 278 entradas creativas y 220 recetas. Se mantienen
+32 cartas activas. Véase [INFUSION-ADVANCED.md](INFUSION-ADVANCED.md) para reglas,
+adaptaciones y dependencias de equipo avanzado.

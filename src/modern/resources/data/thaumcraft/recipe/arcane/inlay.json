@@ -1,0 +1,19 @@
+{
+  "type": "thaumcraft:arcane",
+  "research": "INFUSIONSTABLE",
+  "vis": 25,
+  "crystals": {
+    "aqua": 1
+  },
+  "recipe": {
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      "minecraft:redstone",
+      "minecraft:gold_ingot"
+    ],
+    "result": {
+      "id": "thaumcraft:inlay",
+      "count": 2
+    }
+  }
+}

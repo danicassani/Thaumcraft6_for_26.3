@@ -17,7 +17,7 @@ public final class ResearchEvents {
         PlayerWakeUpEvent.BUS.addListener(event->{var player=event.getEntity();if(!player.level().isClientSide()&&ResearchService.knows(player,"!gotcrystals")&&!ResearchService.knows(player,"!gotdream"))dream(player);});
         TickEvent.PlayerTickEvent.Post.BUS.addListener(event->{
             if(!(event.player() instanceof ServerPlayer player)||player.tickCount%20!=0)return;
-            var state=ResearchService.state(player);if(state==null)return;var next=state;
+            var state=ResearchService.state(player);if(state==null)return;var next=movementKnowledge(player,state);
             boolean crystal=false;for(int i=0;i<player.getInventory().getContainerSize();i++)if(player.getInventory().getItem(i).is(CrystalContent.ESSENCE.get())){crystal=true;break;}
             if(crystal)next=next.flag("!gotcrystals");
             if(player.level().dimension().equals(Level.NETHER))next=next.flag("m_hellandback");
@@ -33,6 +33,15 @@ public final class ResearchEvents {
                 if(aura!=null&&(aura.flux()>aura.vis()||aura.flux()>aura.base()/3F))ResearchService.flag(player,"FLUX");
             }
         });
+    }
+    /** Original movement observations, read from persistent vanilla statistics. */
+    public static KnowledgeState movementKnowledge(ServerPlayer player,KnowledgeState state){
+        var stats=player.getStats();
+        if(stats.getValue(net.minecraft.stats.Stats.CUSTOM.get(net.minecraft.stats.Stats.WALK_ONE_CM))>160000)state=state.flag("m_walker");
+        if(stats.getValue(net.minecraft.stats.Stats.CUSTOM.get(net.minecraft.stats.Stats.SPRINT_ONE_CM))>80000)state=state.flag("m_runner");
+        if(stats.getValue(net.minecraft.stats.Stats.CUSTOM.get(net.minecraft.stats.Stats.SWIM_ONE_CM))>8000)state=state.flag("m_swimmer");
+        if(stats.getValue(net.minecraft.stats.Stats.CUSTOM.get(net.minecraft.stats.Stats.JUMP))>500)state=state.flag("m_jumper");
+        return state;
     }
     public static void dream(net.minecraft.world.entity.player.Player player){
         if(ResearchService.knows(player,"!gotdream")||!ResearchService.flag(player,"!gotdream"))return;

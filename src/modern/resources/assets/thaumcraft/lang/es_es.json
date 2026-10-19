@@ -399,5 +399,19 @@
   "theory.thaumcraft.card.curio": "Curiosidad",
   "theory.thaumcraft.effect.curio": "Consume curiosidad: progreso de rama y hasta 2 robos extra.",
   "theory.thaumcraft.card.dark_whispers": "Susurros oscuros",
-  "theory.thaumcraft.effect.dark_whispers": "Consume todos los niveles; Oculto, warp y posible robo extra."
+  "theory.thaumcraft.effect.dark_whispers": "Consume todos los niveles; Oculto, warp y posible robo extra.",
+  "block.thaumcraft.stabilizer": "Estabilizador",
+  "block.thaumcraft.inlay": "Incrustación de redstone",
+  "block.thaumcraft.effect_glimmer": "Resplandor",
+  "infusion.thaumcraft.charge": "Carga: %s / %s",
+  "infusion.thaumcraft.state.mitigated": "Inestabilidad mitigada",
+  "enchantment.infusion.COLLECTOR": "Recolector",
+  "enchantment.infusion.DESTRUCTIVE": "Destructivo",
+  "enchantment.infusion.BURROWING": "Excavación",
+  "enchantment.infusion.SOUNDING": "Sondeo",
+  "enchantment.infusion.REFINING": "Refinado",
+  "enchantment.infusion.ARCING": "Arco eléctrico",
+  "enchantment.infusion.ESSENCE": "Cosechador de esencia",
+  "enchantment.infusion.LAMPLIGHT": "Luz de lámpara",
+  "infusion.thaumcraft.sharpness_requirement": "Objeto con Filo I o superior"
 }

@@ -51,6 +51,12 @@
     "ordo: 1",
     "perditio: 1"
   ],
+  "thaumcraft:inlay": [
+    "minecraft:redstone",
+    "minecraft:gold_ingot",
+    "Vis: 25",
+    "aqua: 1"
+  ],
   "thaumcraft:jar_normal": [
     "[GWG]",
     "[G G]",
@@ -63,6 +69,29 @@
     "One warded jar; preserves stored essentia.",
     "Vis: 50",
     "perditio: 1"
+  ],
+  "thaumcraft:matrix_cost": [
+    "[SAS]",
+    "[AGA]",
+    "[SAS]",
+    "S = thaumcraft:stone_arcane",
+    "A = thaumcraft:alumentum",
+    "G = minecraft:diamond_block",
+    "Vis: 500",
+    "aer: 1",
+    "aqua: 1",
+    "perditio: 1"
+  ],
+  "thaumcraft:matrix_speed": [
+    "[SNS]",
+    "[NGN]",
+    "[SNS]",
+    "S = thaumcraft:stone_arcane",
+    "N = ['thaumcraft:nitor_white', 'thaumcraft:nitor_orange', 'thaumcraft:nitor_magenta', 'thaumcraft:nitor_lightblue', 'thaumcraft:nitor_yellow', 'thaumcraft:nitor_lime', 'thaumcraft:nitor_pink', 'thaumcraft:nitor_gray', 'thaumcraft:nitor_silver', 'thaumcraft:nitor_cyan', 'thaumcraft:nitor_purple', 'thaumcraft:nitor_blue', 'thaumcraft:nitor_brown', 'thaumcraft:nitor_green', 'thaumcraft:nitor_red', 'thaumcraft:nitor_black']",
+    "G = minecraft:diamond_block",
+    "Vis: 500",
+    "aer: 1",
+    "ordo: 1"
   ],
   "thaumcraft:mechanism_complex": [
     "[ M ]",
@@ -141,6 +170,21 @@
     "F = minecraft:furnace",
     "Vis: 50",
     "ignis: 1"
+  ],
+  "thaumcraft:stabilizer": [
+    "[SRS]",
+    "[BVB]",
+    "[IMI]",
+    "S = thaumcraft:slab_arcane_stone",
+    "R = minecraft:redstone_block",
+    "B = thaumcraft:stone_arcane",
+    "V = thaumcraft:vis_resonator",
+    "I = thaumcraft:inlay",
+    "M = thaumcraft:mechanism_complex",
+    "Vis: 250",
+    "terra: 1",
+    "aqua: 1",
+    "perditio: 1"
   ],
   "thaumcraft:thaumometer": [
     "[ I ]",
@@ -744,5 +788,91 @@
     "Four two-block columns of matching stone at the diagonal corners.",
     "Use Salis Mundus on the matrix to assemble pillars, then empty hand to start.",
     "Use the resonator to inspect stability and missing costs."
+  ],
+  "thaumcraft:RedstoneInlay": [
+    "RG",
+    "R: minecraft:redstone",
+    "G: minecraft:gold_ingot",
+    "Vis 25; {'aqua': 1}"
+  ],
+  "thaumcraft:Stabilizer": [
+    "SRS / BVB / IMI",
+    "S: thaumcraft:slab_arcane_stone",
+    "R: minecraft:redstone_block",
+    "B: thaumcraft:stone_arcane",
+    "V: thaumcraft:vis_resonator",
+    "I: thaumcraft:inlay",
+    "M: thaumcraft:mechanism_complex",
+    "Vis 250; {'terra': 1, 'aqua': 1, 'perditio': 1}"
+  ],
+  "thaumcraft:MatrixMotion": [
+    "SNS / NGN / SNS",
+    "S: thaumcraft:stone_arcane",
+    "N: ['thaumcraft:nitor_white', 'thaumcraft:nitor_orange', 'thaumcraft:nitor_magenta', 'thaumcraft:nitor_lightblue', 'thaumcraft:nitor_yellow', 'thaumcraft:nitor_lime', 'thaumcraft:nitor_pink', 'thaumcraft:nitor_gray', 'thaumcraft:nitor_silver', 'thaumcraft:nitor_cyan', 'thaumcraft:nitor_purple', 'thaumcraft:nitor_blue', 'thaumcraft:nitor_brown', 'thaumcraft:nitor_green', 'thaumcraft:nitor_red', 'thaumcraft:nitor_black']",
+    "G: minecraft:diamond_block",
+    "Vis 500; {'aer': 1, 'ordo': 1}"
+  ],
+  "thaumcraft:MatrixCost": [
+    "SAS / AGA / SAS",
+    "S: thaumcraft:stone_arcane",
+    "A: thaumcraft:alumentum",
+    "G: minecraft:diamond_block",
+    "Vis 500; {'aer': 1, 'aqua': 1, 'perditio': 1}"
+  ],
+  "thaumcraft:IEBURROWINGFAKE": [
+    "Infusion enchantment: burrowing",
+    "Center: compatible tool / weapon; raises one rank, preserving all components.",
+    "Offerings: enchanted book + minecraft:rabbit_foot",
+    "Essentia: {'sensus': 80, 'terra': 150}",
+    "Cost multiplier: next rank + 0.33 per other infusion enchantment."
+  ],
+  "thaumcraft:IECOLLECTORFAKE": [
+    "Infusion enchantment: collector",
+    "Center: compatible tool / weapon; raises one rank, preserving all components.",
+    "Offerings: enchanted book + minecraft:lead",
+    "Essentia: {'desiderium': 80, 'aqua': 100}",
+    "Cost multiplier: next rank + 0.33 per other infusion enchantment."
+  ],
+  "thaumcraft:IEDESTRUCTIVEFAKE": [
+    "Infusion enchantment: destructive",
+    "Center: compatible tool / weapon; raises one rank, preserving all components.",
+    "Offerings: enchanted book + minecraft:tnt",
+    "Essentia: {'aversio': 200, 'perditio': 250}",
+    "Cost multiplier: next rank + 0.33 per other infusion enchantment."
+  ],
+  "thaumcraft:IEREFININGFAKE": [
+    "Infusion enchantment: refining",
+    "Center: compatible tool / weapon; raises one rank, preserving all components.",
+    "Offerings: enchanted book + thaumcraft:salis_mundus",
+    "Essentia: {'ordo': 80, 'permutatio': 60}",
+    "Cost multiplier: next rank + 0.33 per other infusion enchantment."
+  ],
+  "thaumcraft:IESOUNDINGFAKE": [
+    "Infusion enchantment: sounding",
+    "Center: compatible tool / weapon; raises one rank, preserving all components.",
+    "Offerings: enchanted book + minecraft:map",
+    "Essentia: {'sensus': 40, 'ignis': 60}",
+    "Cost multiplier: next rank + 0.33 per other infusion enchantment."
+  ],
+  "thaumcraft:IEARCINGFAKE": [
+    "Infusion enchantment: arcing",
+    "Center: compatible tool / weapon; raises one rank, preserving all components.",
+    "Offerings: enchanted book + minecraft:redstone_block",
+    "Essentia: {'potentia': 40, 'aer': 60}",
+    "Cost multiplier: next rank + 0.33 per other infusion enchantment."
+  ],
+  "thaumcraft:IEESSENCEFAKE": [
+    "Infusion enchantment: essence",
+    "Center: compatible tool / weapon; raises one rank, preserving all components.",
+    "Offerings: enchanted book + thaumcraft:crystal_essence",
+    "Essentia: {'bestia': 40, 'vitium': 60}",
+    "Cost multiplier: next rank + 0.33 per other infusion enchantment."
+  ],
+  "thaumcraft:IELAMPLIGHTFAKE": [
+    "Infusion enchantment: lamplight",
+    "Center: compatible tool / weapon; raises one rank, preserving all components.",
+    "Offerings: enchanted book + ['thaumcraft:nitor_white', 'thaumcraft:nitor_orange', 'thaumcraft:nitor_magenta', 'thaumcraft:nitor_lightblue', 'thaumcraft:nitor_yellow', 'thaumcraft:nitor_lime', 'thaumcraft:nitor_pink', 'thaumcraft:nitor_gray', 'thaumcraft:nitor_silver', 'thaumcraft:nitor_cyan', 'thaumcraft:nitor_purple', 'thaumcraft:nitor_blue', 'thaumcraft:nitor_brown', 'thaumcraft:nitor_green', 'thaumcraft:nitor_red', 'thaumcraft:nitor_black']",
+    "Essentia: {'lux': 80, 'aer': 20}",
+    "Cost multiplier: next rank + 0.33 per other infusion enchantment."
   ]
 }

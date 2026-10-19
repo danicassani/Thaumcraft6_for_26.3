@@ -894,5 +894,19 @@
   "theory.thaumcraft.card.curio": "Curio",
   "theory.thaumcraft.effect.curio": "Consumes curiosity: branch progress and up to 2 bonus draws.",
   "theory.thaumcraft.card.dark_whispers": "Dark Whispers",
-  "theory.thaumcraft.effect.dark_whispers": "Consumes all XP levels; Eldritch, warp and possible bonus draw."
+  "theory.thaumcraft.effect.dark_whispers": "Consumes all XP levels; Eldritch, warp and possible bonus draw.",
+  "block.thaumcraft.stabilizer": "Stabilizer",
+  "block.thaumcraft.inlay": "Redstone Inlay",
+  "block.thaumcraft.effect_glimmer": "Glimmer",
+  "infusion.thaumcraft.charge": "Charge: %s / %s",
+  "infusion.thaumcraft.state.mitigated": "Instability mitigated",
+  "enchantment.infusion.COLLECTOR": "Collector",
+  "enchantment.infusion.DESTRUCTIVE": "Destructive",
+  "enchantment.infusion.BURROWING": "Burrowing",
+  "enchantment.infusion.SOUNDING": "Sounding",
+  "enchantment.infusion.REFINING": "Refining",
+  "enchantment.infusion.ARCING": "Arcing",
+  "enchantment.infusion.ESSENCE": "Essence Harvester",
+  "enchantment.infusion.LAMPLIGHT": "Lamplight",
+  "infusion.thaumcraft.sharpness_requirement": "Item enchanted with Sharpness I or higher"
 }

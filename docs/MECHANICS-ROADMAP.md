@@ -52,7 +52,7 @@ Contenido: `bannerCrimsonCult`, `tube`, `tubeValve`, `tubeRestrict`, `tubeOneway
 
 ## M09: Infusión, simetría, estabilidad y mejoras
 
-**Estado:** port.12 implementa matriz, tres pedestales/altares, activación con Salis, recetas nativas, absorción remota de tarros, costes y progreso persistentes, simetría/estabilidad y sucesos básicos; mejoras, encantamientos y equipos avanzados pendientes (INFUSION-CARDS.md).
+**Estado:** port.13 añade estabilizadores con carga/red horizontal de incrustaciones y pedestales, mitigación pagada, mejoras de velocidad/coste y ocho encantamientos funcionales de herramientas; equipo avanzado, escudos rúnicos, guantelete y sucesos ligados a corrupción siguen dependiendo de M10/M12/M13 (INFUSION-ADVANCED.md).
 
 Contenido: `inlay`, `infusionMatrix`, `stabilizer`.
 

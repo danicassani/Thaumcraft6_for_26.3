@@ -13,7 +13,7 @@ import thaumcraft.crystals.CrystalContent;
 public final class ResearchCatalog {
     public static final List<String> CATEGORIES=List.of("BASICS","AUROMANCY","ALCHEMY","ARTIFICE","INFUSION","GOLEMANCY","ELDRITCH");
     public record ItemRequirement(String id,int count,String aspect,String legacy){
-        public boolean matches(ItemStack stack){return !stack.isEmpty()&&!id.startsWith("unavailable:")
+        public boolean matches(ItemStack stack){if(legacy.contains("enchanted_placeholder")&&legacy.contains("id:16s,lvl:1s"))return !stack.isEmpty()&&java.util.stream.Stream.of(stack.getEnchantments(),stack.getOrDefault(net.minecraft.core.component.DataComponents.STORED_ENCHANTMENTS,net.minecraft.world.item.enchantment.ItemEnchantments.EMPTY)).anyMatch(en->en.entrySet().stream().anyMatch(e->e.getKey().is(net.minecraft.world.item.enchantment.Enchantments.SHARPNESS)&&e.getIntValue()>=1));return !stack.isEmpty()&&!id.startsWith("unavailable:")
             &&BuiltInRegistries.ITEM.getKey(stack.getItem()).toString().equals(id)
             &&(aspect.isEmpty()||(stack.is(CrystalContent.ESSENCE.get())&&CrystalContent.aspect(stack).equals(aspect))||(stack.is(thaumcraft.alchemy.AlchemyContent.PHIAL.get())&&thaumcraft.alchemy.AlchemyContent.amount(stack)==10&&thaumcraft.alchemy.AlchemyContent.aspect(stack).equals(aspect))||(stack.is(thaumcraft.infusion.CuriosityContent.CURIO.get())&&thaumcraft.infusion.CuriosityContent.variant(stack).equals(aspect)));}
         public String proof(){return id+(aspect.isEmpty()?"":"/"+aspect);}
