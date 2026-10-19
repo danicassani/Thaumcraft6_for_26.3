@@ -1,0 +1,95 @@
+package thaumcraft.golems;
+import java.util.*;
+import net.minecraft.core.*;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.syncher.*;
+import net.minecraft.server.level.*;
+import net.minecraft.tags.*;
+import net.minecraft.world.*;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.animal.golem.IronGolem;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.monster.Enemy;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.ItemContainerContents;
+import net.minecraft.world.level.*;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.storage.*;
+import net.minecraft.world.phys.*;
+import net.minecraftforge.event.level.BlockEvent;
+import net.minecraftforge.items.ItemHandlerHelper;
+import thaumcraft.thaumaturgy.SpellEngine;
+/** Persistent owned worker; cargo remains physical throughout task acquisition, travel and delivery. */
+public final class WorkerGolem extends IronGolem implements OwnableEntity {
+    private static final EntityDataAccessor<Integer> MATERIAL=SynchedEntityData.defineId(WorkerGolem.class,EntityDataSerializers.INT);
+    private GolemDesign design=GolemDesign.BASIC;private UUID owner;private BlockPos home=BlockPos.ZERO;private int channel,mode;private SealEntity job;private long jobUntil,nextAction;private BlockPos targetBlock;private UUID targetEntity;private final Map<BlockPos,Long> retries=new HashMap<>();
+    public final SimpleContainer cargo=new SimpleContainer(2);
+    public WorkerGolem(EntityType<? extends IronGolem> t,Level l){super(t,l);setPersistenceRequired();}
+    protected void defineSynchedData(SynchedEntityData.Builder b){super.defineSynchedData(b);b.define(MATERIAL,0);}
+    protected void registerGoals(){goalSelector.addGoal(0,new FloatGoal(this));}
+    public EntityReference<LivingEntity> getOwnerReference(){return owner==null?null:EntityReference.of(owner);}
+    public boolean alliedTo(ServerPlayer p){if(owner==null)return false;if(owner.equals(p.getUUID()))return true;var other=p.level().getServer().getPlayerList().getPlayer(owner);return other!=null&&other.isAlliedTo(p);}
+    public UUID ownerId(){return owner;}public int channel(){return channel;}public int mode(){return mode;}public BlockPos home(){return home;}public GolemDesign design(){return design;}public int material(){return entityData.get(MATERIAL);}
+    public void setHome(BlockPos p){home=p.immutable();clearJob();}public void setMode(int m){mode=Math.clamp(m,0,2);clearJob();getNavigation().stop();}public void setChannel(int c){channel=Math.clamp(c,0,15);clearJob();}
+    public void configure(Player p,GolemDesign d,BlockPos h,int ch){owner=p.getUUID();design=d;home=h.immutable();channel=Math.clamp(ch,0,15);applyDesign();setHealth(getMaxHealth());setPos(Vec3.atBottomCenterOf(h));}
+    private void applyDesign(){entityData.set(MATERIAL,design.material());getAttribute(Attributes.MAX_HEALTH).setBaseValue(design.health());getAttribute(Attributes.ARMOR).setBaseValue(design.armor());getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(design.speed());getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(design.damage());}
+    public boolean fireImmune(){return design!=null&&design.has("fireproof")||super.fireImmune();}
+    public boolean hurtServer(ServerLevel l,DamageSource s,float n){return super.hurtServer(l,s,design.has("blastproof")&&s.is(DamageTypeTags.IS_EXPLOSION)?n*.5F:n);}
+    public net.minecraft.world.scores.PlayerTeam getTeam(){if(owner!=null&&level() instanceof ServerLevel l){var p=l.getServer().getPlayerList().getPlayer(owner);if(p!=null)return p.getTeam();}return super.getTeam();}
+    protected boolean shouldDropLoot(){return false;}
+    public void die(DamageSource s){if(level() instanceof ServerLevel l)dropCargo(l);super.die(s);clearJob();}
+    public void dropCargo(ServerLevel l){for(int i=0;i<2;i++){var s=cargo.removeItemNoUpdate(i);if(!s.isEmpty())l.addFreshEntity(new ItemEntity(l,getX(),getY(),getZ(),s));}}
+    public boolean pack(Player p){if(!(level() instanceof ServerLevel l)||!p.getUUID().equals(owner)||!isAlive()||isRemoved())return false;var s=GolemContent.item(design);s.set(GolemContent.CHANNEL.get(),channel);s.set(GolemContent.HEALTH.get(),Math.clamp(getHealth()/getMaxHealth(),.001F,1F));if(hasCustomName())s.set(DataComponents.CUSTOM_NAME,getCustomName());dropCargo(l);if(!p.addItem(s))l.addFreshEntity(new ItemEntity(l,getX(),getY(),getZ(),s));clearJob();discard();return true;}
+    protected InteractionResult mobInteract(Player p,InteractionHand h){if(!(p.getItemInHand(h).getItem() instanceof GolemBell))return InteractionResult.PASS;if(!p.getUUID().equals(owner))return InteractionResult.FAIL;if(!level().isClientSide()){if(p.isShiftKeyDown())pack(p);else{setChannel(p.getItemInHand(h).getOrDefault(GolemContent.CHANNEL.get(),0));setMode((mode+1)%3);p.sendOverlayMessage(Component.translatable("golem.thaumcraft.mode_"+mode));}}return InteractionResult.SUCCESS;}
+    private void clearJob(){if(job!=null)job.release(this);job=null;targetBlock=null;targetEntity=null;}
+    public void onRemoval(RemovalReason reason){clearJob();super.onRemoval(reason);}
+    public ItemStack insertCargo(ItemStack stack,boolean simulate){var left=stack.copy();for(int i=0;i<design.capacity();i++){var s=cargo.getItem(i);if(!s.isEmpty()&&!ItemStack.isSameItemSameComponents(s,left))continue;int amount=Math.min(left.getCount(),s.isEmpty()?left.getMaxStackSize():s.getMaxStackSize()-s.getCount());if(amount<=0)continue;if(!simulate){if(s.isEmpty())cargo.setItem(i,left.copyWithCount(amount));else{s.grow(amount);cargo.setChanged();}}left.shrink(amount);if(left.isEmpty())break;}return left;}
+    private boolean carries(){return !cargo.isEmpty();}
+    private boolean line(ServerLevel l,Vec3 destination){return SpellEngine.loadedLine(l,getEyePosition(),destination)&&l.clip(new ClipContext(getEyePosition(),destination,ClipContext.Block.COLLIDER,ClipContext.Fluid.NONE,this)).getType()==HitResult.Type.MISS;}
+    private boolean near(Vec3 p){return position().distanceToSqr(p)<4;}
+    private void walk(Vec3 p){if(level().hasChunkAt(BlockPos.containing(p))&&SpellEngine.loadedLine((ServerLevel)level(),position(),p))getNavigation().moveTo(p.x,p.y,p.z,1);}
+    protected void customServerAiStep(ServerLevel l){
+        if(owner==null)return;var p=l.getServer().getPlayerList().getPlayer(owner);if(p==null||!p.isAlive()||p.isSpectator()||p.level()!=l){clearJob();getNavigation().stop();return;}
+        if(design.has("repair")&&tickCount%100==0)heal(1);
+        if(mode==2){getNavigation().stop();return;}if(mode==1){clearJob();if(distanceToSqr(p)>9&&distanceToSqr(p)<32*32)walk(p.position());else getNavigation().stop();return;}
+        if(tickCount%10!=0)return;long now=l.getGameTime();retries.entrySet().removeIf(e->e.getValue()<=now);if(job!=null&&now>jobUntil)retries.put(job.getBlockPos(),now+100);if(job!=null&&(!job.active()||now>jobUntil||!job.claim(this)))clearJob();
+        if(job==null){for(var candidate:SealEntity.nearby(l,this)){if(!retries.containsKey(candidate.getBlockPos())&&acquire(l,p,candidate)&&candidate.claim(this)){job=candidate;jobUntil=now+200;break;}targetBlock=null;targetEntity=null;}}
+        if(job==null){if(blockPosition().distSqr(home)>9&&l.hasChunkAt(home))walk(Vec3.atBottomCenterOf(home));return;}
+        Vec3 destination=targetBlock!=null?Vec3.atBottomCenterOf(targetBlock):Vec3.atCenterOf(job.getBlockPos());Entity target=targetEntity==null?null:l.getEntity(targetEntity);if(targetEntity!=null){if(target==null||!target.isAlive()||!new AABB(job.getBlockPos()).inflate(job.radius).contains(target.position())){clearJob();return;}destination=target.position();}
+        if(!near(destination)){walk(destination);return;}getNavigation().stop();getLookControl().setLookAt(destination.x,destination.y+.3,destination.z);if(now<nextAction)return;nextAction=now+20;
+        perform(l,p,target);clearJob();
+    }
+    private boolean acquire(ServerLevel l,ServerPlayer owner,SealEntity s){
+        if(s.kind()==SealKind.FILL){if(!carries()||s.handler()==null)return false;for(int i=0;i<design.capacity();i++){var stack=cargo.getItem(i);if(s.matches(stack)&&ItemHandlerHelper.insertItemStacked(s.handler(),stack,true).getCount()<stack.getCount())return true;}return false;}
+        if(carries())return false;
+        if(s.kind()==SealKind.EMPTY){var h=s.handler();if(h==null)return false;for(int i=0;i<Math.min(256,h.getSlots());i++){var extracted=h.extractItem(i,64,true);if(s.matches(extracted)&&insertCargo(extracted,true).getCount()<extracted.getCount())return true;}return false;}
+        var area=new AABB(s.getBlockPos()).inflate(s.radius);
+        if(s.kind()==SealKind.PICKUP){for(var e:l.getEntitiesOfClass(ItemEntity.class,area,x->x.isAlive()&&!x.hasPickUpDelay()&&s.matches(x.getItem()))){if(insertCargo(e.getItem(),true).getCount()<e.getItem().getCount()){targetEntity=e.getUUID();return true;}}return false;}
+        if(s.kind()==SealKind.GUARD){for(var e:l.getEntitiesOfClass(LivingEntity.class,area,x->x instanceof Enemy&&!SpellEngine.protectedTarget(owner,x)&&x.isAlive())){if(line(l,e.getEyePosition())){targetEntity=e.getUUID();return true;}}return false;}
+        if(s.kind()==SealKind.BREAKER){var q=s.support();if(breakable(l,owner,q)&&s.matches(new ItemStack(l.getBlockState(q).getBlock().asItem()))){targetBlock=q;return true;}return false;}
+        if(s.kind()==SealKind.HARVEST){for(var q:BlockPos.betweenClosed(s.getBlockPos().offset(-s.radius,-1,-s.radius),s.getBlockPos().offset(s.radius,1,s.radius))){if(!l.hasChunkAt(q))continue;var state=l.getBlockState(q);if(state.getBlock() instanceof CropBlock crop&&crop.isMaxAge(state)&&s.matches(new ItemStack(crop.asItem()))){targetBlock=q.immutable();return true;}}}
+        return false;
+    }
+    private boolean breakable(ServerLevel l,ServerPlayer p,BlockPos q){if(!l.hasChunkAt(q)||!l.mayInteract(p,q)||!p.mayBuild())return false;var state=l.getBlockState(q);return !state.isAir()&&state.getDestroySpeed(l,q)>=0&&state.getDestroySpeed(l,q)<=5&&l.getBlockEntity(q)==null&&!state.is(BlockTags.WITHER_IMMUNE);}
+    private void perform(ServerLevel l,ServerPlayer p,Entity target){if(job==null||!job.active()||!job.claim(this))return;var s=job;
+        if(s.kind()==SealKind.PICKUP&&target instanceof ItemEntity e&&!e.hasPickUpDelay()&&s.matches(e.getItem())&&line(l,e.position().add(0,.1,0))){var left=insertCargo(e.getItem(),false);if(left.isEmpty())e.discard();else e.setItem(left);return;}
+        if(s.kind()==SealKind.FILL){var h=s.handler();if(h==null)return;for(int i=0;i<design.capacity();i++){var stack=cargo.getItem(i);if(s.matches(stack))cargo.setItem(i,ItemHandlerHelper.insertItemStacked(h,stack,false));}return;}
+        if(s.kind()==SealKind.EMPTY){var h=s.handler();if(h==null)return;for(int i=0;i<Math.min(256,h.getSlots());i++){var wanted=h.extractItem(i,64,true);if(!s.matches(wanted))continue;int n=wanted.getCount()-insertCargo(wanted,true).getCount();if(n<=0)continue;var actual=h.extractItem(i,n,false);var left=insertCargo(actual,false);if(!left.isEmpty())l.addFreshEntity(new ItemEntity(l,getX(),getY(),getZ(),left));break;}return;}
+        if(s.kind()==SealKind.GUARD&&target instanceof LivingEntity e&&e instanceof Enemy&&!SpellEngine.protectedTarget(p,e)&&line(l,e.getEyePosition())){l.broadcastEntityEvent(this,(byte)4);e.hurtServer(l,l.damageSources().mobAttack(this),design.damage());return;}
+        if(targetBlock==null||!breakable(l,p,targetBlock)||!line(l,Vec3.atCenterOf(targetBlock).add(0,.6,0)))return;
+        var state=l.getBlockState(targetBlock);if(s.kind()==SealKind.HARVEST&&(!(state.getBlock() instanceof CropBlock crop)||!crop.isMaxAge(state)))return;
+        if((s.kind()==SealKind.BREAKER||s.kind()==SealKind.HARVEST)&&!s.matches(new ItemStack(state.getBlock().asItem())))return;
+        if(s.kind()==SealKind.HARVEST&&(Math.abs(targetBlock.getX()-s.getBlockPos().getX())>s.radius||Math.abs(targetBlock.getZ()-s.getBlockPos().getZ())>s.radius||Math.abs(targetBlock.getY()-s.getBlockPos().getY())>1))return;
+        var event=new BlockEvent.BreakEvent(l,targetBlock,state,p,net.minecraftforge.common.util.Result.DEFAULT);if(BlockEvent.BreakEvent.BUS.post(event)||event.getResult().isDenied())return;
+        var tool=s.kind()==SealKind.BREAKER?new ItemStack(Items.IRON_PICKAXE):ItemStack.EMPTY;var drops=Block.getDrops(state,l,targetBlock,null,this,tool);
+        if(s.kind()==SealKind.HARVEST){var crop=(CropBlock)state.getBlock();var seed=crop.asItem();boolean paid=false;for(var stack:drops)if(stack.is(seed)&&!paid){stack.shrink(1);paid=true;}if(!paid)return;l.setBlock(targetBlock,crop.getStateForAge(0),3);}else l.removeBlock(targetBlock,false);
+        for(var stack:drops){var left=insertCargo(stack,false);if(!left.isEmpty())Block.popResource(l,targetBlock,left);}
+    }
+    protected void addAdditionalSaveData(ValueOutput o){super.addAdditionalSaveData(o);o.store("design",GolemDesign.CODEC,design);if(owner!=null)o.putString("worker_owner",owner.toString());o.putLong("home",home.asLong());o.putInt("channel",channel);o.putInt("mode",mode);var slots=new ArrayList<ItemStack>();for(int i=0;i<2;i++)slots.add(cargo.getItem(i));o.store("cargo",ItemContainerContents.CODEC,ItemContainerContents.fromItems(slots));}
+    protected void readAdditionalSaveData(ValueInput i){super.readAdditionalSaveData(i);design=i.read("design",GolemDesign.CODEC).orElse(GolemDesign.BASIC);try{owner=UUID.fromString(i.getStringOr("worker_owner",""));}catch(IllegalArgumentException e){owner=null;}home=BlockPos.of(i.getLongOr("home",0));channel=Math.clamp(i.getIntOr("channel",0),0,15);mode=Math.clamp(i.getIntOr("mode",0),0,2);var slots=NonNullList.withSize(2,ItemStack.EMPTY);i.read("cargo",ItemContainerContents.CODEC).orElse(ItemContainerContents.EMPTY).copyInto(slots);for(int n=0;n<2;n++)cargo.setItem(n,slots.get(n));applyDesign();clearJob();}
+}

@@ -16,7 +16,7 @@ Contenido: `candles [16 colores]`, `nitor [16 colores]`.
 
 ## M03: Inventarios persistentes, menús y automatización
 
-**Estado:** port.12 añade inventarios de una unidad, sincronización y capacidad Forge de los tres pedestales; contenedores y autómatas restantes pendientes.
+**Estado:** pedestales e inventarios persistentes implementados; port.19 añade bolsa de 18 focos y port.20 prensa y carga de gólems; cofre hambriento y fabricador de patrones pendientes.
 
 Contenido: `tableWood`, `tableStone`, `pedestalArcane`, `pedestalAncient`, `pedestalEldritch`, `hungryChest`, `patternCrafter`, `focusPouch`.
 
@@ -64,7 +64,7 @@ Contenido: `wandWorkbench`, `pechWand`, `alumentum`, `turretPlacer`, `causalityC
 
 ## M11: Gólems, sellos, tareas e IA
 
-**Estado:** pendiente.
+**Estado:** port.20 incorpora prensa con Machina y pagos persistentes, seis materiales, piezas/rasgos, campana y gólem con navegación y carga física; sellos Recoger/Guardar/Vaciar/Vigilar/Cosechar/Romper, propietario, canales, filtros, prioridades y redstone. Sellos avanzados, logística a petición y variantes de movilidad/modelos originales pendientes (GOLEMS.md).
 
 Contenido: `golemBuilder`, `golemBell`, `golemPlacer`, `seals`.
 

@@ -1265,6 +1265,48 @@
       ],
       "thaumcraft:void_seed": [
         "f_VOIDSEED"
+      ],
+      "minecraft:iron_ingot": [
+        "f_MATIRON"
+      ],
+      "minecraft:iron_block": [
+        "f_MATIRON"
+      ],
+      "minecraft:iron_ore": [
+        "f_MATIRON"
+      ],
+      "minecraft:deepslate_iron_ore": [
+        "f_MATIRON"
+      ],
+      "thaumcraft:plate_iron": [
+        "f_MATIRON"
+      ],
+      "thaumcraft:ingot_brass": [
+        "f_MATBRASS"
+      ],
+      "thaumcraft:metal_brass": [
+        "f_MATBRASS"
+      ],
+      "thaumcraft:plate_brass": [
+        "f_MATBRASS"
+      ],
+      "thaumcraft:ingot_thaumium": [
+        "f_MATTHAUMIUM"
+      ],
+      "thaumcraft:metal_thaumium": [
+        "f_MATTHAUMIUM"
+      ],
+      "thaumcraft:plate_thaumium": [
+        "f_MATTHAUMIUM"
+      ],
+      "thaumcraft:ingot_void": [
+        "f_MATVOID"
+      ],
+      "thaumcraft:metal_void": [
+        "f_MATVOID"
+      ],
+      "thaumcraft:plate_void": [
+        "f_MATVOID"
       ]
     },
     "entities": {

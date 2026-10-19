@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=up": {
+      "model": "thaumcraft:block/seal_guard"
+    },
+    "facing=down": {
+      "model": "thaumcraft:block/seal_guard",
+      "x": 180
+    },
+    "facing=north": {
+      "model": "thaumcraft:block/seal_guard",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "thaumcraft:block/seal_guard",
+      "x": 90,
+      "y": 180
+    },
+    "facing=west": {
+      "model": "thaumcraft:block/seal_guard",
+      "x": 90,
+      "y": 270
+    },
+    "facing=east": {
+      "model": "thaumcraft:block/seal_guard",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "textures": {
+    "particle": "thaumcraft:blocks/seal_pickup",
+    "seal": "thaumcraft:blocks/seal_pickup"
+  },
+  "elements": [
+    {
+      "from": [
+        3,
+        0,
+        3
+      ],
+      "to": [
+        13,
+        1,
+        13
+      ],
+      "faces": {
+        "up": {
+          "texture": "#seal"
+        },
+        "down": {
+          "texture": "#seal"
+        },
+        "north": {
+          "texture": "#seal"
+        },
+        "south": {
+          "texture": "#seal"
+        },
+        "east": {
+          "texture": "#seal"
+        },
+        "west": {
+          "texture": "#seal"
+        }
+      }
+    }
+  ]
+}

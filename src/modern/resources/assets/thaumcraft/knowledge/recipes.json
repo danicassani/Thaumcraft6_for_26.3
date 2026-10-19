@@ -91,6 +91,19 @@
     "Vis: 50",
     "Crystals: {}"
   ],
+  "thaumcraft:golem_builder": [
+    "Research: MINDCLOCKWORK@2",
+    "Result: golem_builder",
+    "Vis: 50",
+    "Crystals: {'terra': 1, 'ordo': 1}",
+    "Pattern: IPC / ATS",
+    "I: minecraft:iron_bars",
+    "P: minecraft:piston",
+    "C: minecraft:cauldron",
+    "A: minecraft:anvil",
+    "T: thaumcraft:table_stone",
+    "S: thaumcraft:salis_mundus"
+  ],
   "thaumcraft:grapple_gun": [
     "Research: GRAPPLEGUN",
     "Vis: 75",
@@ -184,6 +197,28 @@
     "ignis: 1",
     "aqua: 1"
   ],
+  "thaumcraft:mind_clockwork": [
+    "Research: MINDCLOCKWORK@2",
+    "Result: mind_clockwork",
+    "Vis: 25",
+    "Crystals: {'ignis': 1, 'ordo': 1}",
+    "Pattern:  P  / PGP / BCB",
+    "P: minecraft:glass_pane",
+    "G: thaumcraft:mechanism_simple",
+    "B: thaumcraft:plate_brass",
+    "C: minecraft:comparator"
+  ],
+  "thaumcraft:module_aggression": [
+    "Research: SEALGUARD",
+    "Result: module_aggression",
+    "Vis: 50",
+    "Crystals: {'ignis': 1}",
+    "Pattern:  R  / RTR / PGP",
+    "R: minecraft:glass_pane",
+    "T: minecraft:blaze_powder",
+    "P: thaumcraft:plate_brass",
+    "G: thaumcraft:mechanism_simple"
+  ],
   "thaumcraft:pedestal_ancient": [
     "[SSS]",
     "[ B ]",
@@ -234,6 +269,17 @@
     "Vis: 5",
     "Ingredients: {'B': 'thaumcraft:ingot_brass', 'P': 'thaumcraft:brain', 'M': 'thaumcraft:mirrored_glass'}",
     "Accessories are equipped in the off hand. Right click to equip."
+  ],
+  "thaumcraft:seal_blank": [
+    "Research: CONTROLSEALS",
+    "Result: seal_blank",
+    "Vis: 20",
+    "Crystals: {'aer': 1}",
+    "Pattern: CTR /  N ",
+    "C: minecraft:clay_ball",
+    "T: thaumcraft:tallow",
+    "R: minecraft:red_dye",
+    "N: thaumcraft:nitor_yellow"
   ],
   "thaumcraft:smelter_basic": [
     "[BCB]",
@@ -588,6 +634,18 @@
     "Aspects: bestia 5, fabrico 1",
     "Requires hot water; consumes 50 mB per craft."
   ],
+  "thaumcraft:seal_pickup": [
+    "Research: SEALCOLLECT",
+    "Result: seal_pickup",
+    "Catalyst: thaumcraft:seal_blank",
+    "Aspects: {'desiderium': 10}"
+  ],
+  "thaumcraft:seal_guard": [
+    "Research: SEALGUARD",
+    "Result: seal_guard",
+    "Catalyst: thaumcraft:seal_blank",
+    "Aspects: {'aversio': 20, 'praemunio': 20}"
+  ],
   "thaumcraft:metal_purification_gold": [
     "Crucible: thaumcraft:cluster_gold x1",
     "Catalyst: minecraft:gold_ore",
@@ -611,6 +669,12 @@
     "Catalyst: thaumcraft:nugget_quartz",
     "Aspects: gelum 2",
     "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:seal_empty": [
+    "Research: SEALEMPTY",
+    "Result: seal_empty",
+    "Catalyst: thaumcraft:seal_blank",
+    "Aspects: {'vacuos': 10}"
   ],
   "thaumcraft:vis_crystal_victus": [
     "Crucible: thaumcraft:crystal_essence x1",
@@ -695,6 +759,12 @@
     "Catalyst: thaumcraft:nugget_quartz",
     "Aspects: fabrico 2",
     "Requires hot water; consumes 50 mB per craft."
+  ],
+  "thaumcraft:seal_fill": [
+    "Research: SEALSTORE",
+    "Result: seal_fill",
+    "Catalyst: thaumcraft:seal_blank",
+    "Aspects: {'aversio': 10}"
   ],
   "thaumcraft:vis_crystal_lux": [
     "Crucible: thaumcraft:crystal_essence x1",
@@ -1526,5 +1596,131 @@
     "Center: {'item': 'minecraft:tnt'}",
     "Offerings: [{'item': 'thaumcraft:morphic_resonator'}, {'item': 'minecraft:redstone_block'}, {'item': 'thaumcraft:alumentum'}, {'item': 'thaumcraft:nitor_yellow'}, {'item': 'thaumcraft:vis_resonator'}, {'item': 'minecraft:redstone_block'}, {'item': 'thaumcraft:alumentum'}, {'item': 'thaumcraft:nitor_yellow'}]",
     "Essentia: {'alienis': 50, 'vitium': 50}"
+  ],
+  "thaumcraft:GolemPress": [
+    "Research: MINDCLOCKWORK@2",
+    "Result: golem_builder",
+    "Vis: 50",
+    "Crystals: {'terra': 1, 'ordo': 1}",
+    "Pattern: IPC / ATS",
+    "I: minecraft:iron_bars",
+    "P: minecraft:piston",
+    "C: minecraft:cauldron",
+    "A: minecraft:anvil",
+    "T: thaumcraft:table_stone",
+    "S: thaumcraft:salis_mundus"
+  ],
+  "thaumcraft:GolemBell": [
+    "Research: ",
+    "Result: golem_bell",
+    "Pattern:  QQ /  QQ / S  ",
+    "Q: minecraft:quartz",
+    "S: minecraft:stick"
+  ],
+  "thaumcraft:golem_bell": [
+    "Research: ",
+    "Result: golem_bell",
+    "Pattern:  QQ /  QQ / S  ",
+    "Q: minecraft:quartz",
+    "S: minecraft:stick"
+  ],
+  "thaumcraft:MindClockwork": [
+    "Research: MINDCLOCKWORK@2",
+    "Result: mind_clockwork",
+    "Vis: 25",
+    "Crystals: {'ignis': 1, 'ordo': 1}",
+    "Pattern:  P  / PGP / BCB",
+    "P: minecraft:glass_pane",
+    "G: thaumcraft:mechanism_simple",
+    "B: thaumcraft:plate_brass",
+    "C: minecraft:comparator"
+  ],
+  "thaumcraft:MindBiothaumic": [
+    "Research: MINDBIOTHAUMIC",
+    "Result: mind_biothaumic",
+    "Center: thaumcraft:mind_clockwork",
+    "Offerings: thaumcraft:brain, thaumcraft:mechanism_complex",
+    "Aspects: {'cognitio': 50, 'machina': 25}"
+  ],
+  "thaumcraft:mind_biothaumic": [
+    "Research: MINDBIOTHAUMIC",
+    "Result: mind_biothaumic",
+    "Center: thaumcraft:mind_clockwork",
+    "Offerings: thaumcraft:brain, thaumcraft:mechanism_complex",
+    "Aspects: {'cognitio': 50, 'machina': 25}"
+  ],
+  "thaumcraft:modaggression": [
+    "Research: SEALGUARD",
+    "Result: module_aggression",
+    "Vis: 50",
+    "Crystals: {'ignis': 1}",
+    "Pattern:  R  / RTR / PGP",
+    "R: minecraft:glass_pane",
+    "T: minecraft:blaze_powder",
+    "P: thaumcraft:plate_brass",
+    "G: thaumcraft:mechanism_simple"
+  ],
+  "thaumcraft:SealBlank": [
+    "Research: CONTROLSEALS",
+    "Result: seal_blank",
+    "Vis: 20",
+    "Crystals: {'aer': 1}",
+    "Pattern: CTR /  N ",
+    "C: minecraft:clay_ball",
+    "T: thaumcraft:tallow",
+    "R: minecraft:red_dye",
+    "N: thaumcraft:nitor_yellow"
+  ],
+  "thaumcraft:SealCollect": [
+    "Research: SEALCOLLECT",
+    "Result: seal_pickup",
+    "Catalyst: thaumcraft:seal_blank",
+    "Aspects: {'desiderium': 10}"
+  ],
+  "thaumcraft:SealStore": [
+    "Research: SEALSTORE",
+    "Result: seal_fill",
+    "Catalyst: thaumcraft:seal_blank",
+    "Aspects: {'aversio': 10}"
+  ],
+  "thaumcraft:SealEmpty": [
+    "Research: SEALEMPTY",
+    "Result: seal_empty",
+    "Catalyst: thaumcraft:seal_blank",
+    "Aspects: {'vacuos': 10}"
+  ],
+  "thaumcraft:SealGuard": [
+    "Research: SEALGUARD",
+    "Result: seal_guard",
+    "Catalyst: thaumcraft:seal_blank",
+    "Aspects: {'aversio': 20, 'praemunio': 20}"
+  ],
+  "thaumcraft:SealHarvest": [
+    "Research: SEALHARVEST",
+    "Result: seal_harvest",
+    "Center: thaumcraft:seal_blank",
+    "Offerings: minecraft:wheat_seeds, minecraft:pumpkin_seeds, minecraft:melon_seeds, minecraft:beetroot_seeds, minecraft:sugar_cane, minecraft:cactus",
+    "Aspects: {'herba': 10, 'sensus': 10, 'humanus': 10}"
+  ],
+  "thaumcraft:seal_harvest": [
+    "Research: SEALHARVEST",
+    "Result: seal_harvest",
+    "Center: thaumcraft:seal_blank",
+    "Offerings: minecraft:wheat_seeds, minecraft:pumpkin_seeds, minecraft:melon_seeds, minecraft:beetroot_seeds, minecraft:sugar_cane, minecraft:cactus",
+    "Aspects: {'herba': 10, 'sensus': 10, 'humanus': 10}"
+  ],
+  "thaumcraft:SealBreak": [
+    "Research: SEALBREAK",
+    "Result: seal_breaker",
+    "Center: thaumcraft:seal_blank",
+    "Offerings: minecraft:golden_axe, minecraft:golden_pickaxe, minecraft:golden_shovel",
+    "Aspects: {'instrumentum': 10, 'perditio': 10, 'humanus': 10}"
+  ],
+  "thaumcraft:seal_breaker": [
+    "Research: SEALBREAK",
+    "Result: seal_breaker",
+    "Center: thaumcraft:seal_blank",
+    "Offerings: minecraft:golden_axe, minecraft:golden_pickaxe, minecraft:golden_shovel",
+    "Aspects: {'instrumentum': 10, 'perditio': 10, 'humanus': 10}"
   ]
 }
