@@ -162,3 +162,30 @@ labels={
 }
 for i,loc in enumerate(['en_us','es_es']):
  p=A/f'lang/{loc}.json';v=json.loads(p.read_text());v.update({k:text[i] for k,text in labels.items()});save(p,v)
+
+# Runtime focus options and rebindable caster controls (port.18).
+focus_options={
+ 'focal.thaumcraft.speed':('Speed','Velocidad'),
+ 'focal.thaumcraft.option':('Projectile option','Opción de proyectil'),
+ 'focal.thaumcraft.fortune':('Fortune','Fortuna'),
+ 'focal.thaumcraft.silk':('Silk touch','Toque de seda'),
+ 'focal.thaumcraft.silk_yes':('Silk: yes','Seda: sí'),
+ 'focal.thaumcraft.silk_no':('Silk: no','Seda: no'),
+ 'focal.thaumcraft.projectile_0':('Normal','Normal'),
+ 'focal.thaumcraft.projectile_1':('Bouncy','Rebote'),
+ 'focal.thaumcraft.projectile_2':('Seek enemies','Busca enemigos'),
+ 'focal.thaumcraft.projectile_3':('Seek allies','Busca aliados'),
+ 'key.thaumcraft.plan_resize':('Resize Plan / Ctrl: change axis','Redimensionar Plan / Ctrl: cambiar eje'),
+ 'key.category.thaumcraft.caster':('Thaumcraft caster','Guantelete de Thaumcraft'),
+ 'caster.thaumcraft.plan_size':('Plan: X %s / Y %s / Z %s • %s','Plan: X %s / Y %s / Z %s • %s'),
+ 'caster.thaumcraft.axis_0':('All axes','Todos los ejes'),
+ 'caster.thaumcraft.axis_1':('X axis','Eje X'),
+ 'caster.thaumcraft.axis_2':('Z axis','Eje Z'),
+ 'caster.thaumcraft.axis_3':('Y axis','Eje Y'),
+ 'research.FOCUSPROJECTILE.stage.2':('Projectile carries the complete focus effects. On the fourth Setup page choose speed 1–5 (one third to five thirds blocks per tick), normal, bouncy, seek enemies or seek allies. Special options require completed Projectile research. Bouncy shots reflect from solid faces with damping. Seeking checks sight, teams, pets and PVP; healing remains safe for allies. Projectiles expire after at most one minute; older unchanged shots keep their original speed and lifetime.','Proyectil transporta los efectos completos del foco. En la cuarta página Más elige velocidad 1–5 (de un tercio a cinco tercios de bloque por tick), normal, rebote, búsqueda de enemigos o aliados. Las opciones especiales requieren completar Proyectil. El rebote pierde velocidad. La búsqueda comprueba visibilidad, equipos, mascotas y PVP. Duran como máximo un minuto; los focos antiguos conservan su velocidad y duración originales.'),
+ 'research.FOCUSBREAK.stage.2':('Break respects hardness, player permissions and Forge break protections. The fourth Setup page offers Fortune 0–IV and Silk Touch; both add focus complexity. Native block loot and experience use the spell mining tool, preserving the actual held equipment. Silk takes priority when combined with Fortune.','Rotura respeta dureza, permisos y protecciones de Forge. La cuarta página Más permite Fortuna 0–IV y Toque de seda; aumentan la complejidad. El botín y la experiencia nativos usan la herramienta del hechizo y conservan el equipo real. Seda tiene prioridad sobre Fortuna.'),
+ 'research.FOCUSEXCHANGE.stage.2':('Exchange uses the block stack in the off hand and normal placement permissions. Fortune 0–IV and Silk Touch on the fourth Setup page control the removed block loot and add complexity. Unbreakable blocks and block entities remain protected.','Intercambio usa los bloques de la mano secundaria y los permisos normales de colocación. Fortuna 0–IV y Toque de seda en la cuarta página Más controlan el botín del bloque retirado y aumentan la complejidad. Los bloques irrompibles y las entidades de bloque siguen protegidos.')}
+for i,loc in enumerate(['en_us','es_es']):
+ p=A/f'lang/{loc}.json';v=json.loads(p.read_text());v.update({k:t[i] for k,t in focus_options.items()})
+ v['research.FOCUSPLAN.stage.2'] += (' G resizes radii 0–3 on the held caster; Ctrl+G cycles all/X/Z/Y axes. Rebind this control in Options. The server synchronizes the dimensions used by both preview and execution.' if i==0 else ' G cambia los radios de 0 a 3 en el guantelete; Ctrl+G alterna todos/X/Z/Y. Puedes cambiar la tecla en Opciones. El servidor sincroniza las dimensiones usadas por la vista previa y el hechizo.')
+ save(p,v)

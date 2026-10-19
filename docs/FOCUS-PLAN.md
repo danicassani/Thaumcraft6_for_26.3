@@ -37,3 +37,7 @@ Servidor dedicado: creación pagada y bloqueada, guardado parcial, reinicio con 
 Vista previa: selección de nueve bloques coincidente en cliente y servidor, con contornos nativos visibles sobre la pared de prueba. Registro `PLAN_CLIENT_PREVIEW_OK` e inspección visual completados.
 
 Compilación limpia correcta (`work/plan-clean-build.log`): las 58 pruebas se ejecutaron sin fallos, errores ni omisiones. El JAR excluye `thaumcraft/test/` e incluye selector, ajustes y vista previa de producción. Entrega `thaumcraft-6.1.BETA26-port.16-forge66.0.13.jar`, 7 707 642 bytes; SHA-256 `ea9f5f55ccfe6483e00a0b87317cd8156c2d7cd714f7f40eec443a80ca0f730e`.
+
+## Actualización port.18
+
+[G y Ctrl+G](FOCUS-OPTIONS.md) permiten ajustar los radios del guantelete y alternar ejes sin recrear el foco. La selección persistente del guantelete se sincroniza y la comparten la vista previa y la ejecución del servidor. El modo Volumen/Superficie sigue perteneciendo al foco.

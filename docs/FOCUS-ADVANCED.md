@@ -30,7 +30,7 @@ La selección de objetivos exige línea de visión. Los rayos y campos comprueba
 
 ## Pendiente
 
-Plan se incorpora en [port.16](FOCUS-PLAN.md). Spellbat y Rift se incorporan en [port.17](FOCUS-SPELLBAT-RIFT.md). Pendientes: grafos con más niveles y combinaciones de modificadores; variantes originales completas de trayectorias, fortuna y seda; bolsa de focos, vara pech, torretas, colapsador causal y gancho. M10 sigue siendo parcial.
+Plan se incorpora en [port.16](FOCUS-PLAN.md). Spellbat y Rift se incorporan en [port.17](FOCUS-SPELLBAT-RIFT.md). Port.18 incorpora [opciones de proyectil, Fortuna/Seda y teclas de Plan](FOCUS-OPTIONS.md). Pendientes: grafos con más niveles y combinaciones de modificadores; secuencias de medios; bolsa de focos, vara pech, torretas, colapsador causal y gancho. M10 sigue siendo parcial.
 
 ## Verificación
 

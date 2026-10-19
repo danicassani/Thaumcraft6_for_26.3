@@ -55,8 +55,8 @@ Los colapsos de grietas conservan su probabilidad original de recompensa primord
 
 ## Pendiente de M10/M12
 
-- Port.15 añade Scatter, Split Target/Trajectory de dos ramas y Cloud/Mine con ajustes y persistencia: [FOCUS-ADVANCED.md](FOCUS-ADVANCED.md). Siguen pendientes grafos de mayor profundidad, opciones originales de fortuna/seda y trayectoria.
-- Port.16 añade [Plan](FOCUS-PLAN.md) con volumen/superficie, radios y vista previa nativa; ajustes de tamaño mediante teclas todavía pendientes.
+- Port.15 añade Scatter, Split Target/Trajectory de dos ramas y Cloud/Mine con ajustes y persistencia: [FOCUS-ADVANCED.md](FOCUS-ADVANCED.md). Port.18 añade [Fortuna/Seda y opciones de proyectil](FOCUS-OPTIONS.md). Siguen pendientes grafos de mayor profundidad y secuencias de medios.
+- Port.16 añade [Plan](FOCUS-PLAN.md) con volumen/superficie, radios y vista previa nativa; port.18 añade ajustes de tamaño con G/Ctrl+G.
 - Port.17 añade [Spellbat y Rift](FOCUS-SPELLBAT-RIFT.md) con usos y restauración persistentes.
 - Bolsa de focos, vara pech, torretas, colapsador causal y gancho.
 - Siete ranuras de accesorios, bases de joyería y equivalencia exacta de las recetas/variantes originales.
