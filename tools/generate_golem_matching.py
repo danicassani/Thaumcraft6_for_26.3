@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+"""Run after generate_golem_areas.py."""
+import json
+from pathlib import Path
+root=Path(__file__).resolve().parents[1]/'src/modern/resources/assets/thaumcraft/lang'
+for index,locale in enumerate(['en_us','es_es']):
+ p=root/(locale+'.json');v=json.loads(p.read_text())
+ for key,labels in {'match_damage':['Damage','Desgaste'],'match_tags':['Materials','Materiales'],'match_mod':['Same mod','Mismo mod'],'match_damage_hint':['Compare wear independently of other components. Exact resets both.','Compara desgaste por separado. Exacto vuelve a ajustar ambos.'],'match_tags_hint':['Equivalent materials override damage and components. Generic tool tags are excluded.','Materiales equivalentes prevalece sobre desgaste y componentes. Excluye etiquetas genéricas de herramientas.'],'match_mod_hint':['Accept any item from the same mod. Overrides all other comparisons.','Acepta objetos del mismo mod. Tiene prioridad sobre las otras comparaciones.']}.items():v['golem.thaumcraft.'+key]=labels[index]
+ prefix=[' The fourth configuration page',' La cuarta página de configuración'][index]
+ v['research.CONTROLSEALS.stage.1']=v['research.CONTROLSEALS.stage.1'].split(prefix)[0]+[
+ ' The fourth configuration page of filtered advanced, Provide, Stock and Use seals separates damage matching, equivalent materials and mod matching. Exact controls components and also resets damage matching to the same value; damage can then be toggled independently. Materials uses material-specific common c tags (ingots, nuggets, gems, dusts, raw materials, ores, storage blocks, plates, rods and gears), plus vanilla logs, planks, wool and sand. Generic categories and tool/enchantment tags never make items equivalent. Same mod takes precedence over all other comparisons; matching materials takes precedence over damage and components, as in the original ore filter. Existing seals retain their previous comparison until edited. Broad stock filters count all accepted variants together, while transporting the actual components and quantities.',
+ ' La cuarta página de los sellos con filtro avanzados, Proveer, Reponer y Usar separa desgaste, equivalencia de materiales y mod de procedencia. Exacto controla componentes y también ajusta desgaste al mismo valor; después puede cambiarse desgaste por separado. Materiales usa etiquetas comunes c específicas (lingotes, pepitas, gemas, polvo, materias primas, menas, bloques de almacenamiento, placas, varillas y engranajes), además de troncos, tablones, lana y arena vanilla. Las categorías genéricas y las etiquetas de herramientas o encantamientos no equivalen materiales. Mismo mod tiene prioridad sobre todo; materiales equivalentes prevalece sobre desgaste y componentes, como el filtro de minerales original. Los sellos existentes conservan su comparación hasta editarlos. Reponer cuenta juntas las variantes aceptadas y transporta los componentes y cantidades físicos.'
+ ][index]
+ p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+print('Seal matching controls and bilingual guide generated.')
