@@ -44,3 +44,5 @@ Compilación final limpia: 92 pruebas correctas, sin fallos, errores ni omitidas
 ## Pendiente en M11
 
 Cabezas exploradoras, brazos de dardos, rangos y experiencia, opciones originales adicionales de área/coincidencia, fabricación y modelos/animaciones originales. Los dieciséis tipos de sello registrados y las cuatro patas no completan por sí solos toda la golemancia de Thaumcraft 6.
+
+Actualización posterior: [Cabezas exploradoras — port.24](GOLEMS-SCOUTS.md).

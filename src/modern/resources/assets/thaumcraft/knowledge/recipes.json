@@ -226,6 +226,13 @@
     "P: thaumcraft:plate_brass",
     "G: thaumcraft:mechanism_simple"
   ],
+  "thaumcraft:module_vision": [
+    "Research: GOLEMVISION",
+    "Result: thaumcraft:module_vision",
+    "Vis: 50; crystal: aqua x1",
+    "B B / E E / PGP",
+    "B: glass bottles x2; E: fermented spider eyes x2; P: brass plates x2; G: simple mechanism"
+  ],
   "thaumcraft:pedestal_ancient": [
     "[SSS]",
     "[ B ]",
@@ -1860,5 +1867,12 @@
     "Vis: 35; crystal: aer x1",
     "WIW / BNB / WGW",
     "W: planks x4; I: thaumium plate; B: iron plates x2; N: any nitor; G: simple mechanism"
+  ],
+  "thaumcraft:modvision": [
+    "Research: GOLEMVISION",
+    "Result: thaumcraft:module_vision",
+    "Vis: 50; crystal: aqua x1",
+    "B B / E E / PGP",
+    "B: glass bottles x2; E: fermented spider eyes x2; P: brass plates x2; G: simple mechanism"
   ]
 }

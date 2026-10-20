@@ -2898,7 +2898,7 @@
     "key": "GOLEMVISION",
     "name": "research.GOLEMVISION.title",
     "icons": [
-      "thaumcraft:module"
+      "thaumcraft:module_vision"
     ],
     "category": "GOLEMANCY",
     "location": [

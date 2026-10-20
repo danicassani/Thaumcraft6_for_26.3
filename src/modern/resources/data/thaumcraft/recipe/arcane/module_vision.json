@@ -1,0 +1,25 @@
+{
+  "type": "thaumcraft:arcane",
+  "research": "GOLEMVISION",
+  "vis": 50,
+  "crystals": {
+    "aqua": 1
+  },
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "B B",
+      "E E",
+      "PGP"
+    ],
+    "key": {
+      "B": "minecraft:glass_bottle",
+      "E": "minecraft:fermented_spider_eye",
+      "P": "thaumcraft:plate_brass",
+      "G": "thaumcraft:mechanism_simple"
+    },
+    "result": {
+      "id": "thaumcraft:module_vision"
+    }
+  }
+}

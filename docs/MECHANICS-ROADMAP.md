@@ -64,7 +64,7 @@ Contenido: `wandWorkbench`, `pechWand`, `alumentum`, `turretPlacer`, `causalityC
 
 ## M11: Gólems, sellos, tareas e IA
 
-**Estado:** port.23 añade ruedas, trepadoras y levitadoras a la prensa, navegación y guardado de gólems; conserva los 16 tipos de sello y los diseños caminantes anteriores. Cabezas exploradoras, dardos, rangos, opciones originales adicionales y modelos/animaciones pendientes (GOLEMS-MOBILITY.md).
+**Estado:** port.24 añade cabezas Explorador/Explorador inteligente, receta original del módulo de visión y radio coherente de 48 bloques para tareas, proveedores y entregas; conserva los índices antiguos y la movilidad de port.23. Dardos, rangos/experiencia, opciones adicionales y modelos originales pendientes (GOLEMS-SCOUTS.md).
 
 Contenido: `golemBuilder`, `golemBell`, `golemPlacer`, `seals`.
 

@@ -1,0 +1,13 @@
+package thaumcraft.golems;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import com.mojang.serialization.JsonOps;
+import com.google.gson.JsonParser;
+class GolemScoutTest {
+ @Test void scoutIsNotSmartOrBiothaumic(){var d=new GolemDesign(3,3,0,0);assertTrue(d.has("scout"));assertTrue(d.has("fragile"));assertFalse(d.has("smart"));assertTrue(d.research().contains("GOLEMVISION"));assertFalse(d.research().contains("MINDBIOTHAUMIC"));assertEquals(1,d.components().get("thaumcraft:mind_clockwork"));assertFalse(d.components().containsKey("thaumcraft:mind_biothaumic"));assertEquals(1,d.components().get("thaumcraft:module_vision"));assertEquals(13,d.cost());}
+ @Test void smartScoutKeepsBothResearchAndTaskTraits(){var d=new GolemDesign(3,4,0,0);assertTrue(d.has("scout")&&d.has("smart")&&d.has("fragile"));assertTrue(d.research().containsAll(java.util.List.of("GOLEMVISION","MINDBIOTHAUMIC")));assertEquals(1,d.components().get("thaumcraft:mind_biothaumic"));assertFalse(d.components().containsKey("thaumcraft:mind_clockwork"));assertEquals(15,d.cost());assertTrue(SealKind.FILL_ADVANCED.accepts(d));assertFalse(SealKind.FILL_ADVANCED.accepts(new GolemDesign(3,3,0,0)));}
+ @Test void originalHeadIndexesAndCostsStayStable(){for(int head=0;head<3;head++){var d=new GolemDesign(3,head,0,0);assertEquals(32,d.workRadius());assertFalse(d.has("scout"));assertFalse(d.components().containsKey("thaumcraft:module_vision"));assertEquals(new int[]{8,12,13}[head],d.cost());}assertEquals(java.util.List.of("basic","smart","smart_armored"),GolemDesign.HEADS.subList(0,3));}
+ @Test void allNewHeadDesignsRoundTrip(){for(int h=3;h<5;h++)for(int m=0;m<6;m++)for(int a=0;a<4;a++)for(int x=0;x<4;x++)for(int l=0;l<4;l++){var d=new GolemDesign(m,h,a,x,l);assertEquals(d,GolemDesign.CODEC.parse(JsonOps.INSTANCE,GolemDesign.CODEC.encodeStart(JsonOps.INSTANCE,d).getOrThrow()).getOrThrow());assertEquals(48,d.workRadius());}}
+ @Test void legacyDataAndInvalidHeadStayBounded(){assertEquals(new GolemDesign(3,2,1,3),GolemDesign.CODEC.parse(JsonOps.INSTANCE,JsonParser.parseString("{\"material\":3,\"head\":2,\"arms\":1,\"addon\":3}")).getOrThrow());assertThrows(IllegalArgumentException.class,()->new GolemDesign(0,5,0,0));assertTrue(GolemDesign.CODEC.parse(JsonOps.INSTANCE,JsonParser.parseString("{\"material\":0,\"head\":5,\"arms\":0,\"addon\":0}")).error().isPresent());}
+ @Test void cyclingPreservesOtherPartsAndArmorCancelsFragile(){var d=new GolemDesign(4,2,1,3,2);assertEquals(new GolemDesign(4,3,1,3,2),d.cycle(1));assertEquals(4,d.cycle(1).cycle(1).head());assertEquals(0,d.cycle(1).cycle(1).cycle(1).head());var armored=new GolemDesign(3,3,0,1);assertTrue(armored.has("scout"));assertFalse(armored.has("fragile")||armored.has("armored"));}
+}
