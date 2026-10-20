@@ -1,0 +1,50 @@
+{
+  "variants": {
+    "facing=north,compressed=false": {
+      "model": "thaumcraft:block/bellows"
+    },
+    "facing=north,compressed=true": {
+      "model": "thaumcraft:block/bellows_compressed"
+    },
+    "facing=east,compressed=false": {
+      "model": "thaumcraft:block/bellows",
+      "y": 90
+    },
+    "facing=east,compressed=true": {
+      "model": "thaumcraft:block/bellows_compressed",
+      "y": 90
+    },
+    "facing=south,compressed=false": {
+      "model": "thaumcraft:block/bellows",
+      "y": 180
+    },
+    "facing=south,compressed=true": {
+      "model": "thaumcraft:block/bellows_compressed",
+      "y": 180
+    },
+    "facing=west,compressed=false": {
+      "model": "thaumcraft:block/bellows",
+      "y": 270
+    },
+    "facing=west,compressed=true": {
+      "model": "thaumcraft:block/bellows_compressed",
+      "y": 270
+    },
+    "facing=up,compressed=false": {
+      "model": "thaumcraft:block/bellows",
+      "x": 90
+    },
+    "facing=up,compressed=true": {
+      "model": "thaumcraft:block/bellows_compressed",
+      "x": 90
+    },
+    "facing=down,compressed=false": {
+      "model": "thaumcraft:block/bellows",
+      "x": 270
+    },
+    "facing=down,compressed=true": {
+      "model": "thaumcraft:block/bellows_compressed",
+      "x": 270
+    }
+  }
+}

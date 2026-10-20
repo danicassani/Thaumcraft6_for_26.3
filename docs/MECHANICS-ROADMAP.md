@@ -40,13 +40,13 @@ Contenido: `arcaneWorkbench`.
 
 ## M07: Alquimia, disolución de aspectos y fluidos
 
-**Estado:** port.10 implementa crisol, agua/calor, disolución, 55 recetas, resolución de aspectos desde recetas y horno básico con alambiques; máquinas y mejoras posteriores pendientes (ALCHEMY-ESSENTIA.md).
+**Estado:** port.30 añade hornos de taumio/vacío, fuelles, puertos auxiliares, respiraderos y siete recetas arcanas, con combustible/progreso/bonificación persistentes; centrifugadora, horno infernal, Thaumatorium y condensador siguen pendientes (ADVANCED-SMELTERS.md).
 
 Contenido: `crucible`, `centrifuge`, `bellows`, `smelterBasic`, `smelterThaumium`, `smelterVoid`, `smelterAux`, `smelterVent`, `alembic`, `infernalFurnace`, `thaumatorium`, `thaumatoriumTop`, `brainBox`, `condenser`, `condenserlattice`, `condenserlatticeDirty`.
 
 ## M08: Transporte y almacenamiento de esencia
 
-**Estado:** port.11 añade seis tubos, succión local, válvulas/redstone, filtros, depósitos mixtos, etiquetas y resonador; port.12 añade cerebro con 2000 XP y absorción remota de tarros para la matriz; fuelles y espejos de esencia siguen pendientes (ESSENTIA-TRANSPORT.md, INFUSION-CARDS.md).
+**Estado:** port.11 añade seis tubos, succión local, válvulas/redstone, filtros, depósitos mixtos, etiquetas y resonador; port.12 añade cerebro con 2000 XP y absorción remota de tarros para la matriz; port.30 conecta fuelles a depósitos con prioridades y redstone. Espejos de esencia pendientes (ESSENTIA-TRANSPORT.md, INFUSION-CARDS.md, ADVANCED-SMELTERS.md).
 
 Contenido: `bannerCrimsonCult`, `tube`, `tubeValve`, `tubeRestrict`, `tubeOneway`, `tubeFilter`, `tubeBuffer`, `jarNormal`, `jarVoid`, `jarBrain`, `essentiaTransportInput`, `essentiaTransportOutput`, `label`, `phial`, `resonator`, `banners [16 colores]`.
 

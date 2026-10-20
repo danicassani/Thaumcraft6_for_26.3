@@ -1619,14 +1619,14 @@
         ],
         "required_item": [
           {
-            "id": "unavailable:thaumcraft:plate",
+            "id": "thaumcraft:plate_thaumium",
             "count": 1,
             "legacy": "thaumcraft:plate;1;2"
           }
         ],
         "required_craft": [
           {
-            "id": "unavailable:thaumcraft:metal",
+            "id": "thaumcraft:metal_alchemical",
             "count": 1,
             "legacy": "thaumcraft:metal;1;2"
           }
@@ -1666,14 +1666,14 @@
         ],
         "required_item": [
           {
-            "id": "unavailable:thaumcraft:plate",
+            "id": "thaumcraft:plate_void",
             "count": 1,
             "legacy": "thaumcraft:plate;1;3"
           }
         ],
         "required_craft": [
           {
-            "id": "unavailable:thaumcraft:metal",
+            "id": "thaumcraft:metal_alchemical_advanced",
             "count": 1,
             "legacy": "thaumcraft:metal;1;3"
           }

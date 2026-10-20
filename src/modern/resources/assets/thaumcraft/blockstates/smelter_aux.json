@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "thaumcraft:block/smelter_aux"
+    },
+    "facing=east": {
+      "model": "thaumcraft:block/smelter_aux",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "thaumcraft:block/smelter_aux",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "thaumcraft:block/smelter_aux",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "thaumcraft:block/smelter_aux",
+      "x": 90
+    },
+    "facing=down": {
+      "model": "thaumcraft:block/smelter_aux",
+      "x": 270
+    }
+  }
+}

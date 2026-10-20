@@ -1,3 +1,5 @@
+> Estado actualizado de hornos y fuelles en port.30: [ADVANCED-SMELTERS.md](ADVANCED-SMELTERS.md). Este documento conserva las pruebas y límites de su entrega original.
+
 # Red de esencia: port.11
 
 Minecraft 26.3 / Forge 66.0.13 / Java 25. Se implementa el transporte físico de

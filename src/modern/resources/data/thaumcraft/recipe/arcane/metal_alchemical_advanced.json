@@ -1,0 +1,26 @@
+{
+  "type": "thaumcraft:arcane",
+  "research": "ESSENTIASMELTERVOID@1",
+  "vis": 200,
+  "crystals": {
+    "terra": 1,
+    "ignis": 1
+  },
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      " A ",
+      "VPV",
+      " A "
+    ],
+    "key": {
+      "A": "thaumcraft:metal_alchemical",
+      "V": "thaumcraft:plate_void",
+      "P": "thaumcraft:primordial_pearl"
+    },
+    "result": {
+      "id": "thaumcraft:metal_alchemical_advanced",
+      "count": 1
+    }
+  }
+}

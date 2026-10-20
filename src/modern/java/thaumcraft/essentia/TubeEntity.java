@@ -37,7 +37,7 @@ public final class TubeEntity extends thaumcraft.devices.AuraDeviceEntity implem
     @Override public boolean canOutput(Direction face){return flows()&&connects(face)&&(kind()!=TubeBlock.Kind.ONEWAY||face==facing());}
     @Override public Map<String,Integer> contents(Direction face){return supported()?state.aspects():Map.of();}
     @Override public String suctionType(Direction face){return kind()==TubeBlock.Kind.BUFFER?"":suctionType;}
-    @Override public int suction(Direction face){if(!flows()||!connects(face))return 0;return kind()==TubeBlock.Kind.BUFFER?(state.chokes().get(face.ordinal())==2?0:1):suction;}
+    @Override public int suction(Direction face){if(!flows()||!connects(face))return 0;return kind()==TubeBlock.Kind.BUFFER?(state.chokes().get(face.ordinal())==2?0:state.chokes().get(face.ordinal())==1?1:Math.max(1,SmelterUpgradeBlock.count(level,worldPosition,Direction.values())*32)):suction;}
     @Override public int minimumSuction(){return 0;}
     @Override public boolean insert(String aspect,Direction face,boolean simulate){
         if(!canInput(face)||!CrystalAspects.COLORS.containsKey(aspect)||total()>=capacity()||!filter().isEmpty()&&!filter().equals(aspect)||kind()!=TubeBlock.Kind.BUFFER&&total()>0&&!state.aspects().containsKey(aspect))return false;

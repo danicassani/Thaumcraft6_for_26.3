@@ -10,6 +10,16 @@
     "Vis: 50",
     "aqua: 1"
   ],
+  "thaumcraft:bellows": [
+    "[WW ]",
+    "[LLI]",
+    "[WW ]",
+    "W = #minecraft:planks",
+    "L = minecraft:leather",
+    "I = minecraft:iron_ingot",
+    "Vis: 25",
+    "aer: 1"
+  ],
   "thaumcraft:caster_basic": [
     "Research: UNLOCKAUROMANCY@2",
     "[III]",
@@ -204,6 +214,30 @@
     "ignis: 1",
     "aqua: 1"
   ],
+  "thaumcraft:metal_alchemical": [
+    "[IVI]",
+    "[TWT]",
+    "[IVI]",
+    "I = thaumcraft:plate_iron",
+    "V = thaumcraft:tube_valve",
+    "T = thaumcraft:tube",
+    "W = thaumcraft:plank_greatwood",
+    "Vis: 75",
+    "aqua: 1",
+    "ordo: 1",
+    "perditio: 1"
+  ],
+  "thaumcraft:metal_alchemical_advanced": [
+    "[ A ]",
+    "[VPV]",
+    "[ A ]",
+    "A = thaumcraft:metal_alchemical",
+    "V = thaumcraft:plate_void",
+    "P = thaumcraft:primordial_pearl",
+    "Vis: 200",
+    "terra: 1",
+    "ignis: 1"
+  ],
   "thaumcraft:mind_clockwork": [
     "Research: MINDCLOCKWORK@2",
     "Result: mind_clockwork",
@@ -309,6 +343,20 @@
     "R: minecraft:red_dye",
     "N: thaumcraft:nitor_yellow"
   ],
+  "thaumcraft:smelter_aux": [
+    "[WTW]",
+    "[RGR]",
+    "[IBI]",
+    "W = thaumcraft:plank_greatwood",
+    "T = thaumcraft:tube_filter",
+    "R = thaumcraft:plate_brass",
+    "G = thaumcraft:metal_alchemical",
+    "I = thaumcraft:plate_iron",
+    "B = thaumcraft:bellows",
+    "Vis: 100",
+    "aer: 1",
+    "terra: 1"
+  ],
   "thaumcraft:smelter_basic": [
     "[BCB]",
     "[SFS]",
@@ -319,6 +367,40 @@
     "F = minecraft:furnace",
     "Vis: 50",
     "ignis: 1"
+  ],
+  "thaumcraft:smelter_thaumium": [
+    "[BFB]",
+    "[IGI]",
+    "[III]",
+    "B = thaumcraft:plate_brass",
+    "F = thaumcraft:smelter_basic",
+    "I = thaumcraft:plate_thaumium",
+    "G = thaumcraft:metal_alchemical",
+    "Vis: 250",
+    "ignis: 2"
+  ],
+  "thaumcraft:smelter_vent": [
+    "[IBI]",
+    "[MGF]",
+    "[IBI]",
+    "I = thaumcraft:plate_iron",
+    "B = thaumcraft:plate_brass",
+    "M = thaumcraft:filter",
+    "F = thaumcraft:filter",
+    "G = thaumcraft:metal_alchemical",
+    "Vis: 150",
+    "aer: 1"
+  ],
+  "thaumcraft:smelter_void": [
+    "[BFB]",
+    "[IGI]",
+    "[III]",
+    "B = thaumcraft:plate_brass",
+    "F = thaumcraft:smelter_basic",
+    "I = thaumcraft:plate_void",
+    "G = thaumcraft:metal_alchemical_advanced",
+    "Vis: 750",
+    "ignis: 3"
   ],
   "thaumcraft:stabilizer": [
     "[SRS]",
@@ -1888,5 +1970,62 @@
     "Vis: 50; crystal: aqua x1",
     "B B / E E / PGP",
     "B: glass bottles x2; E: fermented spider eyes x2; P: brass plates x2; G: simple mechanism"
+  ],
+  "thaumcraft:EssentiaSmelterThaumium": [
+    "BFB / IGI / III",
+    "B: thaumcraft:plate_brass",
+    "F: thaumcraft:smelter_basic",
+    "I: thaumcraft:plate_thaumium",
+    "G: thaumcraft:metal_alchemical",
+    "Vis 250; crystals {'ignis': 2}"
+  ],
+  "thaumcraft:EssentiaSmelterVoid": [
+    "BFB / IGI / III",
+    "B: thaumcraft:plate_brass",
+    "F: thaumcraft:smelter_basic",
+    "I: thaumcraft:plate_void",
+    "G: thaumcraft:metal_alchemical_advanced",
+    "Vis 750; crystals {'ignis': 3}"
+  ],
+  "thaumcraft:SmelterAux": [
+    "WTW / RGR / IBI",
+    "W: thaumcraft:plank_greatwood",
+    "T: thaumcraft:tube_filter",
+    "R: thaumcraft:plate_brass",
+    "G: thaumcraft:metal_alchemical",
+    "I: thaumcraft:plate_iron",
+    "B: thaumcraft:bellows",
+    "Vis 100; crystals {'aer': 1, 'terra': 1}"
+  ],
+  "thaumcraft:SmelterVent": [
+    "IBI / MGF / IBI",
+    "I: thaumcraft:plate_iron",
+    "B: thaumcraft:plate_brass",
+    "M: thaumcraft:filter",
+    "F: thaumcraft:filter",
+    "G: thaumcraft:metal_alchemical",
+    "Vis 150; crystals {'aer': 1}"
+  ],
+  "thaumcraft:Bellows": [
+    "WW  / LLI / WW ",
+    "W: #minecraft:planks",
+    "L: minecraft:leather",
+    "I: minecraft:iron_ingot",
+    "Vis 25; crystals {'aer': 1}"
+  ],
+  "thaumcraft:AlchemicalConstruct": [
+    "IVI / TWT / IVI",
+    "I: thaumcraft:plate_iron",
+    "V: thaumcraft:tube_valve",
+    "T: thaumcraft:tube",
+    "W: thaumcraft:plank_greatwood",
+    "Vis 75; crystals {'aqua': 1, 'ordo': 1, 'perditio': 1}"
+  ],
+  "thaumcraft:AdvAlchemyConstruct": [
+    " A  / VPV /  A ",
+    "A: thaumcraft:metal_alchemical",
+    "V: thaumcraft:plate_void",
+    "P: thaumcraft:primordial_pearl",
+    "Vis 200; crystals {'terra': 1, 'ignis': 1}"
   ]
 }
