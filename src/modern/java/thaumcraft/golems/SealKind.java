@@ -8,6 +8,7 @@ public enum SealKind {
     public boolean advanced(){return name().endsWith("_ADVANCED");}
     public SealKind base(){return advanced()?switch(this){case PICKUP_ADVANCED->PICKUP;case FILL_ADVANCED->FILL;case EMPTY_ADVANCED->EMPTY;case GUARD_ADVANCED->GUARD;case BREAKER_ADVANCED->BREAKER;default->this;}:this;}
     public int filterSlots(){return advanced()&&base()!=GUARD||this==PROVIDER||this==STOCK?9:1;}
+    public boolean hasArea(){return base()==PICKUP||base()==GUARD||base()==BREAKER||this==HARVEST||this==LUMBER||this==BUTCHER;}
     public boolean hasFilters(){return base()!=GUARD&&this!=LUMBER&&this!=BUTCHER;}
     public boolean accepts(GolemDesign d){return (trait.isEmpty()||d.has(trait))&&(!(advanced()||this==USE||this==LUMBER||this==BUTCHER)||d.has("smart"))&&(!d.has("clumsy")||this!=HARVEST&&this!=PROVIDER&&this!=STOCK&&base()!=PICKUP&&base()!=FILL&&base()!=EMPTY);}
 }

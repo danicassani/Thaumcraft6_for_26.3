@@ -12,16 +12,18 @@ import thaumcraft.thaumaturgy.SpellEngine;
 
 /** Bounded loaded-world searches. No task forces chunks or caches a list of victims. */
 public final class GolemTasks {
-    public static AABB area(SealEntity s){return new AABB(s.getBlockPos()).inflate(s.radius);}
+    public static AABB area(SealEntity s){return s.area();}
     public static boolean adult(Animal a){return a.isAlive()&&!a.isBaby()&&!(a instanceof Enemy)&&!(a instanceof TamableAnimal t&&t.isTame())&&!a.isLeashed();}
     public static boolean butcher(ServerLevel l,SealEntity s,ServerPlayer owner,Animal a){
         if(!adult(a)||!area(s).contains(a.position())||SpellEngine.protectedTarget(owner,a))return false;
         return l.getEntitiesOfClass(Animal.class,area(s),other->other.getType()==a.getType()&&adult(other)&&!SpellEngine.protectedTarget(owner,other)).size()>2;
     }
-    public static boolean inTimberArea(SealEntity s,BlockPos q){return inTimberArea(s.getBlockPos(),s.radius,q);}
+    public static boolean inTimberArea(SealEntity s,BlockPos q){return s.oriented()?area(s).contains(net.minecraft.world.phys.Vec3.atCenterOf(q)):inTimberArea(s.getBlockPos(),s.radius,q);}
     public static boolean inTimberArea(BlockPos p,int radius,BlockPos q){return Math.abs((long)q.getX()-p.getX())<=radius&&Math.abs((long)q.getZ()-p.getZ())<=radius&&(long)q.getY()>=p.getY()-1L&&(long)q.getY()<=p.getY()+radius*2L;}
+    public static Iterable<BlockPos> blocks(SealEntity s){var b=area(s);return BlockPos.betweenClosed(BlockPos.containing(b.minX,b.minY,b.minZ),BlockPos.containing(b.maxX-1,b.maxY-1,b.maxZ-1));}
+    public static boolean inHarvestArea(SealEntity s,BlockPos q){return s.oriented()?area(s).contains(net.minecraft.world.phys.Vec3.atCenterOf(q)):Math.abs((long)q.getX()-s.getBlockPos().getX())<=s.radius&&Math.abs((long)q.getZ()-s.getBlockPos().getZ())<=s.radius&&Math.abs((long)q.getY()-s.getBlockPos().getY())<=1;}
     public static BlockPos root(ServerLevel l,SealEntity s,BlockPos worker){BlockPos best=null;double distance=Double.MAX_VALUE;
-        for(var q:BlockPos.betweenClosed(s.getBlockPos().offset(-s.radius,-1,-s.radius),s.getBlockPos().offset(s.radius,s.radius*2,s.radius))){if(!l.hasChunkAt(q)||!l.getBlockState(q).is(BlockTags.LOGS))continue;if(l.hasChunkAt(q.below())&&l.getBlockState(q.below()).is(BlockTags.LOGS))continue;double d=q.distSqr(worker);if(d<distance){distance=d;best=q.immutable();}}
+        for(var q:s.oriented()?blocks(s):BlockPos.betweenClosed(s.getBlockPos().offset(-s.radius,-1,-s.radius),s.getBlockPos().offset(s.radius,s.radius*2,s.radius))){if(!l.hasChunkAt(q)||!l.getBlockState(q).is(BlockTags.LOGS))continue;if(l.hasChunkAt(q.below())&&l.getBlockState(q.below()).is(BlockTags.LOGS))continue;double d=q.distSqr(worker);if(d<distance){distance=d;best=q.immutable();}}
         return best;
     }
     public static BlockPos furthest(ServerLevel l,SealEntity s,BlockPos root){if(!l.hasChunkAt(root)||!l.getBlockState(root).is(BlockTags.LOGS))return null;

@@ -64,7 +64,7 @@ Contenido: `wandWorkbench`, `pechWand`, `alumentum`, `turretPlacer`, `causalityC
 
 ## M11: Gólems, sellos, tareas e IA
 
-**Estado:** port.26 añade rangos 0–10 para Inteligentes, XP por trabajo y daño efectivos, bonificaciones, interfaz y progreso persistente al guardar/recoger/desplegar. Conserva brazos Lanzadardos, cabezas exploradoras y cuatro movilidades. Opciones adicionales de sellos, fabricación y modelos originales pendientes (GOLEMS-RANKS.md).
+**Estado:** port.27 añade áreas orientadas X/Y/Z por cara, controles independientes y conservación de zonas anteriores; adquisición/revalidación para recogida, combate, cosecha, rotura y tala. Conserva rangos, lanzadardos y movilidades. Coincidencia adicional, fabricación y modelos originales pendientes (GOLEMS-AREAS.md).
 
 Contenido: `golemBuilder`, `golemBell`, `golemPlacer`, `seals`.
 

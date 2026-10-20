@@ -1,0 +1,12 @@
+package thaumcraft.test;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
+import net.minecraftforge.event.TickEvent;
+import thaumcraft.*;
+import thaumcraft.golems.*;
+@Mod.EventBusSubscriber(modid=Thaumcraft.MODID,value=Dist.CLIENT)
+public final class AreaClientSync {
+ static String last="",panel="";static boolean title,geometry;
+ @SubscribeEvent public static void tick(TickEvent.ClientTickEvent.Post e){if(!System.getProperty("thaumcraft.thaumaturgyProbe","").equals("area-client"))return;var mc=net.minecraft.client.Minecraft.getInstance();if(mc.player!=null&&mc.player.isDeadOrDying()&&!AreaClient.tested){mc.player.respawn();return;}if(AreaClient.tested&&mc.gui.screen() instanceof net.minecraft.client.gui.screens.TitleScreen&&!title){title=true;Thaumcraft.LOGGER.info("AREA_TITLE_READY: world saved and title screen active");}if(mc.level!=null&&!geometry)for(var entity:mc.level.entitiesForRendering())if(entity instanceof WorkerGolem w){ThaumaturgyProbe.check(Math.abs(w.getBbWidth()-.56)<.000001&&Math.abs(w.getBbHeight()-1.08)<.000001,"Client cached unscaled worker dimensions");geometry=true;Thaumcraft.LOGGER.info("AREA_CLIENT_GEOMETRY_OK: native cached dimensions match scale");break;}if(mc.player==null||!(mc.player.containerMenu instanceof SealMenu m))return;String state=m.value(26)+":"+m.value(27)+":"+m.value(28)+":"+m.value(29);if(!state.equals(last)){last=state;Thaumcraft.LOGGER.info("AREA_MENU_SYNC_OK {}",state);}if(mc.gui.screen() instanceof thaumcraft.client.GolemScreens.Seal gui){var controls=gui.children().stream().filter(w->w instanceof net.minecraft.client.gui.components.Button b&&b.visible).map(w->(net.minecraft.client.gui.components.Button)w).toList();if(controls.stream().anyMatch(b->b.getMessage().getString().startsWith("X"))&&!panel.equals(state)){panel=state;for(int axis=0;axis<3;axis++)for(int side=0;side<2;side++){var text=net.minecraft.network.chat.Component.translatable("golem.thaumcraft.area_"+"xyz".charAt(axis)+(side==0?"_minus":"_plus")).append(" "+m.value(27+axis)).getString();ThaumaturgyProbe.check(controls.stream().anyMatch(b->b.getMessage().getString().equals(text)),"Missing visible area control: "+text);}Thaumcraft.LOGGER.info("AREA_PANEL_STATE {}",state);if(AreaClient.tested&&state.equals("1:4:2:3"))Thaumcraft.LOGGER.info("AREA_SCREENSHOT_READY: actual six controls visible, synchronized X4 Y2 Z3, completed native boundary tests");}}}
+}

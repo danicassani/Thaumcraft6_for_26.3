@@ -619,7 +619,7 @@
   "research.MINDCLOCKWORK.stage.2": "I have managed to crack artificial intelligence in the form of a magically powered clockwork mind. It has its limitations and very little autonomy, but it is a start.<BR>Of course, now that I have a mind it is time to put it to use. I should draw up some designs for golems along with a way to craft them.",
   "research.MINDCLOCKWORK.stage.3": "Build the compact press using the recipe. Choose material, head, arms, addon and legs. Hover Build for the complete cost and traits. All components are taken atomically; Machina from the sides/bottom completes the paid job across restarts. Walkers preserve the old costs. Wheels replace the walker base with two bowls and leather, retain a mechanism and move 25% faster with a lower automatic step. Hauler leather adds to wheel leather. Deploy the physical golem; bell cycles Work/Follow/Stay, sneak bell packs without healing and drops its real cargo. Design and legs persist in the item and entity. Mobility uses collisions and loaded chunks. Native shapes distinguish wheels and a levitator; original OBJ models/animations remain pending.",
   "research.CONTROLSEALS.title": "Control Seals",
-  "research.CONTROLSEALS.stage.1": "Seals attach as visible plates beside a support. Sneak-use a bell to configure channel, priority, task radius, redstone pause and samples. Golems work for their owner/channel in loaded chunks within 32 blocks of home, or 48 with Scout/Smart Scout heads; their owner must be online in that dimension. The seal task radius remains separate. Bell on ground sets home; bell on a golem cycles Work/Follow/Stay and sneak bell packs it.",
+  "research.CONTROLSEALS.stage.1": "Seals attach as visible plates beside a support. Sneak-use a bell to configure channel, priority, task radius, redstone pause and samples. Golems work for their owner/channel in loaded chunks within 32 blocks of home, or 48 with Scout/Smart Scout heads; their owner must be online in that dimension. The seal task radius remains separate. Bell on ground sets home; bell on a golem cycles Work/Follow/Stay and sneak bell packs it. The third configuration page offers a face-oriented area for Pickup, Guard, Breaker, Harvest, Lumber and Butcher, including their advanced variants. X, Y and Z range independently from 1 to 8. Along the mounting face the area extends forward; perpendicular axes extend equally in both directions by dimension minus one. Existing-radius mode is the default and preserves previous zones. Switching modes or editing dimensions invalidates current jobs and flying darts. The home work radius and inventory faces stay separate. No chunks are loaded by an area search. Oriented Breaker drops physical loot for Pickup workers, so it can continue breaking blocks without carrying the drops.",
   "research.GOLEMDIRECT.title": "Golem Mastery",
   "research.GOLEMDIRECT.stage.1": "Having golems mindlessly following seals is not my only goal. I want them to mindlessly follow me as well.<BR>There has to be a way to make that happen.",
   "research.GOLEMDIRECT.stage.2": "I can now right-click on a golem with the §5Golemancer's Bell§0 to have it follow me. While following me, it will no longer obey seals and combat-capable golems will defend me in combat.<BR>Clicking on the golem again will return it to normal functioning, and its home location will be set to its current location.",
@@ -1165,5 +1165,14 @@
   "golem.thaumcraft.darts": "Dart launchers",
   "golem.thaumcraft.ranged": "Ranged",
   "golem.thaumcraft.rank": "Rank %s (%s/%s XP)",
-  "golem.thaumcraft.rank_max": "Rank %s (maximum)"
+  "golem.thaumcraft.rank_max": "Rank %s (maximum)",
+  "golem.thaumcraft.area_mode": "Area",
+  "golem.thaumcraft.area_oriented": "Face oriented",
+  "golem.thaumcraft.area_legacy": "Existing radius",
+  "golem.thaumcraft.area_x_minus": "X −",
+  "golem.thaumcraft.area_x_plus": "X +",
+  "golem.thaumcraft.area_y_minus": "Y −",
+  "golem.thaumcraft.area_y_plus": "Y +",
+  "golem.thaumcraft.area_z_minus": "Z −",
+  "golem.thaumcraft.area_z_plus": "Z +"
 }

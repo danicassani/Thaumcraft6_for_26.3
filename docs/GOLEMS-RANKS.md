@@ -43,3 +43,5 @@ Compilación limpia: 110 pruebas, cero fallos, errores u omisiones. JAR `thaumcr
 ## Pendiente
 
 Opciones adicionales de área y coincidencia de los sellos, tareas de fabricación y modelos/animaciones originales. La progresión no completa toda la golemancia original.
+
+port.27 incorpora [áreas orientadas de sellos](GOLEMS-AREAS.md).
