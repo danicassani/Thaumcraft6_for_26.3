@@ -41,3 +41,5 @@ Fixtures aisladas `tasks-write`, `tasks-read`, `tasks-client`, excluidas del JAR
 La pasada nativa verifica petición de una unidad desde cinco, pausa/recarga del gólem y una colocación pagada, además de interacción vacía; ocho troncos conectados con ramas y un tronco testigo fuera del área; cuatro adultos reducidos a dos con dos carniceros, conservando cría y mascota sin daño. La aproximación de colocación usa alcance de navegación cero para alcanzar la casilla indicada, evitando detenerse en una casilla vecina. La infusión admite lana roja y devuelve Carnicero. El reinicio dedicado conserva también un pedido físico de Abastecer guardado con port.21.
 
 Compilación limpia: 86 pruebas correctas, 0 fallos/errores/omitidas. 293 recetas, 256 definiciones de objeto y 16 tipos de sello. JAR sin fixtures: `thaumcraft-6.1.BETA26-port.22-forge66.0.13.jar` (7951119 bytes), SHA-256 `c4dbe8bc886bd354b289ab08b4a2fe7b19b8788c660c8b30882d64ae156b22cf`. Cliente cerrado normalmente tras guardar; servidor y reinicio concluyen correctamente.
+
+Actualización posterior: [Movilidad de gólems — port.23](GOLEMS-MOBILITY.md) incorpora ruedas, trepadoras y levitadoras.

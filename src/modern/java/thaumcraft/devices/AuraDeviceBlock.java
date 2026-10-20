@@ -22,7 +22,7 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import thaumcraft.aura.AuraManager;
 
 public final class AuraDeviceBlock extends Block implements EntityBlock {
-    public enum Kind { GENERATOR, DIOPTRA, PEDESTAL, SIPHON }
+    public enum Kind { GENERATOR, DIOPTRA, PEDESTAL, SIPHON, LEVITATOR }
     public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
     public final Kind kind;
@@ -32,7 +32,7 @@ public final class AuraDeviceBlock extends Block implements EntityBlock {
     }
     @Override protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) { builder.add(FACING, POWERED); }
     @Override public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return switch(kind) { case GENERATOR -> new VisGeneratorEntity(pos, state); case DIOPTRA -> new DioptraEntity(pos, state); case PEDESTAL -> new RechargePedestalEntity(pos, state); case SIPHON -> new VoidSiphonEntity(pos,state); };
+        return switch(kind) { case GENERATOR -> new VisGeneratorEntity(pos, state); case DIOPTRA -> new DioptraEntity(pos, state); case PEDESTAL -> new RechargePedestalEntity(pos, state); case SIPHON -> new VoidSiphonEntity(pos,state); case LEVITATOR -> new LevitatorEntity(pos,state); };
     }
     @Override public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
         return level.isClientSide() ? null : (l, p, s, entity) -> { if (entity instanceof AuraDeviceEntity device) device.serverTick(); };
@@ -68,6 +68,7 @@ public final class AuraDeviceBlock extends Block implements EntityBlock {
         return InteractionResult.TRY_WITH_EMPTY_HAND;
     }
     @Override protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
+        if(kind==Kind.LEVITATOR && level.getBlockEntity(pos) instanceof LevitatorEntity levitator){if(!level.isClientSide())levitator.increaseRange(player);return InteractionResult.SUCCESS;}
         if(kind==Kind.SIPHON && level.getBlockEntity(pos) instanceof VoidSiphonEntity siphon)return siphon.interact(player);
         if (kind == Kind.PEDESTAL && level.getBlockEntity(pos) instanceof RechargePedestalEntity pedestal) return pedestal.interact(player, InteractionHand.MAIN_HAND);
         if (level instanceof ServerLevel server) {

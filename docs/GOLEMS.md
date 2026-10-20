@@ -60,3 +60,5 @@ Compilación final `gradle --offline clean build`: 79 pruebas, cero fallos, erro
 Actualización: [port.21 — sellos avanzados y abastecimiento](GOLEMS-LOGISTICS.md) incorpora filtros múltiples, cinco variantes avanzadas y logística física a petición. Véanse allí el estado y los pendientes actuales.
 
 Port.22 añade los tres sellos restantes: [Usar, Talar y Carnicero](GOLEMS-TASKS.md), con límites de la adaptación y pruebas.
+
+Actualización posterior: [Movilidad de gólems — port.23](GOLEMS-MOBILITY.md) incorpora ruedas, trepadoras y levitadoras.

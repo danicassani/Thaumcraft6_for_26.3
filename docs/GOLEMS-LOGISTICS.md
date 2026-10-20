@@ -51,3 +51,5 @@ Fixtures `-PthaumaturgyProbe=logistics-write/logistics-read/logistics-client`, e
 Resultado de la pasada nativa: proveedor 64 y destino 7 con objetivo 23; se extraen 16, se guarda/restaura el gólem, se pausa por redstone y se entregan exactamente 16 con dos trabajadores distintos. Al elevar el objetivo a 40 se extraen 17; si el destino se llena externamente, los 17 permanecen en la carga. Cliente cerrado normalmente tras guardar el mundo; servidor dedicado y reinicio terminan correctamente.
 
 Compilación limpia: 82 pruebas, 0 fallos/errores/omitidas; 290 recetas y 253 definiciones de objeto. JAR normal sin fixtures de prueba: `thaumcraft-6.1.BETA26-port.21-forge66.0.13.jar` (7926144 bytes), SHA-256 `56da67dcabbc001984ba6c9587abebe713db9cce70277f309581b21969a2289a`.
+
+Actualización posterior: [Movilidad de gólems — port.23](GOLEMS-MOBILITY.md) incorpora ruedas, trepadoras y levitadoras.

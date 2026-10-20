@@ -27,18 +27,20 @@ import thaumcraft.thaumaturgy.SpellEngine;
 /** Persistent owned worker; cargo remains physical throughout task acquisition, travel and delivery. */
 public final class WorkerGolem extends IronGolem implements OwnableEntity {
     private static final EntityDataAccessor<Integer> MATERIAL=SynchedEntityData.defineId(WorkerGolem.class,EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> LEGS=SynchedEntityData.defineId(WorkerGolem.class,EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Boolean> CLIMBING=SynchedEntityData.defineId(WorkerGolem.class,EntityDataSerializers.BOOLEAN);
     private GolemDesign design=GolemDesign.BASIC;private UUID owner;private BlockPos home=BlockPos.ZERO;private int channel,mode;private SealEntity job;private long jobUntil,nextAction;private BlockPos targetBlock;private UUID targetEntity;private SealEntity supply;private BlockPos delivery;private ItemStack requested=ItemStack.EMPTY;private int jobRevision;private final Map<BlockPos,Long> retries=new HashMap<>();
     public final SimpleContainer cargo=new SimpleContainer(2);
     public WorkerGolem(EntityType<? extends IronGolem> t,Level l){super(t,l);setPersistenceRequired();}
-    protected void defineSynchedData(SynchedEntityData.Builder b){super.defineSynchedData(b);b.define(MATERIAL,0);}
+    protected void defineSynchedData(SynchedEntityData.Builder b){super.defineSynchedData(b);b.define(MATERIAL,0);b.define(LEGS,0);b.define(CLIMBING,false);}
     protected void registerGoals(){goalSelector.addGoal(0,new FloatGoal(this));}
     public EntityReference<LivingEntity> getOwnerReference(){return owner==null?null:EntityReference.of(owner);}
     public boolean alliedTo(ServerPlayer p){if(owner==null)return false;if(owner.equals(p.getUUID()))return true;var other=p.level().getServer().getPlayerList().getPlayer(owner);return other!=null&&other.isAlliedTo(p);}
     public BlockPos delivery(){return delivery;}public ItemStack requested(){return requested.copy();}
-    public UUID ownerId(){return owner;}public int channel(){return channel;}public int mode(){return mode;}public BlockPos home(){return home;}public GolemDesign design(){return design;}public int material(){return entityData.get(MATERIAL);}
-    public void setHome(BlockPos p){home=p.immutable();clearJob();}public void setMode(int m){mode=Math.clamp(m,0,2);clearJob();getNavigation().stop();}public void setChannel(int c){channel=Math.clamp(c,0,15);clearJob();}
+    public UUID ownerId(){return owner;}public int channel(){return channel;}public int mode(){return mode;}public BlockPos home(){return home;}public GolemDesign design(){return design;}public int material(){return entityData.get(MATERIAL);}public int legs(){return entityData.get(LEGS);}
+    public void setHome(BlockPos p){home=p.immutable();clearJob();}public void setMode(int m){mode=Math.clamp(m,0,2);clearJob();stopMoving();}public void setChannel(int c){channel=Math.clamp(c,0,15);clearJob();}
     public void configure(Player p,GolemDesign d,BlockPos h,int ch){owner=p.getUUID();design=d;home=h.immutable();channel=Math.clamp(ch,0,15);applyDesign();setHealth(getMaxHealth());setPos(Vec3.atBottomCenterOf(h));}
-    private void applyDesign(){entityData.set(MATERIAL,design.material());getAttribute(Attributes.MAX_HEALTH).setBaseValue(design.health());getAttribute(Attributes.ARMOR).setBaseValue(design.armor());getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(design.speed());getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(design.damage());}
+    private void applyDesign(){entityData.set(MATERIAL,design.material());getAttribute(Attributes.MAX_HEALTH).setBaseValue(design.health());getAttribute(Attributes.ARMOR).setBaseValue(design.armor());getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(design.speed());getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(design.damage());getAttribute(Attributes.FLYING_SPEED).setBaseValue(design.speed());getAttribute(Attributes.STEP_HEIGHT).setBaseValue(design.legs()==1?.5:1);entityData.set(LEGS,design.legs());GolemNavigation.configure(this);}
     public boolean fireImmune(){return design!=null&&design.has("fireproof")||super.fireImmune();}
     public boolean hurtServer(ServerLevel l,DamageSource s,float n){return super.hurtServer(l,s,design.has("blastproof")&&s.is(DamageTypeTags.IS_EXPLOSION)?n*.5F:n);}
     public net.minecraft.world.scores.PlayerTeam getTeam(){if(owner!=null&&level() instanceof ServerLevel l){var p=l.getServer().getPlayerList().getPlayer(owner);if(p!=null)return p.getTeam();}return super.getTeam();}
@@ -51,21 +53,26 @@ public final class WorkerGolem extends IronGolem implements OwnableEntity {
     private void clearJob(){if(job!=null)job.release(this);if(supply!=null)supply.release(this);supply=null;job=null;targetBlock=null;targetEntity=null;}
     public void onRemoval(RemovalReason reason){clearJob();super.onRemoval(reason);}
     public ItemStack insertCargo(ItemStack stack,boolean simulate){var left=stack.copy();for(int i=0;i<design.capacity();i++){var s=cargo.getItem(i);if(!s.isEmpty()&&!ItemStack.isSameItemSameComponents(s,left))continue;int amount=Math.min(left.getCount(),s.isEmpty()?left.getMaxStackSize():s.getMaxStackSize()-s.getCount());if(amount<=0)continue;if(!simulate){if(s.isEmpty())cargo.setItem(i,left.copyWithCount(amount));else{s.grow(amount);cargo.setChanged();}}left.shrink(amount);if(left.isEmpty())break;}return left;}
+    void useNavigation(net.minecraft.world.entity.ai.navigation.PathNavigation nav,net.minecraft.world.entity.ai.control.MoveControl control){if(navigation!=null)navigation.stop();navigation=nav;moveControl=control;setNoGravity(design.legs()==3);}
+    private void stopMoving(){getNavigation().stop();getMoveControl().setWantedPosition(getX(),getY(),getZ(),0);if(legs()==3){setDeltaMovement(Vec3.ZERO);setYya(0);setZza(0);}}
+    @Override public boolean onClimbable(){return legs()==2&&entityData.get(CLIMBING)||super.onClimbable();}
+    @Override public void tick(){super.tick();if(!level().isClientSide())entityData.set(CLIMBING,legs()==2&&horizontalCollision);if(legs()==3)setNoGravity(true);}
+    @Override public boolean causeFallDamage(double distance,float multiplier,DamageSource source){return legs()!=2&&legs()!=3&&super.causeFallDamage(distance,multiplier,source);}
     private boolean carries(){return !cargo.isEmpty();}
     private boolean line(ServerLevel l,Vec3 destination){return SpellEngine.loadedLine(l,getEyePosition(),destination)&&l.clip(new ClipContext(getEyePosition(),destination,ClipContext.Block.COLLIDER,ClipContext.Fluid.NONE,this)).getType()==HitResult.Type.MISS;}
     private boolean near(Vec3 p){return position().distanceToSqr(p)<4;}
     private void walk(Vec3 p){if(level().hasChunkAt(BlockPos.containing(p))&&SpellEngine.loadedLine((ServerLevel)level(),position(),p))getNavigation().moveTo(p.x,p.y,p.z,1);}
     protected void customServerAiStep(ServerLevel l){
-        if(owner==null)return;var p=l.getServer().getPlayerList().getPlayer(owner);if(p==null||!p.isAlive()||p.isSpectator()||p.level()!=l){clearJob();getNavigation().stop();return;}
+        if(owner==null)return;var p=l.getServer().getPlayerList().getPlayer(owner);if(p==null||!p.isAlive()||p.isSpectator()||p.level()!=l){clearJob();stopMoving();return;}
         if(design.has("repair")&&tickCount%100==0)heal(1);
-        if(mode==2){getNavigation().stop();return;}if(mode==1){clearJob();if(distanceToSqr(p)>9&&distanceToSqr(p)<32*32)walk(p.position());else getNavigation().stop();return;}
+        if(mode==2){stopMoving();return;}if(mode==1){clearJob();if(distanceToSqr(p)>9&&distanceToSqr(p)<32*32)walk(p.position());else stopMoving();return;}
         if(tickCount%10!=0)return;if(delivery!=null&&cargo.isEmpty())clearDelivery();long now=l.getGameTime();retries.entrySet().removeIf(e->e.getValue()<=now);if(job!=null&&now>jobUntil)retries.put(job.getBlockPos(),now+100);if(job!=null&&(!job.active()||job.revision()!=jobRevision||now>jobUntil||!job.claim(this)))clearJob();
-        if(job==null&&delivery!=null){if(!l.hasChunkAt(delivery)){getNavigation().stop();return;}var dest=l.getBlockEntity(delivery) instanceof SealEntity se?se:null;if(dest!=null&&GolemLogistics.belongs(dest,this)&&(dest.kind()==SealKind.STOCK||dest.kind()==SealKind.USE)&&dest.matches(requested)&&dest.wanted(requested)>0){if(!dest.active()||!dest.claim(this)){getNavigation().stop();return;}job=dest;jobRevision=dest.revision();jobUntil=now+200;targetBlock=dest.kind()==SealKind.USE?dest.useTarget():null;}else clearDelivery();}
+        if(job==null&&delivery!=null){if(!l.hasChunkAt(delivery)){stopMoving();return;}var dest=l.getBlockEntity(delivery) instanceof SealEntity se?se:null;if(dest!=null&&GolemLogistics.belongs(dest,this)&&(dest.kind()==SealKind.STOCK||dest.kind()==SealKind.USE)&&dest.matches(requested)&&dest.wanted(requested)>0){if(!dest.active()||!dest.claim(this)){stopMoving();return;}job=dest;jobRevision=dest.revision();jobUntil=now+200;targetBlock=dest.kind()==SealKind.USE?dest.useTarget():null;}else clearDelivery();}
         if(job==null){for(var candidate:SealEntity.nearby(l,this)){if(!retries.containsKey(candidate.getBlockPos())&&acquire(l,p,candidate)&&candidate.claim(this)){job=candidate;jobRevision=candidate.revision();jobUntil=now+200;break;}targetBlock=null;targetEntity=null;supply=null;}}
-        if(job==null){if(blockPosition().distSqr(home)>9&&l.hasChunkAt(home))walk(Vec3.atBottomCenterOf(home));return;}
+        if(job==null){if(blockPosition().distSqr(home)>9&&l.hasChunkAt(home))walk(Vec3.atBottomCenterOf(home));else stopMoving();return;}
         if(supply!=null&&(!GolemLogistics.belongs(supply,this)||!supply.claim(this))){clearJob();return;}
         boolean placing=job.kind()==SealKind.USE&&job.useAir&&supply==null;Vec3 destination=placing?GolemInteraction.stand(job,this):targetBlock!=null?Vec3.atBottomCenterOf(targetBlock):Vec3.atCenterOf(job.getBlockPos());Entity target=targetEntity==null?null:l.getEntity(targetEntity);if(targetEntity!=null){if(target==null||!target.isAlive()||!new AABB(job.getBlockPos()).inflate(job.radius).contains(target.position())){clearJob();return;}destination=target.position();}
-        if(placing?position().distanceToSqr(destination)>.64:!near(destination)){if(placing&&l.hasChunkAt(BlockPos.containing(destination))&&SpellEngine.loadedLine(l,position(),destination))getNavigation().moveTo(destination.x,destination.y,destination.z,0,1);else walk(destination);return;}getNavigation().stop();getLookControl().setLookAt(destination.x,destination.y+.3,destination.z);if(now<nextAction)return;nextAction=now+20;
+        if(placing?position().distanceToSqr(destination)>.64:!near(destination)){if(placing&&l.hasChunkAt(BlockPos.containing(destination))&&SpellEngine.loadedLine(l,position(),destination))getNavigation().moveTo(destination.x,destination.y,destination.z,0,1);else walk(destination);return;}stopMoving();getLookControl().setLookAt(destination.x,destination.y+.3,destination.z);if(now<nextAction)return;nextAction=now+20;
         if(!perform(l,p,target))clearJob();
     }
     private boolean acquire(ServerLevel l,ServerPlayer owner,SealEntity s){

@@ -152,6 +152,13 @@
     "Vis: 50",
     "perditio: 1"
   ],
+  "thaumcraft:levitator": [
+    "Research: LEVITATOR",
+    "Result: thaumcraft:levitator",
+    "Vis: 35; crystal: aer x1",
+    "WIW / BNB / WGW",
+    "W: planks x4; I: thaumium plate; B: iron plates x2; N: any nitor; G: simple mechanism"
+  ],
   "thaumcraft:matrix_cost": [
     "[SAS]",
     "[AGA]",
@@ -1846,5 +1853,12 @@
     "Aspects: {'bestia': 10, 'sensus': 10, 'humanus': 10}",
     "Instability: 0",
     "Result: thaumcraft:seal_butcher"
+  ],
+  "thaumcraft:Levitator": [
+    "Research: LEVITATOR",
+    "Result: thaumcraft:levitator",
+    "Vis: 35; crystal: aer x1",
+    "WIW / BNB / WGW",
+    "W: planks x4; I: thaumium plate; B: iron plates x2; N: any nitor; G: simple mechanism"
   ]
 }

@@ -64,7 +64,7 @@ Contenido: `wandWorkbench`, `pechWand`, `alumentum`, `turretPlacer`, `causalityC
 
 ## M11: Gólems, sellos, tareas e IA
 
-**Estado:** port.22 añade Usar con interacción nativa y suministros físicos, Talar conectado y Carnicero que conserva adultos; 16 tipos de sello registrados, con cliente, servidor y reinicio verificados. Movilidad especial, rangos, opciones originales adicionales y modelos/animaciones pendientes (GOLEMS-TASKS.md).
+**Estado:** port.23 añade ruedas, trepadoras y levitadoras a la prensa, navegación y guardado de gólems; conserva los 16 tipos de sello y los diseños caminantes anteriores. Cabezas exploradoras, dardos, rangos, opciones originales adicionales y modelos/animaciones pendientes (GOLEMS-MOBILITY.md).
 
 Contenido: `golemBuilder`, `golemBell`, `golemPlacer`, `seals`.
 
@@ -82,7 +82,7 @@ Contenido: `taintFibre`, `taintCrust`, `taintSoil`, `taintRock`, `taintGeyser`, 
 
 ## M14: Redstone, movimiento y máquinas auxiliares
 
-**Estado:** pendiente.
+**Estado:** port.23 incorpora levitador arcano con receta original, cuatro alcances, impulso físico, bloqueo por colisiones/chunks, pausa redstone y reserva de aura persistente como dependencia de los gólems voladores; restantes máquinas auxiliares pendientes (GOLEMS-MOBILITY.md).
 
 Contenido: `pavingStoneTravel`, `pavingStoneBarrier`, `arcaneEar`, `arcaneEarToggle`, `lampArcane`, `lampFertility`, `lampGrowth`, `levitator`, `everfullUrn`, `spa`, `redstoneRelay`, `potionSprayer`.
 

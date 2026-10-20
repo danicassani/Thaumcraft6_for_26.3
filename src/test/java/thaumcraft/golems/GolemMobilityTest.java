@@ -1,0 +1,13 @@
+package thaumcraft.golems;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import com.mojang.serialization.JsonOps;
+import com.google.gson.JsonParser;
+class GolemMobilityTest {
+ @Test void oldDesignsDecodeAsWalkersWithSameCosts(){var old=JsonParser.parseString("{\"material\":0,\"head\":0,\"arms\":0,\"addon\":0}");var d=GolemDesign.CODEC.parse(JsonOps.INSTANCE,old).getOrThrow();assertEquals(GolemDesign.BASIC,d);assertEquals(0,d.legs());assertEquals(8,d.cost());assertEquals(java.util.Map.of("thaumcraft:plank_greatwood",3,"thaumcraft:mechanism_simple",2,"thaumcraft:mind_clockwork",1),d.components());}
+ @Test void everyLegDesignRoundTrips(){for(int l=0;l<4;l++)for(int m=0;m<6;m++)for(int h=0;h<3;h++)for(int a=0;a<4;a++)for(int x=0;x<4;x++){var d=new GolemDesign(m,h,a,x,l);assertEquals(d,GolemDesign.CODEC.parse(JsonOps.INSTANCE,GolemDesign.CODEC.encodeStart(JsonOps.INSTANCE,d).getOrThrow()).getOrThrow());assertTrue(d.components().values().stream().allMatch(n->n>0));}}
+ @Test void legPaymentAggregatesSharedParts(){var wheel=new GolemDesign(0,0,0,3,1);assertEquals(2,wheel.components().get("minecraft:bowl"));assertEquals(2,wheel.components().get("minecraft:leather"));assertEquals(2,wheel.components().get("thaumcraft:plank_greatwood"));var climb=new GolemDesign(0,0,0,0,2);assertEquals(3,climb.components().get("thaumcraft:mechanism_simple"));assertEquals(4,climb.components().get("minecraft:flint"));var fly=new GolemDesign(3,2,0,1,3);assertEquals(12,fly.components().get("thaumcraft:plate_brass"));assertEquals(1,fly.components().get("thaumcraft:levitator"));}
+ @Test void researchAndTraitsBelongToEachLeg(){assertTrue(new GolemDesign(0,0,0,0,1).has("wheeled"));assertTrue(new GolemDesign(0,0,0,0,2).research().contains("GOLEMCLIMBER"));var fly=new GolemDesign(0,0,0,1,3);assertTrue(fly.research().contains("GOLEMFLYER"));assertTrue(fly.has("flyer"));assertFalse(fly.has("fragile"));assertFalse(fly.has("armored"));assertTrue(new GolemDesign(0,0,0,0,3).has("fragile"));}
+ @Test void editsKeepLegsAndOldButtonIds(){var d=new GolemDesign(2,1,1,3,2);for(int button=0;button<4;button++)assertEquals(2,d.cycle(button).legs());assertEquals(3,d.cycle(5).legs());assertEquals(d,d.cycle(4));assertThrows(IllegalArgumentException.class,()->new GolemDesign(0,0,0,0,4));assertTrue(GolemDesign.CODEC.parse(JsonOps.INSTANCE,JsonParser.parseString("{\"material\":0,\"head\":0,\"arms\":0,\"addon\":0,\"legs\":-1}")).error().isPresent());}
+ @Test void rollersAreFasterAndFlyersSlower(){for(int m=0;m<6;m++){var walk=new GolemDesign(m,0,0,0,0);assertTrue(new GolemDesign(m,0,0,0,1).speed()>walk.speed());assertTrue(new GolemDesign(m,0,0,0,3).speed()<walk.speed());}}
+}

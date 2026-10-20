@@ -27,7 +27,7 @@ public final class GolemBuilder extends AuraDeviceEntity implements MenuProvider
         if(missing.values().stream().anyMatch(n->n>0)){p.sendOverlayMessage(Component.translatable("golem.thaumcraft.missing_components"));return false;}
         for(var pay:payments)p.getInventory().removeItem(pay.slot,pay.amount);p.getInventory().setChanged();pending=draft;owner=p.getUUID();remaining=total=draft.cost();sync();return true;
     }
-    public boolean edit(Player p,int button){if(!valid(p)||working())return false;if(button==4)return start(p);if(button<0||button>3)return false;draft=draft.cycle(button);sync();return true;}
+    public boolean edit(Player p,int button){if(!valid(p)||working())return false;if(button==4)return start(p);if(button<0||button>5)return false;draft=draft.cycle(button);sync();return true;}
     private void complete(){if(pending!=null&&remaining==0&&output.isEmpty()){var result=GolemContent.item(pending);output.setItem(0,result);if(level instanceof ServerLevel l){var p=owner==null?null:l.getServer().getPlayerList().getPlayer(owner);if(p!=null)ResearchService.recordCraft(p,result);}pending=null;sync();}}
     public void serverTick(){if(pending==null)return;if(remaining<=0){complete();return;}if(level.getGameTime()%5==0)for(var face:Direction.values())if(EssentiaNetwork.pull(level,worldPosition,this,face))break;}
     public boolean connects(Direction d){return d!=Direction.UP;}public boolean canInput(Direction d){return connects(d)&&working()&&remaining>0;}public boolean canOutput(Direction d){return false;}public Map<String,Integer> contents(Direction d){return Map.of();}public String suctionType(Direction d){return "machina";}public int suction(Direction d){return canInput(d)?128:0;}public int minimumSuction(){return 0;}

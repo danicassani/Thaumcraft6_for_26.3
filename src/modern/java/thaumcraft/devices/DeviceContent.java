@@ -27,7 +27,9 @@ public final class DeviceContent {
     public static final RegistryObject<AuraDeviceBlock> GENERATOR = block("vis_generator", AuraDeviceBlock.Kind.GENERATOR);
     public static final RegistryObject<AuraDeviceBlock> DIOPTRA = block("dioptra", AuraDeviceBlock.Kind.DIOPTRA);
     public static final RegistryObject<AuraDeviceBlock> PEDESTAL = block("recharge_pedestal", AuraDeviceBlock.Kind.PEDESTAL);
+    public static final RegistryObject<AuraDeviceBlock> LEVITATOR = block("levitator", AuraDeviceBlock.Kind.LEVITATOR);
     public static final RegistryObject<AuraDeviceBlock> SIPHON = block("void_siphon", AuraDeviceBlock.Kind.SIPHON);
+    public static final RegistryObject<BlockEntityType<LevitatorEntity>> LEVITATOR_TYPE = TYPES.register("levitator", () -> new BlockEntityType<>(LevitatorEntity::new, Set.of(LEVITATOR.get())));
     public static final RegistryObject<BlockEntityType<VisGeneratorEntity>> GENERATOR_TYPE = TYPES.register("vis_generator", () -> new BlockEntityType<>(VisGeneratorEntity::new, Set.of(GENERATOR.get())));
     public static final RegistryObject<BlockEntityType<DioptraEntity>> DIOPTRA_TYPE = TYPES.register("dioptra", () -> new BlockEntityType<>(DioptraEntity::new, Set.of(DIOPTRA.get())));
     public static final RegistryObject<BlockEntityType<RechargePedestalEntity>> PEDESTAL_TYPE = TYPES.register("recharge_pedestal", () -> new BlockEntityType<>(RechargePedestalEntity::new, Set.of(PEDESTAL.get())));
