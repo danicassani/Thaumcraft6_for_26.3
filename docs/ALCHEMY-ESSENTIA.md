@@ -1,3 +1,5 @@
+La centrifugadora funcional se añade en [port.31](CENTRIFUGE.md).
+
 > Estado actualizado de hornos y fuelles en port.30: [ADVANCED-SMELTERS.md](ADVANCED-SMELTERS.md). Este documento conserva las pruebas y límites de su entrega original.
 
 # Mecánicas antes que cartas: port.10

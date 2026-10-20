@@ -30,6 +30,9 @@ public final class EssentiaContent{
     public static final Map<String,RegistryObject<TubeBlock>> TUBES=new LinkedHashMap<>();
     static{for(var k:TubeBlock.Kind.values()){String id=k==TubeBlock.Kind.NORMAL?"tube":"tube_"+k.name().toLowerCase(Locale.ROOT);var block=Registrar.BLOCKS.register(id,()->new TubeBlock(k,BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK,SimpleContent.id(id))).strength(.5F,5).sound(SoundType.METAL).noOcclusion()));TUBES.put(id,block);var item=Registrar.ITEMS.register(id,()->new BlockItem(block.get(),properties(id).useBlockDescriptionPrefix()));BasicContent.display(item);}}
     public static final RegistryObject<BlockEntityType<TubeEntity>> TYPE=TYPES.register("essentia_tube",()->new BlockEntityType<>(TubeEntity::new,new HashSet<>(TUBES.values().stream().map(RegistryObject::get).toList())));
+    public static final RegistryObject<CentrifugeBlock> CENTRIFUGE=Registrar.BLOCKS.register("centrifuge",()->new CentrifugeBlock(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK,SimpleContent.id("centrifuge"))).strength(2,5).sound(SoundType.WOOD).noOcclusion()));
+    public static final RegistryObject<Item> CENTRIFUGE_ITEM=Registrar.ITEMS.register("centrifuge",()->new BlockItem(CENTRIFUGE.get(),properties("centrifuge").useBlockDescriptionPrefix()));
+    public static final RegistryObject<BlockEntityType<CentrifugeEntity>> CENTRIFUGE_TYPE=TYPES.register("centrifuge",()->new BlockEntityType<>(CentrifugeEntity::new,java.util.Set.of(CENTRIFUGE.get())));
     public static final RegistryObject<Item> LABEL=Registrar.ITEMS.register("label",()->new Item(properties("label")){
         @Override public InteractionResult useOn(UseOnContext c){if(c.getPlayer()!=null&&c.getLevel().getBlockEntity(c.getClickedPos()) instanceof AlchemyMachine m)return m.label(c.getPlayer(),c.getHand(),c.getClickedFace());return InteractionResult.PASS;}
     });
@@ -38,7 +41,7 @@ public final class EssentiaContent{
     });
     public static final RegistryObject<RecipeSerializer<LabelRecipe>> LABEL_RECIPE=Registrar.RECIPE_SERIALIZERS.register("essentia_label",()->new RecipeSerializer<>(com.mojang.serialization.MapCodec.unit(new LabelRecipe()),net.minecraft.network.codec.StreamCodec.unit(new LabelRecipe())));
     public static final RegistryObject<RecipeSerializer<EmptyPhialRecipe>> BUFFER_RECIPE=Registrar.RECIPE_SERIALIZERS.register("essentia_buffer",()->new RecipeSerializer<>(com.mojang.serialization.MapCodec.unit(new EmptyPhialRecipe()),net.minecraft.network.codec.StreamCodec.unit(new EmptyPhialRecipe())));
-    static{BasicContent.display(LABEL);BasicContent.display(RESONATOR);}
+    static{BasicContent.display(CENTRIFUGE_ITEM);BasicContent.display(LABEL);BasicContent.display(RESONATOR);}
     private EssentiaContent(){}
     private static Item.Properties properties(String id){return new Item.Properties().setId(ResourceKey.create(Registries.ITEM,SimpleContent.id(id)));}
     public static ItemStack label(String aspect){var s=new ItemStack(LABEL.get());s.set(AlchemyContent.ESSENCE.get(),aspect);s.set(net.minecraft.core.component.DataComponents.ITEM_NAME,Component.translatable("essentia.thaumcraft.label",Component.translatable("tc.aspect."+aspect)));return s;}

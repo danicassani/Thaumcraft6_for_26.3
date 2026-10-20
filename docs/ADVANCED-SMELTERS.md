@@ -2,6 +2,8 @@
 
 Primer lote de alquimia avanzada para Minecraft 26.3 / Forge 66.0.13 / Java 25. Añade cinco bloques funcionales y siete recetas arcanas, conservando el horno básico y sus datos. M07 sigue parcial: este lote no incluye aún centrifugadora, horno infernal, Thaumatorium ni condensador.
 
+La centrifugadora se añade en [port.31](CENTRIFUGE.md).
+
 ## Mecánica
 
 - Horno básico / taumio / vacío: capacidad 256; probabilidad de retención por unidad 80 / 90 / 95 %. Para vitium se aplica el multiplicador original 0,66. Los aspectos no retenidos producen flux salvo que los eliminen los respiraderos.

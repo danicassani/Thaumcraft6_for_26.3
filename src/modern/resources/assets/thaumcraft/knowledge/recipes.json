@@ -32,6 +32,18 @@
     "Vis: 100",
     "Crystals: {'aer': 1, 'ignis': 1, 'aqua': 1, 'terra': 1, 'ordo': 1, 'perditio': 1}"
   ],
+  "thaumcraft:centrifuge": [
+    "[ T ]",
+    "[RCP]",
+    "[ T ]",
+    "T = thaumcraft:tube",
+    "R = thaumcraft:morphic_resonator",
+    "C = thaumcraft:metal_alchemical",
+    "P = thaumcraft:mechanism_simple",
+    "Vis: 100",
+    "ordo: 1",
+    "perditio: 1"
+  ],
   "thaumcraft:cloth_boots": [
     "Research: UNLOCKINFUSION",
     "[I I]",
@@ -2027,5 +2039,13 @@
     "V: thaumcraft:plate_void",
     "P: thaumcraft:primordial_pearl",
     "Vis 200; crystals {'terra': 1, 'ignis': 1}"
+  ],
+  "thaumcraft:Centrifuge": [
+    " T  / RCP /  T ",
+    "T: thaumcraft:tube",
+    "R: thaumcraft:morphic_resonator",
+    "C: thaumcraft:metal_alchemical",
+    "P: thaumcraft:mechanism_simple",
+    "Vis 100; crystals ordo 1, perditio 1"
   ]
 }

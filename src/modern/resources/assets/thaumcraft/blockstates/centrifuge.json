@@ -1,0 +1,36 @@
+{
+  "variants": {
+    "phase=0": {
+      "model": "thaumcraft:block/centrifuge",
+      "y": 0
+    },
+    "phase=1": {
+      "model": "thaumcraft:block/centrifuge_diagonal",
+      "y": 0
+    },
+    "phase=2": {
+      "model": "thaumcraft:block/centrifuge",
+      "y": 90
+    },
+    "phase=3": {
+      "model": "thaumcraft:block/centrifuge_diagonal",
+      "y": 90
+    },
+    "phase=4": {
+      "model": "thaumcraft:block/centrifuge",
+      "y": 180
+    },
+    "phase=5": {
+      "model": "thaumcraft:block/centrifuge_diagonal",
+      "y": 180
+    },
+    "phase=6": {
+      "model": "thaumcraft:block/centrifuge",
+      "y": 270
+    },
+    "phase=7": {
+      "model": "thaumcraft:block/centrifuge_diagonal",
+      "y": 270
+    }
+  }
+}

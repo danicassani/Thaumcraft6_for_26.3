@@ -40,7 +40,7 @@ Contenido: `arcaneWorkbench`.
 
 ## M07: Alquimia, disolución de aspectos y fluidos
 
-**Estado:** port.30 añade hornos de taumio/vacío, fuelles, puertos auxiliares, respiraderos y siete recetas arcanas, con combustible/progreso/bonificación persistentes; centrifugadora, horno infernal, Thaumatorium y condensador siguen pendientes (ADVANCED-SMELTERS.md).
+**Estado:** port.30 añade hornos de taumio/vacío, fuelles, puertos y respiraderos; port.31 añade centrifugadora con descomposición aleatoria, transporte vertical, redstone y trabajo persistente. Horno infernal, Thaumatorium y condensador siguen pendientes (ADVANCED-SMELTERS.md, CENTRIFUGE.md).
 
 Contenido: `crucible`, `centrifuge`, `bellows`, `smelterBasic`, `smelterThaumium`, `smelterVoid`, `smelterAux`, `smelterVent`, `alembic`, `infernalFurnace`, `thaumatorium`, `thaumatoriumTop`, `brainBox`, `condenser`, `condenserlattice`, `condenserlatticeDirty`.
 
