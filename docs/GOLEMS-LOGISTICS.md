@@ -1,5 +1,7 @@
 # Sellos avanzados y abastecimiento — port.21
 
+**Estado actual:** [cierre de golemancia en port.29](GOLEMS-COMPLETE.md). Este documento describe una entrega histórica; sus listas de pendientes quedan sustituidas por el estado actual.
+
 Minecraft 26.3 / Forge 66.0.13 / Java 25. Amplía los gólems de port.20 con siete sellos: Recoger, Guardar, Vaciar, Vigilar y Romper avanzados, Proporcionar y Abastecer. Hay trece sellos en total. M11 sigue parcial.
 
 ## Filtros e interfaz

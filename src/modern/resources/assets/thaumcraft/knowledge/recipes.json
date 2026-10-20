@@ -233,6 +233,20 @@
     "B B / E E / PGP",
     "B: glass bottles x2; E: fermented spider eyes x2; P: brass plates x2; G: simple mechanism"
   ],
+  "thaumcraft:pattern_crafter": [
+    "[VH ]",
+    "[GCG]",
+    "[ W ]",
+    "V = thaumcraft:vis_resonator",
+    "H = minecraft:hopper",
+    "G = thaumcraft:mechanism_simple",
+    "C = minecraft:crafting_table",
+    "W = thaumcraft:plank_greatwood",
+    "Vis: 50",
+    "terra: 1",
+    "aqua: 1",
+    "ordo: 1"
+  ],
   "thaumcraft:pedestal_ancient": [
     "[SSS]",
     "[ B ]",

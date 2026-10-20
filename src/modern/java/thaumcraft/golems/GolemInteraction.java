@@ -38,6 +38,8 @@ public final class GolemInteraction {
             actor.getTextFilter().leave();
         }
     }
+    public static boolean plant(ServerLevel l,ServerPlayer owner,WorkerGolem worker,int slot,net.minecraft.core.BlockPos at){return plant(l,owner,worker,slot,at,at.below(),Direction.UP);}
+    public static boolean plant(ServerLevel l,ServerPlayer owner,WorkerGolem worker,int slot,net.minecraft.core.BlockPos at,net.minecraft.core.BlockPos support,Direction face){if(!owner.mayBuild()||!l.hasChunkAt(at)||!l.hasChunkAt(support)||!l.mayInteract(owner,at)||!l.mayInteract(owner,support)||!owner.mayUseItemAt(support,face,worker.cargo.getItem(slot)))return false;var actor=new Actor(l,new GameProfile(worker.getUUID(),"[TCGolem]"));actor.setPos(worker.position());actor.setItemInHand(InteractionHand.MAIN_HAND,worker.cargo.removeItemNoUpdate(slot));try{return actor.gameMode.useItemOn(actor,l,actor.getMainHandItem(),InteractionHand.MAIN_HAND,new BlockHitResult(Vec3.atCenterOf(support).add(face.getStepX()*.501,face.getStepY()*.501,face.getStepZ()*.501),face,support,false)).consumesAction();}finally{for(int i=0;i<actor.getInventory().getContainerSize();i++){var rest=worker.insertCargo(actor.getInventory().removeItemNoUpdate(i),false);if(!rest.isEmpty())net.minecraft.world.level.block.Block.popResource(l,at,rest);}actor.getTextFilter().leave();}}
     private static final class Actor extends ServerPlayer {
         Actor(ServerLevel level,GameProfile profile){super(level.getServer(),level,profile,ClientInformation.createDefault());
             new ServerGamePacketListenerImpl(level.getServer(),new net.minecraft.network.Connection(PacketFlow.SERVERBOUND),this,CommonListenerCookie.createInitial(profile,false)){

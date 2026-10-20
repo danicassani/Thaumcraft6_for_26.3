@@ -1,5 +1,7 @@
 # Gólems — port.20
 
+**Estado actual:** [cierre de golemancia en port.29](GOLEMS-COMPLETE.md). Este documento describe una entrega histórica; sus listas de pendientes quedan sustituidas por el estado actual.
+
 Minecraft 26.3 / Forge 66.0.13 / Java 25. Primera entrega funcional de M11. Incluye prensa, gólem persistente, campana, seis sellos, transporte físico por capacidades Forge y recetas/progresión del libro. M11 permanece parcial.
 
 ## Fabricación y piezas

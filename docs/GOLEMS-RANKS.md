@@ -1,5 +1,7 @@
 # Rangos y experiencia — port.26
 
+**Estado actual:** [cierre de golemancia en port.29](GOLEMS-COMPLETE.md). Este documento describe una entrega histórica; sus listas de pendientes quedan sustituidas por el estado actual.
+
 Minecraft 26.3 / Forge 66.0.13 / Java 25. Progresión de gólems Inteligentes, separada del diseño de construcción. M11 sigue parcial.
 
 ## Progresión

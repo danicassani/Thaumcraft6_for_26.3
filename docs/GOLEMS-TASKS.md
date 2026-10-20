@@ -1,5 +1,7 @@
 # Usar, Talar y Carnicero — port.22
 
+**Estado actual:** [cierre de golemancia en port.29](GOLEMS-COMPLETE.md). Este documento describe una entrega histórica; sus listas de pendientes quedan sustituidas por el estado actual.
+
 Minecraft 26.3 / Forge 66.0.13 / Java 25. Se añaden los tres tipos de sello restantes: dieciséis tipos registrados en total, conservando los trece identificadores y posiciones anteriores. M11 continúa parcial por opciones, movilidad, experiencia y presentación pendientes.
 
 ## Usar

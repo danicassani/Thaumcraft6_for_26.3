@@ -1,5 +1,7 @@
 # Áreas orientadas de sellos — port.27
 
+**Estado actual:** [cierre de golemancia en port.29](GOLEMS-COMPLETE.md). Este documento describe una entrega histórica; sus listas de pendientes quedan sustituidas por el estado actual.
+
 Minecraft 26.3 / Forge 66.0.13 / Java 25. Añade las dimensiones independientes X/Y/Z del original a Recoger, Vigilar, Romper, Cosechar, Talar y Carnicero, incluidas sus variantes avanzadas. Mantiene las zonas existentes como modo predeterminado; M11 sigue parcial.
 
 ## Configuración y geometría

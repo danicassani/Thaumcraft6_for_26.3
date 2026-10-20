@@ -1,5 +1,7 @@
 # Brazos lanzadardos — port.25
 
+**Estado actual:** [cierre de golemancia en port.29](GOLEMS-COMPLETE.md). Este documento describe una entrega histórica; sus listas de pendientes quedan sustituidas por el estado actual.
+
 Minecraft 26.3 / Forge 66.0.13 / Java 25. Añade la quinta selección de brazos a la prensa y un proyectil físico `thaumcraft:golem_dart`. Los índices de brazos 0–3 y todos los identificadores anteriores se conservan. M11 sigue parcial.
 
 ## Fabricación

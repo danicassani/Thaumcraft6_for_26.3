@@ -16,7 +16,7 @@ Contenido: `candles [16 colores]`, `nitor [16 colores]`.
 
 ## M03: Inventarios persistentes, menús y automatización
 
-**Estado:** pedestales e inventarios persistentes implementados; port.19 añade bolsa de 18 focos y port.20 prensa y carga de gólems; cofre hambriento y fabricador de patrones pendientes.
+**Estado:** pedestales e inventarios persistentes implementados; port.19 añade bolsa de 18 focos, port.20 prensa/carga de gólems y port.29 fabricador de diez patrones con inventarios físicos y reserva de vis; cofre hambriento pendiente.
 
 Contenido: `tableWood`, `tableStone`, `pedestalArcane`, `pedestalAncient`, `pedestalEldritch`, `hungryChest`, `patternCrafter`, `focusPouch`.
 
@@ -64,7 +64,7 @@ Contenido: `wandWorkbench`, `pechWand`, `alumentum`, `turretPlacer`, `causalityC
 
 ## M11: Gólems, sellos, tareas e IA
 
-**Estado:** port.27 añade áreas orientadas X/Y/Z por cara, controles independientes y conservación de zonas anteriores; adquisición/revalidación para recogida, combate, cosecha, rotura y tala. Conserva rangos, lanzadardos y movilidades. Coincidencia adicional, fabricación y modelos originales pendientes (GOLEMS-AREAS.md).
+**Estado:** port.29 cierra la golemancia funcional: 2400 diseños, 16 sellos y sus opciones, logística/semillas, combate y defensa, minería progresiva y contenedores, prensa multibloque reversible y modelos OBJ originales con carga/animaciones. Fabricador de patrones integrado con proveedores y reposición. Adaptaciones modernas de placas, interfaz y compatibilidad con prensas compactas documentadas (GOLEMS-COMPLETE.md).
 
 Contenido: `golemBuilder`, `golemBell`, `golemPlacer`, `seals`.
 

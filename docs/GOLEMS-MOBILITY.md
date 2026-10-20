@@ -1,5 +1,7 @@
 # Movilidad de gólems — port.23
 
+**Estado actual:** [cierre de golemancia en port.29](GOLEMS-COMPLETE.md). Este documento describe una entrega histórica; sus listas de pendientes quedan sustituidas por el estado actual.
+
 Minecraft 26.3 / Forge 66.0.13 / Java 25. La prensa permite elegir Caminantes, Ruedas, Trepadoras o Levitadoras. Se conservan los identificadores anteriores y se añade el levitador arcano como dependencia fabricable; no se añaden sellos. M11 sigue parcial.
 
 ## Construcción y progresión
