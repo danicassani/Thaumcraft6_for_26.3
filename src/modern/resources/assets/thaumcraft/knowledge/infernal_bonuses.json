@@ -1,0 +1,221 @@
+[
+  {
+    "inputs": [
+      "thaumcraft:cluster_iron",
+      "#minecraft:iron_ores",
+      "minecraft:raw_iron"
+    ],
+    "output": "minecraft:iron_nugget",
+    "chance": 0.33
+  },
+  {
+    "inputs": [
+      "#minecraft:iron_ores",
+      "minecraft:raw_iron"
+    ],
+    "output": "thaumcraft:nugget_rareearth",
+    "chance": 0.01
+  },
+  {
+    "inputs": [
+      "thaumcraft:cluster_gold",
+      "#minecraft:gold_ores",
+      "minecraft:raw_gold"
+    ],
+    "output": "minecraft:gold_nugget",
+    "chance": 0.33
+  },
+  {
+    "inputs": [
+      "#minecraft:gold_ores",
+      "minecraft:raw_gold"
+    ],
+    "output": "thaumcraft:nugget_rareearth",
+    "chance": 0.02
+  },
+  {
+    "inputs": [
+      "thaumcraft:cluster_copper",
+      "#minecraft:copper_ores",
+      "minecraft:raw_copper"
+    ],
+    "output": "thaumcraft:nugget_copper",
+    "chance": 0.33
+  },
+  {
+    "inputs": [
+      "#minecraft:copper_ores",
+      "minecraft:raw_copper"
+    ],
+    "output": "thaumcraft:nugget_rareearth",
+    "chance": 0.01
+  },
+  {
+    "inputs": [
+      "thaumcraft:cluster_tin",
+      "#c:ores/tin",
+      "thaumcraft:ore_tin"
+    ],
+    "output": "thaumcraft:nugget_tin",
+    "chance": 0.33
+  },
+  {
+    "inputs": [
+      "#c:ores/tin",
+      "thaumcraft:ore_tin"
+    ],
+    "output": "thaumcraft:nugget_rareearth",
+    "chance": 0.01
+  },
+  {
+    "inputs": [
+      "thaumcraft:cluster_silver",
+      "#c:ores/silver",
+      "thaumcraft:ore_silver"
+    ],
+    "output": "thaumcraft:nugget_silver",
+    "chance": 0.33
+  },
+  {
+    "inputs": [
+      "#c:ores/silver",
+      "thaumcraft:ore_silver"
+    ],
+    "output": "thaumcraft:nugget_rareearth",
+    "chance": 0.02
+  },
+  {
+    "inputs": [
+      "thaumcraft:cluster_lead",
+      "#c:ores/lead",
+      "thaumcraft:ore_lead"
+    ],
+    "output": "thaumcraft:nugget_lead",
+    "chance": 0.33
+  },
+  {
+    "inputs": [
+      "#c:ores/lead",
+      "thaumcraft:ore_lead"
+    ],
+    "output": "thaumcraft:nugget_rareearth",
+    "chance": 0.01
+  },
+  {
+    "inputs": [
+      "thaumcraft:cluster_cinnabar",
+      "#c:ores/cinnabar",
+      "thaumcraft:ore_cinnabar"
+    ],
+    "output": "thaumcraft:nugget_quicksilver",
+    "chance": 0.33
+  },
+  {
+    "inputs": [
+      "#c:ores/cinnabar",
+      "thaumcraft:ore_cinnabar"
+    ],
+    "output": "thaumcraft:nugget_rareearth",
+    "chance": 0.025
+  },
+  {
+    "inputs": [
+      "thaumcraft:cluster_quartz",
+      "minecraft:nether_quartz_ore"
+    ],
+    "output": "thaumcraft:nugget_quartz",
+    "chance": 0.33
+  },
+  {
+    "inputs": [
+      "minecraft:nether_quartz_ore"
+    ],
+    "output": "thaumcraft:nugget_rareearth",
+    "chance": 0.01
+  },
+  {
+    "inputs": [
+      "thaumcraft:cluster_iron",
+      "thaumcraft:cluster_gold",
+      "thaumcraft:cluster_copper",
+      "thaumcraft:cluster_tin",
+      "thaumcraft:cluster_silver",
+      "thaumcraft:cluster_lead",
+      "thaumcraft:cluster_cinnabar",
+      "thaumcraft:cluster_quartz"
+    ],
+    "output": "thaumcraft:nugget_rareearth",
+    "chance": 0.02
+  },
+  {
+    "inputs": [
+      "#minecraft:diamond_ores"
+    ],
+    "output": "thaumcraft:nugget_rareearth",
+    "chance": 0.025
+  },
+  {
+    "inputs": [
+      "#minecraft:emerald_ores"
+    ],
+    "output": "thaumcraft:nugget_rareearth",
+    "chance": 0.025
+  },
+  {
+    "inputs": [
+      "#minecraft:redstone_ores"
+    ],
+    "output": "thaumcraft:nugget_rareearth",
+    "chance": 0.01
+  },
+  {
+    "inputs": [
+      "#minecraft:lapis_ores"
+    ],
+    "output": "thaumcraft:nugget_rareearth",
+    "chance": 0.01
+  },
+  {
+    "inputs": [
+      "minecraft:beef"
+    ],
+    "output": "thaumcraft:chunk_beef",
+    "chance": 0.33
+  },
+  {
+    "inputs": [
+      "minecraft:chicken"
+    ],
+    "output": "thaumcraft:chunk_chicken",
+    "chance": 0.33
+  },
+  {
+    "inputs": [
+      "minecraft:porkchop"
+    ],
+    "output": "thaumcraft:chunk_pork",
+    "chance": 0.33
+  },
+  {
+    "inputs": [
+      "minecraft:rabbit"
+    ],
+    "output": "thaumcraft:chunk_rabbit",
+    "chance": 0.33
+  },
+  {
+    "inputs": [
+      "minecraft:mutton"
+    ],
+    "output": "thaumcraft:chunk_mutton",
+    "chance": 0.33
+  },
+  {
+    "inputs": [
+      "minecraft:cod",
+      "minecraft:salmon"
+    ],
+    "output": "thaumcraft:chunk_fish",
+    "chance": 0.33
+  }
+]

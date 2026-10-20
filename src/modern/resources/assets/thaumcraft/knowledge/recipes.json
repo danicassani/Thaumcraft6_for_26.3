@@ -2047,5 +2047,13 @@
     "C: thaumcraft:metal_alchemical",
     "P: thaumcraft:mechanism_simple",
     "Vis 100; crystals ordo 1, perditio 1"
+  ],
+  "thaumcraft:infernalfurnace": [
+    "3 x 3 x 3 multiblock; Salis Mundus; INFERNALFURNACE",
+    "12 minecraft:nether_bricks; 12 minecraft:obsidian; iron bars; lava source",
+    "Corners: nether bricks on all three layers. Remaining frame: obsidian.",
+    "Bottom center: obsidian. Middle center: lava. Top center: open.",
+    "Front middle: iron bars. Apply Salis to any frame block or bars.",
+    "No fuel. Input through open top or top item capability. Output through front."
   ]
 }

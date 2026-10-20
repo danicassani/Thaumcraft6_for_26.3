@@ -36,6 +36,9 @@
     "thaumcraft:recharge_pedestal",
     "thaumcraft:void_siphon",
     "thaumcraft:stabilizer",
-    "thaumcraft:inlay"
+    "thaumcraft:inlay",
+    "thaumcraft:infernal_nether_bricks",
+    "thaumcraft:infernal_obsidian",
+    "thaumcraft:infernal_furnace"
   ]
 }

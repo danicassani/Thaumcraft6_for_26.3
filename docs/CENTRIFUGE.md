@@ -2,6 +2,8 @@
 
 Añade la centrifugadora a Minecraft 26.3 / Forge 66.0.13 / Java 25. Es el segundo lote de alquimia avanzada, tras los hornos y mejoras de port.30. No cambia la generación del mundo. El horno infernal, el Thaumatorium y el condensador siguen pendientes.
 
+El horno infernal se añade en [port.32](INFERNAL-FURNACE.md).
+
 ## Funcionamiento
 
 La máquina conserva las reglas de `TileCentrifuge` original: una unidad de un aspecto compuesto produce **una unidad de uno de sus dos componentes**, elegido al azar. No produce ambos ni dos unidades. Utiliza las 31 composiciones del catálogo original de 37 aspectos; rechaza los seis primarios y los identificadores desconocidos.
