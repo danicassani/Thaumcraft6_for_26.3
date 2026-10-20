@@ -37,3 +37,5 @@ Compilación final limpia: 98 pruebas correctas, sin fallos, errores ni omitidas
 ## Pendiente
 
 Brazos de dardos y combate a distancia de gólems, rangos/experiencia, opciones originales adicionales de coincidencia/área, fabricación y modelos/animaciones originales. Esta entrega no completa toda la golemancia original.
+
+Actualización posterior: [Brazos lanzadardos — port.25](GOLEMS-DARTS.md).

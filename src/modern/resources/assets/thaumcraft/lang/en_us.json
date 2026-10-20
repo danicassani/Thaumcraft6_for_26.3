@@ -681,7 +681,7 @@
   "research.GOLEMBREAKER.stage.2": "By replacing a golem's arms with a set of powerful, diamond-tipped pneumatic grinders it will be able to break through all but the hardest materials.<BR>§9This research unlocks additional golem parts§0.",
   "research.GOLEMCOMBATADV.title": "Improved Golem Combat",
   "research.GOLEMCOMBATADV.stage.1": "I should design improved weapons and armor for my golems.",
-  "research.GOLEMCOMBATADV.stage.2": "You can now craft specialized golem weaponry and armor to make them much more effective in combat.<BR>§9This research unlocks additional golem parts§0.",
+  "research.GOLEMCOMBATADV.stage.2": "Dart arms require this research and cost one aggression module, two dispensers, 32 arrows and one extra simple mechanism in the press. They grant Fighter, Clumsy, Ranged and Fragile. The Fighter addon pays its own second aggression module. Arrows are construction materials: no ammunition is taken per shot, matching the original arms. Darts cannot be picked up. Guard/advanced Guard and Butcher use physical projectiles up to 16 blocks, after 20 ticks of visible aim, with a 20–25 tick shot interval. They need valid tasks, owner/channel, loaded chunks and clear block sight; no ranged melee fallback. Each dart retains its chosen victim, worker and seal and rechecks protection, PvP, redstone, range of the seal and butcher breeding population at impact. Changing the task or disabling the worker invalidates shots. Darts expire after 200 ticks and vanish on block impact; no collateral targets. Other arms keep their previous melee behavior. Native launcher shapes are adapted; original OBJ animations remain pending.",
   "research.BASEELDRITCH.title": "Void Seeds",
   "research.BASEELDRITCH.stage.1": "The void seed I have discovered begs further study. I should study it further and perhaps discover a practical use for it.<BR>Currently it seems morphicly unstable - it's physical properties are constantly shifting and changing shape. Maybe binding it with something else will make it easier to manipulate. Metal perhaps?",
   "research.BASEELDRITCH.stage.2": "My hand shakes as I write this. The strange substance I have investigated has opened strange new vistas in my mind.<BR>Before me I have formulas for creating a mysterious new metal, yet I do not remember writing them, nor does the handwriting look quite like mine.<BR>The metal they describe is a mass of contradictions. It is hard and unyielding, yet at the same time soft and easy to work. It will feel warm to the touch, almost alive and like living things it will slowly heal itself if damaged.<BR>Crafting mere physical tools from this seems almost... wrong.",
@@ -1161,5 +1161,7 @@
   "block.thaumcraft.levitator": "Arcane Levitator",
   "block.thaumcraft.levitator.range": "Range: %s blocks. Cost: %s / 1200 vis per entity-tick.",
   "golem.thaumcraft.scout": "Scout",
-  "golem.thaumcraft.smart_scout": "Smart Scout"
+  "golem.thaumcraft.smart_scout": "Smart Scout",
+  "golem.thaumcraft.darts": "Dart launchers",
+  "golem.thaumcraft.ranged": "Ranged"
 }

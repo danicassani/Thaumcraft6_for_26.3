@@ -13,7 +13,7 @@ import thaumcraft.golems.*;
 @Mod.EventBusSubscriber(modid=Thaumcraft.MODID,value=Dist.CLIENT)
 public final class GolemScreens {
     @SubscribeEvent public static void setup(FMLClientSetupEvent e){e.enqueueWork(()->{net.minecraft.client.gui.screens.MenuScreens.register(GolemContent.BUILDER_MENU.get(),Builder::new);net.minecraft.client.gui.screens.MenuScreens.register(GolemContent.SEAL_MENU.get(),Seal::new);});}
-    @SubscribeEvent public static void renderers(net.minecraftforge.client.event.EntityRenderersEvent.RegisterRenderers e){e.registerEntityRenderer(GolemContent.GOLEM.get(),GolemRenderer::new);}
+    @SubscribeEvent public static void renderers(net.minecraftforge.client.event.EntityRenderersEvent.RegisterRenderers e){e.registerEntityRenderer(GolemContent.GOLEM.get(),GolemRenderer::new);e.registerEntityRenderer(GolemContent.DART.get(),net.minecraft.client.renderer.entity.TippableArrowRenderer::new);}
     public static final class Builder extends AbstractContainerScreen<GolemBuilderMenu> {
         private final Button[] buttons=new Button[6];public Builder(GolemBuilderMenu m,Inventory i,Component t){super(m,i,t,176,238);inventoryLabelY=144;}
         protected void init(){super.init();for(int j=0;j<6;j++){final int action=j;buttons[j]=addRenderableWidget(Button.builder(Component.empty(),b->minecraft.gameMode.handleInventoryButtonClick(menu.containerId,action)).bounds(leftPos+8,topPos+18+(j==4?5:j==5?4:j)*18,j==4?126:160,18).build());}containerTick();}

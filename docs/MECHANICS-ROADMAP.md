@@ -64,7 +64,7 @@ Contenido: `wandWorkbench`, `pechWand`, `alumentum`, `turretPlacer`, `causalityC
 
 ## M11: Gólems, sellos, tareas e IA
 
-**Estado:** port.24 añade cabezas Explorador/Explorador inteligente, receta original del módulo de visión y radio coherente de 48 bloques para tareas, proveedores y entregas; conserva los índices antiguos y la movilidad de port.23. Dardos, rangos/experiencia, opciones adicionales y modelos originales pendientes (GOLEMS-SCOUTS.md).
+**Estado:** port.25 añade brazos Lanzadardos, proyectiles físicos ligados a víctima/sello, cadencia y guardia/carnicero a distancia con protección al impactar; conserva las cabezas exploradoras y cuatro movilidades. Rangos/experiencia, opciones adicionales, fabricación y modelos originales pendientes (GOLEMS-DARTS.md).
 
 Contenido: `golemBuilder`, `golemBell`, `golemPlacer`, `seals`.
 
