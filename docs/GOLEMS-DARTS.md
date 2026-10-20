@@ -41,3 +41,5 @@ Compilación limpia: 104 pruebas, cero fallos, errores u omisiones. JAR `thaumcr
 ## Pendiente
 
 Rangos y experiencia de gólems, opciones originales adicionales de área/coincidencia, tareas de fabricación y modelos/animaciones originales. Implementar los cinco tipos de brazo no completa toda la golemancia original.
+
+port.26 incorpora [rangos y experiencia](GOLEMS-RANKS.md).
