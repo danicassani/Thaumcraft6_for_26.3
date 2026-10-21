@@ -1,0 +1,58 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "thaumcraft:block/taint_crust_0",
+        "weight": 8
+      },
+      {
+        "model": "thaumcraft:block/taint_crust_1",
+        "weight": 8,
+        "x": 90
+      },
+      {
+        "model": "thaumcraft:block/taint_crust_2",
+        "weight": 8,
+        "y": 90
+      },
+      {
+        "model": "thaumcraft:block/taint_crust_3",
+        "weight": 8,
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "thaumcraft:block/taint_crust_4"
+      },
+      {
+        "model": "thaumcraft:block/taint_crust_5",
+        "x": 90
+      },
+      {
+        "model": "thaumcraft:block/taint_crust_6",
+        "y": 90
+      },
+      {
+        "model": "thaumcraft:block/taint_crust_7",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "thaumcraft:block/taint_crust_8"
+      },
+      {
+        "model": "thaumcraft:block/taint_crust_9",
+        "x": 90
+      },
+      {
+        "model": "thaumcraft:block/taint_crust_10",
+        "y": 90
+      },
+      {
+        "model": "thaumcraft:block/taint_crust_11",
+        "x": 90,
+        "y": 90
+      }
+    ]
+  }
+}

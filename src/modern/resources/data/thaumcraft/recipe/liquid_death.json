@@ -1,0 +1,13 @@
+{
+  "type": "thaumcraft:crucible",
+  "catalyst": "minecraft:bucket",
+  "research": "LIQUIDDEATH",
+  "aspects": {
+    "mortuus": 100,
+    "alkimia": 20,
+    "perditio": 50
+  },
+  "result": {
+    "id": "thaumcraft:bucket_death"
+  }
+}

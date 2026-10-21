@@ -21,8 +21,8 @@ Desde [port.5](AURA-CORE.md), `world.generateAura` controla la inicialización d
 | CONFIG_WORLD.oreDensity | `100` | The % of normal ore amounts that will be spawned. For example 50 will spawn half the ores while 200 will spawn double. Default 100 | SERVER world.oreDensity | activa en chunks nuevos (paso 3) |
 | CONFIG_WORLD.generateMagicForest | `true` | Generar bosque mágico | SERVER world.generateMagicForest | migrada (esquema) |
 | CONFIG_WORLD.biomeMagicalForestWeight | `5` | Higher values increases number of magical forest biomes. If you are using biome addon mods you probably want to increase this weight quite a bit | SERVER world.biomeMagicalForestWeight | migrada (esquema) |
-| CONFIG_WORLD.taintSpreadRate | `100.0f` | The % chance of taint fibres spreading on a block tick. Setting this to 0 will effectively stop taint fibre spread. | SERVER world.taintSpreadRate | migrada (esquema) |
-| CONFIG_WORLD.taintSpreadArea | `32` | The range at which taint can spread from a taint seed. This value is only a base and will be modified by flux levels. | SERVER world.taintSpreadArea | migrada (esquema) |
+| CONFIG_WORLD.taintSpreadRate | `100.0f` | The % chance of taint fibres spreading on a block tick. Setting this to 0 will effectively stop taint fibre spread. | SERVER world.taintSpreadRate | activa en la propagación (TAINT-FLUIDS.md) |
+| CONFIG_WORLD.taintSpreadArea | `32` | The range at which taint can spread from a taint seed. This value is only a base and will be modified by flux levels. | SERVER world.taintSpreadArea | activa en semillas y degradación (TAINT-FLUIDS.md) |
 | CONFIG_WORLD.generateAura | `true` | Generar aura | SERVER world.generateAura | conectada: nuevos registros de aura |
 | CONFIG_WORLD.generateStructure | `true` | Habilitar generación de estructuras Thaumcraft | SERVER world.generateStructure | migrada (esquema) |
 | CONFIG_WORLD.generateCinnabar | `true` | Habilitar generación de mena de cinabrio | SERVER world.generateCinnabar | activa en chunks nuevos (paso 3) |

@@ -11,15 +11,16 @@ import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
 /** Datapack recipe, separate from crafting and cooking; the machine pays aspects and water. */
-public record AlchemyRecipe(Ingredient catalyst,Map<String,Integer> aspects,ItemStackTemplate result,String research,String crystalAspect) implements Recipe<SingleRecipeInput>{
-    public AlchemyRecipe(Ingredient c,Map<String,Integer> a,ItemStackTemplate r,String research){this(c,a,r,research,"");}
+public record AlchemyRecipe(Ingredient catalyst,Map<String,Integer> aspects,ItemStackTemplate result,String research,String crystalAspect,String phialAspect) implements Recipe<SingleRecipeInput>{
+    public AlchemyRecipe(Ingredient c,Map<String,Integer> a,ItemStackTemplate r,String research){this(c,a,r,research,"","");}
+    public AlchemyRecipe(Ingredient c,Map<String,Integer> a,ItemStackTemplate r,String research,String crystal){this(c,a,r,research,crystal,"");}
     public static final MapCodec<AlchemyRecipe> CODEC=RecordCodecBuilder.mapCodec(i->i.group(
         Ingredient.CODEC.fieldOf("catalyst").forGetter(AlchemyRecipe::catalyst),AspectAmounts.CODEC.validate(m->m.isEmpty()?DataResult.error(()->"Alchemy needs aspects"):DataResult.success(m)).fieldOf("aspects").forGetter(AlchemyRecipe::aspects),
-        ItemStackTemplate.CODEC.fieldOf("result").forGetter(AlchemyRecipe::result),Codec.string(0,192).fieldOf("research").forGetter(AlchemyRecipe::research),thaumcraft.essentia.TubeState.FILTER.optionalFieldOf("crystal_aspect","").forGetter(AlchemyRecipe::crystalAspect)
+        ItemStackTemplate.CODEC.fieldOf("result").forGetter(AlchemyRecipe::result),Codec.string(0,192).fieldOf("research").forGetter(AlchemyRecipe::research),thaumcraft.essentia.TubeState.FILTER.optionalFieldOf("crystal_aspect","").forGetter(AlchemyRecipe::crystalAspect),thaumcraft.essentia.TubeState.FILTER.optionalFieldOf("phial_aspect","").forGetter(AlchemyRecipe::phialAspect)
     ).apply(i,AlchemyRecipe::new));
     public static final StreamCodec<RegistryFriendlyByteBuf,AlchemyRecipe> STREAM=ByteBufCodecs.fromCodecWithRegistries(CODEC.codec());
     public AlchemyRecipe{aspects=Map.copyOf(aspects);}
-    @Override public boolean matches(SingleRecipeInput input,Level level){return catalyst.test(input.item())&&(crystalAspect.isEmpty()||input.item().is(thaumcraft.crystals.CrystalContent.ESSENCE.get())&&thaumcraft.crystals.CrystalContent.aspect(input.item()).equals(crystalAspect));}
+    @Override public boolean matches(SingleRecipeInput input,Level level){return catalyst.test(input.item())&&(phialAspect.isEmpty()||input.item().is(AlchemyContent.PHIAL.get())&&AlchemyContent.amount(input.item())==10&&AlchemyContent.aspect(input.item()).equals(phialAspect))&&(crystalAspect.isEmpty()||input.item().is(thaumcraft.crystals.CrystalContent.ESSENCE.get())&&thaumcraft.crystals.CrystalContent.aspect(input.item()).equals(crystalAspect));}
     @Override public ItemStack assemble(SingleRecipeInput input){return result.create();}
     @Override public RecipeSerializer<AlchemyRecipe> getSerializer(){return AlchemyContent.SERIALIZER.get();}
     @Override public RecipeType<AlchemyRecipe> getType(){return AlchemyContent.RECIPES.get();}

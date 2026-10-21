@@ -50,8 +50,8 @@ public final class ScanningService {
         if(target!=null){result=observe(player,target);effects=target.position();}
         else if(block.getType()==HitResult.Type.BLOCK){
             var pos=block.getBlockPos();var state=level.getBlockState(pos);var item=state.getBlock().asItem();
-            ItemStack stack=new ItemStack(item);if(stack.isEmpty()){if(!state.getFluidState().isEmpty())stack=new ItemStack(state.getFluidState().is(net.minecraft.tags.FluidTags.LAVA)?Items.LAVA_BUCKET:Items.WATER_BUCKET);}
-            result=observe(player,stack);effects=Vec3.atCenterOf(pos);
+            ItemStack stack=new ItemStack(item);if(stack.isEmpty()){if(!state.getFluidState().isEmpty())stack=new ItemStack(state.getFluidState().getType().getBucket());}
+            result=state.is(thaumcraft.taint.TaintContent.GOO.get())?observe(player,false,"thaumcraft:flux_goo","thaumcraft:flux_goo",Map.of("vitium",10)):observe(player,stack);effects=Vec3.atCenterOf(pos);
             var tile=level.getBlockEntity(pos);if(tile!=null){var capability=tile.getCapability(ForgeCapabilities.ITEM_HANDLER,net.minecraft.core.Direction.UP);if(capability.isPresent()){var handler=capability.orElseThrow(IllegalStateException::new);for(int i=0;i<Math.min(handler.getSlots(),100);i++)if(!handler.getStackInSlot(i).isEmpty())result=observe(player,handler.getStackInSlot(i))||result;}}
         }else {return thaumcraft.theory.CelestialObservations.scan(player);}
         if(result)level.sendParticles(ParticleTypes.ENCHANT,effects.x,effects.y+.5,effects.z,20,.4,.4,.4,.1);

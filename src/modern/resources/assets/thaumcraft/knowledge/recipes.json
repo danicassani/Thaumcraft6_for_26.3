@@ -2117,5 +2117,17 @@
     "F: thaumcraft:filter",
     "Q: minecraft:quartz",
     "Vis 100; crystals terra 3, aer 3"
+  ],
+  "thaumcraft:LiquidDeath": [
+    "Catalyst minecraft:bucket",
+    "mortuus 100, alkimia 20, perditio 50"
+  ],
+  "thaumcraft:BathSalts": [
+    "Catalyst thaumcraft:salis_mundus",
+    "cognitio 40, aer 40, ordo 40, victus 40"
+  ],
+  "thaumcraft:BottleTaint": [
+    "Catalyst thaumcraft:phial (Vitium 10)",
+    "vitium 30, aqua 30"
   ]
 }

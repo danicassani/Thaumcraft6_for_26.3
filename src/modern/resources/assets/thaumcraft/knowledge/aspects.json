@@ -790,6 +790,36 @@
       "vitium": 15,
       "vitreus": 10
     },
+    "thaumcraft:taint_fibre": {
+      "herba": 5,
+      "vitium": 10
+    },
+    "thaumcraft:taint_crust": {
+      "victus": 5,
+      "vitium": 5
+    },
+    "thaumcraft:taint_soil": {
+      "terra": 5,
+      "vitium": 5
+    },
+    "thaumcraft:taint_geyser": {
+      "auram": 5,
+      "aqua": 5,
+      "vitium": 10
+    },
+    "thaumcraft:taint_rock": {
+      "terra": 10,
+      "vitium": 5
+    },
+    "thaumcraft:taint_feature": {
+      "auram": 5,
+      "bestia": 5,
+      "vitium": 10
+    },
+    "thaumcraft:taint_log": {
+      "herba": 5,
+      "vitium": 5
+    },
     "thaumcraft:log_greatwood": {
       "herba": 20,
       "victus": 5
@@ -853,6 +883,10 @@
       "metallum": 5,
       "alienis": 5,
       "cognitio": 5
+    },
+    "thaumcraft:stone_porous": {
+      "terra": 5,
+      "vacuos": 5
     },
     "thaumcraft:brain": {
       "victus": 5,
@@ -1140,6 +1174,39 @@
       "vitium": 20,
       "alienis": 20,
       "auram": 20
+    },
+    "thaumcraft:thaumic_slime": {
+      "victus": 5,
+      "aqua": 5,
+      "vitium": 5,
+      "alkimia": 5
+    },
+    "thaumcraft:taintacle": {
+      "vitium": 15,
+      "bestia": 10
+    },
+    "thaumcraft:taint_seed": {
+      "herba": 20,
+      "bestia": 20,
+      "vitium": 20
+    },
+    "thaumcraft:taint_seed_prime": {
+      "herba": 30,
+      "bestia": 30,
+      "vitium": 30
+    },
+    "thaumcraft:taintacle_small": {
+      "vitium": 5,
+      "bestia": 5
+    },
+    "thaumcraft:taint_swarm": {
+      "vitium": 15,
+      "aer": 5
+    },
+    "thaumcraft:taintacle_giant": {
+      "alienis": 40,
+      "bestia": 40,
+      "vitium": 40
     }
   },
   "triggers": {
@@ -1394,6 +1461,27 @@
       ],
       "minecraft:llama_spit": [
         "f_spit"
+      ],
+      "thaumcraft:taint_seed": [
+        "!TaintSeed"
+      ],
+      "thaumcraft:taint_seed_prime": [
+        "!TaintSeed"
+      ],
+      "thaumcraft:taint_crawler": [
+        "!TaintCrawler"
+      ],
+      "thaumcraft:taintacle": [
+        "!Taintacle"
+      ],
+      "thaumcraft:taintacle_small": [
+        "!Taintacle"
+      ],
+      "thaumcraft:taintacle_giant": [
+        "!Taintacle"
+      ],
+      "thaumcraft:thaumic_slime": [
+        "!ThaumSlime"
       ]
     }
   }

@@ -76,7 +76,7 @@ Contenido: `brain`, `sanitySoap`, `bathSalts`, `sanityChecker`, `voidAxe`, `void
 
 ## M13: Corrupción, contagio, rifts y fluidos especiales
 
-**Estado:** núcleo de grietas implementado para el sifón: generación por flux, crecimiento, estabilidad, colisiones, sincronización, guardado y colapso con semillas; eventos avanzados, corrupción y fluidos pendientes (ARCANE-RIFTS.md).
+**Estado:** port.35 añade corrupción dependiente de semillas, degradación, criaturas corruptas, goo finito, muerte líquida, baños purificadores, botellas, agotamiento y protección temporal, sucesos de semilla y contagio de grietas. Wisps/nubes de grieta, perla primordial y equivalencia final pendientes (TAINT-FLUIDS.md).
 
 Contenido: `taintFibre`, `taintCrust`, `taintSoil`, `taintRock`, `taintGeyser`, `taintFeature`, `taintLog`, `fluxGoo`, `liquidDeath`, `purifyingFluid`, `bottleTaint`.
 
@@ -100,7 +100,7 @@ Contenido: `stonePorous`, `lootCrateCommon`, `lootCrateUncommon`, `lootCrateRare
 
 ## Dependencias adicionales fuera del registro BlocksTC/ItemsTC
 
-También quedan pendientes los cubos de muerte líquida y fluido purificador (M13), las criaturas/IA y huevos de aparición de ConfigEntities (M10–M13/M16), los encantamientos normales y de infusión (M09/M12), los efectos de poción propios (M12/M13) y la generación de biomas/estructuras/dimensiones (M01/M16). No son referencias independientes de ItemsTC.
+Se han portado los cubos de muerte líquida y fluido purificador y las criaturas directamente asociadas a la corrupción (TAINT-FLUIDS.md). Quedan las demás criaturas/IA y huevos de aparición de ConfigEntities (M10–M13/M16), los encantamientos normales y de infusión (M09/M12), los efectos de poción propios (M12/M13) y la generación de biomas/estructuras/dimensiones (M01/M16). No son referencias independientes de ItemsTC.
 
 ## Orden de implementación por dependencias
 

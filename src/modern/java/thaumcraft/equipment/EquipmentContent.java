@@ -33,7 +33,8 @@ public final class EquipmentContent {
     private static final EquipmentSlot[] ARMOR={EquipmentSlot.HEAD,EquipmentSlot.CHEST,EquipmentSlot.LEGS,EquipmentSlot.FEET};
     public static String name(ItemStack s){var id=BuiltInRegistries.ITEM.getKey(s.getItem());return id.getNamespace().equals("thaumcraft")?id.getPath():"";}
     public static float visCost(Player p,float base){int discount=0;for(var slot:ARMOR)discount+=DISCOUNTS.getOrDefault(name(p.getItemBySlot(slot)),0);if(name(p.getOffhandItem()).equals("charm_voidseer")&&p instanceof ServerPlayer real){var warp=thaumcraft.persistence.PlayerWarpStore.read(real).result();if(warp.isPresent())discount+=Math.min(25,warp.get().permanent()/4);}
-        return base*(1-Math.min(80,discount)/100F);}
+        int exhaustion=0;for(var effect:java.util.List.of(thaumcraft.taint.TaintContent.EXHAUST,thaumcraft.taint.TaintContent.INFECTIOUS)){var active=p.getEffect(effect.getHolder().orElseThrow());if(active!=null)exhaustion=Math.max(exhaustion,active.getAmplifier()+1);}
+        return base*(1-Math.min(80,discount-10*exhaustion)/100F);}
     public static int runic(ItemStack s){return s.getOrDefault(RUNIC.get(),0);}
     public static boolean canAugment(ItemStack s){return s.getCount()==1&&(s.has(net.minecraft.core.component.DataComponents.EQUIPPABLE)||s.getItem() instanceof AccessoryItem)&&runic(s)<9;}
     public static ItemStack augment(ItemStack s){if(!canAugment(s))return ItemStack.EMPTY;var out=s.copy();out.set(RUNIC.get(),runic(s)+1);return out;}

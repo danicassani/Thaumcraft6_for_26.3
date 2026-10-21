@@ -45,6 +45,8 @@
     "thaumcraft:brain_box",
     "thaumcraft:condenser",
     "thaumcraft:condenser_lattice",
-    "thaumcraft:condenser_lattice_dirty"
+    "thaumcraft:condenser_lattice_dirty",
+    "thaumcraft:taint_rock",
+    "thaumcraft:stone_porous"
   ]
 }
