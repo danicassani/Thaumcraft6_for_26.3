@@ -39,6 +39,9 @@
     "thaumcraft:inlay",
     "thaumcraft:infernal_nether_bricks",
     "thaumcraft:infernal_obsidian",
-    "thaumcraft:infernal_furnace"
+    "thaumcraft:infernal_furnace",
+    "thaumcraft:thaumatorium",
+    "thaumcraft:thaumatorium_top",
+    "thaumcraft:brain_box"
   ]
 }

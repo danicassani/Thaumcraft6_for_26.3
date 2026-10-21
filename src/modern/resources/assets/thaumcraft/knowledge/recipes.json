@@ -20,6 +20,17 @@
     "Vis: 25",
     "aer: 1"
   ],
+  "thaumcraft:brain_box": [
+    "[IAI]",
+    "[ABA]",
+    "[IAI]",
+    "I = thaumcraft:plate_iron",
+    "A = thaumcraft:amber",
+    "B = thaumcraft:mind_clockwork",
+    "Vis: 50",
+    "terra: 1",
+    "ordo: 1"
+  ],
   "thaumcraft:caster_basic": [
     "Research: UNLOCKAUROMANCY@2",
     "[III]",
@@ -2055,5 +2066,15 @@
     "Bottom center: obsidian. Middle center: lava. Top center: open.",
     "Front middle: iron bars. Apply Salis to any frame block or bars.",
     "No fuel. Input through open top or top item capability. Output through front."
+  ],
+  "thaumcraft:Thaumatorium": [
+    "Salis Mundus: two alchemical constructs above a crucible. Heat below the crucible."
+  ],
+  "thaumcraft:MnemonicMatrix": [
+    "IAI / ABA / IAI",
+    "I: thaumcraft:plate_iron",
+    "A: thaumcraft:amber",
+    "B: thaumcraft:mind_clockwork",
+    "Vis 50; crystals terra 1, ordo 1"
   ]
 }

@@ -1,0 +1,10 @@
+package thaumcraft.thaumatorium;
+import com.mojang.serialization.*;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import java.util.*;
+import net.minecraft.world.item.ItemStack;
+import thaumcraft.alchemy.AspectAmounts;
+public record ThaumatoriumSave(int version,List<Selection> selections,ItemStack input,ItemStack reserved,List<ItemStack> products,Map<String,Integer> cost,Map<String,Integer> remaining,String active){
+ public record Selection(String id,String owner,String research){public static final Codec<Selection> CODEC=RecordCodecBuilder.create(i->i.group(Codec.string(1,256).fieldOf("id").forGetter(Selection::id),Codec.STRING.validate(s->{try{UUID.fromString(s);return DataResult.success(s);}catch(IllegalArgumentException e){return DataResult.error(()->"Invalid owner");}}).fieldOf("owner").forGetter(Selection::owner),Codec.string(0,192).fieldOf("research").forGetter(Selection::research)).apply(i,Selection::new));}
+ public static final Codec<ThaumatoriumSave> CODEC=RecordCodecBuilder.<ThaumatoriumSave>create(i->i.group(Codec.intRange(1,1).fieldOf("version").forGetter(ThaumatoriumSave::version),Selection.CODEC.listOf(0,15).fieldOf("selections").forGetter(ThaumatoriumSave::selections),ItemStack.OPTIONAL_CODEC.fieldOf("input").forGetter(ThaumatoriumSave::input),ItemStack.OPTIONAL_CODEC.fieldOf("reserved").forGetter(ThaumatoriumSave::reserved),ItemStack.CODEC.listOf(0,2).fieldOf("products").forGetter(ThaumatoriumSave::products),AspectAmounts.CODEC.fieldOf("cost").forGetter(ThaumatoriumSave::cost),AspectAmounts.CODEC.fieldOf("remaining").forGetter(ThaumatoriumSave::remaining),Codec.string(0,256).fieldOf("active").forGetter(ThaumatoriumSave::active)).apply(i,ThaumatoriumSave::new)).validate(s->s.selections.stream().map(Selection::id).distinct().count()==s.selections.size()&&AspectAmounts.contains(s.cost,s.remaining)&&(s.reserved.isEmpty()?s.cost.isEmpty()&&s.remaining.isEmpty()&&s.active.isEmpty():s.reserved.getCount()==1&&!s.cost.isEmpty()&&!s.products.isEmpty()&&!s.active.isEmpty())?DataResult.success(s):DataResult.error(()->"Inconsistent thaumatorium work"));
+}
