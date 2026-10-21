@@ -11,6 +11,7 @@ for kind,file in [('fortress','ModelFortressArmor'),('crimson_plate','ModelKnigh
   s=source
   # All four constructors use simple f-dependent belt branches with no nested blocks.
   s=re.sub(r'if \(f < 1\.0f\) \{([^{}]*)\}\s*else \{([^{}]*)\}',lambda m:m[1] if inner else m[2],s)
+  s=re.sub(r'if \(f >= 1\.0f\) \{([^{}]*)\}',lambda m:'' if inner else m[1],s)
   if kind=='fortress':
    a=s.index('        Mask = new ModelRenderer[3];');b=s.index('        (Goggles =',a)
    s=s[:a]+''.join(f'(Mask{i} = new ModelRenderer(this, {52+i*24}, 2)).addBox(-4.5f, -5.0f, -4.6f, 9, 5, 1);\nMask{i}.setRotationPoint(0,0,0);\n' for i in range(3))+s[b:]

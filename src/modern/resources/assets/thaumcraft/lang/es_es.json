@@ -865,5 +865,9 @@
   "item.thaumcraft.ring_apprentice": "Anillo del aprendiz",
   "item.thaumcraft.amulet_fancy": "Amuleto refinado",
   "item.thaumcraft.ring_fancy": "Anillo refinado",
-  "item.thaumcraft.girdle_fancy": "Faja refinada"
+  "item.thaumcraft.girdle_fancy": "Faja refinada",
+  "equipment.thaumcraft.shovel_plane": "Plano de construcción: %s (uso agachado en el aire para cambiar)",
+  "equipment.thaumcraft.shovel_controls": "Uso agachado en el aire: cambiar plano de construcción",
+  "equipment.thaumcraft.wind_use": "Mantén uso: cabalgar el viento",
+  "equipment.thaumcraft.attract_use": "Mantén uso: atraer objetos sueltos"
 }

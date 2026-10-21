@@ -55,3 +55,5 @@ El cierre nativo del cliente confirma también el archivo real `players/data/<uu
 Compilación limpia: **170 pruebas**, sin fallos, errores ni omitidas. El paquete contiene 320 recetas y 301 definiciones de objetos, sin clases de pruebas. Los generadores completos pasan dos veces y la segunda no modifica archivos.
 
 Artefacto: `thaumcraft-6.1.BETA26-port.39-forge66.0.13.jar` (8672516 bytes). SHA-256: `6f0f73e8dd11a0cfc636056ec1585284d2059a4c81dc9f27ad02441cda2146d5`.
+
+Actualización: [port.40](EQUIPMENT-ABILITIES.md) completa la protección especial, habilidades de herramientas, movimiento del viajero y oscilación de telas, y corrige la visibilidad del faldón del modelo interior. Las adaptaciones concretas al motor moderno se describen allí.

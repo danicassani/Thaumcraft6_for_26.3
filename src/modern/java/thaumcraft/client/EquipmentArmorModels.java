@@ -26,7 +26,8 @@ public final class EquipmentArmorModels {
   final String family;final EquipmentSlot slot;
   Armor(ModelPart root,String family,EquipmentSlot slot){super(root);this.family=family;this.slot=slot;}
   void show(ModelPart p,String child,boolean visible){if(p.hasChild(child))p.getChild(child).visible=visible;}
-  public void setupAnim(HumanoidRenderState s){super.setupAnim(s);head.visible=hat.visible=body.visible=leftArm.visible=rightArm.visible=leftLeg.visible=rightLeg.visible=false;switch(slot){case HEAD->head.visible=true;case CHEST->{body.visible=true;leftArm.visible=true;rightArm.visible=true;}case LEGS,FEET->{leftLeg.visible=true;rightLeg.visible=true;}default->{}}
+  public void setupAnim(HumanoidRenderState s){super.setupAnim(s);head.visible=hat.visible=body.visible=leftArm.visible=rightArm.visible=leftLeg.visible=rightLeg.visible=false;switch(slot){case HEAD->head.visible=true;case CHEST->{body.visible=true;leftArm.visible=true;rightArm.visible=true;}case LEGS->{body.visible=true;leftLeg.visible=true;rightLeg.visible=true;}case FEET->{leftLeg.visible=true;rightLeg.visible=true;}default->{}}
+   EquipmentCloth.animate(body,family,s.walkAnimationPos,s.walkAnimationSpeed);
    if(family.equals("fortress")){int mask=s.headEquipment.getOrDefault(FortressMasks.MASK.get(),-1),set=0;for(var stack:List.of(s.headEquipment,s.chestEquipment,s.legsEquipment))if(EquipmentContent.name(stack).startsWith("fortress_"))set++;for(int i=0;i<3;i++)show(head,"Mask"+i,mask==i);show(head,"Goggles",s.headEquipment.getOrDefault(FortressMasks.GOGGLES.get(),false));for(String n:List.of("OrnamentL","OrnamentL2","OrnamentR","OrnamentR2","Gemornament","Gem"))show(head,n,set>=3);for(String n:List.of("flapL","flapR"))show(head,n,set>=2);show(body,"Book",set>=2);show(body,"Scroll",set>=3);}
   }
  }
