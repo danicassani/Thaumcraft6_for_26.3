@@ -2129,5 +2129,10 @@
   "thaumcraft:BottleTaint": [
     "Catalyst thaumcraft:phial (Vitium 10)",
     "vitium 30, aqua 30"
+  ],
+  "thaumcraft:SaneSoap": [
+    "Catalyst: thaumcraft:flesh_block",
+    "Cognitio 75, Alienis 50, Ordo 75, Victus 50",
+    "Research: SANESOAP"
   ]
 }

@@ -52,7 +52,7 @@ public final class ResearchService {
         PlayerWarpStore.State warpState=null;
         if(warp>0&&!ThaumcraftConfig.wussMode.get()&&player instanceof net.minecraft.server.level.ServerPlayer real){
             var saved=PlayerWarpStore.read(real).result();if(saved.isEmpty())return false;var w=saved.get();
-            warpState=new PlayerWarpStore.State(w.version(),Math.min(500,w.permanent()+(warp+1)/2),Math.min(500,w.normal()+warp/2),w.temporary(),w.counter());
+            warpState=thaumcraft.warp.WarpRules.add(w,(warp+1)/2,warp/2,0);
         }
         if(!KnowledgeStore.write(player,next))return false;
         if(warpState!=null&&PlayerWarpStore.write((net.minecraft.server.level.ServerPlayer)player,warpState).result().isEmpty()){KnowledgeStore.write(player,old);return false;}

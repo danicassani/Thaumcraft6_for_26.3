@@ -76,6 +76,7 @@ public final class BasicContent {
         thaumcraft.trees.TreeContent.register(bus);
         thaumcraft.thaumaturgy.ThaumaturgyContent.register(bus);
         thaumcraft.equipment.EquipmentContent.register(bus);
+        thaumcraft.warp.WarpContent.register(bus);
         thaumcraft.golems.GolemContent.register(bus);
         TABS.register(bus);
         OreCountPlacement.register(bus);

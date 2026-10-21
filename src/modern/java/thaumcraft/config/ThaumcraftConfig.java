@@ -10,6 +10,7 @@ public final class ThaumcraftConfig {
     public static final ForgeConfigSpec.BooleanValue largeTagText;
     public static final ForgeConfigSpec.BooleanValue disableShaders;
     public static final ForgeConfigSpec.BooleanValue crooked;
+    public static final ForgeConfigSpec.BooleanValue nostress;
     public static final ForgeConfigSpec.BooleanValue dialBottom;
     public static final ForgeConfigSpec.BooleanValue showTags;
     public static final ForgeConfigSpec.BooleanValue blueBiome;
@@ -55,6 +56,7 @@ public final class ThaumcraftConfig {
         largeTagText = client.define("largeTagText", false);
         disableShaders = client.define("disableShaders", false);
         crooked = client.define("crooked", true);
+        nostress = client.define("nostress", false);
         dialBottom = client.define("dialBottom", false);
         showTags = client.define("showTags", false);
         blueBiome = client.define("blueBiome", false);

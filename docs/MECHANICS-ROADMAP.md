@@ -70,7 +70,7 @@ Contenido: `golemBuilder`, `golemBell`, `golemPlacer`, `seals`.
 
 ## M12: Warp, autocuración, efectos de equipo y accesorios
 
-**Estado:** port.14 añade herramientas/armaduras del vacío, elementales, fortaleza y túnicas; reparación, descuentos, escudo rúnico, botas cargables, accesorios adaptados a mano secundaria y comprobador de cordura. Equivalencia completa, siete ranuras, máscaras, culto y limpieza de distorsión siguen pendientes (THAUMATURGY-EQUIPMENT.md).
+**Estado:** port.38 añade motor persistente de sucesos de distorsión, reactivación del contador, cinco aflicciones, jabón con receta original, arañas mentales, guardianes y portales/cultistas funcionales. Sales y protección del baño de port.35 integradas. Siguen pendientes siete ranuras, máscaras y equipamiento/modelos completos del culto; adaptaciones visuales y proyectil provisional del clérigo documentados (WARP-EVENTS.md, THAUMATURGY-EQUIPMENT.md).
 
 Contenido: `brain`, `sanitySoap`, `bathSalts`, `sanityChecker`, `voidAxe`, `voidSword`, `voidShovel`, `voidPick`, `voidHoe`, `elementalAxe`, `elementalSword`, `elementalShovel`, `elementalPick`, `elementalHoe`, `primalCrusher`, `crimsonBlade`, `goggles`, `clothChest`, `clothLegs`, `clothBoots`, `travellerBoots`, `fortressHelm`, `fortressChest`, `fortressLegs`, `voidHelm`, `voidChest`, `voidLegs`, `voidBoots`, `voidRobeHelm`, `voidRobeChest`, `voidRobeLegs`, `crimsonPlateHelm`, `crimsonPlateChest`, `crimsonPlateLegs`, `crimsonBoots`, `crimsonRobeHelm`, `crimsonRobeChest`, `crimsonRobeLegs`, `crimsonPraetorHelm`, `crimsonPraetorChest`, `crimsonPraetorLegs`, `baubles`, `amuletVis`, `charmVerdant`, `bandCuriosity`, `charmVoidseer`, `ringCloud`, `charmUndying`.
 

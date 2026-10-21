@@ -78,7 +78,7 @@ public final class ResearchTableEntity extends thaumcraft.devices.AuraDeviceEnti
         if(!ready(p,index))return false;var card=session.choices.get(index);var next=session.copy();var old=ResearchService.state(p);var effect=TheoryCards.apply(card,next,p,old);var take=plan(p,card);if(effect==null||take==null)return false;
         PlayerWarpStore.State warp=null;
         if((effect.normalWarp()>0||effect.temporaryWarp()>0)&&!ThaumcraftConfig.wussMode.get()){
-            if(!(p instanceof ServerPlayer real))return false;var saved=PlayerWarpStore.read(real).result();if(saved.isEmpty())return false;var w=saved.get();warp=new PlayerWarpStore.State(w.version(),w.permanent(),Math.min(500,w.normal()+effect.normalWarp()),Math.min(500,w.temporary()+effect.temporaryWarp()),w.counter());
+            if(!(p instanceof ServerPlayer real))return false;var saved=PlayerWarpStore.read(real).result();if(saved.isEmpty())return false;var w=saved.get();warp=thaumcraft.warp.WarpRules.add(w,0,effect.normalWarp(),effect.temporaryWarp());
         }
         if(!KnowledgeStore.write(p,effect.knowledge()))return false;
         if(warp!=null&&PlayerWarpStore.write((ServerPlayer)p,warp).result().isEmpty()){KnowledgeStore.write(p,old);return false;}

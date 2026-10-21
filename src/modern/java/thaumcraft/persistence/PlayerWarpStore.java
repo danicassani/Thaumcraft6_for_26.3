@@ -7,7 +7,7 @@ import net.minecraft.nbt.NbtOps;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 
-/** Server-authoritative storage only. No warp mechanics, packets, or legacy conversion. */
+/** Versioned server-authoritative storage; gameplay is handled by WarpEngine. */
 public final class PlayerWarpStore {
     public static final String ID = "thaumcraft:warp";
     public static final int FORMAT_VERSION = 1;

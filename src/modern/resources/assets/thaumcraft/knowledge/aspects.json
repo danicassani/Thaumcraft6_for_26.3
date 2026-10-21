@@ -1211,6 +1211,25 @@
     "thaumcraft:wisp": {
       "auram": 5,
       "volatus": 5
+    },
+    "thaumcraft:mind_spider": {
+      "vitium": 5,
+      "ignis": 5
+    },
+    "thaumcraft:eldritch_guardian": {
+      "alienis": 20,
+      "mortuus": 20,
+      "exanimis": 20
+    },
+    "thaumcraft:cultist_knight": {
+      "alienis": 5,
+      "humanus": 15,
+      "aversio": 5
+    },
+    "thaumcraft:cultist_cleric": {
+      "alienis": 5,
+      "humanus": 15,
+      "aversio": 5
     }
   },
   "triggers": {
@@ -1489,6 +1508,9 @@
       ],
       "thaumcraft:wisp": [
         "!Wisp"
+      ],
+      "thaumcraft:eldritch_guardian": [
+        "!EldritchGuardian"
       ]
     }
   }
