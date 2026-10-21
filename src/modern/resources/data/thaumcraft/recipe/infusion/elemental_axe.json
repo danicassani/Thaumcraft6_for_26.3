@@ -14,7 +14,10 @@
       "crystal_aspect": "aqua"
     },
     {
-      "item": "thaumcraft:primordial_nugget"
+      "item": [
+        "thaumcraft:primordial_nugget",
+        "thaumcraft:primordial_pearl"
+      ]
     },
     {
       "item": "thaumcraft:plank_greatwood"

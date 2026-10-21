@@ -24,6 +24,7 @@ public final class FluxRiftEntity extends Entity {
     private List<RiftShape.Point> shape=List.of();
     public FluxRiftEntity(EntityType<? extends FluxRiftEntity> type,Level level) {super(type,level);setNoGravity(true);}
     @Override protected void defineSynchedData(SynchedEntityData.Builder data) {data.define(SEED,1);data.define(SIZE,5);data.define(STABILITY,0F);data.define(COLLAPSE,false);}
+    public int collapseSize(){return maxSize;}
     public int size() {return entityData.get(SIZE);} public int seed() {return entityData.get(SEED);} public float stability() {return entityData.get(STABILITY);} public boolean collapsing() {return entityData.get(COLLAPSE);}
     public void setSize(int size) {entityData.set(SIZE,Math.clamp(size,1,100));maxSize=Math.max(maxSize,size());}
     public void setSeed(int seed) {entityData.set(SEED,seed);}
@@ -41,11 +42,11 @@ public final class FluxRiftEntity extends Entity {
     @Override public void move(MoverType type,Vec3 vector) {}
     @Override public boolean hurtServer(ServerLevel level,DamageSource source,float amount) {return false;}
     @Override public void tick() {
-        super.tick();bounds();
+        if(isRemoved())return;super.tick();bounds();
         if(!(level() instanceof ServerLevel server))return;
         var points=shape();int i=random.nextInt(points.size()-1);var a=position().add(points.get(i).position());var b=position().add(points.get(i+1).position());
         // Check the entire short segment before clipping: never fetch a neighboring unloaded chunk.
-        if(server.hasChunkAt(BlockPos.containing(a))&&server.hasChunkAt(BlockPos.containing(b))) {
+        if(thaumcraft.thaumaturgy.SpellEngine.loadedLine(server,a,b)) {
             var hit=server.clip(new ClipContext(a,b,ClipContext.Block.COLLIDER,ClipContext.Fluid.NONE,this));
             if(hit.getType()==HitResult.Type.BLOCK) {var pos=hit.getBlockPos();var state=server.getBlockState(pos);if(!state.isAir()&&state.getDestroySpeed(server,pos)>=0)server.destroyBlock(pos,false,this);}
         }
@@ -56,7 +57,8 @@ public final class FluxRiftEntity extends Entity {
         if(size()<=1 && !collapsing())beginCollapse();
         if(collapsing()) {
             if(random.nextBoolean())AuraManager.addVis(server,blockPosition(),1);else AuraManager.addFlux(server,blockPosition(),1);
-            if(size()<=1) {completeCollapse(server);return;}setSize(size()-1);
+            if(!thaumcraft.config.ThaumcraftConfig.wussMode.get()&&random.nextInt(10)==0)server.explode(this,getX()+random.nextGaussian()*2,getY()+random.nextGaussian()*2,getZ()+random.nextGaussian()*2,random.nextFloat()/2,Level.ExplosionInteraction.NONE);
+            setSize(Math.max(1,size()-1));if(size()<=1) {completeCollapse(server);return;}
         }
         if(tickCount%120==0)setStability(stability()-.2F);
         if(tickCount%600==getId()%600 && !collapsing()) {
@@ -64,6 +66,7 @@ public final class FluxRiftEntity extends Entity {
             if(cell!=null && cell.flux()>=cost && size()<100 && stability()<=50) {AuraManager.drainFlux(server,blockPosition(),cost,false);setSize(size()+1);}
             if(stability()<0 && random.nextInt(1000)<Math.abs(stability())+size())corruptionEvent(server,random.nextInt(101));
         }
+        if(tickCount%300==0)playSound(RiftContent.PORTAL.get(),Math.max(.01F,(float)(.15+random.nextGaussian()*.066)),Math.max(.1F,(float)(.75+random.nextGaussian()*.1)));
         if(tickCount%20==0)server.sendParticles(ParticleTypes.REVERSE_PORTAL,getX(),getY(),getZ(),2,.3,.3,.3,.01);
     }
     /** Execute one original weighted event; failed spawns never pay stability. */
@@ -83,10 +86,22 @@ public final class FluxRiftEntity extends Entity {
         if(event==RiftEvents.Kind.COLLAPSE){beginCollapse();return true;}return false;
     }
     private void completeCollapse(ServerLevel level) {
-        if(random.nextInt(100)<(int)Math.sqrt(maxSize))level.addFreshEntity(new ItemEntity(level,getX(),getY(),getZ(),new ItemStack(SimpleContent.ITEMS.get("primordial_nugget").get(),2+random.nextInt(4))));
-        var seeds=new ItemStack(SimpleContent.ITEMS.get("void_seed").get(),(int)Math.sqrt(maxSize));
+        if(isRemoved())return;discard();
+        if(RiftCollapse.pearl(maxSize,random.nextInt(100)))level.addFreshEntity(new ItemEntity(level,getX(),getY(),getZ(),PrimordialPearl.worn(4+random.nextInt(4))));
+        var seeds=new ItemStack(SimpleContent.ITEMS.get("void_seed").get(),RiftCollapse.seeds(maxSize));
         if(!seeds.isEmpty())level.addFreshEntity(new ItemEntity(level,getX(),getY(),getZ(),seeds));
-        level.sendParticles(ParticleTypes.PORTAL,getX(),getY(),getZ(),60,.6,.6,.6,.2);discard();
+        collapseEffects(level);
+        level.sendParticles(ParticleTypes.PORTAL,getX(),getY(),getZ(),60,.6,.6,.6,.2);
+    }
+    private void collapseEffects(ServerLevel level) {
+        if(thaumcraft.config.ThaumcraftConfig.wussMode.get())return;
+        var band=RiftCollapse.stability(stability());
+        for(var e:level.getEntitiesOfClass(LivingEntity.class,new AABB(position(),position()).inflate(32),e->e.isAlive()&&!e.isSpectator())) {
+            double distance=distanceToSqr(e);
+            if(band==RiftCollapse.Stability.VERY_UNSTABLE){int n=RiftCollapse.exposure(distance,120);if(n>0)e.addEffect(new net.minecraft.world.effect.MobEffectInstance(thaumcraft.taint.TaintContent.DISEASE.getHolder().orElseThrow(),n*20));}
+            if(band==RiftCollapse.Stability.VERY_UNSTABLE||band==RiftCollapse.Stability.UNSTABLE){int n=RiftCollapse.exposure(distance,300);if(n>0)e.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.WEAKNESS,n*20));}
+            if(band!=RiftCollapse.Stability.VERY_STABLE&&e instanceof net.minecraft.server.level.ServerPlayer p){int n=RiftCollapse.exposure(distance,25);if(n>0)thaumcraft.infusion.CuriosityContent.warp(p,0,n,n);}
+        }
     }
     @Override protected void addAdditionalSaveData(ValueOutput out) {out.putInt("rift_size",size());out.putInt("rift_seed",seed());out.putFloat("stability",stability());out.putBoolean("collapse",collapsing());out.putInt("max_size",maxSize);}
     @Override protected void readAdditionalSaveData(ValueInput in) {setSize(in.getIntOr("rift_size",5));setSeed(in.getIntOr("rift_seed",1));float stability=in.getFloatOr("stability",0);setStability(Float.isFinite(stability)?stability:0);entityData.set(COLLAPSE,in.getBooleanOr("collapse",false));maxSize=Math.clamp(in.getIntOr("max_size",size()),1,100);}

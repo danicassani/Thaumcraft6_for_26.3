@@ -26,5 +26,13 @@
       "thaumcraft:zap1",
       "thaumcraft:zap2"
     ]
+  },
+  "evilportal": {
+    "sounds": [
+      {
+        "name": "thaumcraft:evilportal",
+        "stream": false
+      }
+    ]
   }
 }

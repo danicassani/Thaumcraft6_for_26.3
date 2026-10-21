@@ -1,14 +1,16 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "NNN",
-    "NNN",
-    "NNN"
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "thaumcraft:primordial_nugget"
   ],
-  "key": {
-    "N": "thaumcraft:primordial_nugget"
-  },
   "result": {
-    "id": "thaumcraft:primordial_pearl"
+    "id": "thaumcraft:primordial_pearl",
+    "components": {
+      "minecraft:custom_model_data": {
+        "floats": [
+          7.0
+        ]
+      }
+    }
   }
 }

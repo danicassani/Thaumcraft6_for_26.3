@@ -33,3 +33,5 @@ SHA-256 de la captura: `df25a48e2460852c8bb974777547382f5f3d78e0b3108643f48c66a4
 
 Entrega: `thaumcraft-6.1.BETA26-port.36-forge66.0.13.jar` (8411952 bytes).
 SHA-256: `64fca9f39362f1aee29285659451ba3473466a59a48fe5d5afe892ea040040d9`.
+
+Actualización port.37: la perla primordial y los efectos finales de colapso quedan implementados; la comparación funcional y las adaptaciones gráficas se detallan en [PRIMORDIAL-RIFTS.md](PRIMORDIAL-RIFTS.md).

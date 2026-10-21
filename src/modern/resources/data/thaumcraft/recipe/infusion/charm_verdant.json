@@ -6,7 +6,10 @@
   },
   "components": [
     {
-      "item": "thaumcraft:primordial_nugget"
+      "item": [
+        "thaumcraft:primordial_nugget",
+        "thaumcraft:primordial_pearl"
+      ]
     },
     {
       "item": "thaumcraft:crystal_essence",

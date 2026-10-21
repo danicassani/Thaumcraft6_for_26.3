@@ -38,7 +38,7 @@ public final class ThaumaturgyContent {
     public static final RegistryObject<EntityType<TurretArrow>> TURRET_ARROW=Registrar.ENTITIES.register("turret_arrow",()->EntityType.Builder.<TurretArrow>of(TurretArrow::new,MobCategory.MISC).sized(.5F,.5F).clientTrackingRange(8).updateInterval(1).build(ResourceKey.create(Registries.ENTITY_TYPE,SimpleContent.id("turret_arrow"))));
     public static final RegistryObject<RiftHoleBlock> HOLE=Registrar.BLOCKS.register("hole",()->new RiftHoleBlock(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK,SimpleContent.id("hole"))).strength(-1,3600000).noOcclusion().noLootTable().lightLevel(s->10).pushReaction(net.minecraft.world.level.material.PushReaction.IMMOVEABLE)));
     public static void register(BusGroup bus){
-        SimpleContent.block("table_stone","stone","");SimpleContent.material("primordial_pearl");SimpleContent.material("primordial_nugget");
+        SimpleContent.block("table_stone","stone","");SimpleContent.item("primordial_pearl",thaumcraft.rifts.PrimordialPearl::new);SimpleContent.material("primordial_nugget");
         SimpleContent.item("focus_1",p->new FocusItem(p,15));SimpleContent.item("focus_2",p->new FocusItem(p,25));SimpleContent.item("focus_3",p->new FocusItem(p,50));
         SimpleContent.item("wand_workbench",p->new BlockItem(TABLE.get(),p.useBlockDescriptionPrefix()));
         SimpleContent.item("caster_basic",CasterItem::new);SimpleContent.item("focus_pouch",FocusPouch::new);SimpleContent.item("pech_wand",PechWand::new);SimpleContent.item("causality_collapser",CausalityCollapser::new);
