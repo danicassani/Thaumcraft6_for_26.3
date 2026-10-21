@@ -1322,5 +1322,6 @@
   "equipment.thaumcraft.shovel_plane": "Architect plane: %s (sneak-use in air to change)",
   "equipment.thaumcraft.shovel_controls": "Sneak-use in air: change architect plane",
   "equipment.thaumcraft.wind_use": "Hold use: ride the wind",
-  "equipment.thaumcraft.attract_use": "Hold use: attract dropped items"
+  "equipment.thaumcraft.attract_use": "Hold use: attract dropped items",
+  "block.thaumcraft.hungry_chest": "Hungry Chest"
 }

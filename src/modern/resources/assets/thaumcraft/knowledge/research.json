@@ -3142,7 +3142,7 @@
         ],
         "required_item": [
           {
-            "id": "unavailable:oredict:chest",
+            "id": "minecraft:chest",
             "count": 1,
             "legacy": "oredict:chest"
           },

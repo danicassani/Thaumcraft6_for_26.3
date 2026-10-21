@@ -869,5 +869,6 @@
   "equipment.thaumcraft.shovel_plane": "Plano de construcción: %s (uso agachado en el aire para cambiar)",
   "equipment.thaumcraft.shovel_controls": "Uso agachado en el aire: cambiar plano de construcción",
   "equipment.thaumcraft.wind_use": "Mantén uso: cabalgar el viento",
-  "equipment.thaumcraft.attract_use": "Mantén uso: atraer objetos sueltos"
+  "equipment.thaumcraft.attract_use": "Mantén uso: atraer objetos sueltos",
+  "block.thaumcraft.hungry_chest": "Cofre hambriento"
 }

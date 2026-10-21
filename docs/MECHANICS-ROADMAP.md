@@ -16,7 +16,7 @@ Contenido: `candles [16 colores]`, `nitor [16 colores]`.
 
 ## M03: Inventarios persistentes, menús y automatización
 
-**Estado:** pedestales e inventarios persistentes implementados; port.19 añade bolsa de 18 focos, port.20 prensa/carga de gólems y port.29 fabricador de diez patrones con inventarios físicos y reserva de vis; cofre hambriento pendiente.
+**Estado:** pedestales e inventarios persistentes implementados; port.19 añade bolsa de 18 focos, port.20 prensa/carga de gólems y port.29 fabricador de diez patrones con inventarios físicos y reserva de vis; port.41 completa el cofre hambriento nativo con recogida física, 27 ranuras, automatización y receta original (HUNGRY-CHEST.md).
 
 Contenido: `tableWood`, `tableStone`, `pedestalArcane`, `pedestalAncient`, `pedestalEldritch`, `hungryChest`, `patternCrafter`, `focusPouch`.
 

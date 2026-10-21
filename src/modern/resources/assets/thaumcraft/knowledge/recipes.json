@@ -177,6 +177,16 @@
     "Vis: 25",
     "Ingredients: {'B': 'thaumcraft:plate_brass', 'R': 'thaumcraft:nugget_rareearth', 'H': 'minecraft:tripwire_hook'}"
   ],
+  "thaumcraft:hungry_chest": [
+    "[WTW]",
+    "[W W]",
+    "[WWW]",
+    "W = thaumcraft:plank_greatwood",
+    "T = #minecraft:wooden_trapdoors",
+    "Vis: 15",
+    "terra: 1",
+    "aqua: 1"
+  ],
   "thaumcraft:infusion_matrix": [
     "[S S]",
     "[ N ]",
@@ -2144,5 +2154,14 @@
     "Center: fortress helmet (retains components and damage)",
     "Offerings: minecraft:red_dye, plate_iron, minecraft:leather, minecraft:ghast_tear, minecraft:milk_bucket, plate_iron",
     "Essentia: {'exanimis': 80, 'victus': 80, 'praemunio': 20}"
+  ],
+  "thaumcraft:HungryChest": [
+    "[WTW]",
+    "[W W]",
+    "[WWW]",
+    "W = thaumcraft:plank_greatwood",
+    "T = #minecraft:wooden_trapdoors",
+    "Vis: 15",
+    "terra: 1, aqua: 1"
   ]
 }
