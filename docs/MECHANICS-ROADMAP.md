@@ -40,7 +40,7 @@ Contenido: `arcaneWorkbench`.
 
 ## M07: Alquimia, disolución de aspectos y fluidos
 
-**Estado:** port.30 añade hornos y mejoras; port.31 añade centrifugadora; port.32 añade horno infernal multibloque reversible, Salis, cocción nativa, aura, fuelles, bonificaciones y cola persistente. port.33 añade Thaumatorium, matrices mnemónicas, selector autorizado, transporte y trabajo pagado persistente. Condensador pendiente (ADVANCED-SMELTERS.md, CENTRIFUGE.md, INFERNAL-FURNACE.md, THAUMATORIUM.md).
+**Estado:** port.30 añade hornos y mejoras; port.31 añade centrifugadora; port.32 añade horno infernal multibloque reversible, Salis, cocción nativa, aura, fuelles, bonificaciones y cola persistente. port.33 añade Thaumatorium, matrices mnemónicas, selector autorizado, transporte y trabajo pagado persistente. port.34 añade condensador, celosías, filtrado de flux, atascos y mantenimiento, transporte y progreso persistente; equipos de M07 portados, compatibilidad y equivalencia final por auditar (ADVANCED-SMELTERS.md, CENTRIFUGE.md, INFERNAL-FURNACE.md, THAUMATORIUM.md, FLUX-CONDENSER.md).
 
 Contenido: `crucible`, `centrifuge`, `bellows`, `smelterBasic`, `smelterThaumium`, `smelterVoid`, `smelterAux`, `smelterVent`, `alembic`, `infernalFurnace`, `thaumatorium`, `thaumatoriumTop`, `brainBox`, `condenser`, `condenserlattice`, `condenserlatticeDirty`.
 

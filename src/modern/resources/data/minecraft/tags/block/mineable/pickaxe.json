@@ -42,6 +42,9 @@
     "thaumcraft:infernal_furnace",
     "thaumcraft:thaumatorium",
     "thaumcraft:thaumatorium_top",
-    "thaumcraft:brain_box"
+    "thaumcraft:brain_box",
+    "thaumcraft:condenser",
+    "thaumcraft:condenser_lattice",
+    "thaumcraft:condenser_lattice_dirty"
   ]
 }

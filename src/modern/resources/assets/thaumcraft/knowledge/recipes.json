@@ -81,6 +81,31 @@
     "Vis: 100",
     "Crystals: {}"
   ],
+  "thaumcraft:condenser": [
+    "[BCB]",
+    "[WMW]",
+    "[BTB]",
+    "T = thaumcraft:tube",
+    "C = thaumcraft:morphic_resonator",
+    "W = #minecraft:planks",
+    "M = thaumcraft:mechanism_complex",
+    "B = thaumcraft:plate_brass",
+    "Vis: 500",
+    "aer: 5",
+    "aqua: 5",
+    "perditio: 5"
+  ],
+  "thaumcraft:condenser_lattice": [
+    "[QTQ]",
+    "[QFQ]",
+    "[QTQ]",
+    "T = thaumcraft:plate_thaumium",
+    "F = thaumcraft:filter",
+    "Q = minecraft:quartz",
+    "Vis: 100",
+    "terra: 3",
+    "aer: 3"
+  ],
   "thaumcraft:dioptra": [
     "[APA]",
     "[IGI]",
@@ -2076,5 +2101,21 @@
     "A: thaumcraft:amber",
     "B: thaumcraft:mind_clockwork",
     "Vis 50; crystals terra 1, ordo 1"
+  ],
+  "thaumcraft:Condenser": [
+    "BCB / WMW / BTB",
+    "T: thaumcraft:tube",
+    "C: thaumcraft:morphic_resonator",
+    "W: #minecraft:planks",
+    "M: thaumcraft:mechanism_complex",
+    "B: thaumcraft:plate_brass",
+    "Vis 500; crystals aer 5, aqua 5, perditio 5"
+  ],
+  "thaumcraft:CondenserLattice": [
+    "QTQ / QFQ / QTQ",
+    "T: thaumcraft:plate_thaumium",
+    "F: thaumcraft:filter",
+    "Q: minecraft:quartz",
+    "Vis 100; crystals terra 3, aer 3"
   ]
 }
