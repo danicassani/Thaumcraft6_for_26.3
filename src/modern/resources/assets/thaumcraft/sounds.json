@@ -5,5 +5,26 @@
       "thaumcraft:gore1",
       "thaumcraft:gore2"
     ]
+  },
+  "wisplive": {
+    "sounds": [
+      "thaumcraft:wisplive1",
+      "thaumcraft:wisplive2",
+      "thaumcraft:wisplive3"
+    ]
+  },
+  "wispdead": {
+    "sounds": [
+      {
+        "name": "thaumcraft:wispdead",
+        "stream": false
+      }
+    ]
+  },
+  "zap": {
+    "sounds": [
+      "thaumcraft:zap1",
+      "thaumcraft:zap2"
+    ]
   }
 }

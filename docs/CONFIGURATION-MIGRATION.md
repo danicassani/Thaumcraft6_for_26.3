@@ -40,13 +40,13 @@ Desde [port.5](AURA-CORE.md), `world.generateAura` controla la inicialización d
 | CONFIG_WORLD.regenTrees | `false` | Regenerar árboles de chunks marcados | SERVER world.regenTrees | migrada (esquema) |
 | CONFIG_WORLD.allowSpawnAngryZombie | `true` | Permitir spawn de zombis furiosos | SERVER world.allowSpawnAngryZombie | migrada (esquema) |
 | CONFIG_WORLD.allowSpawnFireBat | `true` | Permitir spawn de murciélagos de fuego | SERVER world.allowSpawnFireBat | migrada (esquema) |
-| CONFIG_WORLD.allowSpawnWisp | `true` | Permitir spawn de wisps | SERVER world.allowSpawnWisp | migrada (esquema) |
+| CONFIG_WORLD.allowSpawnWisp | `true` | Permitir spawn de wisps | SERVER world.allowSpawnWisp | activa en wisps de grieta; aparición natural pendiente (RIFT-EVENTS.md) |
 | CONFIG_WORLD.allowSpawnTaintacle | `true` | Permitir spawn de tentáculos de corrupción | SERVER world.allowSpawnTaintacle | migrada (esquema) |
 | CONFIG_WORLD.allowSpawnPech | `true` | Permitir spawn de pechs | SERVER world.allowSpawnPech | migrada (esquema) |
 | CONFIG_WORLD.allowSpawnElder | `true` | Permitir spawn de ancianos eldritch | SERVER world.allowSpawnElder | migrada (esquema) |
 | CONFIG_WORLD.allowChampionMobs | `true` | Setting this to false will disable spawning champion mobs. Even when false they will still have a greatly reduced chance of spawning in certain dangerous places. | SERVER world.allowChampionMobs | migrada (esquema) |
 | CONFIG_MISC.noSleep | `false` | Setting this to true will make you get the recipe book for salis mundus without having to sleep first. | SERVER misc.noSleep | migrada (esquema) |
-| CONFIG_MISC.wussMode | `false` | Setting this to true disables Warp, Taint spread and similar mechanics. You wuss. | SERVER misc.wussMode | migrada (esquema) |
+| CONFIG_MISC.wussMode | `false` | Setting this to true disables Warp, Taint spread and similar mechanics. You wuss. | SERVER misc.wussMode | activa parcialmente en investigación, corrupción y sucesos de grietas (TAINT-FLUIDS.md, RIFT-EVENTS.md) |
 | CONFIG_MISC.allowCheatSheet | `false` | Enables a version of the Thauminomicon in creative mode that grants you all the research when you first use it. | SERVER misc.allowCheatSheet | migrada (esquema) |
 | CONFIG_MISC.shieldRecharge | `2000` | How many milliseconds passes between runic shielding recharge ticks. Lower values equals faster recharge. Minimum of 500. | SERVER misc.shieldRecharge | migrada (esquema) |
 | CONFIG_MISC.shieldWait | `4000` | How many milliseconds passes after a shield has been reduced to zero before it can start recharging again. Minimum of 0. | SERVER misc.shieldWait | migrada (esquema) |
@@ -93,3 +93,13 @@ Véase [RESEARCH-SCANNING.md](RESEARCH-SCANNING.md).
 silverwood en bosques. No bloquea el crecimiento de saplings plantados. La
 recuperación de vis de sus hojas usa el aura existente; véase
 [ALCHEMY-ESSENTIA.md](ALCHEMY-ESSENTIA.md).
+
+## Consumidores de port.35–36
+
+`world.allowSpawnWisp` controla las apariciones de wisps desde las grietas.
+`misc.wussMode` impide nuevas apariciones y elimina las nubes ambientales;
+los wisps activos con IA también desaparecen. La corrupción y los líquidos de
+port.35 tienen sus consumidores documentados en [TAINT-FLUIDS.md](TAINT-FLUIDS.md).
+Las referencias a mecánicas pendientes en los apartados históricos de port.7/8
+se actualizan en [RIFT-EVENTS.md](RIFT-EVENTS.md) para estos sistemas; el resto
+de sucesos de distorsión sigue pendiente.

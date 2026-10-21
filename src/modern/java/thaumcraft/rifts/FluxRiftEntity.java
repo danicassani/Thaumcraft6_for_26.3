@@ -66,18 +66,21 @@ public final class FluxRiftEntity extends Entity {
         }
         if(tickCount%20==0)server.sendParticles(ParticleTypes.REVERSE_PORTAL,getX(),getY(),getZ(),2,.3,.3,.3,.01);
     }
-    /** Original weights retained: the wisp/cloud slots remain reserved for their own port. */
+    /** Execute one original weighted event; failed spawns never pay stability. */
     public boolean corruptionEvent(ServerLevel server,int roll) {
-        if(collapsing()||thaumcraft.config.ThaumcraftConfig.wussMode.get())return false;
-        if(roll>=50&&roll<60){
+        if(collapsing()||isRemoved()||server!=level()||thaumcraft.config.ThaumcraftConfig.wussMode.get())return false;
+        var event=RiftEvents.select(roll);
+        if(event==RiftEvents.Kind.WISP){var at=position().add(random.nextGaussian()*5,random.nextGaussian()*5,random.nextGaussian()*5);if(Wisp.spawn(server,at,random.nextInt(5)==0)==null)return false;setStability(stability()+5);return true;}
+        if(event==RiftEvents.Kind.SEED){
             if(thaumcraft.taint.TaintWorld.seed(server,blockPosition())!=null)return false;
             var p=blockPosition().offset((int)(random.nextGaussian()*5),(int)(random.nextGaussian()*5),(int)(random.nextGaussian()*5));
             if(!server.hasChunkAt(p.below())||!server.getBlockState(p.below()).isFaceSturdy(server,p.below(),net.minecraft.core.Direction.UP))return false;
             var seed=thaumcraft.taint.TaintWorld.spawnSeed(server,p,true,size());if(seed==null)return false;
             AuraManager.addFlux(server,blockPosition(),size()/2);discard();return true;
         }
-        if(roll>=60&&roll<80){boolean changed=false;for(var e:server.getEntitiesOfClass(LivingEntity.class,getBoundingBox().inflate(16)))if(!(e instanceof Player p&&(p.isCreative()||p.isSpectator()))){e.addEffect(new net.minecraft.world.effect.MobEffectInstance(thaumcraft.taint.TaintContent.INFECTIOUS.getHolder().orElseThrow(),3000,2));changed=true;}if(changed)setStability(stability()+10);return changed;}
-        if(roll==100){beginCollapse();return true;}return false;
+        if(event==RiftEvents.Kind.EXHAUST){boolean changed=false;for(var e:server.getEntitiesOfClass(LivingEntity.class,getBoundingBox().inflate(16)))if(!(e instanceof Player p&&(p.isCreative()||p.isSpectator()))){e.addEffect(new net.minecraft.world.effect.MobEffectInstance(thaumcraft.taint.TaintContent.INFECTIOUS.getHolder().orElseThrow(),3000,2));changed=true;}if(changed)setStability(stability()+10);return changed;}
+        if(event==RiftEvents.Kind.CLOUD){var target=server.getNearestPlayer(this,16);if(target==null||target.isSpectator())return false;var at=target.position().add(0,target.getBbHeight()*.5,0);if(!server.hasChunkAt(BlockPos.containing(at)))return false;if(server.getEntitiesOfClass(RiftCloud.class,new AABB(blockPosition()).inflate(32)).size()>=16)return false;int low=Math.min(size()/2,30),high=Math.min(size(),120);int seconds=RiftEvents.seconds(size(),low+random.nextInt(high-low+1));var cloud=new RiftCloud(RiftContent.CLOUD.get(),server);cloud.configure(server,at,1+random.nextInt(3),seconds);return server.addFreshEntity(cloud);}
+        if(event==RiftEvents.Kind.COLLAPSE){beginCollapse();return true;}return false;
     }
     private void completeCollapse(ServerLevel level) {
         if(random.nextInt(100)<(int)Math.sqrt(maxSize))level.addFreshEntity(new ItemEntity(level,getX(),getY(),getZ(),new ItemStack(SimpleContent.ITEMS.get("primordial_nugget").get(),2+random.nextInt(4))));

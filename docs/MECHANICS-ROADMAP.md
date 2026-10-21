@@ -76,7 +76,7 @@ Contenido: `brain`, `sanitySoap`, `bathSalts`, `sanityChecker`, `voidAxe`, `void
 
 ## M13: Corrupción, contagio, rifts y fluidos especiales
 
-**Estado:** port.35 añade corrupción dependiente de semillas, degradación, criaturas corruptas, goo finito, muerte líquida, baños purificadores, botellas, agotamiento y protección temporal, sucesos de semilla y contagio de grietas. Wisps/nubes de grieta, perla primordial y equivalencia final pendientes (TAINT-FLUIDS.md).
+**Estado:** port.35 añade corrupción, criaturas y fluidos. port.36 completa los cinco sucesos de grieta con wisps funcionales, aspectos/sonidos/cristales, combate y nubes de flux ambientales con daño y duración persistente. Perla primordial y equivalencia final pendientes (TAINT-FLUIDS.md, RIFT-EVENTS.md).
 
 Contenido: `taintFibre`, `taintCrust`, `taintSoil`, `taintRock`, `taintGeyser`, `taintFeature`, `taintLog`, `fluxGoo`, `liquidDeath`, `purifyingFluid`, `bottleTaint`.
 

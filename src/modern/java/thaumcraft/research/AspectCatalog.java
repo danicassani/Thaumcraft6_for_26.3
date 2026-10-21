@@ -21,7 +21,7 @@ public final class AspectCatalog {
         for(var e:definitions.entrySet())if(e.getKey().startsWith("#")&&stack.is(TagKey.create(Registries.ITEM,Identifier.parse(e.getKey().substring(1)))))result=values(e.getValue().getAsJsonObject());
         return result;
     }
-    public static Map<String,Integer> entity(Entity entity){var id=BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString();var e=DATA.getAsJsonObject("entities").getAsJsonObject(id);return e==null?Map.of():values(e);}
+    public static Map<String,Integer> entity(Entity entity){if(entity instanceof thaumcraft.rifts.Wisp w){var aspects=new LinkedHashMap<String,Integer>();aspects.put("auram",5);aspects.put("volatus",5);aspects.merge(w.aspect(),5,Integer::sum);return Map.copyOf(aspects);}var id=BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString();var e=DATA.getAsJsonObject("entities").getAsJsonObject(id);return e==null?Map.of():values(e);}
     public static int observation(String category,Map<String,Integer> aspects){var formula=DATA.getAsJsonObject("formulae").getAsJsonObject(category);double total=0;for(var e:formula.entrySet())total+=aspects.getOrDefault(e.getKey(),0)*e.getValue().getAsInt()/10D;return (int)Math.ceil(Math.sqrt(total));}
     public static List<String> triggers(boolean entity,String id){var o=DATA.getAsJsonObject("triggers").getAsJsonObject(entity?"entities":"items");return o.has(id)?ResearchCatalog.strings(o,id):List.of();}
     public static List<String> components(String aspect){var o=DATA.getAsJsonObject("components");return o.has(aspect)?ResearchCatalog.strings(o,aspect):List.of();}

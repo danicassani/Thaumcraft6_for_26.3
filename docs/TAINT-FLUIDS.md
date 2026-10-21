@@ -116,3 +116,5 @@ SHA-256 de la captura: `0fd92f75511a48ef581fab07982113eec661254543d6b5aa5a3efec2
 
 Entrega: `thaumcraft-6.1.BETA26-port.35-forge66.0.13.jar` (8317214 bytes).
 SHA-256: `c761910d9225eaf31bb8980254e6e9969fc4cfc858d067108a2e8d84083690d7`.
+
+Actualización port.36: los sucesos de wisps y nubes antes reservados están implementados y verificados por separado; véase [RIFT-EVENTS.md](RIFT-EVENTS.md).

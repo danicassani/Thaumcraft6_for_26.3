@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "thaumcraft:taint",
-    "thaumcraft:dissolve"
+    "thaumcraft:dissolve",
+    "thaumcraft:rift_flux"
   ]
 }

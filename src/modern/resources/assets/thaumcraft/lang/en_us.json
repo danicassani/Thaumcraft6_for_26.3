@@ -1251,5 +1251,8 @@
   "entity.thaumcraft.thaumic_slime": "Thaumic Slime",
   "entity.thaumcraft.bottle_taint": "Bottle of Taint",
   "death.attack.thaumcraft.taint": "%1$s succumbed to taint",
-  "death.attack.thaumcraft.dissolve": "%1$s dissolved"
+  "death.attack.thaumcraft.dissolve": "%1$s dissolved",
+  "entity.thaumcraft.wisp": "Wisp",
+  "entity.thaumcraft.rift_cloud": "Rift Flux Cloud",
+  "death.attack.thaumcraft.rift_flux": "%1$s succumbed to a flux cloud"
 }

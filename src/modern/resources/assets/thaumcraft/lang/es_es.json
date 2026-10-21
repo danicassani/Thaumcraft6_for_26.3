@@ -798,5 +798,8 @@
   "death.attack.thaumcraft.dissolve": "%1$s se disolvió",
   "research.BOTTLETAINT.stage.1": " Lánzala para esparcir masa de flux y enfermedad. La corrupción crece cerca de semillas vivas: elimínalas para frenarla. La masa tiene volumen finito, se degrada en flux y puede generar slimes taumatúrgicos.",
   "research.BATHSALTS.stage.2": " Suelta una sal en agua fuente y espera 10 segundos para crear un baño purificador. Su fuente se consume al conceder protección contra la distorsión y se puede transportar en un cubo. La duración depende de la distorsión permanente; el baño no la elimina.",
-  "research.LIQUIDDEATH.stage.2": " Fluido con corrientes nativas, daño de fuente 5 y sin fuentes infinitas. Las criaturas disueltas dejan cristales de sus aspectos."
+  "research.LIQUIDDEATH.stage.2": " Fluido con corrientes nativas, daño de fuente 5 y sin fuentes infinitas. Las criaturas disueltas dejan cristales de sus aspectos.",
+  "entity.thaumcraft.wisp": "Fuego fatuo",
+  "entity.thaumcraft.rift_cloud": "Nube de flux de grieta",
+  "death.attack.thaumcraft.rift_flux": "%1$s sucumbió a una nube de flux"
 }

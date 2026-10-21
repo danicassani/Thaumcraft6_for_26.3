@@ -1207,6 +1207,10 @@
       "alienis": 40,
       "bestia": 40,
       "vitium": 40
+    },
+    "thaumcraft:wisp": {
+      "auram": 5,
+      "volatus": 5
     }
   },
   "triggers": {
@@ -1482,6 +1486,9 @@
       ],
       "thaumcraft:thaumic_slime": [
         "!ThaumSlime"
+      ],
+      "thaumcraft:wisp": [
+        "!Wisp"
       ]
     }
   }
