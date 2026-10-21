@@ -13,7 +13,10 @@
     "key": {
       "L": "minecraft:leather",
       "G": "minecraft:gold_ingot",
-      "B": "minecraft:string"
+      "B": [
+        "thaumcraft:girdle_mundane",
+        "minecraft:string"
+      ]
     },
     "result": {
       "id": "thaumcraft:focus_pouch"

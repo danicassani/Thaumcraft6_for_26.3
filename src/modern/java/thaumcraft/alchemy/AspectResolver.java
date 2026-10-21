@@ -25,7 +25,7 @@ public final class AspectResolver {
         }
     }
     public static Map<String,Integer> item(ServerLevel level,ItemStack stack){
-        if(stack.isEmpty())return Map.of();var direct=AspectCatalog.item(stack);if(!direct.isEmpty())return direct;
+        if(stack.isEmpty())return Map.of();var equipment=thaumcraft.equipment.EquipmentContent.cultAspects(level,stack);if(equipment!=null)return equipment;var direct=AspectCatalog.item(stack);if(!direct.isEmpty())return direct;
         if(stack.is(AlchemyContent.PHIAL.get()))return Map.of();
         var manager=level.recipeAccess();var resolver=MANAGERS.computeIfAbsent(manager,AspectResolver::new);return resolver.resolve(stack,new HashSet<>(),new int[]{1024},0);
     }

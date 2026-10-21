@@ -2,7 +2,10 @@
   "type": "thaumcraft:infusion",
   "research": "VOIDSEERPEARL",
   "input": {
-    "item": "minecraft:gold_ingot"
+    "item": [
+      "thaumcraft:amulet_fancy",
+      "minecraft:gold_ingot"
+    ]
   },
   "components": [
     {

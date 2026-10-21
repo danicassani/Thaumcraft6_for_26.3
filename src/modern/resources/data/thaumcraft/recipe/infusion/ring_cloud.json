@@ -2,7 +2,10 @@
   "type": "thaumcraft:infusion",
   "research": "CLOUDRING",
   "input": {
-    "item": "minecraft:gold_ingot"
+    "item": [
+      "thaumcraft:ring_mundane",
+      "minecraft:gold_ingot"
+    ]
   },
   "components": [
     {

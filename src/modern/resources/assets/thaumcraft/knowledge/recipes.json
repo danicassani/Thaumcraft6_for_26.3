@@ -1599,25 +1599,19 @@
     "Accessories are equipped in the off hand. Right click to equip."
   ],
   "thaumcraft:CLOUDRING": [
-    "Research: CLOUDRING",
-    "Center: {'item': 'minecraft:gold_ingot'}",
-    "Offerings: [{'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aer'}, {'item': 'minecraft:feather'}]",
-    "Essentia: {'aer': 50}",
-    "Accessories are equipped in the off hand. Right click to equip."
+    "Center: ['thaumcraft:ring_mundane', 'minecraft:gold_ingot']",
+    "Offerings: thaumcraft:crystal_essence, minecraft:feather",
+    "Essentia: {'aer': 50}"
   ],
   "thaumcraft:CuriosityBand": [
-    "Research: CURIOSITYBAND",
-    "Center: {'item': 'minecraft:gold_ingot'}",
-    "Offerings: [{'item': 'minecraft:emerald'}, {'item': 'minecraft:writable_book'}, {'item': 'minecraft:emerald'}, {'item': 'minecraft:writable_book'}, {'item': 'minecraft:emerald'}, {'item': 'minecraft:writable_book'}, {'item': 'minecraft:emerald'}, {'item': 'minecraft:writable_book'}]",
-    "Essentia: {'cognitio': 150, 'vacuos': 50, 'vinculum': 100}",
-    "Accessories are equipped in the off hand. Right click to equip."
+    "Center: ['thaumcraft:girdle_fancy', 'minecraft:gold_ingot']",
+    "Offerings: minecraft:emerald, minecraft:writable_book, minecraft:emerald, minecraft:writable_book, minecraft:emerald, minecraft:writable_book, minecraft:emerald, minecraft:writable_book",
+    "Essentia: {'cognitio': 150, 'vacuos': 50, 'vinculum': 100}"
   ],
   "thaumcraft:VerdantHeart": [
-    "Research: VERDANTCHARMS",
-    "Center: {'item': 'minecraft:gold_ingot'}",
-    "Offerings: [{'item': 'thaumcraft:primordial_nugget'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'victus'}, {'item': 'minecraft:milk_bucket'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'herba'}]",
-    "Essentia: {'victus': 60, 'ordo': 30, 'herba': 60}",
-    "Accessories are equipped in the off hand. Right click to equip."
+    "Center: ['thaumcraft:amulet_fancy', 'minecraft:gold_ingot']",
+    "Offerings: ['thaumcraft:primordial_nugget', 'thaumcraft:primordial_pearl'], thaumcraft:crystal_essence, minecraft:milk_bucket, thaumcraft:crystal_essence",
+    "Essentia: {'victus': 60, 'ordo': 30, 'herba': 60}"
   ],
   "thaumcraft:VerdantHeartLife": [
     "Research: VERDANTCHARMS",
@@ -1634,18 +1628,14 @@
     "Accessories are equipped in the off hand. Right click to equip."
   ],
   "thaumcraft:VisAmulet": [
-    "Research: VISAMULET",
-    "Center: {'item': 'minecraft:gold_ingot'}",
-    "Offerings: [{'item': 'thaumcraft:vis_resonator'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aer'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'ignis'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'aqua'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'terra'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'ordo'}]",
-    "Essentia: {'auram': 50, 'potentia': 100, 'vacuos': 50}",
-    "Accessories are equipped in the off hand. Right click to equip."
+    "Center: ['thaumcraft:amulet_mundane', 'minecraft:gold_ingot']",
+    "Offerings: thaumcraft:vis_resonator, thaumcraft:crystal_essence, thaumcraft:crystal_essence, thaumcraft:crystal_essence, thaumcraft:crystal_essence, thaumcraft:crystal_essence",
+    "Essentia: {'auram': 50, 'potentia': 100, 'vacuos': 50}"
   ],
   "thaumcraft:VoidseerPearl": [
-    "Research: VOIDSEERPEARL",
-    "Center: {'item': 'minecraft:gold_ingot'}",
-    "Offerings: [{'item': 'thaumcraft:brain'}, {'item': 'thaumcraft:void_seed'}, {'item': 'thaumcraft:brain'}, {'item': 'thaumcraft:primordial_pearl'}]",
-    "Essentia: {'cognitio': 150, 'vacuos': 150, 'praecantatio': 100}",
-    "Accessories are equipped in the off hand. Right click to equip."
+    "Center: ['thaumcraft:amulet_fancy', 'minecraft:gold_ingot']",
+    "Offerings: thaumcraft:brain, thaumcraft:void_seed, thaumcraft:brain, thaumcraft:primordial_pearl",
+    "Essentia: {'cognitio': 150, 'vacuos': 150, 'praecantatio': 100}"
   ],
   "thaumcraft:RobeChest": [
     "Research: UNLOCKINFUSION",
@@ -2134,5 +2124,25 @@
     "Catalyst: thaumcraft:flesh_block",
     "Cognitio 75, Alienis 50, Ordo 75, Victus 50",
     "Research: SANESOAP"
+  ],
+  "thaumcraft:HelmGoggles": [
+    "Center: fortress helmet (retains components and damage)",
+    "Offerings: minecraft:slime_ball, goggles",
+    "Essentia: {'sensus': 40, 'auram': 20, 'praemunio': 20}"
+  ],
+  "thaumcraft:MaskGrinningDevil": [
+    "Center: fortress helmet (retains components and damage)",
+    "Offerings: minecraft:ink_sac, plate_iron, minecraft:leather, shimmerleaf, brain, plate_iron",
+    "Essentia: {'cognitio': 80, 'victus': 80, 'praemunio': 20}"
+  ],
+  "thaumcraft:MaskAngryGhost": [
+    "Center: fortress helmet (retains components and damage)",
+    "Offerings: minecraft:bone_meal, plate_iron, minecraft:leather, minecraft:poisonous_potato, minecraft:wither_skeleton_skull, plate_iron",
+    "Essentia: {'perditio': 80, 'mortuus': 80, 'praemunio': 20}"
+  ],
+  "thaumcraft:MaskSippingFiend": [
+    "Center: fortress helmet (retains components and damage)",
+    "Offerings: minecraft:red_dye, plate_iron, minecraft:leather, minecraft:ghast_tear, minecraft:milk_bucket, plate_iron",
+    "Essentia: {'exanimis': 80, 'victus': 80, 'praemunio': 20}"
   ]
 }

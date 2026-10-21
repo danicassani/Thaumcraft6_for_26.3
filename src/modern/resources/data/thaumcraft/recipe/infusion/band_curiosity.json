@@ -2,7 +2,10 @@
   "type": "thaumcraft:infusion",
   "research": "CURIOSITYBAND",
   "input": {
-    "item": "minecraft:gold_ingot"
+    "item": [
+      "thaumcraft:girdle_fancy",
+      "minecraft:gold_ingot"
+    ]
   },
   "components": [
     {

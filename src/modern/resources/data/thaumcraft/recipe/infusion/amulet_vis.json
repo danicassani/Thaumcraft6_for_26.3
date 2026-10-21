@@ -2,7 +2,10 @@
   "type": "thaumcraft:infusion",
   "research": "VISAMULET",
   "input": {
-    "item": "minecraft:gold_ingot"
+    "item": [
+      "thaumcraft:amulet_mundane",
+      "minecraft:gold_ingot"
+    ]
   },
   "components": [
     {

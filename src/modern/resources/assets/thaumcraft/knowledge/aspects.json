@@ -920,6 +920,11 @@
       "terra": 10,
       "ordo": 10,
       "perditio": 10
+    },
+    "thaumcraft:ring_apprentice": {
+      "auram": 5,
+      "metallum": 5,
+      "praecantatio": 20
     }
   },
   "entities": {

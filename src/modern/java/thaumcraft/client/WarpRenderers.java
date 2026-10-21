@@ -44,7 +44,7 @@ public final class WarpRenderers {
   public Identifier getTextureLocation(LivingEntityRenderState s){return Identifier.parse("thaumcraft:textures/entity/eldritch_guardian.png");}
  }
  public static final class Cultist extends HumanoidMobRenderer<WarpMonster,HumanoidRenderState,HumanoidModel<HumanoidRenderState>>{
-  public Cultist(EntityRendererProvider.Context c){super(c,new HumanoidModel<>(c.bakeLayer(CULTIST)),.5F);}
+  public Cultist(EntityRendererProvider.Context c){super(c,new HumanoidModel<>(c.bakeLayer(CULTIST)),.5F);addLayer(new net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer<>(this,ArmorModelSet.bake(ModelLayers.PLAYER_ARMOR,c.getModelSet(),HumanoidModel<HumanoidRenderState>::new),c.getEquipmentRenderer()));}
   public HumanoidRenderState createRenderState(){return new HumanoidRenderState();}
   public Identifier getTextureLocation(HumanoidRenderState s){return Identifier.parse("thaumcraft:textures/entity/cultist.png");}
  }

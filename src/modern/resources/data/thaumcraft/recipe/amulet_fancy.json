@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    "SGS",
+    " I "
+  ],
+  "key": {
+    "S": "minecraft:string",
+    "G": "minecraft:diamond",
+    "I": "minecraft:gold_ingot"
+  },
+  "result": {
+    "id": "thaumcraft:amulet_fancy"
+  }
+}
