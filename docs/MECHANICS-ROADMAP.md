@@ -46,7 +46,7 @@ Contenido: `crucible`, `centrifuge`, `bellows`, `smelterBasic`, `smelterThaumium
 
 ## M08: Transporte y almacenamiento de esencia
 
-**Estado:** port.11 añade seis tubos, succión local, válvulas/redstone, filtros, depósitos mixtos, etiquetas y resonador; port.12 añade cerebro con 2000 XP y absorción remota de tarros para la matriz; port.30 conecta fuelles a depósitos con prioridades y redstone. Espejos de esencia pendientes (ESSENTIA-TRANSPORT.md, INFUSION-CARDS.md, ADVANCED-SMELTERS.md).
+**Estado:** port.11 añade seis tubos, succión local, válvulas/redstone, filtros, depósitos mixtos, etiquetas y resonador; port.12 añade cerebro con 2000 XP y absorción remota de tarros para la matriz; port.30 conecta fuelles a depósitos con prioridades y redstone. port.42 incorpora espejos de esencia y fuentes remotas para la matriz (MIRRORS.md) (ESSENTIA-TRANSPORT.md, INFUSION-CARDS.md, ADVANCED-SMELTERS.md).
 
 Contenido: `bannerCrimsonCult`, `tube`, `tubeValve`, `tubeRestrict`, `tubeOneway`, `tubeFilter`, `tubeBuffer`, `jarNormal`, `jarVoid`, `jarBrain`, `essentiaTransportInput`, `essentiaTransportOutput`, `label`, `phial`, `resonator`, `banners [16 colores]`.
 
@@ -88,7 +88,7 @@ Contenido: `pavingStoneTravel`, `pavingStoneBarrier`, `arcaneEar`, `arcaneEarTog
 
 ## M15: Espejos y enlaces entre ubicaciones
 
-**Estado:** pendiente.
+**Estado:** port.42 implementa espejos de objetos y esencia y espejo de mano: seis caras, enlace con dimensión/identidad, colas acotadas, automatización, envío físico y por menú, tarros remotos y matrices de infusión, inestabilidad/flux, guardado y recuperación sin cargar chunks a la fuerza. Recetas y texturas originales; shader y capacidad de cola adaptados (MIRRORS.md).
 
 Contenido: `mirror`, `mirrorEssentia`, `handMirror`.
 

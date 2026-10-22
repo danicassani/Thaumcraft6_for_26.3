@@ -307,6 +307,13 @@
     "B: thaumcraft:plate_brass",
     "C: minecraft:comparator"
   ],
+  "thaumcraft:mirrored_glass": [
+    "thaumcraft:quicksilver",
+    "#thaumcraft:glass_panes",
+    "Vis: 50",
+    "aqua: 1",
+    "ordo: 1"
+  ],
   "thaumcraft:module_aggression": [
     "Research: SEALGUARD",
     "Result: module_aggression",
@@ -2163,5 +2170,28 @@
     "T = #minecraft:wooden_trapdoors",
     "Vis: 15",
     "terra: 1, aqua: 1"
+  ],
+  "thaumcraft:Mirror": [
+    "Center: thaumcraft:mirrored_glass",
+    "Offerings: minecraft:gold_ingot, minecraft:gold_ingot, minecraft:gold_ingot, minecraft:ender_pearl",
+    "Essentia: {'motus': 25, 'tenebrae': 25, 'permutatio': 25}",
+    "Instability: 1"
+  ],
+  "thaumcraft:MirrorEssentia": [
+    "Center: thaumcraft:mirrored_glass",
+    "Offerings: minecraft:iron_ingot, minecraft:iron_ingot, minecraft:iron_ingot, minecraft:ender_pearl",
+    "Essentia: {'motus': 25, 'aqua': 25, 'permutatio': 25}",
+    "Instability: 2"
+  ],
+  "thaumcraft:MirrorHand": [
+    "Center: thaumcraft:mirror",
+    "Offerings: minecraft:stick, minecraft:compass, minecraft:map",
+    "Essentia: {'instrumentum': 50, 'motus': 50}",
+    "Instability: 5"
+  ],
+  "thaumcraft:mirrorglass": [
+    "Quicksilver + glass pane",
+    "Vis: 50",
+    "aqua: 1, ordo: 1"
   ]
 }

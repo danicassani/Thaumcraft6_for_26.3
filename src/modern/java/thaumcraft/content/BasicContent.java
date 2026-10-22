@@ -63,6 +63,7 @@ public final class BasicContent {
         thaumcraft.crystals.CrystalContent.register(bus);
         thaumcraft.devices.DeviceContent.register(bus);
         thaumcraft.storage.HungryChest.register(bus);
+        thaumcraft.mirrors.MirrorContent.register(bus);
         thaumcraft.crafting.ArcaneContent.register(bus);
         thaumcraft.rifts.RiftContent.register(bus);
         thaumcraft.research.ResearchContent.register(bus);

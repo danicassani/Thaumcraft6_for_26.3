@@ -18,8 +18,8 @@ public final class EssentiaNetwork {
         String wanted=target.suctionType(face);
         for(var aspect:source.contents(opposite).keySet().stream().sorted().toList()){
             if(!wanted.isEmpty()&&!wanted.equals(aspect))continue;
-            if(target.insert(aspect,face,true)&&source.extract(aspect,opposite,true)){
-                if(!source.extract(aspect,opposite,false))return false;
+            if(target.insert(aspect,face,true)&&source.extractFor(aspect,opposite,target,true)){
+                if(!source.extractFor(aspect,opposite,target,false))return false;
                 if(!target.insert(aspect,face,false))throw new IllegalStateException("Essentia target changed during server-thread transfer");
                 return true;
             }

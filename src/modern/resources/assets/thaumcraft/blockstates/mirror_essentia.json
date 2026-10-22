@@ -1,0 +1,40 @@
+{
+  "variants": {
+    "facing=down,enabled=false": {
+      "model": "thaumcraft:block/mirror_essentia_down_closed"
+    },
+    "facing=down,enabled=true": {
+      "model": "thaumcraft:block/mirror_essentia_down_open"
+    },
+    "facing=up,enabled=false": {
+      "model": "thaumcraft:block/mirror_essentia_up_closed"
+    },
+    "facing=up,enabled=true": {
+      "model": "thaumcraft:block/mirror_essentia_up_open"
+    },
+    "facing=north,enabled=false": {
+      "model": "thaumcraft:block/mirror_essentia_north_closed"
+    },
+    "facing=north,enabled=true": {
+      "model": "thaumcraft:block/mirror_essentia_north_open"
+    },
+    "facing=south,enabled=false": {
+      "model": "thaumcraft:block/mirror_essentia_south_closed"
+    },
+    "facing=south,enabled=true": {
+      "model": "thaumcraft:block/mirror_essentia_south_open"
+    },
+    "facing=west,enabled=false": {
+      "model": "thaumcraft:block/mirror_essentia_west_closed"
+    },
+    "facing=west,enabled=true": {
+      "model": "thaumcraft:block/mirror_essentia_west_open"
+    },
+    "facing=east,enabled=false": {
+      "model": "thaumcraft:block/mirror_essentia_east_closed"
+    },
+    "facing=east,enabled=true": {
+      "model": "thaumcraft:block/mirror_essentia_east_open"
+    }
+  }
+}

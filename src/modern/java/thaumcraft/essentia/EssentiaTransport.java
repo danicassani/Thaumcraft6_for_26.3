@@ -14,4 +14,6 @@ public interface EssentiaTransport {
     int minimumSuction();
     boolean insert(String aspect,Direction face,boolean simulate);
     boolean extract(String aspect,Direction face,boolean simulate);
+    /** A remote source must not drain the same physical container that is receiving. */
+    default boolean extractFor(String aspect,Direction face,EssentiaTransport receiver,boolean simulate){return extract(aspect,face,simulate); }
 }

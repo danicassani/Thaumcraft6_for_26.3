@@ -1323,5 +1323,14 @@
   "equipment.thaumcraft.shovel_controls": "Sneak-use in air: change architect plane",
   "equipment.thaumcraft.wind_use": "Hold use: ride the wind",
   "equipment.thaumcraft.attract_use": "Hold use: attract dropped items",
-  "block.thaumcraft.hungry_chest": "Hungry Chest"
+  "block.thaumcraft.hungry_chest": "Hungry Chest",
+  "block.thaumcraft.mirror": "Magic Mirror",
+  "block.thaumcraft.mirror_essentia": "Essentia Mirror",
+  "item.thaumcraft.hand_mirror": "Hand Mirror",
+  "mirror.thaumcraft.deposit": "Unsent items stay here",
+  "mirror.thaumcraft.connected": "Mirror linked to a loaded destination",
+  "mirror.thaumcraft.waiting": "Mirror unlinked or destination unavailable",
+  "mirror.thaumcraft.link": "Bound to %s at %s, %s, %s",
+  "mirror.thaumcraft.controls": "Use on an unpaired mirror of the same type, then place.",
+  "mirror.thaumcraft.hand_controls": "Use on an item mirror to bind; use in main hand to send."
 }

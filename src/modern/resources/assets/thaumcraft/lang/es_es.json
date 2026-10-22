@@ -870,5 +870,14 @@
   "equipment.thaumcraft.shovel_controls": "Uso agachado en el aire: cambiar plano de construcción",
   "equipment.thaumcraft.wind_use": "Mantén uso: cabalgar el viento",
   "equipment.thaumcraft.attract_use": "Mantén uso: atraer objetos sueltos",
-  "block.thaumcraft.hungry_chest": "Cofre hambriento"
+  "block.thaumcraft.hungry_chest": "Cofre hambriento",
+  "block.thaumcraft.mirror": "Espejo mágico",
+  "block.thaumcraft.mirror_essentia": "Espejo de esencia",
+  "item.thaumcraft.hand_mirror": "Espejo de mano",
+  "mirror.thaumcraft.deposit": "Lo no enviado queda aquí",
+  "mirror.thaumcraft.connected": "Espejo enlazado con un destino cargado",
+  "mirror.thaumcraft.waiting": "Espejo sin enlace o con destino no disponible",
+  "mirror.thaumcraft.link": "Vinculado a %s en %s, %s, %s",
+  "mirror.thaumcraft.controls": "Usa sobre un espejo libre del mismo tipo y colócalo después.",
+  "mirror.thaumcraft.hand_controls": "Usa sobre un espejo de objetos para vincular; usa en la mano principal para enviar."
 }
