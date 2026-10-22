@@ -33,3 +33,5 @@ Un segundo proceso de servidor recuperó desde un cofre las pociones, perlas des
 Compilación limpia `clean build test`: 180 pruebas, sin fallos, errores ni omisiones; 205 tablas de botín y 635 referencias de modelos validadas. El JAR contiene 336 recetas y 325 definiciones de objetos, sin clases de las pruebas nativas.
 
 Artefacto: `thaumcraft-6.1.BETA26-port.48-forge66.0.13.jar`, 8941496 bytes. SHA-256: `283d8c1a4b6fb376fd2d38a042b928cdcca6bfc898102c2983f6eb4a6edc9a80`.
+
+Actualización port.50: las cajas y urnas aparecen naturalmente en los túmulos; el cofre de greatwood infestado conserva el botín vanilla original. Véase [WORLDGEN-STRUCTURES.md](WORLDGEN-STRUCTURES.md). Las fuentes de bolsas de campeones/jefes siguen pendientes.

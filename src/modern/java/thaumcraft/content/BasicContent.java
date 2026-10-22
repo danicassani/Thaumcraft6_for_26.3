@@ -79,6 +79,7 @@ public final class BasicContent {
         thaumcraft.taint.TaintContent.register(bus);
         thaumcraft.infusion.InfusionContent.register(bus);
         thaumcraft.trees.TreeContent.register(bus);
+        thaumcraft.worldgen.MoundContent.register(bus);
         thaumcraft.thaumaturgy.ThaumaturgyContent.register(bus);
         thaumcraft.equipment.EquipmentContent.register(bus);
         thaumcraft.warp.WarpContent.register(bus);

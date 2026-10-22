@@ -39,3 +39,5 @@ La ejecución final del cliente encontró otro bosque natural en (2752, 2752), c
 Compilación limpia `clean build test`: 183 pruebas sin fallos, errores ni omisiones; 205 tablas de botín y 635 referencias de modelos validadas. El JAR conserva las 336 recetas y 325 definiciones de objetos e incluye el registro de colores y los dos access transformers; no contiene clases de las pruebas nativas.
 
 Artefacto: `thaumcraft-6.1.BETA26-port.49-forge66.0.13.jar`, 8957615 bytes. SHA-256: `922e9b6cebd3f3498db959f8536323c146914ca9d52f957566d4af01adafc208`.
+
+Actualización port.50: los túmulos con tesoros y los greatwoods infestados pasan a estar implementados; véase [WORLDGEN-STRUCTURES.md](WORLDGEN-STRUCTURES.md). Los demás pendientes de esta lista se mantienen.

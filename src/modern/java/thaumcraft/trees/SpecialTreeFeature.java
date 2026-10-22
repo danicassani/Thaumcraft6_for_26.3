@@ -31,6 +31,8 @@ public record SpecialTreeFeature(boolean silverwood) implements Feature {
                 if (flower.canSurvive(level,p)) level.setBlock(p,flower,2);
             }
         }
+        if (placed&&!silverwood&&!(level instanceof net.minecraft.server.level.ServerLevel)&&random.nextInt(8)==0)
+            thaumcraft.worldgen.InfestedGreatwood.place(level,random,origin);
         return placed;
     }
     static boolean soil(BlockState s) {return s.is(BlockTags.DIRT)||s.is(Blocks.GRASS_BLOCK)||s.is(Blocks.MYCELIUM);}
