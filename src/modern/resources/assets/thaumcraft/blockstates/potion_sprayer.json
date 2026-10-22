@@ -1,0 +1,56 @@
+{
+  "variants": {
+    "facing=down,enabled=false": {
+      "model": "thaumcraft:block/potion_sprayer",
+      "x": 180
+    },
+    "facing=down,enabled=true": {
+      "model": "thaumcraft:block/potion_sprayer",
+      "x": 180
+    },
+    "facing=up,enabled=false": {
+      "model": "thaumcraft:block/potion_sprayer"
+    },
+    "facing=up,enabled=true": {
+      "model": "thaumcraft:block/potion_sprayer"
+    },
+    "facing=north,enabled=false": {
+      "model": "thaumcraft:block/potion_sprayer",
+      "x": 90
+    },
+    "facing=north,enabled=true": {
+      "model": "thaumcraft:block/potion_sprayer",
+      "x": 90
+    },
+    "facing=south,enabled=false": {
+      "model": "thaumcraft:block/potion_sprayer",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,enabled=true": {
+      "model": "thaumcraft:block/potion_sprayer",
+      "x": 90,
+      "y": 180
+    },
+    "facing=east,enabled=false": {
+      "model": "thaumcraft:block/potion_sprayer",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,enabled=true": {
+      "model": "thaumcraft:block/potion_sprayer",
+      "x": 90,
+      "y": 90
+    },
+    "facing=west,enabled=false": {
+      "model": "thaumcraft:block/potion_sprayer",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,enabled=true": {
+      "model": "thaumcraft:block/potion_sprayer",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

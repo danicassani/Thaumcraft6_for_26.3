@@ -231,6 +231,16 @@
     "Vis: 50",
     "perditio: 1"
   ],
+  "thaumcraft:lamp_arcane": [
+    "[ I ]",
+    "[IAI]",
+    "[ I ]",
+    "I = thaumcraft:plate_iron",
+    "A = thaumcraft:amber_block",
+    "Vis: 50",
+    "aer: 1",
+    "ignis: 1"
+  ],
   "thaumcraft:levitator": [
     "Research: LEVITATOR",
     "Result: thaumcraft:levitator",
@@ -397,6 +407,19 @@
     "B = thaumcraft:stone_eldritch_tile",
     "Vis: 150"
   ],
+  "thaumcraft:potion_sprayer": [
+    "[BDB]",
+    "[IAI]",
+    "[ICI]",
+    "B = thaumcraft:plate_brass",
+    "D = minecraft:dispenser",
+    "I = thaumcraft:plate_iron",
+    "A = minecraft:brewing_stand",
+    "C = thaumcraft:metal_alchemical",
+    "Vis: 75",
+    "aqua: 1",
+    "ignis: 1"
+  ],
   "thaumcraft:rechargepedestal": [
     "[ R ]",
     "[DID]",
@@ -502,6 +525,18 @@
     "G = thaumcraft:metal_alchemical_advanced",
     "Vis: 750",
     "ignis: 3"
+  ],
+  "thaumcraft:spa": [
+    "[QIQ]",
+    "[SJS]",
+    "[SPS]",
+    "Q = minecraft:quartz_block",
+    "I = minecraft:iron_bars",
+    "S = thaumcraft:stone_arcane",
+    "J = thaumcraft:jar_normal",
+    "P = thaumcraft:mechanism_simple",
+    "Vis: 50",
+    "aqua: 1"
   ],
   "thaumcraft:stabilizer": [
     "[SRS]",
@@ -2265,5 +2300,48 @@
   ],
   "thaumcraft:ArcaneEarToggle": [
     "Arcane ear + lever"
+  ],
+  "thaumcraft:ArcaneLamp": [
+    " I  / IAI /  I ",
+    "I: thaumcraft:plate_iron",
+    "A: thaumcraft:amber_block",
+    "Vis: 50",
+    "Crystals: {'aer': 1, 'ignis': 1}"
+  ],
+  "thaumcraft:ArcaneSpa": [
+    "QIQ / SJS / SPS",
+    "Q: minecraft:quartz_block",
+    "I: minecraft:iron_bars",
+    "S: thaumcraft:stone_arcane",
+    "J: thaumcraft:jar_normal",
+    "P: thaumcraft:mechanism_simple",
+    "Vis: 50",
+    "Crystals: {'aqua': 1}"
+  ],
+  "thaumcraft:PotionSprayer": [
+    "BDB / IAI / ICI",
+    "B: thaumcraft:plate_brass",
+    "D: minecraft:dispenser",
+    "I: thaumcraft:plate_iron",
+    "A: minecraft:brewing_stand",
+    "C: thaumcraft:metal_alchemical",
+    "Vis: 75",
+    "Crystals: {'aqua': 1, 'ignis': 1}"
+  ],
+  "thaumcraft:EverfullUrn": [
+    "Catalyst: minecraft:flower_pot",
+    "Essentia: {'aqua': 30, 'fabrico': 10, 'terra': 10}"
+  ],
+  "thaumcraft:LampGrowth": [
+    "Center: thaumcraft:lamp_arcane",
+    "Offerings: [{'item': 'minecraft:gold_ingot'}, {'item': 'minecraft:bone_meal'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'terra'}, {'item': 'minecraft:gold_ingot'}, {'item': 'minecraft:bone_meal'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'terra'}]",
+    "Essentia: {'herba': 20, 'lux': 15, 'victus': 15, 'instrumentum': 15}",
+    "Instability: 4"
+  ],
+  "thaumcraft:LampFertility": [
+    "Center: thaumcraft:lamp_arcane",
+    "Offerings: [{'item': 'minecraft:gold_ingot'}, {'item': 'minecraft:wheat'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'ignis'}, {'item': 'minecraft:gold_ingot'}, {'item': 'minecraft:carrot'}, {'item': 'thaumcraft:crystal_essence', 'crystal_aspect': 'ignis'}]",
+    "Essentia: {'bestia': 20, 'lux': 15, 'victus': 15, 'desiderium': 15}",
+    "Instability: 4"
   ]
 }

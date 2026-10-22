@@ -1339,5 +1339,17 @@
   "block.thaumcraft.arcane_ear_toggle": "Arcane Ear (Toggle)",
   "block.thaumcraft.redstone_relay": "Redstone Relay",
   "auxiliary.thaumcraft.note": "Note: %s · Instrument: %s",
-  "auxiliary.thaumcraft.relay": "Input threshold: %s · Output: %s"
+  "auxiliary.thaumcraft.relay": "Input threshold: %s · Output: %s",
+  "block.thaumcraft.lamp_arcane": "Arcane Lamp",
+  "block.thaumcraft.lamp_growth": "Lamp of Growth",
+  "block.thaumcraft.lamp_fertility": "Lamp of Fertility",
+  "block.thaumcraft.everfull_urn": "Everfull Urn",
+  "block.thaumcraft.spa": "Arcane Spa",
+  "block.thaumcraft.potion_sprayer": "Potion Sprayer",
+  "utility.thaumcraft.water": "Water: %s mB",
+  "utility.thaumcraft.charges": "Charges: %s",
+  "utility.thaumcraft.mode": "Mode",
+  "utility.thaumcraft.mixing": "%s mB · mixing salts",
+  "utility.thaumcraft.pouring": "%s mB · pouring fluid",
+  "utility.thaumcraft.sprayer": "%s/8 · essentia %s/%s"
 }

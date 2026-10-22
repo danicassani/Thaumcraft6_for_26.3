@@ -82,7 +82,7 @@ Contenido: `taintFibre`, `taintCrust`, `taintSoil`, `taintRock`, `taintGeyser`, 
 
 ## M14: Redstone, movimiento y máquinas auxiliares
 
-**Estado:** port.23 incorpora el levitador arcano. port.43 añade piedras de viaje/barrera, oreja arcana normal/conmutador y relé configurable con diodo nativo, recetas/texturas originales, colisión selectiva, eventos de notas y guardado. Lámparas arcana/de crecimiento/de fertilidad, urna inagotable, spa y pulverizador siguen pendientes (AUXILIARY-REDSTONE.md, GOLEMS-MOBILITY.md).
+**Estado:** port.23 incorpora el levitador; port.43 añade piedras de viaje/barrera, dos orejas y relé nativo. port.44 completa lámparas arcana/crecimiento/fertilidad, urna inagotable, spa y pulverizador: luz con propiedad compatible con infusión, crecimiento y cría pagados, vis/agua, baños y pociones con essentia, menús, automatización y estados versionados persistentes. Recetas y recursos originales; adaptaciones documentadas (UTILITY-MACHINES.md, AUXILIARY-REDSTONE.md, GOLEMS-MOBILITY.md).
 
 Contenido: `pavingStoneTravel`, `pavingStoneBarrier`, `arcaneEar`, `arcaneEarToggle`, `lampArcane`, `lampFertility`, `lampGrowth`, `levitator`, `everfullUrn`, `spa`, `redstoneRelay`, `potionSprayer`.
 

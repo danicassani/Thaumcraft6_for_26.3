@@ -886,5 +886,17 @@
   "block.thaumcraft.arcane_ear_toggle": "Oreja arcana (conmutador)",
   "block.thaumcraft.redstone_relay": "Relé de redstone",
   "auxiliary.thaumcraft.note": "Nota: %s · Instrumento: %s",
-  "auxiliary.thaumcraft.relay": "Umbral de entrada: %s · Salida: %s"
+  "auxiliary.thaumcraft.relay": "Umbral de entrada: %s · Salida: %s",
+  "block.thaumcraft.lamp_arcane": "Lámpara arcana",
+  "block.thaumcraft.lamp_growth": "Lámpara de crecimiento",
+  "block.thaumcraft.lamp_fertility": "Lámpara de fertilidad",
+  "block.thaumcraft.everfull_urn": "Urna inagotable",
+  "block.thaumcraft.spa": "Spa arcano",
+  "block.thaumcraft.potion_sprayer": "Pulverizador de pociones",
+  "utility.thaumcraft.water": "Agua: %s mB",
+  "utility.thaumcraft.charges": "Cargas: %s",
+  "utility.thaumcraft.mode": "Modo",
+  "utility.thaumcraft.mixing": "%s mB · mezcla de sales",
+  "utility.thaumcraft.pouring": "%s mB · vertido de fluido",
+  "utility.thaumcraft.sprayer": "%s/8 · esencia %s/%s"
 }

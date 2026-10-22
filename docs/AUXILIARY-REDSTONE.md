@@ -1,6 +1,6 @@
 # Dispositivos auxiliares: movimiento y redstone — port.43
 
-Este bloque implementa cinco dispositivos de M14. El levitador ya existía; lámparas arcana/de crecimiento/de fertilidad, urna inagotable, spa y pulverizador siguen pendientes.
+Este bloque implementa cinco dispositivos de M14. El levitador ya existía; port.44 incorpora las lámparas, urna, spa y pulverizador restantes (UTILITY-MACHINES.md).
 
 ## Piedras
 

@@ -1,0 +1,161 @@
+{
+  "render_type": "minecraft:cutout",
+  "ambientocclusion": false,
+  "textures": {
+    "side": "thaumcraft:block/lamp_grow_on",
+    "stand": "thaumcraft:block/base_metal",
+    "particle": "thaumcraft:block/lamp_grow_off"
+  },
+  "elements": [
+    {
+      "from": [
+        4,
+        2,
+        4
+      ],
+      "to": [
+        12,
+        14,
+        12
+      ],
+      "faces": {
+        "up": {
+          "uv": [
+            8,
+            0,
+            16,
+            8
+          ],
+          "texture": "#side"
+        },
+        "down": {
+          "uv": [
+            8,
+            0,
+            16,
+            8
+          ],
+          "texture": "#side"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            8,
+            12
+          ],
+          "texture": "#side"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            8,
+            12
+          ],
+          "texture": "#side"
+        },
+        "north": {
+          "uv": [
+            0,
+            0,
+            8,
+            12
+          ],
+          "texture": "#side"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            8,
+            12
+          ],
+          "texture": "#side"
+        }
+      }
+    },
+    {
+      "from": [
+        15,
+        6,
+        6
+      ],
+      "to": [
+        16,
+        10,
+        10
+      ],
+      "faces": {
+        "west": {
+          "texture": "#stand"
+        },
+        "east": {
+          "texture": "#stand"
+        },
+        "north": {
+          "texture": "#stand"
+        },
+        "south": {
+          "texture": "#stand"
+        },
+        "down": {
+          "texture": "#stand"
+        },
+        "up": {
+          "texture": "#stand"
+        }
+      }
+    },
+    {
+      "from": [
+        12,
+        7,
+        7
+      ],
+      "to": [
+        15,
+        9,
+        9
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            9,
+            13,
+            11,
+            16
+          ],
+          "texture": "#stand"
+        },
+        "south": {
+          "uv": [
+            5,
+            13,
+            7,
+            16
+          ],
+          "texture": "#stand"
+        },
+        "down": {
+          "uv": [
+            7,
+            13,
+            9,
+            16
+          ],
+          "texture": "#stand"
+        },
+        "up": {
+          "uv": [
+            3,
+            13,
+            5,
+            16
+          ],
+          "texture": "#stand"
+        }
+      }
+    }
+  ]
+}

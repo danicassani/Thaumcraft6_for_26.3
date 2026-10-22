@@ -1,0 +1,40 @@
+{
+  "variants": {
+    "facing=down,enabled=false": {
+      "model": "thaumcraft:block/everfull_urn"
+    },
+    "facing=down,enabled=true": {
+      "model": "thaumcraft:block/everfull_urn"
+    },
+    "facing=up,enabled=false": {
+      "model": "thaumcraft:block/everfull_urn"
+    },
+    "facing=up,enabled=true": {
+      "model": "thaumcraft:block/everfull_urn"
+    },
+    "facing=north,enabled=false": {
+      "model": "thaumcraft:block/everfull_urn"
+    },
+    "facing=north,enabled=true": {
+      "model": "thaumcraft:block/everfull_urn"
+    },
+    "facing=south,enabled=false": {
+      "model": "thaumcraft:block/everfull_urn"
+    },
+    "facing=south,enabled=true": {
+      "model": "thaumcraft:block/everfull_urn"
+    },
+    "facing=east,enabled=false": {
+      "model": "thaumcraft:block/everfull_urn"
+    },
+    "facing=east,enabled=true": {
+      "model": "thaumcraft:block/everfull_urn"
+    },
+    "facing=west,enabled=false": {
+      "model": "thaumcraft:block/everfull_urn"
+    },
+    "facing=west,enabled=true": {
+      "model": "thaumcraft:block/everfull_urn"
+    }
+  }
+}
