@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Original smelter tiers/upgrades, costs and native research requirements. Run after earlier generators."""
 import json,copy
+from loot_schema import for_resource
 from pathlib import Path
 R=Path(__file__).resolve().parents[1];A=R/'src/modern/resources/assets/thaumcraft';D=R/'src/modern/resources/data/thaumcraft';O=R/'src/main/resources/assets/thaumcraft'
-def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(for_resource(p,v),ensure_ascii=False,indent=2)+'\n')
 for name in ['smelter_thaumium','smelter_void','smelter_aux','smelter_vent','bellows']:
  bases=[name+'_off',name+'_on'] if name.startswith(('smelter_thaumium','smelter_void')) else [name]
  for base in bases:

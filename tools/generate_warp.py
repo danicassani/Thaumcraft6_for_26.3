@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Warp assets and original soap crucible recipe; run after primordial."""
 import json
+from loot_schema import for_resource
 from pathlib import Path
 from PIL import Image
 R=Path(__file__).resolve().parents[1];A=R/'src/modern/resources/assets/thaumcraft';D=R/'src/modern/resources/data/thaumcraft';O=R/'src/main/resources/assets/thaumcraft'
-def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(for_resource(p,v),ensure_ascii=False,indent=2)+'\n')
 save(A/'models/item/sanity_soap.json',{'parent':'minecraft:item/generated','textures':{'layer0':'thaumcraft:items/sanity_soap'}})
 save(A/'items/sanity_soap.json',{'model':{'type':'minecraft:model','model':'thaumcraft:item/sanity_soap'}})
 save(D/'recipe/sanity_soap.json',{'type':'thaumcraft:crucible','research':'SANESOAP','catalyst':'thaumcraft:flesh_block','aspects':{'cognitio':75,'alienis':50,'ordo':75,'victus':50},'result':{'id':'thaumcraft:sanity_soap'}})

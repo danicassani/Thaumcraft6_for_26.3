@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Functional stabilization, original matrix upgrades and eight active tool infusions."""
 import json
+from loot_schema import for_resource
 from pathlib import Path
 R=Path(__file__).resolve().parents[1]
 AS=R/'src/modern/resources/assets/thaumcraft'
@@ -8,7 +9,7 @@ DATA=R/'src/modern/resources/data/thaumcraft'
 OLD=R/'src/main/resources/assets/thaumcraft'
 def save(path,value):
  path.parent.mkdir(parents=True,exist_ok=True)
- path.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n')
+ path.write_text(json.dumps(for_resource(path,value),ensure_ascii=False,indent=2)+'\n')
 for n in ['stabilizer','inlay_dot','inlay_dot_0','inlay_side','inlay_side0']:
  v=json.loads((OLD/f'models/block/{n}.json').read_text());v.pop('__createdwith',None);v['render_type']='minecraft:cutout';save(AS/f'models/block/{n}.json',v)
 save(AS/'blockstates/stabilizer.json',{'variants':{'':{'model':'thaumcraft:block/stabilizer'}}})

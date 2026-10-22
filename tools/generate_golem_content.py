@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Functional first golem release: only active parts and six task seals."""
 import json,shutil
+from loot_schema import for_resource
 from pathlib import Path
 R=Path(__file__).resolve().parents[1];A=R/'src/modern/resources/assets/thaumcraft';D=R/'src/modern/resources/data/thaumcraft'
-def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(for_resource(p,v),ensure_ascii=False,indent=2)+'\n')
 def shaped(n,pat,key,count=1):return {'type':'minecraft:crafting_shaped','pattern':pat,'key':key,'result':{'id':'thaumcraft:'+n,'count':count}}
 def arc(n,res,vis,crystals,pat,key,count=1):save(D/f'recipe/arcane/{n}.json',{'type':'thaumcraft:arcane','research':res,'vis':vis,'crystals':crystals,'recipe':shaped(n,pat,key,count)})
 def inf(n,res,base,parts,aspects,inst):save(D/f'recipe/infusion/{n}.json',{'type':'thaumcraft:infusion','research':res,'input':{'item':'thaumcraft:'+base},'components':[{'item':p if ':' in p else 'thaumcraft:'+p} for p in parts],'aspects':aspects,'instability':inst,'result':{'id':'thaumcraft:'+n}})

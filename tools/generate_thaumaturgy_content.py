@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Native spell and equipment assets; original research gates and recipe costs."""
 import json,shutil
+from loot_schema import for_resource
 from pathlib import Path
 R=Path(__file__).resolve().parents[1];A=R/'src/modern/resources/assets/thaumcraft';D=R/'src/modern/resources/data/thaumcraft';O=R/'src/main/resources/assets/thaumcraft'
-def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(for_resource(p,v),ensure_ascii=False,indent=2)+'\n')
 names=['primordial_pearl','primordial_nugget','focus_1','focus_2','focus_3','goggles','traveller_boots','primal_crusher']+[f'{f}_{t}' for f in ['void','elemental'] for t in ['sword','pick','axe','shovel','hoe']]+[f'{f}_{s}' for f in ['cloth','fortress','void','void_robe'] for s in ['helm','chest','legs','boots'] if (f!='cloth' or s!='helm') and (f not in ['fortress','void_robe'] or s!='boots')]
 for name in names:
  old='traveller_boots' if name=='traveller_boots' else name

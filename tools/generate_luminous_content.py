@@ -1,7 +1,8 @@
+from loot_schema import for_resource
 from pathlib import Path
 import json
 root=Path(__file__).resolve().parents[1];a=root/'src/modern/resources/assets/thaumcraft';d=root/'src/modern/resources/data/thaumcraft';legacy=root/'src/main/resources/assets/thaumcraft'
-def save(p,o):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(o,indent=2,ensure_ascii=False)+'\n')
+def save(p,o):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(for_resource(p,o),indent=2,ensure_ascii=False)+'\n')
 colors=[('white',16383998,'blanco'),('orange',16351261,'naranja'),('magenta',13061821,'magenta'),('lightblue',3847130,'azul claro'),('yellow',16701501,'amarillo'),('lime',8439583,'lima'),('pink',15961002,'rosa'),('gray',4673362,'gris'),('silver',10329495,'gris claro'),('cyan',1481884,'cian'),('purple',8991416,'morado'),('blue',3949738,'azul'),('brown',8606770,'marrón'),('green',6192150,'verde'),('red',11546150,'rojo'),('black',1908001,'negro')]
 model=json.loads((legacy/'models/block/candle.json').read_text());save(a/'models/block/tallow_candle.json',model)
 save(a/'models/block/nitor.json',{'elements':[],'textures':{'particle':'thaumcraft:blocks/nitor'}})

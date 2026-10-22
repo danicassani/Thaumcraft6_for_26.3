@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Run last: original flux condenser, connected lattices, recipes and guide."""
 import json,copy
+from loot_schema import for_resource
 from pathlib import Path
 R=Path(__file__).resolve().parents[1];A=R/'src/modern/resources/assets/thaumcraft';D=R/'src/modern/resources/data/thaumcraft';O=R/'src/main/resources/assets/thaumcraft'
-def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(for_resource(p,v),ensure_ascii=False,indent=2)+'\n')
 for n in ['condenser','condenser_lattice_core','condenser_lattice_core_dirty','condenser_lattice_side']:
  m=json.loads((O/f'models/block/{n}.json').read_text());m.pop('__createdwith',None);m['render_type']='minecraft:cutout';save(A/f'models/block/{n}.json',m)
 m=json.loads((A/'models/block/condenser.json').read_text());m['textures']['side']='thaumcraft:blocks/condenser_off';save(A/'models/block/condenser_off.json',m)

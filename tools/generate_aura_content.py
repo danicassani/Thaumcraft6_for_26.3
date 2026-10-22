@@ -1,4 +1,5 @@
 """Modern resources for the functional aura buffer and creative flux sponge."""
+from loot_schema import for_resource
 from pathlib import Path
 import json
 ROOT=Path(__file__).resolve().parents[1]
@@ -6,7 +7,7 @@ a=ROOT/'src/modern/resources/assets/thaumcraft'
 d=ROOT/'src/modern/resources/data/thaumcraft'
 def save(p,v):
  p.parent.mkdir(parents=True,exist_ok=True)
- p.write_text(json.dumps(v,indent=2,ensure_ascii=False)+'\n')
+ p.write_text(json.dumps(for_resource(p,v),indent=2,ensure_ascii=False)+'\n')
 variants={}
 for charge in range(11):
  stage=0 if charge==0 else 4 if charge==10 else (charge-1)//3+1

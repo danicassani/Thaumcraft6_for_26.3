@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Alchemy recipes whose outputs already have native behavior; preserve original costs."""
 import json
+from loot_schema import for_resource
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];OLD=ROOT/'src/main/resources/assets/thaumcraft';AS=ROOT/'src/modern/resources/assets/thaumcraft';DATA=ROOT/'src/modern/resources/data/thaumcraft'
-def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(for_resource(p,v),ensure_ascii=False,indent=2)+'\n')
 def model(n,v):save(AS/f'models/block/{n}.json',v)
 for name,source in [('crucible','crucible'),('alembic','alembic_normal'),('jar_normal','jar_normal'),('jar_void','jar_void'),('smelter_basic_off','smelter_basic_off'),('smelter_basic_on','smelter_basic_on')]:
  v=json.loads((OLD/f'models/block/{source}.json').read_text());v.pop('__createdwith',None)

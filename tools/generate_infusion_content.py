@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Original infusion costs and viable outputs; native models, loot and 32 active theory cards."""
 import json
+from loot_schema import for_resource
 from pathlib import Path
 R=Path(__file__).resolve().parents[1];AS=R/'src/modern/resources/assets/thaumcraft';DATA=R/'src/modern/resources/data/thaumcraft';OLD=R/'src/main/resources/assets/thaumcraft'
-def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(for_resource(p,v),ensure_ascii=False,indent=2)+'\n')
 def box(a,b,texture):return {'from':a,'to':b,'faces':{f:{'texture':texture} for f in ['up','down','north','south','west','east']}}
 for name,old in [('pedestal_arcane','pedestal_normal'),('pedestal_ancient','pedestal_ancient'),('pedestal_eldritch','pedestal_eldritch'),('jar_brain','jar_brain_item')]:
  v=json.loads((OLD/f'models/block/{old}.json').read_text());v.pop('__createdwith',None)

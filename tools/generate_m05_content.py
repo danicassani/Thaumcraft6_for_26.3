@@ -1,11 +1,12 @@
 """Port original crystal meshes and device resources, with 26.3 vanilla prototypes."""
+from loot_schema import for_resource
 from pathlib import Path
 import json, re, random, zipfile
 ROOT=Path(__file__).resolve().parents[1]
 a=ROOT/'src/modern/resources/assets/thaumcraft';d=ROOT/'src/modern/resources/data';old=ROOT/'src/main/resources/assets/thaumcraft'
 mc=zipfile.ZipFile('/workspace/.gradle/caches/minecraftforge/forgegradle/mavenizer/caches/minecraft_tasks/26.3/client.jar')
 def save(path,data):
- path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n')
+ path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(for_resource(path,data),indent=2,ensure_ascii=False)+'\n')
 def argb(rgb):return (rgb|0xff000000)-(1<<32)
 source=re.sub(r'//[^\n]*','',(ROOT/'src/main/java/thaumcraft/api/aspects/Aspect.java').read_text())
 aspects={name:int(color,16) for name,color in re.findall(r'new Aspect\("([a-z]+)",\s*(0x[0-9a-fA-F]+)',source)}

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Movement parts and bilingual book; run after generate_golem_tasks.py."""
 import json
+from loot_schema import for_resource
 from pathlib import Path
 A=Path(__file__).resolve().parents[1]/'src/modern/resources/assets/thaumcraft'
 labels={
@@ -13,12 +14,12 @@ guides={
  'research.GOLEMFLYER.stage.1':('Unlock Levitator legs, requiring this research in press and placement. They replace the walker base with a levitator, four brass plates and a slime ball, retaining a mechanism. They add Flyer and Fragile before addon traits cancel opposites. Flight is 33% slower than that material design on foot. Native flying navigation carries physical cargo across gaps and to higher inventories, routing around obstacles in loaded chunks. No gravity or fall damage; Stay and offline owners stop and hover rather than continuing the old route. It does not enable work through walls, distant seals or unloaded destinations.',
  'Desbloquea patas Levitadoras; la prensa y la colocación exigen esta investigación. Sustituyen el material caminante por un levitador, cuatro placas de latón y una bola de slime, conservando un mecanismo. Añaden Volador y Frágil antes de cancelar opuestos con las mejoras. Vuelan un 33% más despacio que ese diseño a pie. La navegación aérea transporta carga física sobre huecos y hasta inventarios elevados, rodeando obstáculos dentro de chunks cargados. Sin gravedad ni daño de caída; Esperar y el dueño desconectado detienen el recorrido y mantienen la altura. No permiten trabajar a través de paredes, con sellos lejanos ni en destinos descargados.')}
 for i,loc in enumerate(['en_us','es_es']):
- p=A/f'lang/{loc}.json';v=json.loads(p.read_text());v.update({'golem.thaumcraft.'+k:pair[i] for k,pair in labels.items()});v.update({k:pair[i] for k,pair in guides.items()});p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+ p=A/f'lang/{loc}.json';v=json.loads(p.read_text());v.update({'golem.thaumcraft.'+k:pair[i] for k,pair in labels.items()});v.update({k:pair[i] for k,pair in guides.items()});p.write_text(json.dumps(for_resource(p,v),ensure_ascii=False,indent=2)+'\n')
 print('Walker/Wheels/Climber/Levitator labels and research guides generated.')
 
 # Functional levitator dependency, including the original arcane crafting payment.
 D=A.parents[1]/'data/thaumcraft'
-def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(for_resource(p,v),ensure_ascii=False,indent=2)+'\n')
 recipe={'type':'thaumcraft:arcane','research':'LEVITATOR','vis':35,'crystals':{'aer':1},'recipe':{'type':'minecraft:crafting_shaped','pattern':['WIW','BNB','WGW'],'key':{'W':'#minecraft:planks','I':'thaumcraft:plate_thaumium','B':'thaumcraft:plate_iron','N':'#thaumcraft:nitor','G':'thaumcraft:mechanism_simple'},'result':{'id':'thaumcraft:levitator'}}}
 save(D/'recipe/arcane/levitator.json',recipe)
 variants={}

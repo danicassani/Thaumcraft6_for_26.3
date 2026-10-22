@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Original paving stones, ears and configurable redstone relay."""
+from loot_schema import for_resource
 from pathlib import Path
 import json,shutil
 R=Path(__file__).resolve().parents[1];root=R/'src/modern/resources';old=R/'src/main/resources/assets/thaumcraft'
 def save(p,v):
- p=root/p;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+ p=root/p;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(for_resource(p,v),ensure_ascii=False,indent=2)+'\n')
 def texture(n):
  for suffix in ['.png','.png.mcmeta']:
   src=old/f'textures/blocks/{n}{suffix}'

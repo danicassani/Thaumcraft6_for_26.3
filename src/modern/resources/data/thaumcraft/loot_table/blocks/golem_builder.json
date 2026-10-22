@@ -10,15 +10,13 @@
             {
               "type": "minecraft:item",
               "name": "minecraft:piston",
-              "conditions": [
-                {
-                  "condition": "minecraft:block_state_property",
-                  "block": "thaumcraft:golem_builder",
-                  "properties": {
-                    "assembled": "true"
-                  }
+              "condition": {
+                "type": "minecraft:match_block",
+                "blocks": "thaumcraft:golem_builder",
+                "state": {
+                  "assembled": "true"
                 }
-              ]
+              }
             },
             {
               "type": "minecraft:item",

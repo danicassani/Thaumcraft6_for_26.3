@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Run last: original two-block Thaumatorium mesh and Mnemonic Matrix recipe."""
 import json,copy
+from loot_schema import for_resource
 from pathlib import Path
 R=Path(__file__).resolve().parents[1];A=R/'src/modern/resources/assets/thaumcraft';D=R/'src/modern/resources/data/thaumcraft';O=R/'src/main/resources/assets/thaumcraft'
-def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(for_resource(p,v),ensure_ascii=False,indent=2)+'\n')
 vertices=[];uv=[];triangles=[]
 for line in (O/'models/block/thaumatorium.obj').read_text().splitlines():
  v=line.split()

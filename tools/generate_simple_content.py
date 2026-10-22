@@ -2,12 +2,13 @@
 Run from repository root after tools/audit_content.py. Minecraft prototypes are
 read from the already-resolved 26.3 client archive, never guessed from older APIs.
 """
+from loot_schema import for_resource
 from pathlib import Path
 import json,re,zipfile,itertools,shutil,argparse
 ROOT=Path(__file__).resolve().parents[1];legacy=ROOT/'src/main/resources/assets/thaumcraft';out=ROOT/'src/modern/resources';a=out/'assets/thaumcraft';d=out/'data/thaumcraft'
 parser=argparse.ArgumentParser();parser.add_argument('--minecraft-client',type=Path,default=Path('/workspace/.gradle/caches/minecraftforge/forgegradle/mavenizer/caches/minecraft_tasks/26.3/client.jar'));args=parser.parse_args()
 mc=zipfile.ZipFile(args.minecraft_client)
-def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,indent=2,ensure_ascii=False)+'\n')
+def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(for_resource(p,v),indent=2,ensure_ascii=False)+'\n')
 def tc(n):return 'thaumcraft:'+n
 audit=json.loads((ROOT/'docs/CONTENT-INVENTORY.json').read_text());config=(ROOT/'src/main/java/thaumcraft/common/config/ConfigBlocks.java').read_text().splitlines();blocks=[];fields={}
 for row in audit:

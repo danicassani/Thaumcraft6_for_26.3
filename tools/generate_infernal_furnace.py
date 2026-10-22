@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Original infernal multiblock model, catalog and bounded smelting bonus definitions. Run last."""
 import json
+from loot_schema import for_resource
 from pathlib import Path
 R=Path(__file__).resolve().parents[1];A=R/'src/modern/resources/assets/thaumcraft';D=R/'src/modern/resources/data/thaumcraft'
-def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(for_resource(p,v),ensure_ascii=False,indent=2)+'\n')
 m=json.loads((R/'src/main/resources/assets/thaumcraft/models/block/infernal_furnace.json').read_text());m.pop('__createdwith',None);m['render_type']='minecraft:cutout';m['textures'].update(core='minecraft:block/lava_still',fire='minecraft:block/fire_0',particle='thaumcraft:blocks/infernal_furnace');m['display']={'gui':{'rotation':[30,225,0],'scale':[.275,.275,.275]}};save(A/'models/block/infernal_furnace.json',m)
 save(A/'blockstates/infernal_furnace.json',{'variants':{f'facing={d}':{'model':'thaumcraft:block/infernal_furnace','y':y} for d,y in [('north',180),('east',270),('south',0),('west',90)]}})
 save(A/'items/infernal_furnace.json',{'model':{'type':'minecraft:model','model':'thaumcraft:block/infernal_furnace'}})

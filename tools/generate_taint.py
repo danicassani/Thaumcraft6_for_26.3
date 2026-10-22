@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Run after condenser: functional taint and fluids, legacy assets, survival recipes."""
 import json,copy
+from loot_schema import for_resource
 from pathlib import Path
 R=Path(__file__).resolve().parents[1];A=R/'src/modern/resources/assets/thaumcraft';D=R/'src/modern/resources/data/thaumcraft';O=R/'src/main/resources/assets/thaumcraft'
-def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(for_resource(p,v),ensure_ascii=False,indent=2)+'\n')
 def model(n,v):save(A/f'models/block/{n}.json',v)
 def state(n,v):save(A/f'blockstates/{n}.json',v)
 def cube(n,t,parent='cube_all'):model(n,{'parent':'minecraft:block/'+parent,'textures':t});state(n,{'variants':{'':{'model':'thaumcraft:block/'+n}}})

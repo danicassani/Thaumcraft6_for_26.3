@@ -11,39 +11,21 @@
               "type": "minecraft:item",
               "name": "thaumcraft:stone_porous",
               "weight": 1,
-              "conditions": [
-                {
-                  "condition": "minecraft:match_tool",
-                  "predicate": {
-                    "predicates": {
-                      "minecraft:enchantments": [
-                        {
-                          "enchantments": "minecraft:silk_touch",
-                          "levels": {
-                            "min": 1
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              ]
+              "condition": "minecraft:tool/can_silk_touch"
             },
             {
               "type": "minecraft:loot_table",
               "value": "thaumcraft:blocks/porous_bonus",
-              "conditions": [
-                {
-                  "condition": "minecraft:table_bonus",
-                  "enchantment": "minecraft:fortune",
-                  "chances": [
-                    0.06666666666666667,
-                    0.13333333333333333,
-                    0.2,
-                    0.26666666666666666
-                  ]
-                }
-              ]
+              "condition": {
+                "type": "minecraft:table_bonus",
+                "enchantment": "minecraft:fortune",
+                "chances": [
+                  0.06666666666666667,
+                  0.13333333333333333,
+                  0.2,
+                  0.26666666666666666
+                ]
+              }
             },
             {
               "type": "minecraft:item",
@@ -53,11 +35,9 @@
           ]
         }
       ],
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ]
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      }
     }
   ]
 }

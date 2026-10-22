@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Port original table/charger/siphon meshes and available TC6 arcane recipes."""
 import json
+from loot_schema import for_resource
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -11,7 +12,7 @@ OLD = ROOT / 'src/main/resources/assets/thaumcraft'
 
 def save(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + '\n')
+    path.write_text(json.dumps(for_resource(path,value), indent=2, ensure_ascii=False) + '\n')
 
 
 for name in ['arcane_workbench', 'void_siphon']:

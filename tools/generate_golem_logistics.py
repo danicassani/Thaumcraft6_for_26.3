@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Advanced seals and physical provision routes; run after generate_golem_content.py."""
 import json,shutil
+from loot_schema import for_resource
 from pathlib import Path
 R=Path(__file__).resolve().parents[1];A=R/'src/modern/resources/assets/thaumcraft';D=R/'src/modern/resources/data/thaumcraft';O=R/'src/main/resources/assets/thaumcraft'
-def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(for_resource(p,v),ensure_ascii=False,indent=2)+'\n')
 recipes=[('pickup_advanced','pickup','SEALCOLLECT&&MINDBIOTHAUMIC',{'sensus':10,'cognitio':10},'SealCollectAdv'),('fill_advanced','fill','SEALSTORE&&MINDBIOTHAUMIC',{'sensus':10,'cognitio':10},'SealStoreAdv'),('empty_advanced','empty','SEALEMPTY&&MINDBIOTHAUMIC',{'sensus':10,'cognitio':10},'SealEmptyAdv'),('guard_advanced','guard','SEALGUARD&&MINDBIOTHAUMIC',{'sensus':20,'cognitio':20},'SealGuardAdv'),('breaker_advanced','breaker','SEALBREAK&&MINDBIOTHAUMIC',{'sensus':10,'cognitio':10,'instrumentum':20},'SealBreakAdv'),('provider','empty_advanced','SEALPROVIDE',{'permutatio':10,'desiderium':10},'SealProvide'),('stock','fill','SEALSTOCK',{'cognitio':10,'desiderium':10},'SealStock')]
 pages=json.loads((A/'knowledge/recipes.json').read_text())
 for k,base,research,aspects,alias in recipes:

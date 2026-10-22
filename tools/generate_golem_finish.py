@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Final golem resources; run after golem_matching."""
 import json,shutil,math
+from loot_schema import for_resource
 from pathlib import Path
 R=Path(__file__).resolve().parents[1];A=R/'src/modern/resources/assets/thaumcraft';D=R/'src/modern/resources/data/thaumcraft';old=R/'src/main/resources/assets/thaumcraft'
-def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+def save(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(for_resource(p,v),ensure_ascii=False,indent=2)+'\n')
 meshes={}
 for p in sorted((old/'models/obj').glob('golem_*.obj'))+[old/'models/block/golembuilder.obj']:
  vertices=[];uvs=[];normals=[];groups={};group='default'
@@ -55,5 +56,5 @@ for i,locale in enumerate(['en_us','es_es']):
   ]
  }.items():
   text=paragraphs[i];v[key]=v.get(key,'').split(text)[0]+text
- p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+ p.write_text(json.dumps(for_resource(p,v),ensure_ascii=False,indent=2)+'\n')
 print('Original golem meshes',len(meshes),'triangles',sum(len(t) for m in meshes.values() for t in m.values()))

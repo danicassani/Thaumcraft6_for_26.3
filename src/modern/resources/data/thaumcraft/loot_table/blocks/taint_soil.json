@@ -11,31 +11,15 @@
               "type": "minecraft:item",
               "name": "thaumcraft:taint_soil",
               "weight": 1,
-              "conditions": [
-                {
-                  "condition": "minecraft:match_tool",
-                  "predicate": {
-                    "predicates": {
-                      "minecraft:enchantments": [
-                        {
-                          "enchantments": "minecraft:silk_touch",
-                          "levels": {
-                            "min": 1
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              ]
+              "condition": "minecraft:tool/can_silk_touch"
             },
             {
               "type": "minecraft:item",
               "name": "thaumcraft:crystal_essence",
               "weight": 1,
-              "functions": [
+              "modifier": [
                 {
-                  "function": "minecraft:set_components",
+                  "type": "minecraft:set_components",
                   "components": {
                     "thaumcraft:crystal_aspect": "vitium",
                     "minecraft:item_name": {
@@ -44,21 +28,17 @@
                   }
                 }
               ],
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.06666666666666667
-                }
-              ]
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.06666666666666667
+              }
             }
           ]
         }
       ],
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ]
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      }
     }
   ]
 }

@@ -29,3 +29,6 @@ forge*changelog.txt
 
 # Local build/runtime verification evidence
 /work/
+
+# Python generator imports
+/tools/__pycache__/

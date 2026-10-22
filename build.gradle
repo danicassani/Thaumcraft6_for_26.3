@@ -4,7 +4,7 @@ plugins {
     id 'eclipse'
     id 'net.minecraftforge.gradle' version '7.0.17'
 }
-version = '6.1.BETA26-port.46-forge66.0.13'
+version = '6.1.BETA26-port.47-forge66.0.13'
 group = 'griglog.thaumcraft'
 base.archivesName = 'thaumcraft'
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
@@ -143,6 +143,16 @@ tasks.register('checkModelResources', Exec) {
             stagedMainResources.get().asFile
 }
 tasks.named('check') { dependsOn tasks.named('checkModelResources') }
+tasks.register('checkLootResources', Exec) {
+    group = 'verification'
+    description = 'Reject obsolete loot fields that the native codec can ignore.'
+    dependsOn tasks.named('processResources')
+    def python = providers.gradleProperty('pythonExecutable').getOrElse(
+            System.getProperty('os.name').toLowerCase().contains('windows') ? 'python' : 'python3')
+    commandLine python, layout.projectDirectory.file('tools/verify_loot_resources.py').asFile,
+            stagedMainResources.get().asFile
+}
+tasks.named('check') { dependsOn tasks.named('checkLootResources') }
 tasks.register('checkWarpCodec') { dependsOn tasks.named('test') }
 
 tasks.withType(JavaExec).configureEach {

@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
+from loot_schema import for_resource
 from pathlib import Path
 import json,shutil
 R=Path(__file__).resolve().parents[1];root=R/'src/modern/resources'
 def save(p,v):
- p=root/p;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+ p=root/p;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(for_resource(p,v),ensure_ascii=False,indent=2)+'\n')
 p=root/'assets/thaumcraft/textures/entity/chest/hungry.png';p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(R/'src/main/resources/assets/thaumcraft/textures/models/chesthungry.png',p)
 save(Path('assets/minecraft/atlases/chest.json'),{'sources':[{'type':'minecraft:single','resource':'thaumcraft:entity/chest/hungry','sprite':'thaumcraft:entity/chest/hungry'}]})
 # JSON item models and breaking particles use the block atlas, unlike the BER.

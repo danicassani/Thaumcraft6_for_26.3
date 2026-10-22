@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Native mirror block models and original TC6 infusion/arcane recipes."""
+from loot_schema import for_resource
 from pathlib import Path
 import json,shutil,itertools
 R=Path(__file__).resolve().parents[1];root=R/'src/modern/resources';old=R/'src/main/resources/assets/thaumcraft'
 def save(p,v):
- p=root/p;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+ p=root/p;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(for_resource(p,v),ensure_ascii=False,indent=2)+'\n')
 for texture in ['mirrorframe','mirrorframe2','mirrorpane','mirrorpaneopen','mirrorpanetrans']:
  p=root/f'assets/thaumcraft/textures/block/{texture}.png';p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(old/f'textures/blocks/{texture}.png',p)
 p=root/'assets/thaumcraft/textures/item/hand_mirror.png';p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(old/'textures/items/hand_mirror.png',p)

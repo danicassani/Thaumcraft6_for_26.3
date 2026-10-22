@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Native theory-table models, recipes, notes and bilingual interface strings."""
 import json
+from loot_schema import for_resource
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];RES=ROOT/'src/modern/resources';AS=RES/'assets/thaumcraft';DATA=RES/'data/thaumcraft'
 def save(path,value):
- path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n')
+ path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(for_resource(path,value),ensure_ascii=False,indent=2)+'\n')
 for name in ['table_wood','research_table']:
  model=json.loads((ROOT/f'src/main/resources/assets/thaumcraft/models/block/{name}.json').read_text())
  save(AS/f'models/block/{name}.json',model);save(AS/f'blockstates/{name}.json',{'variants':{'':{'model':f'thaumcraft:block/{name}'}}})

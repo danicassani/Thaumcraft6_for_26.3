@@ -63,9 +63,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "vacuos",
                 "minecraft:item_name": {
@@ -79,9 +79,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "lux",
                 "minecraft:item_name": {
@@ -95,9 +95,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "motus",
                 "minecraft:item_name": {
@@ -111,9 +111,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "gelum",
                 "minecraft:item_name": {
@@ -127,9 +127,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "vitreus",
                 "minecraft:item_name": {
@@ -143,9 +143,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "metallum",
                 "minecraft:item_name": {
@@ -159,9 +159,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "victus",
                 "minecraft:item_name": {
@@ -175,9 +175,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "mortuus",
                 "minecraft:item_name": {
@@ -191,9 +191,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "potentia",
                 "minecraft:item_name": {
@@ -207,9 +207,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "permutatio",
                 "minecraft:item_name": {
@@ -223,9 +223,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "praecantatio",
                 "minecraft:item_name": {
@@ -239,9 +239,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "auram",
                 "minecraft:item_name": {
@@ -255,9 +255,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "alkimia",
                 "minecraft:item_name": {
@@ -271,9 +271,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "vitium",
                 "minecraft:item_name": {
@@ -287,9 +287,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "tenebrae",
                 "minecraft:item_name": {
@@ -303,9 +303,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "alienis",
                 "minecraft:item_name": {
@@ -319,9 +319,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "volatus",
                 "minecraft:item_name": {
@@ -335,9 +335,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "herba",
                 "minecraft:item_name": {
@@ -351,9 +351,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "instrumentum",
                 "minecraft:item_name": {
@@ -367,9 +367,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "fabrico",
                 "minecraft:item_name": {
@@ -383,9 +383,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "machina",
                 "minecraft:item_name": {
@@ -399,9 +399,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "vinculum",
                 "minecraft:item_name": {
@@ -415,9 +415,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "spiritus",
                 "minecraft:item_name": {
@@ -431,9 +431,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "cognitio",
                 "minecraft:item_name": {
@@ -447,9 +447,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "sensus",
                 "minecraft:item_name": {
@@ -463,9 +463,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "aversio",
                 "minecraft:item_name": {
@@ -479,9 +479,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "praemunio",
                 "minecraft:item_name": {
@@ -495,9 +495,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "desiderium",
                 "minecraft:item_name": {
@@ -511,9 +511,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "exanimis",
                 "minecraft:item_name": {
@@ -527,9 +527,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "bestia",
                 "minecraft:item_name": {
@@ -543,9 +543,9 @@
           "type": "minecraft:item",
           "name": "thaumcraft:crystal_essence",
           "weight": 1,
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "thaumcraft:crystal_aspect": "humanus",
                 "minecraft:item_name": {
