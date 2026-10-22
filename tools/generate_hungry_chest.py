@@ -6,6 +6,10 @@ def save(p,v):
  p=root/p;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
 p=root/'assets/thaumcraft/textures/entity/chest/hungry.png';p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(R/'src/main/resources/assets/thaumcraft/textures/models/chesthungry.png',p)
 save(Path('assets/minecraft/atlases/chest.json'),{'sources':[{'type':'minecraft:single','resource':'thaumcraft:entity/chest/hungry','sprite':'thaumcraft:entity/chest/hungry'}]})
+# JSON item models and breaking particles use the block atlas, unlike the BER.
+p=Path('assets/minecraft/atlases/blocks.json');atlas=json.loads((root/p).read_text());entry={'type':'minecraft:single','resource':'thaumcraft:entity/chest/hungry','sprite':'thaumcraft:entity/chest/hungry'}
+if entry not in atlas['sources']:atlas['sources'].append(entry)
+save(p,atlas)
 save(Path('assets/thaumcraft/blockstates/hungry_chest.json'),{'variants':{'':{'model':'thaumcraft:block/hungry_chest_particle'}}})
 save(Path('assets/thaumcraft/models/block/hungry_chest_particle.json'),{'textures':{'particle':'thaumcraft:entity/chest/hungry'}})
 def cube(lo,hi,u,v):

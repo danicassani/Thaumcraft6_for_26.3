@@ -1,6 +1,7 @@
 {
   "textures": {
-    "cross": "thaumcraft:blocks/taint_growth_4"
+    "cross": "thaumcraft:blocks/taint_growth_4",
+    "particle": "thaumcraft:blocks/taint_growth_4"
   },
   "elements": [
     {

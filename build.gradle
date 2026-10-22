@@ -4,7 +4,7 @@ plugins {
     id 'eclipse'
     id 'net.minecraftforge.gradle' version '7.0.17'
 }
-version = '6.1.BETA26-port.45-forge66.0.13'
+version = '6.1.BETA26-port.46-forge66.0.13'
 group = 'griglog.thaumcraft'
 base.archivesName = 'thaumcraft'
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
@@ -133,6 +133,16 @@ processResources {
 }
 
 tasks.named('test') { useJUnitPlatform() }
+tasks.register('checkModelResources', Exec) {
+    group = 'verification'
+    description = 'Validate model texture files, aliases and atlas registration (requires Python 3).'
+    dependsOn tasks.named('processResources')
+    def python = providers.gradleProperty('pythonExecutable').getOrElse(
+            System.getProperty('os.name').toLowerCase().contains('windows') ? 'python' : 'python3')
+    commandLine python, layout.projectDirectory.file('tools/verify_model_resources.py').asFile,
+            stagedMainResources.get().asFile
+}
+tasks.named('check') { dependsOn tasks.named('checkModelResources') }
 tasks.register('checkWarpCodec') { dependsOn tasks.named('test') }
 
 tasks.withType(JavaExec).configureEach {

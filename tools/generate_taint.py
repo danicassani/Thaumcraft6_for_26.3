@@ -8,7 +8,9 @@ def model(n,v):save(A/f'models/block/{n}.json',v)
 def state(n,v):save(A/f'blockstates/{n}.json',v)
 def cube(n,t,parent='cube_all'):model(n,{'parent':'minecraft:block/'+parent,'textures':t});state(n,{'variants':{'':{'model':'thaumcraft:block/'+n}}})
 for n in ['taint_fibre','taint_growth_1','taint_growth_2','taint_growth_3','taint_growth_4','taint_orb_0','taint_orb_1','taint_orb_2','log_taintwood']:
- v=json.loads((O/f'models/block/{n}.json').read_text());v['render_type']='minecraft:cutout';model(n,v)
+ v=json.loads((O/f'models/block/{n}.json').read_text());v['render_type']='minecraft:cutout'
+ if n.startswith('taint_growth_'):v['textures']['particle']=f'thaumcraft:blocks/{n}'
+ model(n,v)
 v=json.loads((O/'blockstates/taint_fibre.json').read_text())
 for part in v['multipart']:
  part['apply']['model']=part['apply']['model'].replace('thaumcraft:','thaumcraft:block/')

@@ -98,6 +98,8 @@ Contenido: `mirror`, `mirrorEssentia`, `handMirror`.
 
 Contenido: `stonePorous`, `lootCrateCommon`, `lootCrateUncommon`, `lootCrateRare`, `lootUrnCommon`, `lootUrnUncommon`, `lootUrnRare`, `hole`, `effectShock`, `effectSap`, `effectGlimmer`, `placeholderNetherbrick`, `placeholderObsidian`, `placeholderBars`, `placeholderAnvil`, `placeholderCauldron`, `placeholderTable`, `empty`, `barrier`, `lootBag`, `enchantedPlaceholder`.
 
+La revisión visual de port.46 corrige el atlas del cofre hambriento y las partículas de los cuatro crecimientos de corrupción; la compilación verifica los recursos de modelos (MODEL-RESOURCES.md).
+
 ## Dependencias adicionales fuera del registro BlocksTC/ItemsTC
 
 Se han portado los cubos de muerte líquida y fluido purificador y las criaturas directamente asociadas a la corrupción (TAINT-FLUIDS.md). Quedan las demás criaturas/IA y huevos de aparición de ConfigEntities (M10–M13/M16), los encantamientos normales y de infusión (M09/M12), los efectos de poción propios (M12/M13) y la generación de biomas/estructuras/dimensiones (M01/M16). No son referencias independientes de ItemsTC.
