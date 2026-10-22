@@ -1,0 +1,26 @@
+{
+  "type": "thaumcraft:arcane",
+  "research": "ARCANEEAR",
+  "vis": 15,
+  "crystals": {
+    "aer": 1
+  },
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "P P",
+      " G ",
+      "WRW"
+    ],
+    "key": {
+      "P": "thaumcraft:plate_brass",
+      "G": "thaumcraft:mechanism_simple",
+      "W": "#minecraft:wooden_slabs",
+      "R": "minecraft:redstone"
+    },
+    "result": {
+      "id": "thaumcraft:arcane_ear",
+      "count": 1
+    }
+  }
+}

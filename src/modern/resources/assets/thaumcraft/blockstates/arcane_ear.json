@@ -1,0 +1,56 @@
+{
+  "variants": {
+    "powered=false,facing=down": {
+      "x": 180,
+      "model": "thaumcraft:block/arcane_ear_off"
+    },
+    "powered=false,facing=up": {
+      "model": "thaumcraft:block/arcane_ear_off"
+    },
+    "powered=false,facing=east": {
+      "y": 90,
+      "x": 90,
+      "model": "thaumcraft:block/arcane_ear_off"
+    },
+    "powered=false,facing=west": {
+      "y": 270,
+      "x": 90,
+      "model": "thaumcraft:block/arcane_ear_off"
+    },
+    "powered=false,facing=north": {
+      "x": 90,
+      "model": "thaumcraft:block/arcane_ear_off"
+    },
+    "powered=false,facing=south": {
+      "y": 180,
+      "x": 90,
+      "model": "thaumcraft:block/arcane_ear_off"
+    },
+    "powered=true,facing=down": {
+      "x": 180,
+      "model": "thaumcraft:block/arcane_ear_on"
+    },
+    "powered=true,facing=up": {
+      "model": "thaumcraft:block/arcane_ear_on"
+    },
+    "powered=true,facing=east": {
+      "y": 90,
+      "x": 90,
+      "model": "thaumcraft:block/arcane_ear_on"
+    },
+    "powered=true,facing=west": {
+      "y": 270,
+      "x": 90,
+      "model": "thaumcraft:block/arcane_ear_on"
+    },
+    "powered=true,facing=north": {
+      "x": 90,
+      "model": "thaumcraft:block/arcane_ear_on"
+    },
+    "powered=true,facing=south": {
+      "y": 180,
+      "x": 90,
+      "model": "thaumcraft:block/arcane_ear_on"
+    }
+  }
+}

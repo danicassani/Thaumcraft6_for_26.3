@@ -10,6 +10,17 @@
     "Vis: 50",
     "aqua: 1"
   ],
+  "thaumcraft:arcane_ear": [
+    "[P P]",
+    "[ G ]",
+    "[WRW]",
+    "P = thaumcraft:plate_brass",
+    "G = thaumcraft:mechanism_simple",
+    "W = #minecraft:wooden_slabs",
+    "R = minecraft:redstone",
+    "Vis: 15",
+    "aer: 1"
+  ],
   "thaumcraft:bellows": [
     "[WW ]",
     "[LLI]",
@@ -346,6 +357,22 @@
     "aqua: 1",
     "ordo: 1"
   ],
+  "thaumcraft:paving_stone_barrier": [
+    "[SS]",
+    "[SS]",
+    "S = thaumcraft:stone_arcane_brick",
+    "Vis: 50",
+    "ignis: 1",
+    "ordo: 1"
+  ],
+  "thaumcraft:paving_stone_travel": [
+    "[SS]",
+    "[SS]",
+    "S = thaumcraft:stone_arcane_brick",
+    "Vis: 50",
+    "aer: 1",
+    "terra: 1"
+  ],
   "thaumcraft:pedestal_ancient": [
     "[SSS]",
     "[ B ]",
@@ -380,6 +407,15 @@
     "S = #minecraft:stone_crafting_materials",
     "Vis: 100",
     "aer: 1",
+    "ordo: 1"
+  ],
+  "thaumcraft:redstone_relay": [
+    "[TGT]",
+    "[SSS]",
+    "T = minecraft:redstone_torch",
+    "G = thaumcraft:mechanism_simple",
+    "S = minecraft:smooth_stone_slab",
+    "Vis: 10",
     "ordo: 1"
   ],
   "thaumcraft:resonator": [
@@ -2193,5 +2229,41 @@
     "Quicksilver + glass pane",
     "Vis: 50",
     "aqua: 1, ordo: 1"
+  ],
+  "thaumcraft:PaveTravel": [
+    "SS / SS",
+    "S: thaumcraft:stone_arcane_brick",
+    "Output: 4 x thaumcraft:paving_stone_travel",
+    "Vis: 50",
+    "Crystals: {'aer': 1, 'terra': 1}"
+  ],
+  "thaumcraft:PaveBarrier": [
+    "SS / SS",
+    "S: thaumcraft:stone_arcane_brick",
+    "Output: 4 x thaumcraft:paving_stone_barrier",
+    "Vis: 50",
+    "Crystals: {'ignis': 1, 'ordo': 1}"
+  ],
+  "thaumcraft:ArcaneEar": [
+    "P P /  G  / WRW",
+    "P: thaumcraft:plate_brass",
+    "G: thaumcraft:mechanism_simple",
+    "W: #minecraft:wooden_slabs",
+    "R: minecraft:redstone",
+    "Output: 1 x thaumcraft:arcane_ear",
+    "Vis: 15",
+    "Crystals: {'aer': 1}"
+  ],
+  "thaumcraft:RedstoneRelay": [
+    "TGT / SSS",
+    "T: minecraft:redstone_torch",
+    "G: thaumcraft:mechanism_simple",
+    "S: minecraft:smooth_stone_slab",
+    "Output: 1 x thaumcraft:redstone_relay",
+    "Vis: 10",
+    "Crystals: {'ordo': 1}"
+  ],
+  "thaumcraft:ArcaneEarToggle": [
+    "Arcane ear + lever"
   ]
 }

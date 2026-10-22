@@ -82,7 +82,7 @@ Contenido: `taintFibre`, `taintCrust`, `taintSoil`, `taintRock`, `taintGeyser`, 
 
 ## M14: Redstone, movimiento y máquinas auxiliares
 
-**Estado:** port.23 incorpora levitador arcano con receta original, cuatro alcances, impulso físico, bloqueo por colisiones/chunks, pausa redstone y reserva de aura persistente como dependencia de los gólems voladores; restantes máquinas auxiliares pendientes (GOLEMS-MOBILITY.md).
+**Estado:** port.23 incorpora el levitador arcano. port.43 añade piedras de viaje/barrera, oreja arcana normal/conmutador y relé configurable con diodo nativo, recetas/texturas originales, colisión selectiva, eventos de notas y guardado. Lámparas arcana/de crecimiento/de fertilidad, urna inagotable, spa y pulverizador siguen pendientes (AUXILIARY-REDSTONE.md, GOLEMS-MOBILITY.md).
 
 Contenido: `pavingStoneTravel`, `pavingStoneBarrier`, `arcaneEar`, `arcaneEarToggle`, `lampArcane`, `lampFertility`, `lampGrowth`, `levitator`, `everfullUrn`, `spa`, `redstoneRelay`, `potionSprayer`.
 

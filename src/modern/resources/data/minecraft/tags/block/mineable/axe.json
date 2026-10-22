@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "thaumcraft:arcane_ear",
+    "thaumcraft:arcane_ear_toggle",
     "thaumcraft:arcane_workbench",
     "thaumcraft:arcane_workbench_charger",
     "thaumcraft:hungry_chest",

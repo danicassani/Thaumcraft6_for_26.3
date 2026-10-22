@@ -879,5 +879,12 @@
   "mirror.thaumcraft.waiting": "Espejo sin enlace o con destino no disponible",
   "mirror.thaumcraft.link": "Vinculado a %s en %s, %s, %s",
   "mirror.thaumcraft.controls": "Usa sobre un espejo libre del mismo tipo y colócalo después.",
-  "mirror.thaumcraft.hand_controls": "Usa sobre un espejo de objetos para vincular; usa en la mano principal para enviar."
+  "mirror.thaumcraft.hand_controls": "Usa sobre un espejo de objetos para vincular; usa en la mano principal para enviar.",
+  "block.thaumcraft.paving_stone_travel": "Piedra de viaje",
+  "block.thaumcraft.paving_stone_barrier": "Piedra de barrera",
+  "block.thaumcraft.arcane_ear": "Oreja arcana",
+  "block.thaumcraft.arcane_ear_toggle": "Oreja arcana (conmutador)",
+  "block.thaumcraft.redstone_relay": "Relé de redstone",
+  "auxiliary.thaumcraft.note": "Nota: %s · Instrumento: %s",
+  "auxiliary.thaumcraft.relay": "Umbral de entrada: %s · Salida: %s"
 }

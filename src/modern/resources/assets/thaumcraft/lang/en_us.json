@@ -1332,5 +1332,12 @@
   "mirror.thaumcraft.waiting": "Mirror unlinked or destination unavailable",
   "mirror.thaumcraft.link": "Bound to %s at %s, %s, %s",
   "mirror.thaumcraft.controls": "Use on an unpaired mirror of the same type, then place.",
-  "mirror.thaumcraft.hand_controls": "Use on an item mirror to bind; use in main hand to send."
+  "mirror.thaumcraft.hand_controls": "Use on an item mirror to bind; use in main hand to send.",
+  "block.thaumcraft.paving_stone_travel": "Paving Stone of Travel",
+  "block.thaumcraft.paving_stone_barrier": "Paving Stone of Warding",
+  "block.thaumcraft.arcane_ear": "Arcane Ear",
+  "block.thaumcraft.arcane_ear_toggle": "Arcane Ear (Toggle)",
+  "block.thaumcraft.redstone_relay": "Redstone Relay",
+  "auxiliary.thaumcraft.note": "Note: %s · Instrument: %s",
+  "auxiliary.thaumcraft.relay": "Input threshold: %s · Output: %s"
 }
