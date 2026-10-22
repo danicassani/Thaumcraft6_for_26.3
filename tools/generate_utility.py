@@ -8,17 +8,18 @@ def save(p,v):
 def texture(n):
  for suffix in ['.png','.png.mcmeta']:
   a=old/f'textures/blocks/{n}{suffix}'
+  if suffix=='.png' and not a.is_file():raise FileNotFoundError(a)
   if a.exists():
    p=root/f'assets/thaumcraft/textures/block/{n}{suffix}';p.parent.mkdir(parents=True,exist_ok=True)
    if suffix.endswith('mcmeta'):p.write_text(json.dumps(json.loads(a.read_text()),indent=2)+'\n')
    else:shutil.copyfile(a,p)
-for n in ['lamp_on','lamp_off','lamp_grow_on','lamp_grow_off','lamp_fertility_on','lamp_fertility_off','base_metal','everfull_urn','spa_side','spa_top','potion_sprayer_bottom','potion_sprayer_top','potion_sprayer_side']:texture(n)
+for n in ['lamp_on','lamp_off','lamp_grow_on','lamp_grow_off','lamp_fert_on','lamp_fert_off','base_metal','everfull_urn','spa_side','spa_top','potion_sprayer_bottom','potion_sprayer_top','potion_sprayer_side']:texture(n)
 body=json.loads((old/'models/block/lamp.json').read_text())['elements'];stand=json.loads((old/'models/block/lamp_stand.json').read_text())['elements']
 faces=['down','up','north','south','east','west']
 def pt(p,f):
  x,y,z=p
  return {'down':(x,y,z),'up':(x,16-y,16-z),'north':(x,16-z,y),'south':(x,z,16-y),'east':(16-y,z,x),'west':(y,z,16-x)}[f]
-for name,tex in [('lamp_arcane','lamp'),('lamp_growth','lamp_grow'),('lamp_fertility','lamp_fertility')]:
+for name,tex in [('lamp_arcane','lamp'),('lamp_growth','lamp_grow'),('lamp_fertility','lamp_fert')]:
  variants={}
  for face in faces:
   for on in [False,True]:

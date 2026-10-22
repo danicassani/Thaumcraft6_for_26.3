@@ -2,9 +2,9 @@
   "render_type": "minecraft:cutout",
   "ambientocclusion": false,
   "textures": {
-    "side": "thaumcraft:block/lamp_fertility_off",
+    "side": "thaumcraft:block/lamp_fert_off",
     "stand": "thaumcraft:block/base_metal",
-    "particle": "thaumcraft:block/lamp_fertility_off"
+    "particle": "thaumcraft:block/lamp_fert_off"
   },
   "elements": [
     {

@@ -47,3 +47,9 @@ La urna comprueba la conversión pagada de vis, extracción simulada, transferen
 Verificación completada en servidor dedicado y cliente nativo. Un segundo proceso comprueba la persistencia de luz, reservas y poción, sin repetir un disparo con redstone mantenida. En cliente se abre el menú del spa, se cambia el modo mediante su botón y se transfieren sales en ambos sentidos con entradas reales. El mundo se guarda y vuelve al título correctamente.
 
 Compilación limpia `clean build test`: 180 pruebas, cero fallos, errores u omisiones. El JAR de port.44 contiene 336 recetas y 316 definiciones de objeto, sin las clases de prueba. Tamaño: 8 897 748 bytes; SHA-256: `4bb4410b90c94c2777fa553c78e454cc50301d4b0cda46010539598590951a05`. La captura en el mundo se tomó antes de generar el JAR y publicar los cambios.
+
+### Corrección visual de port.45
+
+La captura general de port.44 ocultaba parcialmente una textura ausente detrás de los animales. El modelo de la lámpara de fertilidad solicitaba `lamp_fertility_on/off`, pero los archivos originales se llaman `lamp_fert_on/off`. Se corrigen las doce variantes (seis orientaciones y dos estados), se incorporan ambas texturas y la animación original. El generador ahora rechaza una textura obligatoria ausente en lugar de omitirla. La prueba `utility-photo` abre el mundo guardado y coloca la cámara al este de esta lámpara sin reconstruir la escena.
+
+Verificado en cliente nativo con captura cercana y cierre correcto; no aparecen avisos de texturas ausentes para las lámparas. Compilación limpia de port.45: 180 pruebas sin fallos, errores ni omisiones. Las referencias de textura de las 36 variantes se comprueban también dentro del JAR final. JAR: 8 900 355 bytes; SHA-256: `0d34c7bd7c1d61a52049f8f3a28122c2afc9aa95226cb24b632d2ae8bda69cfd`.
