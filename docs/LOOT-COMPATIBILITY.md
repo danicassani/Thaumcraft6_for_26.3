@@ -43,3 +43,5 @@ Las fixtures se activan con `-PalchemyProbe=loot-write`, `loot-read` y `loot-cli
 Compilación limpia `clean build test`: 180 pruebas, cero fallos, errores u omisiones; pasan `checkLootResources` (185 tablas) y `checkModelResources` (626 referencias). El guard de botín pasa también sobre las tablas extraídas del JAR. Se conservan 336 recetas y 316 definiciones de objetos.
 
 Artefacto: `thaumcraft-6.1.BETA26-port.47-forge66.0.13.jar`, 8 900 155 bytes; SHA-256: `bc5363d85ba79c59e1934d93e846463e7f2250f7431cb1a2888ab8e3db1317a2`.
+
+Actualización port.48: las bolsas y seis contenedores ya tienen mecánicas y recursos; su integración con generación de mundo queda para la siguiente etapa. Véase [TREASURES.md](TREASURES.md).

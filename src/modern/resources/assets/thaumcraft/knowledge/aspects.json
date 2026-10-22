@@ -893,6 +893,30 @@
       "cognitio": 20,
       "exanimis": 10
     },
+    "thaumcraft:loot_urn_common": {
+      "desiderium": 10,
+      "terra": 2
+    },
+    "thaumcraft:loot_urn_uncommon": {
+      "desiderium": 20,
+      "terra": 2
+    },
+    "thaumcraft:loot_urn_rare": {
+      "desiderium": 30,
+      "terra": 2
+    },
+    "thaumcraft:loot_crate_common": {
+      "desiderium": 10,
+      "herba": 2
+    },
+    "thaumcraft:loot_crate_uncommon": {
+      "desiderium": 20,
+      "herba": 2
+    },
+    "thaumcraft:loot_crate_rare": {
+      "desiderium": 30,
+      "herba": 2
+    },
     "thaumcraft:salis_mundus": {
       "praecantatio": 5,
       "potentia": 5
@@ -925,6 +949,15 @@
       "auram": 5,
       "metallum": 5,
       "praecantatio": 20
+    },
+    "thaumcraft:loot_bag_common": {
+      "desiderium": 10
+    },
+    "thaumcraft:loot_bag_uncommon": {
+      "desiderium": 20
+    },
+    "thaumcraft:loot_bag_rare": {
+      "desiderium": 30
     }
   },
   "entities": {

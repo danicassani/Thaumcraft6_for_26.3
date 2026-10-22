@@ -898,5 +898,14 @@
   "utility.thaumcraft.mode": "Modo",
   "utility.thaumcraft.mixing": "%s mB · mezcla de sales",
   "utility.thaumcraft.pouring": "%s mB · vertido de fluido",
-  "utility.thaumcraft.sprayer": "%s/8 · esencia %s/%s"
+  "utility.thaumcraft.sprayer": "%s/8 · esencia %s/%s",
+  "block.thaumcraft.loot_crate_common": "Caja de tesoro común",
+  "block.thaumcraft.loot_urn_common": "Urna de tesoro común",
+  "item.thaumcraft.loot_bag_common": "Bolsa de tesoro común",
+  "block.thaumcraft.loot_crate_uncommon": "Caja de tesoro poco común",
+  "block.thaumcraft.loot_urn_uncommon": "Urna de tesoro poco común",
+  "item.thaumcraft.loot_bag_uncommon": "Bolsa de tesoro poco común",
+  "block.thaumcraft.loot_crate_rare": "Caja de tesoro rara",
+  "block.thaumcraft.loot_urn_rare": "Urna de tesoro rara",
+  "item.thaumcraft.loot_bag_rare": "Bolsa de tesoro rara"
 }

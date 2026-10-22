@@ -1,0 +1,3510 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_axe",
+          "weight": 20049732,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:leather_boots",
+          "weight": 20049732,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:leather_leggings",
+          "weight": 20049732,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:leather_chestplate",
+          "weight": 20049732,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:leather_helmet",
+          "weight": 20049732,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_sword",
+          "weight": 35037437,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_boots",
+          "weight": 35037437,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_leggings",
+          "weight": 35037437,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_chestplate",
+          "weight": 35037437,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_helmet",
+          "weight": 35037437,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_axe",
+          "weight": 19306115,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:chainmail_boots",
+          "weight": 19306115,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:chainmail_leggings",
+          "weight": 19306115,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:chainmail_chestplate",
+          "weight": 19306115,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:chainmail_helmet",
+          "weight": 19306115,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_sword",
+          "weight": 4920630,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_boots",
+          "weight": 4920630,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_leggings",
+          "weight": 4920630,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_chestplate",
+          "weight": 4920630,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_helmet",
+          "weight": 4920630,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "thaumcraft:thaumium_sword",
+          "weight": 643070,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "thaumcraft:thaumium_boots",
+          "weight": 643070,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "thaumcraft:thaumium_legs",
+          "weight": 643070,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "thaumcraft:thaumium_chest",
+          "weight": 643070,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "thaumcraft:thaumium_helm",
+          "weight": 643070,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_sword",
+          "weight": 41933,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_boots",
+          "weight": 41933,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_leggings",
+          "weight": 41933,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_chestplate",
+          "weight": 41933,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_helmet",
+          "weight": 41933,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "thaumcraft:void_sword",
+          "weight": 1083,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "thaumcraft:void_boots",
+          "weight": 1083,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "thaumcraft:void_legs",
+          "weight": 1083,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "thaumcraft:void_chest",
+          "weight": 1083,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "thaumcraft:void_helm",
+          "weight": 1083,
+          "modifier": [
+            {
+              "type": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0.8333333333333334,
+                "max": 1
+              }
+            },
+            {
+              "type": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": 5,
+                    "weight": 1
+                  },
+                  {
+                    "data": 6,
+                    "weight": 1
+                  },
+                  {
+                    "data": 8,
+                    "weight": 1
+                  },
+                  {
+                    "data": 9,
+                    "weight": 1
+                  },
+                  {
+                    "data": 11,
+                    "weight": 1
+                  },
+                  {
+                    "data": 12,
+                    "weight": 1
+                  },
+                  {
+                    "data": 14,
+                    "weight": 1
+                  },
+                  {
+                    "data": 15,
+                    "weight": 1
+                  },
+                  {
+                    "data": 17,
+                    "weight": 1
+                  },
+                  {
+                    "data": 18,
+                    "weight": 1
+                  },
+                  {
+                    "data": 20,
+                    "weight": 1
+                  },
+                  {
+                    "data": 21,
+                    "weight": 1
+                  },
+                  {
+                    "data": 23,
+                    "weight": 1
+                  },
+                  {
+                    "data": 24,
+                    "weight": 1
+                  },
+                  {
+                    "data": 26,
+                    "weight": 1
+                  },
+                  {
+                    "data": 27,
+                    "weight": 1
+                  },
+                  {
+                    "data": 29,
+                    "weight": 1
+                  },
+                  {
+                    "data": 30,
+                    "weight": 1
+                  }
+                ]
+              },
+              "options": "#minecraft:in_enchanting_table",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

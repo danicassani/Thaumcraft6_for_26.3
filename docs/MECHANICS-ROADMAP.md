@@ -94,7 +94,7 @@ Contenido: `mirror`, `mirrorEssentia`, `handMirror`.
 
 ## M16: Botín, estructuras, dimensión y contenido interno
 
-**Estado:** port.47 corrige 56 tablas existentes que usaban campos de condiciones/modificadores ignorados por 26.3. Se recuperan alternativas de Seda, probabilidades/Fortuna, explosiones y cantidades/componentes; el build revisa las 185 tablas (LOOT-COMPATIBILITY.md). Bolsas, cajas/urnas de tesoro, estructuras y dimensión siguen pendientes.
+**Estado:** port.47 corrige 56 tablas existentes que usaban campos de condiciones/modificadores ignorados por 26.3. Se recuperan alternativas de Seda, probabilidades/Fortuna, explosiones y cantidades/componentes; el build revisa las 185 tablas (LOOT-COMPATIBILITY.md). Port.48 incorpora las tres bolsas y las seis cajas/urnas, con tablas nativas, recompensas y recursos originales (TREASURES.md). La colocación natural en estructuras, integración con criaturas restantes y dimensión siguen pendientes.
 
 Contenido: `stonePorous`, `lootCrateCommon`, `lootCrateUncommon`, `lootCrateRare`, `lootUrnCommon`, `lootUrnUncommon`, `lootUrnRare`, `hole`, `effectShock`, `effectSap`, `effectGlimmer`, `placeholderNetherbrick`, `placeholderObsidian`, `placeholderBars`, `placeholderAnvil`, `placeholderCauldron`, `placeholderTable`, `empty`, `barrier`, `lootBag`, `enchantedPlaceholder`.
 

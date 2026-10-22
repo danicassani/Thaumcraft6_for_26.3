@@ -66,6 +66,7 @@ public final class BasicContent {
         thaumcraft.mirrors.MirrorContent.register(bus);
         thaumcraft.auxiliary.AuxiliaryContent.register(bus);
         thaumcraft.utility.UtilityContent.register(bus);
+        thaumcraft.treasure.TreasureContent.register(bus);
         thaumcraft.crafting.ArcaneContent.register(bus);
         thaumcraft.rifts.RiftContent.register(bus);
         thaumcraft.research.ResearchContent.register(bus);

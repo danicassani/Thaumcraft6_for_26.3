@@ -1351,5 +1351,14 @@
   "utility.thaumcraft.mode": "Mode",
   "utility.thaumcraft.mixing": "%s mB · mixing salts",
   "utility.thaumcraft.pouring": "%s mB · pouring fluid",
-  "utility.thaumcraft.sprayer": "%s/8 · essentia %s/%s"
+  "utility.thaumcraft.sprayer": "%s/8 · essentia %s/%s",
+  "block.thaumcraft.loot_crate_common": "Common Treasure Crate",
+  "block.thaumcraft.loot_urn_common": "Common Treasure Urn",
+  "item.thaumcraft.loot_bag_common": "Common Treasure Bag",
+  "block.thaumcraft.loot_crate_uncommon": "Uncommon Treasure Crate",
+  "block.thaumcraft.loot_urn_uncommon": "Uncommon Treasure Urn",
+  "item.thaumcraft.loot_bag_uncommon": "Uncommon Treasure Bag",
+  "block.thaumcraft.loot_crate_rare": "Rare Treasure Crate",
+  "block.thaumcraft.loot_urn_rare": "Rare Treasure Urn",
+  "item.thaumcraft.loot_bag_rare": "Rare Treasure Bag"
 }

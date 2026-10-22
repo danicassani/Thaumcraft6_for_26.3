@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:loot_table",
+              "value": "thaumcraft:treasure/gear_uncommon",
+              "condition": {
+                "type": "minecraft:random_chance",
+                "chance": 0.025
+              }
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "thaumcraft:treasure/base_uncommon"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

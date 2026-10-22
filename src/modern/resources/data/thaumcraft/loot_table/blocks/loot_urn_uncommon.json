@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      },
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "thaumcraft:loot_urn_uncommon",
+              "weight": 1,
+              "condition": "minecraft:tool/can_silk_touch"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "thaumcraft:treasure/cache_uncommon"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
