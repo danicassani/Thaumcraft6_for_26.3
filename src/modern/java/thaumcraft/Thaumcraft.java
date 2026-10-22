@@ -21,6 +21,7 @@ public final class Thaumcraft {
         context.registerConfig(ModConfig.Type.SERVER, ThaumcraftConfig.SERVER, "thaumcraft-server.toml");
         FMLCommonSetupEvent.getBus(modBus).addListener(event ->
             LOGGER.info("Thaumcraft initialized: building blocks, materials, thaumium equipment, food, colored lights, persistent aura, growing crystals, arcane crafting, flux rifts and persistent research"));
+        thaumcraft.worldgen.MagicalForest.register();
         PlayerWarpStore.registerEvents();
         thaumcraft.research.ResearchEvents.register();
         thaumcraft.aura.AuraManager.registerEvents();

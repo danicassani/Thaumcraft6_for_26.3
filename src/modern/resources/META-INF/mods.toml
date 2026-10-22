@@ -3,7 +3,7 @@ loaderVersion="[66,)"
 license="All Rights Reserved"
 [[mods]]
 modId="thaumcraft"
-version="6.1.BETA26-port.48-forge66.0.13"
+version="6.1.BETA26-port.49-forge66.0.13"
 displayName="Thaumcraft 6"
 authors="Azanor, GrigLog"
 description="Personal migration of Thaumcraft 6: building blocks, materials, thaumium equipment, food, colored lights, persistent aura, growing crystals, aura devices, arcane crafting, flux rifts, scanning and persistent research, theorycrafting and celestial notes, crucible alchemy, essentia distillation, physical tube transport, persistent infusion, stabilization networks, matrix upgrades, eight functional infusion enchantments, 32 active theory cards, persistent focal manipulation, nine spell effects, casting gauntlet, scatter and split spell graphs, persistent clouds and mines, full/surface block planning with native selection preview, homing spellbats and journaled temporary rift tunnels, runic shielding and native equipment/accessories. Advanced systems are still in progress."

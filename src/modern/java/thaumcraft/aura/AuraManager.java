@@ -106,6 +106,7 @@ public final class AuraManager {
         return new AuraCell(base, base, 0);
     }
     private static float biomeWeight(Holder<Biome> biome) {
+        if (biome.is(thaumcraft.worldgen.MagicalForest.KEY)) return .625F;
         if (biome.is(Identifier.parse("minecraft:mushroom_fields"))) return .75F;
         float sum = 0; int count = 0;
         for (var entry : BIOME_WEIGHTS) {

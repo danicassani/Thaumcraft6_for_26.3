@@ -1360,5 +1360,6 @@
   "item.thaumcraft.loot_bag_uncommon": "Uncommon Treasure Bag",
   "block.thaumcraft.loot_crate_rare": "Rare Treasure Crate",
   "block.thaumcraft.loot_urn_rare": "Rare Treasure Urn",
-  "item.thaumcraft.loot_bag_rare": "Rare Treasure Bag"
+  "item.thaumcraft.loot_bag_rare": "Rare Treasure Bag",
+  "biome.thaumcraft.magical_forest": "Magical Forest"
 }

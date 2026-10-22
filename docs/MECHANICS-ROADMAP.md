@@ -4,7 +4,7 @@ Orden de trabajo. Estas entradas describen trabajo pendiente salvo que se indiqu
 
 ## M01: Crecimiento de árboles y ciclo de hojas
 
-**Estado:** port.10 añade crecimiento por tiempo/bonemeal, hojas nativas con drops/decay, recuperación de vis de silverwood y generación básica en bosques nuevos; forma de árboles y biomas mágicos originales aún parciales (ALCHEMY-ESSENTIA.md).
+**Estado:** port.49 integra magical_forest en el clima estándar del Overworld, árboles greatwood de dos copas, silverwood con raíces/tronco en cruz y roble mágico, follaje nativo y flora. Solo terreno nuevo; estructuras, árboles infestados, decoración/variantes visuales y criaturas aún pendientes (WORLDGEN-FOREST.md).
 
 Contenido: `saplingGreatwood`, `saplingSilverwood`, `leafGreatwood`, `leafSilverwood`.
 
@@ -94,7 +94,7 @@ Contenido: `mirror`, `mirrorEssentia`, `handMirror`.
 
 ## M16: Botín, estructuras, dimensión y contenido interno
 
-**Estado:** port.47 corrige 56 tablas existentes que usaban campos de condiciones/modificadores ignorados por 26.3. Se recuperan alternativas de Seda, probabilidades/Fortuna, explosiones y cantidades/componentes; el build revisa las 185 tablas (LOOT-COMPATIBILITY.md). Port.48 incorpora las tres bolsas y las seis cajas/urnas, con tablas nativas, recompensas y recursos originales (TREASURES.md). La colocación natural en estructuras, integración con criaturas restantes y dimensión siguen pendientes.
+**Estado:** port.47 corrige 56 tablas existentes que usaban campos de condiciones/modificadores ignorados por 26.3. Se recuperan alternativas de Seda, probabilidades/Fortuna, explosiones y cantidades/componentes; el build revisa las 185 tablas (LOOT-COMPATIBILITY.md). Port.48 incorpora las tres bolsas y las seis cajas/urnas, con tablas nativas, recompensas y recursos originales (TREASURES.md). Port.49 incorpora el bosque mágico y árboles naturales (WORLDGEN-FOREST.md). La colocación natural en estructuras, integración con criaturas restantes y dimensión siguen pendientes.
 
 Contenido: `stonePorous`, `lootCrateCommon`, `lootCrateUncommon`, `lootCrateRare`, `lootUrnCommon`, `lootUrnUncommon`, `lootUrnRare`, `hole`, `effectShock`, `effectSap`, `effectGlimmer`, `placeholderNetherbrick`, `placeholderObsidian`, `placeholderBars`, `placeholderAnvil`, `placeholderCauldron`, `placeholderTable`, `empty`, `barrier`, `lootBag`, `enchantedPlaceholder`.
 

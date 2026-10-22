@@ -907,5 +907,6 @@
   "item.thaumcraft.loot_bag_uncommon": "Bolsa de tesoro poco común",
   "block.thaumcraft.loot_crate_rare": "Caja de tesoro rara",
   "block.thaumcraft.loot_urn_rare": "Urna de tesoro rara",
-  "item.thaumcraft.loot_bag_rare": "Bolsa de tesoro rara"
+  "item.thaumcraft.loot_bag_rare": "Bolsa de tesoro rara",
+  "biome.thaumcraft.magical_forest": "Bosque mágico"
 }

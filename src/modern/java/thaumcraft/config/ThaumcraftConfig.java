@@ -66,7 +66,7 @@ public final class ThaumcraftConfig {
         server.pop();
         server.push("world");
         oreDensity = server.worldRestart().defineInRange("oreDensity", 100, 1, 500);
-        generateMagicForest = server.define("generateMagicForest", true);
+        generateMagicForest = server.worldRestart().define("generateMagicForest", true);
         biomeMagicalForestWeight = server.worldRestart().defineInRange("biomeMagicalForestWeight", 5, 0, 100);
         taintSpreadRate = server.defineInRange("taintSpreadRate", 100.0, 0, 500);
         taintSpreadArea = server.defineInRange("taintSpreadArea", 32, 8, 256);

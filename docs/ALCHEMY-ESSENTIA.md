@@ -177,3 +177,6 @@ manual descrito para port.10; los frascos continúan disponibles.
 La continuación de port.12 implementa la matriz, sus pedestales, absorción
 remota para infusión y cerebro en frasco, y amplía el mazo a 32 cartas activas.
 Véase [INFUSION-CARDS.md](INFUSION-CARDS.md) para recetas y límites.
+
+
+Actualización port.49: las formas simplificadas de árboles de port.10 quedan sustituidas por las formas ramificadas descritas en [WORLDGEN-FOREST.md](WORLDGEN-FOREST.md); el bosque mágico ya se integra en el clima del Overworld. Véase ese documento para alcance y pendientes.

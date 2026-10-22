@@ -4,7 +4,7 @@ plugins {
     id 'eclipse'
     id 'net.minecraftforge.gradle' version '7.0.17'
 }
-version = '6.1.BETA26-port.48-forge66.0.13'
+version = '6.1.BETA26-port.49-forge66.0.13'
 group = 'griglog.thaumcraft'
 base.archivesName = 'thaumcraft'
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
@@ -39,6 +39,7 @@ sourceSets.main {
     resources.setSrcDirs(['src/modern/resources'])
 }
 // Explicit integration fixtures; never packaged by the normal build.
+if (providers.gradleProperty('worldgenProbe').isPresent()) { sourceSets.main.java.srcDir('src/worldgenTest/java') }
 if (providers.gradleProperty('thaumaturgyProbe').isPresent()) { sourceSets.main.java.srcDir('src/thaumaturgyTest/java') }
 
 if (providers.gradleProperty('infusionProbe').isPresent()) {
@@ -76,11 +77,13 @@ if (providers.gradleProperty('basicContentProbe').isPresent()) {
 }
 
 minecraft {
+    accessTransformer.from(file('src/modern/resources/META-INF/accesstransformer.cfg'))
     runs {
         configureEach {
             workingDir = layout.projectDirectory.dir('run')
             if (providers.gradleProperty('thaumaturgyProbe').isPresent()) systemProperty 'thaumcraft.thaumaturgyProbe', providers.gradleProperty('thaumaturgyProbe').get()
             systemProperty 'eventbus.api.strictRuntimeChecks', 'true'
+            if (providers.gradleProperty('worldgenProbe').isPresent()) systemProperty 'thaumcraft.worldgenProbe', providers.gradleProperty('worldgenProbe').get()
             if (providers.gradleProperty('infusionProbe').isPresent()) systemProperty 'thaumcraft.infusionProbe', providers.gradleProperty('infusionProbe').get()
             if (providers.gradleProperty('essentiaProbe').isPresent()) systemProperty 'thaumcraft.essentiaProbe', providers.gradleProperty('essentiaProbe').get()
             if (providers.gradleProperty('alchemyProbe').isPresent()) systemProperty 'thaumcraft.alchemyProbe', providers.gradleProperty('alchemyProbe').get()
@@ -99,6 +102,7 @@ minecraft {
         register('server') {
             workingDir = layout.projectDirectory.dir('run/server')
             args '--nogui'
+            if (providers.gradleProperty('worldgenProbe').isPresent()) args '--world', 'worldgen-smoke49'
             if (providers.gradleProperty('thaumaturgyProbe').isPresent()) args '--world', 'thaumaturgy-smoke'
             if (providers.gradleProperty('infusionProbe').isPresent()) args '--world', 'infusion-smoke'
             if (providers.gradleProperty('essentiaProbe').isPresent()) args '--world', 'essentia-smoke'

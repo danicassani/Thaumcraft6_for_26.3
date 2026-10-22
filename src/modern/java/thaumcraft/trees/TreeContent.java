@@ -17,6 +17,7 @@ public final class TreeContent {
     public static final Map<String,RegistryObject<Block>> BLOCKS=new LinkedHashMap<>();
     static{
         FEATURES.register("special_tree",()->SpecialTreeFeature.CODEC);
+        FEATURES.register("forest_decoration",()->thaumcraft.worldgen.ForestDecoration.CODEC);
         for(var wood:List.of("greatwood","silverwood")){
             var key=ResourceKey.<Feature>create(Registries.FEATURE,SimpleContent.id(wood));var grower=new TreeGrower("thaumcraft_"+wood,WeightedList.of(key),WeightedList.of(),WeightedList.of(),key);
             add("sapling_"+wood,()->new SaplingBlock(grower,props("sapling_"+wood).noCollision().noOcclusion().randomTicks().instabreak().sound(SoundType.GRASS)));
