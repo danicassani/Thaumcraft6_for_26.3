@@ -1,0 +1,41 @@
+# Encuentros del culto — port.51
+
+Los portales carmesíes menores aparecen mediante una feature nativa al generar chunks nuevos del Overworld. Conservan el ID `thaumcraft:cultist_portal_lesser` y las entidades de caballero y clérigo de los sucesos de distorsión.
+
+## Generación y compatibilidad
+
+- Césped, podzol y micelio se comprueban explícitamente: la etiqueta nativa `minecraft:dirt` de 26.3 ya no los incluye.
+- Filtro de rareza de 1/500 por chunk, seguido de comprobaciones de terreno y espacio. Permite tierra, piedra natural, arena y nieve compacta, con suelo sólido y tres bloques de aire. No aparece en agua, fuera del borde o de los límites verticales, en mundos planos, en otras dimensiones, en pacífico o con `wussMode`.
+- `world.generateStructure` controla los encuentros nuevos. No se recorren chunks ya cargados ni se hace retrogeneración. Al actualizar un mundo, los encuentros podrán aparecer en zonas que se generen por primera vez.
+- La entidad queda guardada con su chunk, no como un temporizador que la vuelva a crear. Destruirla no regenera el encuentro. Su salud, activación y próxima invocación sobreviven al guardado. Los portales de versiones anteriores mantienen su ID y se consideran activos si ya tenían un plazo de invocación.
+- La probabilidad original se adapta a un filtro de decoración independiente del sorteo de túmulos. El espacio libre y la superficie válida reducen la frecuencia efectiva. Los datapacks pueden modificar la feature colocada y su modificador de biomas.
+
+## Encuentro
+
+Un portal nuevo permanece dormido hasta detectar un jugador elegible a 32 bloques. Abre su animación original durante 50 ticks; espera 100 ticks desde la activación para la primera oleada. Las siguientes comprobaciones llegan cada 50–99 ticks.
+
+Requiere un jugador visible y admite como máximo 2/4/6 cultistas vivos próximos en fácil/normal/difícil. Consulta la visión directamente, sin la caché de una IA desactivada. Cada invocación exitosa crea un caballero (67 %) o clérigo (33 %) y cuesta 5–9 de los 100 puntos de salud del portal. Una invocación obstruida, cancelada o limitada no gasta salud. Mantiene las restricciones de chunks cargados y colisión del port anterior.
+
+El portal es inmóvil, persistente e inmune a fuego, caídas y efectos de poción. Tocarlo puede infligir cuatro puntos de daño mágico atribuido al portal. Su muerte provoca una explosión de fuerza 1,5 sin destruir bloques ni generar fuego, como el encuentro original. La aparición de esbirros emite partículas y un pulso visible. Pacífico y `wussMode` siguen retirando estas criaturas, incluidos los portales de distorsión.
+
+El atlas original se anima con apertura y oscilación según la salud. El daño de contacto usa el sonido original `zap`; la apertura y la invocación usan sonidos nativos como adaptación. Caballeros y clérigos conservan su equipo, botín y ataques anteriores; este paso no sustituye su proyectil provisional ni incorpora nuevas variantes de culto.
+
+## Alcance pendiente
+
+Los portales mayores, el pretor, jefes, pechs, apariciones naturales de wisps, bioma eerie, estructuras eldritch y su dimensión siguen pendientes. No se considera cerrado M16.
+
+## Verificación
+
+Los fixtures opcionales `cult-server`, `cult-read` y `cult-client` no forman parte del JAR normal. La búsqueda de encuentros usa la ordenación nativa de features y el RNG de decoración para seleccionar candidatos del filtro de rareza publicado; no modifica su frecuencia ni crea un portal de sustitución para la captura.
+
+Servidor dedicado: encuentro generado por la feature publicada en `(-3959, 80, -3235)`, activación, primera oleada real y coste de nueve puntos de salud; contacto mágico y límite normal sin gasto adicional. También pasan suelo de césped/podzol/micelio/arena, obstrucción, opciones de generación, `wussMode`, inmunidad a pociones y cierre sin romper el suelo.
+
+Segundo proceso dedicado: mismo UUID, activación, persistencia y salud de 91 conservados, con `generateStructure=false` durante la comprobación.
+
+El primer fixture de cliente seleccionó un portal antiguo de distorsión del mundo de pruebas. Se corrigió para aceptar únicamente entidades del chunk candidato de la feature nativa, evitando confundir una entidad previa con generación nueva.
+
+Cliente nativo: portal natural en `(-5011, 71, -3439)` en llanura de girasoles; activación, oleada, estado sincronizado y render de portal/cultistas. Captura compartida antes del JAR final y de ambos pushes. SHA-256 de la captura: `463eed4104dbd1509ce9f338489db1fe012afefaf49bc74573ff725a3372f5fe`.
+
+Construcción normal `clean build test --offline`: 187 pruebas, cero fallos, errores u omisiones; 635 referencias de modelos, 336 recetas, 325 definiciones de objetos y 205 tablas de botín. Generadores en dos pasadas, segunda sin cambios. JAR sin fixtures, sin entradas ZIP duplicadas y con JSON válidos.
+
+Entrega: `thaumcraft-6.1.BETA26-port.51-forge66.0.13.jar`, 8987411 bytes. SHA-256: `81faa666b1417d3fa9e2a8ac68939fead7e08eb74679d18b8eb0f3476e3e1b69`.

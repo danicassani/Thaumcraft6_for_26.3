@@ -39,3 +39,5 @@ El entorno se reinició durante un primer intento de construcción; los resultad
 
 Entrega: `thaumcraft-6.1.BETA26-port.38-forge66.0.13.jar` (8532169 bytes).
 SHA-256: `2e24a982451d73a09c96fff2fadf930bfecf7e664a1030a525115dc204763616`.
+
+Actualización port.51: los portales menores comparten ahora la activación por proximidad, contacto, inmunidades, explosión final sin destrucción y animación descritos en [CULT-ENCOUNTERS.md](CULT-ENCOUNTERS.md). También aparecen en chunks nuevos mediante generación nativa.

@@ -53,9 +53,11 @@ public final class WarpRenderers {
   public EntityRenderState createRenderState(){return new EntityRenderState();}
   public void submit(EntityRenderState s,PoseStack p,SubmitNodeCollector out,CameraRenderState c){super.submit(s,p,out,c);if(s.isInvisible)return;p.pushPose();p.rotate(c.orientation);RiftEventRenderers.quad(p,out,Identifier.parse("thaumcraft:textures/misc/particles.png"),64,512+(int)s.ageInTicks%16,.3F,0xff442266);p.popPose();}
  }
- public static final class Portal extends EntityRenderer<WarpMonster,EntityRenderState>{
+ public static final class PortalState extends EntityRenderState{boolean active;float opening,health,pulse;}
+ public static final class Portal extends EntityRenderer<WarpMonster,PortalState>{
   public Portal(EntityRendererProvider.Context c){super(c);shadowRadius=0;}
-  public EntityRenderState createRenderState(){return new EntityRenderState();}
-  public void submit(EntityRenderState s,PoseStack p,SubmitNodeCollector out,CameraRenderState camera){super.submit(s,p,out,camera);if(s.isInvisible)return;p.pushPose();p.translate(0,1.5,0);p.rotate(camera.orientation);float u=((int)s.ageInTicks/2%16)/16F;out.submitCustomGeometry(p,RenderTypes.entityTranslucentEmissive(Identifier.parse("thaumcraft:textures/misc/cultist_portal.png")),(pose,b)->{float[][] vertices={{-1.5F,-1.5F,u,1},{1.5F,-1.5F,u+1F/16,1},{1.5F,1.5F,u+1F/16,0},{-1.5F,1.5F,u,0}};for(var v:vertices)b.addVertex(pose.pose(),v[0],v[1],0).setColor(0xffffffff).setUv(v[2],v[3]).setOverlay(OverlayTexture.NO_OVERLAY).setLight(0xf000f0).setNormal(pose,0,0,1);});p.popPose();}
+  public PortalState createRenderState(){return new PortalState();}
+  public void extractRenderState(WarpMonster e,PortalState s,float t){super.extractRenderState(e,s,t);s.active=e.portalActive();s.opening=Math.min(1,(e.portalAge()+t)/50F);s.health=e.getHealth()/e.getMaxHealth();s.pulse=e.portalPulse();}
+  public void submit(PortalState s,PoseStack p,SubmitNodeCollector out,CameraRenderState camera){super.submit(s,p,out,camera);if(s.isInvisible||!s.active)return;p.pushPose();p.translate(0,1.5,0);p.rotate(camera.orientation);float wear=(1-s.health)/3F,bob=(float)Math.sin(s.ageInTicks/(5-12*wear))*wear+wear;float scale=s.opening*(1.25F-bob/3)+(float)Math.sin(s.pulse*Math.PI/5)*.12F;p.scale(scale,Math.max(.01F,s.opening*(1.4F-bob/4)),scale);float u=(15-(int)s.ageInTicks%16)/16F;out.submitCustomGeometry(p,RenderTypes.entityTranslucentEmissive(Identifier.parse("thaumcraft:textures/misc/cultist_portal.png")),(pose,b)->{float[][] vertices={{-1,-1,u,1},{1,-1,u+1F/16,1},{1,1,u+1F/16,0},{-1,1,u,0}};for(var v:vertices)b.addVertex(pose.pose(),v[0],v[1],0).setColor(0xffffffff).setUv(v[2],v[3]).setOverlay(OverlayTexture.NO_OVERLAY).setLight(0xf000f0).setNormal(pose,0,0,1);});p.popPose();}
  }
 }
