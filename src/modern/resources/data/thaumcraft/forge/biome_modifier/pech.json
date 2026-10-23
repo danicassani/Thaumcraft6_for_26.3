@@ -1,0 +1,11 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "#thaumcraft:pech_habitat",
+  "spawners": [
+    {
+      "type": "thaumcraft:pech",
+      "weight": 10,
+      "count": 1
+    }
+  ]
+}

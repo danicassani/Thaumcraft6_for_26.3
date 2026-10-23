@@ -45,3 +45,5 @@ Actualización port.50: los túmulos con tesoros y los greatwoods infestados pas
 Actualización port.52: la aparición natural de wisps en el bosque mágico queda implementada con pesos y grupos originales; véase [WISP-NATURAL-SPAWNS.md](WISP-NATURAL-SPAWNS.md). Pechs, decoración restante y bioma eerie siguen pendientes.
 
 Actualización port.53: se incorporan rocas de musgo y hongos gigantes naturales, además de la opción visual azul del cliente, también para bosques existentes. Véase [FOREST-DECORATION.md](FOREST-DECORATION.md) para probabilidades, adaptación espacial y pruebas. No hay regeneración de bloques en chunks antiguos. La fauna pendiente, eerie y el contenido eldritch siguen separados.
+
+Actualización port.53–54: decoración y paleta del bosque en [FOREST-DECORATION.md](FOREST-DECORATION.md); pechs en [PECHS.md](PECHS.md). El bioma eerie sigue pendiente.

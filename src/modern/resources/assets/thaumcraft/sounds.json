@@ -44,5 +44,48 @@
     "sounds": [
       "thaumcraft:urnbreak"
     ]
+  },
+  "pech_idle": {
+    "sounds": [
+      "thaumcraft:pech_idle1",
+      "thaumcraft:pech_idle2",
+      "thaumcraft:pech_idle3"
+    ]
+  },
+  "pech_hit": {
+    "sounds": [
+      "thaumcraft:pech_hit1",
+      "thaumcraft:pech_hit2"
+    ]
+  },
+  "pech_death": {
+    "sounds": [
+      {
+        "name": "thaumcraft:pech_death",
+        "stream": false
+      }
+    ]
+  },
+  "pech_charge": {
+    "sounds": [
+      "thaumcraft:pech_charge1",
+      "thaumcraft:pech_charge2"
+    ]
+  },
+  "pech_dice": {
+    "sounds": [
+      {
+        "name": "thaumcraft:pech_dice",
+        "stream": false
+      }
+    ]
+  },
+  "pech_trade": {
+    "sounds": [
+      {
+        "name": "thaumcraft:pech_trade",
+        "stream": false
+      }
+    ]
   }
 }

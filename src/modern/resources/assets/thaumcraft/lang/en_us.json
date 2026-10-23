@@ -1361,5 +1361,14 @@
   "block.thaumcraft.loot_crate_rare": "Rare Treasure Crate",
   "block.thaumcraft.loot_urn_rare": "Rare Treasure Urn",
   "item.thaumcraft.loot_bag_rare": "Rare Treasure Bag",
-  "biome.thaumcraft.magical_forest": "Magical Forest"
+  "biome.thaumcraft.magical_forest": "Magical Forest",
+  "entity.thaumcraft.pech": "Pech",
+  "entity.thaumcraft.pech.0": "Pech Forager",
+  "entity.thaumcraft.pech.1": "Pech Mage",
+  "entity.thaumcraft.pech.2": "Pech Stalker",
+  "entity.thaumcraft.pech_bolt": "Pech Spell",
+  "item.thaumcraft.pech_spawn_egg": "Pech Spawn Egg",
+  "pech.thaumcraft.roll": "Trade",
+  "pech.thaumcraft.offering": "Valued offering → rewards",
+  "pech.thaumcraft.no_room": "Rewards do not fit. Your offering is unchanged."
 }

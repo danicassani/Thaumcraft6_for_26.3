@@ -94,6 +94,8 @@ Contenido: `mirror`, `mirrorEssentia`, `handMirror`.
 
 ## M16: Botín, estructuras, dimensión y contenido interno
 
+Port.54 incorpora los pechs y su comercio, amistad, mochila, combate y botín; ver [PECHS.md](PECHS.md). El resto de criaturas y contenido eldritch sigue pendiente.
+
 **Estado:** port.47 corrige 56 tablas existentes que usaban campos de condiciones/modificadores ignorados por 26.3. Se recuperan alternativas de Seda, probabilidades/Fortuna, explosiones y cantidades/componentes; el build revisa las 185 tablas (LOOT-COMPATIBILITY.md). Port.48 incorpora las tres bolsas y las seis cajas/urnas, con tablas nativas, recompensas y recursos originales (TREASURES.md). Port.49 incorpora el bosque mágico y árboles naturales (WORLDGEN-FOREST.md). Port.50 añade túmulos localizables con geometría original, tesoros, cofre/trampa y spawners, y greatwood infestado (WORLDGEN-STRUCTURES.md). Portales/criaturas restantes y dimensión siguen pendientes.
 
 Contenido: `stonePorous`, `lootCrateCommon`, `lootCrateUncommon`, `lootCrateRare`, `lootUrnCommon`, `lootUrnUncommon`, `lootUrnRare`, `hole`, `effectShock`, `effectSap`, `effectGlimmer`, `placeholderNetherbrick`, `placeholderObsidian`, `placeholderBars`, `placeholderAnvil`, `placeholderCauldron`, `placeholderTable`, `empty`, `barrier`, `lootBag`, `enchantedPlaceholder`.

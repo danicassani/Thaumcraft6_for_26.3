@@ -45,3 +45,5 @@ El evento que desconectaba al cliente correspondía exactamente a `crystal_aqua`
 Entrega final: `clean build test` completado; 187 pruebas, sin fallos, errores ni omisiones. Generadores estables en una segunda pasada y recursos verificados: 637 referencias de modelos, 336 recetas, 325 definiciones de objetos y 205 tablas de botín. El JAR excluye los fixtures opcionales.
 
 Artefacto: `thaumcraft-6.1.BETA26-port.52-forge66.0.13.jar`, 8991404 bytes. SHA-256: `5226209731255b659c93762bafa4c280b85e5a2597e2117fc5124c142775f118`.
+
+Actualización port.54: los pechs ya están implementados; véase [PECHS.md](PECHS.md). Las apariciones naturales de wisps están disponibles desde port.52.

@@ -908,5 +908,14 @@
   "block.thaumcraft.loot_crate_rare": "Caja de tesoro rara",
   "block.thaumcraft.loot_urn_rare": "Urna de tesoro rara",
   "item.thaumcraft.loot_bag_rare": "Bolsa de tesoro rara",
-  "biome.thaumcraft.magical_forest": "Bosque mágico"
+  "biome.thaumcraft.magical_forest": "Bosque mágico",
+  "entity.thaumcraft.pech": "Pech",
+  "entity.thaumcraft.pech.0": "Pech recolector",
+  "entity.thaumcraft.pech.1": "Pech taumaturgo",
+  "entity.thaumcraft.pech.2": "Pech acechador",
+  "entity.thaumcraft.pech_bolt": "Hechizo pech",
+  "item.thaumcraft.pech_spawn_egg": "Generador de pech",
+  "pech.thaumcraft.roll": "Tratar",
+  "pech.thaumcraft.offering": "Ofrenda valiosa → premios",
+  "pech.thaumcraft.no_room": "No caben los premios. Conservas tu ofrenda."
 }

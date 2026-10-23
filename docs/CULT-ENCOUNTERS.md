@@ -41,3 +41,5 @@ Construcción normal `clean build test --offline`: 187 pruebas, cero fallos, err
 Entrega: `thaumcraft-6.1.BETA26-port.51-forge66.0.13.jar`, 8987411 bytes. SHA-256: `81faa666b1417d3fa9e2a8ac68939fead7e08eb74679d18b8eb0f3476e3e1b69`.
 
 Actualización port.52: las apariciones naturales de wisps en bosque mágico y Nether pasan a estar implementadas; véase [WISP-NATURAL-SPAWNS.md](WISP-NATURAL-SPAWNS.md). Los demás pendientes de esta entrega se mantienen.
+
+Actualización port.54: los pechs ya están implementados; véase [PECHS.md](PECHS.md). Las apariciones naturales de wisps están disponibles desde port.52.

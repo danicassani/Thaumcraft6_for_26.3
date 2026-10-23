@@ -47,7 +47,6 @@ public final class ThaumaturgyContent {
             public net.minecraft.world.InteractionResult useOn(net.minecraft.world.item.context.UseOnContext c){if(!c.getLevel().isClientSide()&&(c.getPlayer()==null||!thaumcraft.research.ResearchService.knows(c.getPlayer(),name.equals("turret_basic")?"BASICTURRET":"ADVANCEDTURRET")))return net.minecraft.world.InteractionResult.FAIL;return super.useOn(c);}
         });}
 
-        net.minecraftforge.event.entity.living.LivingDropsEvent.BUS.addListener(e->{if(e.getEntity().getType()==net.minecraft.world.entity.EntityTypes.WITCH&&e.getSource().getEntity() instanceof net.minecraft.server.level.ServerPlayer p&&p.getRandom().nextInt(20)==0)e.getDrops().add(new net.minecraft.world.entity.item.ItemEntity(p.level(),e.getEntity().getX(),e.getEntity().getY(),e.getEntity().getZ(),new ItemStack(SimpleContent.ITEMS.get("pech_wand").get())));});
         net.minecraftforge.event.entity.EntityAttributeCreationEvent.BUS.addListener(e->e.put(SPELLBAT.get(),net.minecraft.world.entity.ambient.Bat.createAttributes().add(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH,5).build()));RiftData.register();PlanControls.register();
         RareEarthLoot.register(bus);COMPONENTS.register(bus);TYPES.register(bus);MENUS.register(bus);
         net.minecraftforge.event.entity.player.ItemTooltipEvent.BUS.addListener(e->{var s=e.getItemStack();var program=s.get(PROGRAM.get());if(program==null&&s.getItem() instanceof CasterItem){var f=s.get(FOCUS.get());if(f!=null)program=f.get(PROGRAM.get());}if(program!=null){

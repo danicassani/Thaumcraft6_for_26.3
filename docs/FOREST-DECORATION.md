@@ -42,3 +42,5 @@ Captura compartida antes del JAR final y de los pushes. SHA-256 de la imagen: `a
 Entrega final: `clean build test` completado en 49 s; 187 pruebas, sin fallos, errores ni omisiones. Segunda pasada de generadores sin cambios. Recursos comprobados: 637 referencias de modelos, 336 recetas, 325 definiciones de objetos y 205 tablas de botín. El JAR normal excluye los fixtures y conserva todos los recursos gráficos de port.52.
 
 Artefacto: `thaumcraft-6.1.BETA26-port.53-forge66.0.13.jar`, 8994471 bytes. SHA-256: `cf8a7c65a14645a3764e8e9d860a40ebc7d119271f3dace690ce93155ed038db`.
+
+Actualización port.54: los pechs ya están implementados; véase [PECHS.md](PECHS.md). Las apariciones naturales de wisps están disponibles desde port.52.

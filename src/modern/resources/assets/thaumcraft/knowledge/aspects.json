@@ -1268,6 +1268,12 @@
       "alienis": 5,
       "humanus": 15,
       "aversio": 5
+    },
+    "thaumcraft:pech": {
+      "humanus": 10,
+      "auram": 5,
+      "permutatio": 10,
+      "desiderium": 5
     }
   },
   "triggers": {
@@ -1450,9 +1456,6 @@
         "f_BAT",
         "f_FLY"
       ],
-      "minecraft:pech": [
-        "!Pech"
-      ],
       "minecraft:brainy_zombie": [
         "!BrainyZombie",
         "f_BRAIN"
@@ -1549,6 +1552,9 @@
       ],
       "thaumcraft:eldritch_guardian": [
         "!EldritchGuardian"
+      ],
+      "thaumcraft:pech": [
+        "!Pech"
       ]
     }
   }
