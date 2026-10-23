@@ -43,7 +43,11 @@ def verify(root):
 
     for directory in ['blockstates', 'items']:
         for path in assets.glob(f'*/{directory}/**/*.json'):
-            references(json.loads(path.read_text()))
+            data = json.loads(path.read_text())
+            if directory == 'blockstates' and path.parent.parent.name == 'thaumcraft' and (path.stem.startswith('crystal_') or path.stem == 'taint_fibre'):
+                if not any('when' not in part for part in data.get('multipart', [])):
+                    errors.append(f'{path.name}: multipart needs an unconditional particle fallback for unsupported states')
+            references(data)
 
     def inherit(name, chain=()):
         if ':' not in name:

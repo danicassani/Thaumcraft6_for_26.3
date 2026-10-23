@@ -991,6 +991,11 @@
           "y": 270
         }
       ]
+    },
+    {
+      "apply": {
+        "model": "thaumcraft:block/crystal_particle"
+      }
     }
   ]
 }

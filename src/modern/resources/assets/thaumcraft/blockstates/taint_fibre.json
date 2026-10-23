@@ -87,6 +87,11 @@
       "apply": {
         "model": "thaumcraft:block/taint_growth_4"
       }
+    },
+    {
+      "apply": {
+        "model": "thaumcraft:block/taint_fibre_particle"
+      }
     }
   ]
 }

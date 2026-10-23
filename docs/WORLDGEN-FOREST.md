@@ -41,3 +41,5 @@ Compilación limpia `clean build test`: 183 pruebas sin fallos, errores ni omisi
 Artefacto: `thaumcraft-6.1.BETA26-port.49-forge66.0.13.jar`, 8957615 bytes. SHA-256: `922e9b6cebd3f3498db959f8536323c146914ca9d52f957566d4af01adafc208`.
 
 Actualización port.50: los túmulos con tesoros y los greatwoods infestados pasan a estar implementados; véase [WORLDGEN-STRUCTURES.md](WORLDGEN-STRUCTURES.md). Los demás pendientes de esta lista se mantienen.
+
+Actualización port.52: la aparición natural de wisps en el bosque mágico queda implementada con pesos y grupos originales; véase [WISP-NATURAL-SPAWNS.md](WISP-NATURAL-SPAWNS.md). Pechs, decoración restante y bioma eerie siguen pendientes.

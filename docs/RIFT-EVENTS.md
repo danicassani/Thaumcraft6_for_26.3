@@ -35,3 +35,5 @@ Entrega: `thaumcraft-6.1.BETA26-port.36-forge66.0.13.jar` (8411952 bytes).
 SHA-256: `64fca9f39362f1aee29285659451ba3473466a59a48fe5d5afe892ea040040d9`.
 
 Actualización port.37: la perla primordial y los efectos finales de colapso quedan implementados; la comparación funcional y las adaptaciones gráficas se detallan en [PRIMORDIAL-RIFTS.md](PRIMORDIAL-RIFTS.md).
+
+Actualización port.52: las apariciones naturales de wisps en bosque mágico y Nether pasan a estar implementadas; véase [WISP-NATURAL-SPAWNS.md](WISP-NATURAL-SPAWNS.md). Los demás pendientes de esta entrega se mantienen.

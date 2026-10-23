@@ -14,7 +14,7 @@ spawns['creature']=[s for s in spawns['creature'] if s['type']!='minecraft:wolf'
 for s in spawns['monster']:
  if s['type'] in ['minecraft:witch','minecraft:enderman']:s.update(weight=3,count=1)
 spawns['monster'].append({'type':'minecraft:vex','count':1,'weight':1})
-# Pech and natural wisp spawning are integrated with the creature delivery, not invented substitutes.
+# Natural wisps use Forge biome modifiers; pechs remain with their creature delivery.
 vegetation=biome['features'][9]
 vegetation[vegetation.index('minecraft:trees_birch_and_oak_leaf_litter')]='thaumcraft:magical_trees'
 vegetation.insert(vegetation.index('thaumcraft:magical_trees')+1,'thaumcraft:magical_ground')

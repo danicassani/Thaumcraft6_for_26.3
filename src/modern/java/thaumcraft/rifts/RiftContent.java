@@ -17,5 +17,5 @@ public final class RiftContent {
     private static RegistryObject<net.minecraft.sounds.SoundEvent> sound(String id){return SOUNDS.register(id,()->net.minecraft.sounds.SoundEvent.createVariableRangeEvent(SimpleContent.id(id)));}
     public static final RegistryObject<net.minecraft.sounds.SoundEvent> PORTAL=sound("evilportal");
     private RiftContent() {}
-    public static void register(net.minecraftforge.eventbus.api.bus.BusGroup bus) {SOUNDS.register(bus);net.minecraftforge.event.entity.EntityAttributeCreationEvent.BUS.addListener(e->e.put(WISP.get(),Wisp.attributes()));}
+    public static void register(net.minecraftforge.eventbus.api.bus.BusGroup bus) {SOUNDS.register(bus);WispSpawning.register();net.minecraftforge.event.entity.EntityAttributeCreationEvent.BUS.addListener(e->e.put(WISP.get(),Wisp.attributes()));}
 }

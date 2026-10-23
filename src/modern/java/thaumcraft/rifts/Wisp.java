@@ -17,17 +17,20 @@ import thaumcraft.thaumaturgy.SpellEngine;
 public final class Wisp extends Monster{
  private static final EntityDataAccessor<String> ASPECT=SynchedEntityData.defineId(Wisp.class,EntityDataSerializers.STRING);
  private static final EntityDataAccessor<Integer> ZAP=SynchedEntityData.defineId(Wisp.class,EntityDataSerializers.INT);
- private int aggro,charge,zapTicks;private BlockPos destination;
+ private boolean aspectChosen;private int aggro,charge,zapTicks;private BlockPos destination;
  public Wisp(EntityType<? extends Wisp> t,Level l){super(t,l);setNoGravity(true);xpReward=5;}
- public static Wisp spawn(ServerLevel l,Vec3 position,boolean flux){if(!Double.isFinite(position.x)||!Double.isFinite(position.y)||!Double.isFinite(position.z))return null;var p=BlockPos.containing(position);if(thaumcraft.config.ThaumcraftConfig.wussMode.get()||!thaumcraft.config.ThaumcraftConfig.allowSpawnWisp.get()||l.getDifficulty()==net.minecraft.world.Difficulty.PEACEFUL||!l.isInWorldBounds(p)||!l.isInWorldBounds(p.above())||!l.hasChunkAt(p)||!l.getFluidState(p).isEmpty()||!l.getFluidState(p.above()).isEmpty())return null;if(l.getBrightness(LightLayer.SKY,p)>l.getRandom().nextInt(32)||l.getMaxLocalRawBrightness(p)>l.getRandom().nextInt(8)||l.getEntitiesOfClass(Wisp.class,new AABB(p).inflate(16)).size()>=8)return null;var w=new Wisp(RiftContent.WISP.get(),l);w.setPos(position);if(flux)w.aspect("vitium");else w.chooseAspect();return l.noCollision(w)&&l.addFreshEntity(w)?w:null;}
+ public static Wisp spawn(ServerLevel l,Vec3 position,boolean flux){if(!Double.isFinite(position.x)||!Double.isFinite(position.y)||!Double.isFinite(position.z))return null;var p=BlockPos.containing(position);if(thaumcraft.config.ThaumcraftConfig.wussMode.get()||!thaumcraft.config.ThaumcraftConfig.allowSpawnWisp.get()||l.getDifficulty()==net.minecraft.world.Difficulty.PEACEFUL||!l.isInWorldBounds(p)||!l.isInWorldBounds(p.above())||!l.hasChunkAt(p)||!l.getFluidState(p).isEmpty()||!l.getFluidState(p.above()).isEmpty())return null;if(!WispSpawning.light(l,p,l.getRandom())||l.getEntitiesOfClass(Wisp.class,new AABB(p).inflate(16)).size()>=8)return null;var w=new Wisp(RiftContent.WISP.get(),l);w.setPos(position);if(flux)w.aspect("vitium");else w.chooseAspect();return l.noCollision(w)&&l.addFreshEntity(w)?w:null;}
  public static AttributeSupplier attributes(){return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH,22).add(Attributes.ATTACK_DAMAGE,3).add(Attributes.MOVEMENT_SPEED,.15).add(Attributes.FOLLOW_RANGE,16).build();}
  protected void registerGoals(){}
  public boolean canBreatheUnderwater(){return true;}
  public boolean causeFallDamage(double distance,float multiplier,DamageSource source){return false;}
  protected void defineSynchedData(SynchedEntityData.Builder d){super.defineSynchedData(d);d.define(ASPECT,"aer");d.define(ZAP,-1);}
- public String aspect(){return entityData.get(ASPECT);}public void aspect(String a){if(!CrystalAspects.COLORS.containsKey(a))throw new IllegalArgumentException("Unknown wisp aspect");entityData.set(ASPECT,a);}
+ public String aspect(){return entityData.get(ASPECT);}public void aspect(String a){if(!CrystalAspects.COLORS.containsKey(a))throw new IllegalArgumentException("Unknown wisp aspect");entityData.set(ASPECT,a);aspectChosen=true;}
  public int charge(){return charge;}public int zapTicks(){return zapTicks;}public Entity zapTarget(){return level().getEntity(entityData.get(ZAP));}
  public void chooseAspect(){var keys=new ArrayList<>(CrystalAspects.COLORS.keySet());int i=random.nextInt(10)!=0?random.nextInt(6):6+random.nextInt(keys.size()-6);aspect(keys.get(i));}
+ public int getMaxSpawnClusterSize(){return 2;}
+ public boolean checkSpawnRules(LevelAccessor level,EntitySpawnReason reason){return WispSpawning.enabled(level)&&this.level() instanceof ServerLevel l&&l.getEntitiesOfClass(Wisp.class,getBoundingBox().inflate(16),w->w.isAlive()).size()<8;}
+ public SpawnGroupData finalizeSpawn(ServerLevelAccessor level,net.minecraft.world.DifficultyInstance difficulty,EntitySpawnReason reason,SpawnGroupData group){var result=super.finalizeSpawn(level,difficulty,reason,group);if(!aspectChosen)chooseAspect();return result;}
  public boolean considersEntityAsAlly(Entity e){return e instanceof Wisp||super.considersEntityAsAlly(e);}
  private boolean eligible(LivingEntity e){return e!=null&&e.isAlive()&&e.level()==level()&&!e.isSpectator()&&!isAlliedTo(e)&&!(e instanceof Player p&&p.getAbilities().invulnerable)&&distanceToSqr(e)<=1024;}
  public boolean visible(ServerLevel l,LivingEntity target){var a=getEyePosition();var b=target.getEyePosition();return SpellEngine.loadedLine(l,a,b)&&l.clip(new ClipContext(a,b,ClipContext.Block.COLLIDER,ClipContext.Fluid.NONE,this)).getType()==HitResult.Type.MISS;}
