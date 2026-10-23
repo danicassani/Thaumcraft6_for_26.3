@@ -9,6 +9,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import thaumcraft.champion.ChampionSystem;
 
 /** Static extension points. Recipe instances and worldgen belong in data resources. */
 public final class Registrar {
@@ -21,6 +22,7 @@ public final class Registrar {
     private Registrar() {}
     public static void register(BusGroup modBus) {
         thaumcraft.content.BasicContent.register(modBus);
+        ChampionSystem.register(modBus);
         BLOCKS.register(modBus);
         ITEMS.register(modBus);
         ENTITIES.register(modBus);

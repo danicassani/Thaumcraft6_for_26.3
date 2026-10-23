@@ -21,7 +21,7 @@ import thaumcraft.warp.*;
 public final class WarpRenderers {
  static final ModelLayerLocation GUARDIAN=new ModelLayerLocation(Identifier.parse("thaumcraft:eldritch_guardian"),"main"),CULTIST=new ModelLayerLocation(Identifier.parse("thaumcraft:cultist"),"main");
  @SubscribeEvent public static void layers(EntityRenderersEvent.RegisterLayerDefinitions e){e.registerLayerDefinition(GUARDIAN,WarpGuardianGeometry::layer);e.registerLayerDefinition(CULTIST,()->LayerDefinition.create(HumanoidModel.createMesh(CubeDeformation.NONE,0),64,32));}
- @SubscribeEvent public static void renderers(EntityRenderersEvent.RegisterRenderers e){e.registerEntityRenderer(WarpCreatures.SPIDER.get(),Mind::new);e.registerEntityRenderer(WarpCreatures.GUARDIAN.get(),Guardian::new);e.registerEntityRenderer(WarpCreatures.KNIGHT.get(),Cultist::new);e.registerEntityRenderer(WarpCreatures.CLERIC.get(),Cultist::new);e.registerEntityRenderer(WarpCreatures.PORTAL.get(),Portal::new);e.registerEntityRenderer(WarpCreatures.ORB.get(),Orb::new);}
+ @SubscribeEvent public static void renderers(EntityRenderersEvent.RegisterRenderers e){e.registerEntityRenderer(WarpCreatures.SPIDER.get(),Mind::new);e.registerEntityRenderer(WarpCreatures.GUARDIAN.get(),Guardian::new);e.registerEntityRenderer(WarpCreatures.KNIGHT.get(),Cultist::new);e.registerEntityRenderer(WarpCreatures.CLERIC.get(),Cultist::new);e.registerEntityRenderer(WarpCreatures.PORTAL.get(),Portal::new);e.registerEntityRenderer(WarpCreatures.ORB.get(),c->new Orb<WarpOrb>(c));e.registerEntityRenderer(WarpCreatures.CLERIC_ORB.get(),c->new Orb<ClericOrb>(c));}
  public static final class Mind extends SpiderRenderer<MindSpider>{
   public Mind(EntityRendererProvider.Context c){super(c);}
   public boolean shouldRender(MindSpider e,Frustum f,double x,double y,double z,float partial){return (!e.harmless()||Minecraft.getInstance().player!=null&&e.viewer().equals(Minecraft.getInstance().player.getUUID().toString()))&&super.shouldRender(e,f,x,y,z,partial);}
@@ -48,7 +48,7 @@ public final class WarpRenderers {
   public HumanoidRenderState createRenderState(){return new HumanoidRenderState();}
   public Identifier getTextureLocation(HumanoidRenderState s){return Identifier.parse("thaumcraft:textures/entity/cultist.png");}
  }
- public static final class Orb extends EntityRenderer<WarpOrb,EntityRenderState>{
+ public static final class Orb<T extends net.minecraft.world.entity.Entity> extends EntityRenderer<T,EntityRenderState>{
   public Orb(EntityRendererProvider.Context c){super(c);shadowRadius=0;}
   public EntityRenderState createRenderState(){return new EntityRenderState();}
   public void submit(EntityRenderState s,PoseStack p,SubmitNodeCollector out,CameraRenderState c){super.submit(s,p,out,c);if(s.isInvisible)return;p.pushPose();p.rotate(c.orientation);RiftEventRenderers.quad(p,out,Identifier.parse("thaumcraft:textures/misc/particles.png"),64,512+(int)s.ageInTicks%16,.3F,0xff442266);p.popPose();}

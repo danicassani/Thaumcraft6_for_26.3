@@ -22,7 +22,7 @@ Las tablas `treasure/common|uncommon|rare` producen una recompensa; `bag_*` y `c
 
 ## Disponibilidad y siguiente etapa
 
-Los nueve objetos están registrados, disponibles en la pestaña creativa y utilizables por comandos/datapacks. Esta entrega implementa sus mecánicas y recursos. Su colocación natural en estructuras y la integración con la generación de mundo corresponden a la siguiente etapa; los drops de campeones/jefes se conectarán al implementar esas criaturas. No se inventan fuentes alternativas de fabricación.
+Los nueve objetos están registrados, disponibles en la pestaña creativa y utilizables por comandos/datapacks. Esta entrega implementa sus mecánicas y recursos. Su colocación natural en estructuras y la integración con la generación de mundo corresponden a la siguiente etapa. M16.1 conecta la bolsa de campeones: un campeón que no sea `tainted` suelta una bolsa con tier `min(2, floor((rand(9) + Fortuna) / 5))` y 5–7 XP (CHAMPIONS.md). Los drops de jefes siguen pendientes. No se inventan fuentes alternativas de fabricación.
 
 ## Verificación de port.48
 
@@ -34,4 +34,4 @@ Compilación limpia `clean build test`: 180 pruebas, sin fallos, errores ni omis
 
 Artefacto: `thaumcraft-6.1.BETA26-port.48-forge66.0.13.jar`, 8941496 bytes. SHA-256: `283d8c1a4b6fb376fd2d38a042b928cdcca6bfc898102c2983f6eb4a6edc9a80`.
 
-Actualización port.50: las cajas y urnas aparecen naturalmente en los túmulos; el cofre de greatwood infestado conserva el botín vanilla original. Véase [WORLDGEN-STRUCTURES.md](WORLDGEN-STRUCTURES.md). Las fuentes de bolsas de campeones/jefes siguen pendientes.
+Actualización port.50: las cajas y urnas aparecen naturalmente en los túmulos; el cofre de greatwood infestado conserva el botín vanilla original. Véase [WORLDGEN-STRUCTURES.md](WORLDGEN-STRUCTURES.md). M16.1 aporta la fuente de bolsas de campeones; la de jefes sigue pendiente (CHAMPIONS.md).

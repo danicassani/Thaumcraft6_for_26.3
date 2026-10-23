@@ -40,7 +40,7 @@ Se registran las tres piezas de placas, túnica y pretor, las botas y la espada 
 
 Caballeros y clérigos llevan su equipo correspondiente, con posibilidad nativa de soltar cada pieza del 5%. El pretor se registra sin inventar una receta o sustituir su criatura original pendiente de M16.
 
-Los modelos de fortaleza, caballero, túnica y pretor se generan a partir de las cajas, pivotes, espejos y jerarquías originales, con variantes interiores/exteriores. Jugadores, soportes y cultistas usan el sistema nativo de equipo; los componentes del casco seleccionan las máscaras y gafas visibles. Las poses de torso y extremidades usan la animación moderna. No se reproduce literalmente cada oscilación de telas de 1.12 ni el motor antiguo ISpecialArmor de protección mágica/fuego: la equivalencia completa de esos acabados y otras habilidades activas de equipo sigue en auditoría M12. El proyectil perseguidor del clérigo y sus variantes completas de aparición siguen en M16, como se indicó en port.38.
+Los modelos de fortaleza, caballero, túnica y pretor se generan a partir de las cajas, pivotes, espejos y jerarquías originales, con variantes interiores/exteriores. Jugadores, soportes y cultistas usan el sistema nativo de equipo; los componentes del casco seleccionan las máscaras y gafas visibles. Las poses de torso y extremidades usan la animación moderna. No se reproduce literalmente cada oscilación de telas de 1.12 ni el motor antiguo ISpecialArmor de protección mágica/fuego: la equivalencia completa de esos acabados y otras habilidades activas de equipo sigue en auditoría M12. El proyectil perseguidor del clérigo se implementa en M16.3 (CULT-ENCOUNTERS.md); las variantes completas de aparición siguen fuera de alcance.
 
 ## Verificación
 

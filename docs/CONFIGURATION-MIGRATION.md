@@ -44,7 +44,7 @@ Desde [port.5](AURA-CORE.md), `world.generateAura` controla la inicialización d
 | CONFIG_WORLD.allowSpawnTaintacle | `true` | Permitir spawn de tentáculos de corrupción | SERVER world.allowSpawnTaintacle | migrada (esquema) |
 | CONFIG_WORLD.allowSpawnPech | `true` | Permitir spawn de pechs | SERVER world.allowSpawnPech | migrada (esquema) |
 | CONFIG_WORLD.allowSpawnElder | `true` | Permitir spawn de ancianos eldritch | SERVER world.allowSpawnElder | migrada (esquema) |
-| CONFIG_WORLD.allowChampionMobs | `true` | Setting this to false will disable spawning champion mobs. Even when false they will still have a greatly reduced chance of spawning in certain dangerous places. | SERVER world.allowChampionMobs | migrada (esquema) |
+| CONFIG_WORLD.allowChampionMobs | `true` | Setting this to false will disable spawning champion mobs. Even when false they will still have a greatly reduced chance of spawning in certain dangerous places. | SERVER world.allowChampionMobs | migrada y aplicada por M16.1: suma 2 a la tirada y anula los bonus de dificultad, bioma y whitelist (CHAMPIONS.md) |
 | CONFIG_MISC.noSleep | `false` | Setting this to true will make you get the recipe book for salis mundus without having to sleep first. | SERVER misc.noSleep | migrada (esquema) |
 | CONFIG_MISC.wussMode | `false` | Setting this to true disables Warp, Taint spread and similar mechanics. You wuss. | SERVER misc.wussMode | activa parcialmente en investigación, corrupción y sucesos de grietas (TAINT-FLUIDS.md, RIFT-EVENTS.md) |
 | CONFIG_MISC.allowCheatSheet | `false` | Enables a version of the Thauminomicon in creative mode that grants you all the research when you first use it. | SERVER misc.allowCheatSheet | migrada (esquema) |

@@ -40,7 +40,27 @@ public final class CuriosityContent{
         if(variant.equals("rites"))next=next.flag("CrimsonRites");if(!KnowledgeStore.write(p,next))return false;if((variant.equals("eldritch")||variant.equals("rites"))&&!warp(real,variant.equals("rites")&&r.nextBoolean()?1:0,1,5)){KnowledgeStore.write(p,old);return false;}
         if(!p.getAbilities().instabuild)stack.shrink(1);p.sendSystemMessage(Component.translatable("infusion.thaumcraft.knowledge"));return true;
     }
-    @SubscribeEvent public static void drops(LivingDropsEvent e){if(e.getEntity() instanceof Zombie zombie&&e.getSource().getEntity() instanceof Player&&zombie.getRandom().nextInt(10)==0)e.getDrops().add(new ItemEntity(zombie.level(),zombie.getX(),zombie.getY()+.5,zombie.getZ(),new ItemStack(BRAIN.get())));}
+    @SubscribeEvent public static void drops(LivingDropsEvent e){if(!(e.getEntity().level() instanceof net.minecraft.server.level.ServerLevel server))return;
+        var dead=e.getEntity();
+        if(dead instanceof Zombie zombie&&e.isRecentlyHit()){
+            int looting=looting(server,e.getSource().getEntity());
+            if(thaumcraft.warp.CultistRules.dropsBrain(zombie.getRandom().nextInt(10),looting))
+                e.getDrops().add(new ItemEntity(server,dead.getX(),dead.getEyeY(),dead.getZ(),new ItemStack(BRAIN.get())));
+        }
+        if(dead instanceof thaumcraft.warp.WarpMonster cultist&&(cultist.kind==thaumcraft.warp.WarpMonster.Kind.KNIGHT||cultist.kind==thaumcraft.warp.WarpMonster.Kind.CLERIC)
+                &&e.getSource().getEntity() instanceof ServerPlayer p&&!p.getClass().getName().contains("FakePlayer")){
+            boolean knows=ResearchService.knows(p,"!CrimsonCultist@2");
+            boolean carrying=p.getInventory().getNonEquipmentItems().stream().anyMatch(s->s.is(CURIO.get())&&"rites".equals(variant(s)));
+            int denominator=thaumcraft.warp.CultistRules.curioDenominator(knows,carrying);
+            if(thaumcraft.warp.CultistRules.dropsCurio(cultist.getRandom().nextInt(denominator),denominator))
+                e.getDrops().add(new ItemEntity(server,dead.getX(),dead.getEyeY(),dead.getZ(),curio("rites")));
+        }
+    }
+    private static int looting(net.minecraft.server.level.ServerLevel server,net.minecraft.world.entity.Entity killer){
+        if(!(killer instanceof net.minecraft.world.entity.LivingEntity living))return 0;
+        var enchantment=server.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).get(net.minecraft.world.item.enchantment.Enchantments.LOOTING);
+        return enchantment.isPresent()?net.minecraft.world.item.enchantment.EnchantmentHelper.getEnchantmentLevel(enchantment.get(),living):0;
+    }
     @SubscribeEvent public static void eaten(net.minecraftforge.event.entity.living.LivingEntityUseItemEvent.Finish e){if(e.getEntity() instanceof ServerPlayer p&&e.getItem().is(BRAIN.get())&&p.getRandom().nextFloat()<.8F)warp(p,0,0,1+p.getRandom().nextInt(3));}
     public static void register(BusGroup bus){COMPONENTS.register(bus);}
 }
