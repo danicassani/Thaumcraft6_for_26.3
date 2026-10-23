@@ -140,7 +140,8 @@
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode"
+      "minecraft:amethyst_geode",
+      "thaumcraft:magical_boulders"
     ],
     [
       "minecraft:monster_room",
@@ -187,6 +188,7 @@
     [
       "minecraft:glow_lichen",
       "minecraft:forest_flowers",
+      "thaumcraft:magical_mushrooms",
       "thaumcraft:magical_trees",
       "thaumcraft:magical_ground",
       "minecraft:patch_bush",

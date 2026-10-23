@@ -91,7 +91,7 @@ public final class WorldgenProbe {
         }
     }
     @SubscribeEvent public static void tick(TickEvent.LevelTickEvent.Post event) {
-        if (mode().isEmpty()||(mode().startsWith("structures")||mode().startsWith("cult")||mode().startsWith("wisp"))||done||!(event.level() instanceof ServerLevel level)||level.dimension()!=net.minecraft.world.level.Level.OVERWORLD) return;
+        if (mode().isEmpty()||(mode().startsWith("structures")||mode().startsWith("cult")||mode().startsWith("wisp")||mode().startsWith("decoration"))||done||!(event.level() instanceof ServerLevel level)||level.dimension()!=net.minecraft.world.level.Level.OVERWORLD) return;
         if (mode().equals("client")&&level.players().isEmpty()) return;
         if (++ticks<100) return;
         done=true;

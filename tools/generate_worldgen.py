@@ -16,9 +16,17 @@ for s in spawns['monster']:
 spawns['monster'].append({'type':'minecraft:vex','count':1,'weight':1})
 # Natural wisps use Forge biome modifiers; pechs remain with their creature delivery.
 vegetation=biome['features'][9]
+# Keep rocks before vegetation and giant mushrooms before trees, as in the original decorate().
+biome['features'][2].append('thaumcraft:magical_boulders')
 vegetation[vegetation.index('minecraft:trees_birch_and_oak_leaf_litter')]='thaumcraft:magical_trees'
+vegetation.insert(vegetation.index('thaumcraft:magical_trees'),'thaumcraft:magical_mushrooms')
 vegetation.insert(vegetation.index('thaumcraft:magical_trees')+1,'thaumcraft:magical_ground')
 save(D/'thaumcraft/worldgen/biome/magical_forest.json',biome)
+for name,feature,count in [('magical_boulders','minecraft:forest_rock',{'type':'minecraft:uniform','min_inclusive':0,'max_inclusive':2}),('magical_mushrooms','minecraft:mushroom_island_vegetation',16)]:
+ placement=[{'type':'minecraft:count','count':count}]
+ if name=='magical_mushrooms':placement.append({'type':'minecraft:rarity_filter','chance':40})
+ placement.extend([{'type':'minecraft:in_square'},{'type':'minecraft:heightmap','heightmap':'WORLD_SURFACE_WG'},{'type':'minecraft:biome'}])
+ save(D/f'thaumcraft/worldgen/placed_feature/{name}.json',{'feature':feature,'placement':placement})
 for name,ground in [('magical_trees',False),('magical_ground',True)]:
  save(D/f'thaumcraft/worldgen/feature/{name}.json',{'type':'thaumcraft:forest_decoration','ground':ground})
  placement=[{'type':'minecraft:count','count':2},{'type':'minecraft:in_square'},{'type':'minecraft:heightmap','heightmap':'OCEAN_FLOOR_WG'},{'type':'minecraft:biome'}] if not ground else [{'type':'minecraft:heightmap','heightmap':'OCEAN_FLOOR_WG'},{'type':'minecraft:biome'}]
