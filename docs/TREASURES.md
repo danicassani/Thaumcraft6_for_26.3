@@ -22,7 +22,7 @@ Las tablas `treasure/common|uncommon|rare` producen una recompensa; `bag_*` y `c
 
 ## Disponibilidad y siguiente etapa
 
-Los nueve objetos están registrados, disponibles en la pestaña creativa y utilizables por comandos/datapacks. Esta entrega implementa sus mecánicas y recursos. Su colocación natural en estructuras y la integración con la generación de mundo corresponden a la siguiente etapa. M16.1 conecta la bolsa de campeones: un campeón que no sea `tainted` suelta una bolsa con tier `min(2, floor((rand(9) + Fortuna) / 5))` y 5–7 XP (CHAMPIONS.md). Los drops de jefes siguen pendientes. No se inventan fuentes alternativas de fabricación.
+Los nueve objetos están registrados, disponibles en la pestaña creativa y utilizables por comandos/datapacks. Esta entrega implementa sus mecánicas y recursos. Su colocación natural en estructuras y la integración con la generación de mundo corresponden a la siguiente etapa. M16.1 conecta la bolsa de campeones: un campeón que no sea `tainted` suelta una bolsa con tier `min(2, floor((rand(9) + Saqueo) / 5))` y 5–7 XP (CHAMPIONS.md). Los drops de jefes siguen pendientes. No se inventan fuentes alternativas de fabricación.
 
 ## Verificación de port.48
 

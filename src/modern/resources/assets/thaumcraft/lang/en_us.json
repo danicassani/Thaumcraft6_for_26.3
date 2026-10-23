@@ -1386,5 +1386,7 @@
   "champion.mod.vampiric": "Vampiric",
   "champion.mod.infested": "Infested",
   "champion.mod.tainted": "Tainted",
-  "attribute.name.thaumcraft.champion_mod": "Champion modifier"
+  "attribute.name.thaumcraft.champion_mod": "Champion modifier",
+  "infusion.thaumcraft.warping": "Item warping: %s",
+  "infusion.thaumcraft.state.invalid_remainder": "Incompatible crafting remainder"
 }

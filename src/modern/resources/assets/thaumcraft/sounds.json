@@ -87,5 +87,28 @@
         "stream": false
       }
     ]
+  },
+  "infusion_start": {
+    "sounds": [
+      {
+        "name": "thaumcraft:craftstart",
+        "stream": false
+      }
+    ]
+  },
+  "infusion_fail": {
+    "sounds": [
+      {
+        "name": "thaumcraft:craftfail",
+        "stream": false
+      }
+    ]
+  },
+  "infusion_complete": {
+    "sounds": [
+      "thaumcraft:wand1",
+      "thaumcraft:wand2",
+      "thaumcraft:wand3"
+    ]
   }
 }

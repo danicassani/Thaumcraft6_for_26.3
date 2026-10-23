@@ -4,7 +4,7 @@ plugins {
     id 'eclipse'
     id 'net.minecraftforge.gradle' version '7.0.17'
 }
-version = '6.1.BETA26-port.54-forge66.0.13'
+version = '6.1.BETA26-port.55-forge66.0.13'
 group = 'griglog.thaumcraft'
 base.archivesName = 'thaumcraft'
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
@@ -104,7 +104,7 @@ minecraft {
             args '--nogui'
             if (providers.gradleProperty('worldgenProbe').isPresent()) args '--world', providers.gradleProperty('worldgenProbe').get().startsWith('pech') ? 'pech-smoke54' : providers.gradleProperty('worldgenProbe').get().startsWith('decoration') ? 'decoration-smoke53' : providers.gradleProperty('worldgenProbe').get().startsWith('wisp') ? 'wisp-smoke52' : providers.gradleProperty('worldgenProbe').get().startsWith('cult') ? 'cult-smoke51' : providers.gradleProperty('worldgenProbe').get().startsWith('structures') ? 'structures-smoke50' : 'worldgen-smoke49'
             if (providers.gradleProperty('thaumaturgyProbe').isPresent()) args '--world', 'thaumaturgy-smoke'
-            if (providers.gradleProperty('infusionProbe').isPresent()) args '--world', 'infusion-smoke'
+            if (providers.gradleProperty('infusionProbe').isPresent()) args '--world', providers.gradleProperty('infusionProbe').get().startsWith('finish') ? 'infusion-smoke55' : 'infusion-smoke'
             if (providers.gradleProperty('essentiaProbe').isPresent()) args '--world', 'essentia-smoke'
             if (providers.gradleProperty('alchemyProbe').isPresent()) args '--world', 'alchemy-smoke'
             if (providers.gradleProperty('theoryProbe').isPresent()) args '--world', 'theory-smoke'

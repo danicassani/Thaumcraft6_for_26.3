@@ -68,6 +68,7 @@ public final class ChampionSystem {
     private static final Identifier HEALTH = SimpleContent.id("champion_health");
     private static final Identifier DAMAGE = SimpleContent.id("champion_damage");
     private static final Identifier BOLD_SPEED = SimpleContent.id("champion_bold_speed");
+    private static final Identifier WARD_CAP = SimpleContent.id("champion_ward_cap");
     private static final Identifier MIGHTY_DAMAGE = SimpleContent.id("champion_mighty_damage");
 
     private static final Identifier NONE_MOD = SimpleContent.id("champion_none");
@@ -95,9 +96,9 @@ public final class ChampionSystem {
 
     private static void addToMobs(EntityAttributeModificationEvent event) {
         for (EntityType<? extends LivingEntity> type : event.getTypes()) {
-            if (Mob.class.isAssignableFrom(type.getBaseClass())) {
-                event.add(type, attribute());
-            }
+            // getBaseClass() is the declared factory base, not the concrete mob class.
+            // This event already exposes only living entity types; onJoin restricts processing to Mob.
+            event.add(type, attribute());
         }
     }
 
@@ -196,6 +197,7 @@ public final class ChampionSystem {
                 damage.addPermanentModifier(new AttributeModifier(MIGHTY_DAMAGE, 2.0D, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
             }
         } else if (type == 5) {
+            ensureWardCapacity(mob);
             mob.setAbsorptionAmount(mob.getAbsorptionAmount() + (float) ((int) mob.getAttributeBaseValue(Attributes.MAX_HEALTH) / 2));
         }
 
@@ -209,11 +211,18 @@ public final class ChampionSystem {
         if (persist) mob.setPersistenceRequired();
     }
 
+    private static void ensureWardCapacity(Mob mob) {
+        var cap=mob.getAttribute(Attributes.MAX_ABSORPTION);if(cap==null)return;
+        double limit=(int)mob.getAttributeBaseValue(Attributes.MAX_HEALTH)/2;
+        var old=cap.getModifier(WARD_CAP);if(old!=null&&old.amount()==limit)return;
+        cap.removeModifier(WARD_CAP);cap.addPermanentModifier(new AttributeModifier(WARD_CAP,limit,AttributeModifier.Operation.ADD_VALUE));
+    }
     private static void onLivingTick(LivingEvent.LivingTickEvent event) {
         if (!(event.getEntity() instanceof Mob mob)) return;
         if (!(mob.level() instanceof ServerLevel)) return;
         int type = championType(mob);
         if (type == 5) {
+            ensureWardCapacity(mob);
             // Warded: one absorption point every 25 ticks, up to half its base health.
             if (mob.hurtTime <= 0 && mob.tickCount % 25 == 0) {
                 int limit = (int) mob.getAttributeBaseValue(Attributes.MAX_HEALTH) / 2;
@@ -260,7 +269,7 @@ public final class ChampionSystem {
         // Offensive modifiers (type 1) fire when the champion deals damage.
         if (type == 4 && attacker.getRandom().nextFloat() < 0.4F) {
             target.addEffect(new MobEffectInstance(MobEffects.WITHER, 200));
-        } else if (type == 6 && attacker.getRandom().nextFloat() < 0.33F && target instanceof ServerPlayer player) {
+        } else if (type == 6 && !ThaumcraftConfig.wussMode.get() && attacker.getRandom().nextFloat() < 0.33F && target instanceof ServerPlayer player) {
             PlayerWarpStore.read(player).result().ifPresent(state ->
                     PlayerWarpStore.write(player, WarpRules.add(state, 0, 0, 1 + attacker.getRandom().nextInt(3))));
         } else if (type == 8 && attacker.getRandom().nextFloat() < 0.4F) {

@@ -1,5 +1,7 @@
 # Infusión avanzada: port.13
 
+Cierre y actualización en port.55: [INFUSION-COMPLETE.md](INFUSION-COMPLETE.md).
+
 Minecraft 26.3 / Forge 66.0.13 / Java 25.
 
 ## Estabilización
@@ -91,16 +93,13 @@ Los efectos son adaptaciones nativas: Collector desplaza drops en lugar de usar
 la entidad animada original; Burrowing cosecha un conjunto conectado acotado en
 vez de seleccionar solo el bloque más lejano; Sounding usa partículas en lugar
 del shader de escaneo; Refining cubre los tres metales con mineral crudo nativo.
-La generación aleatoria de warp del equipo al encantar queda para M12.
+Port.55 incorpora el warp propio del objeto al encantar y lo conecta con M12.
 
-Se añaden accidentes de destrucción de ingredientes con flux y expulsión con
-explosión pequeña, que pueden ser mitigados por la red. Flux goo y los efectos
-de corrupción/enfermedades siguen dependiendo de M13/M12.
+Port.55 completa los 24 resultados ponderados, incluidos goo, enfermedades,
+warp, descargas y los seis accidentes de ingredientes; véase INFUSION-COMPLETE.md.
 
-Las recetas de equipo elemental, fortaleza, accesorios, escudos rúnicos y focos
-siguen dependiendo de sus efectos de M10/M12. El inicio del altar continúa con
-mano vacía hasta implementar el guantelete. No se registran resultados de equipo
-sin su comportamiento.
+El equipo elemental, fortaleza, accesorios, escudos rúnicos y focos se incorporaron
+en M10/M12. El altar se inicia con el guantelete y conserva sus requisitos de investigación.
 
 ## Verificación
 

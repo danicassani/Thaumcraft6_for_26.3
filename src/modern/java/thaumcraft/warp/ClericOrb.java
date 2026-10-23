@@ -23,14 +23,16 @@ import net.minecraft.world.phys.Vec3;
  * Port of TC6's {@code EntityGolemOrb} as used by the cultist cleric.
  *
  * <p>The original orb homes towards its target for up to 240 ticks, has no
- * gravity and deals the caster's attack damage on impact. The client does not
- * need the target because movement is simulated on the server.</p>
+ * gravity and deals the caster's attack damage on impact. Targets persist by UUID;
+ * the current runtime id is synchronized for matching client homing.</p>
  */
 public final class ClericOrb extends ThrowableItemProjectile {
     private static final int LIFETIME = 240;
     private static final EntityDataAccessor<Integer> TARGET =
             SynchedEntityData.defineId(ClericOrb.class, EntityDataSerializers.INT);
     private Entity target;
+    private java.util.UUID targetUuid;
+    private boolean deflected;
     private long expires;
 
     public ClericOrb(EntityType<? extends ClericOrb> type, Level level) {
@@ -40,6 +42,7 @@ public final class ClericOrb extends ThrowableItemProjectile {
     public ClericOrb(EntityType<? extends ClericOrb> type, Level level, LivingEntity owner, LivingEntity target) {
         super(type, owner, level, new ItemStack(Items.ENDER_PEARL));
         this.target = target;
+        this.targetUuid = target.getUUID();
         entityData.set(TARGET, target.getId());
     }
 
@@ -61,28 +64,19 @@ public final class ClericOrb extends ThrowableItemProjectile {
 
     @Override
     protected boolean canHitEntity(Entity entity) {
-        return entity != getOwner() && super.canHitEntity(entity);
+        return (deflected||entity != getOwner()) && !(entity instanceof net.minecraft.world.entity.player.Player p&&(p.isCreative()||p.isSpectator())) && super.canHitEntity(entity);
     }
 
     @Override
     public void tick() {
-        super.tick();
-        if (isRemoved()) return;
-
-        if (!level().isClientSide()) {
-            long now = level().getGameTime();
-            if (expires == 0L) expires = now + LIFETIME;
-            if (now >= expires) {
-                discard();
-                return;
-            }
+        if(level() instanceof ServerLevel server){
+            long now=server.getGameTime();if(expires==0)expires=now+LIFETIME;
+            if(thaumcraft.config.ThaumcraftConfig.wussMode.get()||now>=expires||expires>now+LIFETIME||!thaumcraft.thaumaturgy.SpellEngine.loadedLine(server,position(),position().add(getDeltaMovement()))){discard();return;}
+            if(targetUuid!=null){target=server.getEntity(targetUuid);entityData.set(TARGET,target instanceof LivingEntity&&target.isAlive()?target.getId():0);}
+        }else if(target==null||target.isRemoved()||target.getId()!=entityData.get(TARGET)){
+            var entity=level().getEntity(entityData.get(TARGET));target=entity instanceof LivingEntity?entity:null;
         }
-
-        // Resolve the tracked target on both sides; the original sent its entity id in spawn data.
-        if (target == null) {
-            int id = entityData.get(TARGET);
-            if (id != 0 && level().getEntity(id) instanceof LivingEntity living) target = living;
-        }
+        super.tick();if(isRemoved())return;
 
         // TC6 homes every tick by adding distance-scaled acceleration and clamping each axis.
         if (target != null && target.isAlive()) {
@@ -104,6 +98,7 @@ public final class ClericOrb extends ThrowableItemProjectile {
     protected void onHit(HitResult hit) {
         super.onHit(hit);
         if (!(level() instanceof ServerLevel server)) return;
+        if(thaumcraft.config.ThaumcraftConfig.wussMode.get()){discard();return;}
 
         if (hit instanceof EntityHitResult entityHit
                 && entityHit.getEntity() instanceof LivingEntity victim
@@ -117,16 +112,26 @@ public final class ClericOrb extends ThrowableItemProjectile {
     }
 
     @Override
+    public boolean hurtServer(ServerLevel level,net.minecraft.world.damagesource.DamageSource source,float amount){
+        if(isInvulnerableToBase(source)||source.getEntity()==null)return false;
+        if(thaumcraft.config.ThaumcraftConfig.wussMode.get()){discard();return false;}
+        setDeltaMovement(source.getEntity().getLookAngle().scale(.9));deflected=true;markHurt();
+        playSound(thaumcraft.rifts.RiftContent.ZAP.get(),1,1);return true;
+    }
+    @Override
     protected void addAdditionalSaveData(ValueOutput out) {
         super.addAdditionalSaveData(out);
         out.putLong("cleric_expires", expires);
-        out.putInt("cleric_target", entityData.get(TARGET));
+        if(targetUuid!=null)out.putString("cleric_target_uuid",targetUuid.toString());
+        out.putBoolean("cleric_deflected",deflected);
     }
 
     @Override
     protected void readAdditionalSaveData(ValueInput in) {
         super.readAdditionalSaveData(in);
         expires = in.getLongOr("cleric_expires", 0L);
-        entityData.set(TARGET, in.getIntOr("cleric_target", 0));
+        target=null;targetUuid=null;entityData.set(TARGET,0);
+        try{targetUuid=java.util.UUID.fromString(in.getStringOr("cleric_target_uuid",""));}catch(IllegalArgumentException ignored){}
+        deflected=in.getBooleanOr("cleric_deflected",false);
     }
 }

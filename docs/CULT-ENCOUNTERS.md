@@ -28,7 +28,7 @@ El clérigo elige en cada ataque a distancia entre las tres bolas de fuego peque
 
 Al morir un caballero o clérigo a manos de un jugador, puede soltar una curiosidad carmesí de la variante `rites` (equivalente al metadata 6). El denominador es 4 por defecto, 20 si el jugador conoce `!CrimsonCultist@2` y 50 si lleva una curiosidad `rites` en el inventario; el curio se sortea con `nextInt(denominador) == 0`. La variante `rites` se identifica por su componente, no por un metadata inexistente en 26.3.
 
-El cerebro cae de zombis recién golpeados con `rand.nextInt(10) - Fortuna < 1`, usando el nivel de Fortuna del arma del asesino. Se excluye a los zombis con cerebro, pendientes de portar; no se añade una variante provisional. Estas reglas puras viven en `CultistRules` y tienen pruebas JUnit dedicadas.
+El cerebro cae de zombis recién golpeados con `rand.nextInt(10) - Saqueo < 1`, usando el nivel de Saqueo del arma del asesino. Se excluye a los zombis con cerebro, pendientes de portar; no se añade una variante provisional. Estas reglas puras viven en `CultistRules` y tienen pruebas JUnit dedicadas.
 
 
 ## Alcance pendiente
@@ -56,3 +56,7 @@ Actualización port.52: las apariciones naturales de wisps en bosque mágico y N
 Actualización port.54: los pechs ya están implementados; véase [PECHS.md](PECHS.md). Las apariciones naturales de wisps están disponibles desde port.52.
 
 Actualización M16.3: el proyectil perseguidor y los drops de curiosidad/cerebro están implementados. `ClericOrb`, `WarpMonster`, `WarpCreatures`, `CuriosityContent` y `WarpRenderers` compilan contra las APIs reales de Forge/MC 26.3; las clases con APIs parcheadas ajenas (`KnowledgeStore`, `BasicContent`, `SpellEngine`, `RiftContent`) se sustituyeron por stubs mínimos solo para esa comprobación dirigida. `CultistRulesTest` pasa 4/4 con JUnit. No se ejecutó el `clean build` completo: el decompilador de `MinecraftMavenizer` sigue agotando memoria (código 137). Queda pendiente una prueba en cliente de la persecución visible y del drop real en un mundo dedicado.
+
+Actualización port.55: se corrigen persistencia y seguridad del orbe. El objetivo se guarda por UUID y su ID actual se sincroniza tras cargar; los IDs temporales de guardados antiguos no se reutilizan como identidad. Se recupera la devolución al golpearlo, el control de `wussMode`, la caducidad acotada y el límite a chunks cargados. Las pruebas nativas comprueban las dos ramas de disparo del clérigo, trayectoria, colisión y daño, controles de devolución/wuss y los drops mediante muertes reales. La comprobación completa de Gradle ya funciona en el entorno preparado, sin stubs.
+
+El reinicio de port.55 recupera un orbe y su objetivo por UUID, resuelve el nuevo ID temporal y verifica impacto y daño tras cargar. El cliente confirma la entidad sincronizada de un orbe lanzado por la IA real, además del modelo del clérigo.

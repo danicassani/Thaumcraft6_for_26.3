@@ -61,3 +61,13 @@ Las tablas de las tres bolsas ya existían desde port.48; este milestone solo a�
 - `spooky` no se comprueba porque el puerto aún no tiene el bioma eerie; Nether y End sí.
 - La localización de peligro del original devuelve siempre `false`; no se replica.
 - El atributo persistido usa `Identifier` en lugar del UUID de 1.12.2, como exige la API moderna.
+
+## Cierre de verificación port.55
+
+Se corrige el registro efectivo del atributo: `getBaseClass()` describe la fábrica y no permitía identificar los zombis concretos. El evento añade el atributo a los tipos vivos disponibles y la lógica de aparición sigue limitada a `Mob`. Los campeones Warded reciben ahora un modificador persistente de `MAX_ABSORPTION`, necesario en 26.3; se repara también al actualizar campeones antiguos. El modificador de warp respeta `wussMode`.
+
+La fixture nativa comprueba la conversión por `EntityJoinLevelEvent`, las 14 identidades, atributos y serialización, daño real de espinas/armadura y efectos ofensivos, crías de corrupción, regeneración de escudo y salud, y una sola bolsa tras una muerte real. Otras 64 muertes de zombis y 64 de cultistas verifican los drops y componentes con Looting III. Estas comprobaciones complementan los seis tests de fórmulas; las fixtures no entran en el JAR.
+
+Se mantiene el alcance documentado de M16.1: no se añade aquí la conversión independiente `makeTainted` de criaturas pasivas, jefes, eerie ni dimensión.
+
+La prueba de reinicio en otro proceso restaura el límite de absorción Warded. La inspección de cliente incluye su modelo y nombre sincronizados junto al clérigo y al proyectil real; no depende de una captura del menú principal.

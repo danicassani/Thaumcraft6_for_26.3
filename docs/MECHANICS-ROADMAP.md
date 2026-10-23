@@ -52,7 +52,7 @@ Contenido: `bannerCrimsonCult`, `tube`, `tubeValve`, `tubeRestrict`, `tubeOneway
 
 ## M09: Infusión, simetría, estabilidad y mejoras
 
-**Estado:** port.13 añade estabilizadores con carga/red horizontal de incrustaciones y pedestales, mitigación pagada, mejoras de velocidad/coste y ocho encantamientos funcionales de herramientas; port.14 añade equipo, escudos rúnicos y guantelete básico; variantes avanzadas y sucesos de corrupción siguen pendientes (INFUSION-ADVANCED.md).
+**Estado:** port.55 cierra la infusión funcional activa de TC6: tres altares, cuatro mejoras, simetría, estabilización pagada, ocho encantamientos y warp persistente del objeto, mejoras rúnicas/fortaleza, 24 resultados ponderados de inestabilidad, goo/enfermedades/descargas, absorción persistente y recuperación de ofrendas trasladadas. Compatibilidad de guardado v1; efectos visuales adaptados y variantes sin recetas originales documentados (INFUSION-COMPLETE.md).
 
 Contenido: `inlay`, `infusionMatrix`, `stabilizer`.
 

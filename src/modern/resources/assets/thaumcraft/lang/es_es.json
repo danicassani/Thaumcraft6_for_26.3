@@ -933,5 +933,7 @@
   "champion.mod.vampiric": "Vampírico",
   "champion.mod.infested": "Infestado",
   "champion.mod.tainted": "Contaminado",
-  "attribute.name.thaumcraft.champion_mod": "Modificador de campeón"
+  "attribute.name.thaumcraft.champion_mod": "Modificador de campeón",
+  "infusion.thaumcraft.warping": "Distorsión del objeto: %s",
+  "infusion.thaumcraft.state.invalid_remainder": "Resto de fabricación incompatible"
 }

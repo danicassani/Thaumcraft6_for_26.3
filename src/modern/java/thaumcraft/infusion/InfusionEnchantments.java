@@ -24,6 +24,10 @@ public final class InfusionEnchantments {
     private static final Codec<Map<String,Integer>> CODEC=Codec.unboundedMap(Codec.STRING,Codec.intRange(1,5)).validate(m->m.size()<=Kind.values().length&&m.entrySet().stream().allMatch(e->Kind.of(e.getKey())!=null&&e.getValue()<=Kind.of(e.getKey()).max)?DataResult.success(Map.copyOf(m)):DataResult.error(()->"Invalid infusion enchantments"));
     private static final DeferredRegister<DataComponentType<?>> COMPONENTS=DeferredRegister.create(Registries.DATA_COMPONENT_TYPE,Thaumcraft.MODID);
     public static final RegistryObject<DataComponentType<Map<String,Integer>>> ENCHANTMENTS=COMPONENTS.register("infusion_enchantments",()->DataComponentType.<Map<String,Integer>>builder().persistent(CODEC).networkSynchronized(ByteBufCodecs.fromCodec(CODEC)).build());
+    public static final RegistryObject<DataComponentType<Integer>> WARP=COMPONENTS.register("infusion_warp",()->DataComponentType.<Integer>builder().persistent(Codec.intRange(0,127)).networkSynchronized(ByteBufCodecs.VAR_INT).build());
+    public static int warp(ItemStack stack){return stack.getOrDefault(WARP.get(),0);}
+    /** Roll only when committing a job, never when rendering or matching a recipe. */
+    public static ItemStack commitWarp(ItemStack original,ItemStack result,int roll){if(roll<0||roll>=10)throw new IllegalArgumentException("Invalid infusion warp draw");var out=result.copy();if(roll<original.getOrDefault(ENCHANTMENTS.get(),Map.<String,Integer>of()).size())out.set(WARP.get(),Math.min(127,warp(original)+1));return out;}
     public static int level(ItemStack s,Kind k){return s.getOrDefault(ENCHANTMENTS.get(),Map.<String,Integer>of()).getOrDefault(k.id(),0);}
     public static boolean canApply(ItemStack s,Kind k){return s.getCount()==1&&k.accepts(s)&&level(s,k)<k.max;}
     public static ItemStack apply(ItemStack s,Kind k){if(!canApply(s,k))return ItemStack.EMPTY;var out=s.copy();var values=new TreeMap<>(s.getOrDefault(ENCHANTMENTS.get(),Map.<String,Integer>of()));values.put(k.id(),level(s,k)+1);out.set(ENCHANTMENTS.get(),Map.copyOf(values));return out;}
