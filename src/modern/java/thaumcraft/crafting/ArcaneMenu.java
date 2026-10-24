@@ -10,6 +10,9 @@ import thaumcraft.crystals.CrystalContent;
 /** A single native result slot. Only the server can turn its preview into a paid stack. */
 public final class ArcaneMenu extends AbstractContainerMenu {
     public static final int RESULT=15,PLAYER_START=16,PLAYER_END=52;
+    private static final int[] CRYSTAL_X={64,17,112,17,112,64},CRYSTAL_Y={13,35,35,93,93,115};
+    public static int crystalX(int i){return CRYSTAL_X[i];}
+    public static int crystalY(int i){return CRYSTAL_Y[i];}
     private final ArcaneWorkbenchEntity table;
     private final Container inventory;
     private final SimpleContainer preview=new SimpleContainer(1);
@@ -21,9 +24,9 @@ public final class ArcaneMenu extends AbstractContainerMenu {
             public int get(int i){var match=table.match();return switch(i){case 0->Math.min(32766,table.availableVis());case 1->table.visCost(playerInv.player,match);case 2->!inventory.getItem(15).isEmpty()||table.canCraft(playerInv.player,match)?1:0;case 3->table.charged()?9:1;case 10->match!=null&&!thaumcraft.research.ResearchService.knows(playerInv.player,match.research())?1:0;case 11->table.reason(playerInv.player,match);default->match==null?0:match.crystals().getOrDefault(ArcaneRecipe.PRIMALS.get(i-4),0);};}
             public void set(int i,int v){}public int getCount(){return 12;}
         };
-        for(int y=0;y<3;y++)for(int x=0;x<3;x++)addSlot(new Slot(inventory,x+y*3,16+x*20,28+y*20));
-        for(int i=0;i<6;i++){final String aspect=ArcaneRecipe.PRIMALS.get(i);addSlot(new Slot(inventory,9+i,16+i*24,104){public boolean mayPlace(ItemStack s){return s.is(CrystalContent.ESSENCE.get())&&CrystalContent.aspect(s).equals(aspect);}});}
-        addSlot(new Slot(preview,0,132,48){
+        for(int y=0;y<3;y++)for(int x=0;x<3;x++)addSlot(new Slot(inventory,x+y*3,40+x*24,40+y*24));
+        for(int i=0;i<6;i++){final String aspect=ArcaneRecipe.PRIMALS.get(i);addSlot(new Slot(inventory,9+i,crystalX(i),crystalY(i)){public boolean mayPlace(ItemStack s){return s.is(CrystalContent.ESSENCE.get())&&CrystalContent.aspect(s).equals(aspect);}});}
+        addSlot(new Slot(preview,0,160,64){
             public boolean mayPlace(ItemStack s){return false;}
             public boolean mayPickup(Player p){return table==null?ready():stillValid(p)&&(!inventory.getItem(15).isEmpty()||table.canCraft(p,table.match()));}
             public ItemStack remove(int amount){
@@ -34,7 +37,7 @@ public final class ArcaneMenu extends AbstractContainerMenu {
             }
             public void onTake(Player p,ItemStack s){super.onTake(p,s);refreshOutput();}
         });
-        addStandardInventorySlots(playerInv,8,146);addDataSlots(data);refreshOutput();
+        addStandardInventorySlots(playerInv,16,151);addDataSlots(data);refreshOutput();
     }
     private void refreshOutput(){if(table==null)return;var stored=inventory.getItem(15);var match=table.match();var result=!stored.isEmpty()?stored.copy():match==null?ItemStack.EMPTY:match.result().copy();if(!ItemStack.matches(preview.getItem(0),result))preview.setItem(0,result);}
     public int available(){return data.get(0);}public int cost(){return data.get(1);}public boolean ready(){return data.get(2)==1;}public int chunks(){return data.get(3);}public int crystalCost(int p){return data.get(4+p);}public boolean researchLocked(){return data.get(10)==1;}public int reason(){return data.get(11);}

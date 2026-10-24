@@ -29,3 +29,7 @@ Las fixtures optativas `-PbookProbe=write runServer` y `read` comprueban la crea
 ### Client shutdown limitation
 
 The final native client run passed recipe rendering, native output pickup and all nine M16 renderer assertions. Closing the X11 window subsequently triggered the native client shutdown watchdog in `VulkanGpuSurface.present` / `vkQueuePresentKHR` (2026-10-24), after the integrated server began saving players and worlds. This run is not claimed as a clean client shutdown. Dedicated-server shutdown and cold-restart persistence checks passed separately.
+
+## Disposición original — port.62
+
+La mesa utiliza la textura original `arcaneworkbench.png`, con el tablero verde y el marco de madera. La cuadrícula está en (40,40), con separación de 24 píxeles; los cristales rodean el tablero en el orden original —aire arriba, fuego/agua en las esquinas superiores, tierra/orden en las inferiores y entropía abajo—. El resultado está en (160,64) y los inventarios conservan sus índices y contenidos. Los halos giratorios marcan los cristales requeridos y la reserva/coste de vis aparece junto a la salida. Se mantiene la recogida nativa del resultado y el pago del servidor.

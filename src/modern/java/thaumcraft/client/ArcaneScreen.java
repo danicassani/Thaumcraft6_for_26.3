@@ -1,9 +1,10 @@
 package thaumcraft.client;
 
 import net.minecraft.client.gui.GuiGraphicsExtractor;
-import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -15,21 +16,30 @@ import thaumcraft.crystals.CrystalAspects;
 
 @Mod.EventBusSubscriber(modid=Thaumcraft.MODID,value=Dist.CLIENT)
 public final class ArcaneScreen extends AbstractContainerScreen<ArcaneMenu> {
-    public ArcaneScreen(ArcaneMenu menu,Inventory inventory,Component title) {super(menu,inventory,title,184,228);inventoryLabelY=134;}
-    @SubscribeEvent public static void screens(FMLClientSetupEvent event) {event.enqueueWork(()->net.minecraft.client.gui.screens.MenuScreens.register(ArcaneContent.MENU.get(),ArcaneScreen::new));}
-    @Override public void extractBackground(GuiGraphicsExtractor graphics,int mouseX,int mouseY,float partial) {
+    private static final Identifier TEXTURE=Identifier.parse("thaumcraft:textures/gui/arcaneworkbench.png");
+    public ArcaneScreen(ArcaneMenu menu,Inventory inventory,Component title){super(menu,inventory,title,190,234);}
+    @SubscribeEvent public static void screens(FMLClientSetupEvent event){event.enqueueWork(()->net.minecraft.client.gui.screens.MenuScreens.register(ArcaneContent.MENU.get(),ArcaneScreen::new));}
+    @Override protected void extractLabels(GuiGraphicsExtractor graphics,int mouseX,int mouseY){}
+    @Override public void extractBackground(GuiGraphicsExtractor graphics,int mouseX,int mouseY,float partial){
         super.extractBackground(graphics,mouseX,mouseY,partial);
-        graphics.fill(leftPos,topPos,leftPos+imageWidth,topPos+imageHeight,0xFFB9AFCC);
-        graphics.fill(leftPos+4,topPos+18,leftPos+180,topPos+134,0xFF302840);
-        for(var slot:menu.slots) {if(slot.index==15)graphics.fill(leftPos+slot.x-2,topPos+slot.y-2,leftPos+slot.x+18,topPos+slot.y+18,0xFFAA88CC);graphics.fill(leftPos+slot.x-1,topPos+slot.y-1,leftPos+slot.x+17,topPos+slot.y+17,0xFF796A8A);graphics.fill(leftPos+slot.x,topPos+slot.y,leftPos+slot.x+16,topPos+slot.y+16,0xFF17141F);}
-        for(int i=0;i<6;i++) {
-            int color=0xFF000000|CrystalAspects.COLORS.get(ArcaneRecipe.PRIMALS.get(i));
-            graphics.fill(leftPos+16+i*24,topPos+121,leftPos+32+i*24,topPos+123,color);
-            if(menu.crystalCost(i)>0)graphics.text(font,Integer.toString(menu.crystalCost(i)),leftPos+20+i*24,topPos+124,color,false);
+        graphics.blit(RenderPipelines.GUI_TEXTURED,TEXTURE,leftPos,topPos,0,0,imageWidth,imageHeight,256,256);
+        for(int i=0;i<6;i++)if(menu.crystalCost(i)>0){
+            int color=0x55000000|CrystalAspects.COLORS.get(ArcaneRecipe.PRIMALS.get(i));
+            graphics.pose().pushMatrix();graphics.pose().translate(leftPos+ArcaneMenu.crystalX(i)+8,topPos+ArcaneMenu.crystalY(i)+8);
+            graphics.pose().rotate((float)Math.toRadians(i*60+(minecraft.player.tickCount+partial)%360));
+            graphics.blit(RenderPipelines.GUI_TEXTURED,TEXTURE,-16,-16,192,0,32,32,64,64,256,256,color);
+            graphics.pose().popMatrix();
         }
-        graphics.text(font,Component.translatable("menu.thaumcraft.vis_available",menu.available()),leftPos+82,topPos+22,0xFFFFFFFF,false);
-        graphics.text(font,Component.translatable("menu.thaumcraft.vis_cost",menu.reason()==1?"—":menu.cost()),leftPos+82,topPos+34,0xFFDDD0EE,false);
-        graphics.text(font,Component.literal("→"),leftPos+103,topPos+53,0xFFDDD0EE,false);
-        var status=Component.translatable("menu.thaumcraft.reason."+menu.reason());int row=0;for(var line:font.split(status,160)){if(row==2)break;graphics.text(font,line,leftPos+12,topPos+86+row++*9,menu.reason()==0?0xFF99DD99:0xFFFFC580,false);}
+        smallCentered(graphics,Component.translatable("menu.thaumcraft.vis_available",menu.available()),168,46,menu.reason()==4?0xFFFF8888:0xFFAE8FCE);
+        if(menu.reason()!=1)smallCentered(graphics,Component.translatable("menu.thaumcraft.vis_cost",menu.cost()),168,38,0xFFBDE5F2);
+        if(menu.reason()>1){
+            graphics.pose().pushMatrix();graphics.pose().translate(leftPos+148,topPos+101);graphics.pose().scale(.5F,.5F);
+            int y=0;for(var line:font.split(Component.translatable("menu.thaumcraft.reason."+menu.reason()),80)){graphics.text(font,line,0,y,0xFFFFC580,false);y+=9;}
+            graphics.pose().popMatrix();
+        }
+    }
+    private void smallCentered(GuiGraphicsExtractor graphics,Component text,int x,int y,int color){
+        graphics.pose().pushMatrix();graphics.pose().translate(leftPos+x,topPos+y);graphics.pose().scale(.5F,.5F);
+        graphics.text(font,text,-font.width(text)/2,0,color,false);graphics.pose().popMatrix();
     }
 }
