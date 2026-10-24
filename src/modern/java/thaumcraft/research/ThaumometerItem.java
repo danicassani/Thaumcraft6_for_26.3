@@ -11,6 +11,7 @@ public final class ThaumometerItem extends Item {
     public static final int SCAN_TICKS=20;
     private static final String OTHER_HAND="tc_scan_other_hand";
     public ThaumometerItem(Properties properties){super(properties);}
+    public static boolean inspectingOtherHand(Player player){return player.isUsingItem()&&player.getUseItem().is(ResearchContent.METER.get())?player.getPersistentData().getBooleanOr(OTHER_HAND,false):player.isShiftKeyDown();}
     @Override public int getUseDuration(ItemStack stack,LivingEntity user){return SCAN_TICKS;}
     @Override public ItemUseAnimation getUseAnimation(ItemStack stack){return ItemUseAnimation.NONE;}
     @Override public InteractionResult use(Level level,Player player,InteractionHand hand){
