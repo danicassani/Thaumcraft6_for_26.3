@@ -24,5 +24,5 @@ public final class ResearchContent {
     static{BasicContent.display(BOOK);BasicContent.display(METER);}
     private ResearchContent(){}
     private static Item.Properties properties(String id){return new Item.Properties().setId(ResourceKey.create(Registries.ITEM,SimpleContent.id(id))).stacksTo(1).rarity(Rarity.UNCOMMON);}
-    public static void register(BusGroup bus){MENUS.register(bus);}
+    public static void register(BusGroup bus){MENUS.register(bus);ScanEffects.register(bus);}
 }

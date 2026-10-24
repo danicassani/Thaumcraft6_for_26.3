@@ -221,7 +221,7 @@ ui={
 'research.thaumcraft.parents':'Prerequisites:','research.thaumcraft.deliver':'Deliver:','research.thaumcraft.craft':'Craft:','research.thaumcraft.discover':'Discover:',
 'research.thaumcraft.cost':'Knowledge:','research.thaumcraft.recipe':'Recipe:','research.thaumcraft.future_recipe':'This recipe needs a mechanic that is still pending in this port.',
 'research.thaumcraft.stage':'Stage %s / %s','research.thaumcraft.scans':'Scans: %s','research.thaumcraft.aura':'Base %s  Vis %s  Flux %s',
-'research.thaumcraft.scan_hint':'Use to scan; sneak to scan offhand.','menu.thaumcraft.research_locked':'Research locked'},
+'research.thaumcraft.scan_hint':'Hold %s for 1 second: scan the target','menu.thaumcraft.research_locked':'Research locked'},
 'es_es':{
 'item.thaumcraft.thaumonomicon':'Thaumonomicon','item.thaumcraft.thaumometer':'Taumómetro',
 'research.thaumcraft.advance':'Continuar','research.thaumcraft.progress':'Investigación avanzada: %s','research.thaumcraft.complete':'Investigación completada: %s',
@@ -231,8 +231,10 @@ ui={
 'research.thaumcraft.parents':'Requisitos:','research.thaumcraft.deliver':'Entregar:','research.thaumcraft.craft':'Fabricar:','research.thaumcraft.discover':'Descubrir:',
 'research.thaumcraft.cost':'Conocimiento:','research.thaumcraft.recipe':'Receta:','research.thaumcraft.future_recipe':'Esta receta requiere una mecánica aún pendiente en el port.',
 'research.thaumcraft.stage':'Etapa %s / %s','research.thaumcraft.scans':'Escaneos: %s','research.thaumcraft.aura':'Base %s  Vis %s  Flux %s',
-'research.thaumcraft.scan_hint':'Usar: escanear. Agachado: mano secundaria.','menu.thaumcraft.research_locked':'Investigación'} }
+'research.thaumcraft.scan_hint':'Mantén %s 1 segundo: escanear el objetivo','menu.thaumcraft.research_locked':'Investigación'} }
+ui['en_us'].update({'research.thaumcraft.scan_hint': 'Hold %s for 1 second: scan the target', 'research.thaumcraft.scan_other_hint': '%s + hold %s: scan %s (other hand)', 'research.thaumcraft.scan_other_empty_hint': '%s + hold %s: scan an item in the other hand', 'research.thaumcraft.scan_other_empty': 'Hold an item in the hand opposite the Thaumometer, then sneak and use it.'})
 ui['en_us'].update({'research.thaumcraft.journal.1':'A strange dream\n\nGrind three crystals of different aspects with redstone using a bowl and flint. This creates Salis Mundus; the bowl and flint are returned.','research.thaumcraft.journal.2':'Use Salis Mundus on a bookshelf. Open the Thaumonomicon and start First Steps. Then transform a crafting table with Salis Mundus. Follow the book to craft a thaumometer and scan for knowledge.'})
+ui['es_es'].update({'research.thaumcraft.scan_hint': 'Mantén %s 1 segundo: escanear el objetivo', 'research.thaumcraft.scan_other_hint': '%s + mantener %s: escanear %s (otra mano)', 'research.thaumcraft.scan_other_empty_hint': '%s + mantener %s: escanear un objeto de la otra mano', 'research.thaumcraft.scan_other_empty': 'Pon un objeto en la mano opuesta al taumómetro; agáchate y úsalo.'})
 ui['es_es'].update({'research.thaumcraft.journal.1':'Un sueño extraño\n\nMuele tres cristales de aspectos distintos con redstone, un cuenco y pedernal. Obtendrás Salis Mundus; se devuelven el cuenco y el pedernal.','research.thaumcraft.journal.2':'Aplica Salis Mundus a una librería. Abre el Thaumonomicon y comienza Primeros pasos. Transforma una mesa de crafteo con Salis Mundus. El libro explica el taumómetro y los escaneos.'})
 for locale,values in ui.items():
     for category,label in zip(['BASICS','AUROMANCY','ALCHEMY','ARTIFICE','INFUSION','GOLEMANCY','ELDRITCH'],['Basics','Aura','Alchemy','Artifice','Infusion','Golems','Eldritch'] if locale=='en_us' else ['Básicos','Aura','Alquimia','Artificio','Infusión','Gólems','Oculto']):

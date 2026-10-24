@@ -225,7 +225,7 @@
   "research.thaumcraft.stage": "Etapa %s / %s",
   "research.thaumcraft.scans": "Escaneos: %s",
   "research.thaumcraft.aura": "Base %s  Vis %s  Flux %s",
-  "research.thaumcraft.scan_hint": "Usar: escanear. Agachado: mano secundaria.",
+  "research.thaumcraft.scan_hint": "Mantén %s 1 segundo: escanear el objetivo",
   "menu.thaumcraft.research_locked": "Investigación",
   "research.thaumcraft.category.BASICS": "Básicos",
   "research.thaumcraft.category.AUROMANCY": "Aura",
@@ -983,5 +983,8 @@
   "research.thaumcraft.points.observation": "Observación",
   "research.thaumcraft.points.theory": "Teoría",
   "research.thaumcraft.points_short": "Obs.: %s  Teo.: %s",
-  "research.thaumcraft.points_progress": "Próxima observación: %s%%; próxima teoría: %s%%"
+  "research.thaumcraft.points_progress": "Próxima observación: %s%%; próxima teoría: %s%%",
+  "research.thaumcraft.scan_other_hint": "%s + mantener %s: escanear %s (otra mano)",
+  "research.thaumcraft.scan_other_empty_hint": "%s + mantener %s: escanear un objeto de la otra mano",
+  "research.thaumcraft.scan_other_empty": "Pon un objeto en la mano opuesta al taumómetro; agáchate y úsalo."
 }

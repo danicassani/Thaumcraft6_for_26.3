@@ -720,7 +720,7 @@
   "research.thaumcraft.stage": "Stage %s / %s",
   "research.thaumcraft.scans": "Scans: %s",
   "research.thaumcraft.aura": "Base %s  Vis %s  Flux %s",
-  "research.thaumcraft.scan_hint": "Use to scan; sneak to scan offhand.",
+  "research.thaumcraft.scan_hint": "Hold %s for 1 second: scan the target",
   "menu.thaumcraft.research_locked": "Research locked",
   "research.thaumcraft.category.BASICS": "Basics",
   "research.thaumcraft.category.AUROMANCY": "Aura",
@@ -1436,5 +1436,8 @@
   "research.thaumcraft.points.observation": "Observation",
   "research.thaumcraft.points.theory": "Theory",
   "research.thaumcraft.points_short": "Obs: %s  Theo: %s",
-  "research.thaumcraft.points_progress": "Next observation: %s%%; next theory: %s%%"
+  "research.thaumcraft.points_progress": "Next observation: %s%%; next theory: %s%%",
+  "research.thaumcraft.scan_other_hint": "%s + hold %s: scan %s (other hand)",
+  "research.thaumcraft.scan_other_empty_hint": "%s + hold %s: scan an item in the other hand",
+  "research.thaumcraft.scan_other_empty": "Hold an item in the hand opposite the Thaumometer, then sneak and use it."
 }

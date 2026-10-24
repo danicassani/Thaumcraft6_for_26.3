@@ -171,5 +171,10 @@
         "stream": false
       }
     ]
+  },
+  "scan": {
+    "sounds": [
+      "thaumcraft:scan"
+    ]
   }
 }
