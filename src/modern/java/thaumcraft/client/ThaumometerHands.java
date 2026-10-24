@@ -29,10 +29,15 @@ public final class ThaumometerHands {
         if(!player.isInvisible()&&mc.getEntityRenderDispatcher().getRenderer(player) instanceof AvatarRenderer<?> renderer){
             for(int sign:new int[]{1,-1}){
                 pose.pushPose();
-                pose.translate(sign*.75,-.28,.06);
+                // Anchor the native fingertips on the frame, then let the arm extend back toward the player.
+                pose.translate(sign*.34,-.18,.02);
                 pose.rotateDegrees(Axis.YP,sign*12);
-                pose.rotateDegrees(Axis.XP,-75);
+                pose.rotateDegrees(Axis.XP,-55);
                 pose.rotateDegrees(Axis.ZP,sign*-8);
+                double palmCenter=player.getSkin().model()==net.minecraft.world.entity.player.PlayerModelType.SLIM?.03125:.0625;
+                double tipX=.3125+palmCenter*Math.cos(.1)+.625*Math.sin(.1);
+                double tipY=.125-palmCenter*Math.sin(.1)+.625*Math.cos(.1);
+                pose.translate(sign*tipX,-tipY,0);
                 if(sign==1)renderer.renderRightHand(pose,event.getNodeCollector(),event.getPackedLight(),player.getSkin().body().texturePath(),true);
                 else renderer.renderLeftHand(pose,event.getNodeCollector(),event.getPackedLight(),player.getSkin().body().texturePath(),true);
                 pose.popPose();
