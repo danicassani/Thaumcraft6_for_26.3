@@ -1274,6 +1274,48 @@
       "auram": 5,
       "permutatio": 10,
       "desiderium": 5
+    },
+    "thaumcraft:firebat": {
+      "bestia": 5,
+      "volatus": 5,
+      "ignis": 10
+    },
+    "thaumcraft:brainy_zombie": {
+      "exanimis": 20,
+      "humanus": 10,
+      "cognitio": 5,
+      "aversio": 5
+    },
+    "thaumcraft:giant_brainy_zombie": {
+      "exanimis": 25,
+      "humanus": 15,
+      "cognitio": 5,
+      "aversio": 10
+    },
+    "thaumcraft:eldritch_crab": {
+      "alienis": 10,
+      "bestia": 10,
+      "vinculum": 10
+    },
+    "thaumcraft:inhabited_zombie": {
+      "alienis": 10,
+      "exanimis": 10,
+      "humanus": 5
+    },
+    "thaumcraft:eldritch_warden": {
+      "alienis": 40,
+      "mortuus": 40,
+      "exanimis": 40
+    },
+    "thaumcraft:eldritch_golem": {
+      "alienis": 40,
+      "potentia": 40,
+      "machina": 40
+    },
+    "thaumcraft:cultist_leader": {
+      "alienis": 40,
+      "aversio": 40,
+      "humanus": 40
     }
   },
   "triggers": {

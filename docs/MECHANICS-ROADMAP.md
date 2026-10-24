@@ -94,9 +94,7 @@ Contenido: `mirror`, `mirrorEssentia`, `handMirror`.
 
 ## M16: Botín, estructuras, dimensión y contenido interno
 
-Port.54 incorpora los pechs y su comercio, amistad, mochila, combate y botín; ver [PECHS.md](PECHS.md). M16.1 añade los 14 modificadores de campeón y su bolsa de botín (CHAMPIONS.md). M16.3 incorpora el proyectil perseguidor del clérigo y los drops de curiosidad carmesí y cerebro (CULT-ENCOUNTERS.md). El resto de criaturas y contenido eldritch sigue pendiente.
-
-**Estado:** port.47 corrige 56 tablas existentes que usaban campos de condiciones/modificadores ignorados por 26.3. Se recuperan alternativas de Seda, probabilidades/Fortuna, explosiones y cantidades/componentes; el build revisa las 185 tablas (LOOT-COMPATIBILITY.md). Port.48 incorpora las tres bolsas y las seis cajas/urnas, con tablas nativas, recompensas y recursos originales (TREASURES.md). Port.49 incorpora el bosque mágico y árboles naturales (WORLDGEN-FOREST.md). Port.50 añade túmulos localizables con geometría original, tesoros, cofre/trampa y spawners, y greatwood infestado (WORLDGEN-STRUCTURES.md). Portales/criaturas restantes y dimensión siguen pendientes.
+**Estado actual:** port.56 completa las criaturas restantes, jefes y portal mayor registrados en TC6, con fases, botín, guardado, barras y escudo, nueve huevos y escaneo. Conserva tesoros, bosque, túmulos, wisps, portales menores, pechs y campeones de port.47–55. Se preservan los biomas registrados Eerie/eldritch; el original no contiene un generador ni registro de dimensión Outer Lands. Véase [ELDRITCH-COMPLETE.md](ELDRITCH-COMPLETE.md) para el alcance y las adaptaciones; una dimensión nueva no se considera un pendiente del port.
 
 Contenido: `stonePorous`, `lootCrateCommon`, `lootCrateUncommon`, `lootCrateRare`, `lootUrnCommon`, `lootUrnUncommon`, `lootUrnRare`, `hole`, `effectShock`, `effectSap`, `effectGlimmer`, `placeholderNetherbrick`, `placeholderObsidian`, `placeholderBars`, `placeholderAnvil`, `placeholderCauldron`, `placeholderTable`, `empty`, `barrier`, `lootBag`, `enchantedPlaceholder`.
 
@@ -104,7 +102,7 @@ La revisión visual de port.46 corrige el atlas del cofre hambriento y las part�
 
 ## Dependencias adicionales fuera del registro BlocksTC/ItemsTC
 
-Se han portado los cubos de muerte líquida y fluido purificador y las criaturas directamente asociadas a la corrupción (TAINT-FLUIDS.md). Quedan las demás criaturas/IA y huevos de aparición de ConfigEntities (M10–M13/M16), los encantamientos normales y de infusión (M09/M12), los efectos de poción propios (M12/M13) y la generación de biomas/estructuras/dimensiones (M01/M16). No son referencias independientes de ItemsTC.
+Se han portado los cubos de muerte líquida y fluido purificador y las criaturas directamente asociadas a la corrupción (TAINT-FLUIDS.md). Las criaturas, encuentros y registros de biomas restantes de M16 se revisan en port.56 (ELDRITCH-COMPLETE.md). La infusión activa se cierra en port.55. Los elementos sin recetas, registro o generador en el código fuente se distinguen del contenido funcional; no se inventa una dimensión para cubrir una referencia de configuración.
 
 ## Orden de implementación por dependencias
 

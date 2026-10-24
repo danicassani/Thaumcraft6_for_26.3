@@ -90,7 +90,9 @@ public final class ArcaneWorkbenchEntity extends AuraDeviceEntity implements Men
         return true;
     }
     public boolean canCraft(Player player,Match match){return canCraft(match,visCost(player,match))&&thaumcraft.research.ResearchService.knows(player,match.research());}
-    /** The button only requests a craft; the server resolves the recipe and pays everything again. */
+    /** A player-facing reason, evaluated from the same match as the output preview. */
+    public int reason(Player player,Match match){if(!inventory.getItem(15).isEmpty())return 0;if(match==null)return 1;if(!thaumcraft.research.ResearchService.knows(player,match.research()))return 2;if(!hasCrystals(match.crystals()))return 3;if(availableVis()<visCost(player,match))return 4;return canCraft(player,match)?0:5;}
+    /** Picking up the preview requests this transaction; the server matches and pays again. */
     public boolean craft(Player player) {
         if(!(level instanceof ServerLevel) || !valid(player))return false;
         var match=match();if(!canCraft(player,match)||!spendVis(visCost(player,match)))return false;

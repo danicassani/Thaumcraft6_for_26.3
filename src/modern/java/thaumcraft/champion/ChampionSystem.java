@@ -104,6 +104,7 @@ public final class ChampionSystem {
 
     /** Whitelist values from TC6's ConfigEntities: 0, 1, 2 and 3 with bonus 0, 0, 1 and 2. */
     private static int whitelistValue(Mob mob) {
+        if (mob instanceof thaumcraft.eldritch.EldritchMob elder && (elder.kind==thaumcraft.eldritch.EldritchMob.Kind.CRAB||elder.kind==thaumcraft.eldritch.EldritchMob.Kind.BRAINY||elder.kind==thaumcraft.eldritch.EldritchMob.Kind.GIANT)) return 0;
         if (mob instanceof Zombie || mob instanceof Spider || mob instanceof Blaze
                 || mob instanceof Enderman || mob instanceof Skeleton || mob instanceof Witch) {
             return 0;
@@ -151,7 +152,7 @@ public final class ChampionSystem {
         boolean allowed = ThaumcraftConfig.allowChampionMobs.get();
         boolean easy = level.getDifficulty() == net.minecraft.world.Difficulty.EASY;
         boolean hard = level.getDifficulty() == net.minecraft.world.Difficulty.HARD;
-        boolean netherOrEnd = level.getBiome(mob.blockPosition()).is(net.minecraft.tags.BiomeTags.IS_NETHER)
+        boolean netherOrEnd = level.getBiome(mob.blockPosition()).is(net.minecraft.tags.TagKey.create(Registries.BIOME,SimpleContent.id("is_spooky"))) || level.getBiome(mob.blockPosition()).is(net.minecraft.tags.BiomeTags.IS_NETHER)
                 || level.getBiome(mob.blockPosition()).is(net.minecraft.tags.BiomeTags.IS_END);
         int roll = ChampionRules.adjustSpawnRoll(mob.getRandom().nextInt(100), easy, hard, allowed, netherOrEnd);
         int bonus = allowed ? ChampionRules.whitelistBonus(whitelistValue(mob)) : 0;

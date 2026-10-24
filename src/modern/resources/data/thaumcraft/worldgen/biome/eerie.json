@@ -1,0 +1,72 @@
+{
+  "attributes": {
+    "minecraft:gameplay/natural_mob_spawns": {
+      "spawn_costs": {},
+      "spawns_by_category": {
+        "ambient": [
+          {
+            "type": "minecraft:bat",
+            "weight": 3,
+            "count": 1
+          }
+        ],
+        "monster": [
+          {
+            "type": "minecraft:witch",
+            "weight": 8,
+            "count": 1
+          },
+          {
+            "type": "minecraft:enderman",
+            "weight": 4,
+            "count": 1
+          },
+          {
+            "type": "thaumcraft:brainy_zombie",
+            "weight": 32,
+            "count": 1
+          },
+          {
+            "type": "thaumcraft:giant_brainy_zombie",
+            "weight": 8,
+            "count": 1
+          },
+          {
+            "type": "thaumcraft:wisp",
+            "weight": 3,
+            "count": 1
+          },
+          {
+            "type": "thaumcraft:eldritch_guardian",
+            "weight": 1,
+            "count": 1
+          }
+        ]
+      }
+    },
+    "minecraft:visual/sky_color": "#222299",
+    "minecraft:visual/fog_color": "#202028"
+  },
+  "carvers": [],
+  "downfall": 0,
+  "effects": {
+    "water_color": "#2e538f",
+    "grass_color": "#404840",
+    "foliage_color": "#404840"
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  "has_precipitation": false,
+  "temperature": 0.8
+}

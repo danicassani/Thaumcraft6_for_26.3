@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "thaumcraft:brain"
+        }
+      ],
+      "condition": {
+        "type": "minecraft:random_chance_with_enchanted_bonus",
+        "enchantment": "minecraft:looting",
+        "unenchanted_chance": 0.5,
+        "enchanted_chance": {
+          "type": "minecraft:linear",
+          "base": 0.6,
+          "per_level_above_first": 0.1
+        }
+      }
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:entities/zombie"
+        }
+      ]
+    }
+  ]
+}

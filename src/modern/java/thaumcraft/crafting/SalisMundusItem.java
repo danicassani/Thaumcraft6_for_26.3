@@ -21,7 +21,7 @@ public final class SalisMundusItem extends Item {
         if(level instanceof ServerLevel server) {
             var player=context.getPlayer();
             if(player==null||!thaumcraft.research.ResearchService.knows(player,book?"!gotdream":crucible?"UNLOCKALCHEMY@2":"FIRSTSTEPS@1")){
-                if(player!=null)player.sendOverlayMessage(net.minecraft.network.chat.Component.translatable(book?"research.thaumcraft.need_dream":"research.thaumcraft.need_book"));return InteractionResult.FAIL;
+                if(player!=null)player.sendOverlayMessage(net.minecraft.network.chat.Component.translatable(book?"research.thaumcraft.need_dream":crucible?"research.thaumcraft.need_crucible_research":"research.thaumcraft.need_book"));return InteractionResult.FAIL;
             }
             if(!server.setBlockAndUpdate(pos,book?Blocks.AIR.defaultBlockState():crucible?thaumcraft.alchemy.AlchemyContent.CRUCIBLE.get().defaultBlockState():ArcaneContent.WORKBENCH.get().defaultBlockState()))return InteractionResult.FAIL;
             var result=new net.minecraft.world.item.ItemStack(book?thaumcraft.research.ResearchContent.BOOK.get():crucible?thaumcraft.alchemy.AlchemyContent.CRUCIBLE.get().asItem():ArcaneContent.WORKBENCH.get().asItem());

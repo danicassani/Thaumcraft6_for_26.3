@@ -110,5 +110,66 @@
       "thaumcraft:wand2",
       "thaumcraft:wand3"
     ]
+  },
+  "egidle": {
+    "sounds": [
+      "thaumcraft:egidle1",
+      "thaumcraft:egidle2"
+    ]
+  },
+  "egattack": {
+    "sounds": [
+      {
+        "name": "thaumcraft:egattack",
+        "stream": false
+      }
+    ]
+  },
+  "egdeath": {
+    "sounds": [
+      {
+        "name": "thaumcraft:egdeath",
+        "stream": false
+      }
+    ]
+  },
+  "egscreech": {
+    "sounds": [
+      {
+        "name": "thaumcraft:egscreech",
+        "stream": false
+      }
+    ]
+  },
+  "crabtalk": {
+    "sounds": [
+      "thaumcraft:crabtalk1",
+      "thaumcraft:crabtalk2",
+      "thaumcraft:crabtalk3"
+    ]
+  },
+  "crabclaw": {
+    "sounds": [
+      {
+        "name": "thaumcraft:crabclaw",
+        "stream": false
+      }
+    ]
+  },
+  "crabdeath": {
+    "sounds": [
+      {
+        "name": "thaumcraft:crabdeath",
+        "stream": false
+      }
+    ]
+  },
+  "monolith": {
+    "sounds": [
+      {
+        "name": "thaumcraft:monolith",
+        "stream": false
+      }
+    ]
   }
 }

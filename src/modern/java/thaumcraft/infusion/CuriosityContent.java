@@ -42,7 +42,7 @@ public final class CuriosityContent{
     }
     @SubscribeEvent public static void drops(LivingDropsEvent e){if(!(e.getEntity().level() instanceof net.minecraft.server.level.ServerLevel server))return;
         var dead=e.getEntity();
-        if(dead instanceof Zombie zombie&&e.isRecentlyHit()){
+        if(dead instanceof Zombie zombie&&!(zombie instanceof thaumcraft.eldritch.BrainyZombie brainy&&brainy.kind!=thaumcraft.eldritch.EldritchMob.Kind.INHABITED)&&e.isRecentlyHit()){
             int looting=looting(server,e.getSource().getEntity());
             if(thaumcraft.warp.CultistRules.dropsBrain(zombie.getRandom().nextInt(10),looting))
                 e.getDrops().add(new ItemEntity(server,dead.getX(),dead.getEyeY(),dead.getZ(),new ItemStack(BRAIN.get())));

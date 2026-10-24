@@ -47,6 +47,7 @@ public final class ResearchCatalog {
     }
     static List<String> strings(JsonObject object,String key){if(!object.has(key))return List.of();var result=new ArrayList<String>();for(var v:object.getAsJsonArray(key))result.add(v.getAsString());return List.copyOf(result);}
     private static List<ItemRequirement> items(JsonObject object,String key){var result=new ArrayList<ItemRequirement>();for(var v:object.getAsJsonArray(key)){var o=v.getAsJsonObject();result.add(new ItemRequirement(o.get("id").getAsString(),o.get("count").getAsInt(),o.has("aspect")?o.get("aspect").getAsString():"",o.get("legacy").getAsString()));}return List.copyOf(result);}
+    public static boolean categoryUnlocked(KnowledgeState state,String category){return category.equals("BASICS")||knows(state,"UNLOCK"+category);}
     public static boolean knows(KnowledgeState state,String query){
         if(query==null||query.isEmpty())return true;
         if(query.startsWith("~"))query=query.substring(1);

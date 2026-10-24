@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SCS",
+    "SSS"
+  ],
+  "key": {
+    "S": [
+      "minecraft:stone",
+      "minecraft:andesite",
+      "minecraft:diorite",
+      "minecraft:granite"
+    ],
+    "C": "thaumcraft:crystal_essence"
+  },
+  "result": {
+    "id": "thaumcraft:stone_arcane",
+    "count": 9
+  }
+}

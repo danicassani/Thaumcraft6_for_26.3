@@ -4,7 +4,7 @@ plugins {
     id 'eclipse'
     id 'net.minecraftforge.gradle' version '7.0.17'
 }
-version = '6.1.BETA26-port.55-forge66.0.13'
+version = '6.1.BETA26-port.56-forge66.0.13'
 group = 'griglog.thaumcraft'
 base.archivesName = 'thaumcraft'
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
@@ -42,6 +42,8 @@ sourceSets.main {
 if (providers.gradleProperty('worldgenProbe').isPresent()) { sourceSets.main.java.srcDir('src/worldgenTest/java') }
 if (providers.gradleProperty('thaumaturgyProbe').isPresent()) { sourceSets.main.java.srcDir('src/thaumaturgyTest/java') }
 
+if (providers.gradleProperty('bookProbe').isPresent()) { sourceSets.main.java.srcDir('src/bookTest/java'); sourceSets.main.java.srcDir('src/eldritchTest/java') }
+if (providers.gradleProperty('eldritchProbe').isPresent()) { sourceSets.main.java.srcDir('src/eldritchTest/java') }
 if (providers.gradleProperty('infusionProbe').isPresent()) {
     sourceSets.main.java.srcDir('src/infusionTest/java')
 }
@@ -84,6 +86,8 @@ minecraft {
             if (providers.gradleProperty('thaumaturgyProbe').isPresent()) systemProperty 'thaumcraft.thaumaturgyProbe', providers.gradleProperty('thaumaturgyProbe').get()
             systemProperty 'eventbus.api.strictRuntimeChecks', 'true'
             if (providers.gradleProperty('worldgenProbe').isPresent()) systemProperty 'thaumcraft.worldgenProbe', providers.gradleProperty('worldgenProbe').get()
+            if (providers.gradleProperty('bookProbe').isPresent()) systemProperty 'thaumcraft.bookProbe', providers.gradleProperty('bookProbe').get()
+            if (providers.gradleProperty('eldritchProbe').isPresent()) systemProperty 'thaumcraft.eldritchProbe', providers.gradleProperty('eldritchProbe').get()
             if (providers.gradleProperty('infusionProbe').isPresent()) systemProperty 'thaumcraft.infusionProbe', providers.gradleProperty('infusionProbe').get()
             if (providers.gradleProperty('essentiaProbe').isPresent()) systemProperty 'thaumcraft.essentiaProbe', providers.gradleProperty('essentiaProbe').get()
             if (providers.gradleProperty('alchemyProbe').isPresent()) systemProperty 'thaumcraft.alchemyProbe', providers.gradleProperty('alchemyProbe').get()
@@ -102,6 +106,8 @@ minecraft {
         register('server') {
             workingDir = layout.projectDirectory.dir('run/server')
             args '--nogui'
+            if (providers.gradleProperty('bookProbe').isPresent()) args '--world', 'book-smoke56'
+            if (providers.gradleProperty('eldritchProbe').isPresent()) args '--world', 'eldritch-smoke56'
             if (providers.gradleProperty('worldgenProbe').isPresent()) args '--world', providers.gradleProperty('worldgenProbe').get().startsWith('pech') ? 'pech-smoke54' : providers.gradleProperty('worldgenProbe').get().startsWith('decoration') ? 'decoration-smoke53' : providers.gradleProperty('worldgenProbe').get().startsWith('wisp') ? 'wisp-smoke52' : providers.gradleProperty('worldgenProbe').get().startsWith('cult') ? 'cult-smoke51' : providers.gradleProperty('worldgenProbe').get().startsWith('structures') ? 'structures-smoke50' : 'worldgen-smoke49'
             if (providers.gradleProperty('thaumaturgyProbe').isPresent()) args '--world', 'thaumaturgy-smoke'
             if (providers.gradleProperty('infusionProbe').isPresent()) args '--world', providers.gradleProperty('infusionProbe').get().startsWith('finish') ? 'infusion-smoke55' : 'infusion-smoke'

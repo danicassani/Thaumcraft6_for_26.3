@@ -71,3 +71,5 @@ La fixture nativa comprueba la conversión por `EntityJoinLevelEvent`, las 14 id
 Se mantiene el alcance documentado de M16.1: no se añade aquí la conversión independiente `makeTainted` de criaturas pasivas, jefes, eerie ni dimensión.
 
 La prueba de reinicio en otro proceso restaura el límite de absorción Warded. La inspección de cliente incluye su modelo y nombre sincronizados junto al clérigo y al proyectil real; no depende de una captura del menú principal.
+
+Actualización port.56: los jefes y las criaturas restantes, el portal mayor, sus fases y botín y los registros Eerie/eldritch están descritos en [ELDRITCH-COMPLETE.md](ELDRITCH-COMPLETE.md). La referencia a una dimensión pendiente se corrige: el código original no registra ni genera Outer Lands.

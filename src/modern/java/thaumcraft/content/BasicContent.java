@@ -51,7 +51,7 @@ public final class BasicContent {
         CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.thaumcraft"))
             .icon(() -> new ItemStack(AMBER.get()))
-            .displayItems((parameters, output) -> { DISPLAY_ITEMS.forEach(item -> output.accept(item.get())); DISPLAY_STACKS.forEach(stack -> output.accept(stack.get())); })
+            .displayItems((parameters, output) -> { DISPLAY_ITEMS.forEach(item -> output.accept(item.get())); DISPLAY_STACKS.forEach(stack -> output.accept(stack.get())); thaumcraft.eldritch.EldritchContent.EGGS.forEach(item -> output.accept(item.get())); })
             .build());
 
     private BasicContent() {}
@@ -85,6 +85,7 @@ public final class BasicContent {
         thaumcraft.warp.WarpContent.register(bus);
         thaumcraft.golems.GolemContent.register(bus);
         thaumcraft.pech.PechContent.register(bus);
+        thaumcraft.eldritch.EldritchContent.register(bus);
         TABS.register(bus);
         OreCountPlacement.register(bus);
     }

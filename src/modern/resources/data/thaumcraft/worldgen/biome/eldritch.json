@@ -1,0 +1,45 @@
+{
+  "attributes": {
+    "minecraft:gameplay/natural_mob_spawns": {
+      "spawn_costs": {},
+      "spawns_by_category": {
+        "monster": [
+          {
+            "type": "thaumcraft:inhabited_zombie",
+            "weight": 1,
+            "count": 1
+          },
+          {
+            "type": "thaumcraft:eldritch_guardian",
+            "weight": 1,
+            "count": 1
+          }
+        ]
+      }
+    },
+    "minecraft:visual/sky_color": "#000000",
+    "minecraft:visual/fog_color": "#202028"
+  },
+  "carvers": [],
+  "downfall": 0.2,
+  "effects": {
+    "water_color": "#2e538f",
+    "grass_color": "#404840",
+    "foliage_color": "#404840"
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  "has_precipitation": true,
+  "temperature": 0.8
+}

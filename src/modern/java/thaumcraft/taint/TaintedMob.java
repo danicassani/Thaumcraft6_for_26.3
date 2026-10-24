@@ -23,6 +23,7 @@ public final class TaintedMob extends Monster {
   public final String id;public final float width,height;public final double health,damage,speed;public final boolean seed;
   Kind(String i,float w,float h,double hp,double d,double s,boolean seed){id=i;width=w;height=h;health=hp;damage=d;speed=s;this.seed=seed;}
  }
+ private final net.minecraft.server.level.ServerBossEvent boss=new net.minecraft.server.level.ServerBossEvent(java.util.UUID.randomUUID(),net.minecraft.network.chat.Component.empty(),net.minecraft.world.BossEvent.BossBarColor.PURPLE,net.minecraft.world.BossEvent.BossBarOverlay.PROGRESS);
  public final Kind kind;public int boost;private int remaining=200,attackCooldown;
  public TaintedMob(EntityType<? extends TaintedMob> type,Level l,Kind k){super(type,l);kind=k;xpReward=k==Kind.PRIME?12:k.seed||k==Kind.TENTACLE?8:k==Kind.GIANT?20:k==Kind.SMALL?0:3;setPersistenceRequired();if(k==Kind.SWARM)setNoGravity(true);}
  public static AttributeSupplier attributes(Kind k){return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH,k.health).add(Attributes.ATTACK_DAMAGE,k.damage).add(Attributes.MOVEMENT_SPEED,k.speed).add(Attributes.FOLLOW_RANGE,32).add(Attributes.KNOCKBACK_RESISTANCE,k.speed==0?1:0).build();}
@@ -31,7 +32,12 @@ public final class TaintedMob extends Monster {
  public void move(MoverType type,Vec3 motion){super.move(type,kind!=null&&kind.speed==0?new Vec3(0,Math.min(0,motion.y),0):motion);}
  public boolean supported(){var p=blockPosition().below();return level().hasChunkAt(p)&&level().getBlockState(p).isFaceSturdy(level(),p,net.minecraft.core.Direction.UP);}
  public boolean removeWhenFarAway(double d){return !kind.seed&&kind!=Kind.GIANT;}
+ public void startSeenByPlayer(net.minecraft.server.level.ServerPlayer p){super.startSeenByPlayer(p);if(kind==Kind.GIANT)boss.addPlayer(p);}
+ public void stopSeenByPlayer(net.minecraft.server.level.ServerPlayer p){super.stopSeenByPlayer(p);boss.removePlayer(p);}
+ public boolean hurtServer(ServerLevel l,net.minecraft.world.damagesource.DamageSource s,float n){if(kind==Kind.GIANT&&n>35){addEffect(new MobEffectInstance(net.minecraft.world.effect.MobEffects.REGENERATION,200,2));n=35;}return super.hurtServer(l,s,n);}
+ protected void dropCustomDeathLoot(ServerLevel l,net.minecraft.world.damagesource.DamageSource s,boolean player){super.dropCustomDeathLoot(l,s,player);if(kind==Kind.GIANT&&l.getEntitiesOfClass(TaintedMob.class,getBoundingBox().inflate(48),m->m!=this&&m.isAlive()&&m.kind==Kind.GIANT).isEmpty())spawnAtLocation(l,thaumcraft.rifts.PrimordialPearl.worn(0));}
  protected void customServerAiStep(ServerLevel l){
+  if(kind==Kind.GIANT){boss.setName(getDisplayName());boss.setProgress(Math.clamp(getHealth()/getMaxHealth(),0,1));if(tickCount%30==0)heal(1);}
   if(thaumcraft.config.ThaumcraftConfig.wussMode.get()){discard();return;}
   if(kind==Kind.SMALL&&--remaining<=0){discard();return;}
   if(kind.seed){getNavigation().stop();var motion=getDeltaMovement();setDeltaMovement(0,motion.y,0);if(!supported())return;

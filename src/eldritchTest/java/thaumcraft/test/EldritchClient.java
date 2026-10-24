@@ -1,0 +1,11 @@
+package thaumcraft.test;
+import net.minecraft.client.Minecraft;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+@Mod.EventBusSubscriber(modid="thaumcraft",value=Dist.CLIENT)
+public final class EldritchClient {
+ static int ticks;static boolean logged;static String screen="";
+ @SubscribeEvent public static void tick(TickEvent.ClientTickEvent.Post e){if(!EldritchProbe.mode().equals("client"))return;var mc=Minecraft.getInstance();if(mc.gui.screen()!=null){var name=mc.gui.screen().getClass().getSimpleName();if(!screen.equals(name)){screen=name;thaumcraft.Thaumcraft.LOGGER.info("ELDRITCH56_UI_SCREEN: {}",name);}}if(mc.level==null||mc.player==null||!EldritchProbe.ready)return;mc.player.setYRot(180);mc.player.setXRot(12);mc.player.yRotO=180;mc.player.xRotO=12;if(!logged&&++ticks>60){logged=true;var types=new java.util.ArrayList<net.minecraft.world.entity.EntityType<?>>();thaumcraft.eldritch.EldritchContent.TYPES.values().forEach(t->types.add(t.get()));thaumcraft.eldritch.EldritchContent.ZOMBIES.values().forEach(t->types.add(t.get()));types.add(thaumcraft.eldritch.EldritchContent.FIREBAT.get());for(var type:types){boolean found=false;for(var entity:mc.level.entitiesForRendering())if(entity.getType()==type)found=true;EldritchProbe.check(found,"Client entity not synchronized: "+type.toString());}for(var entity:mc.level.entitiesForRendering())if(entity instanceof thaumcraft.eldritch.EldritchMob mob&&mob.kind==thaumcraft.eldritch.EldritchMob.Kind.GOLEM){@SuppressWarnings("unchecked") var renderer=(net.minecraft.client.renderer.entity.EntityRenderer<net.minecraft.world.entity.Entity,net.minecraft.client.renderer.entity.state.EntityRenderState>)(Object)mc.getEntityRenderDispatcher().getRenderer(entity);var state=renderer.createRenderState();renderer.extractRenderState(entity,state,0);EldritchProbe.check(state instanceof net.minecraft.client.renderer.entity.state.LivingEntityRenderState living&&Math.abs(living.scale-mob.getScale()*1.7F)<.001,"Original golem render scale missing");}thaumcraft.Thaumcraft.LOGGER.info("ELDRITCH56_CLIENT_SYNC_OK: all nine additional mob types present on client with live renderer state");}}
+}
