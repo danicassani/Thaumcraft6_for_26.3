@@ -22,6 +22,7 @@ public final class Registrar {
     private Registrar() {}
     public static void register(BusGroup modBus) {
         thaumcraft.content.BasicContent.register(modBus);
+        thaumcraft.bore.BoreContent.register(modBus);
         ChampionSystem.register(modBus);
         BLOCKS.register(modBus);
         ITEMS.register(modBus);

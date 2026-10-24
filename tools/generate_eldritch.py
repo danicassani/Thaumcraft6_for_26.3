@@ -9,6 +9,13 @@ names={'brainy_zombie':('Angry Zombie','Zombi furioso'),'giant_brainy_zombie':('
 sounds=json.loads((A/'sounds.json').read_text());original=json.loads((O/'sounds.json').read_text())
 for n in ['egidle','egattack','egdeath','egscreech','crabtalk','crabclaw','crabdeath','monolith']:
  sounds[n]=dict(original[n]);sounds[n].pop('category',None)
+ for entry in sounds[n]['sounds']:
+  name=entry if isinstance(entry,str) else entry['name']
+  namespace,_,path=name.partition(':')
+  if not path: namespace,path='thaumcraft',namespace
+  if namespace!='thaumcraft': continue
+  source=O/'sounds'/f'{path}.ogg';target=A/'sounds'/f'{path}.ogg'
+  target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(source,target)
 save(A/'sounds.json',sounds)
 for n in names:
  egg=n+'_spawn_egg';save(A/f'models/item/{egg}.json',{'parent':'minecraft:item/generated','textures':{'layer0':'minecraft:item/egg'}});save(A/f'items/{egg}.json',{'model':{'type':'minecraft:model','model':'thaumcraft:item/'+egg}})

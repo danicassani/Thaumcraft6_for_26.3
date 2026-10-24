@@ -1316,6 +1316,11 @@
       "alienis": 40,
       "aversio": 40,
       "humanus": 40
+    },
+    "thaumcraft:arcane_bore": {
+      "machina": 30,
+      "instrumentum": 20,
+      "perditio": 20
     }
   },
   "triggers": {

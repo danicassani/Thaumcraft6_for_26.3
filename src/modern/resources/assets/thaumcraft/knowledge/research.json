@@ -347,7 +347,7 @@
     "key": "ARCANEBORE",
     "name": "research.ARCANEBORE.title",
     "icons": [
-      "thaumcraft:turret;1;2"
+      "thaumcraft:arcane_bore"
     ],
     "category": "ARTIFICE",
     "location": [

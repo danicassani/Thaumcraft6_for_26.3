@@ -501,7 +501,7 @@
   "research.HUNGRYCHEST.stage.2": "This chest, which I have decided to call a Hungry Chest, will gobble up any loose items that touches it. In effect it functions like a hopper, though it does not output any items it gathers to other inventories. ",
   "research.ARCANEBORE.title": "Arcane Bore",
   "research.ARCANEBORE.stage.1": "I need to work out an automated way of digging out large areas. It should be a fairly simple matter to redesign one of my new turrets to target the ground instead of enemies.<BR>My discovery of the breaker focus effect should allow me to create a specialized and limited version of a caster that can be used by this mining turret. ",
-  "research.ARCANEBORE.stage.2": "I have designed a mining device I am calling the Arcane Bore. Once placed and given a redstone signal it will start digging out an area in front of it. The device requires a pickaxe to be placed inside it. Normally inanimate objects cannot use foci, but with a liberal application of sympathetic magic the focus could be 'tricked' into working.<BR>This had a unforeseen benefit as well - the pickaxe is actually being used to dig on metaphysical level and any attributes and enchantments it has are actually applied to the digging process. The pickaxe will wear out however, but much slower than normal - I estimate an average pickaxe will last about 50 times longer.<BR>The size of the area dug is also determined by the material of the pickaxe. The more enchantable the material is, the more efficient the sympathetic magic is, which in turn increases the area that can be dug.<BR>Any blocks dug are ejected at the position of the bore. If there is an inventory adjacent to the bore the items will be placed in there instead.<PAGE>The bore also requires vis to function consuming 1 vis for every 4 blocks dug.<LINE>The bore can be turned to face any direction except down. To change the direction it faces simply left-click on it to make it face towards you.<BR>Like other arcane turrets the bore will also respond to arcane activator rails - passing over an inactive rail will switch it on while an active one will disable it.",
+  "research.ARCANEBORE.stage.2": "Place the bore on a powered support, then fit a pickaxe. It draws vis from the local aura. Strike it to aim; crouch and interact to pack it up. Nearby containers receive the mined materials.",
   "research.GRAPPLEGUN.title": "Arcane Grappler",
   "research.GRAPPLEGUN.stage.1": "In my endeavours thus far I have learned an important fact: Mobility is key.<BR>I should create a tool that will allow me to traverse difficult terrain with ease.<BR>I believe magnets are the answer. Rare earths can be used to create magnets, but they are limited in what they can stick to. If I can enhance their innate magnetic properties with some form of sympathetic magic, it should allow them to stick to anything.",
   "research.GRAPPLEGUN.stage.2": "Charge the gun on a charging pedestal or with a Vis Amulet (capacity 100). A shot consumes one charge and attaches to a solid block within 32 blocks. The tether pulls you toward its anchor. Sneak or use again to release. Changing the support or an obstructed tether also releases it.",
@@ -1438,5 +1438,10 @@
   "research.thaumcraft.points_progress": "Next observation: %s%%; next theory: %s%%",
   "research.thaumcraft.scan_other_empty": "I need something to study in my other hand.",
   "research.thaumcraft.unstudied": "Unstudied",
-  "research.thaumcraft.studied": "Studied"
+  "research.thaumcraft.studied": "Studied",
+  "item.thaumcraft.arcane_bore": "Arcane Bore",
+  "bore.thaumcraft.size": "Width: %s · Depth: %s",
+  "bore.thaumcraft.vis": "Vis: %s / 10",
+  "bore.thaumcraft.instructions": "Place the bore on a powered support, then fit a pickaxe. It draws vis from the local aura. Strike it to aim; crouch and interact to pack it up. Nearby containers receive the mined materials.",
+  "entity.thaumcraft.arcane_bore": "Arcane Bore"
 }

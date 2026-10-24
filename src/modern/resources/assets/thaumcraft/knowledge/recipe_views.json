@@ -4596,6 +4596,53 @@
     },
     "instability": 6
   },
+  "thaumcraft:infusion/arcane_bore": {
+    "kind": "infusion",
+    "result": {
+      "id": "thaumcraft:arcane_bore"
+    },
+    "grid": [
+      {
+        "item": "thaumcraft:plank_greatwood"
+      },
+      {
+        "item": "thaumcraft:plank_greatwood"
+      },
+      {
+        "item": "thaumcraft:mechanism_complex"
+      },
+      {
+        "item": "thaumcraft:plate_brass"
+      },
+      {
+        "item": "minecraft:diamond_pickaxe"
+      },
+      {
+        "item": "minecraft:diamond_shovel"
+      },
+      {
+        "item": "thaumcraft:morphic_resonator"
+      },
+      {
+        "item": "thaumcraft:nugget_rareearth"
+      },
+      null
+    ],
+    "aspects": {
+      "potentia": 25,
+      "terra": 25,
+      "machina": 100,
+      "vacuos": 25,
+      "motus": 25
+    },
+    "crystals": {},
+    "vis": 0,
+    "research": "ARCANEBORE",
+    "input": {
+      "item": "thaumcraft:turret_basic"
+    },
+    "instability": 4
+  },
   "thaumcraft:infusion/band_curiosity": {
     "kind": "infusion",
     "result": {
@@ -9078,6 +9125,53 @@
     "crystals": {},
     "vis": 0,
     "research": "ALUMENTUM"
+  },
+  "thaumcraft:ArcaneBore": {
+    "kind": "infusion",
+    "result": {
+      "id": "thaumcraft:arcane_bore"
+    },
+    "grid": [
+      {
+        "item": "thaumcraft:plank_greatwood"
+      },
+      {
+        "item": "thaumcraft:plank_greatwood"
+      },
+      {
+        "item": "thaumcraft:mechanism_complex"
+      },
+      {
+        "item": "thaumcraft:plate_brass"
+      },
+      {
+        "item": "minecraft:diamond_pickaxe"
+      },
+      {
+        "item": "minecraft:diamond_shovel"
+      },
+      {
+        "item": "thaumcraft:morphic_resonator"
+      },
+      {
+        "item": "thaumcraft:nugget_rareearth"
+      },
+      null
+    ],
+    "aspects": {
+      "potentia": 25,
+      "terra": 25,
+      "machina": 100,
+      "vacuos": 25,
+      "motus": 25
+    },
+    "crystals": {},
+    "vis": 0,
+    "research": "ARCANEBORE",
+    "input": {
+      "item": "thaumcraft:turret_basic"
+    },
+    "instability": 4
   },
   "thaumcraft:ArcaneEar": {
     "kind": "arcane",
