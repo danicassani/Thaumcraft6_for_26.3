@@ -993,5 +993,19 @@
   "bore.thaumcraft.vis": "Vis: %s / 10",
   "bore.thaumcraft.instructions": "Coloca la perforadora sobre un soporte alimentado con redstone e introduce un pico. Extrae vis del aura local. Golpéala para orientarla; agáchate e interactúa para recogerla. Los contenedores adyacentes reciben los materiales excavados.",
   "entity.thaumcraft.arcane_bore": "Perforadora arcana",
-  "research.ARCANEBORE.stage.2": "Coloca la perforadora sobre un soporte alimentado con redstone e introduce un pico. Extrae vis del aura local. Golpéala para orientarla; agáchate e interactúa para recogerla. Los contenedores adyacentes reciben los materiales excavados."
+  "research.ARCANEBORE.stage.2": "Coloca la perforadora sobre un soporte alimentado con redstone e introduce un pico. Extrae vis del aura local. Golpéala para orientarla; agáchate e interactúa para recogerla. Los contenedores adyacentes reciben los materiales excavados.",
+  "focal.thaumcraft.canvas_title": "Árbol del foco",
+  "focal.thaumcraft.canvas_center": "Centrar árbol",
+  "focal.thaumcraft.canvas_help": "Selecciona un nodo para editarlo. Arrastra el fondo para desplazarte; usa la rueda para ampliar.",
+  "focal.thaumcraft.canvas_impact": "Mismo impacto",
+  "focal.thaumcraft.canvas_power": "Pot. %s",
+  "focal.thaumcraft.canvas_depth": "Prof. %s",
+  "focal.thaumcraft.canvas_duration": "Dur. %s",
+  "focal.thaumcraft.canvas_levels": "%s niveles XP",
+  "focal.thaumcraft.canvas_issue_1": "Introduce un foco",
+  "focal.thaumcraft.canvas_issue_2": "Capacidad insuficiente",
+  "focal.thaumcraft.canvas_issue_3": "Investigación incompleta",
+  "focal.thaumcraft.canvas_issue_4": "Faltan niveles de XP",
+  "focal.thaumcraft.canvas_issue_5": "Faltan cristales de vis",
+  "focal.thaumcraft.canvas_issue_6": "Fabricación en curso"
 }

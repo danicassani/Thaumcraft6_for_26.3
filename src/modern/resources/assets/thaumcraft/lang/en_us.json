@@ -1443,5 +1443,19 @@
   "bore.thaumcraft.size": "Width: %s · Depth: %s",
   "bore.thaumcraft.vis": "Vis: %s / 10",
   "bore.thaumcraft.instructions": "Place the bore on a powered support, then fit a pickaxe. It draws vis from the local aura. Strike it to aim; crouch and interact to pack it up. Nearby containers receive the mined materials.",
-  "entity.thaumcraft.arcane_bore": "Arcane Bore"
+  "entity.thaumcraft.arcane_bore": "Arcane Bore",
+  "focal.thaumcraft.canvas_title": "Focus graph",
+  "focal.thaumcraft.canvas_center": "Center graph",
+  "focal.thaumcraft.canvas_help": "Select a node to edit it. Drag the background to pan; scroll to zoom.",
+  "focal.thaumcraft.canvas_impact": "Same impact",
+  "focal.thaumcraft.canvas_power": "Power %s",
+  "focal.thaumcraft.canvas_depth": "Depth %s",
+  "focal.thaumcraft.canvas_duration": "Time %s",
+  "focal.thaumcraft.canvas_levels": "%s XP levels",
+  "focal.thaumcraft.canvas_issue_1": "Insert a blank focus",
+  "focal.thaumcraft.canvas_issue_2": "Focus capacity exceeded",
+  "focal.thaumcraft.canvas_issue_3": "Research incomplete",
+  "focal.thaumcraft.canvas_issue_4": "Not enough XP levels",
+  "focal.thaumcraft.canvas_issue_5": "Missing vis crystals",
+  "focal.thaumcraft.canvas_issue_6": "Crafting in progress"
 }

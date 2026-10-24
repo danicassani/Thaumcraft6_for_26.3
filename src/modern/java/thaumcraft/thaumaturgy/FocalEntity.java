@@ -26,16 +26,18 @@ public final class FocalEntity extends AuraDeviceEntity implements MenuProvider 
     public int capacity(){return inventory.getItem(0).getItem() instanceof FocusItem f?f.capacity:0;}
     public boolean valid(Player p){return level!=null&&p.level()==level&&level.getBlockEntity(worldPosition)==this&&p.distanceToSqr(net.minecraft.world.phys.Vec3.atCenterOf(worldPosition))<=64;}
     public boolean knows(Player p,FocusProgram program){return program.knows(p);}
-    public boolean start(Player p){
-        if(!(level instanceof ServerLevel)||working()||!valid(p)||draft.complexity()>capacity()||capacity()==0||!knows(p,draft)||(!p.getAbilities().instabuild&&p.experienceLevel<draft.levels()))return false;
-        var costs=new TreeMap<>(draft.crystals());
-        record Payment(Container inventory,int slot,int amount){}
-        var payments=new ArrayList<Payment>();
-        // Reserve exact costs from the table first, then the player's main inventory. Nothing is paid on failure.
+    private record Payment(Container inventory,int slot,int amount){}
+    private List<Payment> payments(Player p){
+        var costs=new TreeMap<>(draft.crystals());var payments=new ArrayList<Payment>();
         for(Container source:List.of(inventory,p.getInventory()))for(int i=source==inventory?1:0;i<(source==inventory?10:36);i++){
             var stack=source.getItem(i);if(!stack.is(CrystalContent.ESSENCE.get()))continue;String aspect=CrystalContent.aspect(stack);int take=Math.min(stack.getCount(),Math.max(0,costs.getOrDefault(aspect,0)));if(take>0){payments.add(new Payment(source,i,take));costs.put(aspect,costs.get(aspect)-take);}
         }
-        if(costs.values().stream().anyMatch(n->n>0))return false;
+        return costs.values().stream().anyMatch(n->n>0)?null:List.copyOf(payments);
+    }
+    public int craftIssue(Player p){if(working())return 6;if(capacity()==0)return 1;if(draft.complexity()>capacity())return 2;if(!knows(p,draft))return 3;if(!p.getAbilities().instabuild&&p.experienceLevel<draft.levels())return 4;return payments(p)==null?5:0;}
+    public boolean start(Player p){
+        if(!(level instanceof ServerLevel)||!valid(p)||craftIssue(p)!=0)return false;
+        var payments=payments(p);if(payments==null)return false;
         for(var payment:payments)payment.inventory.removeItem(payment.slot,payment.amount);
         if(!p.getAbilities().instabuild)p.giveExperienceLevels(-draft.levels());
         pending=draft;remaining=total=draft.craftingVis(capacity());owner=p.getUUID();sync();return true;
@@ -52,21 +54,34 @@ public final class FocalEntity extends AuraDeviceEntity implements MenuProvider 
     public boolean edit(Player p,int button){return edit(p,button,0);}
     public boolean edit(Player p,int button,int selected){return edit(p,button,selected,List.of());}
     public boolean edit(Player p,int button,int selected,List<Integer> address){
+        return edit(p,button,selected,address,-1);
+    }
+    public boolean edit(Player p,int button,int selected,List<Integer> address,int effect){
         if(!valid(p)||working())return false;if(button==0)return start(p);
         var node=draft.at(address);if(node==null||selected<0||selected>node.branches().size())return false;
-        var edited=editProgram(node,button,selected);if(edited==null)return false;
+        var edited=editProgram(node,button,selected,effect);if(edited==null)return false;
         var graph=draft.replaceAt(address,edited);if(!graph.valid())return false;draft=graph;sync();return true;
     }
-    private FocusProgram editProgram(FocusProgram draft,int button,int selected){
-        FocusProgram next=draft;var path=selected==0?draft.root():draft.branches().getFirst();var effects=new ArrayList<>(path.effects());var last=effects.getLast();String medium=path.medium();int radius=path.radius(),seconds=path.seconds();boolean friendly=path.friendly();var projectile=path.projectile();
+    private FocusProgram editProgram(FocusProgram draft,int button,int selected,int effect){
+        FocusProgram next=draft;var path=selected==0?draft.root():draft.branches().getFirst();var effects=new ArrayList<>(path.effects());int index=effect<0?effects.size()-1:Math.min(effect,effects.size()-1);var last=index<0?new FocusProgram.Effect("fire",1,1):effects.get(index);String medium=path.medium();int radius=path.radius(),seconds=path.seconds();boolean friendly=path.friendly();var projectile=path.projectile();
+        if(effects.isEmpty()&&(button==2||button==3||button==4||button==6||button==20||button==21))return null;
+        if(button>=80&&button<80+FocusProgram.MEDIA.size()){
+            medium=FocusProgram.MEDIA.get(button-80);if(selected==1&&(draft.modifier().equals("split_target")||medium.equals("plan")))return null;if(medium.equals("projectile")&&projectile.speed()==0)projectile=new FocusProgram.ProjectileSettings(1,projectile.option());
+            next=draft.replace(selected,new FocusProgram.Branch(medium,effects,radius,seconds,friendly,projectile,path.next()));return next.valid()?next:null;
+        }
+        if(button>=88&&button<88+FocusProgram.EFFECTS.size()){
+            if(index>=0&&last.kind().equals(FocusProgram.EFFECTS.get(button-88)))return draft;var replacement=new FocusProgram.Effect(FocusProgram.EFFECTS.get(button-88),last.power(),FocusProgram.EFFECTS.get(button-88).equals("rift")?Math.max(2,last.duration()):Math.min(5,last.duration()),last.depth());if(index<0)effects.add(replacement);else effects.set(index,replacement);
+            return draft.replace(selected,new FocusProgram.Branch(medium,effects,radius,seconds,friendly,projectile,path.next()));
+        }
+        if(button>=100&&button<100+FocusProgram.MODIFIERS.size()){next=draft.modifier(FocusProgram.MODIFIERS.get(button-100));return next.valid()?next:null;}
         switch(button){
             case 1->{if(selected==1&&draft.modifier().equals("split_target"))return null;do{medium=FocusProgram.MEDIA.get((FocusProgram.MEDIA.indexOf(medium)+1)%FocusProgram.MEDIA.size());}while(medium.equals("plan")&&(selected==1||draft.modifier().equals("split_trajectory")||draft.modifier().equals("scatter")));if(medium.equals("projectile")&&projectile.speed()==0)projectile=new FocusProgram.ProjectileSettings(1,projectile.option());}
-            case 2->effects.set(effects.size()-1,new FocusProgram.Effect(FocusProgram.EFFECTS.get((FocusProgram.EFFECTS.indexOf(last.kind())+1)%FocusProgram.EFFECTS.size()),last.power(),FocusProgram.EFFECTS.get((FocusProgram.EFFECTS.indexOf(last.kind())+1)%FocusProgram.EFFECTS.size()).equals("rift")?Math.max(2,last.duration()):Math.min(5,last.duration()),last.depth()));
-            case 3->effects.set(effects.size()-1,new FocusProgram.Effect(last.kind(),last.kind().equals("rift")?last.power():last.power()%5+1,last.duration(),last.kind().equals("rift")?(last.depth()==32?8:last.depth()+8):last.depth(),last.fortune(),last.silk()));
-            case 4->effects.set(effects.size()-1,new FocusProgram.Effect(last.kind(),last.power(),last.kind().equals("rift")?(last.duration()==10?2:last.duration()+1):last.duration()%5+1,last.depth(),last.fortune(),last.silk()));
+            case 2->effects.set(index,new FocusProgram.Effect(FocusProgram.EFFECTS.get((FocusProgram.EFFECTS.indexOf(last.kind())+1)%FocusProgram.EFFECTS.size()),last.power(),FocusProgram.EFFECTS.get((FocusProgram.EFFECTS.indexOf(last.kind())+1)%FocusProgram.EFFECTS.size()).equals("rift")?Math.max(2,last.duration()):Math.min(5,last.duration()),last.depth()));
+            case 3->effects.set(index,new FocusProgram.Effect(last.kind(),last.kind().equals("rift")?last.power():last.power()%5+1,last.duration(),last.kind().equals("rift")?(last.depth()==32?8:last.depth()+8):last.depth(),last.fortune(),last.silk()));
+            case 4->effects.set(index,new FocusProgram.Effect(last.kind(),last.power(),last.kind().equals("rift")?(last.duration()==10?2:last.duration()+1):last.duration()%5+1,last.depth(),last.fortune(),last.silk()));
             case 5->{if(draft.totalEffects()>=8)return null;effects.add(new FocusProgram.Effect("fire",1,1));}
-            case 6->{if(effects.size()<=1)return null;effects.removeLast();}
-            case 7->{int index=FocusProgram.MODIFIERS.indexOf(draft.modifier());do{next=draft.modifier(FocusProgram.MODIFIERS.get(++index%FocusProgram.MODIFIERS.size()));}while(!next.valid()&&index<FocusProgram.MODIFIERS.size()*2);}
+            case 6->{if(effects.isEmpty()||effects.size()==1&&path.next().isEmpty())return null;effects.remove(index);}
+            case 7->{int modifierIndex=FocusProgram.MODIFIERS.indexOf(draft.modifier());do{next=draft.modifier(FocusProgram.MODIFIERS.get(++modifierIndex%FocusProgram.MODIFIERS.size()));}while(!next.valid()&&modifierIndex<FocusProgram.MODIFIERS.size()*2);}
             case 9->next=new FocusProgram(draft.medium(),draft.effects(),draft.modifier(),draft.forks()==10?2:draft.forks()+1,draft.cone(),draft.radius(),draft.seconds(),draft.friendly(),draft.branches(),draft.plan(),draft.projectile(),draft.next());
             case 10->next=new FocusProgram(draft.medium(),draft.effects(),draft.modifier(),draft.forks(),FocusProgram.CONES.get((FocusProgram.CONES.indexOf(draft.cone())+1)%FocusProgram.CONES.size()),draft.radius(),draft.seconds(),draft.friendly(),draft.branches(),draft.plan(),draft.projectile(),draft.next());
             case 11->radius=radius%3+1;
@@ -74,7 +89,7 @@ public final class FocalEntity extends AuraDeviceEntity implements MenuProvider 
             case 13->friendly=!friendly;
             case 14,15,16,17->{if(selected!=0||!draft.medium().equals("plan"))return null;var a=draft.plan();var plan=new FocusProgram.PlanSettings(button==14?(a.x()+1)%4:a.x(),button==15?(a.y()+1)%4:a.y(),button==16?(a.z()+1)%4:a.z(),button==17?!a.surface():a.surface());next=new FocusProgram(draft.medium(),draft.effects(),draft.modifier(),draft.forks(),draft.cone(),draft.radius(),draft.seconds(),draft.friendly(),draft.branches(),plan,draft.projectile(),draft.next());}
             case 18,19->{if(!medium.equals("projectile"))return null;projectile=new FocusProgram.ProjectileSettings(button==18?projectile.speed()%5+1:Math.max(1,projectile.speed()),button==19?(projectile.option()+1)%4:projectile.option());}
-            case 20,21->{if(!last.harvest())return null;effects.set(effects.size()-1,new FocusProgram.Effect(last.kind(),last.power(),last.duration(),last.depth(),button==20?(last.fortune()+1)%5:last.fortune(),button==21?!last.silk():last.silk()));}
+            case 20,21->{if(!last.harvest())return null;effects.set(index,new FocusProgram.Effect(last.kind(),last.power(),last.duration(),last.depth(),button==20?(last.fortune()+1)%5:last.fortune(),button==21?!last.silk():last.silk()));}
             case 22->next=draft.withChild(selected,new FocusProgram("touch",List.of(new FocusProgram.Effect("fire",1,1))));
             case 24->next=draft.withChild(selected,null);
             default->{return null;}
