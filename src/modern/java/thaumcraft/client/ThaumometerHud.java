@@ -22,6 +22,6 @@ public final class ThaumometerHud {
         var aura=Component.translatable("research.thaumcraft.aura",cell.base(),String.format(java.util.Locale.ROOT,"%.1f",cell.vis()),String.format(java.util.Locale.ROOT,"%.1f",cell.flux()));
         int width=client.font.width(aura);
         graphics.fill(5,5,Math.min(width+13,client.getWindow().getGuiScaledWidth()-5),23,0xAA20152D);
-        graphics.text(client.font,aura,9,9,0xFFE9D2FA,false);
+        graphics.text(client.font,aura,9,9,0xB3E9D2FA,false);
     });}
 }
