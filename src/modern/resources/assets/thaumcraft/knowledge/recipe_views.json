@@ -817,6 +817,54 @@
     "vis": 5,
     "research": "UNLOCKINFUSION"
   },
+  "thaumcraft:arcane/essentia_input": {
+    "kind": "arcane",
+    "result": {
+      "id": "thaumcraft:essentia_input"
+    },
+    "grid": [
+      null,
+      null,
+      null,
+      "thaumcraft:plate_brass",
+      "minecraft:dispenser",
+      "thaumcraft:plate_brass",
+      "thaumcraft:plate_iron",
+      "thaumcraft:metal_alchemical",
+      "thaumcraft:plate_iron"
+    ],
+    "aspects": {},
+    "crystals": {
+      "aer": 1,
+      "aqua": 1
+    },
+    "vis": 100,
+    "research": "ESSENTIATRANSPORT"
+  },
+  "thaumcraft:arcane/essentia_output": {
+    "kind": "arcane",
+    "result": {
+      "id": "thaumcraft:essentia_output"
+    },
+    "grid": [
+      null,
+      null,
+      null,
+      "thaumcraft:plate_brass",
+      "minecraft:hopper",
+      "thaumcraft:plate_brass",
+      "thaumcraft:plate_iron",
+      "thaumcraft:metal_alchemical",
+      "thaumcraft:plate_iron"
+    ],
+    "aspects": {},
+    "crystals": {
+      "aer": 1,
+      "aqua": 1
+    },
+    "vis": 100,
+    "research": "ESSENTIATRANSPORT"
+  },
   "thaumcraft:arcane/filter": {
     "kind": "arcane",
     "result": {
@@ -11200,78 +11248,52 @@
     "research": "ESSENTIASMELTERVOID"
   },
   "thaumcraft:EssentiaTransportIn": {
-    "kind": "infusion",
+    "kind": "arcane",
     "result": {
-      "id": "thaumcraft:mirror_essentia"
+      "id": "thaumcraft:essentia_input"
     },
     "grid": [
-      {
-        "item": "minecraft:iron_ingot"
-      },
-      {
-        "item": "minecraft:iron_ingot"
-      },
-      {
-        "item": "minecraft:iron_ingot"
-      },
-      {
-        "item": "minecraft:ender_pearl"
-      },
       null,
       null,
       null,
-      null,
-      null
+      "thaumcraft:plate_brass",
+      "minecraft:dispenser",
+      "thaumcraft:plate_brass",
+      "thaumcraft:plate_iron",
+      "thaumcraft:metal_alchemical",
+      "thaumcraft:plate_iron"
     ],
-    "aspects": {
-      "motus": 25,
-      "aqua": 25,
-      "permutatio": 25
+    "aspects": {},
+    "crystals": {
+      "aer": 1,
+      "aqua": 1
     },
-    "crystals": {},
-    "vis": 0,
-    "research": "MIRRORESSENTIA",
-    "input": {
-      "item": "thaumcraft:mirrored_glass"
-    },
-    "instability": 2
+    "vis": 100,
+    "research": "ESSENTIATRANSPORT"
   },
   "thaumcraft:EssentiaTransportOut": {
-    "kind": "infusion",
+    "kind": "arcane",
     "result": {
-      "id": "thaumcraft:mirror_essentia"
+      "id": "thaumcraft:essentia_output"
     },
     "grid": [
-      {
-        "item": "minecraft:iron_ingot"
-      },
-      {
-        "item": "minecraft:iron_ingot"
-      },
-      {
-        "item": "minecraft:iron_ingot"
-      },
-      {
-        "item": "minecraft:ender_pearl"
-      },
       null,
       null,
       null,
-      null,
-      null
+      "thaumcraft:plate_brass",
+      "minecraft:hopper",
+      "thaumcraft:plate_brass",
+      "thaumcraft:plate_iron",
+      "thaumcraft:metal_alchemical",
+      "thaumcraft:plate_iron"
     ],
-    "aspects": {
-      "motus": 25,
-      "aqua": 25,
-      "permutatio": 25
+    "aspects": {},
+    "crystals": {
+      "aer": 1,
+      "aqua": 1
     },
-    "crystals": {},
-    "vis": 0,
-    "research": "MIRRORESSENTIA",
-    "input": {
-      "item": "thaumcraft:mirrored_glass"
-    },
-    "instability": 2
+    "vis": 100,
+    "research": "ESSENTIATRANSPORT"
   },
   "thaumcraft:EverfullUrn": {
     "kind": "crucible",

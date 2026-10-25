@@ -135,3 +135,5 @@ no incluye clases de fixtures ni recursos de prueba.
 La continuación de port.12 implementa la matriz, sus pedestales, absorción
 remota para infusión y cerebro en frasco, y amplía el mazo a 32 cartas activas.
 Véase [INFUSION-CARDS.md](INFUSION-CARDS.md) para recetas y límites.
+
+Actualización port.71: los [transfusores de esencia](ESSENTIA-TRANSFUSERS.md) añaden llenado y vaciado a distancia, con recetas originales y guardado de transferencias reservadas.
