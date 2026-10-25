@@ -1,0 +1,800 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:component",
+    "component": "thaumcraft:banner_aspect",
+    "cases": [
+      {
+        "when": "aer",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -130
+            }
+          ]
+        }
+      },
+      {
+        "when": "terra",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -11091968
+            }
+          ]
+        }
+      },
+      {
+        "when": "ignis",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -42495
+            }
+          ]
+        }
+      },
+      {
+        "when": "aqua",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12790532
+            }
+          ]
+        }
+      },
+      {
+        "when": "ordo",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -2763540
+            }
+          ]
+        }
+      },
+      {
+        "when": "perditio",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12566464
+            }
+          ]
+        }
+      },
+      {
+        "when": "vacuos",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -7829368
+            }
+          ]
+        }
+      },
+      {
+        "when": "lux",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -64
+            }
+          ]
+        }
+      },
+      {
+        "when": "motus",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -3289868
+            }
+          ]
+        }
+      },
+      {
+        "when": "gelum",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -1966081
+            }
+          ]
+        }
+      },
+      {
+        "when": "vitreus",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -8323073
+            }
+          ]
+        }
+      },
+      {
+        "when": "metallum",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -4868659
+            }
+          ]
+        }
+      },
+      {
+        "when": "victus",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -2228219
+            }
+          ]
+        }
+      },
+      {
+        "when": "mortuus",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -9830395
+            }
+          ]
+        }
+      },
+      {
+        "when": "potentia",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -4128769
+            }
+          ]
+        }
+      },
+      {
+        "when": "permutatio",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -11041961
+            }
+          ]
+        }
+      },
+      {
+        "when": "praecantatio",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -3211009
+            }
+          ]
+        }
+      },
+      {
+        "when": "auram",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -16129
+            }
+          ]
+        }
+      },
+      {
+        "when": "alkimia",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -14439267
+            }
+          ]
+        }
+      },
+      {
+        "when": "vitium",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -8388480
+            }
+          ]
+        }
+      },
+      {
+        "when": "tenebrae",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -14540254
+            }
+          ]
+        }
+      },
+      {
+        "when": "alienis",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -8368000
+            }
+          ]
+        }
+      },
+      {
+        "when": "volatus",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -1579049
+            }
+          ]
+        }
+      },
+      {
+        "when": "herba",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -16667648
+            }
+          ]
+        }
+      },
+      {
+        "when": "instrumentum",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12566290
+            }
+          ]
+        }
+      },
+      {
+        "when": "fabrico",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -8348288
+            }
+          ]
+        }
+      },
+      {
+        "when": "machina",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -8355680
+            }
+          ]
+        }
+      },
+      {
+        "when": "vinculum",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -6651776
+            }
+          ]
+        }
+      },
+      {
+        "when": "spiritus",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -1315845
+            }
+          ]
+        }
+      },
+      {
+        "when": "cognitio",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -420225
+            }
+          ]
+        }
+      },
+      {
+        "when": "sensus",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -4128832
+            }
+          ]
+        }
+      },
+      {
+        "when": "aversio",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -4173744
+            }
+          ]
+        }
+      },
+      {
+        "when": "praemunio",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -16727872
+            }
+          ]
+        }
+      },
+      {
+        "when": "desiderium",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -1655228
+            }
+          ]
+        }
+      },
+      {
+        "when": "exanimis",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12959744
+            }
+          ]
+        }
+      },
+      {
+        "when": "bestia",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -6331383
+            }
+          ]
+        }
+      },
+      {
+        "when": "humanus",
+        "model": {
+          "type": "minecraft:model",
+          "model": "thaumcraft:item/banner_painted",
+          "tints": [
+            {
+              "type": "minecraft:constant",
+              "value": -1
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -12930086
+            },
+            {
+              "type": "minecraft:constant",
+              "value": -10304
+            }
+          ]
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "thaumcraft:item/banner",
+      "tints": [
+        {
+          "type": "minecraft:constant",
+          "value": -1
+        },
+        {
+          "type": "minecraft:constant",
+          "value": -12930086
+        }
+      ]
+    }
+  }
+}

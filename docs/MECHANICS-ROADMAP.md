@@ -48,6 +48,8 @@ Contenido: `crucible`, `centrifuge`, `bellows`, `smelterBasic`, `smelterThaumium
 
 **Estado:** port.11 añade seis tubos, succión local, válvulas/redstone, filtros, depósitos mixtos, etiquetas y resonador; port.12 añade cerebro con 2000 XP y absorción remota de tarros para la matriz; port.30 conecta fuelles a depósitos con prioridades y redstone. port.42 incorpora espejos de esencia y fuentes remotas para la matriz (MIRRORS.md) (ESSENTIA-TRANSPORT.md, INFUSION-CARDS.md, ADVANCED-SMELTERS.md).
 
+Port.71 completa los transfusores de llenado/vaciado; port.72 recupera los diecisiete estandartes originales con símbolos de aspectos y oscilación. Véanse [ESSENTIA-TRANSFUSERS.md](ESSENTIA-TRANSFUSERS.md) y [BANNERS-VISUALS.md](BANNERS-VISUALS.md).
+
 Contenido: `bannerCrimsonCult`, `tube`, `tubeValve`, `tubeRestrict`, `tubeOneway`, `tubeFilter`, `tubeBuffer`, `jarNormal`, `jarVoid`, `jarBrain`, `essentiaTransportInput`, `essentiaTransportOutput`, `label`, `phial`, `resonator`, `banners [16 colores]`.
 
 ## M09: Infusión, simetría, estabilidad y mejoras

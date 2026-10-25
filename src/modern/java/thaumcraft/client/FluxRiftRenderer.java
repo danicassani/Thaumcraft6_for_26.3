@@ -20,24 +20,19 @@ public final class FluxRiftRenderer extends EntityRenderer<FluxRiftEntity,FluxRi
     public static final class State extends EntityRenderState { List<RiftShape.Point> points=List.of();boolean collapse;float stability; }
     public FluxRiftRenderer(EntityRendererProvider.Context context){super(context);}
     @SubscribeEvent public static void register(EntityRenderersEvent.RegisterRenderers event){event.registerEntityRenderer(RiftContent.RIFT.get(),FluxRiftRenderer::new);}
+    @Override protected net.minecraft.world.phys.AABB getBoundingBoxForCulling(FluxRiftEntity r,float partial){return super.getBoundingBoxForCulling(r,partial).inflate(.6);}
     @Override public State createRenderState(){return new State();}
     @Override public void extractRenderState(FluxRiftEntity entity,State state,float partial){super.extractRenderState(entity,state,partial);state.points=entity.shape();state.collapse=entity.collapsing();state.stability=entity.stability();}
     @Override public void submit(State state,PoseStack pose,SubmitNodeCollector collector,CameraRenderState camera){
         super.submit(state,pose,collector,camera);
-        var points=state.points;float age=state.ageInTicks;
-        collector.submitCustomGeometry(pose,RenderTypes.debugQuads(),(transform,buffer)->{
-            // A dark eight-sided core with thin bright seams follows the seeded TC6 path.
-            for(int i=0;i<points.size()-1;i++) {
-                var a=points.get(i);var b=points.get(i+1);var tangent=b.position().subtract(a.position()).normalize();
-                var u=tangent.cross(Math.abs(tangent.y)<.9?new Vec3(0,1,0):new Vec3(1,0,0)).normalize();var v=tangent.cross(u).normalize();
-                float pulse=1+(float)Math.sin(age*.08+i*.7)*Math.max(0,-state.stability)/1600;
-                for(int side=0;side<8;side++) {
-                    double angle=side*Math.PI/4,next=(side+1)*Math.PI/4;
-                    var p=u.scale(Math.cos(angle)).add(v.scale(Math.sin(angle)));var q=u.scale(Math.cos(next)).add(v.scale(Math.sin(next)));
-                    Vec3[] vertices={a.position().add(p.scale(a.width()*pulse)),a.position().add(q.scale(a.width()*pulse)),b.position().add(q.scale(b.width()*pulse)),b.position().add(p.scale(b.width()*pulse))};
-                    for(var point:vertices)buffer.addVertex(transform.pose(),(float)point.x,(float)point.y,(float)point.z).setColor(side==1||side==5?(state.collapse?0xFFCC4466:0xFF8754BF):0xFF080411);
-                }
-            }
-        });
+        var core=thaumcraft.visual.PortalGeometry.rift(state.points,state.ageInTicks,state.stability,1);
+        collector.submitCustomGeometry(pose,RenderTypes.endPortal(),(transform,buffer)->{for(var face:core)for(var point:face)buffer.addVertex(transform.pose(),(float)point.x,(float)point.y,(float)point.z);});
+        // The original had three enlarged, additive star layers. Native emissive translucency
+        // retains their silhouette and movement while respecting the modern depth buffer.
+        for(int layer=0;layer<3;layer++){
+            var shell=thaumcraft.visual.PortalGeometry.rift(state.points,state.ageInTicks,state.stability,1.25F+.5F*layer);
+            int color=((24-layer*6)<<24)|(state.collapse?0xff6688:0x9874df);
+            collector.submitCustomGeometry(pose,RenderTypes.entityTranslucentEmissive(net.minecraft.resources.Identifier.parse("minecraft:textures/entity/end_portal.png")),(transform,buffer)->{for(var face:shell){var normal=face[1].subtract(face[0]).cross(face[2].subtract(face[0])).normalize();for(int i=0;i<4;i++){var p=face[i];buffer.addVertex(transform.pose(),(float)p.x,(float)p.y,(float)p.z).setColor(color).setUv(i<2?0:1,i==0||i==3?0:1).setOverlay(net.minecraft.client.renderer.texture.OverlayTexture.NO_OVERLAY).setLight(0x00f000f0).setNormal(transform,(float)normal.x,(float)normal.y,(float)normal.z);}}});
+        }
     }
 }

@@ -1639,6 +1639,54 @@
     },
     "minecraft:chest": {
       "vacuos": 15
+    },
+    "thaumcraft:banner_white": {
+      "alienis": 5
+    },
+    "thaumcraft:banner_orange": {
+      "alienis": 5
+    },
+    "thaumcraft:banner_magenta": {
+      "alienis": 5
+    },
+    "thaumcraft:banner_lightblue": {
+      "alienis": 5
+    },
+    "thaumcraft:banner_yellow": {
+      "alienis": 5
+    },
+    "thaumcraft:banner_lime": {
+      "alienis": 5
+    },
+    "thaumcraft:banner_pink": {
+      "alienis": 5
+    },
+    "thaumcraft:banner_gray": {
+      "alienis": 5
+    },
+    "thaumcraft:banner_silver": {
+      "alienis": 5
+    },
+    "thaumcraft:banner_cyan": {
+      "alienis": 5
+    },
+    "thaumcraft:banner_purple": {
+      "alienis": 5
+    },
+    "thaumcraft:banner_blue": {
+      "alienis": 5
+    },
+    "thaumcraft:banner_brown": {
+      "alienis": 5
+    },
+    "thaumcraft:banner_green": {
+      "alienis": 5
+    },
+    "thaumcraft:banner_red": {
+      "alienis": 5
+    },
+    "thaumcraft:banner_black": {
+      "alienis": 5
     }
   }
 }

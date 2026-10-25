@@ -1,3 +1,5 @@
+> Actualización port.72: [estandartes originales y equivalencias visuales](BANNERS-VISUALS.md). Las descripciones de sustitutos vanilla y superficies estáticas siguientes corresponden a entregas anteriores.
+
 # Espejos y enlaces — port.42
 
 Registra `mirror`, `mirror_essentia` y `hand_mirror` y conecta el transporte remoto al sistema existente. Las dimensiones se guardan por su clave moderna; cada espejo tiene identidad persistente. Un bloque nuevo en las coordenadas de uno destruido no hereda sus enlaces.

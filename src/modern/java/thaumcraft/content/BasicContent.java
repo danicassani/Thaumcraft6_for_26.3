@@ -73,6 +73,7 @@ public final class BasicContent {
         thaumcraft.theory.TheoryContent.register(bus);
         thaumcraft.alchemy.AlchemyContent.register(bus);
         thaumcraft.essentia.EssentiaContent.register(bus);
+        thaumcraft.banners.BannerContent.register(bus);
         thaumcraft.infernal.InfernalContent.register(bus);
         thaumcraft.thaumatorium.ThaumatoriumContent.register(bus);
         thaumcraft.condenser.CondenserContent.register(bus);

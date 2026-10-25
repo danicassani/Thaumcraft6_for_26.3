@@ -1,3 +1,5 @@
+> Actualización port.72: [estandartes originales y equivalencias visuales](BANNERS-VISUALS.md). Las descripciones de sustitutos vanilla y superficies estáticas siguientes corresponden a entregas anteriores.
+
 # Thaumonomicon — port.70
 
 Se cierra la lista concreta del libro de port.69: buscador, transiciones, formato de páginas, doce referencias especiales, traducción y abrazadera. No es una certificación de paridad de todo el mod ni una reproducción binaria del renderizador 1.12.

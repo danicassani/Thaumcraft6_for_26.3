@@ -226,7 +226,7 @@
   "thaumcraft:arcane/banner_black": {
     "kind": "arcane",
     "result": {
-      "id": "minecraft:black_banner"
+      "id": "thaumcraft:banner_black"
     },
     "grid": [
       "minecraft:black_wool",
@@ -247,7 +247,7 @@
   "thaumcraft:arcane/banner_blue": {
     "kind": "arcane",
     "result": {
-      "id": "minecraft:blue_banner"
+      "id": "thaumcraft:banner_blue"
     },
     "grid": [
       "minecraft:blue_wool",
@@ -268,7 +268,7 @@
   "thaumcraft:arcane/banner_brown": {
     "kind": "arcane",
     "result": {
-      "id": "minecraft:brown_banner"
+      "id": "thaumcraft:banner_brown"
     },
     "grid": [
       "minecraft:brown_wool",
@@ -289,7 +289,7 @@
   "thaumcraft:arcane/banner_cyan": {
     "kind": "arcane",
     "result": {
-      "id": "minecraft:cyan_banner"
+      "id": "thaumcraft:banner_cyan"
     },
     "grid": [
       "minecraft:cyan_wool",
@@ -310,7 +310,7 @@
   "thaumcraft:arcane/banner_gray": {
     "kind": "arcane",
     "result": {
-      "id": "minecraft:gray_banner"
+      "id": "thaumcraft:banner_gray"
     },
     "grid": [
       "minecraft:gray_wool",
@@ -331,7 +331,7 @@
   "thaumcraft:arcane/banner_green": {
     "kind": "arcane",
     "result": {
-      "id": "minecraft:green_banner"
+      "id": "thaumcraft:banner_green"
     },
     "grid": [
       "minecraft:green_wool",
@@ -352,7 +352,7 @@
   "thaumcraft:arcane/banner_light_blue": {
     "kind": "arcane",
     "result": {
-      "id": "minecraft:light_blue_banner"
+      "id": "thaumcraft:banner_lightblue"
     },
     "grid": [
       "minecraft:light_blue_wool",
@@ -373,7 +373,7 @@
   "thaumcraft:arcane/banner_light_gray": {
     "kind": "arcane",
     "result": {
-      "id": "minecraft:light_gray_banner"
+      "id": "thaumcraft:banner_silver"
     },
     "grid": [
       "minecraft:light_gray_wool",
@@ -394,7 +394,7 @@
   "thaumcraft:arcane/banner_lime": {
     "kind": "arcane",
     "result": {
-      "id": "minecraft:lime_banner"
+      "id": "thaumcraft:banner_lime"
     },
     "grid": [
       "minecraft:lime_wool",
@@ -415,7 +415,7 @@
   "thaumcraft:arcane/banner_magenta": {
     "kind": "arcane",
     "result": {
-      "id": "minecraft:magenta_banner"
+      "id": "thaumcraft:banner_magenta"
     },
     "grid": [
       "minecraft:magenta_wool",
@@ -436,7 +436,7 @@
   "thaumcraft:arcane/banner_orange": {
     "kind": "arcane",
     "result": {
-      "id": "minecraft:orange_banner"
+      "id": "thaumcraft:banner_orange"
     },
     "grid": [
       "minecraft:orange_wool",
@@ -457,7 +457,7 @@
   "thaumcraft:arcane/banner_pink": {
     "kind": "arcane",
     "result": {
-      "id": "minecraft:pink_banner"
+      "id": "thaumcraft:banner_pink"
     },
     "grid": [
       "minecraft:pink_wool",
@@ -478,7 +478,7 @@
   "thaumcraft:arcane/banner_purple": {
     "kind": "arcane",
     "result": {
-      "id": "minecraft:purple_banner"
+      "id": "thaumcraft:banner_purple"
     },
     "grid": [
       "minecraft:purple_wool",
@@ -499,7 +499,7 @@
   "thaumcraft:arcane/banner_red": {
     "kind": "arcane",
     "result": {
-      "id": "minecraft:red_banner"
+      "id": "thaumcraft:banner_red"
     },
     "grid": [
       "minecraft:red_wool",
@@ -520,7 +520,7 @@
   "thaumcraft:arcane/banner_white": {
     "kind": "arcane",
     "result": {
-      "id": "minecraft:white_banner"
+      "id": "thaumcraft:banner_white"
     },
     "grid": [
       "minecraft:white_wool",
@@ -541,7 +541,7 @@
   "thaumcraft:arcane/banner_yellow": {
     "kind": "arcane",
     "result": {
-      "id": "minecraft:yellow_banner"
+      "id": "thaumcraft:banner_yellow"
     },
     "grid": [
       "minecraft:yellow_wool",

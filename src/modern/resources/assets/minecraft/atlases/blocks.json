@@ -9,6 +9,11 @@
       "type": "minecraft:single",
       "resource": "thaumcraft:entity/chest/hungry",
       "sprite": "thaumcraft:entity/chest/hungry"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "thaumcraft:models/banner_blank",
+      "sprite": "thaumcraft:models/banner_blank"
     }
   ]
 }

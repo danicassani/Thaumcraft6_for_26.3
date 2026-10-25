@@ -1,7 +1,8 @@
 {
   "ambientocclusion": false,
   "textures": {
-    "side": "thaumcraft:items/grapple_gun"
+    "side": "thaumcraft:items/grapple_gun",
+    "particle": "#side"
   },
   "display": {
     "gui": {

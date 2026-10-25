@@ -1,3 +1,5 @@
+> Actualización port.72: [estandartes originales y equivalencias visuales](BANNERS-VISUALS.md). Las descripciones de sustitutos vanilla y superficies estáticas siguientes corresponden a entregas anteriores.
+
 # Auditoría de progresión del Thaumonomicon — port.68, actualizada en port.70
 
 ## Alcance y resultado

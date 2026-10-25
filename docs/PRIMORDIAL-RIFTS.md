@@ -1,3 +1,5 @@
+> Actualización port.72: [estandartes originales y equivalencias visuales](BANNERS-VISUALS.md). Las descripciones de sustitutos vanilla y superficies estáticas siguientes corresponden a entregas anteriores.
+
 # Perla primordial y revisión de grietas — port.37
 
 Minecraft 26.3 / Forge 66.0.13 / Java 25. No cambia identificadores ni añade generación retroactiva.
