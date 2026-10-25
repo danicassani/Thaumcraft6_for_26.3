@@ -1,4 +1,4 @@
-# Auditoría de progresión del Thaumonomicon — port.68
+# Auditoría de progresión del Thaumonomicon — port.68, actualizada en port.70
 
 ## Alcance y resultado
 
@@ -33,7 +33,7 @@ También se escanean entidades reales de gólem de hierro, cultista y murciélag
 
 La escena del cliente utiliza conocimiento controlado para comprobar exclusivamente la presentación: sello básico terminado, mente biotaúmica inicialmente sin descubrir y posterior finalización desde el servidor. Se exige navegación por clics nativos hasta la ilustración avanzada. Esta escena no se contabiliza como una prueba de supervivencia ni como una ruta de progresión ganada por el jugador.
 
-## Pendientes que no deben confundirse con bloqueos del grafo
+## Pendientes detectados en port.68, resueltos en port.70
 
 Quedan doce referencias originales sin una ilustración de receta estática:
 
@@ -46,6 +46,18 @@ De 433 claves de títulos, etapas y ampliaciones, 378 recurren al inglés en esp
 
 Se detecta también una instrucción funcional pendiente en Tarros protegidos: el texto original atribuye a la abrazadera el bloqueo de llenado/extracción manual, pero el código moderno no contiene aún ese consumidor del objeto. Esta entrega restaura su fabricación e ilustración; no implementa ni certifica la función de cierre. No es un requisito de una etapa, pero debe corregirse antes de declarar equivalencia del capítulo.
 
-## Entrega verificada
+## Entrega verificada de port.68
 
 La compilación limpia final pasa 214 pruebas sin fallos, errores ni omisiones. Cliente y servidor finalizan normalmente. El JAR excluye las fixtures y conserva el contenido de port.67 ajeno a estas correcciones. Las capturas de la receta condicional se tomaron antes de generar el artefacto. No cambia la versión 1 del conocimiento guardado ni se retiran identificadores publicados.
+
+## Cierre de las omisiones del libro — port.70
+
+Las doce referencias anteriores ya tienen representación: seis diagramas de estructuras por capas (horno, tres altares, prensa y Thaumatorium), etiquetas codificadas con su aspecto real, grupos de accesorios y estandartes, y las tres purificaciones opcionales. El generador `generate_book_completion.py` debe ejecutarse después de los generadores anteriores. La auditoría reproducible ya devuelve `references_without_diagram: []`.
+
+Los estandartes usan objetos vanilla, con su colocación, patrones de telar y persistencia nativos; se añaden las dieciséis recetas arcanas de colores. No son un nuevo bloque con el antiguo renderizador de símbolos de esencia. Las purificaciones opcionales usan `c:ores/tin`, `c:ores/silver` y `c:ores/lead`: se declaran etiquetas vacías y la receta solo puede coincidir cuando un mod o paquete de datos aporta minerales. El libro indica su ausencia. Esto no certifica la integración de todos los metales de terceros ni añade sus minerales al mundo.
+
+Las 433 claves referenciadas de títulos, etapas y ampliaciones tienen traducción española, sin recurrir al inglés. Las 378 traducciones añadidas están en `tools/es_research_texts.lang`, con redacción adaptada a los controles del port y conservando instrucciones, imágenes y divisiones de página. Se añaden asimismo las glosas españolas de los aspectos.
+
+La abrazadera se consume una sola vez, persiste en tarros normales y del vacío, impide transferencias por viales y extracción remota, permite tubos y vuelve como un objeto separado al recoger el tarro. La esencia y la etiqueta permanecen en el objeto de tarro. Los tarros antiguos sin el nuevo campo siguen abiertos.
+
+La entrega port.70 pasa 224 pruebas sin fallos, errores ni omisiones y las verificaciones nativas finales de cliente y servidor, con cierre normal. Los detalles de composición, capturas y alcance están en [THAUMONOMICON-COMPLETION.md](THAUMONOMICON-COMPLETION.md).

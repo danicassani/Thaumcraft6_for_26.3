@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "thaumcraft:block/pedestal_eldritch"
+    "model": "thaumcraft:item/pedestal_eldritch"
   }
 }

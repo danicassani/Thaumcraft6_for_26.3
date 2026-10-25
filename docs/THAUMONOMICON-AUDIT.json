@@ -756,56 +756,7 @@
   "craft_requirements": 34,
   "unreachable": {},
   "errors": [],
-  "references_without_diagram": [
-    {
-      "entry": "BASEINFUSION",
-      "reference": "thaumcraft:Banners"
-    },
-    {
-      "entry": "BASEINFUSION",
-      "reference": "thaumcraft:baubles_stuff"
-    },
-    {
-      "entry": "INFERNALFURNACE",
-      "reference": "thaumcraft:infernalfurnace"
-    },
-    {
-      "entry": "INFUSION",
-      "reference": "thaumcraft:infusionaltar"
-    },
-    {
-      "entry": "INFUSIONANCIENT",
-      "reference": "thaumcraft:infusionaltarancient"
-    },
-    {
-      "entry": "INFUSIONELDRITCH",
-      "reference": "thaumcraft:infusionaltareldritch"
-    },
-    {
-      "entry": "METALPURIFICATION",
-      "reference": "thaumcraft:metal_purification_tin"
-    },
-    {
-      "entry": "METALPURIFICATION",
-      "reference": "thaumcraft:metal_purification_silver"
-    },
-    {
-      "entry": "METALPURIFICATION",
-      "reference": "thaumcraft:metal_purification_lead"
-    },
-    {
-      "entry": "MINDCLOCKWORK",
-      "reference": "thaumcraft:GolemPress"
-    },
-    {
-      "entry": "THAUMATORIUM",
-      "reference": "thaumcraft:Thaumatorium"
-    },
-    {
-      "entry": "WARDEDJARS",
-      "reference": "thaumcraft:JarLabelEssence"
-    }
-  ],
+  "references_without_diagram": [],
   "scope": "Symbolic research/craft-gate reachability with supplied resources, knowledge and legitimate discovery events; not an end-to-end survival or mod-compatibility certification.",
   "stage_trace": [
     "CrimsonRites@1",

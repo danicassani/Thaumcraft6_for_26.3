@@ -1,0 +1,22 @@
+{
+  "type": "thaumcraft:arcane",
+  "research": "BASEINFUSION",
+  "vis": 10,
+  "crystals": {},
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "WS",
+      "WS",
+      "WB"
+    ],
+    "key": {
+      "W": "minecraft:orange_wool",
+      "S": "minecraft:stick",
+      "B": "#minecraft:wooden_slabs"
+    },
+    "result": {
+      "id": "minecraft:orange_banner"
+    }
+  }
+}

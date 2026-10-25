@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "thaumcraft:block/pedestal_arcane"
+    "model": "thaumcraft:item/pedestal_arcane"
   }
 }

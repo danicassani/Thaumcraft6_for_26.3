@@ -23,3 +23,7 @@ Compilación limpia y 218 pruebas, sin fallos, errores ni pruebas omitidas. En e
 El cierre del cliente de esta ejecución volvió a activar el watchdog en `VulkanGpuSurface.present` / `vkQueuePresentKHR`, al salir del mundo y cerrar la ventana, después de las comprobaciones visuales. No se declara un cierre limpio del cliente. Es la limitación gráfica del entorno ya documentada; el servidor dedicado completó su prueba y cierre.
 
 La comprobación del JAR exige que no se incluyan escenas de prueba, conserva las entradas anteriores ajenas a la interfaz y contrasta los píxeles de los siete fondos PNG con los JPG originales.
+
+## Ampliación port.70
+
+El [cierre del libro](THAUMONOMICON-COMPLETION.md) añade búsqueda, formato completo de las etiquetas presentes, transiciones adaptadas, diagramas pendientes, español y abrazaderas; también corrige la disposición inferior de los controles y los márgenes. Las limitaciones de port.69 descritas arriba corresponden a esa entrega histórica.

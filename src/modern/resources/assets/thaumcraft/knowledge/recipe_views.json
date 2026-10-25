@@ -223,6 +223,342 @@
     "vis": 15,
     "research": "ARCANEEAR"
   },
+  "thaumcraft:arcane/banner_black": {
+    "kind": "arcane",
+    "result": {
+      "id": "minecraft:black_banner"
+    },
+    "grid": [
+      "minecraft:black_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:black_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:black_wool",
+      "#minecraft:wooden_slabs",
+      null
+    ],
+    "aspects": {},
+    "crystals": {},
+    "vis": 10,
+    "research": "BASEINFUSION"
+  },
+  "thaumcraft:arcane/banner_blue": {
+    "kind": "arcane",
+    "result": {
+      "id": "minecraft:blue_banner"
+    },
+    "grid": [
+      "minecraft:blue_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:blue_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:blue_wool",
+      "#minecraft:wooden_slabs",
+      null
+    ],
+    "aspects": {},
+    "crystals": {},
+    "vis": 10,
+    "research": "BASEINFUSION"
+  },
+  "thaumcraft:arcane/banner_brown": {
+    "kind": "arcane",
+    "result": {
+      "id": "minecraft:brown_banner"
+    },
+    "grid": [
+      "minecraft:brown_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:brown_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:brown_wool",
+      "#minecraft:wooden_slabs",
+      null
+    ],
+    "aspects": {},
+    "crystals": {},
+    "vis": 10,
+    "research": "BASEINFUSION"
+  },
+  "thaumcraft:arcane/banner_cyan": {
+    "kind": "arcane",
+    "result": {
+      "id": "minecraft:cyan_banner"
+    },
+    "grid": [
+      "minecraft:cyan_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:cyan_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:cyan_wool",
+      "#minecraft:wooden_slabs",
+      null
+    ],
+    "aspects": {},
+    "crystals": {},
+    "vis": 10,
+    "research": "BASEINFUSION"
+  },
+  "thaumcraft:arcane/banner_gray": {
+    "kind": "arcane",
+    "result": {
+      "id": "minecraft:gray_banner"
+    },
+    "grid": [
+      "minecraft:gray_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:gray_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:gray_wool",
+      "#minecraft:wooden_slabs",
+      null
+    ],
+    "aspects": {},
+    "crystals": {},
+    "vis": 10,
+    "research": "BASEINFUSION"
+  },
+  "thaumcraft:arcane/banner_green": {
+    "kind": "arcane",
+    "result": {
+      "id": "minecraft:green_banner"
+    },
+    "grid": [
+      "minecraft:green_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:green_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:green_wool",
+      "#minecraft:wooden_slabs",
+      null
+    ],
+    "aspects": {},
+    "crystals": {},
+    "vis": 10,
+    "research": "BASEINFUSION"
+  },
+  "thaumcraft:arcane/banner_light_blue": {
+    "kind": "arcane",
+    "result": {
+      "id": "minecraft:light_blue_banner"
+    },
+    "grid": [
+      "minecraft:light_blue_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:light_blue_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:light_blue_wool",
+      "#minecraft:wooden_slabs",
+      null
+    ],
+    "aspects": {},
+    "crystals": {},
+    "vis": 10,
+    "research": "BASEINFUSION"
+  },
+  "thaumcraft:arcane/banner_light_gray": {
+    "kind": "arcane",
+    "result": {
+      "id": "minecraft:light_gray_banner"
+    },
+    "grid": [
+      "minecraft:light_gray_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:light_gray_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:light_gray_wool",
+      "#minecraft:wooden_slabs",
+      null
+    ],
+    "aspects": {},
+    "crystals": {},
+    "vis": 10,
+    "research": "BASEINFUSION"
+  },
+  "thaumcraft:arcane/banner_lime": {
+    "kind": "arcane",
+    "result": {
+      "id": "minecraft:lime_banner"
+    },
+    "grid": [
+      "minecraft:lime_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:lime_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:lime_wool",
+      "#minecraft:wooden_slabs",
+      null
+    ],
+    "aspects": {},
+    "crystals": {},
+    "vis": 10,
+    "research": "BASEINFUSION"
+  },
+  "thaumcraft:arcane/banner_magenta": {
+    "kind": "arcane",
+    "result": {
+      "id": "minecraft:magenta_banner"
+    },
+    "grid": [
+      "minecraft:magenta_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:magenta_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:magenta_wool",
+      "#minecraft:wooden_slabs",
+      null
+    ],
+    "aspects": {},
+    "crystals": {},
+    "vis": 10,
+    "research": "BASEINFUSION"
+  },
+  "thaumcraft:arcane/banner_orange": {
+    "kind": "arcane",
+    "result": {
+      "id": "minecraft:orange_banner"
+    },
+    "grid": [
+      "minecraft:orange_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:orange_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:orange_wool",
+      "#minecraft:wooden_slabs",
+      null
+    ],
+    "aspects": {},
+    "crystals": {},
+    "vis": 10,
+    "research": "BASEINFUSION"
+  },
+  "thaumcraft:arcane/banner_pink": {
+    "kind": "arcane",
+    "result": {
+      "id": "minecraft:pink_banner"
+    },
+    "grid": [
+      "minecraft:pink_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:pink_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:pink_wool",
+      "#minecraft:wooden_slabs",
+      null
+    ],
+    "aspects": {},
+    "crystals": {},
+    "vis": 10,
+    "research": "BASEINFUSION"
+  },
+  "thaumcraft:arcane/banner_purple": {
+    "kind": "arcane",
+    "result": {
+      "id": "minecraft:purple_banner"
+    },
+    "grid": [
+      "minecraft:purple_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:purple_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:purple_wool",
+      "#minecraft:wooden_slabs",
+      null
+    ],
+    "aspects": {},
+    "crystals": {},
+    "vis": 10,
+    "research": "BASEINFUSION"
+  },
+  "thaumcraft:arcane/banner_red": {
+    "kind": "arcane",
+    "result": {
+      "id": "minecraft:red_banner"
+    },
+    "grid": [
+      "minecraft:red_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:red_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:red_wool",
+      "#minecraft:wooden_slabs",
+      null
+    ],
+    "aspects": {},
+    "crystals": {},
+    "vis": 10,
+    "research": "BASEINFUSION"
+  },
+  "thaumcraft:arcane/banner_white": {
+    "kind": "arcane",
+    "result": {
+      "id": "minecraft:white_banner"
+    },
+    "grid": [
+      "minecraft:white_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:white_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:white_wool",
+      "#minecraft:wooden_slabs",
+      null
+    ],
+    "aspects": {},
+    "crystals": {},
+    "vis": 10,
+    "research": "BASEINFUSION"
+  },
+  "thaumcraft:arcane/banner_yellow": {
+    "kind": "arcane",
+    "result": {
+      "id": "minecraft:yellow_banner"
+    },
+    "grid": [
+      "minecraft:yellow_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:yellow_wool",
+      "minecraft:stick",
+      null,
+      "minecraft:yellow_wool",
+      "#minecraft:wooden_slabs",
+      null
+    ],
+    "aspects": {},
+    "crystals": {},
+    "vis": 10,
+    "research": "BASEINFUSION"
+  },
   "thaumcraft:arcane/bellows": {
     "kind": "arcane",
     "result": {
@@ -3026,6 +3362,78 @@
       null,
       null,
       "minecraft:iron_ore",
+      null,
+      null,
+      null,
+      null
+    ],
+    "aspects": {
+      "metallum": 5,
+      "ordo": 5
+    },
+    "crystals": {},
+    "vis": 0,
+    "research": "METALPURIFICATION"
+  },
+  "thaumcraft:crucible/metal_purification_lead": {
+    "kind": "crucible",
+    "result": {
+      "id": "thaumcraft:cluster_lead"
+    },
+    "grid": [
+      null,
+      null,
+      null,
+      null,
+      "#c:ores/lead",
+      null,
+      null,
+      null,
+      null
+    ],
+    "aspects": {
+      "metallum": 5,
+      "ordo": 5
+    },
+    "crystals": {},
+    "vis": 0,
+    "research": "METALPURIFICATION"
+  },
+  "thaumcraft:crucible/metal_purification_silver": {
+    "kind": "crucible",
+    "result": {
+      "id": "thaumcraft:cluster_silver"
+    },
+    "grid": [
+      null,
+      null,
+      null,
+      null,
+      "#c:ores/silver",
+      null,
+      null,
+      null,
+      null
+    ],
+    "aspects": {
+      "metallum": 5,
+      "ordo": 5
+    },
+    "crystals": {},
+    "vis": 0,
+    "research": "METALPURIFICATION"
+  },
+  "thaumcraft:crucible/metal_purification_tin": {
+    "kind": "crucible",
+    "result": {
+      "id": "thaumcraft:cluster_tin"
+    },
+    "grid": [
+      null,
+      null,
+      null,
+      null,
+      "#c:ores/tin",
       null,
       null,
       null,
@@ -12672,6 +13080,84 @@
     "vis": 0,
     "research": "METALPURIFICATION"
   },
+  "thaumcraft:metal_purification_tin": {
+    "kind": "crucible",
+    "result": {
+      "id": "thaumcraft:cluster_tin"
+    },
+    "grid": [
+      null,
+      null,
+      null,
+      null,
+      "#c:ores/tin",
+      null,
+      null,
+      null,
+      null
+    ],
+    "aspects": {
+      "metallum": 5,
+      "ordo": 5
+    },
+    "crystals": {},
+    "vis": 0,
+    "research": "METALPURIFICATION",
+    "optional_tag": "c:ores/tin",
+    "note": "research.thaumcraft.diagram.optional"
+  },
+  "thaumcraft:metal_purification_silver": {
+    "kind": "crucible",
+    "result": {
+      "id": "thaumcraft:cluster_silver"
+    },
+    "grid": [
+      null,
+      null,
+      null,
+      null,
+      "#c:ores/silver",
+      null,
+      null,
+      null,
+      null
+    ],
+    "aspects": {
+      "metallum": 5,
+      "ordo": 5
+    },
+    "crystals": {},
+    "vis": 0,
+    "research": "METALPURIFICATION",
+    "optional_tag": "c:ores/silver",
+    "note": "research.thaumcraft.diagram.optional"
+  },
+  "thaumcraft:metal_purification_lead": {
+    "kind": "crucible",
+    "result": {
+      "id": "thaumcraft:cluster_lead"
+    },
+    "grid": [
+      null,
+      null,
+      null,
+      null,
+      "#c:ores/lead",
+      null,
+      null,
+      null,
+      null
+    ],
+    "aspects": {
+      "metallum": 5,
+      "ordo": 5
+    },
+    "crystals": {},
+    "vis": 0,
+    "research": "METALPURIFICATION",
+    "optional_tag": "c:ores/lead",
+    "note": "research.thaumcraft.diagram.optional"
+  },
   "thaumcraft:MindBiothaumic": {
     "kind": "infusion",
     "result": {
@@ -14601,5 +15087,398 @@
     },
     "vis": 200,
     "research": "WORKBENCHCHARGER"
+  },
+  "thaumcraft:Banners": {
+    "choices": [
+      "thaumcraft:arcane/banner_white",
+      "thaumcraft:arcane/banner_orange",
+      "thaumcraft:arcane/banner_magenta",
+      "thaumcraft:arcane/banner_light_blue",
+      "thaumcraft:arcane/banner_yellow",
+      "thaumcraft:arcane/banner_lime",
+      "thaumcraft:arcane/banner_pink",
+      "thaumcraft:arcane/banner_gray",
+      "thaumcraft:arcane/banner_light_gray",
+      "thaumcraft:arcane/banner_cyan",
+      "thaumcraft:arcane/banner_purple",
+      "thaumcraft:arcane/banner_blue",
+      "thaumcraft:arcane/banner_brown",
+      "thaumcraft:arcane/banner_green",
+      "thaumcraft:arcane/banner_red",
+      "thaumcraft:arcane/banner_black"
+    ]
+  },
+  "thaumcraft:baubles_stuff": {
+    "choices": [
+      "thaumcraft:amulet_mundane",
+      "thaumcraft:ring_mundane",
+      "thaumcraft:girdle_mundane",
+      "thaumcraft:amulet_fancy",
+      "thaumcraft:ring_fancy",
+      "thaumcraft:girdle_fancy"
+    ]
+  },
+  "thaumcraft:infernalfurnace": {
+    "kind": "blueprint",
+    "result": {
+      "id": "thaumcraft:infernal_furnace"
+    },
+    "grid": [],
+    "layers": [
+      [
+        "NON",
+        "OOO",
+        "NON"
+      ],
+      [
+        "NON",
+        "OLO",
+        "NIN"
+      ],
+      [
+        "NON",
+        "O O",
+        "NON"
+      ]
+    ],
+    "palette": {
+      "N": {
+        "id": "minecraft:nether_bricks"
+      },
+      "O": {
+        "id": "minecraft:obsidian"
+      },
+      "L": {
+        "id": "minecraft:lava_bucket"
+      },
+      "I": {
+        "id": "minecraft:iron_bars"
+      }
+    },
+    "note": "research.thaumcraft.diagram.furnace"
+  },
+  "thaumcraft:infusionaltar": {
+    "kind": "blueprint",
+    "result": {
+      "id": "thaumcraft:infusion_matrix"
+    },
+    "grid": [],
+    "layers": [
+      [
+        "S S",
+        " P ",
+        "S S"
+      ],
+      [
+        "S S",
+        "   ",
+        "S S"
+      ],
+      [
+        "   ",
+        " M ",
+        "   "
+      ]
+    ],
+    "palette": {
+      "S": {
+        "id": "thaumcraft:stone_arcane"
+      },
+      "P": {
+        "id": "thaumcraft:pedestal_arcane"
+      },
+      "M": {
+        "id": "thaumcraft:infusion_matrix"
+      }
+    },
+    "note": "research.thaumcraft.diagram.altar"
+  },
+  "thaumcraft:infusionaltarancient": {
+    "kind": "blueprint",
+    "result": {
+      "id": "thaumcraft:infusion_matrix"
+    },
+    "grid": [],
+    "layers": [
+      [
+        "S S",
+        " P ",
+        "S S"
+      ],
+      [
+        "S S",
+        "   ",
+        "S S"
+      ],
+      [
+        "   ",
+        " M ",
+        "   "
+      ]
+    ],
+    "palette": {
+      "S": {
+        "id": "thaumcraft:stone_ancient"
+      },
+      "P": {
+        "id": "thaumcraft:pedestal_ancient"
+      },
+      "M": {
+        "id": "thaumcraft:infusion_matrix"
+      }
+    },
+    "note": "research.thaumcraft.diagram.altar"
+  },
+  "thaumcraft:infusionaltareldritch": {
+    "kind": "blueprint",
+    "result": {
+      "id": "thaumcraft:infusion_matrix"
+    },
+    "grid": [],
+    "layers": [
+      [
+        "S S",
+        " P ",
+        "S S"
+      ],
+      [
+        "S S",
+        "   ",
+        "S S"
+      ],
+      [
+        "   ",
+        " M ",
+        "   "
+      ]
+    ],
+    "palette": {
+      "S": {
+        "id": "thaumcraft:stone_eldritch_tile"
+      },
+      "P": {
+        "id": "thaumcraft:pedestal_eldritch"
+      },
+      "M": {
+        "id": "thaumcraft:infusion_matrix"
+      }
+    },
+    "note": "research.thaumcraft.diagram.altar"
+  },
+  "thaumcraft:GolemPress": {
+    "kind": "blueprint",
+    "result": {
+      "id": "thaumcraft:golem_builder"
+    },
+    "grid": [],
+    "layers": [
+      [
+        "CP",
+        "AT"
+      ],
+      [
+        " I",
+        "  "
+      ]
+    ],
+    "palette": {
+      "P": {
+        "id": "minecraft:piston"
+      },
+      "C": {
+        "id": "minecraft:cauldron"
+      },
+      "T": {
+        "id": "thaumcraft:table_stone"
+      },
+      "A": {
+        "id": "minecraft:anvil"
+      },
+      "I": {
+        "id": "minecraft:iron_bars"
+      }
+    },
+    "note": "research.thaumcraft.diagram.press"
+  },
+  "thaumcraft:Thaumatorium": {
+    "kind": "blueprint",
+    "result": {
+      "id": "thaumcraft:thaumatorium"
+    },
+    "grid": [],
+    "layers": [
+      [
+        "C"
+      ],
+      [
+        "A"
+      ],
+      [
+        "A"
+      ]
+    ],
+    "palette": {
+      "C": {
+        "id": "thaumcraft:crucible"
+      },
+      "A": {
+        "id": "thaumcraft:metal_alchemical"
+      }
+    },
+    "note": "research.thaumcraft.diagram.thaumatorium"
+  },
+  "thaumcraft:JarLabelEssence": {
+    "choices": [
+      "thaumcraft:diagram/label_aer",
+      "thaumcraft:diagram/label_ignis",
+      "thaumcraft:diagram/label_aqua",
+      "thaumcraft:diagram/label_terra",
+      "thaumcraft:diagram/label_ordo",
+      "thaumcraft:diagram/label_perditio"
+    ]
+  },
+  "thaumcraft:diagram/label_aer": {
+    "kind": "crafting_shapeless",
+    "result": {
+      "id": "thaumcraft:label",
+      "aspect": "aer"
+    },
+    "grid": [
+      {
+        "id": "thaumcraft:label"
+      },
+      {
+        "id": "thaumcraft:phial",
+        "aspect": "aer"
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "note": "research.thaumcraft.diagram.label"
+  },
+  "thaumcraft:diagram/label_ignis": {
+    "kind": "crafting_shapeless",
+    "result": {
+      "id": "thaumcraft:label",
+      "aspect": "ignis"
+    },
+    "grid": [
+      {
+        "id": "thaumcraft:label"
+      },
+      {
+        "id": "thaumcraft:phial",
+        "aspect": "ignis"
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "note": "research.thaumcraft.diagram.label"
+  },
+  "thaumcraft:diagram/label_aqua": {
+    "kind": "crafting_shapeless",
+    "result": {
+      "id": "thaumcraft:label",
+      "aspect": "aqua"
+    },
+    "grid": [
+      {
+        "id": "thaumcraft:label"
+      },
+      {
+        "id": "thaumcraft:phial",
+        "aspect": "aqua"
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "note": "research.thaumcraft.diagram.label"
+  },
+  "thaumcraft:diagram/label_terra": {
+    "kind": "crafting_shapeless",
+    "result": {
+      "id": "thaumcraft:label",
+      "aspect": "terra"
+    },
+    "grid": [
+      {
+        "id": "thaumcraft:label"
+      },
+      {
+        "id": "thaumcraft:phial",
+        "aspect": "terra"
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "note": "research.thaumcraft.diagram.label"
+  },
+  "thaumcraft:diagram/label_ordo": {
+    "kind": "crafting_shapeless",
+    "result": {
+      "id": "thaumcraft:label",
+      "aspect": "ordo"
+    },
+    "grid": [
+      {
+        "id": "thaumcraft:label"
+      },
+      {
+        "id": "thaumcraft:phial",
+        "aspect": "ordo"
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "note": "research.thaumcraft.diagram.label"
+  },
+  "thaumcraft:diagram/label_perditio": {
+    "kind": "crafting_shapeless",
+    "result": {
+      "id": "thaumcraft:label",
+      "aspect": "perditio"
+    },
+    "grid": [
+      {
+        "id": "thaumcraft:label"
+      },
+      {
+        "id": "thaumcraft:phial",
+        "aspect": "perditio"
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "note": "research.thaumcraft.diagram.label"
   }
 }
