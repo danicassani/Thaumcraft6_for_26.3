@@ -1542,5 +1542,10 @@
   "block.thaumcraft.banner_green": "Green Banner",
   "block.thaumcraft.banner_red": "Red Banner",
   "block.thaumcraft.banner_black": "Black Banner",
-  "block.thaumcraft.banner_crimson_cult": "Crimson Cult Banner"
+  "block.thaumcraft.banner_crimson_cult": "Crimson Cult Banner",
+  "item.thaumcraft.thaumonomicon_cheat": "Cheater’s Thaumonomicon",
+  "research.thaumcraft.cheat_hint": "Use to unlock all research.",
+  "research.thaumcraft.cheat_disabled": "Research unlocking is disabled by the server.",
+  "research.thaumcraft.cheat_granted": "All research unlocked.",
+  "research.thaumcraft.cheat_failed": "Research could not be unlocked; saved data was preserved."
 }

@@ -246,3 +246,7 @@ for locale,values in ui.items():
     path=OUT/f'lang/{locale}.json';lang=json.loads(path.read_text());lang.update(values)
     for key in ["scan_hint","scan_other_hint","scan_other_empty_hint"]:lang.pop("research.thaumcraft."+key,None)
     save(path,lang)
+
+# Preserve the original marked creative variant when regenerating the normal book.
+import subprocess,sys
+subprocess.run([sys.executable,str(ROOT/"tools/generate_cheat_sheet.py")],check=True)

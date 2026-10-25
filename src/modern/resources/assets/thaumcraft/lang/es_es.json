@@ -1510,5 +1510,10 @@
   "block.thaumcraft.banner_green": "Estandarte verde",
   "block.thaumcraft.banner_red": "Estandarte rojo",
   "block.thaumcraft.banner_black": "Estandarte negro",
-  "block.thaumcraft.banner_crimson_cult": "Estandarte del Culto Carmesí"
+  "block.thaumcraft.banner_crimson_cult": "Estandarte del Culto Carmesí",
+  "item.thaumcraft.thaumonomicon_cheat": "Thaumonomicon de trucos",
+  "research.thaumcraft.cheat_hint": "Úsalo para desbloquear todas las investigaciones.",
+  "research.thaumcraft.cheat_disabled": "El servidor ha desactivado el desbloqueo de investigaciones.",
+  "research.thaumcraft.cheat_granted": "Todas las investigaciones desbloqueadas.",
+  "research.thaumcraft.cheat_failed": "No se pudo desbloquear la investigación; se han conservado los datos guardados."
 }

@@ -1,6 +1,15 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "thaumcraft:item/thaumonomicon"
+    "type": "minecraft:condition",
+    "property": "minecraft:has_component",
+    "component": "thaumcraft:cheat_sheet",
+    "on_true": {
+      "type": "minecraft:model",
+      "model": "thaumcraft:item/thaumonomicon_cheat"
+    },
+    "on_false": {
+      "type": "minecraft:model",
+      "model": "thaumcraft:item/thaumonomicon"
+    }
   }
 }

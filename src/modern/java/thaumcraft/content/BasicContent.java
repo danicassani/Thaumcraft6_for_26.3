@@ -51,7 +51,7 @@ public final class BasicContent {
         CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.thaumcraft"))
             .icon(() -> new ItemStack(AMBER.get()))
-            .displayItems((parameters, output) -> { DISPLAY_ITEMS.forEach(item -> output.accept(item.get())); DISPLAY_STACKS.forEach(stack -> output.accept(stack.get())); thaumcraft.eldritch.EldritchContent.EGGS.forEach(item -> output.accept(item.get())); })
+            .displayItems((parameters, output) -> { DISPLAY_ITEMS.forEach(item -> { output.accept(item.get()); if(item==thaumcraft.research.ResearchContent.BOOK&&thaumcraft.research.CheatSheet.allowed()) output.accept(thaumcraft.research.CheatSheet.stack()); }); DISPLAY_STACKS.forEach(stack -> output.accept(stack.get())); thaumcraft.eldritch.EldritchContent.EGGS.forEach(item -> output.accept(item.get())); })
             .build());
 
     private BasicContent() {}

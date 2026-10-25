@@ -1,3 +1,5 @@
+> Actualización port.73: `misc.allowCheatSheet` ya está implementada; véase [CHEAT-SHEET.md](CHEAT-SHEET.md). Las referencias siguientes a su falta de consumidor son históricas.
+
 # Correspondencia de configuración
 
 Fuente de las filas antiguas: `src/main/java/thaumcraft/common/config/ModConfig.java`.
