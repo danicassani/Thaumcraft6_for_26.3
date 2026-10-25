@@ -22,7 +22,8 @@ public final class ResearchCatalog {
     public record Stage(String text,List<ItemRequirement> items,List<ItemRequirement> crafts,List<String> research,List<Cost> costs,List<String> recipes,int warp){
         public boolean free(){return items.isEmpty()&&crafts.isEmpty()&&research.isEmpty()&&costs.isEmpty();}
     }
-    public record Entry(String key,String name,String category,List<String> parents,List<String> siblings,List<Stage> stages,boolean hidden){}
+    public record Addendum(String text,List<String> research,List<String> recipes){}
+    public record Entry(String key,String name,String category,List<String> parents,List<String> siblings,List<Stage> stages,boolean hidden,List<Addendum> addenda){}
     public static final List<Entry> ENTRIES;
     public static final Map<String,Entry> BY_KEY;
     static {
@@ -34,7 +35,8 @@ public final class ResearchCatalog {
                 for(var raw:strings(s,"required_knowledge")){var parts=raw.split(";");costs.add(new Cost(parts[0],parts[1],Integer.parseInt(parts[2])));}
                 stages.add(new Stage(s.get("text").getAsString(),items(s,"required_item"),items(s,"required_craft"),strings(s,"required_research"),List.copyOf(costs),strings(s,"recipes"),s.has("warp")?s.get("warp").getAsInt():0));
             }
-            entries.add(new Entry(e.get("key").getAsString(),e.get("name").getAsString(),e.get("category").getAsString(),strings(e,"parents"),strings(e,"siblings"),List.copyOf(stages),strings(e,"meta").contains("HIDDEN")));
+            var addenda=new ArrayList<Addendum>();if(e.has("addenda"))for(var raw:e.getAsJsonArray("addenda")){var a=raw.getAsJsonObject();addenda.add(new Addendum(a.get("text").getAsString(),strings(a,"required_research"),strings(a,"recipes")));}
+            entries.add(new Entry(e.get("key").getAsString(),e.get("name").getAsString(),e.get("category").getAsString(),strings(e,"parents"),strings(e,"siblings"),List.copyOf(stages),strings(e,"meta").contains("HIDDEN"),List.copyOf(addenda)));
         }
         ENTRIES=List.copyOf(entries);var byKey=new LinkedHashMap<String,Entry>();for(var entry:entries)if(byKey.put(entry.key,entry)!=null)throw new IllegalStateException("Duplicate research key");BY_KEY=Map.copyOf(byKey);
     }
@@ -55,8 +57,9 @@ public final class ResearchCatalog {
         if(query.contains("&&")){for(var part:query.split("&&"))if(!knows(state,part))return false;return true;}
         var parts=query.split("@",-1);var entry=BY_KEY.get(parts[0]);
         if(entry==null)return parts.length==1&&state.flags().contains(parts[0]);
-        if(parts.length==1&&state.flags().contains(entry.key())&&entry.stages().size()==1&&entry.stages().getFirst().free())return true;
-        int stage=state.stages().getOrDefault(parts[0],0);
+        // Scan discoveries and old rites studies represent completion, including @stage queries.
+        boolean flaggedComplete=state.flags().contains(entry.key())&&(entry.stages().size()==1&&entry.stages().getFirst().free()||entry.key().equals("CrimsonRites"));
+        int stage=flaggedComplete?entry.stages().size()+1:state.stages().getOrDefault(parts[0],0);
         if(parts.length==2){try{return stage>=Integer.parseInt(parts[1])&&stage>0;}catch(NumberFormatException ex){return false;}}
         return parts.length==1&&stage>entry.stages.size();
     }

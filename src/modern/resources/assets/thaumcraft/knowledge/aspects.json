@@ -1338,86 +1338,76 @@
         "!ORBLOCK3"
       ],
       "thaumcraft:ore_amber": [
-        "ORE",
-        "!OREAMBER"
+        "!OREAMBER",
+        "ORE"
       ],
       "thaumcraft:ore_cinnabar": [
-        "ORE",
-        "!ORECINNABAR"
+        "!ORECINNABAR",
+        "ORE"
       ],
       "thaumcraft:crystal_aer": [
-        "ORE",
-        "!ORECRYSTAL"
+        "!ORECRYSTAL",
+        "ORE"
       ],
       "thaumcraft:crystal_ignis": [
-        "ORE",
-        "!ORECRYSTAL"
+        "!ORECRYSTAL",
+        "ORE"
       ],
       "thaumcraft:crystal_aqua": [
-        "ORE",
-        "!ORECRYSTAL"
+        "!ORECRYSTAL",
+        "ORE"
       ],
       "thaumcraft:crystal_terra": [
-        "ORE",
-        "!ORECRYSTAL"
+        "!ORECRYSTAL",
+        "ORE"
       ],
       "thaumcraft:crystal_ordo": [
-        "ORE",
-        "!ORECRYSTAL"
+        "!ORECRYSTAL",
+        "ORE"
       ],
       "thaumcraft:crystal_perditio": [
-        "ORE",
-        "!ORECRYSTAL"
+        "!ORECRYSTAL",
+        "ORE"
       ],
       "thaumcraft:crystal_vitium": [
-        "ORE",
-        "!ORECRYSTAL"
+        "!ORECRYSTAL",
+        "ORE"
       ],
       "thaumcraft:log_greatwood": [
-        "PLANTS",
-        "!PLANTWOOD"
+        "!PLANTWOOD",
+        "PLANTS"
       ],
       "thaumcraft:log_silverwood": [
-        "PLANTS",
-        "!PLANTWOOD"
+        "!PLANTWOOD",
+        "PLANTS"
       ],
       "thaumcraft:sapling_greatwood": [
-        "PLANTS",
-        "!PLANTWOOD"
+        "!PLANTWOOD",
+        "PLANTS"
       ],
       "thaumcraft:sapling_silverwood": [
-        "PLANTS",
-        "!PLANTWOOD"
+        "!PLANTWOOD",
+        "PLANTS"
       ],
       "thaumcraft:cinderpearl": [
-        "PLANTS",
-        "!PLANTCINDERPEARL"
+        "!PLANTCINDERPEARL",
+        "PLANTS"
       ],
       "thaumcraft:shimmerleaf": [
-        "PLANTS",
-        "!PLANTSHIMMERLEAF"
+        "!PLANTSHIMMERLEAF",
+        "PLANTS"
       ],
       "thaumcraft:vishroom": [
-        "PLANTS",
-        "!PLANTVISHROOM"
-      ],
-      "minecraft:nether_portal": [
-        "f_TELEPORT"
-      ],
-      "minecraft:end_portal": [
-        "f_TELEPORT"
+        "!PLANTVISHROOM",
+        "PLANTS"
       ],
       "minecraft:end_portal_frame": [
         "f_TELEPORT"
       ],
       "minecraft:dispenser": [
-        "f_DISPENSER",
         "f_DISPENSER"
       ],
       "minecraft:terracotta": [
-        "f_MATCLAY"
-      ],
-      "minecraft:stained_hardened_clay": [
         "f_MATCLAY"
       ],
       "thaumcraft:primordial_pearl": [
@@ -1491,56 +1481,9 @@
       ]
     },
     "entities": {
-      "minecraft:wisp": [
-        "!Wisp",
-        "f_FLY"
-      ],
-      "minecraft:thaumic_slime": [
-        "!ThaumSlime"
-      ],
-      "minecraft:fire_bat": [
-        "!Firebat",
-        "f_BAT",
-        "f_FLY"
-      ],
-      "minecraft:brainy_zombie": [
-        "!BrainyZombie",
-        "f_BRAIN"
-      ],
-      "minecraft:eldritch_crab": [
-        "!EldritchCrab"
-      ],
-      "minecraft:inhabited_zombie": [
-        "!EldritchCrab"
-      ],
-      "minecraft:cultist": [
-        "!CrimsonCultist"
-      ],
-      "minecraft:eldritch_guardian": [
-        "!EldritchGuardian"
-      ],
-      "minecraft:taint_crawler": [
-        "!TaintCrawler"
-      ],
-      "minecraft:taintacle": [
-        "!Taintacle"
-      ],
-      "minecraft:taint_seed": [
-        "!TaintSeed"
-      ],
-      "minecraft:taint_swarm": [
-        "!TaintSwarm",
-        "f_FLY"
-      ],
       "thaumcraft:flux_rift": [
         "f_toomuchflux",
         "!FluxRift"
-      ],
-      "minecraft:golem": [
-        "f_golem"
-      ],
-      "minecraft:owned_construct": [
-        "f_golem"
       ],
       "minecraft:spider": [
         "f_SPIDER"
@@ -1557,9 +1500,6 @@
       ],
       "minecraft:blaze": [
         "f_FLY"
-      ],
-      "minecraft:thaumcraft_boss": [
-        "!ORBOSS"
       ],
       "minecraft:enderman": [
         "f_TELEPORT"
@@ -1595,14 +1535,110 @@
         "!ThaumSlime"
       ],
       "thaumcraft:wisp": [
-        "!Wisp"
+        "!Wisp",
+        "f_FLY"
       ],
       "thaumcraft:eldritch_guardian": [
         "!EldritchGuardian"
       ],
       "thaumcraft:pech": [
         "!Pech"
+      ],
+      "thaumcraft:brainy_zombie": [
+        "!BrainyZombie",
+        "f_BRAIN"
+      ],
+      "thaumcraft:giant_brainy_zombie": [
+        "!BrainyZombie",
+        "f_BRAIN"
+      ],
+      "thaumcraft:eldritch_crab": [
+        "!EldritchCrab"
+      ],
+      "thaumcraft:inhabited_zombie": [
+        "!EldritchCrab"
+      ],
+      "thaumcraft:cultist_knight": [
+        "!CrimsonCultist"
+      ],
+      "thaumcraft:cultist_cleric": [
+        "!CrimsonCultist"
+      ],
+      "thaumcraft:cultist_leader": [
+        "!CrimsonCultist"
+      ],
+      "minecraft:iron_golem": [
+        "f_golem"
+      ],
+      "minecraft:snow_golem": [
+        "f_golem"
+      ],
+      "thaumcraft:golem": [
+        "f_golem"
+      ],
+      "thaumcraft:arcane_bore": [
+        "f_golem"
+      ],
+      "thaumcraft:turret_basic": [
+        "f_golem"
+      ],
+      "thaumcraft:turret_advanced": [
+        "f_golem"
+      ],
+      "thaumcraft:taint_swarm": [
+        "!TaintSwarm",
+        "f_FLY"
+      ],
+      "thaumcraft:eldritch_golem": [
+        "!ORBOSS"
+      ],
+      "thaumcraft:eldritch_warden": [
+        "!ORBOSS"
+      ],
+      "thaumcraft:firebat": [
+        "!Firebat",
+        "f_BAT",
+        "f_FLY"
+      ],
+      "minecraft:small_fireball": [
+        "f_fireball"
+      ],
+      "minecraft:dragon_fireball": [
+        "f_fireball"
       ]
+    }
+  },
+  "complex": {
+    "minecraft:torch": {
+      "lux": 5
+    },
+    "minecraft:cauldron": {
+      "alkimia": 15
+    },
+    "minecraft:fermented_spider_eye": {
+      "alkimia": 5
+    },
+    "minecraft:blaze_powder": {
+      "alkimia": 5
+    },
+    "minecraft:glistering_melon_slice": {
+      "alkimia": 5
+    },
+    "minecraft:magma_cream": {
+      "alkimia": 5
+    },
+    "minecraft:golden_carrot": {
+      "sensus": 10,
+      "alkimia": 5
+    },
+    "minecraft:paper": {
+      "cognitio": 2
+    },
+    "minecraft:bookshelf": {
+      "cognitio": 8
+    },
+    "minecraft:chest": {
+      "vacuos": 15
     }
   }
 }

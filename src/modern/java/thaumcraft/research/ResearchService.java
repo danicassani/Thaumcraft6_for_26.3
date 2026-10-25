@@ -25,7 +25,7 @@ public final class ResearchService {
         return take;
     }
     public static boolean canAdvance(Player player,ResearchCatalog.Entry entry){
-        var state=state(player);if(state==null||!parents(state,entry))return false;
+        var state=state(player);if(state==null||ResearchCatalog.knows(state,entry.key())||!parents(state,entry))return false;
         if(entry.key().startsWith("!")||entry.hidden()&&entry.parents().isEmpty()&&!state.stages().containsKey(entry.key())&&!state.flags().contains(entry.key()))return false;
         int current=state.stages().getOrDefault(entry.key(),0);if(current>entry.stages().size())return false;
         if(current==0)return true;

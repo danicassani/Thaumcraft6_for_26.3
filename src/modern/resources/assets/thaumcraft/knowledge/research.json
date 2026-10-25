@@ -2562,7 +2562,7 @@
     "parents": [
       "FOCUSMINE",
       "f_BAT",
-      "!minecraft:blaze"
+      "!Firebat"
     ],
     "meta": [
       "REVERSE"
@@ -4776,8 +4776,7 @@
       {
         "text": "research.SEALBREAK.stage.2",
         "recipes": [
-          "thaumcraft:SealBreak",
-          "thaumcraft:SealBreakAdv"
+          "thaumcraft:SealBreak"
         ],
         "required_item": [],
         "required_craft": []
@@ -4858,8 +4857,7 @@
       {
         "text": "research.SEALCOLLECT.stage.1",
         "recipes": [
-          "thaumcraft:SealCollect",
-          "thaumcraft:SealCollectAdv"
+          "thaumcraft:SealCollect"
         ],
         "required_item": [],
         "required_craft": []
@@ -4906,8 +4904,7 @@
       {
         "text": "research.SEALEMPTY.stage.2",
         "recipes": [
-          "thaumcraft:SealEmpty",
-          "thaumcraft:SealEmptyAdv"
+          "thaumcraft:SealEmpty"
         ],
         "required_item": [],
         "required_craft": []
@@ -4955,8 +4952,7 @@
         "text": "research.SEALGUARD.stage.2",
         "recipes": [
           "thaumcraft:SealGuard",
-          "thaumcraft:modaggression",
-          "thaumcraft:SealGuardAdv"
+          "thaumcraft:modaggression"
         ],
         "warp": 1,
         "required_item": [],
@@ -5136,8 +5132,7 @@
       {
         "text": "research.SEALSTORE.stage.1",
         "recipes": [
-          "thaumcraft:SealStore",
-          "thaumcraft:SealStoreAdv"
+          "thaumcraft:SealStore"
         ],
         "required_item": [],
         "required_craft": []

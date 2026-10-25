@@ -154,6 +154,27 @@
     "vis": 0,
     "research": ""
   },
+  "thaumcraft:arcane/activator_rail": {
+    "kind": "arcane",
+    "result": {
+      "id": "thaumcraft:activator_rail"
+    },
+    "grid": [
+      "minecraft:activator_rail",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "aspects": {},
+    "crystals": {},
+    "vis": 10,
+    "research": "FIRSTSTEPS"
+  },
   "thaumcraft:arcane/alembic": {
     "kind": "arcane",
     "result": {
@@ -1374,7 +1395,7 @@
     "aspects": {},
     "crystals": {},
     "vis": 5,
-    "research": "SANITYCHECKER"
+    "research": "WARP"
   },
   "thaumcraft:arcane/seal_blank": {
     "kind": "arcane",
@@ -1774,6 +1795,34 @@
     },
     "vis": 100,
     "research": "BASICTURRET"
+  },
+  "thaumcraft:arcane/vis_battery": {
+    "kind": "arcane",
+    "result": {
+      "id": "thaumcraft:vis_battery"
+    },
+    "grid": [
+      "thaumcraft:slab_arcane_stone",
+      "thaumcraft:slab_arcane_stone",
+      "thaumcraft:slab_arcane_stone",
+      "thaumcraft:slab_arcane_stone",
+      "thaumcraft:vis_resonator",
+      "thaumcraft:slab_arcane_stone",
+      "thaumcraft:slab_arcane_stone",
+      "thaumcraft:slab_arcane_stone",
+      "thaumcraft:slab_arcane_stone"
+    ],
+    "aspects": {},
+    "crystals": {
+      "aer": 2,
+      "ignis": 2,
+      "aqua": 2,
+      "terra": 2,
+      "ordo": 2,
+      "perditio": 2
+    },
+    "vis": 50,
+    "research": "VISBATTERY"
   },
   "thaumcraft:arcane/vis_generator": {
     "kind": "arcane",
@@ -2879,6 +2928,54 @@
       null,
       null,
       "thaumcraft:ore_cinnabar",
+      null,
+      null,
+      null,
+      null
+    ],
+    "aspects": {
+      "metallum": 5,
+      "ordo": 5
+    },
+    "crystals": {},
+    "vis": 0,
+    "research": "METALPURIFICATION"
+  },
+  "thaumcraft:crucible/metal_purification_copper_ore": {
+    "kind": "crucible",
+    "result": {
+      "id": "thaumcraft:cluster_copper"
+    },
+    "grid": [
+      null,
+      null,
+      null,
+      null,
+      "minecraft:copper_ore",
+      null,
+      null,
+      null,
+      null
+    ],
+    "aspects": {
+      "metallum": 5,
+      "ordo": 5
+    },
+    "crystals": {},
+    "vis": 0,
+    "research": "METALPURIFICATION"
+  },
+  "thaumcraft:crucible/metal_purification_deepslate_copper_ore": {
+    "kind": "crucible",
+    "result": {
+      "id": "thaumcraft:cluster_copper"
+    },
+    "grid": [
+      null,
+      null,
+      null,
+      null,
+      "minecraft:deepslate_copper_ore",
       null,
       null,
       null,
@@ -6707,6 +6804,28 @@
     },
     "instability": 7
   },
+  "thaumcraft:jar_brace": {
+    "kind": "crafting_shaped",
+    "result": {
+      "id": "thaumcraft:jar_brace",
+      "count": 2
+    },
+    "grid": [
+      "thaumcraft:nugget_brass",
+      "minecraft:stick",
+      "thaumcraft:nugget_brass",
+      "minecraft:stick",
+      null,
+      "minecraft:stick",
+      "thaumcraft:nugget_brass",
+      "minecraft:stick",
+      "thaumcraft:nugget_brass"
+    ],
+    "aspects": {},
+    "crystals": {},
+    "vis": 0,
+    "research": ""
+  },
   "thaumcraft:label": {
     "kind": "crafting_shapeless",
     "result": {
@@ -9761,6 +9880,27 @@
     "vis": 100,
     "research": "BASICTURRET"
   },
+  "thaumcraft:activatorrail": {
+    "kind": "arcane",
+    "result": {
+      "id": "thaumcraft:activator_rail"
+    },
+    "grid": [
+      "minecraft:activator_rail",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "aspects": {},
+    "crystals": {},
+    "vis": 10,
+    "research": "FIRSTSTEPS"
+  },
   "thaumcraft:BathSalts": {
     "kind": "crucible",
     "result": {
@@ -11631,6 +11771,27 @@
     "vis": 150,
     "research": "IMPROVEDSMELTING2"
   },
+  "thaumcraft:triplemeattreatfake": {
+    "kind": "crafting_shapeless",
+    "result": {
+      "id": "thaumcraft:triple_meat_treat"
+    },
+    "grid": [
+      "thaumcraft:chunk_beef",
+      "thaumcraft:chunk_chicken",
+      "thaumcraft:chunk_pork",
+      "minecraft:sugar",
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "aspects": {},
+    "crystals": {},
+    "vis": 0,
+    "research": ""
+  },
   "thaumcraft:InfusionMatrix": {
     "kind": "arcane",
     "result": {
@@ -12474,6 +12635,30 @@
       null,
       null,
       "thaumcraft:ore_cinnabar",
+      null,
+      null,
+      null,
+      null
+    ],
+    "aspects": {
+      "metallum": 5,
+      "ordo": 5
+    },
+    "crystals": {},
+    "vis": 0,
+    "research": "METALPURIFICATION"
+  },
+  "thaumcraft:metal_purification_copper": {
+    "kind": "crucible",
+    "result": {
+      "id": "thaumcraft:cluster_copper"
+    },
+    "grid": [
+      null,
+      null,
+      null,
+      null,
+      "minecraft:copper_ore",
       null,
       null,
       null,
@@ -14019,6 +14204,34 @@
     },
     "instability": 6
   },
+  "thaumcraft:VisBattery": {
+    "kind": "arcane",
+    "result": {
+      "id": "thaumcraft:vis_battery"
+    },
+    "grid": [
+      "thaumcraft:slab_arcane_stone",
+      "thaumcraft:slab_arcane_stone",
+      "thaumcraft:slab_arcane_stone",
+      "thaumcraft:slab_arcane_stone",
+      "thaumcraft:vis_resonator",
+      "thaumcraft:slab_arcane_stone",
+      "thaumcraft:slab_arcane_stone",
+      "thaumcraft:slab_arcane_stone",
+      "thaumcraft:slab_arcane_stone"
+    ],
+    "aspects": {},
+    "crystals": {
+      "aer": 2,
+      "ignis": 2,
+      "aqua": 2,
+      "terra": 2,
+      "ordo": 2,
+      "perditio": 2
+    },
+    "vis": 50,
+    "research": "VISBATTERY"
+  },
   "thaumcraft:VisGenerator": {
     "kind": "arcane",
     "result": {
@@ -14300,6 +14513,28 @@
     "vis": 50,
     "research": "WARDEDJARS"
   },
+  "thaumcraft:BrassBrace": {
+    "kind": "crafting_shaped",
+    "result": {
+      "id": "thaumcraft:jar_brace",
+      "count": 2
+    },
+    "grid": [
+      "thaumcraft:nugget_brass",
+      "minecraft:stick",
+      "thaumcraft:nugget_brass",
+      "minecraft:stick",
+      null,
+      "minecraft:stick",
+      "thaumcraft:nugget_brass",
+      "minecraft:stick",
+      "thaumcraft:nugget_brass"
+    ],
+    "aspects": {},
+    "crystals": {},
+    "vis": 0,
+    "research": ""
+  },
   "thaumcraft:JarLabel": {
     "kind": "crafting_shapeless",
     "result": {
@@ -14341,7 +14576,7 @@
     "aspects": {},
     "crystals": {},
     "vis": 5,
-    "research": "SANITYCHECKER"
+    "research": "WARP"
   },
   "thaumcraft:workbenchcharger": {
     "kind": "arcane",

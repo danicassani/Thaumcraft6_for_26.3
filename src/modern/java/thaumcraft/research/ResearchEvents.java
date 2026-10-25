@@ -19,6 +19,7 @@ public final class ResearchEvents {
         TickEvent.PlayerTickEvent.Post.BUS.addListener(event->{
             if(!(event.player() instanceof ServerPlayer player)||player.tickCount%20!=0)return;
             var state=ResearchService.state(player);if(state==null)return;var next=movementKnowledge(player,state);
+            next=ResearchDiscovery.reconcile(next,thaumcraft.persistence.PlayerWarpStore.read(player).result().map(w->w.permanent()+w.normal()>0).orElse(false));
             boolean crystal=false;for(int i=0;i<player.getInventory().getContainerSize();i++)if(player.getInventory().getItem(i).is(CrystalContent.ESSENCE.get())){crystal=true;break;}
             if(crystal)next=next.flag("!gotcrystals");
             if(player.level().dimension().equals(Level.NETHER))next=next.flag("m_hellandback");

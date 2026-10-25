@@ -25,12 +25,12 @@ public final class AspectResolver {
         }
     }
     public static Map<String,Integer> item(ServerLevel level,ItemStack stack){
-        if(stack.isEmpty())return Map.of();var equipment=thaumcraft.equipment.EquipmentContent.cultAspects(level,stack);if(equipment!=null)return equipment;var direct=AspectCatalog.item(stack);if(!direct.isEmpty())return direct;
+        if(stack.isEmpty())return Map.of();var equipment=thaumcraft.equipment.EquipmentContent.cultAspects(level,stack);if(equipment!=null)return equipment;var direct=AspectCatalog.item(stack);if(!direct.isEmpty())return AspectCatalog.augment(stack,direct);
         if(stack.is(AlchemyContent.PHIAL.get()))return Map.of();
         var manager=level.recipeAccess();var resolver=MANAGERS.computeIfAbsent(manager,AspectResolver::new);return resolver.resolve(stack,new HashSet<>(),new int[]{1024},0);
     }
     private Map<String,Integer> resolve(ItemStack stack,Set<Item> path,int[] budget,int depth){
-        var direct=AspectCatalog.item(stack);if(!direct.isEmpty())return direct;
+        var direct=AspectCatalog.item(stack);if(!direct.isEmpty())return AspectCatalog.augment(stack,direct);
         Item item=stack.getItem();if(depth>=12||--budget[0]<0||path.contains(item))return Map.of();if(cache.containsKey(item))return cache.get(item);
         path.add(item);Map<String,Integer> best=Map.of();int minimum=Integer.MAX_VALUE;
         for(var rule:rules.getOrDefault(item,List.of())){
@@ -50,6 +50,6 @@ public final class AspectResolver {
             else{result=AspectAmounts.crafting(sum,rule.result().getCount());if(rule.vis()>0){var m=new TreeMap<>(result);m.merge("praecantatio",(int)(Math.sqrt(1+rule.vis()/2D)/rule.result().getCount()),Integer::sum);m.values().removeIf(v->v<=0);result=Map.copyOf(m);}}
             int total=AspectAmounts.total(result);if(total>0&&total<minimum){best=result;minimum=total;}
         }
-        path.remove(item);if(!best.isEmpty())cache.put(item,best);return best;
+        path.remove(item);best=AspectCatalog.augment(stack,best);if(!best.isEmpty())cache.put(item,best);return best;
     }
 }

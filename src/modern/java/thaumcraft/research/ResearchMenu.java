@@ -7,12 +7,13 @@ import net.minecraft.world.item.ItemStack;
 /** Book actions use the native menu button packet; no client-provided points, flags or stages. */
 public final class ResearchMenu extends AbstractContainerMenu {
     private static final int SIZE=ResearchCatalog.ENTRIES.size();
+    private static final int ADDENDA=ResearchCatalog.ENTRIES.stream().mapToInt(e->e.addenda().size()).sum();
     private final Player owner;
     private final ContainerData data;
     private int selected=ResearchCatalog.ENTRIES.indexOf(ResearchCatalog.BY_KEY.get("FIRSTSTEPS"));
     public ResearchMenu(int id,Inventory inventory){
         super(ResearchContent.MENU.get(),id);owner=inventory.player;
-        data=new SimpleContainerData(SIZE*2+89);data.set(SIZE,selected);addDataSlots(data);refresh();
+        data=new SimpleContainerData(SIZE*2+89+ADDENDA);data.set(SIZE,selected);addDataSlots(data);refresh();
     }
     private void refresh(){
         if(owner.level().isClientSide())return;
@@ -22,6 +23,7 @@ public final class ResearchMenu extends AbstractContainerMenu {
             data.set(i,ResearchCatalog.knows(state,e.key())?e.stages().size()+1:state.stages().getOrDefault(e.key(),0));
             data.set(SIZE+18+i,state.stages().getOrDefault(e.key(),0)>0||state.flags().contains(e.key())||(!e.hidden()||!e.parents().isEmpty())&&ResearchService.parents(state,e)?1:0);
         }
+        int addendumIndex=0;for(var e:ResearchCatalog.ENTRIES)for(var a:e.addenda())data.set(SIZE*2+89+addendumIndex++,ResearchCatalog.knows(state,e.key())&&a.research().stream().allMatch(r->ResearchCatalog.knows(state,r))?1:0);
         for(int c=0;c<7;c++)data.set(SIZE*2+18+c,ResearchCatalog.categoryUnlocked(state,ResearchCatalog.CATEGORIES.get(c))?1:0);
         if(!ResearchCatalog.categoryUnlocked(state,ResearchCatalog.ENTRIES.get(selected).category()))selected=ResearchCatalog.ENTRIES.indexOf(ResearchCatalog.BY_KEY.get("FIRSTSTEPS"));
         for(int i=0;i<64;i++)data.set(SIZE*2+25+i,0);
@@ -45,6 +47,7 @@ public final class ResearchMenu extends AbstractContainerMenu {
     public boolean validData(){return data.get(SIZE+17)==1;}
     public boolean requirementDone(int index){return index>=0&&index<64&&data.get(SIZE*2+25+index)==1;}
     public boolean categoryUnlocked(int index){return index==0||data.get(SIZE*2+18+index)==1;}
+    public boolean addendumVisible(int entry,int index){if(entry<0||entry>=SIZE||index<0||index>=ResearchCatalog.ENTRIES.get(entry).addenda().size())return false;int offset=0;for(int i=0;i<entry;i++)offset+=ResearchCatalog.ENTRIES.get(i).addenda().size();return data.get(SIZE*2+89+offset+index)==1;}
     public boolean visible(int index){return data.get(SIZE+18+index)==1;}
     @Override public boolean stillValid(Player player){return player==owner&&ResearchService.hasBook(player);}
     @Override public ItemStack quickMoveStack(Player player,int index){return ItemStack.EMPTY;}

@@ -1,0 +1,15 @@
+{
+  "type": "thaumcraft:arcane",
+  "research": "FIRSTSTEPS",
+  "vis": 10,
+  "crystals": {},
+  "recipe": {
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      "minecraft:activator_rail"
+    ],
+    "result": {
+      "id": "thaumcraft:activator_rail"
+    }
+  }
+}
