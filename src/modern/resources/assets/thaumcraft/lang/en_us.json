@@ -1508,5 +1508,9 @@
   "research.thaumcraft.goal.f_MATTHAUMIUM": "thaumium",
   "research.thaumcraft.goal.f_MATVOID": "void metal",
   "research.thaumcraft.goal_stage": "%s (stage %s)",
-  "research.thaumcraft.addendum": "Additional findings"
+  "research.thaumcraft.addendum": "Additional findings",
+  "research.thaumcraft.atlas_center": "Center map",
+  "research.thaumcraft.atlas_back": "Back to the research map",
+  "research.thaumcraft.previous": "Previous pages",
+  "research.thaumcraft.next": "Next pages"
 }

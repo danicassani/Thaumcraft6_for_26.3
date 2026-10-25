@@ -1,0 +1,1869 @@
+{
+  "!BrainyZombie": {
+    "x": -192,
+    "y": 48,
+    "meta": [
+      "HEX",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/r_angryzombie.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "!CrimsonCultist": {
+    "x": -168,
+    "y": 48,
+    "meta": [
+      "HEX",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/r_cultist.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "!EldritchCrab": {
+    "x": -240,
+    "y": 48,
+    "meta": [
+      "HEX",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/r_crab.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "!EldritchGuardian": {
+    "x": -216,
+    "y": 48,
+    "meta": [
+      "HEX",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/r_eldritchguardian.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "!Firebat": {
+    "x": -240,
+    "y": 0,
+    "meta": [
+      "HEX",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/r_firebat.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "!Pech": {
+    "x": -192,
+    "y": 0,
+    "meta": [
+      "HEX",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/r_pech.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "!TaintCrawler": {
+    "x": -192,
+    "y": 24,
+    "meta": [
+      "HEX",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/r_taintcrawler.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "!TaintSeed": {
+    "x": -168,
+    "y": 24,
+    "meta": [
+      "HEX",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/r_taintseed.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "!TaintSwarm": {
+    "x": -240,
+    "y": 24,
+    "meta": [
+      "HEX",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/r_taintswarm.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "!Taintacle": {
+    "x": -216,
+    "y": 24,
+    "meta": [
+      "HEX",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/r_taintacle.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "!ThaumSlime": {
+    "x": -216,
+    "y": 0,
+    "meta": [
+      "HEX",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/r_thaumslime.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "!Wisp": {
+    "x": -168,
+    "y": 0,
+    "meta": [
+      "HEX",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/r_wisp.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "ADVANCEDTURRET": {
+    "x": -96,
+    "y": -96,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:turret_advanced"
+      }
+    ]
+  },
+  "ALUMENTUM": {
+    "x": 48,
+    "y": -24,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/items/alumentum.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "ARCANEBORE": {
+    "x": -72,
+    "y": -144,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:arcane_bore"
+      }
+    ]
+  },
+  "ARCANEEAR": {
+    "x": 0,
+    "y": -96,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:arcane_ear"
+      }
+    ]
+  },
+  "ARCANELAMP": {
+    "x": -72,
+    "y": 0,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:lamp_arcane"
+      }
+    ]
+  },
+  "ARCANEPATTERNCRAFTER": {
+    "x": -48,
+    "y": 120,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:pattern_crafter"
+      }
+    ]
+  },
+  "ARCANESPA": {
+    "x": -120,
+    "y": -96,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:spa"
+      }
+    ]
+  },
+  "ARMORFORTRESS": {
+    "x": -96,
+    "y": 24,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:fortress_helm"
+      }
+    ]
+  },
+  "BASEALCHEMY": {
+    "x": 0,
+    "y": 0,
+    "meta": [
+      "ROUND",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/cat_alchemy.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "BASEARTIFICE": {
+    "x": 0,
+    "y": 0,
+    "meta": [
+      "ROUND",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/cat_artifice.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "BASEAUROMANCY": {
+    "x": 0,
+    "y": 0,
+    "meta": [
+      "ROUND",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/cat_auromancy.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "BASEELDRITCH": {
+    "x": 0,
+    "y": 0,
+    "meta": [
+      "ROUND"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:void_seed"
+      }
+    ]
+  },
+  "BASEGOLEMANCY": {
+    "x": 0,
+    "y": -24,
+    "meta": [
+      "ROUND",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/cat_golemancy.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "BASEINFUSION": {
+    "x": 0,
+    "y": 0,
+    "meta": [
+      "ROUND",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/cat_infusion.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "BASICTURRET": {
+    "x": -48,
+    "y": -96,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:turret_basic"
+      }
+    ]
+  },
+  "BATHSALTS": {
+    "x": -96,
+    "y": -48,
+    "meta": [
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:bath_salts"
+      }
+    ]
+  },
+  "BELLOWS": {
+    "x": 120,
+    "y": -72,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:bellows"
+      }
+    ]
+  },
+  "BOOTSTRAVELLER": {
+    "x": -48,
+    "y": 48,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:traveller_boots"
+      }
+    ]
+  },
+  "BOTTLETAINT": {
+    "x": -144,
+    "y": 0,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:bottle_taint"
+      }
+    ]
+  },
+  "CELESTIALSCANNING": {
+    "x": 96,
+    "y": 24,
+    "meta": [
+      "ROUND"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/r_celestial.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "CENTRIFUGE": {
+    "x": 168,
+    "y": -96,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:centrifuge"
+      }
+    ]
+  },
+  "CHARMUNDYING": {
+    "x": 72,
+    "y": -24,
+    "meta": [
+      "HIDDEN",
+      "REVERSE"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:charm_undying"
+      }
+    ]
+  },
+  "CLOUDRING": {
+    "x": 48,
+    "y": 48,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:ring_cloud"
+      }
+    ]
+  },
+  "CONTROLSEALS": {
+    "x": -48,
+    "y": 120,
+    "meta": [
+      "ROUND",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:golem_bell",
+        "count": 1
+      }
+    ]
+  },
+  "CRYSTALFARMER": {
+    "x": -120,
+    "y": 24,
+    "meta": [
+      "ROUND",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:crystal_aer"
+      },
+      {
+        "id": "thaumcraft:crystal_ignis"
+      },
+      {
+        "id": "thaumcraft:crystal_aqua"
+      },
+      {
+        "id": "thaumcraft:crystal_terra"
+      },
+      {
+        "id": "thaumcraft:crystal_ordo"
+      },
+      {
+        "id": "thaumcraft:crystal_perditio"
+      }
+    ]
+  },
+  "CURIOSITYBAND": {
+    "x": 96,
+    "y": 24,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:band_curiosity"
+      }
+    ]
+  },
+  "CrimsonRites": {
+    "x": -144,
+    "y": 96,
+    "meta": [
+      "ROUND",
+      "HIDDEN",
+      "REVERSE"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:curio",
+        "aspect": "rites"
+      }
+    ]
+  },
+  "DIOPTRA": {
+    "x": -48,
+    "y": 72,
+    "meta": [
+      "REVERSE"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:dioptra"
+      }
+    ]
+  },
+  "ELEMENTALTOOLS": {
+    "x": -96,
+    "y": 72,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:elemental_axe"
+      },
+      {
+        "id": "thaumcraft:elemental_sword"
+      },
+      {
+        "id": "thaumcraft:elemental_pick"
+      },
+      {
+        "id": "thaumcraft:elemental_shovel"
+      },
+      {
+        "id": "thaumcraft:elemental_hoe"
+      }
+    ]
+  },
+  "ESSENTIASMELTER": {
+    "x": 96,
+    "y": 0,
+    "meta": [
+      "SPIKY"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:smelter_basic"
+      }
+    ]
+  },
+  "ESSENTIASMELTERTHAUMIUM": {
+    "x": 192,
+    "y": 0,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:smelter_thaumium"
+      }
+    ]
+  },
+  "ESSENTIASMELTERVOID": {
+    "x": 288,
+    "y": 0,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:smelter_void"
+      }
+    ]
+  },
+  "ESSENTIATRANSPORT": {
+    "x": 288,
+    "y": -48,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:mirror_essentia"
+      }
+    ]
+  },
+  "EVERFULLURN": {
+    "x": -48,
+    "y": 48,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:everfull_urn"
+      }
+    ]
+  },
+  "FIRSTSTEPS": {
+    "x": 0,
+    "y": 0,
+    "meta": [
+      "ROUND",
+      "SPIKY"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/items/thaumonomicon.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "FLUX": {
+    "x": -48,
+    "y": -48,
+    "meta": [
+      "ROUND",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/r_flux.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "FLUXCLEANUP": {
+    "x": -48,
+    "y": -96,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:condenser"
+      }
+    ]
+  },
+  "FLUXRIFT": {
+    "x": 0,
+    "y": -72,
+    "meta": [
+      "ROUND",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/r_fluxrift.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "FOCUSADVANCED": {
+    "x": 0,
+    "y": -48,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:focus_2"
+      }
+    ]
+  },
+  "FOCUSBOLT": {
+    "x": 168,
+    "y": 0,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/foci/bolt.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "FOCUSBREAK": {
+    "x": 48,
+    "y": 144,
+    "meta": [
+      "REVERSE"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/foci/break.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "FOCUSCLOUD": {
+    "x": 168,
+    "y": 48,
+    "meta": [
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/foci/cloud.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "FOCUSCURSE": {
+    "x": -48,
+    "y": 144,
+    "meta": [
+      "HIDDEN",
+      "REVERSE"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/foci/curse.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "FOCUSELEMENTAL": {
+    "x": 0,
+    "y": 48,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/foci/air.png",
+        "width": 32,
+        "height": 32
+      },
+      {
+        "texture": "thaumcraft:textures/foci/frost.png",
+        "width": 32,
+        "height": 32
+      },
+      {
+        "texture": "thaumcraft:textures/foci/earth.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "FOCUSEXCHANGE": {
+    "x": 48,
+    "y": 96,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/foci/exchange.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "FOCUSFLUX": {
+    "x": 0,
+    "y": 96,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/foci/flux.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "FOCUSGREATER": {
+    "x": 0,
+    "y": -96,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:focus_3"
+      }
+    ]
+  },
+  "FOCUSHEAL": {
+    "x": 0,
+    "y": 168,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/foci/heal.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "FOCUSMINE": {
+    "x": 120,
+    "y": 48,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/foci/mine.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "FOCUSPLAN": {
+    "x": 72,
+    "y": 48,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/foci/plan.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "FOCUSPOUCH": {
+    "x": -48,
+    "y": -24,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:focus_pouch"
+      }
+    ]
+  },
+  "FOCUSPROJECTILE": {
+    "x": 72,
+    "y": 0,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/foci/projectile.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "FOCUSRIFT": {
+    "x": 96,
+    "y": 120,
+    "meta": [
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/foci/rift.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "FOCUSSCATTER": {
+    "x": 120,
+    "y": -24,
+    "meta": [
+      "HIDDEN",
+      "REVERSE"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/foci/scatter.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "FOCUSSPELLBAT": {
+    "x": 168,
+    "y": 96,
+    "meta": [
+      "REVERSE"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/foci/spellbat.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "FOCUSSPLIT": {
+    "x": 120,
+    "y": -72,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/foci/split_target.png",
+        "width": 32,
+        "height": 32
+      },
+      {
+        "texture": "thaumcraft:textures/foci/split_trajectory.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "FORTRESSMASK": {
+    "x": -120,
+    "y": 0,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/r_mask0.png",
+        "width": 16,
+        "height": 16
+      },
+      {
+        "texture": "thaumcraft:textures/research/r_mask1.png",
+        "width": 16,
+        "height": 16
+      },
+      {
+        "texture": "thaumcraft:textures/research/r_mask2.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "GOLEMBREAKER": {
+    "x": -192,
+    "y": 48,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/misc/golem/arms_breakers.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "GOLEMCLIMBER": {
+    "x": -96,
+    "y": 48,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/misc/golem/legs_climber.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "GOLEMCOMBATADV": {
+    "x": -288,
+    "y": 48,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/misc/golem/addon_fighter.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "GOLEMDIRECT": {
+    "x": 24,
+    "y": 96,
+    "meta": [
+      "ROUND"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/misc/golem/head_basic.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "GOLEMFLYER": {
+    "x": -144,
+    "y": 48,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/misc/golem/legs_flyer.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "GOLEMLOGISTICS": {
+    "x": 72,
+    "y": 96,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/golem_logistics.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "GOLEMVISION": {
+    "x": -48,
+    "y": 48,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:module_vision"
+      }
+    ]
+  },
+  "GRAPPLEGUN": {
+    "x": 48,
+    "y": 72,
+    "meta": [
+      "REVERSE"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:grapple_gun"
+      }
+    ]
+  },
+  "HEDGEALCHEMY": {
+    "x": -48,
+    "y": 0,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/items/tallow.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "HUNGRYCHEST": {
+    "x": 72,
+    "y": 24,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:hungry_chest"
+      }
+    ]
+  },
+  "IMPROVEDSMELTING": {
+    "x": 120,
+    "y": -96,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:smelter_aux"
+      }
+    ]
+  },
+  "IMPROVEDSMELTING2": {
+    "x": 72,
+    "y": -96,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:smelter_vent"
+      }
+    ]
+  },
+  "INFERNALFURNACE": {
+    "x": 72,
+    "y": -24,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:infernal_furnace"
+      }
+    ]
+  },
+  "INFUSION": {
+    "x": 0,
+    "y": 48,
+    "meta": [
+      "SPIKY"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:infusion_matrix"
+      }
+    ]
+  },
+  "INFUSIONANCIENT": {
+    "x": 0,
+    "y": 144,
+    "meta": [
+      "HIDDEN",
+      "REVERSE"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:stone_ancient"
+      }
+    ]
+  },
+  "INFUSIONBOOST": {
+    "x": -24,
+    "y": 96,
+    "meta": [
+      "REVERSE"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:matrix_cost"
+      },
+      {
+        "id": "thaumcraft:matrix_speed"
+      }
+    ]
+  },
+  "INFUSIONELDRITCH": {
+    "x": -48,
+    "y": 144,
+    "meta": [
+      "HIDDEN",
+      "REVERSE"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:stone_eldritch_tile"
+      }
+    ]
+  },
+  "INFUSIONENCHANTMENT": {
+    "x": -144,
+    "y": 96,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/r_inf_enchant.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "INFUSIONSTABLE": {
+    "x": 24,
+    "y": 96,
+    "meta": [
+      "HIDDEN",
+      "REVERSE"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:stabilizer"
+      }
+    ]
+  },
+  "JARBRAIN": {
+    "x": 48,
+    "y": 24,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:jar_brain"
+      }
+    ]
+  },
+  "KNOWLEDGETYPES": {
+    "x": 48,
+    "y": -24,
+    "meta": [
+      "ROUND",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/knowledge_theory.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "LAMPFERTILITY": {
+    "x": -96,
+    "y": -24,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:lamp_fertility"
+      }
+    ]
+  },
+  "LAMPGROWTH": {
+    "x": -96,
+    "y": 24,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:lamp_growth"
+      }
+    ]
+  },
+  "LEVITATOR": {
+    "x": 120,
+    "y": 72,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:levitator"
+      }
+    ]
+  },
+  "LIQUIDDEATH": {
+    "x": -96,
+    "y": 48,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/items/bucket_death.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "MATSTUDBRASS": {
+    "x": -96,
+    "y": -48,
+    "meta": [
+      "REVERSE",
+      "ROUND",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:plate_brass"
+      }
+    ]
+  },
+  "MATSTUDCLAY": {
+    "x": -96,
+    "y": 0,
+    "meta": [
+      "ROUND"
+    ],
+    "icons": [
+      {
+        "id": "minecraft:terracotta"
+      }
+    ]
+  },
+  "MATSTUDIRON": {
+    "x": -72,
+    "y": -24,
+    "meta": [
+      "REVERSE",
+      "ROUND"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:plate_iron"
+      }
+    ]
+  },
+  "MATSTUDTHAUMIUM": {
+    "x": -120,
+    "y": -24,
+    "meta": [
+      "ROUND",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:plate_thaumium"
+      }
+    ]
+  },
+  "MATSTUDVOID": {
+    "x": -144,
+    "y": 0,
+    "meta": [
+      "ROUND",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:plate_void"
+      }
+    ]
+  },
+  "MATSTUDWOOD": {
+    "x": -48,
+    "y": 0,
+    "meta": [
+      "HIDDEN",
+      "REVERSE",
+      "ROUND"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:log_greatwood"
+      }
+    ]
+  },
+  "METALLURGY": {
+    "x": 48,
+    "y": 48,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/items/ingot_brass.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "METALPURIFICATION": {
+    "x": 48,
+    "y": 96,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/items/cluster_iron.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "MINDBIOTHAUMIC": {
+    "x": 0,
+    "y": 168,
+    "meta": [
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:mind_biothaumic"
+      }
+    ]
+  },
+  "MINDCLOCKWORK": {
+    "x": 0,
+    "y": 72,
+    "meta": [
+      "REVERSE"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:mind_clockwork",
+        "count": 1
+      }
+    ]
+  },
+  "MIRROR": {
+    "x": -144,
+    "y": 0,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:mirror"
+      }
+    ]
+  },
+  "MIRRORESSENTIA": {
+    "x": -168,
+    "y": -24,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:mirror_essentia"
+      }
+    ]
+  },
+  "MIRRORHAND": {
+    "x": -168,
+    "y": 24,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:hand_mirror"
+      }
+    ]
+  },
+  "ORE": {
+    "x": -96,
+    "y": 0,
+    "meta": [
+      "ROUND",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "id": "minecraft:iron_pickaxe"
+      }
+    ]
+  },
+  "PAVINGSTONES": {
+    "x": 0,
+    "y": -48,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:paving_stone_barrier"
+      },
+      {
+        "id": "thaumcraft:paving_stone_travel"
+      }
+    ]
+  },
+  "PLANTS": {
+    "x": -72,
+    "y": 0,
+    "meta": [
+      "ROUND",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:sapling_greatwood"
+      },
+      {
+        "id": "thaumcraft:sapling_silverwood"
+      }
+    ]
+  },
+  "POTIONSPRAYER": {
+    "x": -24,
+    "y": -48,
+    "meta": [
+      "REVERSE"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:potion_sprayer"
+      }
+    ]
+  },
+  "PRIMALCRUSHER": {
+    "x": 0,
+    "y": -72,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:primal_crusher"
+      }
+    ]
+  },
+  "PRIMPEARL": {
+    "x": -192,
+    "y": 96,
+    "meta": [
+      "ROUND",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:primordial_pearl"
+      }
+    ]
+  },
+  "RECHARGEPEDESTAL": {
+    "x": -72,
+    "y": 48,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:recharge_pedestal"
+      }
+    ]
+  },
+  "REDSTONERELAY": {
+    "x": 0,
+    "y": -48,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:redstone_relay"
+      }
+    ]
+  },
+  "RIFTCLOSER": {
+    "x": 0,
+    "y": -120,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:causality_collapser"
+      }
+    ]
+  },
+  "RUNICSHIELDING": {
+    "x": -144,
+    "y": 144,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/r_runicupg.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "SANESOAP": {
+    "x": -72,
+    "y": -96,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:sanity_soap"
+      }
+    ]
+  },
+  "SEALBREAK": {
+    "x": -240,
+    "y": 96,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/items/seals/seal_breaker.png",
+        "width": 16,
+        "height": 48
+      }
+    ]
+  },
+  "SEALBUTCHER": {
+    "x": -264,
+    "y": 144,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/items/seals/seal_butcher.png",
+        "width": 16,
+        "height": 48
+      }
+    ]
+  },
+  "SEALCOLLECT": {
+    "x": -96,
+    "y": 96,
+    "meta": [
+      "ROUND"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/items/seals/seal_pickup.png",
+        "width": 16,
+        "height": 48
+      }
+    ]
+  },
+  "SEALEMPTY": {
+    "x": -192,
+    "y": 96,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/items/seals/seal_empty.png",
+        "width": 16,
+        "height": 48
+      }
+    ]
+  },
+  "SEALGUARD": {
+    "x": -288,
+    "y": 96,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/items/seals/seal_guard.png",
+        "width": 16,
+        "height": 48
+      }
+    ]
+  },
+  "SEALHARVEST": {
+    "x": -120,
+    "y": 144,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/items/seals/seal_harvest.png",
+        "width": 16,
+        "height": 48
+      }
+    ]
+  },
+  "SEALLUMBER": {
+    "x": -216,
+    "y": 144,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/items/seals/seal_lumber.png",
+        "width": 16,
+        "height": 48
+      }
+    ]
+  },
+  "SEALPROVIDE": {
+    "x": -168,
+    "y": 144,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/items/seals/seal_provider.png",
+        "width": 16,
+        "height": 48
+      }
+    ]
+  },
+  "SEALSTOCK": {
+    "x": -144,
+    "y": 192,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/items/seals/seal_stock.png",
+        "width": 16,
+        "height": 48
+      }
+    ]
+  },
+  "SEALSTORE": {
+    "x": -144,
+    "y": 96,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/items/seals/seal_fill.png",
+        "width": 16,
+        "height": 48
+      }
+    ]
+  },
+  "SEALUSE": {
+    "x": -72,
+    "y": 144,
+    "meta": [],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/items/seals/seal_use.png",
+        "width": 16,
+        "height": 48
+      }
+    ]
+  },
+  "THAUMATORIUM": {
+    "x": 240,
+    "y": -48,
+    "meta": [
+      "SPIKY"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:thaumatorium"
+      }
+    ]
+  },
+  "THEORYRESEARCH": {
+    "x": 96,
+    "y": -24,
+    "meta": [
+      "ROUND",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/knowledge_theory.png",
+        "width": 16,
+        "height": 16
+      }
+    ]
+  },
+  "TUBES": {
+    "x": 144,
+    "y": -48,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:tube"
+      }
+    ]
+  },
+  "UNLOCKALCHEMY": {
+    "x": 0,
+    "y": 48,
+    "meta": [
+      "ROUND",
+      "SPIKY"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/cat_alchemy.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "UNLOCKARTIFICE": {
+    "x": 48,
+    "y": 96,
+    "meta": [
+      "ROUND",
+      "SPIKY"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/cat_artifice.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "UNLOCKAUROMANCY": {
+    "x": -48,
+    "y": 96,
+    "meta": [
+      "ROUND",
+      "SPIKY"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/cat_auromancy.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "UNLOCKELDRITCH": {
+    "x": -96,
+    "y": 144,
+    "meta": [
+      "ROUND",
+      "SPIKY",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/cat_eldritch.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "UNLOCKGOLEMANCY": {
+    "x": 0,
+    "y": 144,
+    "meta": [
+      "ROUND",
+      "SPIKY",
+      "REVERSE"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/cat_golemancy.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "UNLOCKINFUSION": {
+    "x": 0,
+    "y": 96,
+    "meta": [
+      "ROUND",
+      "SPIKY"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/cat_infusion.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "VERDANTCHARMS": {
+    "x": 96,
+    "y": 72,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:charm_verdant"
+      }
+    ]
+  },
+  "VISAMULET": {
+    "x": -120,
+    "y": 96,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:amulet_vis"
+      }
+    ]
+  },
+  "VISBATTERY": {
+    "x": -120,
+    "y": 0,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:vis_battery"
+      }
+    ]
+  },
+  "VISGENERATOR": {
+    "x": 48,
+    "y": -72,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:vis_generator"
+      }
+    ]
+  },
+  "VOIDROBEARMOR": {
+    "x": 0,
+    "y": 72,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:void_robe_helm"
+      }
+    ]
+  },
+  "VOIDSEERPEARL": {
+    "x": -72,
+    "y": 0,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:charm_voidseer"
+      }
+    ]
+  },
+  "VOIDSIPHON": {
+    "x": 72,
+    "y": 0,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:void_siphon"
+      }
+    ]
+  },
+  "WARDEDJARS": {
+    "x": 96,
+    "y": -48,
+    "meta": [
+      "ROUND"
+    ],
+    "icons": [
+      {
+        "id": "thaumcraft:jar_normal"
+      }
+    ]
+  },
+  "WARP": {
+    "x": -96,
+    "y": -48,
+    "meta": [
+      "ROUND",
+      "HIDDEN"
+    ],
+    "icons": [
+      {
+        "texture": "thaumcraft:textures/research/r_warp.png",
+        "width": 32,
+        "height": 32
+      }
+    ]
+  },
+  "WORKBENCHCHARGER": {
+    "x": -72,
+    "y": 96,
+    "meta": [],
+    "icons": [
+      {
+        "id": "thaumcraft:arcane_workbench_charger"
+      }
+    ]
+  }
+}

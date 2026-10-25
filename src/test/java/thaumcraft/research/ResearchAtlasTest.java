@@ -1,0 +1,11 @@
+package thaumcraft.research;
+import java.nio.file.*;
+import com.google.gson.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+class ResearchAtlasTest {
+ @Test void zoomKeepsThePointUnderThePointerAndPanIsReversible(){var c=new ResearchAtlas.Camera();c.center(48,-24,360,200);double wx=c.worldX(71),wy=c.worldY(93);c.zoom(4,71,93);assertEquals(wx,c.worldX(71),1e-8);assertEquals(wy,c.worldY(93),1e-8);double x=c.screenX(10),y=c.screenY(20);c.pan(33,-19);assertEquals(x+33,c.screenX(10),1e-8);assertEquals(y-19,c.screenY(20),1e-8);c.pan(-33,19);assertEquals(x,c.screenX(10),1e-8);}
+ @Test void cameraBoundsRejectNonFiniteInputAndKeepZoomFinite(){var c=new ResearchAtlas.Camera();c.center(0,0,320,180);c.zoom(10000,45,23);assertEquals(2,c.zoom());c.zoom(-10000,45,23);assertEquals(.5,c.zoom());double x=c.x(),y=c.y();c.zoom(Double.NaN,0,0);c.pan(Double.POSITIVE_INFINITY,1);assertEquals(x,c.x());assertEquals(y,c.y());c.pan(1e8,-1e8);assertEquals(8192,c.x());assertEquals(-8192,c.y());}
+ @Test void originalBackgroundsHaveModernDecodablePngCopies() throws Exception {for(int i=1;i<=7;i++){var p=Path.of("src/modern/resources/assets/thaumcraft/textures/gui/gui_research_back_"+i+".png");byte[] b=Files.readAllBytes(p);assertEquals(0x89,b[0]&255);assertEquals(0x50,b[1]&255);var image=javax.imageio.ImageIO.read(p.toFile());assertNotNull(image);assertEquals(1024,image.getWidth());assertEquals(1024,image.getHeight());}}
+ @Test void atlasPreservesEveryOriginalResearchPositionAndFrameMetadata() throws Exception {int count=0;try(var files=Files.list(Path.of("src/main/resources/assets/thaumcraft/research"))){for(var file:files.filter(p->p.toString().endsWith(".json")).toList())for(var value:JsonParser.parseString(Files.readString(file)).getAsJsonObject().getAsJsonArray("entries")){var e=value.getAsJsonObject();var topic=ResearchAtlas.TOPICS.get(e.get("key").getAsString());assertNotNull(topic);assertEquals(e.getAsJsonArray("location").get(0).getAsFloat()*24,topic.x());assertEquals(e.getAsJsonArray("location").get(1).getAsFloat()*24,topic.y());assertFalse(topic.icons().isEmpty());if(e.has("meta"))for(var meta:e.getAsJsonArray("meta"))assertTrue(topic.meta().contains(meta.getAsString()));count++;}}assertEquals(148,count);assertEquals(ResearchCatalog.ENTRIES.size(),ResearchAtlas.TOPICS.size());}
+}

@@ -33,3 +33,7 @@ The final native client run passed recipe rendering, native output pickup and al
 ## Disposición original — port.62
 
 La mesa utiliza la textura original `arcaneworkbench.png`, con el tablero verde y el marco de madera. La cuadrícula está en (40,40), con separación de 24 píxeles; los cristales rodean el tablero en el orden original —aire arriba, fuego/agua en las esquinas superiores, tierra/orden en las inferiores y entropía abajo—. El resultado está en (160,64) y los inventarios conservan sus índices y contenidos. Los halos giratorios marcan los cristales requeridos y la reserva/coste de vis aparece junto a la salida. Se mantiene la recogida nativa del resultado y el pago del servidor.
+
+## Mapa y libro originales — port.69
+
+La lista provisional y el panel de texto se sustituyen por el [mapa original y las páginas de pergamino](THAUMONOMICON-ATLAS.md), conservando los requisitos, desbloqueos progresivos y recetas de las entregas anteriores.

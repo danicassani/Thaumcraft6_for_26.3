@@ -1058,5 +1058,9 @@
   "research.thaumcraft.goal.f_MATTHAUMIUM": "taumio",
   "research.thaumcraft.goal.f_MATVOID": "metal del vacío",
   "research.thaumcraft.goal_stage": "%s (etapa %s)",
-  "research.thaumcraft.addendum": "Hallazgos adicionales"
+  "research.thaumcraft.addendum": "Hallazgos adicionales",
+  "research.thaumcraft.atlas_center": "Centrar mapa",
+  "research.thaumcraft.atlas_back": "Volver al mapa de investigación",
+  "research.thaumcraft.previous": "Páginas anteriores",
+  "research.thaumcraft.next": "Páginas siguientes"
 }

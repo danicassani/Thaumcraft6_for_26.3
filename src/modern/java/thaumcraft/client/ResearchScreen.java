@@ -1,11 +1,15 @@
 package thaumcraft.client;
-
 import com.google.gson.*;
 import java.util.*;
+import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.input.MouseButtonEvent;
+import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
@@ -14,33 +18,43 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import thaumcraft.Thaumcraft;
 import thaumcraft.research.*;
-
+/** Original atlas and open-book assets over the existing authoritative research menu. */
 @Mod.EventBusSubscriber(modid=Thaumcraft.MODID,value=Dist.CLIENT)
 public final class ResearchScreen extends AbstractContainerScreen<ResearchMenu> {
-    private final List<Button> topics=new ArrayList<>(),categories=new ArrayList<>();
-    private Button advance,recipeShortcut;
-    private int category,listPage,textPage,lastSelected=-1;
-    public ResearchScreen(ResearchMenu menu,Inventory inventory,Component title){super(menu,inventory,title,390,226);}
-    @SubscribeEvent public static void register(FMLClientSetupEvent e){e.enqueueWork(()->net.minecraft.client.gui.screens.MenuScreens.register(ResearchContent.MENU.get(),ResearchScreen::new));}
-    protected void init(){
-        super.init();topics.clear();categories.clear();
-        for(int i=0;i<7;i++){final int c=i;categories.add(addRenderableWidget(Button.builder(Component.translatable("research.thaumcraft.category."+ResearchCatalog.CATEGORIES.get(i)),b->{category=c;listPage=0;textPage=0;var list=visible();if(!list.isEmpty())minecraft.gameMode.handleInventoryButtonClick(menu.containerId,1000+list.getFirst());}).bounds(leftPos+8+i*53,topPos+19,52,18).build()));}
-        for(int i=0;i<7;i++){final int row=i;topics.add(addRenderableWidget(Button.builder(Component.empty(),b->{var list=visible();int index=listPage*7+row;if(index<list.size()){textPage=0;minecraft.gameMode.handleInventoryButtonClick(menu.containerId,1000+list.get(index));}}).bounds(leftPos+8,topPos+44+i*22,124,20).build()));}
-        addRenderableWidget(Button.builder(Component.literal("<"),b->listPage=Math.max(0,listPage-1)).bounds(leftPos+8,topPos+204,24,16).build());
-        addRenderableWidget(Button.builder(Component.literal(">"),b->{if((listPage+1)*7<visible().size())listPage++;}).bounds(leftPos+108,topPos+204,24,16).build());
-        addRenderableWidget(Button.builder(Component.literal("<"),b->textPage=Math.max(0,textPage-1)).bounds(leftPos+144,topPos+184,24,16).build());
-        addRenderableWidget(Button.builder(Component.literal(">"),b->{if(textPage+1<pageCount())textPage++;}).bounds(leftPos+354,topPos+184,24,16).build());
-        recipeShortcut=addRenderableWidget(Button.builder(Component.translatable("research.thaumcraft.recipe_title"),b->textPage=textPage<textPages()?textPages():0).bounds(leftPos+176,topPos+184,90,16).build());
-        advance=addRenderableWidget(Button.builder(Component.translatable("research.thaumcraft.advance"),b->{minecraft.gameMode.handleInventoryButtonClick(menu.containerId,0);textPage=0;}).bounds(leftPos+282,topPos+204,96,16).build());
-    }
-    private List<Integer> visible(){var result=new ArrayList<Integer>();for(int i=0;i<ResearchCatalog.ENTRIES.size();i++)if(ResearchCatalog.ENTRIES.get(i).category().equals(ResearchCatalog.CATEGORIES.get(category))&&menu.visible(i))result.add(i);result.sort(java.util.Comparator.comparingInt((Integer i)->menu.stage(i)>0&&menu.stage(i)<=ResearchCatalog.ENTRIES.get(i).stages().size()?0:menu.stage(i)>0?1:2).thenComparingInt(i->i));return result;}
-    public void containerTick(){
-        super.containerTick();if(!menu.categoryUnlocked(category))category=0;int count=0;for(int i=0;i<7;i++)if(menu.categoryUnlocked(i))count++;int width=Math.min(110,371/Math.max(1,count)),position=0;
-        for(int i=0;i<7;i++){var b=categories.get(i);b.visible=menu.categoryUnlocked(i);if(b.visible){b.setX(leftPos+8+position++*width);b.setWidth(width-2);b.active=i!=category;}}
-        var list=visible();listPage=Math.min(listPage,Math.max(0,(list.size()-1)/7));
-        for(int i=0;i<topics.size();i++){var b=topics.get(i);int index=listPage*7+i;b.visible=index<list.size();if(b.visible){int id=list.get(index);var entry=ResearchCatalog.ENTRIES.get(id);b.setMessage(Component.literal(menu.stage(id)>entry.stages().size()?"✓ ":menu.stage(id)>0?"• ":"").append(Component.translatable(entry.name())));}}
-        if(lastSelected!=menu.selected()){lastSelected=menu.selected();textPage=0;}advance.active=menu.ready();recipeShortcut.visible=!recipeKeys().isEmpty();textPage=Math.min(textPage,pageCount()-1);
-    }
+ private static final Identifier FRAME=Identifier.parse("thaumcraft:textures/gui/gui_research_browser.png"),BOOK=Identifier.parse("thaumcraft:textures/gui/gui_researchbook.png");
+ private static final int[] BACKGROUNDS={1,2,3,4,7,5,6};
+ private final ResearchAtlas.Camera[] cameras=new ResearchAtlas.Camera[7];private final boolean[] centered=new boolean[7];
+ private final List<ArtButton> nodes=new ArrayList<>(),tabs=new ArrayList<>();private final List<ArtButton> readerControls=new ArrayList<>();
+ private int category,pending=-1,spread,lastSelected=-1,lastStage=-1;private boolean reading,dragging;
+ private ArtButton advance,shortcut,back,previous,next,center;
+ private int mapW,mapH;private int bookX,bookY,bookW,bookH,pageWidth,pageY,pageHeight;private static final float TEXT_SCALE=.75F;
+ public ResearchScreen(ResearchMenu m,Inventory i,Component t){super(m,i,t,390,226);for(int c=0;c<7;c++)cameras[c]=new ResearchAtlas.Camera();}
+ @SubscribeEvent public static void register(FMLClientSetupEvent e){e.enqueueWork(()->net.minecraft.client.gui.screens.MenuScreens.register(ResearchContent.MENU.get(),ResearchScreen::new));}
+ protected void init(){mapW=Math.max(180,width-64);mapH=Math.max(140,height-42);super.init();leftPos=(width-mapW)/2;topPos=(height-mapH)/2;nodes.clear();tabs.clear();readerControls.clear();
+  for(int c=0;c<7;c++){final int chosen=c;tabs.add(addRenderableWidget(new ArtButton(0,0,28,28,Component.translatable("research.thaumcraft.category."+ResearchCatalog.CATEGORIES.get(c)),"tab",c,b->{category=chosen;dragging=false;ensureCentered();position();})));}
+  for(int i=0;i<ResearchCatalog.ENTRIES.size();i++){final int id=i;var e=ResearchCatalog.ENTRIES.get(i);nodes.add(addRenderableWidget(new ArtButton(0,0,32,32,Component.translatable(e.name()),"node",i,b->{minecraft.gameMode.handleInventoryButtonClick(menu.containerId,1000+id);pending=id;dragging=false;})));}
+  center=addRenderableWidget(new ArtButton(0,0,68,16,Component.translatable("research.thaumcraft.atlas_center"),"center",0,b->{centered[category]=false;ensureCentered();position();}));
+  back=reader("back",Component.translatable("research.thaumcraft.atlas_back"),b->returnToMap());previous=reader("previous",Component.translatable("research.thaumcraft.previous"),b->spread=Math.max(0,spread-1));next=reader("next",Component.translatable("research.thaumcraft.next"),b->spread=Math.min(spreads()-1,spread+1));shortcut=reader("recipes",Component.translatable("research.thaumcraft.recipe_title"),b->spread=textLeaves()/2);advance=reader("advance",Component.translatable("research.thaumcraft.advance"),b->{minecraft.gameMode.handleInventoryButtonClick(menu.containerId,0);spread=0;});
+  bookH=Math.min(height-28,276);bookW=Math.min(width-36,(int)(bookH*512F/362));bookH=Math.round(bookW*362F/512);bookX=(width-bookW)/2;bookY=(height-bookH)/2;pageWidth=Math.round(bookW*.41F);pageY=bookY+Math.round(bookH*.20F);pageHeight=Math.round(bookH*.68F);ensureCentered();position();
+ }
+ private ArtButton reader(String kind,Component label,Button.OnPress press){var b=addRenderableWidget(new ArtButton(0,0,24,14,label,kind,0,press));readerControls.add(b);return b;}
+ private boolean inside(double x,double y){return x>=leftPos+3&&x<leftPos+mapW-3&&y>=topPos+3&&y<topPos+mapH-3;}
+ private void ensureCentered(){if(centered[category])return;var target=ResearchCatalog.ENTRIES.stream().filter(e->e.category().equals(ResearchCatalog.CATEGORIES.get(category))&&menu.visible(ResearchCatalog.ENTRIES.indexOf(e))).filter(e->menu.stage(ResearchCatalog.ENTRIES.indexOf(e))>0&&menu.stage(ResearchCatalog.ENTRIES.indexOf(e))<=e.stages().size()).findFirst().orElse(null);if(target==null)target=ResearchCatalog.ENTRIES.stream().filter(e->e.category().equals(ResearchCatalog.CATEGORIES.get(category))&&menu.visible(ResearchCatalog.ENTRIES.indexOf(e))).findFirst().orElse(null);var root=ResearchCatalog.BY_KEY.get(category==0?"FIRSTSTEPS":"BASE"+ResearchCatalog.CATEGORIES.get(category));if(root!=null&&menu.visible(ResearchCatalog.ENTRIES.indexOf(root)))target=root;var t=target==null?null:ResearchAtlas.TOPICS.get(target.key());cameras[category].center(t==null?0:t.x(),t==null?0:t.y(),mapW,mapH);centered[category]=true;}
+ private void position(){int row=0;for(int c=0;c<7;c++){var b=tabs.get(c);b.visible=!reading&&menu.categoryUnlocked(c);b.active=c!=category;b.setX(leftPos-29);b.setY(topPos+row*29);if(b.visible)row++;}
+  var camera=cameras[category];for(int i=0;i<nodes.size();i++){var b=nodes.get(i);var e=ResearchCatalog.ENTRIES.get(i);var t=ResearchAtlas.TOPICS.get(e.key());int size=(int)Math.round(32*camera.zoom());b.setWidth(size);b.setHeight(size);b.setX(leftPos+(int)Math.round(camera.screenX(t.x()))-size/2);b.setY(topPos+(int)Math.round(camera.screenY(t.y()))-size/2);b.visible=!reading&&menu.validData()&&menu.visible(i)&&e.category().equals(ResearchCatalog.CATEGORIES.get(category))&&b.getX()+size>leftPos&&b.getX()<leftPos+mapW&&b.getY()+size>topPos&&b.getY()<topPos+mapH;}
+  center.visible=!reading;center.setX(leftPos+mapW-70);center.setY(topPos+mapH+3);
+  for(var b:readerControls)b.visible=reading;back.setX(bookX+8);back.setY(bookY+bookH+1);previous.setX(bookX+18);previous.setY(bookY+bookH-20);next.setX(bookX+bookW-42);next.setY(bookY+bookH-20);shortcut.setX(bookX+bookW/2-30);shortcut.setY(bookY+bookH+1);shortcut.setWidth(60);advance.setX(bookX+bookW-88);advance.setY(bookY+bookH+1);advance.setWidth(80);advance.active=menu.ready();shortcut.visible=reading&&!recipeKeys().isEmpty();previous.active=spread>0;next.active=spread+1<spreads();
+ }
+ public void containerTick(){super.containerTick();if(!menu.validData())return;if(!menu.categoryUnlocked(category))category=0;ensureCentered();if(pending>=0&&menu.selected()==pending&&menu.stage(pending)>0){reading=true;pending=-1;spread=0;}if(lastSelected!=menu.selected()||lastStage!=menu.stage(menu.selected())){lastSelected=menu.selected();lastStage=menu.stage(menu.selected());spread=0;}spread=Math.min(spread,spreads()-1);position();}
+ private void returnToMap(){reading=false;pending=-1;dragging=false;position();}
+ public void onClose(){if(reading)returnToMap();else super.onClose();}
+ public boolean mouseClicked(MouseButtonEvent e,boolean twice){if(!reading&&inside(e.x(),e.y())&&(e.button()==InputConstants.MOUSE_BUTTON_RIGHT||e.button()==InputConstants.MOUSE_BUTTON_LEFT&&nodes.stream().noneMatch(b->b.visible&&b.isMouseOver(e.x(),e.y())))){dragging=true;return true;}return super.mouseClicked(e,twice);}
+ public boolean mouseDragged(MouseButtonEvent e,double dx,double dy){if(dragging&&!reading){cameras[category].pan(dx,dy);position();return true;}return super.mouseDragged(e,dx,dy);}
+ public boolean mouseReleased(MouseButtonEvent e){if(dragging){dragging=false;return true;}return super.mouseReleased(e);}
+ public boolean mouseScrolled(double x,double y,double horizontal,double vertical){if(!reading&&inside(x,y)){cameras[category].zoom(vertical,x-leftPos,y-topPos);position();return true;}return super.mouseScrolled(x,y,horizontal,vertical);}
+ public boolean mapView(){return !reading;}public int currentCategory(){return category;}public double zoom(){return cameras[category].zoom();}
+ public double[] nodeCenter(String key){var b=nodes.get(ResearchCatalog.ENTRIES.indexOf(ResearchCatalog.BY_KEY.get(key)));return new double[]{b.getX()+b.getWidth()/2D,b.getY()+b.getHeight()/2D};}
+ public int visibleTopics(){return (int)nodes.stream().filter(b->b.visible).count();}
     private ResearchCatalog.Entry entry(){int i=menu.selected();return i>=0&&i<ResearchCatalog.ENTRIES.size()?ResearchCatalog.ENTRIES.get(i):null;}
     private ResearchCatalog.Stage stage(){var e=entry();if(e==null||menu.stage(menu.selected())<=0)return null;return e.stages().get(Math.min(menu.stage(menu.selected()),e.stages().size())-1);}
     private String label(String key){return Component.translatable(key).getString();}
@@ -50,37 +64,47 @@ public final class ResearchScreen extends AbstractContainerScreen<ResearchMenu> 
     private String body(){
         if(!menu.validData())return label("research.thaumcraft.invalid");var e=entry();var page=stage();if(e==null)return "";
         if(page==null)return label("research.thaumcraft.parents")+" "+String.join(", ",e.parents().stream().map(this::researchName).toList());
-        var prose=label(page.text()).replaceAll("(?i)<br\\s*/?>","\n\n").replaceAll("<[^>]*>","").replaceAll("§[0-9a-fk-or]","");var text=new StringBuilder();
+        var prose=label(page.text()).replaceAll("(?i)<(?:br|page|line)\\s*/?>","\n\n").replaceAll("<[^>]*>","").replaceAll("§[0-9a-fk-or]","");var text=new StringBuilder();
         if(menu.stage(menu.selected())<=e.stages().size()){int goal=0;
             for(var r:page.crafts())text.append(menu.requirementDone(goal++)?"✓ ":"○ ").append(label("research.thaumcraft.craft")).append(' ').append(itemName(r)).append('\n');
             for(var r:page.research())text.append(menu.requirementDone(goal++)?"✓ ":"○ ").append(label("research.thaumcraft.discover")).append(' ').append(researchName(r)).append('\n');
             for(var r:page.items())text.append(menu.requirementDone(goal++)?"✓ ":"○ ").append(label("research.thaumcraft.deliver")).append(' ').append(r.count()).append(" × ").append(itemName(r)).append('\n');
             for(var r:page.costs())text.append(menu.requirementDone(goal++)?"✓ ":"○ ").append(label("research.thaumcraft.cost")).append(' ').append(r.amount()).append(' ').append(label("research.thaumcraft.points."+r.kind().toLowerCase(Locale.ROOT))).append(" (").append(label("research.thaumcraft.category."+r.category())).append(")\n");
-        }text.append("\n").append(prose);for(var a:addenda())text.append("\n\n").append(label("research.thaumcraft.addendum")).append("\n").append(label(a.text()).replaceAll("(?i)<br\\s*/?>","\n\n").replaceAll("<[^>]*>",""));return text.toString();
+        }text.append("\n").append(prose);for(var a:addenda())text.append("\n\n").append(label("research.thaumcraft.addendum")).append("\n").append(label(a.text()).replaceAll("(?i)<(?:br|page|line)\\s*/?>","\n\n").replaceAll("<[^>]*>",""));return text.toString();
     }
     private List<String> recipeKeys(){var p=stage();if(p==null)return List.of();var keys=new ArrayList<String>();for(var key:p.recipes())keys.addAll(BookRecipes.expand(key));for(var a:addenda())for(var key:a.recipes())for(var expanded:BookRecipes.expand(key))if(!keys.contains(expanded))keys.add(expanded);for(var r:p.crafts())if(BookRecipes.get(r.id())!=null&&!keys.contains(r.id()))keys.add(r.id());return keys;}
-    public List<String> illustratedRecipes(){return List.copyOf(recipeKeys());}
-    public String currentRecipe(){int index=textPage-textPages();var keys=recipeKeys();return index>=0&&index<keys.size()?keys.get(index):"";}
-    private int textPages(){return Math.max(1,(font.split(Component.literal(body()),232).size()+10)/11);}
-    private int pageCount(){return textPages()+recipeKeys().size();}
-    protected void extractLabels(GuiGraphicsExtractor g,int x,int y){}
-    private void icon(GuiGraphicsExtractor g,ItemStack stack,int x,int y,int mx,int my){if(stack.isEmpty())return;g.fill(x-1,y-1,x+17,y+17,0xFFDDCEB6);g.item(stack,x,y);g.itemDecorations(font,stack,x,y);if(mx>=x&&mx<x+16&&my>=y&&my<y+16)g.setTooltipForNextFrame(font,stack,mx,my);}
-    private void recipe(GuiGraphicsExtractor g,String key,int mx,int my){var view=BookRecipes.get(key);if(view==null){int y=topPos+80;for(var l:font.split(Component.translatable("research.thaumcraft.process_page"),220)){g.text(font,l,leftPos+148,y,0xFF302638,false);y+=10;}return;}
-        var result=BookRecipes.result(view);g.text(font,font.substrByWidth(result.getHoverName(),225).getString(),leftPos+146,topPos+68,0xFF302638,false);
-        String kind=view.get("kind").getAsString();g.text(font,Component.translatable("research.thaumcraft.recipe_kind."+kind),leftPos+146,topPos+80,0xFF715367,false);
-        var grid=view.getAsJsonArray("grid");for(int i=0;i<grid.size()&&i<9;i++)icon(g,BookRecipes.stack(grid.get(i)),leftPos+151+(i%3)*20,topPos+98+(i/3)*20,mx,my);
-        g.text(font,Component.literal("→"),leftPos+220,topPos+120,0xFF715367,false);icon(g,result,leftPos+243,topPos+118,mx,my);
-        if(view.has("input"))icon(g,BookRecipes.stack(view.get("input")),leftPos+219,topPos+98,mx,my);
-        if(view.has("vis")&&view.get("vis").getAsInt()>0)g.text(font,Component.translatable("research.thaumcraft.recipe_cost",view.get("vis").getAsInt()),leftPos+278,topPos+100,0xFF715367,false);
-        if(view.has("crystals")){int i=0;var crystals=view.getAsJsonObject("crystals");for(var aspect:thaumcraft.crafting.ArcaneRecipe.PRIMALS)if(crystals.has(aspect))icon(g,thaumcraft.crystals.CrystalContent.essence(aspect,crystals.get(aspect).getAsInt()),leftPos+244+(i%6)*21,topPos+153+(i++/6)*20,mx,my);}
-        if(view.has("aspects")){int i=0;for(var cost:view.getAsJsonObject("aspects").entrySet()){int xx=leftPos+244+(i%4)*32,yy=topPos+145+(i++/4)*19;if(i>8)break;icon(g,thaumcraft.crystals.CrystalContent.essence(cost.getKey(),1),xx,yy,mx,my);g.text(font,Integer.toString(cost.getValue().getAsInt()),xx+15,yy+6,0xFF302638,false);}}
-        if(kind.equals("salis_mundus"))g.text(font,font.substrByWidth(Component.translatable("research.thaumcraft.recipe_returned"),225).getString(),leftPos+146,topPos+169,0xFF715367,false);
-    }
-    public void extractBackground(GuiGraphicsExtractor g,int mx,int my,float partial){
-        super.extractBackground(g,mx,my,partial);g.fill(leftPos,topPos,leftPos+imageWidth,topPos+imageHeight,0xFF37273E);g.fill(leftPos+138,topPos+40,leftPos+382,topPos+202,0xFFF1E4C9);g.text(font,title,leftPos+8,topPos+6,0xFFFFE9BA,false);
-        var e=entry();if(e!=null){int s=menu.stage(menu.selected());g.text(font,font.substrByWidth(Component.translatable(e.name()),232).getString(),leftPos+144,topPos+44,0xFF38293E,false);g.text(font,Component.translatable("research.thaumcraft.stage",Math.min(s,e.stages().size()),e.stages().size()),leftPos+144,topPos+55,0xFF715367,false);}
-        int texts=textPages();if(textPage>=texts){var keys=recipeKeys();int index=textPage-texts;if(index<keys.size())recipe(g,keys.get(index),mx,my);}else{var lines=font.split(Component.literal(body()),232);for(int i=0,start=textPage*11;i<11&&start+i<lines.size();i++)g.text(font,lines.get(start+i),leftPos+144,topPos+68+i*10,0xFF302638,false);}
-        g.text(font,Component.literal((textPage+1)+" / "+pageCount()),leftPos+290,topPos+188,0xFF38293E,false);g.text(font,Component.literal((listPage+1)+" / "+Math.max(1,(visible().size()+6)/7)),leftPos+52,topPos+208,0xFFFFE9BA,false);
-        g.text(font,Component.translatable("research.thaumcraft.points_short",menu.points(false,category)/16,menu.points(true,category)/32),leftPos+144,topPos+208,0xFFFFE9BA,false);if(mx>=leftPos+144&&mx<leftPos+278&&my>=topPos+204&&my<topPos+222)g.setTooltipForNextFrame(Component.translatable("research.thaumcraft.points_progress",menu.points(false,category)%16*100/16,menu.points(true,category)%32*100/32),mx,my);g.text(font,Component.translatable("research.thaumcraft.scans",menu.scans()),leftPos+236,topPos+6,0xFFFFE9BA,false);
-    }
+
+ public List<String> illustratedRecipes(){return List.copyOf(recipeKeys());}
+ private int linesPerLeaf(){return Math.max(8,(int)(pageHeight/(10*TEXT_SCALE)));}
+ private int textLeaves(){return Math.max(1,(font.split(Component.literal(body()),(int)(pageWidth/TEXT_SCALE)).size()+linesPerLeaf()-1)/linesPerLeaf());}
+ private int leaves(){return textLeaves()+recipeKeys().size();}private int spreads(){return Math.max(1,(leaves()+1)/2);}
+ public String currentRecipe(){var keys=recipeKeys();for(int leaf=spread*2;leaf<=spread*2+1;leaf++){int i=leaf-textLeaves();if(i>=0&&i<keys.size())return keys.get(i);}return "";}
+ protected void extractLabels(GuiGraphicsExtractor g,int x,int y){}
+ private void line(GuiGraphicsExtractor g,int x1,int y1,int x2,int y2,int color){double length=Math.hypot(x2-x1,y2-y1);if(length<1)return;g.pose().pushMatrix();g.pose().translate(x1,y1);g.pose().rotate((float)Math.atan2(y2-y1,x2-x1));g.fill(0,0,(int)Math.ceil(length),1,color);g.pose().popMatrix();}
+ private void atlas(GuiGraphicsExtractor g,int mx,int my){var camera=cameras[category];g.enableScissor(leftPos+3,topPos+3,leftPos+mapW-3,topPos+mapH-3);int u=Math.floorMod((int)(-camera.x()/4),256),v=Math.floorMod((int)(-camera.y()/4),256);float sampleScale=Math.min(2,768F/Math.max(mapW,mapH));g.blit(RenderPipelines.GUI_TEXTURED,Identifier.parse("thaumcraft:textures/gui/gui_research_back_"+BACKGROUNDS[category]+".png"),leftPos,topPos,u,v,mapW,mapH,Math.round(mapW*sampleScale),Math.round(mapH*sampleScale),1024,1024);
+  for(int i=0;i<nodes.size();i++){var child=nodes.get(i);if(!child.visible)continue;for(var query:ResearchCatalog.ENTRIES.get(i).parents()){var parent=ResearchCatalog.BY_KEY.get(query.replaceFirst("^~","").split("@")[0]);if(parent==null)continue;var p=nodes.get(ResearchCatalog.ENTRIES.indexOf(parent));if(!menu.visible(ResearchCatalog.ENTRIES.indexOf(parent))||!parent.category().equals(ResearchCatalog.CATEGORIES.get(category)))continue;int x1=p.getX()+p.getWidth()/2,y1=p.getY()+p.getHeight()/2,x2=child.getX()+child.getWidth()/2,y2=child.getY()+child.getHeight()/2;line(g,x1,y1,x2,y2,0x806f6391);line(g,x1,y1-1,x2,y2-1,0xffc4ad80);}}
+  g.disableScissor();g.blit(RenderPipelines.GUI_TEXTURED,FRAME,leftPos,topPos,48,16,mapW,3,64,16,256,256);g.blit(RenderPipelines.GUI_TEXTURED,FRAME,leftPos,topPos+mapH-3,48,16,mapW,3,64,16,256,256);g.blit(RenderPipelines.GUI_TEXTURED,FRAME,leftPos,topPos,16,48,3,mapH,16,64,256,256);g.blit(RenderPipelines.GUI_TEXTURED,FRAME,leftPos+mapW-3,topPos,16,48,3,mapH,16,64,256,256);
+  g.text(font,title,leftPos,topPos-12,0xffead5a2,true);g.text(font,font.substrByWidth(Component.translatable("research.thaumcraft.category."+ResearchCatalog.CATEGORIES.get(category)),Math.max(70,mapW/2)).getString(),leftPos+mapW/2,topPos-12,0xffead5a2,true);g.text(font,Component.translatable("research.thaumcraft.points_short",menu.points(false,category)/16,menu.points(true,category)/32),leftPos,topPos+mapH+6,0xffead5a2,true);
+ }
+ private void book(GuiGraphicsExtractor g,int mx,int my){g.blit(RenderPipelines.GUI_TEXTURED,BOOK,bookX,bookY,0,0,bookW,bookH,512,362,512,512);var e=entry();if(e==null)return;var lines=font.split(Component.literal(body()),(int)(pageWidth/TEXT_SCALE));int rows=linesPerLeaf(),texts=textLeaves();var keys=recipeKeys();for(int side=0;side<2;side++){int leaf=spread*2+side;if(leaf>=leaves())continue;int x=bookX+Math.round(bookW*(side==0?.06F:.535F));g.enableScissor(x-1,bookY+8,x+pageWidth+1,bookY+bookH-17);if(leaf<texts){g.pose().pushMatrix();g.pose().translate(x,bookY+bookH*.065F);g.pose().scale(.8F,.8F);g.text(font,font.substrByWidth(Component.translatable(e.name()),(int)(pageWidth/.8F)).getString(),0,0,0xff493224,false);g.pose().popMatrix();g.pose().pushMatrix();g.pose().translate(x,bookY+bookH*.13F);g.pose().scale(.65F,.65F);g.text(font,Component.translatable("research.thaumcraft.stage",Math.min(menu.stage(menu.selected()),e.stages().size()),e.stages().size()),0,0,0xff775d43,false);g.pose().popMatrix();g.pose().pushMatrix();g.pose().translate(x,pageY);g.pose().scale(TEXT_SCALE,TEXT_SCALE);for(int n=0,start=leaf*rows;n<rows&&start+n<lines.size();n++)g.text(font,lines.get(start+n),0,n*10,0xff382d24,false);g.pose().popMatrix();}else{float scale=Math.min(pageWidth/160F,(bookH*.80F)/170F);g.pose().pushMatrix();g.pose().translate(x,bookY+bookH*.07F);g.pose().scale(scale,scale);recipe(g,keys.get(leaf-texts),mx,my,x,bookY+bookH*.07F,scale);g.pose().popMatrix();}g.disableScissor();g.pose().pushMatrix();g.pose().translate(x+pageWidth/2-4,bookY+bookH-18);g.pose().scale(.65F,.65F);g.text(font,Integer.toString(leaf+1),0,0,0xff775d43,false);g.pose().popMatrix();}}
+ private void icon(GuiGraphicsExtractor g,ItemStack stack,int x,int y,int mx,int my,double ox,double oy,float scale){if(stack.isEmpty())return;g.item(stack,x,y);g.itemDecorations(font,stack,x,y);double px=ox+x*scale,py=oy+y*scale;if(mx>=px&&mx<px+16*scale&&my>=py&&my<py+16*scale)g.setTooltipForNextFrame(font,stack,mx,my);}
+ private void recipe(GuiGraphicsExtractor g,String key,int mx,int my,double ox,double oy,float scale){var view=BookRecipes.get(key);if(view==null){int y=20;for(var l:font.split(Component.translatable("research.thaumcraft.process_page"),158)){g.text(font,l,0,y,0xff493224,false);y+=10;}return;}var result=BookRecipes.result(view);int yy=0;for(var l:font.split(result.getHoverName(),158)){g.text(font,l,0,yy,0xff493224,false);yy+=10;}String kind=view.get("kind").getAsString();g.text(font,font.substrByWidth(Component.translatable("research.thaumcraft.recipe_kind."+kind),158).getString(),0,yy+3,0xff775d43,false);var grid=view.getAsJsonArray("grid");for(int i=0;i<grid.size()&&i<9;i++)icon(g,BookRecipes.stack(grid.get(i)),5+(i%3)*20,40+(i/3)*20,mx,my,ox,oy,scale);g.text(font,"→",82,64,0xff775d43,false);icon(g,result,119,61,mx,my,ox,oy,scale);if(view.has("input"))icon(g,BookRecipes.stack(view.get("input")),81,40,mx,my,ox,oy,scale);
+  if(view.has("vis")&&view.get("vis").getAsInt()>0)g.text(font,Component.translatable("research.thaumcraft.recipe_cost",view.get("vis").getAsInt()),5,104,0xff775d43,false);
+  if(view.has("crystals")){int i=0;for(var a:thaumcraft.crafting.ArcaneRecipe.PRIMALS)if(view.getAsJsonObject("crystals").has(a)){var s=thaumcraft.crystals.CrystalContent.essence(a,view.getAsJsonObject("crystals").get(a).getAsInt());icon(g,s,5+i%6*24,120+i/6*20,mx,my,ox,oy,scale);i++;}}
+  if(view.has("aspects")){int i=0;for(var cost:view.getAsJsonObject("aspects").entrySet()){int x=5+i%4*38,y=105+i/4*20;i++;g.blit(RenderPipelines.GUI_TEXTURED,Identifier.parse("thaumcraft:textures/aspects/"+cost.getKey()+".png"),x,y,0,0,14,14,32,32,0xff000000|thaumcraft.crystals.CrystalAspects.COLORS.get(cost.getKey()));g.text(font,cost.getValue().getAsString(),x+15,y+4,0xff493224,false);double px=ox+x*scale,py=oy+y*scale;if(mx>=px&&mx<px+14*scale&&my>=py&&my<py+14*scale)g.setTooltipForNextFrame(Component.translatable("tc.aspect."+cost.getKey()),mx,my);}}
+  if(kind.equals("salis_mundus")){int y=143;for(var l:font.split(Component.translatable("research.thaumcraft.recipe_returned"),158)){g.text(font,l,0,y,0xff775d43,false);y+=10;}}
+ }
+ public void extractBackground(GuiGraphicsExtractor g,int mx,int my,float partial){super.extractBackground(g,mx,my,partial);if(reading)book(g,mx,my);else atlas(g,mx,my);}
+ private void topicIcon(GuiGraphicsExtractor g,ResearchAtlas.Topic topic,int x,int y,int size){if(topic.icons().isEmpty())return;var icon=topic.icons().get((int)(System.currentTimeMillis()/1200%topic.icons().size()));if(icon.has("texture")){int w=icon.get("width").getAsInt(),h=icon.get("height").getAsInt(),cell=Math.min(w,h),frames=Math.max(w,h)/cell,frame=(int)(System.currentTimeMillis()/160%frames);g.blit(RenderPipelines.GUI_TEXTURED,Identifier.parse(icon.get("texture").getAsString()),x,y,w>h?frame*cell:0,h>w?frame*cell:0,size,size,cell,cell,w,h);}else{var stack=BookRecipes.stack(icon);g.pose().pushMatrix();g.pose().translate(x,y);g.pose().scale(size/16F,size/16F);g.item(stack,0,0);g.pose().popMatrix();}}
+ private final class ArtButton extends Button {
+  final String kind;final int ref;
+  ArtButton(int x,int y,int w,int h,Component text,String kind,int ref,OnPress press){super(x,y,w,h,text,press,DEFAULT_NARRATION);this.kind=kind;this.ref=ref;setTooltip(Tooltip.create(text));}
+  public boolean isMouseOver(double x,double y){return (!kind.equals("node")||inside(x,y))&&super.isMouseOver(x,y);}
+  protected void extractContents(GuiGraphicsExtractor g,int mx,int my,float partial){int x=getX(),y=getY(),w=getWidth(),h=getHeight();if(kind.equals("node")){g.enableScissor(leftPos+3,topPos+3,leftPos+mapW-3,topPos+mapH-3);var e=ResearchCatalog.ENTRIES.get(ref);var t=ResearchAtlas.TOPICS.get(e.key());int u=t.meta().contains("ROUND")?144:t.meta().contains("HEX")?112:80,v=t.meta().contains("HIDDEN")?80:48;g.blit(RenderPipelines.GUI_TEXTURED,FRAME,x,y,u,v,w,h,32,32,256,256);if(t.meta().contains("SPIKY"))g.blit(RenderPipelines.GUI_TEXTURED,FRAME,x,y,176,v,w,h,32,32,256,256);topicIcon(g,t,x+w/4,y+h/4,w/2);if(menu.stage(ref)>e.stages().size())g.text(font,"✓",x+w-7,y+h-9,0xff7be289,true);else if(menu.stage(ref)>0)g.fill(x+w/2-2,y+h-3,x+w/2+2,y+h-1,0xfff8d27b);if(isHovered)g.fill(x+4,y+h-1,x+w-4,y+h,0xffebd49c);g.disableScissor();return;}
+   if(kind.equals("tab")){g.blit(RenderPipelines.GUI_TEXTURED,FRAME,x,y,80,ref==category?80:48,w,h,32,32,256,256);String tex=ref==0?"textures/items/thaumonomicon_cheat.png":"textures/research/cat_"+ResearchCatalog.CATEGORIES.get(ref).toLowerCase(Locale.ROOT)+".png";g.blit(RenderPipelines.GUI_TEXTURED,Identifier.parse("thaumcraft:"+tex),x+6,y+6,0,0,16,16,32,32);return;}
+   if(kind.equals("previous")||kind.equals("next")||kind.equals("back")){if(!active)return;g.blit(RenderPipelines.GUI_TEXTURED,BOOK,x,y,kind.equals("next")?320:80,kind.equals("next")?448:408,w,h,kind.equals("next")?16:24,16,512,512);return;}
+   if(kind.equals("recipes")||kind.equals("advance"))g.blit(RenderPipelines.GUI_TEXTURED,BOOK,x,y,168,432,w,h,126,22,512,512);
+   int color=reading?(active?0xff67341f:0xff9c8972):0xffead5a2;g.pose().pushMatrix();g.pose().translate(x,y+3);g.pose().scale(.8F,.8F);g.text(font,font.substrByWidth(getMessage(),(int)(w/.8F)).getString(),0,0,color,!reading);g.pose().popMatrix();if(isHovered&&active)g.fill(x,y+h-1,x+w,y+h,reading?0xff9c6441:0xffead5a2);
+  }
+ }
 }
