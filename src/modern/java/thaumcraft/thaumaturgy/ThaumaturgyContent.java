@@ -16,9 +16,12 @@ import net.minecraftforge.eventbus.api.bus.BusGroup;
 import thaumcraft.*;
 import thaumcraft.content.*;
 public final class ThaumaturgyContent {
+    private static final DeferredRegister<net.minecraft.sounds.SoundEvent> SOUNDS=DeferredRegister.create(Registries.SOUND_EVENT,Thaumcraft.MODID);
+    public static final RegistryObject<net.minecraft.sounds.SoundEvent> GRAPPLE_SOUND=SOUNDS.register("ice",()->net.minecraft.sounds.SoundEvent.createVariableRangeEvent(SimpleContent.id("ice")));
     private static final DeferredRegister<DataComponentType<?>> COMPONENTS=DeferredRegister.create(Registries.DATA_COMPONENT_TYPE,Thaumcraft.MODID);
     private static final DeferredRegister<BlockEntityType<?>> TYPES=DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE,Thaumcraft.MODID);
     private static final DeferredRegister<MenuType<?>> MENUS=DeferredRegister.create(Registries.MENU,Thaumcraft.MODID);
+    public static final RegistryObject<DataComponentType<java.util.UUID>> GRAPPLE_LINK=COMPONENTS.register("grapple_link",()->DataComponentType.<java.util.UUID>builder().persistent(net.minecraft.core.UUIDUtil.CODEC).networkSynchronized(net.minecraft.core.UUIDUtil.STREAM_CODEC).build());
     public static final RegistryObject<DataComponentType<FocusProgram>> PROGRAM=COMPONENTS.register("focus_program",()->DataComponentType.<FocusProgram>builder().persistent(FocusProgram.CODEC).networkSynchronized(ByteBufCodecs.fromCodec(FocusProgram.CODEC)).build());
     public static final RegistryObject<DataComponentType<PlanControls.Selection>> PLAN_SELECTION=COMPONENTS.register("plan_selection",()->DataComponentType.<PlanControls.Selection>builder().persistent(PlanControls.Selection.CODEC).networkSynchronized(ByteBufCodecs.fromCodec(PlanControls.Selection.CODEC)).build());
     public static final RegistryObject<DataComponentType<ItemStack>> FOCUS=COMPONENTS.register("caster_focus",()->DataComponentType.<ItemStack>builder().persistent(ItemStack.CODEC).networkSynchronized(ItemStack.STREAM_CODEC).build());
@@ -48,7 +51,7 @@ public final class ThaumaturgyContent {
         });}
 
         net.minecraftforge.event.entity.EntityAttributeCreationEvent.BUS.addListener(e->e.put(SPELLBAT.get(),net.minecraft.world.entity.ambient.Bat.createAttributes().add(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH,5).build()));RiftData.register();PlanControls.register();
-        RareEarthLoot.register(bus);COMPONENTS.register(bus);TYPES.register(bus);MENUS.register(bus);
+        GrappleGun.register();SOUNDS.register(bus);RareEarthLoot.register(bus);COMPONENTS.register(bus);TYPES.register(bus);MENUS.register(bus);
         net.minecraftforge.event.entity.player.ItemTooltipEvent.BUS.addListener(e->{var s=e.getItemStack();var program=s.get(PROGRAM.get());if(program==null&&s.getItem() instanceof CasterItem){var f=s.get(FOCUS.get());if(f!=null)program=f.get(PROGRAM.get());}if(program!=null){
             e.getToolTip().add(net.minecraft.network.chat.Component.translatable("focus.thaumcraft.details",net.minecraft.network.chat.Component.translatable("focus.thaumcraft."+program.medium()),program.complexity(),program.vis()));
             e.getToolTip().add(net.minecraft.network.chat.Component.translatable("focus.thaumcraft.materials",program.levels(),program.crystals()));

@@ -1,6 +1,15 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "thaumcraft:item/grapple_gun"
+    "type": "minecraft:condition",
+    "property": "minecraft:has_component",
+    "component": "thaumcraft:grapple_link",
+    "on_true": {
+      "type": "minecraft:model",
+      "model": "thaumcraft:item/grapple_gun_2"
+    },
+    "on_false": {
+      "type": "minecraft:model",
+      "model": "thaumcraft:item/grapple_gun_1"
+    }
   }
 }

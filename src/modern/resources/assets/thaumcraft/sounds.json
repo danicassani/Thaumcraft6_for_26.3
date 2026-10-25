@@ -176,5 +176,12 @@
     "sounds": [
       "thaumcraft:scan"
     ]
+  },
+  "ice": {
+    "sounds": [
+      "thaumcraft:ice1",
+      "thaumcraft:ice2",
+      "thaumcraft:ice3"
+    ]
   }
 }
