@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "thaumcraft:block/turret_advanced"
+    "model": "thaumcraft:item/turret_advanced"
   }
 }

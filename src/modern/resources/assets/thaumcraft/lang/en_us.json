@@ -586,11 +586,11 @@
   "research.VISBATTERY.stage.2": "I have succeeded in creating a vis battery.<BR>If the local aura is above 95% of its normal capacity the battery will absorb vis and if the aura drops below 75% it will discharge.<BR>There are a few drawbacks however. While it is quicker and a lot more reliable than natural vis crystals, the battery still takes some time to react to changes in the local aura. The second drawback is it's capacity. It can only store 10 points of vis. My attemps to increase this has proven disastrous. I guess this just means that I will need to use them in larger numbers.<BR>Applying a redstone signal to the battery will not only prevent it from functioning, but it will rapidly discharge any vis it is holding back into the aura.",
   "research.BASICTURRET.title": "Automated Crossbow",
   "research.BASICTURRET.stage.1": "A few attacks from wandering monsters has recently turned my mind towards home defense. I should design some sort of automated device that will defend my home from unwanted intruders. ",
-  "research.BASICTURRET.stage.2": "Place your automated crossbow and right click it with normal arrows to load up to 64. It attacks visible monsters up to 24 blocks away, consuming one arrow per shot. Redstone pauses it. Sneak-use an empty hand to retrieve ammunition. Only its owner can configure it; it fires while the owner is present in this dimension.",
+  "research.BASICTURRET.stage.2": "Place the crossbow and use it to open its inventory. Normal, tipped and spectral arrows retain their effects. An upward-facing dispenser beneath it reloads it when empty. It attacks visible monsters within 24 blocks and consumes one arrow per shot. Redstone pauses it. Sneak-use with an empty hand to collect it and its ammunition. It fires while its owner is present in this dimension. It can ride a minecart.",
   "research.f_DISPENSER.text": "Examine something that can launch objects.",
   "research.ADVANCEDTURRET.title": "Advanced Automated Crossbow",
   "research.ADVANCEDTURRET.stage.1": "My recent discovery of advanced artificial minds might allow me to make some much needed improvements to my automated turrets. ",
-  "research.ADVANCEDTURRET.stage.2": "The advanced crossbow fires faster and more accurately. Use a stick to cycle monsters, other non-allied creatures or players. Allies, pets and PVP-disabled targets are protected. It uses the same arrows, owner and redstone rules as the basic model.",
+  "research.ADVANCEDTURRET.stage.2": "The advanced crossbow fires faster and more accurately. Its inventory lets you combine animals, monsters and players as targets. Allies, pets, creative players and players protected by PVP rules remain safe. It shares ammunition and reloading with the basic model. Only the owner can configure or collect a crossbow.",
   "research.BASEGOLEMANCY.title": "Basic Golemancy",
   "research.BASEGOLEMANCY.stage.1": "I now understand the basic concepts that shape Golemancy, but I am sure I can improve on the primitive constructs that anyone can craft. At the very least I can use arcane science to design a simple mind that will be both dependable and predictable instead of relying on the chaotic nature of magic to direct my constructs.",
   "research.JARBRAIN.title": "Brain in a Jar",
@@ -1457,5 +1457,10 @@
   "focal.thaumcraft.canvas_issue_3": "Research incomplete",
   "focal.thaumcraft.canvas_issue_4": "Not enough XP levels",
   "focal.thaumcraft.canvas_issue_5": "Missing vis crystals",
-  "focal.thaumcraft.canvas_issue_6": "Crafting in progress"
+  "focal.thaumcraft.canvas_issue_6": "Crafting in progress",
+  "entity.thaumcraft.turret_basic": "Automated Crossbow",
+  "entity.thaumcraft.turret_advanced": "Advanced Crossbow",
+  "turret.thaumcraft.animals": "Animals",
+  "turret.thaumcraft.monsters": "Monsters",
+  "turret.thaumcraft.players": "Players"
 }

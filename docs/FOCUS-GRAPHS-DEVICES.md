@@ -1,6 +1,6 @@
 # Grafos y dispositivos de taumaturgia — port.19
 
-Actualización: [port.66](GRAPPLE-VISUALS.md) recupera los modelos originales del gancho y el cable texturizado. [port.65](FOCUS-CANVAS.md) incorpora el lienzo visual, selección directa, secuencias sin efectos intermedios y ocho niveles. La [perforadora arcana](ARCANE-BORE.md) está implementada desde port.64. Los límites y pendientes del texto siguiente describen la entrega histórica de port.19.
+Actualización: [port.67](AUTOMATED-CROSSBOWS.md) recupera las ballestas como entidades, sus modelos originales, animaciones, munición especial y recarga automática. [port.66](GRAPPLE-VISUALS.md) recupera los modelos originales del gancho y el cable texturizado. [port.65](FOCUS-CANVAS.md) incorpora el lienzo visual, selección directa, secuencias sin efectos intermedios y ocho niveles. La [perforadora arcana](ARCANE-BORE.md) está implementada desde port.64. Los límites y pendientes del texto siguiente describen la entrega histórica de port.19.
 
 Minecraft 26.3 / Forge 66.0.13 / Java 25. Amplía M10 con continuaciones de focos, bolsa, vara pech, colapsador causal, gancho y dos torretas. Las puntas y bobinas ya existían; se conectan a sus recetas y al lanzador.
 

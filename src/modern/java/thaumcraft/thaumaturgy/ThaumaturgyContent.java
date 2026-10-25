@@ -46,9 +46,7 @@ public final class ThaumaturgyContent {
         SimpleContent.item("wand_workbench",p->new BlockItem(TABLE.get(),p.useBlockDescriptionPrefix()));
         SimpleContent.item("caster_basic",CasterItem::new);SimpleContent.item("focus_pouch",FocusPouch::new);SimpleContent.item("pech_wand",PechWand::new);SimpleContent.item("causality_collapser",CausalityCollapser::new);
         SimpleContent.item("grapple_gun",GrappleGun::new);
-        for(var name:List.of("turret_basic","turret_advanced")){var block=name.equals("turret_basic")?TURRET:TURRET_ADVANCED;SimpleContent.item(name,props->new BlockItem(block.get(),props.useBlockDescriptionPrefix()){
-            public net.minecraft.world.InteractionResult useOn(net.minecraft.world.item.context.UseOnContext c){if(!c.getLevel().isClientSide()&&(c.getPlayer()==null||!thaumcraft.research.ResearchService.knows(c.getPlayer(),name.equals("turret_basic")?"BASICTURRET":"ADVANCEDTURRET")))return net.minecraft.world.InteractionResult.FAIL;return super.useOn(c);}
-        });}
+        TurretContent.register(bus);
 
         net.minecraftforge.event.entity.EntityAttributeCreationEvent.BUS.addListener(e->e.put(SPELLBAT.get(),net.minecraft.world.entity.ambient.Bat.createAttributes().add(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH,5).build()));RiftData.register();PlanControls.register();
         GrappleGun.register();SOUNDS.register(bus);RareEarthLoot.register(bus);COMPONENTS.register(bus);TYPES.register(bus);MENUS.register(bus);

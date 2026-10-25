@@ -564,8 +564,8 @@
   "block.thaumcraft.turret_advanced": "Ballesta automática avanzada",
   "research.FOCUSPOUCH.stage.2": "Abre la bolsa en la mano principal para guardar 18 focos físicos. Con la bolsa en la mano secundaria y el guantelete en la principal, usa el guantelete agachado para alternarlos. El foco instalado vuelve al hueco de la bolsa; conserva nombre y grafo.",
   "research.GRAPPLEGUN.stage.2": "Carga el lanzador en un pedestal de recarga o con un amuleto de vis (capacidad 100). Cada disparo consume una carga y se fija a un bloque sólido hasta 32 bloques. El cable te atrae al anclaje. Agáchate o usa otra vez para soltarte. Cambiar el soporte u obstruir el cable también lo suelta.",
-  "research.BASICTURRET.stage.2": "Coloca tu ballesta automática y usa flechas normales sobre ella para cargar hasta 64. Ataca monstruos visibles hasta 24 bloques y consume una flecha por disparo. La redstone la pausa. Usa la mano vacía agachado para recuperar munición. Solo el propietario puede configurarla; dispara mientras está presente en esta dimensión.",
-  "research.ADVANCEDTURRET.stage.2": "La ballesta avanzada dispara más rápido y con más precisión. Usa un palo para alternar monstruos, otras criaturas no aliadas o jugadores. Protege aliados, mascotas y objetivos con PVP desactivado. Comparte munición, propietario y control por redstone con el modelo básico.",
+  "research.BASICTURRET.stage.2": "Coloca la ballesta y úsala para abrir su inventario. Admite flechas normales, con poción y espectrales, conservando sus efectos. Un dispensador orientado hacia arriba debajo de ella la recarga cuando se vacía. Ataca monstruos visibles hasta 24 bloques y consume una flecha por disparo. La redstone la pausa. Usa la mano vacía agachado para recogerla junto con la munición. Dispara mientras su propietario está presente en esta dimensión. Puede viajar en vagoneta.",
+  "research.ADVANCEDTURRET.stage.2": "La ballesta avanzada dispara más rápido y con más precisión. Su inventario permite combinar animales, monstruos y jugadores como objetivos. Aliados, mascotas, creativo y jugadores protegidos por las reglas de PVP quedan a salvo. Comparte munición y recarga con la básica. Solo el propietario puede configurar o recoger sus ballestas.",
   "research.RIFTCLOSER.stage.2": "Lanza el colapsador causal hacia una grieta de flux. Explota al impactar e inicia el colapso de las grietas a tres bloques. El colapso persiste y produce el botín normal de la grieta. Aléjate de la explosión.",
   "research.BASEAUROMANCY.stage.3": " La quinta página Más añade, abre o elimina la continuación de la rama seleccionada, o vuelve al nivel anterior. Cada nivel admite su modificador y dos ramas; máximo cuatro niveles, ocho efectos totales y 64 ejecuciones. Coste, cristales e investigación incluyen todo el grafo. Cada continuación parte del impacto anterior.",
   "focal.thaumcraft.graph_node": "Nodo %s",
@@ -1007,5 +1007,10 @@
   "focal.thaumcraft.canvas_issue_3": "Investigación incompleta",
   "focal.thaumcraft.canvas_issue_4": "Faltan niveles de XP",
   "focal.thaumcraft.canvas_issue_5": "Faltan cristales de vis",
-  "focal.thaumcraft.canvas_issue_6": "Fabricación en curso"
+  "focal.thaumcraft.canvas_issue_6": "Fabricación en curso",
+  "entity.thaumcraft.turret_basic": "Ballesta automática",
+  "entity.thaumcraft.turret_advanced": "Ballesta automática avanzada",
+  "turret.thaumcraft.animals": "Animales",
+  "turret.thaumcraft.monsters": "Monstruos",
+  "turret.thaumcraft.players": "Jugadores"
 }
