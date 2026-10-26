@@ -1,5 +1,7 @@
 # Opciones de focos — port.18
 
+Actualización port.74: Rotura ya usa trabajo gradual y pago local por bloque; véase [FOCUS-BREAKING.md](FOCUS-BREAKING.md). El resto de esta página describe la entrega original.
+
 Minecraft 26.3 / Forge 66.0.13 / Java 25. Amplía M10 sin nuevos objetos, bloques ni recetas: 230 IDs de objeto, 118 bloques y 264 recetas.
 
 ## Uso

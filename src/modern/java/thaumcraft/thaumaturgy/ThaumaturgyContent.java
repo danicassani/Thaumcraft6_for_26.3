@@ -48,7 +48,7 @@ public final class ThaumaturgyContent {
         SimpleContent.item("grapple_gun",GrappleGun::new);
         TurretContent.register(bus);
 
-        net.minecraftforge.event.entity.EntityAttributeCreationEvent.BUS.addListener(e->e.put(SPELLBAT.get(),net.minecraft.world.entity.ambient.Bat.createAttributes().add(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH,5).build()));RiftData.register();PlanControls.register();
+        net.minecraftforge.event.entity.EntityAttributeCreationEvent.BUS.addListener(e->e.put(SPELLBAT.get(),net.minecraft.world.entity.ambient.Bat.createAttributes().add(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH,5).build()));RiftData.register();FocusBreaking.register();PlanControls.register();
         GrappleGun.register();SOUNDS.register(bus);RareEarthLoot.register(bus);COMPONENTS.register(bus);TYPES.register(bus);MENUS.register(bus);
         net.minecraftforge.event.entity.player.ItemTooltipEvent.BUS.addListener(e->{var s=e.getItemStack();var program=s.get(PROGRAM.get());if(program==null&&s.getItem() instanceof CasterItem){var f=s.get(FOCUS.get());if(f!=null)program=f.get(PROGRAM.get());}if(program!=null){
             e.getToolTip().add(net.minecraft.network.chat.Component.translatable("focus.thaumcraft.details",net.minecraft.network.chat.Component.translatable("focus.thaumcraft."+program.medium()),program.complexity(),program.vis()));

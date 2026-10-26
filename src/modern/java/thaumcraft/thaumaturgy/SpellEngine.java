@@ -24,7 +24,7 @@ public final class SpellEngine {
     }}
     private static void deliver(ServerPlayer p,FocusProgram program,Vec3 origin,Vec3 direction,float strength){
         if(program.medium().equals("spellbat")){long active=0;for(var entity:p.level().getAllEntities())if(entity instanceof SpellBat bat&&p.getUUID().equals(bat.ownerId())&&!bat.isRemoved())active++;if(active>=16)return;var bat=new SpellBat(ThaumaturgyContent.SPELLBAT.get(),p.level());bat.configure(p,program,origin.add(direction.scale(.8)).add(0,-.4,0),strength);if(loadedLine(p.level(),bat.position().add(-.5,0,-.5),bat.position().add(.5,1,.5))&&p.level().noCollision(bat))p.level().addFreshEntity(bat);return;}
-        if(program.medium().equals("plan")){var from=origin;var to=from.add(direction.scale(16));if(!loadedLine(p.level(),from,to))return;var hit=p.level().clip(new ClipContext(from,to,ClipContext.Block.COLLIDER,ClipContext.Fluid.NONE,p));if(hit.getType()==HitResult.Type.MISS)return;for(var q:PlanSelection.select(p.level(),hit,PlanControls.effective(p.getMainHandItem(),program)))apply(p,program,new BlockHitResult(Vec3.atCenterOf(q),hit.getDirection(),q,false),strength);return;}
+        if(program.medium().equals("plan")){var from=origin;var to=from.add(direction.scale(16));if(!loadedLine(p.level(),from,to))return;var hit=p.level().clip(new ClipContext(from,to,ClipContext.Block.COLLIDER,ClipContext.Fluid.NONE,p));if(hit.getType()==HitResult.Type.MISS)return;int index=0;for(var q:PlanSelection.select(p.level(),hit,PlanControls.effective(p.getMainHandItem(),program)))apply(p,program,new BlockHitResult(Vec3.atCenterOf(q),hit.getDirection(),q,false),strength,direction,index++);return;}
         if(program.medium().equals("projectile")){long active=0;for(var e:p.level().getAllEntities())if(e instanceof FocusProjectile shot&&shot.getOwner()==p&&!shot.isRemoved())active++;if(active>=64)return;var shot=new FocusProjectile(ThaumaturgyContent.PROJECTILE.get(),p.level());shot.setOwner(p);shot.setPos(origin.add(0,-.1,0));var stack=new ItemStack(thaumcraft.content.SimpleContent.ITEMS.get("focus_1").get());stack.set(ThaumaturgyContent.PROGRAM.get(),program);shot.setItem(stack);shot.strength(strength);shot.shoot(direction.x,direction.y,direction.z,program.projectile().velocity(),0);p.level().addFreshEntity(shot);return;}
         if(!loadedLine(p.level(),origin,origin.add(direction.scale(program.medium().equals("touch")?4:program.medium().equals("bolt")?32:16))))return;
         var hit=aim(p,origin,direction,program.medium().equals("touch")?4:program.medium().equals("bolt")?32:16);
@@ -41,7 +41,8 @@ public final class SpellEngine {
         apply(p,program,hit,1);
     }
     public static void apply(ServerPlayer p,FocusProgram program,HitResult hit,float strength){apply(p,program,hit,strength,p.getLookAngle());}
-    public static void apply(ServerPlayer p,FocusProgram program,HitResult hit,float strength,Vec3 direction){
+    public static void apply(ServerPlayer p,FocusProgram program,HitResult hit,float strength,Vec3 direction){apply(p,program,hit,strength,direction,0);}
+    private static void apply(ServerPlayer p,FocusProgram program,HitResult hit,float strength,Vec3 direction,int targetIndex){
         if(!program.valid()||!Float.isFinite(strength)||strength<=0||strength>1)return;
         var l=p.level();if(hit.getType()==HitResult.Type.MISS)return;LivingEntity target=hit instanceof EntityHitResult e&&e.getEntity() instanceof LivingEntity living?living:null;
         boolean protectedTarget=target!=null&&protectedTarget(p,target);
@@ -55,7 +56,7 @@ public final class SpellEngine {
                 case "curse"->{target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS,100*e.duration(),(int)power/2));target.addEffect(new MobEffectInstance(MobEffects.SLOWNESS,100*e.duration(),(int)power/2));}
             }}else if(hit instanceof BlockHitResult b){var q=b.getBlockPos();if(!l.hasChunkAt(q)||!l.mayInteract(p,q)||!p.mayUseItemAt(q,b.getDirection(),p.getMainHandItem()))continue;var state=l.getBlockState(q);switch(e.kind()){
                 case "rift"->RiftData.open(p,b,e,strength);
-                case "break"->{if(l.getBlockEntity(q)==null&&state.getDestroySpeed(l,q)>=0&&state.getDestroySpeed(l,q)<=power*4)FocusHarvest.destroy(p,q,e);}
+                case "break"->FocusBreaking.start(p,q,b.getDirection(),e,power,targetIndex);
                 case "exchange"->{var replacement=p.getOffhandItem();if(!(replacement.getItem() instanceof BlockItem block)||l.getBlockEntity(q)!=null||state.getDestroySpeed(l,q)<0||state.getDestroySpeed(l,q)>power*4)continue;var intended=block.getBlock().defaultBlockState();if(intended.hasBlockEntity()||!intended.canSurvive(l,q)||!l.isUnobstructed(intended,q,net.minecraft.world.phys.shapes.CollisionContext.empty()))continue;if(FocusHarvest.destroy(p,q,e)&&l.getBlockState(q).isAir()){replacement.useOn(new net.minecraft.world.item.context.UseOnContext(p,net.minecraft.world.InteractionHand.OFF_HAND,new BlockHitResult(Vec3.atCenterOf(q),Direction.UP,q,false)));}}
                 case "fire"->{var at=q.relative(b.getDirection());if(l.hasChunkAt(at)&&l.mayInteract(p,at)&&p.mayUseItemAt(at,b.getDirection(),p.getMainHandItem())&&l.isEmptyBlock(at)){var fire=BaseFireBlock.getState(l,at);if(fire.canSurvive(l,at)){var snapshot=net.minecraftforge.common.util.BlockSnapshot.create(l.dimension(),l,at);if(!net.minecraftforge.event.ForgeEventFactory.onBlockPlace(p,snapshot,b.getDirection()))l.setBlockAndUpdate(at,fire);}}}
             }}
