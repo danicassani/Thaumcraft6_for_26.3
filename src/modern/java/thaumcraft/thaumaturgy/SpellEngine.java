@@ -57,7 +57,7 @@ public final class SpellEngine {
             }}else if(hit instanceof BlockHitResult b){var q=b.getBlockPos();if(!l.hasChunkAt(q)||!l.mayInteract(p,q)||!p.mayUseItemAt(q,b.getDirection(),p.getMainHandItem()))continue;var state=l.getBlockState(q);switch(e.kind()){
                 case "rift"->RiftData.open(p,b,e,strength);
                 case "break"->FocusBreaking.start(p,q,b.getDirection(),e,power,targetIndex);
-                case "exchange"->{var replacement=p.getOffhandItem();if(!(replacement.getItem() instanceof BlockItem block)||l.getBlockEntity(q)!=null||state.getDestroySpeed(l,q)<0||state.getDestroySpeed(l,q)>power*4)continue;var intended=block.getBlock().defaultBlockState();if(intended.hasBlockEntity()||!intended.canSurvive(l,q)||!l.isUnobstructed(intended,q,net.minecraft.world.phys.shapes.CollisionContext.empty()))continue;if(FocusHarvest.destroy(p,q,e)&&l.getBlockState(q).isAir()){replacement.useOn(new net.minecraft.world.item.context.UseOnContext(p,net.minecraft.world.InteractionHand.OFF_HAND,new BlockHitResult(Vec3.atCenterOf(q),Direction.UP,q,false)));}}
+                case "exchange"->FocusExchange.exchange(p,b,e);
                 case "fire"->{var at=q.relative(b.getDirection());if(l.hasChunkAt(at)&&l.mayInteract(p,at)&&p.mayUseItemAt(at,b.getDirection(),p.getMainHandItem())&&l.isEmptyBlock(at)){var fire=BaseFireBlock.getState(l,at);if(fire.canSurvive(l,at)){var snapshot=net.minecraftforge.common.util.BlockSnapshot.create(l.dimension(),l,at);if(!net.minecraftforge.event.ForgeEventFactory.onBlockPlace(p,snapshot,b.getDirection()))l.setBlockAndUpdate(at,fire);}}}
             }}
         }

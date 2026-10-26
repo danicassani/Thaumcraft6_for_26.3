@@ -550,7 +550,7 @@
   "research.FOCUSBREAK.stage.2": "Break gradually cracks and mines blocks. Harder blocks take longer; higher power speeds up the work. Each completed block also needs local aura: 0.25 vis, plus 0.25 for Silk Touch and 0.1 per Fortune level. Plan staggers its targets. Fortune 0–IV and Silk Touch are on the fourth Setup page and increase complexity. Native loot, experience and Forge protections apply; Silk takes priority over Fortune. Work stops if the block changes or its aura runs out.",
   "research.FOCUSEXCHANGE.title": "Focus Effect: Exchange",
   "research.FOCUSEXCHANGE.stage.1": "While teleportation magic is beyond me at the moment, my studies of the permutatio aspect leads me to believe that I should be able to make physical objects swap positions.<BR>I should see if my theory holds any water.",
-  "research.FOCUSEXCHANGE.stage.2": "Exchange uses the block stack in the off hand and normal placement permissions. Fortune 0–IV and Silk Touch on the fourth Setup page control the removed block loot and add complexity. Unbreakable blocks and block entities remain protected.",
+  "research.FOCUSEXCHANGE.stage.2": "Sneak-use the gauntlet on a block to select its sample. Exchange takes matching blocks from your inventory, returns the removed block loot, and pays local aura per replacement: 0.25 vis, plus 0.25 for Silk Touch and 0.1 per Fortune level. The sample icon appears beneath the aura display. Without a saved sample, blocks in the off hand still work. Fortune 0–IV and Silk Touch are on the fourth Setup page. Protected or unsupported replacements leave the original intact and consume nothing. Block entities and structures needing multiple block positions are excluded.",
   "research.FOCUSRIFT.title": "Focus Effect: Rift",
   "research.FOCUSRIFT.stage.1": "I have performed a few tentative experiments with dimensional magic. Thus far I have had mixed results, but I am able to reliably shift inanimate matter into an adjacent reality while part of that reality shifts into ours.<BR>I think. Either way, the matter returns unharmed almost every time. Living matter is a different matter - I dare not pen what I saw and I doubt I will attempt that experiment again.<BR>Luckily I think I will be able to replicate this discovery in the form a focus effect.",
   "research.FOCUSRIFT.stage.2": "Rift temporarily opens a 3 by 3 tunnel. The power button selects depth 8/16/24/32 and duration selects 2–10 seconds. Blocks restore their exact state when the deadline passes, including after save/restart or chunk reload. Only full opaque solid blocks without inventories, fluids, falling behavior or pistons are eligible; protected or immune central blocks stop the tunnel. No drops. Maximum 288 journaled blocks per owner and 1024 per dimension.",
@@ -1547,5 +1547,6 @@
   "research.thaumcraft.cheat_hint": "Use to unlock all research.",
   "research.thaumcraft.cheat_disabled": "Research unlocking is disabled by the server.",
   "research.thaumcraft.cheat_granted": "All research unlocked.",
-  "research.thaumcraft.cheat_failed": "Research could not be unlocked; saved data was preserved."
+  "research.thaumcraft.cheat_failed": "Research could not be unlocked; saved data was preserved.",
+  "caster.thaumcraft.exchange_selected": "Sample: %s"
 }

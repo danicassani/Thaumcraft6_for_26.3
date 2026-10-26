@@ -545,7 +545,7 @@
   "caster.thaumcraft.axis_3": "Eje Y",
   "research.FOCUSPROJECTILE.stage.2": "Proyectil transporta los efectos completos del foco. En la cuarta página Más elige velocidad 1–5 (de un tercio a cinco tercios de bloque por tick), normal, rebote, búsqueda de enemigos o aliados. Las opciones especiales requieren completar Proyectil. El rebote pierde velocidad. La búsqueda comprueba visibilidad, equipos, mascotas y PVP. Duran como máximo un minuto; los focos antiguos conservan su velocidad y duración originales.",
   "research.FOCUSBREAK.stage.2": "Rotura agrieta y mina los bloques poco a poco. Los bloques duros tardan más; aumentar la potencia acelera el trabajo. Cada bloque terminado necesita además aura local: 0,25 vis, más 0,25 por Toque de seda y 0,1 por nivel de Fortuna. Plan escalona sus objetivos. Fortuna 0–IV y Seda se eligen en la cuarta página Más y aumentan la complejidad. Se respetan el botín, la experiencia y las protecciones de Forge; Seda tiene prioridad sobre Fortuna. El trabajo se cancela si cambia el bloque o se agota su aura.",
-  "research.FOCUSEXCHANGE.stage.2": "Intercambio usa los bloques de la mano secundaria y los permisos normales de colocación. Fortuna 0–IV y Toque de seda en la cuarta página Más controlan el botín del bloque retirado y aumentan la complejidad. Los bloques irrompibles y las entidades de bloque siguen protegidos.",
+  "research.FOCUSEXCHANGE.stage.2": "Agáchate y usa el guantelete sobre un bloque para elegirlo como muestra. Intercambio toma bloques iguales del inventario, recupera el botín del bloque retirado y paga aura local por sustitución: 0,25 vis, más 0,25 por Seda y 0,1 por nivel de Fortuna. La muestra aparece bajo el indicador de aura. Sin una muestra guardada se siguen usando los bloques de la mano secundaria. Fortuna 0–IV y Seda se eligen en la cuarta página Más. Si falta soporte o una protección deniega el cambio, el bloque original queda intacto y no se consume nada. Se excluyen las entidades de bloque y las estructuras de varias posiciones.",
   "focal.thaumcraft.graph_enter": "Entrar siguiente",
   "focal.thaumcraft.graph_add": "Añadir siguiente",
   "focal.thaumcraft.graph_back": "Anterior",
@@ -1515,5 +1515,6 @@
   "research.thaumcraft.cheat_hint": "Úsalo para desbloquear todas las investigaciones.",
   "research.thaumcraft.cheat_disabled": "El servidor ha desactivado el desbloqueo de investigaciones.",
   "research.thaumcraft.cheat_granted": "Todas las investigaciones desbloqueadas.",
-  "research.thaumcraft.cheat_failed": "No se pudo desbloquear la investigación; se han conservado los datos guardados."
+  "research.thaumcraft.cheat_failed": "No se pudo desbloquear la investigación; se han conservado los datos guardados.",
+  "caster.thaumcraft.exchange_selected": "Muestra: %s"
 }

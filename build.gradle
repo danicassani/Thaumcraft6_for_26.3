@@ -4,7 +4,7 @@ plugins {
     id 'eclipse'
     id 'net.minecraftforge.gradle' version '7.0.17'
 }
-version = '6.1.BETA26-port.74-forge66.0.13'
+version = '6.1.BETA26-port.75-forge66.0.13'
 group = 'griglog.thaumcraft'
 base.archivesName = 'thaumcraft'
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
@@ -39,6 +39,7 @@ sourceSets.main {
     resources.setSrcDirs(['src/modern/resources'])
 }
 // Explicit integration fixtures; never packaged by the normal build.
+if (providers.gradleProperty('exchangeProbe').isPresent()) { sourceSets.main.java.srcDir('src/exchangeTest/java') }
 if (providers.gradleProperty('breakProbe').isPresent()) { sourceSets.main.java.srcDir('src/breakTest/java') }
 if (providers.gradleProperty('worldgenProbe').isPresent()) { sourceSets.main.java.srcDir('src/worldgenTest/java') }
 if (providers.gradleProperty('thaumaturgyProbe').isPresent()) { sourceSets.main.java.srcDir('src/thaumaturgyTest/java') }
@@ -84,6 +85,7 @@ minecraft {
     runs {
         configureEach {
             workingDir = layout.projectDirectory.dir('run')
+            if (providers.gradleProperty('exchangeProbe').isPresent()) systemProperty 'thaumcraft.exchangeProbe', providers.gradleProperty('exchangeProbe').get()
             if (providers.gradleProperty('breakProbe').isPresent()) systemProperty 'thaumcraft.breakProbe', providers.gradleProperty('breakProbe').get()
             if (providers.gradleProperty('thaumaturgyProbe').isPresent()) systemProperty 'thaumcraft.thaumaturgyProbe', providers.gradleProperty('thaumaturgyProbe').get()
             systemProperty 'eventbus.api.strictRuntimeChecks', 'true'
@@ -108,6 +110,7 @@ minecraft {
         register('server') {
             workingDir = layout.projectDirectory.dir('run/server')
             args '--nogui'
+            if (providers.gradleProperty('exchangeProbe').isPresent()) args '--world', 'exchange-smoke75'
             if (providers.gradleProperty('breakProbe').isPresent()) args '--world', 'break-smoke74'
             if (providers.gradleProperty('bookProbe').isPresent()) args '--world', 'book-smoke56'
             if (providers.gradleProperty('eldritchProbe').isPresent()) args '--world', 'eldritch-smoke56'
