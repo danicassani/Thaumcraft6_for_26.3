@@ -11,6 +11,12 @@ import thaumcraft.equipment.EquipmentContent;
 import thaumcraft.research.ResearchService;
 public final class CasterItem extends Item {
     public CasterItem(Properties p){super(p.stacksTo(1));}
+    @Override public InteractionResult onItemUseFirst(ItemStack stack,UseOnContext c){
+        var p=c.getPlayer();if(p==null||c.getHand()!=InteractionHand.MAIN_HAND)return InteractionResult.PASS;
+        var entity=c.getLevel().getBlockEntity(c.getClickedPos());
+        if(!p.isShiftKeyDown()&&entity!=null&&!(entity instanceof thaumcraft.infusion.InfusionMatrix)&&!(entity instanceof thaumcraft.essentia.TransfuserEntity)&&ExchangeSelection.usesBlockEffect(stack))return use(c.getLevel(),p,c.getHand());
+        return InteractionResult.PASS;
+    }
     /** Sneak use exchanges actual stacks with the off hand, conserving each focus and its components. */
     public boolean swap(Player p,ItemStack caster){var held=p.getOffhandItem();if(!held.isEmpty()&&!(held.getItem() instanceof FocusItem))return false;var old=caster.get(ThaumaturgyContent.FOCUS.get());if(held.isEmpty()&&old==null)return false;if(held.isEmpty())caster.remove(ThaumaturgyContent.FOCUS.get());else caster.set(ThaumaturgyContent.FOCUS.get(),held.copyWithCount(1));p.setItemInHand(InteractionHand.OFF_HAND,old==null?ItemStack.EMPTY:old.copy());return true;}
     public InteractionResult use(Level level,Player player,InteractionHand hand){if(hand!=InteractionHand.MAIN_HAND)return InteractionResult.PASS;if(!(player instanceof ServerPlayer p))return InteractionResult.SUCCESS;var caster=p.getItemInHand(hand);if(p.isShiftKeyDown())return (p.getOffhandItem().getItem() instanceof FocusPouch?FocusPouch.cycle(p,caster,p.getOffhandItem()):swap(p,caster))?InteractionResult.SUCCESS:InteractionResult.FAIL;

@@ -12,6 +12,8 @@ import net.minecraft.world.level.block.state.BlockState;
 public abstract class AuraDeviceEntity extends BlockEntity {
     protected AuraDeviceEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) { super(type, pos, state); }
     public abstract void serverTick();
+    /** Subclasses with versioned state override this when their data cannot be read safely. */
+    public boolean supported() { return true; }
     protected void sync() {
         setChanged();
         if (level != null && !level.isClientSide()) level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), Block.UPDATE_CLIENTS);

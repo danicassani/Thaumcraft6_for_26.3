@@ -1,5 +1,7 @@
 # Intercambio mediante focos — port.75
 
+Actualización port.76: la exclusión histórica de entidades de bloque se sustituye por soporte de contenedores y protección de datos desconocidos; véase [FOCUS-CONTAINERS.md](FOCUS-CONTAINERS.md).
+
 ## Uso
 
 Equipa un foco con Intercambio en el guantelete. Agáchate y usa el guantelete sobre un bloque para guardar una muestra, sin consumirlo ni gastar vis. Puede estar en cualquier rama o continuación del programa. El foco y sus investigaciones deben ser válidos. La muestra aparece con su icono y nombre bajo el indicador de aura y en el tooltip del guantelete.

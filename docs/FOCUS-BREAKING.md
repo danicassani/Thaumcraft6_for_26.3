@@ -1,5 +1,7 @@
 # Rotura mediante focos — port.74
 
+Actualización port.76: la exclusión histórica de entidades de bloque se sustituye por soporte de contenedores y protección de datos desconocidos; véase [FOCUS-CONTAINERS.md](FOCUS-CONTAINERS.md).
+
 El efecto de Perditio sigue requiriendo FOCUSBREAK y un medio compatible. No añade objetos ni cambia los focos guardados, recetas, investigación ni costes de programación. Intercambio conserva su ejecución anterior.
 
 ## Funcionamiento

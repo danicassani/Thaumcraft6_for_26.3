@@ -21,8 +21,12 @@ public final class ExchangeSelection {
         var program=program(caster);if(program==null)return false;
         return program.graphNodes().stream().anyMatch(n->n.effects().stream().anyMatch(e->e.kind().equals("exchange"))||n.branches().stream().anyMatch(b->b.effects().stream().anyMatch(e->e.kind().equals("exchange"))));
     }
+    public static boolean usesBlockEffect(ItemStack caster) {
+        var program=program(caster);if(program==null)return false;
+        return program.graphNodes().stream().anyMatch(n->n.effects().stream().anyMatch(FocusProgram.Effect::harvest)||n.branches().stream().anyMatch(b->b.effects().stream().anyMatch(FocusProgram.Effect::harvest)));
+    }
     public static boolean singleBlock(BlockState state) {
-        var block=state.getBlock();return !state.isAir()&&!state.hasBlockEntity()&&!(block instanceof DoorBlock)&&!(block instanceof DoublePlantBlock)&&!(block instanceof BedBlock)&&!(block instanceof GameMasterBlock);
+        var block=state.getBlock();return !state.isAir()&&!(block instanceof DoorBlock)&&!(block instanceof DoublePlantBlock)&&!(block instanceof BedBlock)&&!(block instanceof GameMasterBlock);
     }
     public static ItemStack selected(ItemStack caster) {
         var sample=caster.get(ThaumaturgyContent.PICKED_BLOCK.get());
@@ -31,8 +35,9 @@ public final class ExchangeSelection {
     public static boolean pick(ServerPlayer p,ItemStack caster,BlockPos pos) {
         var l=p.level();var program=program(caster);
         if(!l.getServer().isSameThread()||!p.isAlive()||p.isSpectator()||p.getMainHandItem()!=caster||!p.isShiftKeyDown()||!supports(caster)||!program.knows(p)||!l.hasChunkAt(pos)||!l.getWorldBorder().isWithinBounds(pos)||p.getEyePosition().distanceToSqr(net.minecraft.world.phys.Vec3.atCenterOf(pos))>36)return false;
-        var state=l.getBlockState(pos);if(!singleBlock(state)||state.getDestroySpeed(l,pos)<0||l.getBlockEntity(pos)!=null)return false;
-        var sample=state.getCloneItemStack(l,pos,false);
+        var state=l.getBlockState(pos);if(!singleBlock(state)||state.getDestroySpeed(l,pos)<0)return false;
+        // A container sample is its type, never its inventory or block-entity data.
+        var sample=state.hasBlockEntity()?new ItemStack(state.getBlock()):state.getCloneItemStack(l,pos,false);
         if(sample.isEmpty()||!(sample.getItem() instanceof BlockItem block)||!singleBlock(block.getBlock().defaultBlockState()))return false;
         caster.set(ThaumaturgyContent.PICKED_BLOCK.get(),sample.copyWithCount(1));p.inventoryMenu.broadcastChanges();
         p.sendOverlayMessage(Component.translatable("caster.thaumcraft.exchange_selected",sample.getHoverName()));return true;
