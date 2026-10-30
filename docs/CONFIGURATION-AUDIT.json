@@ -1,0 +1,596 @@
+{
+  "scope": "Static references in modern production Java only; excludes legacy sources and fixtures. A reference is not proof of complete behavior.",
+  "declared": 42,
+  "without_references": [
+    "largeTagText",
+    "dialBottom",
+    "showTags",
+    "showGolemEmotes",
+    "regenKey",
+    "regenAura",
+    "regenStructure",
+    "regenCinnabar",
+    "regenAmber",
+    "regenQuartz",
+    "regenCrystals",
+    "regenTrees",
+    "allowSpawnTaintacle",
+    "shieldRecharge",
+    "shieldWait",
+    "shieldCost"
+  ],
+  "entries": [
+    {
+      "name": "largeTagText",
+      "owner": "client",
+      "references": []
+    },
+    {
+      "name": "disableShaders",
+      "owner": "client",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/client/ClientGraphics.java",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "name": "crooked",
+      "owner": "client",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/client/ClientGraphics.java",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "name": "nostress",
+      "owner": "client",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/client/WarpFeedbackClient.java",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "name": "dialBottom",
+      "owner": "client",
+      "references": []
+    },
+    {
+      "name": "showTags",
+      "owner": "client",
+      "references": []
+    },
+    {
+      "name": "blueBiome",
+      "owner": "client",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/client/MagicalForestColors.java",
+          "line": 34
+        }
+      ]
+    },
+    {
+      "name": "showGolemEmotes",
+      "owner": "server",
+      "references": []
+    },
+    {
+      "name": "oreDensity",
+      "owner": "server",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/content/OreCountPlacement.java",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "name": "generateMagicForest",
+      "owner": "server",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/worldgen/MagicalForest.java",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "name": "biomeMagicalForestWeight",
+      "owner": "server",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/worldgen/MagicalForest.java",
+          "line": 20
+        },
+        {
+          "file": "src/modern/java/thaumcraft/worldgen/MagicalForest.java",
+          "line": 27
+        },
+        {
+          "file": "src/modern/java/thaumcraft/worldgen/MagicalForest.java",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "name": "taintSpreadRate",
+      "owner": "server",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/taint/TaintWorld.java",
+          "line": 21
+        },
+        {
+          "file": "src/modern/java/thaumcraft/taint/TaintWorld.java",
+          "line": 27
+        }
+      ]
+    },
+    {
+      "name": "taintSpreadArea",
+      "owner": "server",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/taint/TaintWorld.java",
+          "line": 16
+        },
+        {
+          "file": "src/modern/java/thaumcraft/taint/TaintWorld.java",
+          "line": 17
+        },
+        {
+          "file": "src/modern/java/thaumcraft/taint/TaintWorld.java",
+          "line": 22
+        },
+        {
+          "file": "src/modern/java/thaumcraft/taint/TaintWorld.java",
+          "line": 27
+        },
+        {
+          "file": "src/modern/java/thaumcraft/taint/TaintWorld.java",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "name": "generateAura",
+      "owner": "server",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/aura/AuraManager.java",
+          "line": 93
+        }
+      ]
+    },
+    {
+      "name": "generateFluxRifts",
+      "owner": "server",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/rifts/RiftSpawning.java",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "name": "generateStructure",
+      "owner": "server",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/worldgen/CultistPortalFeature.java",
+          "line": 20
+        },
+        {
+          "file": "src/modern/java/thaumcraft/worldgen/MoundStructure.java",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "name": "generateCinnabar",
+      "owner": "server",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/content/OreCountPlacement.java",
+          "line": 33
+        }
+      ]
+    },
+    {
+      "name": "generateAmber",
+      "owner": "server",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/content/OreCountPlacement.java",
+          "line": 32
+        }
+      ]
+    },
+    {
+      "name": "generateQuartz",
+      "owner": "server",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/content/OreCountPlacement.java",
+          "line": 34
+        }
+      ]
+    },
+    {
+      "name": "generateCrystals",
+      "owner": "server",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/content/OreCountPlacement.java",
+          "line": 35
+        },
+        {
+          "file": "src/modern/java/thaumcraft/crystals/CrystalFeature.java",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "name": "generateTrees",
+      "owner": "server",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/trees/SpecialTreeFeature.java",
+          "line": 22
+        },
+        {
+          "file": "src/modern/java/thaumcraft/worldgen/ForestDecoration.java",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "name": "regenKey",
+      "owner": "server",
+      "references": []
+    },
+    {
+      "name": "regenAura",
+      "owner": "server",
+      "references": []
+    },
+    {
+      "name": "regenStructure",
+      "owner": "server",
+      "references": []
+    },
+    {
+      "name": "regenCinnabar",
+      "owner": "server",
+      "references": []
+    },
+    {
+      "name": "regenAmber",
+      "owner": "server",
+      "references": []
+    },
+    {
+      "name": "regenQuartz",
+      "owner": "server",
+      "references": []
+    },
+    {
+      "name": "regenCrystals",
+      "owner": "server",
+      "references": []
+    },
+    {
+      "name": "regenTrees",
+      "owner": "server",
+      "references": []
+    },
+    {
+      "name": "allowSpawnAngryZombie",
+      "owner": "server",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/eldritch/EldritchSpawning.java",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "name": "allowSpawnFireBat",
+      "owner": "server",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/eldritch/EldritchSpawning.java",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "name": "allowSpawnWisp",
+      "owner": "server",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/rifts/Wisp.java",
+          "line": 22
+        },
+        {
+          "file": "src/modern/java/thaumcraft/rifts/WispSpawning.java",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "name": "allowSpawnTaintacle",
+      "owner": "server",
+      "references": []
+    },
+    {
+      "name": "allowSpawnPech",
+      "owner": "server",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/pech/Pech.java",
+          "line": 43
+        }
+      ]
+    },
+    {
+      "name": "allowSpawnElder",
+      "owner": "server",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/eldritch/EldritchSpawning.java",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "name": "allowChampionMobs",
+      "owner": "server",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/champion/ChampionSystem.java",
+          "line": 152
+        }
+      ]
+    },
+    {
+      "name": "noSleep",
+      "owner": "server",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/research/ResearchEvents.java",
+          "line": 32
+        }
+      ]
+    },
+    {
+      "name": "wussMode",
+      "owner": "server",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/champion/ChampionSystem.java",
+          "line": 273
+        },
+        {
+          "file": "src/modern/java/thaumcraft/eldritch/BrainyZombie.java",
+          "line": 22
+        },
+        {
+          "file": "src/modern/java/thaumcraft/eldritch/BrainyZombie.java",
+          "line": 23
+        },
+        {
+          "file": "src/modern/java/thaumcraft/eldritch/EldritchMob.java",
+          "line": 61
+        },
+        {
+          "file": "src/modern/java/thaumcraft/eldritch/EldritchMob.java",
+          "line": 74
+        },
+        {
+          "file": "src/modern/java/thaumcraft/eldritch/EldritchSpawning.java",
+          "line": 10
+        },
+        {
+          "file": "src/modern/java/thaumcraft/eldritch/FireBat.java",
+          "line": 19
+        },
+        {
+          "file": "src/modern/java/thaumcraft/eldritch/SapField.java",
+          "line": 19
+        },
+        {
+          "file": "src/modern/java/thaumcraft/infusion/CuriosityContent.java",
+          "line": 37
+        },
+        {
+          "file": "src/modern/java/thaumcraft/infusion/InfusionMishaps.java",
+          "line": 38
+        },
+        {
+          "file": "src/modern/java/thaumcraft/infusion/InfusionMishaps.java",
+          "line": 43
+        },
+        {
+          "file": "src/modern/java/thaumcraft/infusion/InfusionMishaps.java",
+          "line": 47
+        },
+        {
+          "file": "src/modern/java/thaumcraft/pech/Pech.java",
+          "line": 43
+        },
+        {
+          "file": "src/modern/java/thaumcraft/pech/Pech.java",
+          "line": 67
+        },
+        {
+          "file": "src/modern/java/thaumcraft/pech/Pech.java",
+          "line": 69
+        },
+        {
+          "file": "src/modern/java/thaumcraft/pech/Pech.java",
+          "line": 75
+        },
+        {
+          "file": "src/modern/java/thaumcraft/pech/Pech.java",
+          "line": 96
+        },
+        {
+          "file": "src/modern/java/thaumcraft/pech/PechBolt.java",
+          "line": 20
+        },
+        {
+          "file": "src/modern/java/thaumcraft/research/CheatSheet.java",
+          "line": 19
+        },
+        {
+          "file": "src/modern/java/thaumcraft/research/ResearchService.java",
+          "line": 53
+        },
+        {
+          "file": "src/modern/java/thaumcraft/rifts/FluxRiftEntity.java",
+          "line": 60
+        },
+        {
+          "file": "src/modern/java/thaumcraft/rifts/FluxRiftEntity.java",
+          "line": 74
+        },
+        {
+          "file": "src/modern/java/thaumcraft/rifts/FluxRiftEntity.java",
+          "line": 97
+        },
+        {
+          "file": "src/modern/java/thaumcraft/rifts/RiftCloud.java",
+          "line": 22
+        },
+        {
+          "file": "src/modern/java/thaumcraft/rifts/Wisp.java",
+          "line": 22
+        },
+        {
+          "file": "src/modern/java/thaumcraft/rifts/Wisp.java",
+          "line": 38
+        },
+        {
+          "file": "src/modern/java/thaumcraft/rifts/Wisp.java",
+          "line": 39
+        },
+        {
+          "file": "src/modern/java/thaumcraft/rifts/WispSpawning.java",
+          "line": 16
+        },
+        {
+          "file": "src/modern/java/thaumcraft/taint/GooBlock.java",
+          "line": 23
+        },
+        {
+          "file": "src/modern/java/thaumcraft/taint/TaintBottle.java",
+          "line": 15
+        },
+        {
+          "file": "src/modern/java/thaumcraft/taint/TaintContent.java",
+          "line": 54
+        },
+        {
+          "file": "src/modern/java/thaumcraft/taint/TaintWorld.java",
+          "line": 21
+        },
+        {
+          "file": "src/modern/java/thaumcraft/taint/TaintWorld.java",
+          "line": 30
+        },
+        {
+          "file": "src/modern/java/thaumcraft/taint/TaintedMob.java",
+          "line": 41
+        },
+        {
+          "file": "src/modern/java/thaumcraft/taint/TaintedMob.java",
+          "line": 52
+        },
+        {
+          "file": "src/modern/java/thaumcraft/taint/ThaumicSlime.java",
+          "line": 17
+        },
+        {
+          "file": "src/modern/java/thaumcraft/theory/ResearchTableEntity.java",
+          "line": 80
+        },
+        {
+          "file": "src/modern/java/thaumcraft/warp/ClericOrb.java",
+          "line": 74
+        },
+        {
+          "file": "src/modern/java/thaumcraft/warp/ClericOrb.java",
+          "line": 101
+        },
+        {
+          "file": "src/modern/java/thaumcraft/warp/ClericOrb.java",
+          "line": 117
+        },
+        {
+          "file": "src/modern/java/thaumcraft/warp/MindSpider.java",
+          "line": 21
+        },
+        {
+          "file": "src/modern/java/thaumcraft/warp/WarpCreatures.java",
+          "line": 19
+        },
+        {
+          "file": "src/modern/java/thaumcraft/warp/WarpEffect.java",
+          "line": 13
+        },
+        {
+          "file": "src/modern/java/thaumcraft/warp/WarpEngine.java",
+          "line": 17
+        },
+        {
+          "file": "src/modern/java/thaumcraft/warp/WarpEngine.java",
+          "line": 21
+        },
+        {
+          "file": "src/modern/java/thaumcraft/warp/WarpMonster.java",
+          "line": 46
+        },
+        {
+          "file": "src/modern/java/thaumcraft/warp/WarpOrb.java",
+          "line": 14
+        },
+        {
+          "file": "src/modern/java/thaumcraft/worldgen/CultistPortalFeature.java",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "name": "allowCheatSheet",
+      "owner": "server",
+      "references": [
+        {
+          "file": "src/modern/java/thaumcraft/research/CheatSheet.java",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "name": "shieldRecharge",
+      "owner": "server",
+      "references": []
+    },
+    {
+      "name": "shieldWait",
+      "owner": "server",
+      "references": []
+    },
+    {
+      "name": "shieldCost",
+      "owner": "server",
+      "references": []
+    }
+  ]
+}

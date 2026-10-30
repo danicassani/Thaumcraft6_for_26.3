@@ -1,3 +1,5 @@
+> Documento histórico: sus pendientes y cifras describen la entrega indicada. La lista revisada actual está en [CURRENT-STATUS.md](CURRENT-STATUS.md).
+
 # Mecánicas y dependencias del port
 
 Orden de trabajo. Estas entradas describen trabajo pendiente salvo que se indique una implementación verificada. No equivalen a funcionalidad por registrar un bloque. Las dependencias cruzadas (p. ej. hojas de silverwood → aura) se conservan en la implementación final.

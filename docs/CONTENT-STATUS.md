@@ -1,3 +1,5 @@
+> Documento histórico: sus pendientes y cifras describen la entrega indicada. La lista revisada actual está en [CURRENT-STATUS.md](CURRENT-STATUS.md).
+
 # Estado del port: contenido y mecánicas
 
 La lista de contenido añadido está en [SIMPLE-CONTENT.md](SIMPLE-CONTENT.md).

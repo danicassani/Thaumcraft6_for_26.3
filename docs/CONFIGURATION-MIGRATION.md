@@ -1,3 +1,5 @@
+> Revisión port.77: `disableShaders` y `crooked` ya tienen consumidores verificados (GRAPHICS-OPTIONS.md). La tabla siguiente conserva la migración histórica; el inventario actual de 42 opciones y 16 sin referencias está en [CONFIGURATION-AUDIT.json](CONFIGURATION-AUDIT.json), con diferencias clasificadas en [CURRENT-STATUS.md](CURRENT-STATUS.md).
+
 > Actualización port.73: `misc.allowCheatSheet` ya está implementada; véase [CHEAT-SHEET.md](CHEAT-SHEET.md). Las referencias siguientes a su falta de consumidor son históricas.
 
 # Correspondencia de configuración

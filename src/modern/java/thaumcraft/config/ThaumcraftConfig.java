@@ -2,7 +2,7 @@ package thaumcraft.config;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 
-/** Verified legacy defaults; gameplay consumers are deferred to later ports. */
+/** Legacy defaults with explicit client/server ownership; consumers are audited separately. */
 public final class ThaumcraftConfig {
     private ThaumcraftConfig() {}
     public static final ForgeConfigSpec CLIENT;
@@ -54,8 +54,8 @@ public final class ThaumcraftConfig {
         var server = new ForgeConfigSpec.Builder();
         client.push("graphics");
         largeTagText = client.define("largeTagText", false);
-        disableShaders = client.define("disableShaders", false);
-        crooked = client.define("crooked", true);
+        disableShaders = client.comment("Use ordinary textured surfaces instead of Thaumcraft's advanced portal effect. Does not disable Minecraft's renderer.").define("disableShaders", false);
+        crooked = client.comment("Give jar labels their original small, stable tilt. Set false for straight labels.").define("crooked", true);
         nostress = client.define("nostress", false);
         dialBottom = client.define("dialBottom", false);
         showTags = client.define("showTags", false);
