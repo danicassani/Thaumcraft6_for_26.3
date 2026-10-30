@@ -12,13 +12,13 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 public final class ScanningService {
     private ScanningService(){}
-    public static boolean observe(Player player,ItemStack stack){return observe(player,false,ResearchCatalog.proof(stack),BuiltInRegistries.ITEM.getKey(stack.getItem()).toString(),player.level() instanceof ServerLevel server?thaumcraft.alchemy.AspectResolver.item(server,stack):AspectCatalog.item(stack));}
+    public static boolean observe(Player player,ItemStack stack){if(stack.isEmpty())return false;return observe(player,false,ResearchCatalog.proof(stack),BuiltInRegistries.ITEM.getKey(stack.getItem()).toString(),player.level() instanceof ServerLevel server?thaumcraft.alchemy.AspectResolver.item(server,stack):AspectCatalog.item(stack));}
     public static boolean observe(Player player,Entity entity){if(entity instanceof ItemEntity item)return observe(player,item.getItem());var key=BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString();return observe(player,true,key,key,AspectCatalog.entity(entity));}
     private static boolean observe(Player player,boolean entity,String identity,String id,Map<String,Integer> aspects){
         if(!(player.level() instanceof ServerLevel))return false;
         var state=ResearchService.state(player);if(state==null)return false;
         String scan=(entity?"entity:":"item:")+identity;var triggers=AspectCatalog.triggers(entity,id);
-        if(state.scans().contains(scan)||aspects.isEmpty()&&triggers.isEmpty())return false;
+        if(state.scans().contains(scan)||entity&&aspects.isEmpty()&&triggers.isEmpty())return false;
         var next=state.scan(scan).flag("!"+id);
         for(var aspect:aspects.keySet())if(!state.flags().contains("!"+aspect)){
             next=next.flag("!"+aspect);for(var category:List.of("BASICS","ALCHEMY","AUROMANCY"))next=next.addPoints("OBSERVATION",category,1);
@@ -26,7 +26,7 @@ public final class ScanningService {
         for(var category:ResearchCatalog.CATEGORIES){int points=AspectCatalog.observation(category,aspects);if(points>0)next=next.addPoints("OBSERVATION",category,points);}
         for(var flag:triggers)next=next.flag(flag);
         if(!KnowledgeStore.write(player,next))return false;
-        var message=Component.translatable("research.thaumcraft.scanned");
+        var message=Component.translatable(aspects.isEmpty()?"research.thaumcraft.studied":"research.thaumcraft.scanned");
         aspects.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(e->message.append(" ").append(Component.translatable("tc.aspect."+e.getKey())).append(" "+e.getValue()));
         player.sendOverlayMessage(message);return true;
     }

@@ -22,7 +22,7 @@ public final class ScanInspection {
         if(target==null||!(p.level() instanceof net.minecraft.server.level.ServerLevel level))return null;
         var knowledge=ResearchService.state(p);if(knowledge==null)return null;
         var values=new TreeMap<String,Integer>();target.aspects(level).forEach((key,n)->{if(CrystalAspects.COLORS.containsKey(key)&&n>0&&n<=1_000_000)values.put(key,n);});boolean known=knowledge.scans().contains(target.identity());
-        boolean scannable=!known&&(!values.isEmpty()||!AspectCatalog.triggers(target.creature(),target.id()).isEmpty());
+        boolean scannable=!known&&(!target.stack().isEmpty()||!values.isEmpty()||!AspectCatalog.triggers(target.creature(),target.id()).isEmpty());
         return new Snapshot(level.dimension().identifier(),target.kind(),target.entityId(),target.blockPos().asLong(),target.identity(),target.nameKey(),known,scannable,known?values:Map.of());
     }
     public static void register(){

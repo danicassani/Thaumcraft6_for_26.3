@@ -11,17 +11,30 @@ import thaumcraft.crystals.CrystalContent;
 
 public final class AspectCatalog {
     private static final JsonObject DATA=ResearchCatalog.load("aspects.json").getAsJsonObject();
+    private static final JsonObject SUPPLEMENT=ResearchCatalog.load("aspect-supplement.json").getAsJsonObject();
     private AspectCatalog(){}
     private static Map<String,Integer> values(JsonObject object){var result=new LinkedHashMap<String,Integer>();object.entrySet().forEach(e->result.put(e.getKey(),e.getValue().getAsInt()));return Map.copyOf(result);}
     public static Map<String,Integer> item(ItemStack stack){
         if(stack.isEmpty())return Map.of();if(stack.is(thaumcraft.infusion.CuriosityContent.CURIO.get())){var type=thaumcraft.infusion.CuriosityContent.variant(stack);return switch(type){case "knowledge"->Map.of("cognitio",30);case "rites"->Map.of("cognitio",15,"alienis",5,"spiritus",5,"praecantatio",5);default->Map.of("cognitio",15,switch(type){case "arcane"->"praecantatio";case "preserved"->"bestia";case "ancient"->"mortuus";case "eldritch"->"alienis";default->"vitium";},15);};}if(stack.is(thaumcraft.alchemy.AlchemyContent.PHIAL.get())&&thaumcraft.alchemy.AlchemyContent.amount(stack)==10&&!thaumcraft.alchemy.AlchemyContent.aspect(stack).isEmpty())return Map.of(thaumcraft.alchemy.AlchemyContent.aspect(stack),10);if(stack.is(CrystalContent.ESSENCE.get()))return Map.of(CrystalContent.aspect(stack),1);
         var definitions=DATA.getAsJsonObject("items");String id=BuiltInRegistries.ITEM.getKey(stack.getItem()).toString();
         if(definitions.has(id))return values(definitions.getAsJsonObject(id));
+        if(SUPPLEMENT.getAsJsonObject("items").has(id))return values(SUPPLEMENT.getAsJsonObject("items").getAsJsonObject(id));
         Map<String,Integer> result=Map.of();
         for(var e:definitions.entrySet())if(e.getKey().startsWith("#")&&stack.is(TagKey.create(Registries.ITEM,Identifier.parse(e.getKey().substring(1)))))result=values(e.getValue().getAsJsonObject());
         return result;
     }
-    public static Map<String,Integer> augment(ItemStack stack,Map<String,Integer> base){if(stack.isEmpty()||!DATA.has("complex"))return base;var values=DATA.getAsJsonObject("complex").getAsJsonObject(BuiltInRegistries.ITEM.getKey(stack.getItem()).toString());if(values==null)return base;var result=new TreeMap<>(base);values.entrySet().forEach(e->result.merge(e.getKey(),e.getValue().getAsInt(),Integer::sum));return Map.copyOf(result);}
+    /** Explicit material equivalents for world-only transformations (waxing, oxidation, dyeing). */
+    public static ItemStack equivalent(ItemStack stack){
+        if(stack.isEmpty())return ItemStack.EMPTY;
+        var alias=SUPPLEMENT.getAsJsonObject("aliases").get(BuiltInRegistries.ITEM.getKey(stack.getItem()).toString());
+        if(alias==null)return ItemStack.EMPTY;var id=Identifier.parse(alias.getAsString());
+        return BuiltInRegistries.ITEM.containsKey(id)?new ItemStack(BuiltInRegistries.ITEM.getValue(id)):ItemStack.EMPTY;
+    }
+    public static Map<String,Integer> augment(ItemStack stack,Map<String,Integer> base){
+        if(stack.isEmpty())return base;String id=BuiltInRegistries.ITEM.getKey(stack.getItem()).toString();var result=new TreeMap<>(base);
+        for(var source:List.of(DATA,SUPPLEMENT)){if(!source.has("complex"))continue;var values=source.getAsJsonObject("complex").getAsJsonObject(id);if(values!=null)values.entrySet().forEach(e->result.merge(e.getKey(),e.getValue().getAsInt(),Integer::sum));}
+        return Map.copyOf(result);
+    }
     public static Map<String,Integer> entity(Entity entity){if(entity instanceof thaumcraft.pech.Pech p)return Map.of("humanus",10,"auram",5,"permutatio",10,p.variant()==0?"desiderium":p.variant()==1?"aversio":"praecantatio",5);if(entity instanceof thaumcraft.rifts.Wisp w){var aspects=new LinkedHashMap<String,Integer>();aspects.put("auram",5);aspects.put("volatus",5);aspects.merge(w.aspect(),5,Integer::sum);return Map.copyOf(aspects);}var id=BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString();var e=DATA.getAsJsonObject("entities").getAsJsonObject(id);return e==null?Map.of():values(e);}
     public static int observation(String category,Map<String,Integer> aspects){var formula=DATA.getAsJsonObject("formulae").getAsJsonObject(category);double total=0;for(var e:formula.entrySet())total+=aspects.getOrDefault(e.getKey(),0)*e.getValue().getAsInt()/10D;return (int)Math.ceil(Math.sqrt(total));}
     public static List<String> triggers(boolean entity,String id){var o=DATA.getAsJsonObject("triggers").getAsJsonObject(entity?"entities":"items");return o.has(id)?ResearchCatalog.strings(o,id):List.of();}
