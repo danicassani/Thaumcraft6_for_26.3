@@ -28,8 +28,8 @@ public final class ThaumometerSight {
         if(world!=mc.level){reset();world=mc.level;}
         var update=ScanInspection.client();if(update!=received){received=update;receivedTick=p.tickCount;}
         if(received!=null&&(p.tickCount-receivedTick>12||!received.dimension().equals(mc.level.dimension().identifier()))){ScanInspection.clear();received=null;}
-        target=ThaumometerItem.inspectingOtherHand(p)?ScanTarget.hand(p):ScanTarget.find(p);
-        if(mc.gui.screen()!=null||mc.gui.hud.isHidden()||received==null||!received.matches(target)||!received.scannable()||target.kind()==ScanTarget.HAND)return;
+        target=ScanTarget.find(p);
+        if(mc.gui.screen()!=null||mc.gui.hud.isHidden()||received==null||!received.matches(target)||!received.scannable())return;
         int alpha=(110+(int)(45*(1+Math.sin((p.tickCount)*.25))))/2;
         try(var ignored=mc.collectPerTickGizmos()){Gizmos.cuboid(target.bounds().inflate(.025),GizmoStyle.stroke((alpha<<24)|0xC888FF,1.5F));}
     }

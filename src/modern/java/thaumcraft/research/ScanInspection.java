@@ -17,7 +17,7 @@ public final class ScanInspection {
     private static Snapshot client;
     public static Snapshot client(){return client;}
     public static void clear(){client=null;}
-    public static Snapshot inspect(ServerPlayer p){return describe(p,ThaumometerItem.inspectingOtherHand(p)?ScanTarget.hand(p):ScanTarget.find(p));}
+    public static Snapshot inspect(ServerPlayer p){return describe(p,ScanTarget.find(p));}
     public static Snapshot describe(net.minecraft.world.entity.player.Player p,ScanTarget target){
         if(target==null||!(p.level() instanceof net.minecraft.server.level.ServerLevel level))return null;
         var knowledge=ResearchService.state(p);if(knowledge==null)return null;

@@ -8,7 +8,7 @@ import thaumcraft.research.*;
 import thaumcraft.client.ThaumometerSight;
 @Mod.EventBusSubscriber(modid="thaumcraft",value=Dist.CLIENT)
 public final class SightClientProof {
- static boolean unseen,known,block,mob,other;
+ static boolean unseen,known,block,mob;
  @SubscribeEvent public static void tick(TickEvent.ClientTickEvent.Post e){
   if(!System.getProperty("thaumcraft.bookProbe","").equals("sight-client")||!SightClientScene.ready)return;
   var mc=Minecraft.getInstance();if(mc.player==null||mc.level==null)return;
@@ -19,6 +19,5 @@ public final class SightClientProof {
   }
   if(snapshot.known()&&snapshot.identity().equals("item:minecraft:glass")&&!block){block=true;thaumcraft.Thaumcraft.LOGGER.info("SIGHT61_PREVIEW_BLOCK_OK");}
   if(snapshot.known()&&snapshot.identity().equals("entity:minecraft:cow")&&!mob){mob=true;thaumcraft.Thaumcraft.LOGGER.info("SIGHT61_PREVIEW_MOB_OK");}
-  if(snapshot.known()&&snapshot.kind()==ScanTarget.HAND&&!other){other=true;thaumcraft.Thaumcraft.LOGGER.info("SIGHT61_PREVIEW_OTHER_OK");}
  }
 }

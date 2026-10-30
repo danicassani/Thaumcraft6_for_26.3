@@ -16,7 +16,7 @@ import thaumcraft.research.*;
 @Mod.EventBusSubscriber(modid="thaumcraft")
 public final class SightClientScene {
  public static final BlockPos P=new BlockPos(61008,180,8);
- static ServerPlayer actor;public static volatile boolean ready;public static volatile int phase;static int ticks;static ItemEntity drop;static Entity cow;static boolean ground,block,mob,other;
+ static ServerPlayer actor;public static volatile boolean ready;public static volatile int phase;static int ticks;static ItemEntity drop;static Entity cow;static boolean ground,block,mob;
  @SubscribeEvent public static void login(net.minecraftforge.event.entity.player.PlayerEvent.PlayerLoggedInEvent e){if(System.getProperty("thaumcraft.bookProbe","").equals("sight-client")&&e.getEntity() instanceof ServerPlayer p)actor=p;}
  static void camera(float pitch){actor.teleportTo(actor.level(),P.getX()+.5,P.getY(),P.getZ()+.5,Set.of(),0,pitch,true);}
  @SubscribeEvent public static void tick(TickEvent.ServerTickEvent.Post e){if(actor==null)return;var l=actor.level();
@@ -35,6 +35,5 @@ public final class SightClientScene {
   if(!block&&knowledge.scans().contains("item:minecraft:glass")){block=true;thaumcraft.Thaumcraft.LOGGER.info("SIGHT61_CLIENT_BLOCK_OK");}
   if(phase==2&&Files.exists(Path.of("../work/sight61-cow"))){l.setBlockAndUpdate(P.offset(0,1,3),Blocks.AIR.defaultBlockState());var c=EntityTypes.COW.create(l,EntitySpawnReason.COMMAND);c.setPos(P.getX()+.5,P.getY(),P.getZ()+3);c.setNoAi(true);ScanProbe.check(l.addFreshEntity(c),"Cow not spawned");cow=c;camera(10);phase=3;}
   if(!mob&&knowledge.scans().contains("entity:minecraft:cow")){mob=true;thaumcraft.Thaumcraft.LOGGER.info("SIGHT61_CLIENT_MOB_OK");}
-  if(!other&&knowledge.scans().contains("item:minecraft:emerald")){other=true;ScanProbe.check(actor.getOffhandItem().getCount()==3,"Other-hand stack changed");thaumcraft.Thaumcraft.LOGGER.info("SIGHT61_CLIENT_OTHER_OK");}
  }
 }

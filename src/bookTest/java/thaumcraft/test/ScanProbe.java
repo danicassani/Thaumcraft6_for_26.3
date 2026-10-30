@@ -30,14 +30,23 @@ public final class ScanProbe {
         KnowledgeStore.write(p,KnowledgeState.EMPTY);
         ResearchContent.METER.get().use(level,p,InteractionHand.MAIN_HAND);tick(p,10);check(scans(p)==0,"Scan happened before one second");p.releaseUsingItem();tick(p,15);check(scans(p)==0,"Early release granted scan");
         p.setShiftKeyDown(true);p.setItemInHand(InteractionHand.OFF_HAND,new ItemStack(Items.GOLD_INGOT));
-        ResearchContent.METER.get().use(level,p,InteractionHand.MAIN_HAND);p.setShiftKeyDown(false);tick(p,19);check(scans(p)==0,"Other-hand scan completed early");tick(p,1);
-        check(ResearchService.state(p).scans().stream().anyMatch(s->s.contains("gold_ingot")),"Shift mode was not latched at start");
+        ResearchContent.METER.get().use(level,p,InteractionHand.MAIN_HAND);p.setShiftKeyDown(false);tick(p,19);check(scans(p)==0,"Scan completed early");tick(p,1);
+        check(ResearchService.state(p).scans().contains("item:minecraft:diamond_block")&&!ResearchService.state(p).scans().contains("item:minecraft:gold_ingot"),"Sneak must scan world, never opposite hand");
         check(p.getOffhandItem().getCount()==1&&p.getMainHandItem().is(ResearchContent.METER.get()),"Scanning consumed or moved held items");
-        tick(p,21);int count=scans(p);p.setShiftKeyDown(true);ResearchContent.METER.get().use(level,p,InteractionHand.MAIN_HAND);tick(p,20);check(scans(p)==count,"Duplicate observation awarded twice");
-        tick(p,21);p.setItemInHand(InteractionHand.MAIN_HAND,new ItemStack(Items.IRON_INGOT));p.setItemInHand(InteractionHand.OFF_HAND,new ItemStack(ResearchContent.METER.get()));
-        ResearchContent.METER.get().use(level,p,InteractionHand.OFF_HAND);tick(p,20);check(ResearchService.state(p).scans().stream().anyMatch(s->s.contains("iron_ingot")),"Offhand meter did not scan the opposite hand");
-        tick(p,21);p.setItemInHand(InteractionHand.MAIN_HAND,ItemStack.EMPTY);count=scans(p);ResearchContent.METER.get().use(level,p,InteractionHand.OFF_HAND);tick(p,20);check(scans(p)==count,"Empty other hand scanned world instead");
-        tick(p,21);p.setShiftKeyDown(false);ResearchContent.METER.get().use(level,p,InteractionHand.OFF_HAND);tick(p,20);check(ResearchService.state(p).scans().stream().anyMatch(s->s.contains("diamond_block")),"World target was not scanned after one second");
+        int count=scans(p);p.setShiftKeyDown(true);ResearchContent.METER.get().use(level,p,InteractionHand.MAIN_HAND);tick(p,20);check(scans(p)==count,"Duplicate observation awarded twice");
+        p.setItemInHand(InteractionHand.MAIN_HAND,ItemStack.EMPTY);p.setItemInHand(InteractionHand.OFF_HAND,new ItemStack(ResearchContent.METER.get()));
+        KnowledgeStore.write(p,KnowledgeState.EMPTY);ResearchContent.METER.get().use(level,p,InteractionHand.OFF_HAND);tick(p,20);check(ResearchService.state(p).scans().contains("item:minecraft:diamond_block"),"Offhand meter did not scan world while crouching");
+        p.setItemInHand(InteractionHand.MAIN_HAND,new ItemStack(ResearchContent.METER.get()));p.setItemInHand(InteractionHand.OFF_HAND,new ItemStack(Items.GOLD_INGOT));
+        for(var block:java.util.List.of(Blocks.CHEST,Blocks.BARREL,Blocks.FURNACE,Blocks.CRAFTING_TABLE,Blocks.LEVER)){
+            var at=pos.offset(0,1,3);level.setBlockAndUpdate(at,block.defaultBlockState());KnowledgeStore.write(p,KnowledgeState.EMPTY);p.setShiftKeyDown(false);
+            var use=new net.minecraft.world.item.context.UseOnContext(p,InteractionHand.MAIN_HAND,new net.minecraft.world.phys.BlockHitResult(net.minecraft.world.phys.Vec3.atCenterOf(at),net.minecraft.core.Direction.NORTH,at,false));
+            check(ResearchContent.METER.get().onItemUseFirst(p.getMainHandItem(),use)==InteractionResult.PASS&&!p.isUsingItem(),"Normal block interaction was intercepted");
+            p.setShiftKeyDown(true);check(ResearchContent.METER.get().onItemUseFirst(p.getMainHandItem(),use).consumesAction()&&p.isUsingItem(),"Sneak hook failed to claim block use");
+            var original=level.getBlockState(at);tick(p,19);check(scans(p)==0,"Block scan completed early");tick(p,1);
+            check(ResearchService.state(p).scans().contains("item:"+net.minecraft.core.registries.BuiltInRegistries.BLOCK.getKey(block)),"Interactable not scanned: "+block);
+            check(!ResearchService.state(p).scans().contains("item:minecraft:gold_ingot")&&p.getOffhandItem().getCount()==1&&level.getBlockState(at).equals(original),"Interactable scan changed opposite item or block");
+        }
+        p.setShiftKeyDown(false);tick(p,1); // Settle the native standing eye height before aiming at the dropped item.
         // A physical item resting above a solid floor must win over the floor ray hit.
         KnowledgeStore.write(p,KnowledgeState.EMPTY);p.setItemInHand(InteractionHand.MAIN_HAND,new ItemStack(ResearchContent.METER.get()));p.setItemInHand(InteractionHand.OFF_HAND,ItemStack.EMPTY);
         for(int z=0;z<=9;z++){level.setBlockAndUpdate(pos.offset(0,-1,z),Blocks.STONE.defaultBlockState());for(int y=0;y<3;y++)level.setBlockAndUpdate(pos.offset(0,y,z),Blocks.AIR.defaultBlockState());}
@@ -59,6 +68,6 @@ public final class ScanProbe {
         drop.setItem(new ItemStack(Items.EMERALD));check(!known.matches(ScanTarget.find(p)),"Changed dropped stack retained stale aspect preview");
         drop.setPos(pos.getX()+.5,pos.getY()+.05,pos.getZ()+12.5);target=ScanTarget.find(p);check(target==null||target.entity()!=drop,"Out-of-range item could be inspected");drop.discard();
         thaumcraft.Thaumcraft.LOGGER.info("SIGHT61_NATIVE_OK: ground stack, twenty-tick scan, seven items retained, unit aspects, no duplicate knowledge, private discovery, solid occlusion, changed stack and range");
-        thaumcraft.Thaumcraft.LOGGER.info("SCAN57_NATIVE_OK: exact 20 ticks, release cancellation, latched Shift mode, both hands, empty hand, no consumption, no duplicate knowledge, world ray");server.halt(false);
+        thaumcraft.Thaumcraft.LOGGER.info("SCAN78_NATIVE_OK: exact 20 ticks, release cancellation, sneak world targeting, both hands, five interactable hooks, no consumption, no duplicate knowledge, world ray");server.halt(false);
     }
 }

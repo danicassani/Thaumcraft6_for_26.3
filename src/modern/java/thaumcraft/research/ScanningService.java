@@ -30,20 +30,9 @@ public final class ScanningService {
         aspects.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(e->message.append(" ").append(Component.translatable("tc.aspect."+e.getKey())).append(" "+e.getValue()));
         player.sendOverlayMessage(message);return true;
     }
-    /** The held object opposite the meter; never scan the meter itself. */
-    public static ItemStack otherHand(Player player){return player.getMainHandItem().is(ResearchContent.METER.get())?player.getOffhandItem():player.getMainHandItem();}
-    /** The server picks the target, checks all ray chunks and respects block occlusion. */
-    public static boolean scan(Player player){return scan(player,player.isShiftKeyDown());}
-    public static boolean scan(Player player,boolean scanOtherHand){
+    /** The server picks the world target, checks all ray chunks and respects block occlusion. */
+    public static boolean scan(Player player){
         if(!(player.level() instanceof ServerLevel level))return false;
-        if(scanOtherHand){
-            var other=otherHand(player);
-            if(other.isEmpty()||other.is(ResearchContent.METER.get())){player.sendOverlayMessage(Component.translatable("research.thaumcraft.scan_other_empty"));return false;}
-            ScanEffects.play(level,player.getBoundingBox().inflate(.05));
-            boolean result=observe(player,other);
-            if(!result)player.sendOverlayMessage(Component.translatable("research.thaumcraft.nothing"));
-            return result;
-        }
         var target=ScanTarget.find(player);
         if(target==null)return thaumcraft.theory.CelestialObservations.scan(player);
         ScanEffects.play(level,target.bounds());
