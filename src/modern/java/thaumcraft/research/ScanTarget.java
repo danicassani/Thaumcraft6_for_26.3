@@ -31,7 +31,9 @@ public record ScanTarget(int kind,int entityId,BlockPos blockPos,ItemStack stack
         }
         if(target!=null)return new ScanTarget(ENTITY,target.getId(),target.blockPosition(),target instanceof ItemEntity item?item.getItem():ItemStack.EMPTY,target,target.getBoundingBox(),false);
         if(block.getType()!=HitResult.Type.BLOCK)return null;
-        var pos=block.getBlockPos();var state=level.getBlockState(pos);var stack=new ItemStack(state.getBlock().asItem());
+        var pos=block.getBlockPos();var state=level.getBlockState(pos);
+        // World-only plant sections represent their harvested plant, not the water they contain.
+        var stack=new ItemStack(state.is(net.minecraft.world.level.block.Blocks.TALL_SEAGRASS)?net.minecraft.world.item.Items.SEAGRASS:state.is(net.minecraft.world.level.block.Blocks.KELP_PLANT)?net.minecraft.world.item.Items.KELP:state.getBlock().asItem());
         if(stack.isEmpty()&&!state.getFluidState().isEmpty())stack=new ItemStack(state.getFluidState().getType().getBucket());
         var shape=state.getShape(level,pos);var bounds=shape.isEmpty()?new AABB(pos):shape.bounds().move(pos);
         return new ScanTarget(BLOCK,-1,pos,stack,null,bounds,state.is(thaumcraft.taint.TaintContent.GOO.get()));

@@ -8,11 +8,12 @@ final class AspectSupplementTest {
  private static JsonObject read(String file)throws Exception{return JsonParser.parseString(Files.readString(Path.of(file))).getAsJsonObject();}
  private static JsonObject supplement()throws Exception{return read("src/modern/resources/assets/thaumcraft/knowledge/aspect-supplement.json");}
  @Test void definitionsUseRealAspectsAndSafeAmounts()throws Exception{
-  var known=read("tools/crystal_aspects.json");var old=read("src/modern/resources/assets/thaumcraft/knowledge/aspects.json").getAsJsonObject("items");
-  for(var entry:supplement().getAsJsonObject("items").entrySet()){
+  var known=read("tools/crystal_aspects.json");var original=read("src/modern/resources/assets/thaumcraft/knowledge/aspects.json");
+  for(String kind:List.of("items","entities")){var old=original.getAsJsonObject(kind);
+  for(var entry:supplement().getAsJsonObject(kind).entrySet()){
    int sum=0;for(var aspect:entry.getValue().getAsJsonObject().entrySet()){assertTrue(known.has(aspect.getKey()),entry.getKey());int n=aspect.getValue().getAsInt();assertTrue(n>0&&n<=500,entry.getKey());sum+=n;}assertTrue(sum>0&&sum<=AspectAmounts.LIMIT);
    if(old.has(entry.getKey()))assertEquals(old.get(entry.getKey()),entry.getValue(),"Do not shadow an original direct assignment");
-  }
+  }}
  }
  @Test void equivalentsCannotCycleOrReferToThemselves()throws Exception{
   var aliases=supplement().getAsJsonObject("aliases");for(var key:aliases.keySet()){

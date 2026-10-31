@@ -1685,5 +1685,12 @@
     "thaumcraft:pillar_eldritch": {
       "ordo": 5
     }
+  },
+  "entities": {
+    "minecraft:phantom": {
+      "exanimis": 10,
+      "volatus": 10,
+      "bestia": 5
+    }
   }
 }
