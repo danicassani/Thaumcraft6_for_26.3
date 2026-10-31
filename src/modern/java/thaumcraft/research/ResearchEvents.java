@@ -18,7 +18,7 @@ public final class ResearchEvents {
         PlayerWakeUpEvent.BUS.addListener(event->{var player=event.getEntity();if(!player.level().isClientSide()&&ResearchService.knows(player,"!gotcrystals")&&!ResearchService.knows(player,"!gotdream"))dream(player);});
         TickEvent.PlayerTickEvent.Post.BUS.addListener(event->{
             if(!(event.player() instanceof ServerPlayer player)||player.tickCount%20!=0)return;
-            var state=ResearchService.state(player);if(state==null)return;var next=movementKnowledge(player,state);
+            var state=ResearchService.state(player);if(state==null)return;var next=craftingKnowledge(player,movementKnowledge(player,state));
             next=ResearchDiscovery.reconcile(next,thaumcraft.persistence.PlayerWarpStore.read(player).result().map(w->w.permanent()+w.normal()>0).orElse(false));
             boolean crystal=false;for(int i=0;i<player.getInventory().getContainerSize();i++)if(player.getInventory().getItem(i).is(CrystalContent.ESSENCE.get())){crystal=true;break;}
             if(crystal)next=next.flag("!gotcrystals");
@@ -35,6 +35,11 @@ public final class ResearchEvents {
                 if(aura!=null&&(aura.flux()>aura.vis()||aura.flux()>aura.base()/3F))ResearchService.flag(player,"FLUX");
             }
         });
+    }
+    /** Recover the scribing prerequisite from vanilla's paid-craft statistic, never mere possession. */
+    public static KnowledgeState craftingKnowledge(ServerPlayer player,KnowledgeState state){
+        String proof="thaumcraft:scribing_tools";
+        return !state.crafts().contains(proof)&&player.getStats().getValue(net.minecraft.stats.Stats.ITEM_CRAFTED.get(thaumcraft.theory.TheoryContent.SCRIBE.get()))>0?state.craft(proof):state;
     }
     /** Original movement observations, read from persistent vanilla statistics. */
     public static KnowledgeState movementKnowledge(ServerPlayer player,KnowledgeState state){

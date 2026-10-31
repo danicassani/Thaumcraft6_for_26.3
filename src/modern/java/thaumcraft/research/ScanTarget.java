@@ -18,7 +18,12 @@ public record ScanTarget(int kind,int entityId,BlockPos blockPos,ItemStack stack
     public static ScanTarget find(Player p){
         var level=p.level();var start=p.getEyePosition();var end=start.add(p.getLookAngle().scale(9));
         for(int i=0;i<=18;i++)if(!level.hasChunkAt(BlockPos.containing(start.lerp(end,i/18D))))return null;
-        var block=level.clip(new ClipContext(start,end,ClipContext.Block.OUTLINE,ClipContext.Fluid.ANY,p));
+        boolean touchingWater=p.isInWater()||p.isUnderWater();
+        var block=level.clip(new ClipContext(start,end,ClipContext.Block.OUTLINE,ClipContext.Fluid.ANY,p){
+            @Override public net.minecraft.world.phys.shapes.VoxelShape getFluidShape(net.minecraft.world.level.material.FluidState fluid,net.minecraft.world.level.BlockGetter world,BlockPos pos){
+                return touchingWater&&fluid.is(net.minecraft.tags.FluidTags.WATER)?net.minecraft.world.phys.shapes.Shapes.empty():super.getFluidShape(fluid,world,pos);
+            }
+        });
         double nearest=block.getType()==HitResult.Type.MISS?81:start.distanceToSqr(block.getLocation());Entity target=null;
         for(var entity:level.getEntities(p,new AABB(start,end).inflate(1),e->e.isAlive()&&!e.isSpectator())){
             var intersection=entity.getBoundingBox().inflate(.1).clip(start,end);

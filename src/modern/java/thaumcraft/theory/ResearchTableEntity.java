@@ -18,17 +18,18 @@ import thaumcraft.persistence.PlayerWarpStore;
 import thaumcraft.research.*;
 
 public final class ResearchTableEntity extends thaumcraft.devices.AuraDeviceEntity implements MenuProvider {
-    public final SimpleContainer inventory=new SimpleContainer(2){@Override public void setChanged(){super.setChanged();ResearchTableEntity.this.setChanged();}};
+    public final SimpleContainer inventory=new SimpleContainer(2){@Override public void setChanged(){super.setChanged();ResearchTableEntity.this.sync();}};
     private static final com.google.gson.JsonObject META=ResearchCatalog.load("theory_meta.json").getAsJsonObject();
     private TheorySession session;
     private Tag unsupported;
     private int revision;
     public ResearchTableEntity(BlockPos p,BlockState s){super(TheoryContent.TYPE.get(),p,s);}
     @Override public void serverTick(){}
+    @Override public net.minecraft.world.phys.AABB getRenderBoundingBox(){return new net.minecraft.world.phys.AABB(worldPosition).inflate(.35,0,.35).expandTowards(0,.75,0);}
     public TheorySession session(){return session;}
     public boolean supported(){return unsupported==null;}
     public int revision(){return revision;}
-    private void commit(TheorySession value){session=value;revision=(revision+1)%32768;setChanged();}
+    private void commit(TheorySession value){session=value;revision=(revision+1)%32768;sync();}
     public boolean valid(Player p){return level instanceof ServerLevel&&level.getBlockEntity(worldPosition)==this&&p.distanceToSqr(worldPosition.getX()+.5,worldPosition.getY()+.5,worldPosition.getZ()+.5)<=64;}
     public boolean owned(Player p){return session==null||session.owner.equals(p.getUUID().toString());}
     @Override public Component getDisplayName(){return Component.translatable("block.thaumcraft.research_table");}

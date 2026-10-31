@@ -37,7 +37,7 @@ public final class TheoryProbe {
             var table=(ResearchTableEntity)level.getBlockEntity(POS);require(table!=null&&table.session()!=null&&table.session().owner.equals(ID.toString())&&table.session().choices.size()==2,"Table session lost after restart");
             require(table.inventory.getItem(0).getDamageValue()==7&&table.inventory.getItem(1).getCount()==13,"Table inventory lost");
             require(ResearchService.state(p).raw("THEORY","BASICS")==32,"Theory rewards lost after restart");require(table.session().choices.getFirst().seed()==987654321012345L,"Draw seed rerolled on restart");
-            Thaumcraft.LOGGER.info("THEORY_RESTART_OK: actual block entity and player file, owner, ink, paper, pending choices/seed and raw theory points");return;
+            Thaumcraft.LOGGER.info("THEORY_RESTART_OK: actual block entity and player file, owner, ink, paper, pending choices/seed and raw theory points");server.halt(false);return;
         }
         for(var b:BlockPos.betweenClosed(POS.offset(-4,0,-4),POS.offset(4,5,4)))level.setBlockAndUpdate(b,Blocks.AIR.defaultBlockState());
         level.setBlockAndUpdate(POS,TheoryContent.WOOD.get().defaultBlockState());p.setItemInHand(InteractionHand.MAIN_HAND,new ItemStack(TheoryContent.SCRIBE.get()));
@@ -69,16 +69,20 @@ public final class TheoryProbe {
         for(var entry:ResearchCatalog.ENTRIES)ResearchService.grant(p,entry.key());
         p.giveExperienceLevels(10);
         var observations=ResearchService.state(p);for(var category:ResearchCatalog.CATEGORIES)observations=observations.addPoints("OBSERVATION",category,64);KnowledgeStore.write(p,observations);
+        for(var variant:thaumcraft.infusion.CuriosityContent.VARIANTS)p.getInventory().add(thaumcraft.infusion.CuriosityContent.curio(variant));
         for(var kind:TheoryCards.Kind.values()){
             var sample=TheorySession.start(p.getUUID(),5,List.of());sample.add("BASICS",100);sample.add("ARTIFICE",80);sample.add("ALCHEMY",60);
             var card=TheoryCards.generate(kind,p,sample,42,true);require(card!=null,"Card could not initialize: "+kind);
             var first=sample.copy();var second=sample.copy();require(TheoryCards.apply(card,first,p,ResearchService.state(p))!=null,"Card failed: "+kind);TheoryCards.apply(card,second,p,ResearchService.state(p));
             require(TheorySession.CODEC.encodeStart(NbtOps.INSTANCE,first).getOrThrow().equals(TheorySession.CODEC.encodeStart(NbtOps.INSTANCE,second).getOrThrow()),"Card rerolled its effect: "+kind);
         }
+        p.getInventory().clearContent();var layout=new TheoryMenu(99,p.getInventory(),table);
+        require(layout.slots.size()==38&&layout.getSlot(0).x==16&&layout.getSlot(0).y==15&&layout.getSlot(1).x==224&&layout.getSlot(2).x==77&&layout.getSlot(29).x==20&&layout.getSlot(37).y==226,"Original research inventory layout incorrect");
+        var savedTool=table.inventory.getItem(0).copy();require(!layout.quickMoveStack(p,0).isEmpty()&&table.inventory.getItem(0).isEmpty(),"Could not remove scribing tools");require(!layout.quickMoveStack(p,37).isEmpty()&&ItemStack.isSameItemSameComponents(savedTool,table.inventory.getItem(0))&&p.getInventory().getItem(8).isEmpty(),"Could not restore tools without duplication");
         table.inventory.setItem(0,new ItemStack(TheoryContent.SCRIBE.get()));table.inventory.setItem(1,new ItemStack(Items.PAPER,13));require(table.start(p,List.of()),"Could not save session");table.inventory.getItem(0).setDamageValue(7);table.session().choices=List.of(new TheoryCards.Card(TheoryCards.Kind.EXPERIMENTATION,0,0,0,0,987654321012345L,false),new TheoryCards.Card(TheoryCards.Kind.CALIBRATE,3,0,0,0,4,false));table.setChanged();server.getPlayerList().getPlayerIo().save(p);
         // Unsupported data is round-tripped unchanged and cannot start a new session.
         var badPos=POS.west(2);level.setBlockAndUpdate(badPos,TheoryContent.TABLE.get().defaultBlockState());var bad=(ResearchTableEntity)level.getBlockEntity(badPos);var tag=bad.saveWithoutMetadata(server.registryAccess());tag.put("theory",StringTag.valueOf("future data"));bad.loadWithComponents(TagValueInput.create(ProblemReporter.DISCARDING,server.registryAccess(),tag));require(!bad.supported()&&!bad.start(p,List.of())&&bad.saveWithoutMetadata(server.registryAccess()).get("theory").equals(StringTag.valueOf("future data")),"Malformed theory overwritten");
-        Thaumcraft.LOGGER.info("THEORY_RUNTIME_OK: table bootstrap, aid validation, paper and ink costs, session ownership, native replay rejection, atomic cards, celestial variants, exact finish, refill, server sky checks and corrupt-data preservation");
+        Thaumcraft.LOGGER.info("THEORY_RUNTIME_OK: table bootstrap, aid validation, paper and ink costs, session ownership, native replay rejection, atomic cards, celestial variants, exact finish, refill, server sky checks and corrupt-data preservation; original menu layout and physical tools shift transfer");server.halt(false);
     }
     private static void sky(ServerLevel level,ServerPlayer p){
         ResearchService.grant(p,"CELESTIALSCANNING");p.getInventory().clearContent();p.getInventory().setItem(0,new ItemStack(ResearchContent.METER.get()));p.getInventory().setItem(1,new ItemStack(TheoryContent.SCRIBE.get()));p.getInventory().setItem(2,new ItemStack(Items.PAPER,10));p.setYRot(0);p.setXRot(-90);
