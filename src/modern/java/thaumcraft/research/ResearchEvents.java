@@ -13,6 +13,7 @@ public final class ResearchEvents {
     public static void register(){
         KnowledgeStore.register();
         ScanInspection.register();
+        InventoryInspection.register();
         ResearchCommands.register();
         PlayerEvent.ItemCraftedEvent.BUS.addListener(event->ResearchService.recordCraft(event.getEntity(),event.getCrafting()));
         PlayerWakeUpEvent.BUS.addListener(event->{var player=event.getEntity();if(!player.level().isClientSide()&&ResearchService.knows(player,"!gotcrystals")&&!ResearchService.knows(player,"!gotdream"))dream(player);});

@@ -17,7 +17,7 @@ public final class ThaumometerHud {
     @SubscribeEvent public static void layers(AddGuiOverlayLayersEvent event){event.getLayeredDraw().add(SimpleContent.id("thaumometer"),(graphics,time)->{
         var client=Minecraft.getInstance();if(client.player==null||client.level==null||client.gui.hud.isHidden())return;
         if(!client.player.getMainHandItem().is(ResearchContent.METER.get())&&!client.player.getOffhandItem().is(ResearchContent.METER.get())&&!thaumcraft.equipment.FortressMasks.hasGoggles(client.player)&&!(client.player.getMainHandItem().getItem() instanceof thaumcraft.thaumaturgy.CasterItem))return;
-        ThaumometerSight.draw(graphics);
+        if(!CrucibleSight.draw(graphics))ThaumometerSight.draw(graphics);
         var snapshot=AuraNetwork.clientSnapshot();if(snapshot==null||!snapshot.dimension().equals(client.level.dimension().identifier())||snapshot.chunk()!=client.player.chunkPosition().pack())return;
         var cell=snapshot.cell();
         var aura=Component.translatable("research.thaumcraft.aura",cell.base(),String.format(java.util.Locale.ROOT,"%.1f",cell.vis()),String.format(java.util.Locale.ROOT,"%.1f",cell.flux()));
